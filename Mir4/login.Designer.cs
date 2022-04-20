@@ -97,11 +97,12 @@ namespace Mir4
             // txt_versao
             // 
             this.txt_versao.AutoSize = true;
-            this.txt_versao.Location = new System.Drawing.Point(278, 370);
+            this.txt_versao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_versao.Location = new System.Drawing.Point(267, 367);
             this.txt_versao.Name = "txt_versao";
-            this.txt_versao.Size = new System.Drawing.Size(56, 13);
+            this.txt_versao.Size = new System.Drawing.Size(63, 13);
             this.txt_versao.TabIndex = 5;
-            this.txt_versao.Text = "V.  0.0.1 a";
+            this.txt_versao.Text = "V.  1.0.0a";
             // 
             // login
             // 
