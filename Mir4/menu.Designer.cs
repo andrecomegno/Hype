@@ -38,7 +38,7 @@ namespace Mir4
             this.arquivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.rodape = new System.Windows.Forms.Panel();
             this.gp_menu.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -163,21 +163,21 @@ namespace Mir4
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.sairToolStripMenuItem.Text = "Sair";
             // 
-            // panel1
+            // rodape
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 558);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 42);
-            this.panel1.TabIndex = 45;
+            this.rodape.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rodape.Location = new System.Drawing.Point(0, 558);
+            this.rodape.Name = "rodape";
+            this.rodape.Size = new System.Drawing.Size(1000, 42);
+            this.rodape.TabIndex = 45;
             // 
             // menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.rodape);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.gp_menu);
             this.Name = "menu";
@@ -203,6 +203,6 @@ namespace Mir4
         private System.Windows.Forms.ToolStripMenuItem arquivosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel rodape;
     }
 }

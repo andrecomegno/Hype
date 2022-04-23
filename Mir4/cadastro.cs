@@ -33,5 +33,10 @@ namespace Mir4
                 gp_cadastro_alt.Enabled = false;
             }
         }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

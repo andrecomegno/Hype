@@ -29,30 +29,27 @@ namespace Mir4
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.rodape = new System.Windows.Forms.Panel();
             this.bt_procurar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gp_geral = new System.Windows.Forms.GroupBox();
+            this.gp_secundario = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.arquivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gp_geral.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // rodape
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 600);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1032, 42);
-            this.panel1.TabIndex = 18;
+            this.rodape.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rodape.Location = new System.Drawing.Point(0, 600);
+            this.rodape.Name = "rodape";
+            this.rodape.Size = new System.Drawing.Size(1032, 42);
+            this.rodape.TabIndex = 18;
             // 
             // bt_procurar
             // 
@@ -81,34 +78,25 @@ namespace Mir4
             this.textBox1.Size = new System.Drawing.Size(509, 23);
             this.textBox1.TabIndex = 43;
             // 
-            // groupBox1
+            // gp_geral
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.bt_procurar);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 59);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1008, 509);
-            this.groupBox1.TabIndex = 45;
-            this.groupBox1.TabStop = false;
+            this.gp_geral.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gp_geral.Controls.Add(this.gp_secundario);
+            this.gp_geral.Controls.Add(this.bt_procurar);
+            this.gp_geral.Controls.Add(this.textBox1);
+            this.gp_geral.Location = new System.Drawing.Point(12, 59);
+            this.gp_geral.Name = "gp_geral";
+            this.gp_geral.Size = new System.Drawing.Size(1008, 509);
+            this.gp_geral.TabIndex = 45;
+            this.gp_geral.TabStop = false;
             // 
-            // groupBox2
+            // gp_secundario
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(21, 84);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(967, 390);
-            this.groupBox2.TabIndex = 45;
-            this.groupBox2.TabStop = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(934, 351);
-            this.dataGridView1.TabIndex = 0;
+            this.gp_secundario.Location = new System.Drawing.Point(21, 84);
+            this.gp_secundario.Name = "gp_secundario";
+            this.gp_secundario.Size = new System.Drawing.Size(967, 390);
+            this.gp_secundario.TabIndex = 45;
+            this.gp_secundario.TabStop = false;
             // 
             // menuStrip1
             // 
@@ -147,17 +135,15 @@ namespace Mir4
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 642);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.gp_geral);
+            this.Controls.Add(this.rodape);
             this.MaximizeBox = false;
             this.Name = "membros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "membros";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.gp_geral.ResumeLayout(false);
+            this.gp_geral.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -167,15 +153,14 @@ namespace Mir4
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel rodape;
         private System.Windows.Forms.Button bt_procurar;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gp_geral;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem arquivosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox gp_secundario;
     }
 }

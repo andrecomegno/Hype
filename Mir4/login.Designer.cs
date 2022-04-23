@@ -31,9 +31,9 @@ namespace Mir4
         {
             this.pl_login = new System.Windows.Forms.Panel();
             this.bt_entrar = new System.Windows.Forms.Button();
-            this.txt_login = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lb_login = new System.Windows.Forms.Label();
             this.txt_senha = new System.Windows.Forms.TextBox();
+            this.txt_login = new System.Windows.Forms.TextBox();
             this.txt_versao = new System.Windows.Forms.Label();
             this.pl_login.SuspendLayout();
             this.SuspendLayout();
@@ -42,9 +42,9 @@ namespace Mir4
             // 
             this.pl_login.BackColor = System.Drawing.SystemColors.Control;
             this.pl_login.Controls.Add(this.bt_entrar);
-            this.pl_login.Controls.Add(this.txt_login);
-            this.pl_login.Controls.Add(this.textBox1);
+            this.pl_login.Controls.Add(this.lb_login);
             this.pl_login.Controls.Add(this.txt_senha);
+            this.pl_login.Controls.Add(this.txt_login);
             this.pl_login.Location = new System.Drawing.Point(12, 12);
             this.pl_login.Name = "pl_login";
             this.pl_login.Size = new System.Drawing.Size(322, 329);
@@ -68,31 +68,31 @@ namespace Mir4
             this.bt_entrar.UseVisualStyleBackColor = false;
             this.bt_entrar.Click += new System.EventHandler(this.bt_entrar_Click_1);
             // 
-            // txt_login
+            // lb_login
             // 
-            this.txt_login.AutoSize = true;
-            this.txt_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_login.Location = new System.Drawing.Point(115, 50);
-            this.txt_login.Name = "txt_login";
-            this.txt_login.Size = new System.Drawing.Size(99, 31);
-            this.txt_login.TabIndex = 4;
-            this.txt_login.Text = "LOGIN";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(70, 166);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 26);
-            this.textBox1.TabIndex = 3;
+            this.lb_login.AutoSize = true;
+            this.lb_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_login.Location = new System.Drawing.Point(115, 50);
+            this.lb_login.Name = "lb_login";
+            this.lb_login.Size = new System.Drawing.Size(99, 31);
+            this.lb_login.TabIndex = 4;
+            this.lb_login.Text = "LOGIN";
             // 
             // txt_senha
             // 
             this.txt_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_senha.Location = new System.Drawing.Point(70, 123);
+            this.txt_senha.Location = new System.Drawing.Point(70, 166);
             this.txt_senha.Name = "txt_senha";
             this.txt_senha.Size = new System.Drawing.Size(184, 26);
-            this.txt_senha.TabIndex = 1;
+            this.txt_senha.TabIndex = 3;
+            // 
+            // txt_login
+            // 
+            this.txt_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_login.Location = new System.Drawing.Point(70, 123);
+            this.txt_login.Name = "txt_login";
+            this.txt_login.Size = new System.Drawing.Size(184, 26);
+            this.txt_login.TabIndex = 1;
             // 
             // txt_versao
             // 
@@ -127,9 +127,9 @@ namespace Mir4
         #endregion
 
         private System.Windows.Forms.Panel pl_login;
+        private System.Windows.Forms.TextBox txt_login;
+        private System.Windows.Forms.Label lb_login;
         private System.Windows.Forms.TextBox txt_senha;
-        private System.Windows.Forms.Label txt_login;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label txt_versao;
         private System.Windows.Forms.Button bt_entrar;
     }
