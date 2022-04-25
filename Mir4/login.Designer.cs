@@ -63,7 +63,7 @@ namespace Mir4
             this.bt_entrar.Location = new System.Drawing.Point(70, 213);
             this.bt_entrar.Name = "bt_entrar";
             this.bt_entrar.Size = new System.Drawing.Size(184, 58);
-            this.bt_entrar.TabIndex = 41;
+            this.bt_entrar.TabIndex = 2;
             this.bt_entrar.Text = "ENTRAR";
             this.bt_entrar.UseVisualStyleBackColor = false;
             this.bt_entrar.Click += new System.EventHandler(this.bt_entrar_Click_1);
@@ -84,7 +84,8 @@ namespace Mir4
             this.txt_senha.Location = new System.Drawing.Point(70, 166);
             this.txt_senha.Name = "txt_senha";
             this.txt_senha.Size = new System.Drawing.Size(184, 26);
-            this.txt_senha.TabIndex = 3;
+            this.txt_senha.TabIndex = 1;
+            this.txt_senha.UseSystemPasswordChar = true;
             // 
             // txt_login
             // 
@@ -92,7 +93,7 @@ namespace Mir4
             this.txt_login.Location = new System.Drawing.Point(70, 123);
             this.txt_login.Name = "txt_login";
             this.txt_login.Size = new System.Drawing.Size(184, 26);
-            this.txt_login.TabIndex = 1;
+            this.txt_login.TabIndex = 0;
             // 
             // txt_versao
             // 

@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace Mir4
 {
-    public partial class membros : Form
+    public partial class detalhes_membros : Form
     {
-        public membros()
+        public detalhes_membros()
         {
             InitializeComponent();
-        }
-
-        private void bt_procurar_Click(object sender, EventArgs e)
-        {
-            detalhes_membros dm = new detalhes_membros();
-            dm.Show();
-
         }
     }
 }

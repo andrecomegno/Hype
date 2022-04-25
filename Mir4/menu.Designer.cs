@@ -54,7 +54,7 @@ namespace Mir4
             this.bt_membros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_membros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_membros.ForeColor = System.Drawing.Color.White;
-            this.bt_membros.Location = new System.Drawing.Point(364, 56);
+            this.bt_membros.Location = new System.Drawing.Point(369, 56);
             this.bt_membros.Name = "bt_membros";
             this.bt_membros.Size = new System.Drawing.Size(193, 69);
             this.bt_membros.TabIndex = 39;
@@ -73,7 +73,7 @@ namespace Mir4
             this.bt_cadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_cadastro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_cadastro.ForeColor = System.Drawing.Color.White;
-            this.bt_cadastro.Location = new System.Drawing.Point(141, 56);
+            this.bt_cadastro.Location = new System.Drawing.Point(146, 56);
             this.bt_cadastro.Name = "bt_cadastro";
             this.bt_cadastro.Size = new System.Drawing.Size(193, 69);
             this.bt_cadastro.TabIndex = 40;
@@ -92,7 +92,7 @@ namespace Mir4
             this.bt_controle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_controle.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_controle.ForeColor = System.Drawing.Color.White;
-            this.bt_controle.Location = new System.Drawing.Point(141, 150);
+            this.bt_controle.Location = new System.Drawing.Point(146, 150);
             this.bt_controle.Name = "bt_controle";
             this.bt_controle.Size = new System.Drawing.Size(193, 69);
             this.bt_controle.TabIndex = 41;
@@ -111,7 +111,7 @@ namespace Mir4
             this.bt_relatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_relatorio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_relatorio.ForeColor = System.Drawing.Color.White;
-            this.bt_relatorio.Location = new System.Drawing.Point(364, 150);
+            this.bt_relatorio.Location = new System.Drawing.Point(369, 150);
             this.bt_relatorio.Name = "bt_relatorio";
             this.bt_relatorio.Size = new System.Drawing.Size(193, 69);
             this.bt_relatorio.TabIndex = 42;
@@ -180,6 +180,7 @@ namespace Mir4
             this.Controls.Add(this.rodape);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.gp_menu);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "menu";
