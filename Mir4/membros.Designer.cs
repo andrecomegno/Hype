@@ -1,7 +1,7 @@
 ﻿
 namespace Mir4
 {
-    partial class membros
+    partial class Membros
     {
         /// <summary>
         /// Required designer variable.
@@ -168,7 +168,7 @@ namespace Mir4
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.sairToolStripMenuItem.Text = "Sair";
             // 
-            // membros
+            // Membros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -177,7 +177,7 @@ namespace Mir4
             this.Controls.Add(this.gp_geral);
             this.Controls.Add(this.rodape);
             this.MinimumSize = new System.Drawing.Size(800, 600);
-            this.Name = "membros";
+            this.Name = "Membros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "membros";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -38,7 +38,7 @@ namespace Mir4
         {
             try
             {
-                membros me = new membros();
+                Membros me = new Membros();
                 me.Show();
             }
             catch

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Mir4
 {
-    public partial class membros : Form
+    public partial class Membros : Form
     {
-        public membros()
+        public Membros()
         {
             InitializeComponent();
         }
