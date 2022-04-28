@@ -183,7 +183,7 @@ namespace Mir4
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "menu";
+            this.Text = "HYPE";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.gp_menu.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);

@@ -117,7 +117,7 @@ namespace Mir4
             this.MaximizeBox = false;
             this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mir4";
+            this.Text = "HYPE - Login";
             this.pl_login.ResumeLayout(false);
             this.pl_login.PerformLayout();
             this.ResumeLayout(false);

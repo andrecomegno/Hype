@@ -179,7 +179,7 @@ namespace Mir4
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Membros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "membros";
+            this.Text = "HYPE - Lista de Todos os Membros";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.gp_geral.ResumeLayout(false);
             this.gp_geral.PerformLayout();

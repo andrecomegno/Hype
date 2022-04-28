@@ -109,7 +109,7 @@ namespace Mir4
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(313, 260);
+            this.label6.Location = new System.Drawing.Point(323, 233);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 17);
             this.label6.TabIndex = 58;
@@ -120,7 +120,7 @@ namespace Mir4
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(143, 260);
+            this.label5.Location = new System.Drawing.Point(153, 233);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 17);
             this.label5.TabIndex = 58;
@@ -129,7 +129,7 @@ namespace Mir4
             // textBox3
             // 
             this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox3.Location = new System.Drawing.Point(361, 257);
+            this.textBox3.Location = new System.Drawing.Point(371, 230);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(112, 20);
             this.textBox3.TabIndex = 65;
@@ -145,7 +145,7 @@ namespace Mir4
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(371, 292);
+            this.button5.Location = new System.Drawing.Point(380, 275);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(102, 36);
             this.button5.TabIndex = 62;
@@ -163,7 +163,7 @@ namespace Mir4
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(155, 292);
+            this.button4.Location = new System.Drawing.Point(164, 275);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(102, 36);
             this.button4.TabIndex = 64;
@@ -173,7 +173,7 @@ namespace Mir4
             // textBox2
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.Location = new System.Drawing.Point(195, 257);
+            this.textBox2.Location = new System.Drawing.Point(205, 230);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(112, 20);
             this.textBox2.TabIndex = 62;
@@ -200,7 +200,7 @@ namespace Mir4
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(263, 292);
+            this.button6.Location = new System.Drawing.Point(272, 275);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(102, 36);
             this.button6.TabIndex = 63;
@@ -210,24 +210,29 @@ namespace Mir4
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(135, 36);
+            this.groupBox3.Location = new System.Drawing.Point(164, 36);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(350, 185);
+            this.groupBox3.Size = new System.Drawing.Size(309, 185);
             this.groupBox3.TabIndex = 23;
             this.groupBox3.TabStop = false;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DATA_PROGRESSAO,
             this.LEVEL,
             this.PODER});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(3, 16);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(344, 166);
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(303, 166);
             this.dataGridView1.TabIndex = 22;
             // 
             // DATA_PROGRESSAO
@@ -408,7 +413,7 @@ namespace Mir4
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(25, 292);
+            this.button3.Location = new System.Drawing.Point(29, 264);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(102, 36);
             this.button3.TabIndex = 59;
@@ -429,22 +434,29 @@ namespace Mir4
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dataGridView2);
-            this.groupBox4.Location = new System.Drawing.Point(68, 36);
+            this.groupBox4.Location = new System.Drawing.Point(85, 36);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(250, 185);
+            this.groupBox4.Size = new System.Drawing.Size(209, 185);
             this.groupBox4.TabIndex = 61;
             this.groupBox4.TabStop = false;
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DATA_OURO,
             this.OURO});
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.Location = new System.Drawing.Point(3, 16);
+            this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(244, 166);
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.Size = new System.Drawing.Size(203, 166);
             this.dataGridView2.TabIndex = 0;
             // 
             // DATA_OURO
@@ -462,7 +474,7 @@ namespace Mir4
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(80, 260);
+            this.label2.Location = new System.Drawing.Point(73, 230);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 17);
             this.label2.TabIndex = 60;
@@ -471,7 +483,7 @@ namespace Mir4
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(189, 257);
+            this.textBox1.Location = new System.Drawing.Point(182, 227);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(112, 20);
             this.textBox1.TabIndex = 59;
@@ -487,7 +499,7 @@ namespace Mir4
             this.bt_sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_sair.ForeColor = System.Drawing.Color.White;
-            this.bt_sair.Location = new System.Drawing.Point(241, 292);
+            this.bt_sair.Location = new System.Drawing.Point(245, 264);
             this.bt_sair.Name = "bt_sair";
             this.bt_sair.Size = new System.Drawing.Size(102, 36);
             this.bt_sair.TabIndex = 56;
@@ -505,7 +517,7 @@ namespace Mir4
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(133, 292);
+            this.button2.Location = new System.Drawing.Point(137, 264);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(102, 36);
             this.button2.TabIndex = 58;
@@ -525,7 +537,7 @@ namespace Mir4
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "detalhes_membros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Detalhes do Membro ";
+            this.Text = "HYPE - Detalhes do Membro ";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
