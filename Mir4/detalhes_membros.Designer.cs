@@ -31,10 +31,19 @@ namespace Mir4
         {
             this.gb_zero = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.DATA_OURO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OURO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.bt_sair = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -52,22 +61,13 @@ namespace Mir4
             this.lb_level = new System.Windows.Forms.Label();
             this.lb_poder = new System.Windows.Forms.Label();
             this.lb_classe = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.DATA_OURO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OURO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.bt_sair = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.gb_zero.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gp_um.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // gb_zero
@@ -100,6 +100,17 @@ namespace Mir4
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             // 
+            // label19
+            // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(118, 25);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(111, 17);
+            this.label19.TabIndex = 20;
+            this.label19.Text = "Doação de Gold";
+            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -110,6 +121,44 @@ namespace Mir4
             this.label6.Size = new System.Drawing.Size(46, 17);
             this.label6.TabIndex = 58;
             this.label6.Text = "Poder";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dataGridView2);
+            this.groupBox4.Location = new System.Drawing.Point(61, 45);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(209, 185);
+            this.groupBox4.TabIndex = 61;
+            this.groupBox4.TabStop = false;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DATA_OURO,
+            this.OURO});
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.EnableHeadersVisualStyles = false;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 16);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.Size = new System.Drawing.Size(203, 166);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // DATA_OURO
+            // 
+            this.DATA_OURO.HeaderText = "DATA";
+            this.DATA_OURO.Name = "DATA_OURO";
+            // 
+            // OURO
+            // 
+            this.OURO.HeaderText = "OURO";
+            this.OURO.Name = "OURO";
             // 
             // label5
             // 
@@ -122,6 +171,17 @@ namespace Mir4
             this.label5.TabIndex = 58;
             this.label5.Text = "Level";
             // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(46, 239);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 17);
+            this.label2.TabIndex = 60;
+            this.label2.Text = "Adicionar Ouro";
+            // 
             // textBox3
             // 
             this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -130,6 +190,14 @@ namespace Mir4
             this.textBox3.Size = new System.Drawing.Size(112, 20);
             this.textBox3.TabIndex = 65;
             // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox1.Location = new System.Drawing.Point(155, 236);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(112, 20);
+            this.textBox1.TabIndex = 59;
+            // 
             // textBox2
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -137,6 +205,42 @@ namespace Mir4
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(112, 20);
             this.textBox2.TabIndex = 62;
+            // 
+            // bt_sair
+            // 
+            this.bt_sair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_sair.BackColor = System.Drawing.Color.Tomato;
+            this.bt_sair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_sair.FlatAppearance.BorderSize = 0;
+            this.bt_sair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
+            this.bt_sair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
+            this.bt_sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_sair.ForeColor = System.Drawing.Color.White;
+            this.bt_sair.Location = new System.Drawing.Point(168, 274);
+            this.bt_sair.Name = "bt_sair";
+            this.bt_sair.Size = new System.Drawing.Size(102, 36);
+            this.bt_sair.TabIndex = 56;
+            this.bt_sair.Text = "Cancelar";
+            this.bt_sair.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.YellowGreen;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(59, 274);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(102, 36);
+            this.button2.TabIndex = 58;
+            this.button2.Text = "Salvar";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // label12
             // 
@@ -326,110 +430,6 @@ namespace Mir4
             this.lb_classe.TabIndex = 8;
             this.lb_classe.Text = "Classe";
             // 
-            // label19
-            // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(118, 25);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(111, 17);
-            this.label19.TabIndex = 20;
-            this.label19.Text = "Doação de Gold";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.dataGridView2);
-            this.groupBox4.Location = new System.Drawing.Point(61, 45);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(209, 185);
-            this.groupBox4.TabIndex = 61;
-            this.groupBox4.TabStop = false;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeColumns = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DATA_OURO,
-            this.OURO});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.EnableHeadersVisualStyles = false;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(203, 166);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // DATA_OURO
-            // 
-            this.DATA_OURO.HeaderText = "DATA";
-            this.DATA_OURO.Name = "DATA_OURO";
-            // 
-            // OURO
-            // 
-            this.OURO.HeaderText = "OURO";
-            this.OURO.Name = "OURO";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(49, 239);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 17);
-            this.label2.TabIndex = 60;
-            this.label2.Text = "Adicionar Ouro";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(158, 236);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(112, 20);
-            this.textBox1.TabIndex = 59;
-            // 
-            // bt_sair
-            // 
-            this.bt_sair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_sair.BackColor = System.Drawing.Color.Tomato;
-            this.bt_sair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_sair.FlatAppearance.BorderSize = 0;
-            this.bt_sair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
-            this.bt_sair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
-            this.bt_sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_sair.ForeColor = System.Drawing.Color.White;
-            this.bt_sair.Location = new System.Drawing.Point(811, 275);
-            this.bt_sair.Name = "bt_sair";
-            this.bt_sair.Size = new System.Drawing.Size(102, 36);
-            this.bt_sair.TabIndex = 56;
-            this.bt_sair.Text = "Cancelar";
-            this.bt_sair.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.YellowGreen;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(668, 275);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 36);
-            this.button2.TabIndex = 58;
-            this.button2.Text = "Salvar";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // detalhes_membros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,12 +447,12 @@ namespace Mir4
             this.gb_zero.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gp_um.ResumeLayout(false);
             this.gp_um.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
