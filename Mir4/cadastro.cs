@@ -26,11 +26,11 @@ namespace Mir4
         {
             if (rd_sim.Checked == true)
             {
-                gp_cadastro_alt.Enabled = true;
+                gp_dois.Enabled = true;
             }
             else
             {
-                gp_cadastro_alt.Enabled = false;
+                gp_dois.Enabled = false;
             }
         }
 

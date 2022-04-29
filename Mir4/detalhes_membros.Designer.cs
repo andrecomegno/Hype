@@ -29,34 +29,29 @@ namespace Mir4
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gb_zero = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.DATA_PROGRESSAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LEVEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PODER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gp_membro = new System.Windows.Forms.GroupBox();
+            this.gp_um = new System.Windows.Forms.GroupBox();
             this.txt_nivel = new System.Windows.Forms.TextBox();
             this.txt_classe = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
+            this.bt_excluir = new System.Windows.Forms.Button();
+            this.lb_dados = new System.Windows.Forms.Label();
             this.txt_poder = new System.Windows.Forms.TextBox();
             this.txt_nick = new System.Windows.Forms.TextBox();
             this.txt_nome = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.lb_level = new System.Windows.Forms.Label();
+            this.lb_poder = new System.Windows.Forms.Label();
+            this.lb_classe = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -66,41 +61,42 @@ namespace Mir4
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.bt_sair = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.gb_zero.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.gp_membro.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.gp_um.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gb_zero
             // 
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.gp_membro);
-            this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Location = new System.Drawing.Point(12, 32);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1033, 503);
-            this.groupBox1.TabIndex = 49;
-            this.groupBox1.TabStop = false;
+            this.gb_zero.Controls.Add(this.groupBox2);
+            this.gb_zero.Controls.Add(this.gp_um);
+            this.gb_zero.Location = new System.Drawing.Point(12, 12);
+            this.gb_zero.Name = "gb_zero";
+            this.gb_zero.Size = new System.Drawing.Size(1033, 537);
+            this.gb_zero.TabIndex = 49;
+            this.gb_zero.TabStop = false;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.bt_sair);
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Location = new System.Drawing.Point(408, 113);
+            this.groupBox2.Location = new System.Drawing.Point(17, 149);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(610, 363);
+            this.groupBox2.Size = new System.Drawing.Size(1001, 361);
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             // 
@@ -109,7 +105,7 @@ namespace Mir4
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(323, 233);
+            this.label6.Location = new System.Drawing.Point(777, 230);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 17);
             this.label6.TabIndex = 58;
@@ -120,7 +116,7 @@ namespace Mir4
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(153, 233);
+            this.label5.Location = new System.Drawing.Point(607, 230);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 17);
             this.label5.TabIndex = 58;
@@ -129,51 +125,15 @@ namespace Mir4
             // textBox3
             // 
             this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox3.Location = new System.Drawing.Point(371, 230);
+            this.textBox3.Location = new System.Drawing.Point(825, 227);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(112, 20);
             this.textBox3.TabIndex = 65;
             // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.Tomato;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(380, 275);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(102, 36);
-            this.button5.TabIndex = 62;
-            this.button5.Text = "Cancelar";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(164, 275);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(102, 36);
-            this.button4.TabIndex = 64;
-            this.button4.Text = "Editar";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // textBox2
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.Location = new System.Drawing.Point(205, 230);
+            this.textBox2.Location = new System.Drawing.Point(659, 227);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(112, 20);
             this.textBox2.TabIndex = 62;
@@ -183,34 +143,16 @@ namespace Mir4
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(274, 16);
+            this.label12.Location = new System.Drawing.Point(760, 25);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(81, 17);
             this.label12.TabIndex = 21;
             this.label12.Text = "Progressão";
             // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.BackColor = System.Drawing.Color.YellowGreen;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(272, 275);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(102, 36);
-            this.button6.TabIndex = 63;
-            this.button6.Text = "Salvar";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(164, 36);
+            this.groupBox3.Location = new System.Drawing.Point(631, 39);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(309, 185);
             this.groupBox3.TabIndex = 23;
@@ -250,26 +192,26 @@ namespace Mir4
             this.PODER.HeaderText = "PODER";
             this.PODER.Name = "PODER";
             // 
-            // gp_membro
+            // gp_um
             // 
-            this.gp_membro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gp_um.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gp_membro.Controls.Add(this.txt_nivel);
-            this.gp_membro.Controls.Add(this.txt_classe);
-            this.gp_membro.Controls.Add(this.button1);
-            this.gp_membro.Controls.Add(this.label10);
-            this.gp_membro.Controls.Add(this.txt_poder);
-            this.gp_membro.Controls.Add(this.txt_nick);
-            this.gp_membro.Controls.Add(this.txt_nome);
-            this.gp_membro.Controls.Add(this.label1);
-            this.gp_membro.Controls.Add(this.label4);
-            this.gp_membro.Controls.Add(this.label3);
-            this.gp_membro.Location = new System.Drawing.Point(17, 19);
-            this.gp_membro.Name = "gp_membro";
-            this.gp_membro.Size = new System.Drawing.Size(1001, 88);
-            this.gp_membro.TabIndex = 17;
-            this.gp_membro.TabStop = false;
+            this.gp_um.Controls.Add(this.txt_nivel);
+            this.gp_um.Controls.Add(this.txt_classe);
+            this.gp_um.Controls.Add(this.bt_excluir);
+            this.gp_um.Controls.Add(this.lb_dados);
+            this.gp_um.Controls.Add(this.txt_poder);
+            this.gp_um.Controls.Add(this.txt_nick);
+            this.gp_um.Controls.Add(this.txt_nome);
+            this.gp_um.Controls.Add(this.lb_level);
+            this.gp_um.Controls.Add(this.lb_poder);
+            this.gp_um.Controls.Add(this.lb_classe);
+            this.gp_um.Location = new System.Drawing.Point(17, 19);
+            this.gp_um.Name = "gp_um";
+            this.gp_um.Size = new System.Drawing.Size(1001, 95);
+            this.gp_um.TabIndex = 17;
+            this.gp_um.TabStop = false;
             // 
             // txt_nivel
             // 
@@ -291,34 +233,34 @@ namespace Mir4
             this.txt_classe.Size = new System.Drawing.Size(138, 20);
             this.txt_classe.TabIndex = 22;
             // 
-            // button1
+            // bt_excluir
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Tomato;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(895, 30);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 31);
-            this.button1.TabIndex = 57;
-            this.button1.Text = "Excluir";
-            this.button1.UseVisualStyleBackColor = false;
+            this.bt_excluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_excluir.BackColor = System.Drawing.Color.Tomato;
+            this.bt_excluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_excluir.FlatAppearance.BorderSize = 0;
+            this.bt_excluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
+            this.bt_excluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
+            this.bt_excluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_excluir.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_excluir.ForeColor = System.Drawing.Color.White;
+            this.bt_excluir.Location = new System.Drawing.Point(884, 30);
+            this.bt_excluir.Name = "bt_excluir";
+            this.bt_excluir.Size = new System.Drawing.Size(77, 31);
+            this.bt_excluir.TabIndex = 57;
+            this.bt_excluir.Text = "Excluir";
+            this.bt_excluir.UseVisualStyleBackColor = false;
             // 
-            // label10
+            // lb_dados
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(473, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 17);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Dados";
+            this.lb_dados.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lb_dados.AutoSize = true;
+            this.lb_dados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_dados.Location = new System.Drawing.Point(473, 16);
+            this.lb_dados.Name = "lb_dados";
+            this.lb_dados.Size = new System.Drawing.Size(49, 17);
+            this.lb_dados.TabIndex = 20;
+            this.lb_dados.Text = "Dados";
             // 
             // txt_poder
             // 
@@ -351,81 +293,45 @@ namespace Mir4
             this.txt_nome.TabIndex = 0;
             this.txt_nome.Text = "Nick";
             // 
-            // label1
+            // lb_level
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(580, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Level";
+            this.lb_level.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lb_level.AutoSize = true;
+            this.lb_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_level.Location = new System.Drawing.Point(580, 44);
+            this.lb_level.Name = "lb_level";
+            this.lb_level.Size = new System.Drawing.Size(42, 17);
+            this.lb_level.TabIndex = 3;
+            this.lb_level.Text = "Level";
             // 
-            // label4
+            // lb_poder
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(700, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Poder";
+            this.lb_poder.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lb_poder.AutoSize = true;
+            this.lb_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_poder.Location = new System.Drawing.Point(700, 44);
+            this.lb_poder.Name = "lb_poder";
+            this.lb_poder.Size = new System.Drawing.Size(46, 17);
+            this.lb_poder.TabIndex = 10;
+            this.lb_poder.Text = "Poder";
             // 
-            // label3
+            // lb_classe
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(382, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 17);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Classe";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox5.Controls.Add(this.button3);
-            this.groupBox5.Controls.Add(this.label19);
-            this.groupBox5.Controls.Add(this.groupBox4);
-            this.groupBox5.Controls.Add(this.label2);
-            this.groupBox5.Controls.Add(this.textBox1);
-            this.groupBox5.Controls.Add(this.bt_sair);
-            this.groupBox5.Controls.Add(this.button2);
-            this.groupBox5.Location = new System.Drawing.Point(17, 113);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(375, 363);
-            this.groupBox5.TabIndex = 26;
-            this.groupBox5.TabStop = false;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(29, 264);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 36);
-            this.button3.TabIndex = 59;
-            this.button3.Text = "Editar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.lb_classe.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lb_classe.AutoSize = true;
+            this.lb_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_classe.Location = new System.Drawing.Point(382, 45);
+            this.lb_classe.Name = "lb_classe";
+            this.lb_classe.Size = new System.Drawing.Size(50, 17);
+            this.lb_classe.TabIndex = 8;
+            this.lb_classe.Text = "Classe";
             // 
             // label19
             // 
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(136, 16);
+            this.label19.Location = new System.Drawing.Point(118, 25);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(111, 17);
             this.label19.TabIndex = 20;
@@ -434,7 +340,7 @@ namespace Mir4
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dataGridView2);
-            this.groupBox4.Location = new System.Drawing.Point(85, 36);
+            this.groupBox4.Location = new System.Drawing.Point(61, 45);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(209, 185);
             this.groupBox4.TabIndex = 61;
@@ -474,7 +380,7 @@ namespace Mir4
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(73, 230);
+            this.label2.Location = new System.Drawing.Point(49, 239);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 17);
             this.label2.TabIndex = 60;
@@ -483,7 +389,7 @@ namespace Mir4
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(182, 227);
+            this.textBox1.Location = new System.Drawing.Point(158, 236);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(112, 20);
             this.textBox1.TabIndex = 59;
@@ -499,7 +405,7 @@ namespace Mir4
             this.bt_sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_sair.ForeColor = System.Drawing.Color.White;
-            this.bt_sair.Location = new System.Drawing.Point(245, 264);
+            this.bt_sair.Location = new System.Drawing.Point(811, 275);
             this.bt_sair.Name = "bt_sair";
             this.bt_sair.Size = new System.Drawing.Size(102, 36);
             this.bt_sair.TabIndex = 56;
@@ -517,7 +423,7 @@ namespace Mir4
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(137, 264);
+            this.button2.Location = new System.Drawing.Point(668, 275);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(102, 36);
             this.button2.TabIndex = 58;
@@ -531,22 +437,20 @@ namespace Mir4
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1060, 561);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gb_zero);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "detalhes_membros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HYPE - Detalhes do Membro ";
-            this.groupBox1.ResumeLayout(false);
+            this.gb_zero.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.gp_membro.ResumeLayout(false);
-            this.gp_membro.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.gp_um.ResumeLayout(false);
+            this.gp_um.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
@@ -554,25 +458,23 @@ namespace Mir4
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox gp_membro;
+        private System.Windows.Forms.GroupBox gb_zero;
+        private System.Windows.Forms.GroupBox gp_um;
         private System.Windows.Forms.TextBox txt_nivel;
         private System.Windows.Forms.TextBox txt_classe;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lb_dados;
         private System.Windows.Forms.TextBox txt_poder;
         private System.Windows.Forms.TextBox txt_nick;
         private System.Windows.Forms.Label txt_nome;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lb_level;
+        private System.Windows.Forms.Label lb_poder;
+        private System.Windows.Forms.Label lb_classe;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_excluir;
         private System.Windows.Forms.Button bt_sair;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
@@ -584,9 +486,6 @@ namespace Mir4
         private System.Windows.Forms.DataGridViewTextBoxColumn DATA_PROGRESSAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn LEVEL;
         private System.Windows.Forms.DataGridViewTextBoxColumn PODER;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox3;

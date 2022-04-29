@@ -32,7 +32,12 @@ namespace Mir4
             this.txt_nome = new System.Windows.Forms.Label();
             this.txt_nick = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.gp_cadastro_alt = new System.Windows.Forms.GroupBox();
+            this.gp_dois = new System.Windows.Forms.GroupBox();
+            this.rd_nao_alt = new System.Windows.Forms.RadioButton();
+            this.lb_alt = new System.Windows.Forms.Label();
+            this.rd_sim_alt = new System.Windows.Forms.RadioButton();
+            this.txt_para_alt = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_poder_alt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,27 +55,22 @@ namespace Mir4
             this.txt_nivel = new System.Windows.Forms.ComboBox();
             this.rd_sim = new System.Windows.Forms.RadioButton();
             this.rd_nao = new System.Windows.Forms.RadioButton();
-            this.gp_membro = new System.Windows.Forms.GroupBox();
+            this.gp_um = new System.Windows.Forms.GroupBox();
+            this.txt_para = new System.Windows.Forms.ComboBox();
             this.lb_texto = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.bt_cadastrar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.gp_cadastro_alt.SuspendLayout();
-            this.gp_membro.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gb_zero = new System.Windows.Forms.GroupBox();
+            this.gp_tres = new System.Windows.Forms.GroupBox();
+            this.lb_obser = new System.Windows.Forms.Label();
+            this.txt_obser = new System.Windows.Forms.TextBox();
+            this.txt_vem = new System.Windows.Forms.TextBox();
+            this.gp_dois.SuspendLayout();
+            this.gp_um.SuspendLayout();
+            this.gb_zero.SuspendLayout();
+            this.gp_tres.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_nome
@@ -100,28 +100,82 @@ namespace Mir4
             this.label1.TabIndex = 3;
             this.label1.Text = "Nivel";
             // 
-            // gp_cadastro_alt
+            // gp_dois
             // 
-            this.gp_cadastro_alt.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gp_cadastro_alt.Controls.Add(this.radioButton1);
-            this.gp_cadastro_alt.Controls.Add(this.label13);
-            this.gp_cadastro_alt.Controls.Add(this.radioButton2);
-            this.gp_cadastro_alt.Controls.Add(this.comboBox3);
-            this.gp_cadastro_alt.Controls.Add(this.label11);
-            this.gp_cadastro_alt.Controls.Add(this.label5);
-            this.gp_cadastro_alt.Controls.Add(this.txt_poder_alt);
-            this.gp_cadastro_alt.Controls.Add(this.label6);
-            this.gp_cadastro_alt.Controls.Add(this.txt_classe_alt);
-            this.gp_cadastro_alt.Controls.Add(this.txt_nivel_alt);
-            this.gp_cadastro_alt.Controls.Add(this.label7);
-            this.gp_cadastro_alt.Controls.Add(this.label8);
-            this.gp_cadastro_alt.Controls.Add(this.txt_nick_alt);
-            this.gp_cadastro_alt.Enabled = false;
-            this.gp_cadastro_alt.Location = new System.Drawing.Point(85, 128);
-            this.gp_cadastro_alt.Name = "gp_cadastro_alt";
-            this.gp_cadastro_alt.Size = new System.Drawing.Size(971, 87);
-            this.gp_cadastro_alt.TabIndex = 11;
-            this.gp_cadastro_alt.TabStop = false;
+            this.gp_dois.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gp_dois.Controls.Add(this.rd_nao_alt);
+            this.gp_dois.Controls.Add(this.lb_alt);
+            this.gp_dois.Controls.Add(this.rd_sim_alt);
+            this.gp_dois.Controls.Add(this.txt_para_alt);
+            this.gp_dois.Controls.Add(this.label11);
+            this.gp_dois.Controls.Add(this.label5);
+            this.gp_dois.Controls.Add(this.txt_poder_alt);
+            this.gp_dois.Controls.Add(this.label6);
+            this.gp_dois.Controls.Add(this.txt_classe_alt);
+            this.gp_dois.Controls.Add(this.txt_nivel_alt);
+            this.gp_dois.Controls.Add(this.label7);
+            this.gp_dois.Controls.Add(this.label8);
+            this.gp_dois.Controls.Add(this.txt_nick_alt);
+            this.gp_dois.Enabled = false;
+            this.gp_dois.Location = new System.Drawing.Point(85, 128);
+            this.gp_dois.Name = "gp_dois";
+            this.gp_dois.Size = new System.Drawing.Size(971, 87);
+            this.gp_dois.TabIndex = 11;
+            this.gp_dois.TabStop = false;
+            // 
+            // rd_nao_alt
+            // 
+            this.rd_nao_alt.AutoSize = true;
+            this.rd_nao_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rd_nao_alt.Location = new System.Drawing.Point(490, 47);
+            this.rd_nao_alt.Name = "rd_nao_alt";
+            this.rd_nao_alt.Size = new System.Drawing.Size(52, 21);
+            this.rd_nao_alt.TabIndex = 18;
+            this.rd_nao_alt.TabStop = true;
+            this.rd_nao_alt.Text = "Não";
+            this.rd_nao_alt.UseVisualStyleBackColor = true;
+            // 
+            // lb_alt
+            // 
+            this.lb_alt.AutoSize = true;
+            this.lb_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_alt.Location = new System.Drawing.Point(296, 49);
+            this.lb_alt.Name = "lb_alt";
+            this.lb_alt.Size = new System.Drawing.Size(133, 17);
+            this.lb_alt.TabIndex = 17;
+            this.lb_alt.Text = "Alt de Progressão ?";
+            // 
+            // rd_sim_alt
+            // 
+            this.rd_sim_alt.AutoSize = true;
+            this.rd_sim_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rd_sim_alt.Location = new System.Drawing.Point(435, 47);
+            this.rd_sim_alt.Name = "rd_sim_alt";
+            this.rd_sim_alt.Size = new System.Drawing.Size(49, 21);
+            this.rd_sim_alt.TabIndex = 17;
+            this.rd_sim_alt.TabStop = true;
+            this.rd_sim_alt.Text = "Sim";
+            this.rd_sim_alt.UseVisualStyleBackColor = true;
+            // 
+            // txt_para_alt
+            // 
+            this.txt_para_alt.FormattingEnabled = true;
+            this.txt_para_alt.Items.AddRange(new object[] {
+            "THE ANCIENTS"});
+            this.txt_para_alt.Location = new System.Drawing.Point(123, 45);
+            this.txt_para_alt.Name = "txt_para_alt";
+            this.txt_para_alt.Size = new System.Drawing.Size(157, 21);
+            this.txt_para_alt.TabIndex = 17;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(69, 49);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(48, 17);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Clã Alt";
             // 
             // label5
             // 
@@ -605,31 +659,43 @@ namespace Mir4
             this.rd_nao.Text = "Não";
             this.rd_nao.UseVisualStyleBackColor = true;
             // 
-            // gp_membro
+            // gp_um
             // 
-            this.gp_membro.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gp_membro.Controls.Add(this.comboBox4);
-            this.gp_membro.Controls.Add(this.rd_nao);
-            this.gp_membro.Controls.Add(this.rd_sim);
-            this.gp_membro.Controls.Add(this.lb_texto);
-            this.gp_membro.Controls.Add(this.comboBox1);
-            this.gp_membro.Controls.Add(this.label10);
-            this.gp_membro.Controls.Add(this.label9);
-            this.gp_membro.Controls.Add(this.txt_poder);
-            this.gp_membro.Controls.Add(this.txt_nick);
-            this.gp_membro.Controls.Add(this.txt_nome);
-            this.gp_membro.Controls.Add(this.label1);
-            this.gp_membro.Controls.Add(this.label4);
-            this.gp_membro.Controls.Add(this.txt_nivel);
-            this.gp_membro.Controls.Add(this.txt_patente);
-            this.gp_membro.Controls.Add(this.label3);
-            this.gp_membro.Controls.Add(this.label2);
-            this.gp_membro.Controls.Add(this.txt_classe);
-            this.gp_membro.Location = new System.Drawing.Point(85, 19);
-            this.gp_membro.Name = "gp_membro";
-            this.gp_membro.Size = new System.Drawing.Size(971, 103);
-            this.gp_membro.TabIndex = 14;
-            this.gp_membro.TabStop = false;
+            this.gp_um.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gp_um.Controls.Add(this.txt_vem);
+            this.gp_um.Controls.Add(this.txt_para);
+            this.gp_um.Controls.Add(this.rd_nao);
+            this.gp_um.Controls.Add(this.rd_sim);
+            this.gp_um.Controls.Add(this.lb_texto);
+            this.gp_um.Controls.Add(this.label10);
+            this.gp_um.Controls.Add(this.label9);
+            this.gp_um.Controls.Add(this.txt_poder);
+            this.gp_um.Controls.Add(this.txt_nick);
+            this.gp_um.Controls.Add(this.txt_nome);
+            this.gp_um.Controls.Add(this.label1);
+            this.gp_um.Controls.Add(this.label4);
+            this.gp_um.Controls.Add(this.txt_nivel);
+            this.gp_um.Controls.Add(this.txt_patente);
+            this.gp_um.Controls.Add(this.label3);
+            this.gp_um.Controls.Add(this.label2);
+            this.gp_um.Controls.Add(this.txt_classe);
+            this.gp_um.Location = new System.Drawing.Point(85, 19);
+            this.gp_um.Name = "gp_um";
+            this.gp_um.Size = new System.Drawing.Size(971, 103);
+            this.gp_um.TabIndex = 14;
+            this.gp_um.TabStop = false;
+            // 
+            // txt_para
+            // 
+            this.txt_para.FormattingEnabled = true;
+            this.txt_para.Items.AddRange(new object[] {
+            "HYPE",
+            "HYPE 2",
+            "THE ANCIENTS"});
+            this.txt_para.Location = new System.Drawing.Point(363, 46);
+            this.txt_para.Name = "txt_para";
+            this.txt_para.Size = new System.Drawing.Size(157, 21);
+            this.txt_para.TabIndex = 16;
             // 
             // lb_texto
             // 
@@ -640,6 +706,26 @@ namespace Mir4
             this.lb_texto.Size = new System.Drawing.Size(104, 17);
             this.lb_texto.TabIndex = 14;
             this.lb_texto.Text = "Ele(a) tem alt ?";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(296, 50);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 17);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Vai para";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(37, 49);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 17);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Vem do Clã";
             // 
             // bt_cancelar
             // 
@@ -678,148 +764,53 @@ namespace Mir4
             this.bt_cadastrar.Text = "Cadastrar";
             this.bt_cadastrar.UseVisualStyleBackColor = false;
             // 
-            // groupBox1
+            // gb_zero
             // 
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.gp_membro);
-            this.groupBox1.Controls.Add(this.bt_cancelar);
-            this.groupBox1.Controls.Add(this.bt_cadastrar);
-            this.groupBox1.Controls.Add(this.gp_cadastro_alt);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1129, 549);
-            this.groupBox1.TabIndex = 47;
-            this.groupBox1.TabStop = false;
+            this.gb_zero.Controls.Add(this.gp_tres);
+            this.gb_zero.Controls.Add(this.gp_um);
+            this.gb_zero.Controls.Add(this.bt_cancelar);
+            this.gb_zero.Controls.Add(this.bt_cadastrar);
+            this.gb_zero.Controls.Add(this.gp_dois);
+            this.gb_zero.Location = new System.Drawing.Point(12, 12);
+            this.gb_zero.Name = "gb_zero";
+            this.gb_zero.Size = new System.Drawing.Size(1129, 549);
+            this.gb_zero.TabIndex = 47;
+            this.gb_zero.TabStop = false;
             // 
-            // label9
+            // gp_tres
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(37, 49);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 17);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Vem do Clã";
+            this.gp_tres.Controls.Add(this.lb_obser);
+            this.gp_tres.Controls.Add(this.txt_obser);
+            this.gp_tres.Location = new System.Drawing.Point(85, 221);
+            this.gp_tres.Name = "gp_tres";
+            this.gp_tres.Size = new System.Drawing.Size(971, 241);
+            this.gp_tres.TabIndex = 43;
+            this.gp_tres.TabStop = false;
             // 
-            // label10
+            // lb_obser
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(296, 50);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 17);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Vai para";
+            this.lb_obser.AutoSize = true;
+            this.lb_obser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_obser.Location = new System.Drawing.Point(408, 16);
+            this.lb_obser.Name = "lb_obser";
+            this.lb_obser.Size = new System.Drawing.Size(129, 25);
+            this.lb_obser.TabIndex = 16;
+            this.lb_obser.Text = "Observações";
             // 
-            // comboBox1
+            // txt_obser
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Besteira",
-            "Feiticeira",
-            "Guerreiro",
-            "Lanceiro",
-            "Taoista"});
-            this.comboBox1.Location = new System.Drawing.Point(123, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(157, 21);
-            this.comboBox1.TabIndex = 14;
+            this.txt_obser.Location = new System.Drawing.Point(40, 60);
+            this.txt_obser.Multiline = true;
+            this.txt_obser.Name = "txt_obser";
+            this.txt_obser.Size = new System.Drawing.Size(899, 162);
+            this.txt_obser.TabIndex = 16;
             // 
-            // comboBox3
+            // txt_vem
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Hype 2"});
-            this.comboBox3.Location = new System.Drawing.Point(123, 45);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(157, 21);
-            this.comboBox3.TabIndex = 17;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(69, 49);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 17);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Clã Alt";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Location = new System.Drawing.Point(85, 221);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(971, 241);
-            this.groupBox2.TabIndex = 43;
-            this.groupBox2.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(40, 60);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(899, 162);
-            this.textBox1.TabIndex = 16;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(408, 16);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(129, 25);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "Observações";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Besteira",
-            "Feiticeira",
-            "Guerreiro",
-            "Lanceiro",
-            "Taoista"});
-            this.comboBox4.Location = new System.Drawing.Point(363, 46);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(157, 21);
-            this.comboBox4.TabIndex = 16;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(296, 49);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(133, 17);
-            this.label13.TabIndex = 17;
-            this.label13.Text = "Alt de Progressão ?";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(490, 47);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(52, 21);
-            this.radioButton1.TabIndex = 18;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Não";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(435, 47);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(49, 21);
-            this.radioButton2.TabIndex = 17;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Sim";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.txt_vem.Location = new System.Drawing.Point(123, 46);
+            this.txt_vem.Name = "txt_vem";
+            this.txt_vem.Size = new System.Drawing.Size(167, 20);
+            this.txt_vem.TabIndex = 17;
             // 
             // cadastro
             // 
@@ -827,19 +818,19 @@ namespace Mir4
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1153, 587);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gb_zero);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
             this.Name = "cadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HYPE - Cadastramento de Novo Membro ";
-            this.gp_cadastro_alt.ResumeLayout(false);
-            this.gp_cadastro_alt.PerformLayout();
-            this.gp_membro.ResumeLayout(false);
-            this.gp_membro.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gp_dois.ResumeLayout(false);
+            this.gp_dois.PerformLayout();
+            this.gp_um.ResumeLayout(false);
+            this.gp_um.PerformLayout();
+            this.gb_zero.ResumeLayout(false);
+            this.gp_tres.ResumeLayout(false);
+            this.gp_tres.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -848,7 +839,7 @@ namespace Mir4
         private System.Windows.Forms.TextBox txt_nick;
         private System.Windows.Forms.Label txt_nome;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox gp_cadastro_alt;
+        private System.Windows.Forms.GroupBox gp_dois;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_poder;
         private System.Windows.Forms.Label label3;
@@ -859,7 +850,7 @@ namespace Mir4
         private System.Windows.Forms.Label lb_texto;
         private System.Windows.Forms.RadioButton rd_nao;
         private System.Windows.Forms.RadioButton rd_sim;
-        private System.Windows.Forms.GroupBox gp_membro;
+        private System.Windows.Forms.GroupBox gp_um;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_poder_alt;
         private System.Windows.Forms.Label label6;
@@ -870,18 +861,18 @@ namespace Mir4
         private System.Windows.Forms.TextBox txt_nick_alt;
         private System.Windows.Forms.Button bt_cancelar;
         private System.Windows.Forms.Button bt_cadastrar;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox gb_zero;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox txt_para_alt;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.GroupBox gp_tres;
+        private System.Windows.Forms.TextBox txt_obser;
+        private System.Windows.Forms.Label lb_obser;
+        private System.Windows.Forms.ComboBox txt_para;
+        private System.Windows.Forms.RadioButton rd_nao_alt;
+        private System.Windows.Forms.Label lb_alt;
+        private System.Windows.Forms.RadioButton rd_sim_alt;
+        private System.Windows.Forms.TextBox txt_vem;
     }
 }
