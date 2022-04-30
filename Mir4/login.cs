@@ -31,10 +31,13 @@ namespace Mir4
             finally
             {
                 
-            }
+            }            
+        }
 
-
-            
+        private void lb_novo_cad_Click(object sender, EventArgs e)
+        {
+            criar_login cl = new criar_login();
+            cl.ShowDialog();
         }
     }
 }

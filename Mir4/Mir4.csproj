@@ -60,6 +60,12 @@
     <Compile Include="controle.Designer.cs">
       <DependentUpon>controle.cs</DependentUpon>
     </Compile>
+    <Compile Include="criar_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="criar_login.Designer.cs">
+      <DependentUpon>criar_login.cs</DependentUpon>
+    </Compile>
     <Compile Include="detalhes_membros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controle.resx">
       <DependentUpon>controle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="criar_login.resx">
+      <DependentUpon>criar_login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="detalhes_membros.resx">
       <DependentUpon>detalhes_membros.cs</DependentUpon>

@@ -35,12 +35,14 @@ namespace Mir4
             this.txt_senha = new System.Windows.Forms.TextBox();
             this.txt_login = new System.Windows.Forms.TextBox();
             this.txt_versao = new System.Windows.Forms.Label();
+            this.lb_novo_cad = new System.Windows.Forms.Label();
             this.pl_login.SuspendLayout();
             this.SuspendLayout();
             // 
             // pl_login
             // 
             this.pl_login.BackColor = System.Drawing.SystemColors.Control;
+            this.pl_login.Controls.Add(this.lb_novo_cad);
             this.pl_login.Controls.Add(this.bt_entrar);
             this.pl_login.Controls.Add(this.lb_login);
             this.pl_login.Controls.Add(this.txt_senha);
@@ -105,6 +107,19 @@ namespace Mir4
             this.txt_versao.TabIndex = 5;
             this.txt_versao.Text = "V.  1.0.0a";
             // 
+            // lb_novo_cad
+            // 
+            this.lb_novo_cad.AutoSize = true;
+            this.lb_novo_cad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lb_novo_cad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_novo_cad.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lb_novo_cad.Location = new System.Drawing.Point(105, 284);
+            this.lb_novo_cad.Name = "lb_novo_cad";
+            this.lb_novo_cad.Size = new System.Drawing.Size(121, 13);
+            this.lb_novo_cad.TabIndex = 5;
+            this.lb_novo_cad.Text = "Criar Novo Cadastro";
+            this.lb_novo_cad.Click += new System.EventHandler(this.lb_novo_cad_Click);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,6 +148,7 @@ namespace Mir4
         private System.Windows.Forms.TextBox txt_senha;
         private System.Windows.Forms.Label txt_versao;
         private System.Windows.Forms.Button bt_entrar;
+        private System.Windows.Forms.Label lb_novo_cad;
     }
 }
 

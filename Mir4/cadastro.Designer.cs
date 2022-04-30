@@ -56,6 +56,7 @@ namespace Mir4
             this.rd_sim = new System.Windows.Forms.RadioButton();
             this.rd_nao = new System.Windows.Forms.RadioButton();
             this.gp_um = new System.Windows.Forms.GroupBox();
+            this.txt_vem = new System.Windows.Forms.TextBox();
             this.txt_para = new System.Windows.Forms.ComboBox();
             this.lb_texto = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -66,7 +67,6 @@ namespace Mir4
             this.gp_tres = new System.Windows.Forms.GroupBox();
             this.lb_obser = new System.Windows.Forms.Label();
             this.txt_obser = new System.Windows.Forms.TextBox();
-            this.txt_vem = new System.Windows.Forms.TextBox();
             this.gp_dois.SuspendLayout();
             this.gp_um.SuspendLayout();
             this.gb_zero.SuspendLayout();
@@ -685,6 +685,13 @@ namespace Mir4
             this.gp_um.TabIndex = 14;
             this.gp_um.TabStop = false;
             // 
+            // txt_vem
+            // 
+            this.txt_vem.Location = new System.Drawing.Point(123, 46);
+            this.txt_vem.Name = "txt_vem";
+            this.txt_vem.Size = new System.Drawing.Size(167, 20);
+            this.txt_vem.TabIndex = 17;
+            // 
             // txt_para
             // 
             this.txt_para.FormattingEnabled = true;
@@ -713,9 +720,9 @@ namespace Mir4
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(296, 50);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 17);
+            this.label10.Size = new System.Drawing.Size(60, 17);
             this.label10.TabIndex = 13;
-            this.label10.Text = "Vai para";
+            this.label10.Text = "Foi para";
             // 
             // label9
             // 
@@ -804,13 +811,6 @@ namespace Mir4
             this.txt_obser.Name = "txt_obser";
             this.txt_obser.Size = new System.Drawing.Size(899, 162);
             this.txt_obser.TabIndex = 16;
-            // 
-            // txt_vem
-            // 
-            this.txt_vem.Location = new System.Drawing.Point(123, 46);
-            this.txt_vem.Name = "txt_vem";
-            this.txt_vem.Size = new System.Drawing.Size(167, 20);
-            this.txt_vem.TabIndex = 17;
             // 
             // cadastro
             // 
