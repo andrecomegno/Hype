@@ -7,82 +7,73 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Mir4.painel;
 
 namespace Mir4
 {
     public partial class menu : Form
     {
+        bool mouseDown;
+        private Point offset;
+
         public menu()
         {
             InitializeComponent();
+
+            aviso uc = new aviso();
+            addControl(uc);
         }
 
-        private void bt_cadastro_Click(object sender, EventArgs e)
+        public void addControl(UserControl userControl)
         {
-            try
-            {
-                cadastro ca = new cadastro();
-                ca.Show();
-            }
-            catch
-            {
-
-            }
-            finally
-            {
-
-            }
+            userControl.Dock = DockStyle.Fill;
+            gp_zero.Controls.Clear();
+            gp_zero.Controls.Add(userControl);
+            userControl.BringToFront();
         }
 
-        private void bt_membros_Click(object sender, EventArgs e)
+        private void bt_novo_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Membros me = new Membros();
-                me.Show();
-            }
-            catch
-            {
 
-            }
-            finally
-            {
-
-            }
         }
 
-        private void bt_controle_Click(object sender, EventArgs e)
+        private void lb_add_Click(object sender, EventArgs e)
         {
-            try
-            {
-                controle co = new controle();
-                co.Show();
-            }
-            catch
-            {
-
-            }
-            finally
-            {
-
-            }
+            novo_cla uc = new novo_cla();
+            addControl(uc);
         }
 
-        private void bt_relatorio_Click(object sender, EventArgs e)
+        private void pl_top_MouseDown(object sender, MouseEventArgs e)
         {
-            try
-            {
-                relatorio re = new relatorio();
-                re.Show();
-            }
-            catch
-            {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mouseDown = true;
+        }
 
-            }
-            finally
+        private void pl_top_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(mouseDown == true)
             {
-
+                Point po = PointToScreen(e.Location);
+                Location = new Point(po.X - offset.X, po.Y - offset.Y);
             }
         }
+
+        private void pl_top_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void bt_fechar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+
     }
 }

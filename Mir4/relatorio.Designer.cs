@@ -37,13 +37,15 @@ namespace Mir4
             this.gp_geral = new System.Windows.Forms.GroupBox();
             this.bt_sair = new System.Windows.Forms.Button();
             this.gp_secundario = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bt_procurar = new System.Windows.Forms.Button();
             this.txt_procurar = new System.Windows.Forms.TextBox();
+            this.bt_relatorio = new System.Windows.Forms.Button();
+            this.bt_membros = new System.Windows.Forms.Button();
+            this.bt_cadastro = new System.Windows.Forms.Button();
+            this.bt_controle = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.gp_geral.SuspendLayout();
             this.gp_secundario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // rodape
@@ -124,21 +126,15 @@ namespace Mir4
             this.gp_secundario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gp_secundario.Controls.Add(this.dataGridView1);
+            this.gp_secundario.Controls.Add(this.bt_relatorio);
+            this.gp_secundario.Controls.Add(this.bt_membros);
+            this.gp_secundario.Controls.Add(this.bt_cadastro);
+            this.gp_secundario.Controls.Add(this.bt_controle);
             this.gp_secundario.Location = new System.Drawing.Point(21, 84);
             this.gp_secundario.Name = "gp_secundario";
             this.gp_secundario.Size = new System.Drawing.Size(1186, 459);
             this.gp_secundario.TabIndex = 45;
             this.gp_secundario.TabStop = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1180, 440);
-            this.dataGridView1.TabIndex = 0;
             // 
             // bt_procurar
             // 
@@ -167,6 +163,78 @@ namespace Mir4
             this.txt_procurar.Size = new System.Drawing.Size(509, 23);
             this.txt_procurar.TabIndex = 43;
             // 
+            // bt_relatorio
+            // 
+            this.bt_relatorio.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bt_relatorio.BackColor = System.Drawing.Color.DarkCyan;
+            this.bt_relatorio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_relatorio.FlatAppearance.BorderSize = 0;
+            this.bt_relatorio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.CadetBlue;
+            this.bt_relatorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
+            this.bt_relatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_relatorio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_relatorio.ForeColor = System.Drawing.Color.White;
+            this.bt_relatorio.Location = new System.Drawing.Point(195, 268);
+            this.bt_relatorio.Name = "bt_relatorio";
+            this.bt_relatorio.Size = new System.Drawing.Size(193, 69);
+            this.bt_relatorio.TabIndex = 46;
+            this.bt_relatorio.Text = "  RELATÓRIO";
+            this.bt_relatorio.UseVisualStyleBackColor = false;
+            // 
+            // bt_membros
+            // 
+            this.bt_membros.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bt_membros.BackColor = System.Drawing.Color.DarkOrange;
+            this.bt_membros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_membros.FlatAppearance.BorderSize = 0;
+            this.bt_membros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BurlyWood;
+            this.bt_membros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
+            this.bt_membros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_membros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_membros.ForeColor = System.Drawing.Color.White;
+            this.bt_membros.Location = new System.Drawing.Point(195, 193);
+            this.bt_membros.Name = "bt_membros";
+            this.bt_membros.Size = new System.Drawing.Size(193, 69);
+            this.bt_membros.TabIndex = 43;
+            this.bt_membros.Text = "   MEMBROS";
+            this.bt_membros.UseVisualStyleBackColor = false;
+            // 
+            // bt_cadastro
+            // 
+            this.bt_cadastro.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bt_cadastro.BackColor = System.Drawing.Color.YellowGreen;
+            this.bt_cadastro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cadastro.FlatAppearance.BorderSize = 0;
+            this.bt_cadastro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.bt_cadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.bt_cadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cadastro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cadastro.ForeColor = System.Drawing.Color.White;
+            this.bt_cadastro.Location = new System.Drawing.Point(195, 43);
+            this.bt_cadastro.Name = "bt_cadastro";
+            this.bt_cadastro.Size = new System.Drawing.Size(193, 69);
+            this.bt_cadastro.TabIndex = 44;
+            this.bt_cadastro.Text = "  CADASTRO";
+            this.bt_cadastro.UseVisualStyleBackColor = false;
+            // 
+            // bt_controle
+            // 
+            this.bt_controle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bt_controle.BackColor = System.Drawing.Color.Gold;
+            this.bt_controle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_controle.FlatAppearance.BorderSize = 0;
+            this.bt_controle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Khaki;
+            this.bt_controle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Khaki;
+            this.bt_controle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_controle.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_controle.ForeColor = System.Drawing.Color.White;
+            this.bt_controle.Location = new System.Drawing.Point(195, 118);
+            this.bt_controle.Name = "bt_controle";
+            this.bt_controle.Size = new System.Drawing.Size(193, 69);
+            this.bt_controle.TabIndex = 45;
+            this.bt_controle.Text = "  CONTROLE";
+            this.bt_controle.UseVisualStyleBackColor = false;
+            // 
             // relatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,7 +253,6 @@ namespace Mir4
             this.gp_geral.ResumeLayout(false);
             this.gp_geral.PerformLayout();
             this.gp_secundario.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,8 +268,11 @@ namespace Mir4
         private System.Windows.Forms.GroupBox gp_geral;
         private System.Windows.Forms.Button bt_sair;
         private System.Windows.Forms.GroupBox gp_secundario;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button bt_procurar;
         private System.Windows.Forms.TextBox txt_procurar;
+        private System.Windows.Forms.Button bt_relatorio;
+        private System.Windows.Forms.Button bt_membros;
+        private System.Windows.Forms.Button bt_cadastro;
+        private System.Windows.Forms.Button bt_controle;
     }
 }

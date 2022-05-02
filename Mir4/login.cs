@@ -21,8 +21,7 @@ namespace Mir4
         {
             try
             {
-                menu me = new menu();
-                me.Show();
+                new menu().Show();
             }
             catch
             {
@@ -36,8 +35,7 @@ namespace Mir4
 
         private void lb_novo_cad_Click(object sender, EventArgs e)
         {
-            criar_login cl = new criar_login();
-            cl.ShowDialog();
+            new criar_login().ShowDialog();
         }
     }
 }
