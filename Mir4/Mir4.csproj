@@ -33,13 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.2\lib\net40\Guna.UI2.dll</HintPath>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +52,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cadastro.cs">
@@ -87,6 +91,12 @@
     <Compile Include="membros.Designer.cs">
       <DependentUpon>membros.cs</DependentUpon>
     </Compile>
+    <Compile Include="cla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cla.Designer.cs">
+      <DependentUpon>cla.cs</DependentUpon>
+    </Compile>
     <Compile Include="menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +108,12 @@
     </Compile>
     <Compile Include="painel\aviso.Designer.cs">
       <DependentUpon>aviso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="painel\cadastro_membro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="painel\cadastro_membro.Designer.cs">
+      <DependentUpon>cadastro_membro.cs</DependentUpon>
     </Compile>
     <Compile Include="painel\novo_cla.cs">
       <SubType>UserControl</SubType>
@@ -131,11 +147,17 @@
     <EmbeddedResource Include="membros.resx">
       <DependentUpon>membros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="cla.resx">
+      <DependentUpon>cla.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="menu.resx">
       <DependentUpon>menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="painel\aviso.resx">
       <DependentUpon>aviso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="painel\cadastro_membro.resx">
+      <DependentUpon>cadastro_membro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="painel\novo_cla.resx">
       <DependentUpon>novo_cla.cs</DependentUpon>

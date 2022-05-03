@@ -29,79 +29,87 @@ namespace Mir4
         /// </summary>
         private void InitializeComponent()
         {
-            this.bt_novo = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.gp_zero = new System.Windows.Forms.GroupBox();
             this.pl_top = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.bt_minimizar = new System.Windows.Forms.Button();
             this.bt_fechar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lb_add = new System.Windows.Forms.Label();
-            this.bt_membros = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bt_cadastro = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.pl_top.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // bt_novo
+            // pl_top
             // 
-            this.bt_novo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bt_novo.BackColor = System.Drawing.Color.DimGray;
-            this.bt_novo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_novo.FlatAppearance.BorderSize = 0;
-            this.bt_novo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.bt_novo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.bt_novo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_novo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_novo.ForeColor = System.Drawing.Color.White;
-            this.bt_novo.Location = new System.Drawing.Point(0, 16);
-            this.bt_novo.Name = "bt_novo";
-            this.bt_novo.Size = new System.Drawing.Size(193, 69);
-            this.bt_novo.TabIndex = 43;
-            this.bt_novo.Text = "  NOME DO CLA";
-            this.bt_novo.UseVisualStyleBackColor = false;
-            this.bt_novo.Click += new System.EventHandler(this.bt_novo_Click);
+            this.pl_top.BackColor = System.Drawing.Color.DimGray;
+            this.pl_top.Controls.Add(this.bt_minimizar);
+            this.pl_top.Controls.Add(this.bt_fechar);
+            this.pl_top.Controls.Add(this.panel3);
+            this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_top.Location = new System.Drawing.Point(0, 0);
+            this.pl_top.Name = "pl_top";
+            this.pl_top.Size = new System.Drawing.Size(1279, 89);
+            this.pl_top.TabIndex = 0;
+            this.pl_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseDown);
+            this.pl_top.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseMove);
+            this.pl_top.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseUp);
             // 
-            // label2
+            // bt_minimizar
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(86, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 20);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "Andy Makler";
+            this.bt_minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_minimizar.BackColor = System.Drawing.Color.Gray;
+            this.bt_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_minimizar.FlatAppearance.BorderSize = 0;
+            this.bt_minimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.bt_minimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.bt_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_minimizar.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_minimizar.ForeColor = System.Drawing.Color.White;
+            this.bt_minimizar.Location = new System.Drawing.Point(1191, 4);
+            this.bt_minimizar.Name = "bt_minimizar";
+            this.bt_minimizar.Size = new System.Drawing.Size(37, 31);
+            this.bt_minimizar.TabIndex = 53;
+            this.bt_minimizar.Text = "-";
+            this.bt_minimizar.UseVisualStyleBackColor = false;
+            this.bt_minimizar.Click += new System.EventHandler(this.bt_minimizar_Click);
             // 
-            // ovalShape1
+            // bt_fechar
             // 
-            this.ovalShape1.BackColor = System.Drawing.Color.Black;
-            this.ovalShape1.FillColor = System.Drawing.Color.White;
-            this.ovalShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid;
-            this.ovalShape1.Location = new System.Drawing.Point(9, 7);
-            this.ovalShape1.Name = "ovalShape1";
-            this.ovalShape1.Size = new System.Drawing.Size(72, 72);
+            this.bt_fechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_fechar.BackColor = System.Drawing.Color.Gray;
+            this.bt_fechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_fechar.FlatAppearance.BorderSize = 0;
+            this.bt_fechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Tomato;
+            this.bt_fechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
+            this.bt_fechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_fechar.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_fechar.ForeColor = System.Drawing.Color.White;
+            this.bt_fechar.Location = new System.Drawing.Point(1234, 4);
+            this.bt_fechar.Name = "bt_fechar";
+            this.bt_fechar.Size = new System.Drawing.Size(37, 31);
+            this.bt_fechar.TabIndex = 52;
+            this.bt_fechar.Text = "X";
+            this.bt_fechar.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // panel3
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.shapeContainer2);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(227, 88);
-            this.panel1.TabIndex = 50;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.shapeContainer2);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(227, 88);
+            this.panel3.TabIndex = 51;
             // 
             // label3
             // 
@@ -115,6 +123,18 @@ namespace Mir4
             this.label3.TabIndex = 50;
             this.label3.Text = "Lider";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(86, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 20);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Andy Makler";
+            // 
             // shapeContainer2
             // 
             this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
@@ -126,132 +146,45 @@ namespace Mir4
             this.shapeContainer2.TabIndex = 49;
             this.shapeContainer2.TabStop = false;
             // 
+            // ovalShape1
+            // 
+            this.ovalShape1.BackColor = System.Drawing.Color.Black;
+            this.ovalShape1.FillColor = System.Drawing.Color.White;
+            this.ovalShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid;
+            this.ovalShape1.Location = new System.Drawing.Point(9, 7);
+            this.ovalShape1.Name = "ovalShape1";
+            this.ovalShape1.Size = new System.Drawing.Size(72, 72);
+            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DimGray;
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.BackColor = System.Drawing.Color.Gray;
+            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 89);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(224, 783);
-            this.panel2.TabIndex = 51;
+            this.panel2.Size = new System.Drawing.Size(1279, 655);
+            this.panel2.TabIndex = 1;
             // 
-            // panel3
+            // groupBox1
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel3.Controls.Add(this.gp_zero);
-            this.panel3.Location = new System.Drawing.Point(224, 87);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1071, 696);
-            this.panel3.TabIndex = 52;
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.bt_cadastro);
+            this.groupBox1.Location = new System.Drawing.Point(84, 37);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1127, 578);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
             // 
-            // gp_zero
+            // dataGridView1
             // 
-            this.gp_zero.Location = new System.Drawing.Point(68, 22);
-            this.gp_zero.Name = "gp_zero";
-            this.gp_zero.Size = new System.Drawing.Size(963, 609);
-            this.gp_zero.TabIndex = 68;
-            this.gp_zero.TabStop = false;
-            // 
-            // pl_top
-            // 
-            this.pl_top.BackColor = System.Drawing.Color.DimGray;
-            this.pl_top.Controls.Add(this.bt_membros);
-            this.pl_top.Controls.Add(this.button1);
-            this.pl_top.Controls.Add(this.bt_cadastro);
-            this.pl_top.Controls.Add(this.bt_fechar);
-            this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_top.Location = new System.Drawing.Point(224, 0);
-            this.pl_top.Name = "pl_top";
-            this.pl_top.Size = new System.Drawing.Size(1071, 88);
-            this.pl_top.TabIndex = 0;
-            this.pl_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseDown);
-            this.pl_top.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseMove);
-            this.pl_top.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseUp);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Gray;
-            this.panel4.Controls.Add(this.lb_add);
-            this.panel4.Controls.Add(this.bt_novo);
-            this.panel4.Location = new System.Drawing.Point(0, 109);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(203, 543);
-            this.panel4.TabIndex = 51;
-            // 
-            // bt_fechar
-            // 
-            this.bt_fechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_fechar.BackColor = System.Drawing.Color.Gray;
-            this.bt_fechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_fechar.FlatAppearance.BorderSize = 0;
-            this.bt_fechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Tomato;
-            this.bt_fechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
-            this.bt_fechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_fechar.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_fechar.ForeColor = System.Drawing.Color.White;
-            this.bt_fechar.Location = new System.Drawing.Point(1026, 4);
-            this.bt_fechar.Name = "bt_fechar";
-            this.bt_fechar.Size = new System.Drawing.Size(37, 31);
-            this.bt_fechar.TabIndex = 44;
-            this.bt_fechar.Text = "X";
-            this.bt_fechar.UseVisualStyleBackColor = false;
-            this.bt_fechar.Click += new System.EventHandler(this.bt_fechar_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(983, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 31);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "-";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // lb_add
-            // 
-            this.lb_add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_add.AutoSize = true;
-            this.lb_add.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lb_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_add.ForeColor = System.Drawing.Color.White;
-            this.lb_add.Location = new System.Drawing.Point(138, 478);
-            this.lb_add.Name = "lb_add";
-            this.lb_add.Size = new System.Drawing.Size(60, 63);
-            this.lb_add.TabIndex = 45;
-            this.lb_add.Text = "+";
-            this.lb_add.Click += new System.EventHandler(this.lb_add_Click);
-            // 
-            // bt_membros
-            // 
-            this.bt_membros.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bt_membros.BackColor = System.Drawing.Color.DarkOrange;
-            this.bt_membros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_membros.FlatAppearance.BorderSize = 0;
-            this.bt_membros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BurlyWood;
-            this.bt_membros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
-            this.bt_membros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_membros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_membros.ForeColor = System.Drawing.Color.White;
-            this.bt_membros.Location = new System.Drawing.Point(282, 8);
-            this.bt_membros.Name = "bt_membros";
-            this.bt_membros.Size = new System.Drawing.Size(193, 69);
-            this.bt_membros.TabIndex = 45;
-            this.bt_membros.Text = "   MEMBROS";
-            this.bt_membros.UseVisualStyleBackColor = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(33, 51);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1060, 232);
+            this.dataGridView1.TabIndex = 48;
             // 
             // bt_cadastro
             // 
@@ -264,56 +197,50 @@ namespace Mir4
             this.bt_cadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_cadastro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_cadastro.ForeColor = System.Drawing.Color.White;
-            this.bt_cadastro.Location = new System.Drawing.Point(68, 8);
+            this.bt_cadastro.Location = new System.Drawing.Point(900, 490);
             this.bt_cadastro.Name = "bt_cadastro";
             this.bt_cadastro.Size = new System.Drawing.Size(193, 69);
-            this.bt_cadastro.TabIndex = 46;
-            this.bt_cadastro.Text = "  CADASTRO";
+            this.bt_cadastro.TabIndex = 47;
+            this.bt_cadastro.Text = "  ADD";
             this.bt_cadastro.UseVisualStyleBackColor = false;
+            this.bt_cadastro.Click += new System.EventHandler(this.bt_cadastro_Click);
             // 
             // menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1295, 783);
-            this.Controls.Add(this.pl_top);
-            this.Controls.Add(this.panel3);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1279, 744);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pl_top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HYPE";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.Text = "menu";
             this.pl_top.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button bt_novo;
-        private System.Windows.Forms.Label label2;
-        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.GroupBox gp_zero;
+
         private System.Windows.Forms.Panel pl_top;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button bt_fechar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lb_add;
-        private System.Windows.Forms.Button bt_membros;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button bt_cadastro;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape1;
+        private System.Windows.Forms.Button bt_minimizar;
+        private System.Windows.Forms.Button bt_fechar;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
