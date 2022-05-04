@@ -19,42 +19,20 @@ namespace Mir4
         {
             InitializeComponent();
 
+            //RecolherMenu();
+
             this.FormBorderStyle = FormBorderStyle.None;
         }
 
-        private void OpenChildForm(Form childForm)
-        {
-            /*open only form
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-            }
-            currentChildForm = childForm;
-            //End
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelDesktop.Controls.Add(childForm);
-            panelDesktop.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            lblTitleChildForm.Text = childForm.Text;
-            */
-        }
-
-
         public void addControl(UserControl userControl)
         {
-            userControl.Dock = DockStyle.Fill;
-            gp_conteudo.Controls.Clear();
-            gp_conteudo.Controls.Add(userControl);
-            userControl.BringToFront();
-        }
+            //if (this.pl_conteudo.Controls.Count > 0)
+            //    this.pl_conteudo.Controls.RemoveAt(0);
 
-        private void bt_cadastro_Click(object sender, EventArgs e)
-        {
-            cadastro_membro uc = new cadastro_membro();
-            addControl(uc);
+            userControl.Dock = DockStyle.Fill;
+            pl_conteudo.Controls.Clear();
+            pl_conteudo.Controls.Add(userControl);
+            userControl.BringToFront();
         }
 
         private void lb_add_Click(object sender, EventArgs e)
@@ -87,10 +65,70 @@ namespace Mir4
 
         private void bt_maximizar_Click(object sender, EventArgs e)
         {
-            if(WindowState == FormWindowState.Normal)
+            if (WindowState == FormWindowState.Normal)
                 WindowState = FormWindowState.Maximized;
             else
                 WindowState = FormWindowState.Normal;
+        }
+
+        private void bt_configurar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_menu_Click(object sender, EventArgs e)
+        {
+            RecolherMenu();
+        }
+
+        private void RecolherMenu()
+        {
+            if (this.pl_menu.Width > 200)
+            {
+                pl_menu.Width = 60;
+                foto_perfil.Visible = false;
+                lb_patente.Visible = false;
+                lb_nick.Visible = false;
+                bt_deslogar.Visible = false;
+                bt_menu.Dock = DockStyle.Left;
+                bt_menu.Width = 60;
+
+                foreach (Button menuButton in pl_menu.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "";
+                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
+                    menuButton.Padding = new Padding(10, 0, 0, 0);
+                }
+            }
+            else
+            {
+                pl_menu.Width = 210;
+                foto_perfil.Visible = true;
+                lb_patente.Visible = false;
+                lb_nick.Visible = true;
+                bt_deslogar.Visible = true;
+                bt_menu.Dock = DockStyle.None;
+                bt_menu.Width = 44;
+
+                foreach (Button menuButton in pl_menu.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "" + menuButton.Tag.ToString();
+                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
+                    menuButton.Padding = new Padding(10, 0, 0, 0);
+                }
+            }
+        }
+
+        private void bt_membros_Click(object sender, EventArgs e)
+        {
+            cadastro_membro uc = new cadastro_membro();
+            addControl(uc);
+        }
+
+        private void bt_painel_Click(object sender, EventArgs e)
+        {
+            home uc = new home();
+            addControl(uc);
         }
     }
 }

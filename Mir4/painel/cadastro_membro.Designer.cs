@@ -29,10 +29,8 @@ namespace Mir4.painel
         /// </summary>
         private void InitializeComponent()
         {
-            this.gp_tres = new System.Windows.Forms.GroupBox();
             this.lb_obser = new System.Windows.Forms.Label();
             this.txt_obser = new System.Windows.Forms.TextBox();
-            this.gp_um = new System.Windows.Forms.GroupBox();
             this.txt_vem = new System.Windows.Forms.TextBox();
             this.txt_para = new System.Windows.Forms.ComboBox();
             this.rd_nao = new System.Windows.Forms.RadioButton();
@@ -52,7 +50,6 @@ namespace Mir4.painel
             this.txt_classe = new System.Windows.Forms.ComboBox();
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.bt_cadastrar = new System.Windows.Forms.Button();
-            this.gp_dois = new System.Windows.Forms.GroupBox();
             this.rd_nao_alt = new System.Windows.Forms.RadioButton();
             this.lb_alt = new System.Windows.Forms.Label();
             this.rd_sim_alt = new System.Windows.Forms.RadioButton();
@@ -66,28 +63,14 @@ namespace Mir4.painel
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_nick_alt = new System.Windows.Forms.TextBox();
-            this.gp_tres.SuspendLayout();
-            this.gp_um.SuspendLayout();
-            this.gp_dois.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gp_tres
-            // 
-            this.gp_tres.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gp_tres.Controls.Add(this.lb_obser);
-            this.gp_tres.Controls.Add(this.txt_obser);
-            this.gp_tres.Location = new System.Drawing.Point(-17, 283);
-            this.gp_tres.Name = "gp_tres";
-            this.gp_tres.Size = new System.Drawing.Size(963, 218);
-            this.gp_tres.TabIndex = 48;
-            this.gp_tres.TabStop = false;
             // 
             // lb_obser
             // 
             this.lb_obser.AutoSize = true;
             this.lb_obser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_obser.ForeColor = System.Drawing.Color.White;
-            this.lb_obser.Location = new System.Drawing.Point(408, 16);
+            this.lb_obser.Location = new System.Drawing.Point(608, 245);
             this.lb_obser.Name = "lb_obser";
             this.lb_obser.Size = new System.Drawing.Size(129, 25);
             this.lb_obser.TabIndex = 16;
@@ -95,41 +78,15 @@ namespace Mir4.painel
             // 
             // txt_obser
             // 
-            this.txt_obser.Location = new System.Drawing.Point(33, 44);
+            this.txt_obser.Location = new System.Drawing.Point(233, 273);
             this.txt_obser.Multiline = true;
             this.txt_obser.Name = "txt_obser";
             this.txt_obser.Size = new System.Drawing.Size(899, 162);
             this.txt_obser.TabIndex = 16;
             // 
-            // gp_um
-            // 
-            this.gp_um.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gp_um.Controls.Add(this.txt_vem);
-            this.gp_um.Controls.Add(this.txt_para);
-            this.gp_um.Controls.Add(this.rd_nao);
-            this.gp_um.Controls.Add(this.rd_sim);
-            this.gp_um.Controls.Add(this.lb_texto);
-            this.gp_um.Controls.Add(this.label10);
-            this.gp_um.Controls.Add(this.label9);
-            this.gp_um.Controls.Add(this.txt_poder);
-            this.gp_um.Controls.Add(this.txt_nick);
-            this.gp_um.Controls.Add(this.txt_nome);
-            this.gp_um.Controls.Add(this.label1);
-            this.gp_um.Controls.Add(this.label4);
-            this.gp_um.Controls.Add(this.txt_nivel);
-            this.gp_um.Controls.Add(this.txt_patente);
-            this.gp_um.Controls.Add(this.label3);
-            this.gp_um.Controls.Add(this.label2);
-            this.gp_um.Controls.Add(this.txt_classe);
-            this.gp_um.Location = new System.Drawing.Point(-17, 81);
-            this.gp_um.Name = "gp_um";
-            this.gp_um.Size = new System.Drawing.Size(963, 103);
-            this.gp_um.TabIndex = 45;
-            this.gp_um.TabStop = false;
-            // 
             // txt_vem
             // 
-            this.txt_vem.Location = new System.Drawing.Point(123, 46);
+            this.txt_vem.Location = new System.Drawing.Point(289, 148);
             this.txt_vem.Name = "txt_vem";
             this.txt_vem.Size = new System.Drawing.Size(167, 20);
             this.txt_vem.TabIndex = 17;
@@ -141,7 +98,7 @@ namespace Mir4.painel
             "HYPE",
             "HYPE 2",
             "THE ANCIENTS"});
-            this.txt_para.Location = new System.Drawing.Point(363, 46);
+            this.txt_para.Location = new System.Drawing.Point(529, 148);
             this.txt_para.Name = "txt_para";
             this.txt_para.Size = new System.Drawing.Size(157, 21);
             this.txt_para.TabIndex = 16;
@@ -151,7 +108,7 @@ namespace Mir4.painel
             this.rd_nao.AutoSize = true;
             this.rd_nao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rd_nao.ForeColor = System.Drawing.Color.White;
-            this.rd_nao.Location = new System.Drawing.Point(868, 50);
+            this.rd_nao.Location = new System.Drawing.Point(1034, 152);
             this.rd_nao.Name = "rd_nao";
             this.rd_nao.Size = new System.Drawing.Size(52, 21);
             this.rd_nao.TabIndex = 13;
@@ -164,7 +121,7 @@ namespace Mir4.painel
             this.rd_sim.AutoSize = true;
             this.rd_sim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rd_sim.ForeColor = System.Drawing.Color.White;
-            this.rd_sim.Location = new System.Drawing.Point(813, 50);
+            this.rd_sim.Location = new System.Drawing.Point(979, 152);
             this.rd_sim.Name = "rd_sim";
             this.rd_sim.Size = new System.Drawing.Size(49, 21);
             this.rd_sim.TabIndex = 12;
@@ -177,7 +134,7 @@ namespace Mir4.painel
             this.lb_texto.AutoSize = true;
             this.lb_texto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_texto.ForeColor = System.Drawing.Color.White;
-            this.lb_texto.Location = new System.Drawing.Point(698, 52);
+            this.lb_texto.Location = new System.Drawing.Point(864, 154);
             this.lb_texto.Name = "lb_texto";
             this.lb_texto.Size = new System.Drawing.Size(104, 17);
             this.lb_texto.TabIndex = 14;
@@ -188,7 +145,7 @@ namespace Mir4.painel
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(296, 50);
+            this.label10.Location = new System.Drawing.Point(462, 152);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(60, 17);
             this.label10.TabIndex = 13;
@@ -199,7 +156,7 @@ namespace Mir4.painel
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(37, 49);
+            this.label9.Location = new System.Drawing.Point(203, 151);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 17);
             this.label9.TabIndex = 12;
@@ -207,14 +164,14 @@ namespace Mir4.painel
             // 
             // txt_poder
             // 
-            this.txt_poder.Location = new System.Drawing.Point(599, 19);
+            this.txt_poder.Location = new System.Drawing.Point(765, 121);
             this.txt_poder.Name = "txt_poder";
             this.txt_poder.Size = new System.Drawing.Size(126, 20);
             this.txt_poder.TabIndex = 9;
             // 
             // txt_nick
             // 
-            this.txt_nick.Location = new System.Drawing.Point(123, 20);
+            this.txt_nick.Location = new System.Drawing.Point(289, 122);
             this.txt_nick.Name = "txt_nick";
             this.txt_nick.Size = new System.Drawing.Size(290, 20);
             this.txt_nick.TabIndex = 1;
@@ -224,7 +181,7 @@ namespace Mir4.painel
             this.txt_nome.AutoSize = true;
             this.txt_nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nome.ForeColor = System.Drawing.Color.White;
-            this.txt_nome.Location = new System.Drawing.Point(82, 23);
+            this.txt_nome.Location = new System.Drawing.Point(248, 125);
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(35, 17);
             this.txt_nome.TabIndex = 0;
@@ -235,7 +192,7 @@ namespace Mir4.painel
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(423, 23);
+            this.label1.Location = new System.Drawing.Point(589, 125);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 17);
             this.label1.TabIndex = 3;
@@ -246,7 +203,7 @@ namespace Mir4.painel
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(547, 22);
+            this.label4.Location = new System.Drawing.Point(713, 124);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 17);
             this.label4.TabIndex = 10;
@@ -407,7 +364,7 @@ namespace Mir4.painel
             "148",
             "149",
             "150"});
-            this.txt_nivel.Location = new System.Drawing.Point(468, 19);
+            this.txt_nivel.Location = new System.Drawing.Point(634, 121);
             this.txt_nivel.Name = "txt_nivel";
             this.txt_nivel.Size = new System.Drawing.Size(69, 21);
             this.txt_nivel.TabIndex = 4;
@@ -421,7 +378,7 @@ namespace Mir4.painel
             "Lider",
             "Membro",
             "Novo Membro"});
-            this.txt_patente.Location = new System.Drawing.Point(589, 48);
+            this.txt_patente.Location = new System.Drawing.Point(755, 150);
             this.txt_patente.Name = "txt_patente";
             this.txt_patente.Size = new System.Drawing.Size(103, 21);
             this.txt_patente.TabIndex = 5;
@@ -431,7 +388,7 @@ namespace Mir4.painel
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(735, 22);
+            this.label3.Location = new System.Drawing.Point(901, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 17);
             this.label3.TabIndex = 8;
@@ -442,7 +399,7 @@ namespace Mir4.painel
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(526, 52);
+            this.label2.Location = new System.Drawing.Point(692, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 17);
             this.label2.TabIndex = 6;
@@ -457,7 +414,7 @@ namespace Mir4.painel
             "Guerreiro",
             "Lanceiro",
             "Taoista"});
-            this.txt_classe.Location = new System.Drawing.Point(791, 18);
+            this.txt_classe.Location = new System.Drawing.Point(957, 120);
             this.txt_classe.Name = "txt_classe";
             this.txt_classe.Size = new System.Drawing.Size(138, 21);
             this.txt_classe.TabIndex = 7;
@@ -473,7 +430,7 @@ namespace Mir4.painel
             this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_cancelar.ForeColor = System.Drawing.Color.White;
-            this.bt_cancelar.Location = new System.Drawing.Point(790, 521);
+            this.bt_cancelar.Location = new System.Drawing.Point(988, 521);
             this.bt_cancelar.Name = "bt_cancelar";
             this.bt_cancelar.Size = new System.Drawing.Size(128, 42);
             this.bt_cancelar.TabIndex = 46;
@@ -491,41 +448,19 @@ namespace Mir4.painel
             this.bt_cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_cadastrar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_cadastrar.ForeColor = System.Drawing.Color.White;
-            this.bt_cadastrar.Location = new System.Drawing.Point(651, 521);
+            this.bt_cadastrar.Location = new System.Drawing.Point(849, 521);
             this.bt_cadastrar.Name = "bt_cadastrar";
             this.bt_cadastrar.Size = new System.Drawing.Size(128, 42);
             this.bt_cadastrar.TabIndex = 47;
             this.bt_cadastrar.Text = "Cadastrar";
             this.bt_cadastrar.UseVisualStyleBackColor = false;
             // 
-            // gp_dois
-            // 
-            this.gp_dois.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gp_dois.Controls.Add(this.rd_nao_alt);
-            this.gp_dois.Controls.Add(this.lb_alt);
-            this.gp_dois.Controls.Add(this.rd_sim_alt);
-            this.gp_dois.Controls.Add(this.txt_para_alt);
-            this.gp_dois.Controls.Add(this.label11);
-            this.gp_dois.Controls.Add(this.label5);
-            this.gp_dois.Controls.Add(this.txt_poder_alt);
-            this.gp_dois.Controls.Add(this.label6);
-            this.gp_dois.Controls.Add(this.txt_classe_alt);
-            this.gp_dois.Controls.Add(this.txt_nivel_alt);
-            this.gp_dois.Controls.Add(this.label7);
-            this.gp_dois.Controls.Add(this.label8);
-            this.gp_dois.Controls.Add(this.txt_nick_alt);
-            this.gp_dois.Location = new System.Drawing.Point(-17, 190);
-            this.gp_dois.Name = "gp_dois";
-            this.gp_dois.Size = new System.Drawing.Size(963, 87);
-            this.gp_dois.TabIndex = 44;
-            this.gp_dois.TabStop = false;
-            // 
             // rd_nao_alt
             // 
             this.rd_nao_alt.AutoSize = true;
             this.rd_nao_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rd_nao_alt.ForeColor = System.Drawing.Color.White;
-            this.rd_nao_alt.Location = new System.Drawing.Point(490, 47);
+            this.rd_nao_alt.Location = new System.Drawing.Point(656, 209);
             this.rd_nao_alt.Name = "rd_nao_alt";
             this.rd_nao_alt.Size = new System.Drawing.Size(52, 21);
             this.rd_nao_alt.TabIndex = 18;
@@ -538,7 +473,7 @@ namespace Mir4.painel
             this.lb_alt.AutoSize = true;
             this.lb_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_alt.ForeColor = System.Drawing.Color.White;
-            this.lb_alt.Location = new System.Drawing.Point(296, 49);
+            this.lb_alt.Location = new System.Drawing.Point(462, 211);
             this.lb_alt.Name = "lb_alt";
             this.lb_alt.Size = new System.Drawing.Size(133, 17);
             this.lb_alt.TabIndex = 17;
@@ -549,7 +484,7 @@ namespace Mir4.painel
             this.rd_sim_alt.AutoSize = true;
             this.rd_sim_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rd_sim_alt.ForeColor = System.Drawing.Color.White;
-            this.rd_sim_alt.Location = new System.Drawing.Point(435, 47);
+            this.rd_sim_alt.Location = new System.Drawing.Point(601, 209);
             this.rd_sim_alt.Name = "rd_sim_alt";
             this.rd_sim_alt.Size = new System.Drawing.Size(49, 21);
             this.rd_sim_alt.TabIndex = 17;
@@ -562,7 +497,7 @@ namespace Mir4.painel
             this.txt_para_alt.FormattingEnabled = true;
             this.txt_para_alt.Items.AddRange(new object[] {
             "THE ANCIENTS"});
-            this.txt_para_alt.Location = new System.Drawing.Point(123, 45);
+            this.txt_para_alt.Location = new System.Drawing.Point(289, 207);
             this.txt_para_alt.Name = "txt_para_alt";
             this.txt_para_alt.Size = new System.Drawing.Size(157, 21);
             this.txt_para_alt.TabIndex = 17;
@@ -572,7 +507,7 @@ namespace Mir4.painel
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(69, 49);
+            this.label11.Location = new System.Drawing.Point(235, 211);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(48, 17);
             this.label11.TabIndex = 16;
@@ -583,7 +518,7 @@ namespace Mir4.painel
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(547, 21);
+            this.label5.Location = new System.Drawing.Point(713, 183);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 17);
             this.label5.TabIndex = 18;
@@ -592,7 +527,7 @@ namespace Mir4.painel
             // txt_poder_alt
             // 
             this.txt_poder_alt.BackColor = System.Drawing.Color.White;
-            this.txt_poder_alt.Location = new System.Drawing.Point(599, 18);
+            this.txt_poder_alt.Location = new System.Drawing.Point(765, 180);
             this.txt_poder_alt.Name = "txt_poder_alt";
             this.txt_poder_alt.Size = new System.Drawing.Size(126, 20);
             this.txt_poder_alt.TabIndex = 17;
@@ -602,7 +537,7 @@ namespace Mir4.painel
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(735, 22);
+            this.label6.Location = new System.Drawing.Point(901, 184);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 17);
             this.label6.TabIndex = 16;
@@ -618,7 +553,7 @@ namespace Mir4.painel
             "Guerreiro",
             "Lanceiro",
             "Taoista"});
-            this.txt_classe_alt.Location = new System.Drawing.Point(791, 17);
+            this.txt_classe_alt.Location = new System.Drawing.Point(957, 179);
             this.txt_classe_alt.Name = "txt_classe_alt";
             this.txt_classe_alt.Size = new System.Drawing.Size(148, 21);
             this.txt_classe_alt.TabIndex = 15;
@@ -779,7 +714,7 @@ namespace Mir4.painel
             "148",
             "149",
             "150"});
-            this.txt_nivel_alt.Location = new System.Drawing.Point(468, 18);
+            this.txt_nivel_alt.Location = new System.Drawing.Point(634, 180);
             this.txt_nivel_alt.Name = "txt_nivel_alt";
             this.txt_nivel_alt.Size = new System.Drawing.Size(69, 21);
             this.txt_nivel_alt.TabIndex = 14;
@@ -789,7 +724,7 @@ namespace Mir4.painel
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(423, 22);
+            this.label7.Location = new System.Drawing.Point(589, 184);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 17);
             this.label7.TabIndex = 13;
@@ -800,7 +735,7 @@ namespace Mir4.painel
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(82, 22);
+            this.label8.Location = new System.Drawing.Point(248, 184);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 17);
             this.label8.TabIndex = 11;
@@ -809,7 +744,7 @@ namespace Mir4.painel
             // txt_nick_alt
             // 
             this.txt_nick_alt.BackColor = System.Drawing.Color.White;
-            this.txt_nick_alt.Location = new System.Drawing.Point(123, 19);
+            this.txt_nick_alt.Location = new System.Drawing.Point(289, 181);
             this.txt_nick_alt.Name = "txt_nick_alt";
             this.txt_nick_alt.Size = new System.Drawing.Size(290, 20);
             this.txt_nick_alt.TabIndex = 12;
@@ -819,30 +754,51 @@ namespace Mir4.painel
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Controls.Add(this.gp_tres);
-            this.Controls.Add(this.gp_um);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.Controls.Add(this.txt_vem);
+            this.Controls.Add(this.rd_nao_alt);
+            this.Controls.Add(this.txt_para);
+            this.Controls.Add(this.lb_obser);
+            this.Controls.Add(this.rd_nao);
+            this.Controls.Add(this.lb_alt);
+            this.Controls.Add(this.rd_sim);
+            this.Controls.Add(this.txt_obser);
+            this.Controls.Add(this.lb_texto);
+            this.Controls.Add(this.rd_sim_alt);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txt_para_alt);
+            this.Controls.Add(this.txt_poder);
             this.Controls.Add(this.bt_cancelar);
+            this.Controls.Add(this.txt_nick);
+            this.Controls.Add(this.txt_nome);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_cadastrar);
-            this.Controls.Add(this.gp_dois);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txt_nivel);
+            this.Controls.Add(this.txt_poder_alt);
+            this.Controls.Add(this.txt_patente);
+            this.Controls.Add(this.txt_nick_alt);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txt_classe);
+            this.Controls.Add(this.txt_classe_alt);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txt_nivel_alt);
             this.Name = "cadastro_membro";
-            this.Size = new System.Drawing.Size(928, 574);
-            this.gp_tres.ResumeLayout(false);
-            this.gp_tres.PerformLayout();
-            this.gp_um.ResumeLayout(false);
-            this.gp_um.PerformLayout();
-            this.gp_dois.ResumeLayout(false);
-            this.gp_dois.PerformLayout();
+            this.Size = new System.Drawing.Size(1325, 790);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox gp_tres;
         private System.Windows.Forms.Label lb_obser;
         private System.Windows.Forms.TextBox txt_obser;
-        private System.Windows.Forms.GroupBox gp_um;
         private System.Windows.Forms.TextBox txt_vem;
         private System.Windows.Forms.ComboBox txt_para;
         private System.Windows.Forms.RadioButton rd_nao;
@@ -862,7 +818,6 @@ namespace Mir4.painel
         private System.Windows.Forms.ComboBox txt_classe;
         private System.Windows.Forms.Button bt_cancelar;
         private System.Windows.Forms.Button bt_cadastrar;
-        private System.Windows.Forms.GroupBox gp_dois;
         private System.Windows.Forms.RadioButton rd_nao_alt;
         private System.Windows.Forms.Label lb_alt;
         private System.Windows.Forms.RadioButton rd_sim_alt;

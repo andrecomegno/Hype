@@ -115,6 +115,12 @@
     <Compile Include="painel\cadastro_membro.Designer.cs">
       <DependentUpon>cadastro_membro.cs</DependentUpon>
     </Compile>
+    <Compile Include="painel\home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="painel\home.Designer.cs">
+      <DependentUpon>home.cs</DependentUpon>
+    </Compile>
     <Compile Include="painel\novo_cla.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </Compile>
     <Compile Include="relatorio.Designer.cs">
       <DependentUpon>relatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="script\RJCircularPictureBox.cs">
+      <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="cadastro.resx">
       <DependentUpon>cadastro.cs</DependentUpon>
@@ -158,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="painel\cadastro_membro.resx">
       <DependentUpon>cadastro_membro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="painel\home.resx">
+      <DependentUpon>home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="painel\novo_cla.resx">
       <DependentUpon>novo_cla.cs</DependentUpon>

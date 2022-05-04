@@ -29,15 +29,15 @@ namespace Mir4
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.lb_nick = new System.Windows.Forms.Label();
+            this.lb_nome_do_cla = new System.Windows.Forms.Label();
+            this.lb_patente = new System.Windows.Forms.Label();
             this.pl_menu = new System.Windows.Forms.Panel();
-            this.gp_nome_login = new System.Windows.Forms.GroupBox();
-            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.foto_perfil = new Mir4.script.RJCircularPictureBox();
+            this.bt_deslogar = new FontAwesome.Sharp.IconButton();
+            this.bt_menu = new FontAwesome.Sharp.IconButton();
             this.bt_configurar = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.bt_gold = new FontAwesome.Sharp.IconButton();
             this.bt_painel = new FontAwesome.Sharp.IconButton();
             this.bt_membros = new FontAwesome.Sharp.IconButton();
@@ -47,72 +47,65 @@ namespace Mir4
             this.bt_minimizar = new System.Windows.Forms.Button();
             this.bt_fechar = new System.Windows.Forms.Button();
             this.pl_centro = new System.Windows.Forms.Panel();
-            this.gp_conteudo = new System.Windows.Forms.GroupBox();
-            this.bt_menu = new FontAwesome.Sharp.IconButton();
-            this.pl_versao = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pl_conf = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pl_nome_cla = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pl_conteudo = new System.Windows.Forms.Panel();
             this.pl_menu.SuspendLayout();
-            this.gp_nome_login.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).BeginInit();
             this.pl_top.SuspendLayout();
             this.pl_centro.SuspendLayout();
-            this.pl_versao.SuspendLayout();
+            this.pl_conf.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.pl_nome_cla.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label2
+            // lb_nick
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(93, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 20);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "Andy Makler";
+            this.lb_nick.AutoSize = true;
+            this.lb_nick.BackColor = System.Drawing.Color.Transparent;
+            this.lb_nick.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nick.ForeColor = System.Drawing.Color.White;
+            this.lb_nick.Location = new System.Drawing.Point(50, 107);
+            this.lb_nick.Name = "lb_nick";
+            this.lb_nick.Size = new System.Drawing.Size(107, 20);
+            this.lb_nick.TabIndex = 48;
+            this.lb_nick.Text = "Andy Makler";
             // 
-            // ovalShape1
+            // lb_nome_do_cla
             // 
-            this.ovalShape1.BackColor = System.Drawing.Color.Black;
-            this.ovalShape1.FillColor = System.Drawing.Color.White;
-            this.ovalShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid;
-            this.ovalShape1.Location = new System.Drawing.Point(9, 3);
-            this.ovalShape1.Name = "ovalShape1";
-            this.ovalShape1.Size = new System.Drawing.Size(72, 72);
+            this.lb_nome_do_cla.AutoSize = true;
+            this.lb_nome_do_cla.BackColor = System.Drawing.Color.Transparent;
+            this.lb_nome_do_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nome_do_cla.ForeColor = System.Drawing.Color.White;
+            this.lb_nome_do_cla.Location = new System.Drawing.Point(13, 5);
+            this.lb_nome_do_cla.Name = "lb_nome_do_cla";
+            this.lb_nome_do_cla.Size = new System.Drawing.Size(75, 20);
+            this.lb_nome_do_cla.TabIndex = 51;
+            this.lb_nome_do_cla.Text = "HYPE ツ";
             // 
-            // label1
+            // lb_patente
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(738, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 20);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "NOME DO CLA";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(151, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 20);
-            this.label3.TabIndex = 50;
-            this.label3.Text = "Lider";
+            this.lb_patente.AutoSize = true;
+            this.lb_patente.BackColor = System.Drawing.Color.Transparent;
+            this.lb_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_patente.ForeColor = System.Drawing.Color.Gray;
+            this.lb_patente.Location = new System.Drawing.Point(75, 127);
+            this.lb_patente.Name = "lb_patente";
+            this.lb_patente.Size = new System.Drawing.Size(49, 20);
+            this.lb_patente.TabIndex = 50;
+            this.lb_patente.Text = "Lider";
             // 
             // pl_menu
             // 
             this.pl_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
-            this.pl_menu.Controls.Add(this.iconButton1);
-            this.pl_menu.Controls.Add(this.pl_versao);
-            this.pl_menu.Controls.Add(this.bt_menu);
-            this.pl_menu.Controls.Add(this.gp_nome_login);
-            this.pl_menu.Controls.Add(this.bt_configurar);
-            this.pl_menu.Controls.Add(this.iconButton4);
+            this.pl_menu.Controls.Add(this.panel1);
+            this.pl_menu.Controls.Add(this.pl_conf);
             this.pl_menu.Controls.Add(this.bt_gold);
             this.pl_menu.Controls.Add(this.bt_painel);
             this.pl_menu.Controls.Add(this.bt_membros);
@@ -120,36 +113,75 @@ namespace Mir4
             this.pl_menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pl_menu.Location = new System.Drawing.Point(0, 0);
             this.pl_menu.Name = "pl_menu";
-            this.pl_menu.Size = new System.Drawing.Size(263, 783);
+            this.pl_menu.Size = new System.Drawing.Size(210, 783);
             this.pl_menu.TabIndex = 51;
             // 
-            // gp_nome_login
+            // foto_perfil
             // 
-            this.gp_nome_login.Controls.Add(this.label2);
-            this.gp_nome_login.Controls.Add(this.label3);
-            this.gp_nome_login.Controls.Add(this.shapeContainer2);
-            this.gp_nome_login.Location = new System.Drawing.Point(0, 0);
-            this.gp_nome_login.Name = "gp_nome_login";
-            this.gp_nome_login.Size = new System.Drawing.Size(206, 107);
-            this.gp_nome_login.TabIndex = 52;
-            this.gp_nome_login.TabStop = false;
+            this.foto_perfil.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.foto_perfil.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.foto_perfil.BorderColor2 = System.Drawing.Color.HotPink;
+            this.foto_perfil.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.foto_perfil.BorderSize = 2;
+            this.foto_perfil.GradientAngle = 50F;
+            this.foto_perfil.Location = new System.Drawing.Point(53, 7);
+            this.foto_perfil.Name = "foto_perfil";
+            this.foto_perfil.Size = new System.Drawing.Size(94, 94);
+            this.foto_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.foto_perfil.TabIndex = 0;
+            this.foto_perfil.TabStop = false;
             // 
-            // shapeContainer2
+            // bt_deslogar
             // 
-            this.shapeContainer2.Location = new System.Drawing.Point(3, 16);
-            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer2.Name = "shapeContainer2";
-            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.ovalShape1});
-            this.shapeContainer2.Size = new System.Drawing.Size(200, 88);
-            this.shapeContainer2.TabIndex = 51;
-            this.shapeContainer2.TabStop = false;
+            this.bt_deslogar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_deslogar.BackColor = System.Drawing.Color.Transparent;
+            this.bt_deslogar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_deslogar.FlatAppearance.BorderSize = 0;
+            this.bt_deslogar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bt_deslogar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.bt_deslogar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_deslogar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_deslogar.ForeColor = System.Drawing.Color.White;
+            this.bt_deslogar.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
+            this.bt_deslogar.IconColor = System.Drawing.Color.White;
+            this.bt_deslogar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_deslogar.IconSize = 35;
+            this.bt_deslogar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_deslogar.Location = new System.Drawing.Point(159, 3);
+            this.bt_deslogar.Name = "bt_deslogar";
+            this.bt_deslogar.Size = new System.Drawing.Size(44, 36);
+            this.bt_deslogar.TabIndex = 60;
+            this.bt_deslogar.Tag = "";
+            this.bt_deslogar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.bt_deslogar, "Sair");
+            this.bt_deslogar.UseVisualStyleBackColor = false;
+            // 
+            // bt_menu
+            // 
+            this.bt_menu.FlatAppearance.BorderSize = 0;
+            this.bt_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_menu.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.bt_menu.IconColor = System.Drawing.Color.White;
+            this.bt_menu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bt_menu.IconSize = 30;
+            this.bt_menu.Location = new System.Drawing.Point(165, 7);
+            this.bt_menu.Name = "bt_menu";
+            this.bt_menu.Size = new System.Drawing.Size(44, 33);
+            this.bt_menu.TabIndex = 52;
+            this.bt_menu.Tag = "";
+            this.bt_menu.UseVisualStyleBackColor = true;
+            this.bt_menu.Click += new System.EventHandler(this.bt_menu_Click);
             // 
             // bt_configurar
             // 
-            this.bt_configurar.BackColor = System.Drawing.Color.YellowGreen;
+            this.bt_configurar.AccessibleName = "";
+            this.bt_configurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bt_configurar.BackColor = System.Drawing.Color.Transparent;
             this.bt_configurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_configurar.FlatAppearance.BorderSize = 0;
+            this.bt_configurar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bt_configurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.bt_configurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_configurar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_configurar.ForeColor = System.Drawing.Color.White;
@@ -158,36 +190,15 @@ namespace Mir4
             this.bt_configurar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.bt_configurar.IconSize = 35;
             this.bt_configurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_configurar.Location = new System.Drawing.Point(-1, 466);
+            this.bt_configurar.Location = new System.Drawing.Point(6, 4);
             this.bt_configurar.Name = "bt_configurar";
-            this.bt_configurar.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.bt_configurar.Size = new System.Drawing.Size(193, 46);
+            this.bt_configurar.Size = new System.Drawing.Size(40, 36);
             this.bt_configurar.TabIndex = 58;
-            this.bt_configurar.Text = "Configuração";
+            this.bt_configurar.Tag = "";
             this.bt_configurar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.bt_configurar, "Configuração");
             this.bt_configurar.UseVisualStyleBackColor = false;
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.BackColor = System.Drawing.Color.YellowGreen;
-            this.iconButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton4.ForeColor = System.Drawing.Color.White;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.IdCard;
-            this.iconButton4.IconColor = System.Drawing.Color.White;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton4.IconSize = 35;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(0, 355);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.iconButton4.Size = new System.Drawing.Size(193, 46);
-            this.iconButton4.TabIndex = 57;
-            this.iconButton4.Text = "Cadastro";
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton4.UseVisualStyleBackColor = false;
+            this.bt_configurar.Click += new System.EventHandler(this.bt_configurar_Click);
             // 
             // bt_gold
             // 
@@ -202,11 +213,12 @@ namespace Mir4
             this.bt_gold.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.bt_gold.IconSize = 35;
             this.bt_gold.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_gold.Location = new System.Drawing.Point(-1, 303);
+            this.bt_gold.Location = new System.Drawing.Point(-1, 332);
             this.bt_gold.Name = "bt_gold";
-            this.bt_gold.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.bt_gold.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.bt_gold.Size = new System.Drawing.Size(193, 46);
             this.bt_gold.TabIndex = 56;
+            this.bt_gold.Tag = "Doações";
             this.bt_gold.Text = "Doações";
             this.bt_gold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bt_gold.UseVisualStyleBackColor = false;
@@ -224,14 +236,16 @@ namespace Mir4
             this.bt_painel.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.bt_painel.IconSize = 35;
             this.bt_painel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_painel.Location = new System.Drawing.Point(-1, 147);
+            this.bt_painel.Location = new System.Drawing.Point(-1, 176);
             this.bt_painel.Name = "bt_painel";
-            this.bt_painel.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.bt_painel.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.bt_painel.Size = new System.Drawing.Size(193, 46);
             this.bt_painel.TabIndex = 55;
+            this.bt_painel.Tag = "Painel";
             this.bt_painel.Text = "Painel";
             this.bt_painel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bt_painel.UseVisualStyleBackColor = false;
+            this.bt_painel.Click += new System.EventHandler(this.bt_painel_Click);
             // 
             // bt_membros
             // 
@@ -246,14 +260,16 @@ namespace Mir4
             this.bt_membros.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.bt_membros.IconSize = 35;
             this.bt_membros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_membros.Location = new System.Drawing.Point(-1, 199);
+            this.bt_membros.Location = new System.Drawing.Point(-1, 228);
             this.bt_membros.Name = "bt_membros";
-            this.bt_membros.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.bt_membros.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.bt_membros.Size = new System.Drawing.Size(193, 46);
             this.bt_membros.TabIndex = 54;
+            this.bt_membros.Tag = "Membros";
             this.bt_membros.Text = "Membros";
             this.bt_membros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bt_membros.UseVisualStyleBackColor = false;
+            this.bt_membros.Click += new System.EventHandler(this.bt_membros_Click);
             // 
             // bt_cadastro
             // 
@@ -268,26 +284,27 @@ namespace Mir4
             this.bt_cadastro.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.bt_cadastro.IconSize = 35;
             this.bt_cadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_cadastro.Location = new System.Drawing.Point(-1, 251);
+            this.bt_cadastro.Location = new System.Drawing.Point(-1, 280);
             this.bt_cadastro.Name = "bt_cadastro";
-            this.bt_cadastro.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.bt_cadastro.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.bt_cadastro.Size = new System.Drawing.Size(193, 46);
             this.bt_cadastro.TabIndex = 53;
+            this.bt_cadastro.Tag = "Cadastro";
             this.bt_cadastro.Text = "Cadastro";
             this.bt_cadastro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bt_cadastro.UseVisualStyleBackColor = false;
             // 
             // pl_top
             // 
-            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
+            this.pl_top.Controls.Add(this.pl_nome_cla);
             this.pl_top.Controls.Add(this.bt_maximizar);
-            this.pl_top.Controls.Add(this.label1);
             this.pl_top.Controls.Add(this.bt_minimizar);
             this.pl_top.Controls.Add(this.bt_fechar);
             this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_top.Location = new System.Drawing.Point(263, 0);
+            this.pl_top.Location = new System.Drawing.Point(210, 0);
             this.pl_top.Name = "pl_top";
-            this.pl_top.Size = new System.Drawing.Size(1032, 69);
+            this.pl_top.Size = new System.Drawing.Size(1085, 54);
             this.pl_top.TabIndex = 0;
             this.pl_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseDown);
             // 
@@ -302,7 +319,7 @@ namespace Mir4
             this.bt_maximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_maximizar.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_maximizar.ForeColor = System.Drawing.Color.White;
-            this.bt_maximizar.Location = new System.Drawing.Point(960, 7);
+            this.bt_maximizar.Location = new System.Drawing.Point(1013, 6);
             this.bt_maximizar.Name = "bt_maximizar";
             this.bt_maximizar.Size = new System.Drawing.Size(27, 26);
             this.bt_maximizar.TabIndex = 46;
@@ -321,7 +338,7 @@ namespace Mir4
             this.bt_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_minimizar.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_minimizar.ForeColor = System.Drawing.Color.White;
-            this.bt_minimizar.Location = new System.Drawing.Point(927, 7);
+            this.bt_minimizar.Location = new System.Drawing.Point(980, 6);
             this.bt_minimizar.Name = "bt_minimizar";
             this.bt_minimizar.Size = new System.Drawing.Size(27, 26);
             this.bt_minimizar.TabIndex = 45;
@@ -340,7 +357,7 @@ namespace Mir4
             this.bt_fechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_fechar.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_fechar.ForeColor = System.Drawing.Color.White;
-            this.bt_fechar.Location = new System.Drawing.Point(993, 7);
+            this.bt_fechar.Location = new System.Drawing.Point(1046, 6);
             this.bt_fechar.Name = "bt_fechar";
             this.bt_fechar.Size = new System.Drawing.Size(27, 26);
             this.bt_fechar.TabIndex = 44;
@@ -350,82 +367,90 @@ namespace Mir4
             // 
             // pl_centro
             // 
-            this.pl_centro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
-            this.pl_centro.Controls.Add(this.gp_conteudo);
+            this.pl_centro.BackColor = System.Drawing.Color.White;
+            this.pl_centro.Controls.Add(this.pl_conteudo);
+            this.pl_centro.Controls.Add(this.panel5);
+            this.pl_centro.Controls.Add(this.panel4);
+            this.pl_centro.Controls.Add(this.panel3);
+            this.pl_centro.Controls.Add(this.panel2);
             this.pl_centro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pl_centro.Location = new System.Drawing.Point(0, 0);
+            this.pl_centro.Location = new System.Drawing.Point(210, 0);
             this.pl_centro.Name = "pl_centro";
-            this.pl_centro.Size = new System.Drawing.Size(1295, 783);
+            this.pl_centro.Size = new System.Drawing.Size(1085, 783);
             this.pl_centro.TabIndex = 53;
             // 
-            // gp_conteudo
+            // pl_conf
             // 
-            this.gp_conteudo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pl_conf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gp_conteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            this.gp_conteudo.Location = new System.Drawing.Point(310, 163);
-            this.gp_conteudo.Name = "gp_conteudo";
-            this.gp_conteudo.Size = new System.Drawing.Size(928, 574);
-            this.gp_conteudo.TabIndex = 47;
-            this.gp_conteudo.TabStop = false;
+            this.pl_conf.Controls.Add(this.bt_configurar);
+            this.pl_conf.Controls.Add(this.bt_deslogar);
+            this.pl_conf.Location = new System.Drawing.Point(0, 737);
+            this.pl_conf.Name = "pl_conf";
+            this.pl_conf.Size = new System.Drawing.Size(207, 43);
+            this.pl_conf.TabIndex = 0;
             // 
-            // bt_menu
+            // panel1
             // 
-            this.bt_menu.FlatAppearance.BorderSize = 0;
-            this.bt_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_menu.IconChar = FontAwesome.Sharp.IconChar.Bars;
-            this.bt_menu.IconColor = System.Drawing.Color.White;
-            this.bt_menu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bt_menu.IconSize = 30;
-            this.bt_menu.Location = new System.Drawing.Point(212, 6);
-            this.bt_menu.Name = "bt_menu";
-            this.bt_menu.Size = new System.Drawing.Size(44, 33);
-            this.bt_menu.TabIndex = 52;
-            this.bt_menu.UseVisualStyleBackColor = true;
+            this.panel1.Controls.Add(this.foto_perfil);
+            this.panel1.Controls.Add(this.bt_menu);
+            this.panel1.Controls.Add(this.lb_patente);
+            this.panel1.Controls.Add(this.lb_nick);
+            this.panel1.Location = new System.Drawing.Point(-2, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(206, 157);
+            this.panel1.TabIndex = 0;
             // 
-            // pl_versao
+            // pl_nome_cla
             // 
-            this.pl_versao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
-            this.pl_versao.Controls.Add(this.label4);
-            this.pl_versao.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pl_versao.Location = new System.Drawing.Point(0, 748);
-            this.pl_versao.Name = "pl_versao";
-            this.pl_versao.Size = new System.Drawing.Size(263, 35);
-            this.pl_versao.TabIndex = 0;
+            this.pl_nome_cla.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pl_nome_cla.Controls.Add(this.lb_nome_do_cla);
+            this.pl_nome_cla.Location = new System.Drawing.Point(842, 8);
+            this.pl_nome_cla.Name = "pl_nome_cla";
+            this.pl_nome_cla.Size = new System.Drawing.Size(102, 33);
+            this.pl_nome_cla.TabIndex = 47;
             // 
-            // label4
+            // panel2
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Silver;
-            this.label4.Location = new System.Drawing.Point(159, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 15);
-            this.label4.TabIndex = 52;
-            this.label4.Text = "Versão 1.0.0a";
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(76, 783);
+            this.panel2.TabIndex = 0;
             // 
-            // iconButton1
+            // panel3
             // 
-            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton1.IconSize = 35;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(-1, 703);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(86, 39);
-            this.iconButton1.TabIndex = 60;
-            this.iconButton1.Text = "Sair";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(1009, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(76, 783);
+            this.panel3.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(76, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(933, 148);
+            this.panel4.TabIndex = 48;
+            // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(76, 656);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(933, 127);
+            this.panel5.TabIndex = 0;
+            // 
+            // pl_conteudo
+            // 
+            this.pl_conteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.pl_conteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pl_conteudo.Location = new System.Drawing.Point(76, 148);
+            this.pl_conteudo.Name = "pl_conteudo";
+            this.pl_conteudo.Size = new System.Drawing.Size(933, 508);
+            this.pl_conteudo.TabIndex = 49;
             // 
             // cla
             // 
@@ -435,46 +460,50 @@ namespace Mir4
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1295, 783);
             this.Controls.Add(this.pl_top);
-            this.Controls.Add(this.pl_menu);
             this.Controls.Add(this.pl_centro);
+            this.Controls.Add(this.pl_menu);
             this.Name = "cla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pl_menu.ResumeLayout(false);
-            this.gp_nome_login.ResumeLayout(false);
-            this.gp_nome_login.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).EndInit();
             this.pl_top.ResumeLayout(false);
-            this.pl_top.PerformLayout();
             this.pl_centro.ResumeLayout(false);
-            this.pl_versao.ResumeLayout(false);
-            this.pl_versao.PerformLayout();
+            this.pl_conf.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.pl_nome_cla.ResumeLayout(false);
+            this.pl_nome_cla.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
-        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lb_nick;
+        private System.Windows.Forms.Label lb_patente;
         private System.Windows.Forms.Panel pl_menu;
         private System.Windows.Forms.Panel pl_top;
         private System.Windows.Forms.Button bt_fechar;
         private System.Windows.Forms.Button bt_minimizar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_nome_do_cla;
         private System.Windows.Forms.Button bt_maximizar;
         private System.Windows.Forms.Panel pl_centro;
-        private System.Windows.Forms.GroupBox gp_conteudo;
         private FontAwesome.Sharp.IconButton bt_cadastro;
         private FontAwesome.Sharp.IconButton bt_configurar;
-        private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton bt_gold;
         private FontAwesome.Sharp.IconButton bt_painel;
         private FontAwesome.Sharp.IconButton bt_membros;
-        private System.Windows.Forms.GroupBox gp_nome_login;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
         private FontAwesome.Sharp.IconButton bt_menu;
-        private System.Windows.Forms.Panel pl_versao;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.Label label4;
+        private FontAwesome.Sharp.IconButton bt_deslogar;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private script.RJCircularPictureBox foto_perfil;
+        private System.Windows.Forms.Panel pl_conf;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pl_nome_cla;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pl_conteudo;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
     }
 }
