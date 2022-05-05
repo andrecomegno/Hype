@@ -24,6 +24,30 @@ namespace Mir4
             this.FormBorderStyle = FormBorderStyle.None;
         }
 
+        private void bt_painel_Click(object sender, EventArgs e)
+        {
+            home uc = new home();
+            addControl(uc);
+        }
+
+        private void bt_membros_Click(object sender, EventArgs e)
+        {
+            membros uc = new membros();
+            addControl(uc);
+        }
+
+        private void bt_cadastro_Click(object sender, EventArgs e)
+        {
+            cadastro_membro uc = new cadastro_membro();
+            addControl(uc);
+        }
+
+        private void bt_gold_Click(object sender, EventArgs e)
+        {
+            doacoes uc = new doacoes();
+            addControl(uc);
+        }
+
         public void addControl(UserControl userControl)
         {
             //if (this.pl_conteudo.Controls.Count > 0)
@@ -87,8 +111,10 @@ namespace Mir4
             {
                 pl_menu.Width = 60;
                 foto_perfil.Visible = false;
+
                 lb_patente.Visible = false;
                 lb_nick.Visible = false;
+
                 bt_deslogar.Visible = false;
                 bt_menu.Dock = DockStyle.Left;
                 bt_menu.Width = 60;
@@ -119,16 +145,6 @@ namespace Mir4
             }
         }
 
-        private void bt_membros_Click(object sender, EventArgs e)
-        {
-            cadastro_membro uc = new cadastro_membro();
-            addControl(uc);
-        }
 
-        private void bt_painel_Click(object sender, EventArgs e)
-        {
-            home uc = new home();
-            addControl(uc);
-        }
     }
 }

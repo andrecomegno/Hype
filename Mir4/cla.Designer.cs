@@ -34,35 +34,35 @@ namespace Mir4
             this.lb_nome_do_cla = new System.Windows.Forms.Label();
             this.lb_patente = new System.Windows.Forms.Label();
             this.pl_menu = new System.Windows.Forms.Panel();
-            this.foto_perfil = new Mir4.script.RJCircularPictureBox();
-            this.bt_deslogar = new FontAwesome.Sharp.IconButton();
+            this.pl_conta = new System.Windows.Forms.Panel();
             this.bt_menu = new FontAwesome.Sharp.IconButton();
+            this.pl_conf = new System.Windows.Forms.Panel();
             this.bt_configurar = new FontAwesome.Sharp.IconButton();
+            this.bt_deslogar = new FontAwesome.Sharp.IconButton();
             this.bt_gold = new FontAwesome.Sharp.IconButton();
             this.bt_painel = new FontAwesome.Sharp.IconButton();
             this.bt_membros = new FontAwesome.Sharp.IconButton();
             this.bt_cadastro = new FontAwesome.Sharp.IconButton();
             this.pl_top = new System.Windows.Forms.Panel();
+            this.pl_nome_cla = new System.Windows.Forms.Panel();
             this.bt_maximizar = new System.Windows.Forms.Button();
             this.bt_minimizar = new System.Windows.Forms.Button();
             this.bt_fechar = new System.Windows.Forms.Button();
             this.pl_centro = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pl_conf = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pl_nome_cla = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.pl_conteudo = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.foto_perfil = new Mir4.script.RJCircularPictureBox();
             this.pl_menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).BeginInit();
-            this.pl_top.SuspendLayout();
-            this.pl_centro.SuspendLayout();
+            this.pl_conta.SuspendLayout();
             this.pl_conf.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pl_top.SuspendLayout();
             this.pl_nome_cla.SuspendLayout();
+            this.pl_centro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_nick
@@ -104,7 +104,7 @@ namespace Mir4
             // pl_menu
             // 
             this.pl_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
-            this.pl_menu.Controls.Add(this.panel1);
+            this.pl_menu.Controls.Add(this.pl_conta);
             this.pl_menu.Controls.Add(this.pl_conf);
             this.pl_menu.Controls.Add(this.bt_gold);
             this.pl_menu.Controls.Add(this.bt_painel);
@@ -116,46 +116,17 @@ namespace Mir4
             this.pl_menu.Size = new System.Drawing.Size(210, 783);
             this.pl_menu.TabIndex = 51;
             // 
-            // foto_perfil
+            // pl_conta
             // 
-            this.foto_perfil.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.foto_perfil.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.foto_perfil.BorderColor2 = System.Drawing.Color.HotPink;
-            this.foto_perfil.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.foto_perfil.BorderSize = 2;
-            this.foto_perfil.GradientAngle = 50F;
-            this.foto_perfil.Location = new System.Drawing.Point(53, 7);
-            this.foto_perfil.Name = "foto_perfil";
-            this.foto_perfil.Size = new System.Drawing.Size(94, 94);
-            this.foto_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.foto_perfil.TabIndex = 0;
-            this.foto_perfil.TabStop = false;
-            // 
-            // bt_deslogar
-            // 
-            this.bt_deslogar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_deslogar.BackColor = System.Drawing.Color.Transparent;
-            this.bt_deslogar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_deslogar.FlatAppearance.BorderSize = 0;
-            this.bt_deslogar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.bt_deslogar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.bt_deslogar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_deslogar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_deslogar.ForeColor = System.Drawing.Color.White;
-            this.bt_deslogar.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
-            this.bt_deslogar.IconColor = System.Drawing.Color.White;
-            this.bt_deslogar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_deslogar.IconSize = 35;
-            this.bt_deslogar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_deslogar.Location = new System.Drawing.Point(159, 3);
-            this.bt_deslogar.Name = "bt_deslogar";
-            this.bt_deslogar.Size = new System.Drawing.Size(44, 36);
-            this.bt_deslogar.TabIndex = 60;
-            this.bt_deslogar.Tag = "";
-            this.bt_deslogar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.bt_deslogar, "Sair");
-            this.bt_deslogar.UseVisualStyleBackColor = false;
+            this.pl_conta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.pl_conta.Controls.Add(this.foto_perfil);
+            this.pl_conta.Controls.Add(this.bt_menu);
+            this.pl_conta.Controls.Add(this.lb_patente);
+            this.pl_conta.Controls.Add(this.lb_nick);
+            this.pl_conta.Location = new System.Drawing.Point(-2, 1);
+            this.pl_conta.Name = "pl_conta";
+            this.pl_conta.Size = new System.Drawing.Size(206, 157);
+            this.pl_conta.TabIndex = 0;
             // 
             // bt_menu
             // 
@@ -172,6 +143,17 @@ namespace Mir4
             this.bt_menu.Tag = "";
             this.bt_menu.UseVisualStyleBackColor = true;
             this.bt_menu.Click += new System.EventHandler(this.bt_menu_Click);
+            // 
+            // pl_conf
+            // 
+            this.pl_conf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pl_conf.Controls.Add(this.bt_configurar);
+            this.pl_conf.Controls.Add(this.bt_deslogar);
+            this.pl_conf.Location = new System.Drawing.Point(0, 737);
+            this.pl_conf.Name = "pl_conf";
+            this.pl_conf.Size = new System.Drawing.Size(207, 43);
+            this.pl_conf.TabIndex = 0;
             // 
             // bt_configurar
             // 
@@ -200,6 +182,32 @@ namespace Mir4
             this.bt_configurar.UseVisualStyleBackColor = false;
             this.bt_configurar.Click += new System.EventHandler(this.bt_configurar_Click);
             // 
+            // bt_deslogar
+            // 
+            this.bt_deslogar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_deslogar.BackColor = System.Drawing.Color.Transparent;
+            this.bt_deslogar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_deslogar.FlatAppearance.BorderSize = 0;
+            this.bt_deslogar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bt_deslogar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.bt_deslogar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_deslogar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_deslogar.ForeColor = System.Drawing.Color.White;
+            this.bt_deslogar.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
+            this.bt_deslogar.IconColor = System.Drawing.Color.White;
+            this.bt_deslogar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_deslogar.IconSize = 35;
+            this.bt_deslogar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_deslogar.Location = new System.Drawing.Point(159, 3);
+            this.bt_deslogar.Name = "bt_deslogar";
+            this.bt_deslogar.Size = new System.Drawing.Size(44, 36);
+            this.bt_deslogar.TabIndex = 60;
+            this.bt_deslogar.Tag = "";
+            this.bt_deslogar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.bt_deslogar, "Sair");
+            this.bt_deslogar.UseVisualStyleBackColor = false;
+            // 
             // bt_gold
             // 
             this.bt_gold.BackColor = System.Drawing.Color.YellowGreen;
@@ -222,6 +230,7 @@ namespace Mir4
             this.bt_gold.Text = "Doações";
             this.bt_gold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bt_gold.UseVisualStyleBackColor = false;
+            this.bt_gold.Click += new System.EventHandler(this.bt_gold_Click);
             // 
             // bt_painel
             // 
@@ -293,6 +302,7 @@ namespace Mir4
             this.bt_cadastro.Text = "Cadastro";
             this.bt_cadastro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bt_cadastro.UseVisualStyleBackColor = false;
+            this.bt_cadastro.Click += new System.EventHandler(this.bt_cadastro_Click);
             // 
             // pl_top
             // 
@@ -307,6 +317,16 @@ namespace Mir4
             this.pl_top.Size = new System.Drawing.Size(1085, 54);
             this.pl_top.TabIndex = 0;
             this.pl_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseDown);
+            // 
+            // pl_nome_cla
+            // 
+            this.pl_nome_cla.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pl_nome_cla.Controls.Add(this.lb_nome_do_cla);
+            this.pl_nome_cla.Location = new System.Drawing.Point(842, 8);
+            this.pl_nome_cla.Name = "pl_nome_cla";
+            this.pl_nome_cla.Size = new System.Drawing.Size(102, 33);
+            this.pl_nome_cla.TabIndex = 47;
             // 
             // bt_maximizar
             // 
@@ -368,9 +388,9 @@ namespace Mir4
             // pl_centro
             // 
             this.pl_centro.BackColor = System.Drawing.Color.White;
+            this.pl_centro.Controls.Add(this.panel4);
             this.pl_centro.Controls.Add(this.pl_conteudo);
             this.pl_centro.Controls.Add(this.panel5);
-            this.pl_centro.Controls.Add(this.panel4);
             this.pl_centro.Controls.Add(this.panel3);
             this.pl_centro.Controls.Add(this.panel2);
             this.pl_centro.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -379,78 +399,61 @@ namespace Mir4
             this.pl_centro.Size = new System.Drawing.Size(1085, 783);
             this.pl_centro.TabIndex = 53;
             // 
-            // pl_conf
+            // pl_conteudo
             // 
-            this.pl_conf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pl_conf.Controls.Add(this.bt_configurar);
-            this.pl_conf.Controls.Add(this.bt_deslogar);
-            this.pl_conf.Location = new System.Drawing.Point(0, 737);
-            this.pl_conf.Name = "pl_conf";
-            this.pl_conf.Size = new System.Drawing.Size(207, 43);
-            this.pl_conf.TabIndex = 0;
+            this.pl_conteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.pl_conteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pl_conteudo.Location = new System.Drawing.Point(70, 0);
+            this.pl_conteudo.Name = "pl_conteudo";
+            this.pl_conteudo.Size = new System.Drawing.Size(945, 733);
+            this.pl_conteudo.TabIndex = 49;
             // 
-            // panel1
+            // panel5
             // 
-            this.panel1.Controls.Add(this.foto_perfil);
-            this.panel1.Controls.Add(this.bt_menu);
-            this.panel1.Controls.Add(this.lb_patente);
-            this.panel1.Controls.Add(this.lb_nick);
-            this.panel1.Location = new System.Drawing.Point(-2, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(206, 157);
-            this.panel1.TabIndex = 0;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(70, 733);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(945, 50);
+            this.panel5.TabIndex = 0;
             // 
-            // pl_nome_cla
+            // panel4
             // 
-            this.pl_nome_cla.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pl_nome_cla.Controls.Add(this.lb_nome_do_cla);
-            this.pl_nome_cla.Location = new System.Drawing.Point(842, 8);
-            this.pl_nome_cla.Name = "pl_nome_cla";
-            this.pl_nome_cla.Size = new System.Drawing.Size(102, 33);
-            this.pl_nome_cla.TabIndex = 47;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(70, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(945, 100);
+            this.panel4.TabIndex = 48;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(1015, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(70, 783);
+            this.panel3.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(76, 783);
+            this.panel2.Size = new System.Drawing.Size(70, 783);
             this.panel2.TabIndex = 0;
             // 
-            // panel3
+            // foto_perfil
             // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1009, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(76, 783);
-            this.panel3.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(76, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(933, 148);
-            this.panel4.TabIndex = 48;
-            // 
-            // panel5
-            // 
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(76, 656);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(933, 127);
-            this.panel5.TabIndex = 0;
-            // 
-            // pl_conteudo
-            // 
-            this.pl_conteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
-            this.pl_conteudo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pl_conteudo.Location = new System.Drawing.Point(76, 148);
-            this.pl_conteudo.Name = "pl_conteudo";
-            this.pl_conteudo.Size = new System.Drawing.Size(933, 508);
-            this.pl_conteudo.TabIndex = 49;
+            this.foto_perfil.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.foto_perfil.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.foto_perfil.BorderColor2 = System.Drawing.Color.HotPink;
+            this.foto_perfil.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.foto_perfil.BorderSize = 2;
+            this.foto_perfil.GradientAngle = 50F;
+            this.foto_perfil.Location = new System.Drawing.Point(53, 7);
+            this.foto_perfil.Name = "foto_perfil";
+            this.foto_perfil.Size = new System.Drawing.Size(94, 94);
+            this.foto_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.foto_perfil.TabIndex = 0;
+            this.foto_perfil.TabStop = false;
             // 
             // cla
             // 
@@ -463,17 +466,17 @@ namespace Mir4
             this.Controls.Add(this.pl_centro);
             this.Controls.Add(this.pl_menu);
             this.Name = "cla";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pl_menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).EndInit();
-            this.pl_top.ResumeLayout(false);
-            this.pl_centro.ResumeLayout(false);
+            this.pl_conta.ResumeLayout(false);
+            this.pl_conta.PerformLayout();
             this.pl_conf.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pl_top.ResumeLayout(false);
             this.pl_nome_cla.ResumeLayout(false);
             this.pl_nome_cla.PerformLayout();
+            this.pl_centro.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -498,7 +501,7 @@ namespace Mir4
         private System.Windows.Forms.ToolTip toolTip1;
         private script.RJCircularPictureBox foto_perfil;
         private System.Windows.Forms.Panel pl_conf;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pl_conta;
         private System.Windows.Forms.Panel pl_nome_cla;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

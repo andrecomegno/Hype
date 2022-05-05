@@ -115,11 +115,23 @@
     <Compile Include="painel\cadastro_membro.Designer.cs">
       <DependentUpon>cadastro_membro.cs</DependentUpon>
     </Compile>
+    <Compile Include="painel\doacoes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="painel\doacoes.Designer.cs">
+      <DependentUpon>doacoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="painel\home.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="painel\home.Designer.cs">
       <DependentUpon>home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="painel\membros.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="painel\membros.Designer.cs">
+      <DependentUpon>membros.cs</DependentUpon>
     </Compile>
     <Compile Include="painel\novo_cla.cs">
       <SubType>UserControl</SubType>
@@ -168,8 +180,14 @@
     <EmbeddedResource Include="painel\cadastro_membro.resx">
       <DependentUpon>cadastro_membro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="painel\doacoes.resx">
+      <DependentUpon>doacoes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="painel\home.resx">
       <DependentUpon>home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="painel\membros.resx">
+      <DependentUpon>membros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="painel\novo_cla.resx">
       <DependentUpon>novo_cla.cs</DependentUpon>

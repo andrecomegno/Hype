@@ -1,7 +1,7 @@
 ﻿
 namespace Mir4.painel
 {
-    partial class cadastro_membro
+    partial class doacoes
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -29,7 +29,6 @@ namespace Mir4.painel
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txt_nick = new System.Windows.Forms.TextBox();
@@ -67,20 +66,10 @@ namespace Mir4.painel
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.lb_obser = new System.Windows.Forms.Label();
             this.txt_obser = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1325, 790);
-            this.panel1.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -91,10 +80,10 @@ namespace Mir4.painel
             this.groupBox1.Controls.Add(this.bt_cancelar);
             this.groupBox1.Controls.Add(this.lb_obser);
             this.groupBox1.Controls.Add(this.txt_obser);
-            this.groupBox1.Location = new System.Drawing.Point(207, 158);
+            this.groupBox1.Location = new System.Drawing.Point(149, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(911, 475);
-            this.groupBox1.TabIndex = 50;
+            this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
             // 
             // panel3
@@ -825,16 +814,14 @@ namespace Mir4.painel
             this.txt_obser.Size = new System.Drawing.Size(853, 162);
             this.txt_obser.TabIndex = 16;
             // 
-            // cadastro_membro
+            // doacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
-            this.Controls.Add(this.panel1);
-            this.Name = "cadastro_membro";
-            this.Size = new System.Drawing.Size(1325, 790);
-            this.panel1.ResumeLayout(false);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "doacoes";
+            this.Size = new System.Drawing.Size(1200, 720);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -847,7 +834,6 @@ namespace Mir4.painel
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txt_nick;
