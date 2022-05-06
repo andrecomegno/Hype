@@ -29,191 +29,119 @@ namespace Mir4
         /// </summary>
         private void InitializeComponent()
         {
-            this.gp_geral = new System.Windows.Forms.GroupBox();
-            this.bt_sair = new System.Windows.Forms.Button();
-            this.gp_secundario = new System.Windows.Forms.GroupBox();
-            this.bt_relatorio = new System.Windows.Forms.Button();
-            this.bt_membros = new System.Windows.Forms.Button();
-            this.bt_cadastro = new System.Windows.Forms.Button();
-            this.bt_controle = new System.Windows.Forms.Button();
-            this.bt_procurar = new System.Windows.Forms.Button();
-            this.txt_procurar = new System.Windows.Forms.TextBox();
-            this.gp_geral.SuspendLayout();
-            this.gp_secundario.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bt_cadastrar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gp_geral
+            // panel1
             // 
-            this.gp_geral.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gp_geral.Controls.Add(this.bt_sair);
-            this.gp_geral.Controls.Add(this.gp_secundario);
-            this.gp_geral.Controls.Add(this.bt_procurar);
-            this.gp_geral.Controls.Add(this.txt_procurar);
-            this.gp_geral.Location = new System.Drawing.Point(12, 67);
-            this.gp_geral.Name = "gp_geral";
-            this.gp_geral.Size = new System.Drawing.Size(1228, 638);
-            this.gp_geral.TabIndex = 48;
-            this.gp_geral.TabStop = false;
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.bt_cadastrar);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1252, 772);
+            this.panel1.TabIndex = 0;
             // 
-            // bt_sair
+            // bt_cadastrar
             // 
-            this.bt_sair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_sair.BackColor = System.Drawing.Color.Tomato;
-            this.bt_sair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_sair.FlatAppearance.BorderSize = 0;
-            this.bt_sair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
-            this.bt_sair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
-            this.bt_sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_sair.ForeColor = System.Drawing.Color.White;
-            this.bt_sair.Location = new System.Drawing.Point(1079, 581);
-            this.bt_sair.Name = "bt_sair";
-            this.bt_sair.Size = new System.Drawing.Size(128, 42);
-            this.bt_sair.TabIndex = 46;
-            this.bt_sair.Text = "Sair";
-            this.bt_sair.UseVisualStyleBackColor = false;
+            this.bt_cadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_cadastrar.BackColor = System.Drawing.Color.YellowGreen;
+            this.bt_cadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cadastrar.FlatAppearance.BorderSize = 0;
+            this.bt_cadastrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.bt_cadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.bt_cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cadastrar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cadastrar.ForeColor = System.Drawing.Color.White;
+            this.bt_cadastrar.Location = new System.Drawing.Point(41, 34);
+            this.bt_cadastrar.Name = "bt_cadastrar";
+            this.bt_cadastrar.Size = new System.Drawing.Size(128, 42);
+            this.bt_cadastrar.TabIndex = 65;
+            this.bt_cadastrar.Text = "Cadastrar";
+            this.bt_cadastrar.UseVisualStyleBackColor = false;
             // 
-            // gp_secundario
+            // button1
             // 
-            this.gp_secundario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gp_secundario.Controls.Add(this.bt_relatorio);
-            this.gp_secundario.Controls.Add(this.bt_membros);
-            this.gp_secundario.Controls.Add(this.bt_cadastro);
-            this.gp_secundario.Controls.Add(this.bt_controle);
-            this.gp_secundario.Location = new System.Drawing.Point(21, 84);
-            this.gp_secundario.Name = "gp_secundario";
-            this.gp_secundario.Size = new System.Drawing.Size(1186, 459);
-            this.gp_secundario.TabIndex = 45;
-            this.gp_secundario.TabStop = false;
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.YellowGreen;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(1084, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 42);
+            this.button1.TabIndex = 66;
+            this.button1.Text = "Cadastrar";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // bt_relatorio
+            // button2
             // 
-            this.bt_relatorio.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bt_relatorio.BackColor = System.Drawing.Color.DarkCyan;
-            this.bt_relatorio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_relatorio.FlatAppearance.BorderSize = 0;
-            this.bt_relatorio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.CadetBlue;
-            this.bt_relatorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
-            this.bt_relatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_relatorio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_relatorio.ForeColor = System.Drawing.Color.White;
-            this.bt_relatorio.Location = new System.Drawing.Point(195, 268);
-            this.bt_relatorio.Name = "bt_relatorio";
-            this.bt_relatorio.Size = new System.Drawing.Size(193, 69);
-            this.bt_relatorio.TabIndex = 46;
-            this.bt_relatorio.Text = "  RELATÓRIO";
-            this.bt_relatorio.UseVisualStyleBackColor = false;
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.BackColor = System.Drawing.Color.YellowGreen;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(41, 699);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(128, 42);
+            this.button2.TabIndex = 67;
+            this.button2.Text = "Cadastrar";
+            this.button2.UseVisualStyleBackColor = false;
             // 
-            // bt_membros
+            // button3
             // 
-            this.bt_membros.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bt_membros.BackColor = System.Drawing.Color.DarkOrange;
-            this.bt_membros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_membros.FlatAppearance.BorderSize = 0;
-            this.bt_membros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BurlyWood;
-            this.bt_membros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
-            this.bt_membros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_membros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_membros.ForeColor = System.Drawing.Color.White;
-            this.bt_membros.Location = new System.Drawing.Point(195, 193);
-            this.bt_membros.Name = "bt_membros";
-            this.bt_membros.Size = new System.Drawing.Size(193, 69);
-            this.bt_membros.TabIndex = 43;
-            this.bt_membros.Text = "   MEMBROS";
-            this.bt_membros.UseVisualStyleBackColor = false;
-            // 
-            // bt_cadastro
-            // 
-            this.bt_cadastro.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bt_cadastro.BackColor = System.Drawing.Color.YellowGreen;
-            this.bt_cadastro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cadastro.FlatAppearance.BorderSize = 0;
-            this.bt_cadastro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.bt_cadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.bt_cadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cadastro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cadastro.ForeColor = System.Drawing.Color.White;
-            this.bt_cadastro.Location = new System.Drawing.Point(195, 43);
-            this.bt_cadastro.Name = "bt_cadastro";
-            this.bt_cadastro.Size = new System.Drawing.Size(193, 69);
-            this.bt_cadastro.TabIndex = 44;
-            this.bt_cadastro.Text = "  CADASTRO";
-            this.bt_cadastro.UseVisualStyleBackColor = false;
-            // 
-            // bt_controle
-            // 
-            this.bt_controle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bt_controle.BackColor = System.Drawing.Color.Gold;
-            this.bt_controle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_controle.FlatAppearance.BorderSize = 0;
-            this.bt_controle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Khaki;
-            this.bt_controle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Khaki;
-            this.bt_controle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_controle.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_controle.ForeColor = System.Drawing.Color.White;
-            this.bt_controle.Location = new System.Drawing.Point(195, 118);
-            this.bt_controle.Name = "bt_controle";
-            this.bt_controle.Size = new System.Drawing.Size(193, 69);
-            this.bt_controle.TabIndex = 45;
-            this.bt_controle.Text = "  CONTROLE";
-            this.bt_controle.UseVisualStyleBackColor = false;
-            // 
-            // bt_procurar
-            // 
-            this.bt_procurar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bt_procurar.BackColor = System.Drawing.Color.Gold;
-            this.bt_procurar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_procurar.FlatAppearance.BorderSize = 0;
-            this.bt_procurar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.bt_procurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.bt_procurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_procurar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_procurar.ForeColor = System.Drawing.Color.White;
-            this.bt_procurar.Location = new System.Drawing.Point(803, 37);
-            this.bt_procurar.Name = "bt_procurar";
-            this.bt_procurar.Size = new System.Drawing.Size(117, 28);
-            this.bt_procurar.TabIndex = 44;
-            this.bt_procurar.Text = "Procurar";
-            this.bt_procurar.UseVisualStyleBackColor = false;
-            // 
-            // txt_procurar
-            // 
-            this.txt_procurar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_procurar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_procurar.Location = new System.Drawing.Point(288, 41);
-            this.txt_procurar.Name = "txt_procurar";
-            this.txt_procurar.Size = new System.Drawing.Size(509, 23);
-            this.txt_procurar.TabIndex = 43;
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button3.BackColor = System.Drawing.Color.YellowGreen;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(1084, 699);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(128, 42);
+            this.button3.TabIndex = 68;
+            this.button3.Text = "Cadastrar";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // relatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(1252, 772);
-            this.Controls.Add(this.gp_geral);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "relatorio";
             this.Text = "relatorio";
-            this.gp_geral.ResumeLayout(false);
-            this.gp_geral.PerformLayout();
-            this.gp_secundario.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox gp_geral;
-        private System.Windows.Forms.Button bt_sair;
-        private System.Windows.Forms.GroupBox gp_secundario;
-        private System.Windows.Forms.Button bt_procurar;
-        private System.Windows.Forms.TextBox txt_procurar;
-        private System.Windows.Forms.Button bt_relatorio;
-        private System.Windows.Forms.Button bt_membros;
-        private System.Windows.Forms.Button bt_cadastro;
-        private System.Windows.Forms.Button bt_controle;
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button bt_cadastrar;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

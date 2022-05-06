@@ -49,9 +49,9 @@ namespace Mir4
             this.bt_minimizar = new System.Windows.Forms.Button();
             this.bt_fechar = new System.Windows.Forms.Button();
             this.pl_centro = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.pl_conteudo = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -387,7 +387,7 @@ namespace Mir4
             // 
             // pl_centro
             // 
-            this.pl_centro.BackColor = System.Drawing.Color.White;
+            this.pl_centro.BackColor = System.Drawing.Color.SlateGray;
             this.pl_centro.Controls.Add(this.panel4);
             this.pl_centro.Controls.Add(this.pl_conteudo);
             this.pl_centro.Controls.Add(this.panel5);
@@ -399,33 +399,38 @@ namespace Mir4
             this.pl_centro.Size = new System.Drawing.Size(1085, 783);
             this.pl_centro.TabIndex = 53;
             // 
-            // pl_conteudo
-            // 
-            this.pl_conteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
-            this.pl_conteudo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pl_conteudo.Location = new System.Drawing.Point(70, 0);
-            this.pl_conteudo.Name = "pl_conteudo";
-            this.pl_conteudo.Size = new System.Drawing.Size(945, 733);
-            this.pl_conteudo.TabIndex = 49;
-            // 
-            // panel5
-            // 
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(70, 733);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(945, 50);
-            this.panel5.TabIndex = 0;
-            // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.SystemColors.Control;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(70, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(945, 100);
             this.panel4.TabIndex = 48;
             // 
+            // pl_conteudo
+            // 
+            this.pl_conteudo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pl_conteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.pl_conteudo.Location = new System.Drawing.Point(70, 97);
+            this.pl_conteudo.Name = "pl_conteudo";
+            this.pl_conteudo.Size = new System.Drawing.Size(945, 636);
+            this.pl_conteudo.TabIndex = 49;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.Control;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(70, 733);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(945, 50);
+            this.panel5.TabIndex = 0;
+            // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(1015, 0);
             this.panel3.Name = "panel3";
@@ -434,6 +439,7 @@ namespace Mir4
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
