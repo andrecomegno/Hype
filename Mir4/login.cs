@@ -65,7 +65,7 @@ namespace Mir4
 
         private void bt_fechar_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
     }
 }

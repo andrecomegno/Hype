@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Mir4
@@ -20,25 +21,21 @@ namespace Mir4
             InitializeComponent();
         }
 
+        private void foto_perfil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Drag Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
         private void pl_top_MouseDown(object sender, MouseEventArgs e)
         {
-            offset.X = e.X;
-            offset.Y = e.Y;
-            mouseDown = true;
-        }
-
-        private void pl_top_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (mouseDown == true)
-            {
-                Point po = PointToScreen(e.Location);
-                Location = new Point(po.X - offset.X, po.Y - offset.Y);
-            }
-        }
-
-        private void pl_top_MouseUp(object sender, MouseEventArgs e)
-        {
-            mouseDown = false;
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
 
@@ -51,5 +48,7 @@ namespace Mir4
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+
     }
 }

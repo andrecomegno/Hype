@@ -35,10 +35,10 @@ namespace Mir4.painel
             this.label4 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.bt_cadastrar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -94,7 +94,7 @@ namespace Mir4.painel
             this.tabControl1.Location = new System.Drawing.Point(49, 40);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(858, 499);
+            this.tabControl1.Size = new System.Drawing.Size(1095, 641);
             this.tabControl1.TabIndex = 16;
             // 
             // tabPage1
@@ -106,19 +106,24 @@ namespace Mir4.painel
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(850, 473);
+            this.tabPage1.Size = new System.Drawing.Size(1087, 615);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Adicionar Novo Cla";
             // 
-            // tabPage2
+            // groupBox1
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.Gray;
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(850, 473);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Cadastrar Membros";
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.txt_nome_cla);
+            this.groupBox1.Controls.Add(this.txt_nome);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txt_poder);
+            this.groupBox1.Location = new System.Drawing.Point(82, 60);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(928, 466);
+            this.groupBox1.TabIndex = 45;
+            this.groupBox1.TabStop = false;
             // 
             // bt_cancelar
             // 
@@ -131,7 +136,7 @@ namespace Mir4.painel
             this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_cancelar.ForeColor = System.Drawing.Color.White;
-            this.bt_cancelar.Location = new System.Drawing.Point(704, 416);
+            this.bt_cancelar.Location = new System.Drawing.Point(941, 558);
             this.bt_cancelar.Name = "bt_cancelar";
             this.bt_cancelar.Size = new System.Drawing.Size(128, 42);
             this.bt_cancelar.TabIndex = 43;
@@ -149,27 +154,22 @@ namespace Mir4.painel
             this.bt_cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_cadastrar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_cadastrar.ForeColor = System.Drawing.Color.White;
-            this.bt_cadastrar.Location = new System.Drawing.Point(565, 416);
+            this.bt_cadastrar.Location = new System.Drawing.Point(802, 558);
             this.bt_cadastrar.Name = "bt_cadastrar";
             this.bt_cadastrar.Size = new System.Drawing.Size(128, 42);
             this.bt_cadastrar.TabIndex = 44;
             this.bt_cadastrar.Text = "Cadastrar";
             this.bt_cadastrar.UseVisualStyleBackColor = false;
             // 
-            // groupBox1
+            // tabPage2
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.txt_nome_cla);
-            this.groupBox1.Controls.Add(this.txt_nome);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txt_poder);
-            this.groupBox1.Location = new System.Drawing.Point(82, 60);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(691, 324);
-            this.groupBox1.TabIndex = 45;
-            this.groupBox1.TabStop = false;
+            this.tabPage2.BackColor = System.Drawing.Color.Gray;
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(850, 473);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Cadastrar Membros";
             // 
             // tabPage3
             // 
@@ -186,7 +186,7 @@ namespace Mir4.painel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
             this.Name = "novo_cla";
-            this.Size = new System.Drawing.Size(963, 578);
+            this.Size = new System.Drawing.Size(1200, 720);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

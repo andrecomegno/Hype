@@ -35,26 +35,22 @@ namespace Mir4
             this.lb_patente = new System.Windows.Forms.Label();
             this.pl_menu = new System.Windows.Forms.Panel();
             this.pl_conta = new System.Windows.Forms.Panel();
-            this.bt_menu = new FontAwesome.Sharp.IconButton();
             this.pl_conf = new System.Windows.Forms.Panel();
-            this.bt_configurar = new FontAwesome.Sharp.IconButton();
-            this.bt_deslogar = new FontAwesome.Sharp.IconButton();
-            this.bt_gold = new FontAwesome.Sharp.IconButton();
-            this.bt_painel = new FontAwesome.Sharp.IconButton();
-            this.bt_membros = new FontAwesome.Sharp.IconButton();
-            this.bt_cadastro = new FontAwesome.Sharp.IconButton();
             this.pl_top = new System.Windows.Forms.Panel();
             this.pl_nome_cla = new System.Windows.Forms.Panel();
             this.bt_maximizar = new System.Windows.Forms.Button();
             this.bt_minimizar = new System.Windows.Forms.Button();
             this.bt_fechar = new System.Windows.Forms.Button();
             this.pl_centro = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.pl_conteudo = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.bt_menu = new FontAwesome.Sharp.IconButton();
+            this.bt_configurar = new FontAwesome.Sharp.IconButton();
+            this.bt_deslogar = new FontAwesome.Sharp.IconButton();
+            this.bt_gold = new FontAwesome.Sharp.IconButton();
+            this.bt_painel = new FontAwesome.Sharp.IconButton();
+            this.bt_membros = new FontAwesome.Sharp.IconButton();
+            this.bt_cadastro = new FontAwesome.Sharp.IconButton();
             this.foto_perfil = new Mir4.script.RJCircularPictureBox();
             this.pl_menu.SuspendLayout();
             this.pl_conta.SuspendLayout();
@@ -83,7 +79,7 @@ namespace Mir4
             this.lb_nome_do_cla.BackColor = System.Drawing.Color.Transparent;
             this.lb_nome_do_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_nome_do_cla.ForeColor = System.Drawing.Color.White;
-            this.lb_nome_do_cla.Location = new System.Drawing.Point(13, 5);
+            this.lb_nome_do_cla.Location = new System.Drawing.Point(14, 4);
             this.lb_nome_do_cla.Name = "lb_nome_do_cla";
             this.lb_nome_do_cla.Size = new System.Drawing.Size(75, 20);
             this.lb_nome_do_cla.TabIndex = 51;
@@ -128,6 +124,120 @@ namespace Mir4
             this.pl_conta.Size = new System.Drawing.Size(206, 157);
             this.pl_conta.TabIndex = 0;
             // 
+            // pl_conf
+            // 
+            this.pl_conf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pl_conf.Controls.Add(this.bt_configurar);
+            this.pl_conf.Controls.Add(this.bt_deslogar);
+            this.pl_conf.Location = new System.Drawing.Point(0, 737);
+            this.pl_conf.Name = "pl_conf";
+            this.pl_conf.Size = new System.Drawing.Size(207, 43);
+            this.pl_conf.TabIndex = 0;
+            // 
+            // pl_top
+            // 
+            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
+            this.pl_top.Controls.Add(this.pl_nome_cla);
+            this.pl_top.Controls.Add(this.bt_maximizar);
+            this.pl_top.Controls.Add(this.bt_minimizar);
+            this.pl_top.Controls.Add(this.bt_fechar);
+            this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_top.Location = new System.Drawing.Point(210, 0);
+            this.pl_top.Name = "pl_top";
+            this.pl_top.Size = new System.Drawing.Size(1085, 38);
+            this.pl_top.TabIndex = 0;
+            this.pl_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseDown);
+            // 
+            // pl_nome_cla
+            // 
+            this.pl_nome_cla.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pl_nome_cla.Controls.Add(this.lb_nome_do_cla);
+            this.pl_nome_cla.Location = new System.Drawing.Point(6, 3);
+            this.pl_nome_cla.Name = "pl_nome_cla";
+            this.pl_nome_cla.Size = new System.Drawing.Size(102, 28);
+            this.pl_nome_cla.TabIndex = 47;
+            // 
+            // bt_maximizar
+            // 
+            this.bt_maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_maximizar.BackColor = System.Drawing.Color.Gray;
+            this.bt_maximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_maximizar.FlatAppearance.BorderSize = 0;
+            this.bt_maximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.bt_maximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.bt_maximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_maximizar.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_maximizar.ForeColor = System.Drawing.Color.White;
+            this.bt_maximizar.Location = new System.Drawing.Point(1021, 4);
+            this.bt_maximizar.Name = "bt_maximizar";
+            this.bt_maximizar.Size = new System.Drawing.Size(27, 26);
+            this.bt_maximizar.TabIndex = 46;
+            this.bt_maximizar.Text = "❐";
+            this.toolTip1.SetToolTip(this.bt_maximizar, "Maximizar");
+            this.bt_maximizar.UseVisualStyleBackColor = false;
+            this.bt_maximizar.Click += new System.EventHandler(this.bt_maximizar_Click);
+            // 
+            // bt_minimizar
+            // 
+            this.bt_minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_minimizar.BackColor = System.Drawing.Color.Gray;
+            this.bt_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_minimizar.FlatAppearance.BorderSize = 0;
+            this.bt_minimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.bt_minimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.bt_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_minimizar.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_minimizar.ForeColor = System.Drawing.Color.White;
+            this.bt_minimizar.Location = new System.Drawing.Point(988, 4);
+            this.bt_minimizar.Name = "bt_minimizar";
+            this.bt_minimizar.Size = new System.Drawing.Size(27, 26);
+            this.bt_minimizar.TabIndex = 45;
+            this.bt_minimizar.Text = "🗕";
+            this.toolTip1.SetToolTip(this.bt_minimizar, "Minimizar");
+            this.bt_minimizar.UseVisualStyleBackColor = false;
+            this.bt_minimizar.Click += new System.EventHandler(this.bt_minimizar_Click);
+            // 
+            // bt_fechar
+            // 
+            this.bt_fechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_fechar.BackColor = System.Drawing.Color.Gray;
+            this.bt_fechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_fechar.FlatAppearance.BorderSize = 0;
+            this.bt_fechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Tomato;
+            this.bt_fechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
+            this.bt_fechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_fechar.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_fechar.ForeColor = System.Drawing.Color.White;
+            this.bt_fechar.Location = new System.Drawing.Point(1054, 4);
+            this.bt_fechar.Name = "bt_fechar";
+            this.bt_fechar.Size = new System.Drawing.Size(27, 26);
+            this.bt_fechar.TabIndex = 44;
+            this.bt_fechar.Text = "X";
+            this.toolTip1.SetToolTip(this.bt_fechar, "Fechar");
+            this.bt_fechar.UseVisualStyleBackColor = false;
+            this.bt_fechar.Click += new System.EventHandler(this.bt_fechar_Click);
+            // 
+            // pl_centro
+            // 
+            this.pl_centro.BackColor = System.Drawing.Color.SlateGray;
+            this.pl_centro.Controls.Add(this.pl_conteudo);
+            this.pl_centro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pl_centro.Location = new System.Drawing.Point(210, 38);
+            this.pl_centro.Name = "pl_centro";
+            this.pl_centro.Size = new System.Drawing.Size(1085, 745);
+            this.pl_centro.TabIndex = 53;
+            // 
+            // pl_conteudo
+            // 
+            this.pl_conteudo.BackColor = System.Drawing.SystemColors.Control;
+            this.pl_conteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pl_conteudo.Location = new System.Drawing.Point(0, 0);
+            this.pl_conteudo.Name = "pl_conteudo";
+            this.pl_conteudo.Size = new System.Drawing.Size(1085, 745);
+            this.pl_conteudo.TabIndex = 49;
+            // 
             // bt_menu
             // 
             this.bt_menu.FlatAppearance.BorderSize = 0;
@@ -143,17 +253,6 @@ namespace Mir4
             this.bt_menu.Tag = "";
             this.bt_menu.UseVisualStyleBackColor = true;
             this.bt_menu.Click += new System.EventHandler(this.bt_menu_Click);
-            // 
-            // pl_conf
-            // 
-            this.pl_conf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pl_conf.Controls.Add(this.bt_configurar);
-            this.pl_conf.Controls.Add(this.bt_deslogar);
-            this.pl_conf.Location = new System.Drawing.Point(0, 737);
-            this.pl_conf.Name = "pl_conf";
-            this.pl_conf.Size = new System.Drawing.Size(207, 43);
-            this.pl_conf.TabIndex = 0;
             // 
             // bt_configurar
             // 
@@ -304,148 +403,6 @@ namespace Mir4
             this.bt_cadastro.UseVisualStyleBackColor = false;
             this.bt_cadastro.Click += new System.EventHandler(this.bt_cadastro_Click);
             // 
-            // pl_top
-            // 
-            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
-            this.pl_top.Controls.Add(this.pl_nome_cla);
-            this.pl_top.Controls.Add(this.bt_maximizar);
-            this.pl_top.Controls.Add(this.bt_minimizar);
-            this.pl_top.Controls.Add(this.bt_fechar);
-            this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_top.Location = new System.Drawing.Point(210, 0);
-            this.pl_top.Name = "pl_top";
-            this.pl_top.Size = new System.Drawing.Size(1085, 54);
-            this.pl_top.TabIndex = 0;
-            this.pl_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseDown);
-            // 
-            // pl_nome_cla
-            // 
-            this.pl_nome_cla.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pl_nome_cla.Controls.Add(this.lb_nome_do_cla);
-            this.pl_nome_cla.Location = new System.Drawing.Point(842, 8);
-            this.pl_nome_cla.Name = "pl_nome_cla";
-            this.pl_nome_cla.Size = new System.Drawing.Size(102, 33);
-            this.pl_nome_cla.TabIndex = 47;
-            // 
-            // bt_maximizar
-            // 
-            this.bt_maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_maximizar.BackColor = System.Drawing.Color.Gray;
-            this.bt_maximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_maximizar.FlatAppearance.BorderSize = 0;
-            this.bt_maximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.bt_maximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.bt_maximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_maximizar.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_maximizar.ForeColor = System.Drawing.Color.White;
-            this.bt_maximizar.Location = new System.Drawing.Point(1013, 6);
-            this.bt_maximizar.Name = "bt_maximizar";
-            this.bt_maximizar.Size = new System.Drawing.Size(27, 26);
-            this.bt_maximizar.TabIndex = 46;
-            this.bt_maximizar.Text = "❐";
-            this.bt_maximizar.UseVisualStyleBackColor = false;
-            this.bt_maximizar.Click += new System.EventHandler(this.bt_maximizar_Click);
-            // 
-            // bt_minimizar
-            // 
-            this.bt_minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_minimizar.BackColor = System.Drawing.Color.Gray;
-            this.bt_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_minimizar.FlatAppearance.BorderSize = 0;
-            this.bt_minimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.bt_minimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.bt_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_minimizar.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_minimizar.ForeColor = System.Drawing.Color.White;
-            this.bt_minimizar.Location = new System.Drawing.Point(980, 6);
-            this.bt_minimizar.Name = "bt_minimizar";
-            this.bt_minimizar.Size = new System.Drawing.Size(27, 26);
-            this.bt_minimizar.TabIndex = 45;
-            this.bt_minimizar.Text = "🗕";
-            this.bt_minimizar.UseVisualStyleBackColor = false;
-            this.bt_minimizar.Click += new System.EventHandler(this.bt_minimizar_Click);
-            // 
-            // bt_fechar
-            // 
-            this.bt_fechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_fechar.BackColor = System.Drawing.Color.Gray;
-            this.bt_fechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_fechar.FlatAppearance.BorderSize = 0;
-            this.bt_fechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Tomato;
-            this.bt_fechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
-            this.bt_fechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_fechar.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_fechar.ForeColor = System.Drawing.Color.White;
-            this.bt_fechar.Location = new System.Drawing.Point(1046, 6);
-            this.bt_fechar.Name = "bt_fechar";
-            this.bt_fechar.Size = new System.Drawing.Size(27, 26);
-            this.bt_fechar.TabIndex = 44;
-            this.bt_fechar.Text = "X";
-            this.bt_fechar.UseVisualStyleBackColor = false;
-            this.bt_fechar.Click += new System.EventHandler(this.bt_fechar_Click);
-            // 
-            // pl_centro
-            // 
-            this.pl_centro.BackColor = System.Drawing.Color.SlateGray;
-            this.pl_centro.Controls.Add(this.panel4);
-            this.pl_centro.Controls.Add(this.pl_conteudo);
-            this.pl_centro.Controls.Add(this.panel5);
-            this.pl_centro.Controls.Add(this.panel3);
-            this.pl_centro.Controls.Add(this.panel2);
-            this.pl_centro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pl_centro.Location = new System.Drawing.Point(210, 0);
-            this.pl_centro.Name = "pl_centro";
-            this.pl_centro.Size = new System.Drawing.Size(1085, 783);
-            this.pl_centro.TabIndex = 53;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.Control;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(70, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(945, 100);
-            this.panel4.TabIndex = 48;
-            // 
-            // pl_conteudo
-            // 
-            this.pl_conteudo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pl_conteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
-            this.pl_conteudo.Location = new System.Drawing.Point(70, 97);
-            this.pl_conteudo.Name = "pl_conteudo";
-            this.pl_conteudo.Size = new System.Drawing.Size(945, 636);
-            this.pl_conteudo.TabIndex = 49;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.Control;
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(70, 733);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(945, 50);
-            this.panel5.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1015, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(70, 783);
-            this.panel3.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(70, 783);
-            this.panel2.TabIndex = 0;
-            // 
             // foto_perfil
             // 
             this.foto_perfil.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
@@ -453,7 +410,9 @@ namespace Mir4
             this.foto_perfil.BorderColor2 = System.Drawing.Color.HotPink;
             this.foto_perfil.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.foto_perfil.BorderSize = 2;
+            this.foto_perfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.foto_perfil.GradientAngle = 50F;
+            this.foto_perfil.Image = global::Mir4.Properties.Resources.HYPE_03;
             this.foto_perfil.Location = new System.Drawing.Point(53, 7);
             this.foto_perfil.Name = "foto_perfil";
             this.foto_perfil.Size = new System.Drawing.Size(94, 94);
@@ -468,9 +427,10 @@ namespace Mir4
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1295, 783);
-            this.Controls.Add(this.pl_top);
             this.Controls.Add(this.pl_centro);
+            this.Controls.Add(this.pl_top);
             this.Controls.Add(this.pl_menu);
+            this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "cla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -509,10 +469,6 @@ namespace Mir4
         private System.Windows.Forms.Panel pl_conf;
         private System.Windows.Forms.Panel pl_conta;
         private System.Windows.Forms.Panel pl_nome_cla;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pl_conteudo;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel4;
     }
 }

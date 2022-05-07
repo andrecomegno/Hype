@@ -8,20 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Mir4
+namespace Mir4.painel
 {
-    public partial class Membros : Form
+    public partial class configuracao : UserControl
     {
-        public Membros()
+        public configuracao()
         {
             InitializeComponent();
-        }
-
-        private void bt_procurar_Click(object sender, EventArgs e)
-        {
-            detalhes_membros dm = new detalhes_membros();
-            dm.Show();
-
         }
     }
 }

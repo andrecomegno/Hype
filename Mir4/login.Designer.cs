@@ -29,91 +29,16 @@ namespace Mir4
         /// </summary>
         private void InitializeComponent()
         {
-            this.pl_login = new System.Windows.Forms.Panel();
-            this.lb_novo_cad = new System.Windows.Forms.Label();
-            this.bt_entrar = new System.Windows.Forms.Button();
-            this.lb_login = new System.Windows.Forms.Label();
-            this.txt_senha = new System.Windows.Forms.TextBox();
-            this.txt_login = new System.Windows.Forms.TextBox();
             this.txt_versao = new System.Windows.Forms.Label();
             this.bt_fechar = new System.Windows.Forms.Button();
+            this.txt_login = new System.Windows.Forms.TextBox();
+            this.txt_senha = new System.Windows.Forms.TextBox();
+            this.lb_login = new System.Windows.Forms.Label();
+            this.bt_entrar = new System.Windows.Forms.Button();
+            this.lb_novo_cad = new System.Windows.Forms.Label();
+            this.pl_login = new System.Windows.Forms.Panel();
             this.pl_login.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pl_login
-            // 
-            this.pl_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pl_login.Controls.Add(this.lb_novo_cad);
-            this.pl_login.Controls.Add(this.bt_entrar);
-            this.pl_login.Controls.Add(this.lb_login);
-            this.pl_login.Controls.Add(this.txt_senha);
-            this.pl_login.Controls.Add(this.txt_login);
-            this.pl_login.Location = new System.Drawing.Point(1, 54);
-            this.pl_login.Name = "pl_login";
-            this.pl_login.Size = new System.Drawing.Size(340, 287);
-            this.pl_login.TabIndex = 0;
-            this.pl_login.MouseDown += new System.Windows.Forms.MouseEventHandler(this.login_MouseDown);
-            this.pl_login.MouseMove += new System.Windows.Forms.MouseEventHandler(this.login_MouseMove);
-            this.pl_login.MouseUp += new System.Windows.Forms.MouseEventHandler(this.login_MouseUp);
-            // 
-            // lb_novo_cad
-            // 
-            this.lb_novo_cad.AutoSize = true;
-            this.lb_novo_cad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lb_novo_cad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_novo_cad.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lb_novo_cad.Location = new System.Drawing.Point(106, 247);
-            this.lb_novo_cad.Name = "lb_novo_cad";
-            this.lb_novo_cad.Size = new System.Drawing.Size(121, 13);
-            this.lb_novo_cad.TabIndex = 5;
-            this.lb_novo_cad.Text = "Criar Novo Cadastro";
-            this.lb_novo_cad.Click += new System.EventHandler(this.lb_novo_cad_Click);
-            // 
-            // bt_entrar
-            // 
-            this.bt_entrar.BackColor = System.Drawing.Color.YellowGreen;
-            this.bt_entrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_entrar.FlatAppearance.BorderSize = 0;
-            this.bt_entrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.bt_entrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.bt_entrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_entrar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_entrar.ForeColor = System.Drawing.Color.White;
-            this.bt_entrar.Location = new System.Drawing.Point(71, 176);
-            this.bt_entrar.Name = "bt_entrar";
-            this.bt_entrar.Size = new System.Drawing.Size(184, 58);
-            this.bt_entrar.TabIndex = 2;
-            this.bt_entrar.Text = "ENTRAR";
-            this.bt_entrar.UseVisualStyleBackColor = false;
-            this.bt_entrar.Click += new System.EventHandler(this.bt_entrar_Click_1);
-            // 
-            // lb_login
-            // 
-            this.lb_login.AutoSize = true;
-            this.lb_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_login.ForeColor = System.Drawing.Color.White;
-            this.lb_login.Location = new System.Drawing.Point(116, 13);
-            this.lb_login.Name = "lb_login";
-            this.lb_login.Size = new System.Drawing.Size(99, 31);
-            this.lb_login.TabIndex = 4;
-            this.lb_login.Text = "LOGIN";
-            // 
-            // txt_senha
-            // 
-            this.txt_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_senha.Location = new System.Drawing.Point(71, 129);
-            this.txt_senha.Name = "txt_senha";
-            this.txt_senha.Size = new System.Drawing.Size(184, 26);
-            this.txt_senha.TabIndex = 1;
-            this.txt_senha.UseSystemPasswordChar = true;
-            // 
-            // txt_login
-            // 
-            this.txt_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_login.Location = new System.Drawing.Point(71, 86);
-            this.txt_login.Name = "txt_login";
-            this.txt_login.Size = new System.Drawing.Size(184, 26);
-            this.txt_login.TabIndex = 0;
             // 
             // txt_versao
             // 
@@ -135,25 +60,100 @@ namespace Mir4
             this.bt_fechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Tomato;
             this.bt_fechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
             this.bt_fechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_fechar.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_fechar.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_fechar.ForeColor = System.Drawing.Color.White;
-            this.bt_fechar.Location = new System.Drawing.Point(307, -1);
+            this.bt_fechar.Location = new System.Drawing.Point(312, 4);
             this.bt_fechar.Name = "bt_fechar";
-            this.bt_fechar.Size = new System.Drawing.Size(37, 31);
-            this.bt_fechar.TabIndex = 46;
+            this.bt_fechar.Size = new System.Drawing.Size(27, 26);
+            this.bt_fechar.TabIndex = 45;
             this.bt_fechar.Text = "X";
             this.bt_fechar.UseVisualStyleBackColor = false;
             this.bt_fechar.Click += new System.EventHandler(this.bt_fechar_Click);
+            // 
+            // txt_login
+            // 
+            this.txt_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_login.Location = new System.Drawing.Point(71, 86);
+            this.txt_login.Name = "txt_login";
+            this.txt_login.Size = new System.Drawing.Size(184, 26);
+            this.txt_login.TabIndex = 0;
+            // 
+            // txt_senha
+            // 
+            this.txt_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_senha.Location = new System.Drawing.Point(71, 129);
+            this.txt_senha.Name = "txt_senha";
+            this.txt_senha.Size = new System.Drawing.Size(184, 26);
+            this.txt_senha.TabIndex = 1;
+            this.txt_senha.UseSystemPasswordChar = true;
+            // 
+            // lb_login
+            // 
+            this.lb_login.AutoSize = true;
+            this.lb_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_login.ForeColor = System.Drawing.Color.White;
+            this.lb_login.Location = new System.Drawing.Point(116, 13);
+            this.lb_login.Name = "lb_login";
+            this.lb_login.Size = new System.Drawing.Size(99, 31);
+            this.lb_login.TabIndex = 4;
+            this.lb_login.Text = "LOGIN";
+            // 
+            // bt_entrar
+            // 
+            this.bt_entrar.BackColor = System.Drawing.Color.YellowGreen;
+            this.bt_entrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_entrar.FlatAppearance.BorderSize = 0;
+            this.bt_entrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.bt_entrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.bt_entrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_entrar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_entrar.ForeColor = System.Drawing.Color.White;
+            this.bt_entrar.Location = new System.Drawing.Point(71, 176);
+            this.bt_entrar.Name = "bt_entrar";
+            this.bt_entrar.Size = new System.Drawing.Size(184, 58);
+            this.bt_entrar.TabIndex = 2;
+            this.bt_entrar.Text = "ENTRAR";
+            this.bt_entrar.UseVisualStyleBackColor = false;
+            this.bt_entrar.Click += new System.EventHandler(this.bt_entrar_Click_1);
+            // 
+            // lb_novo_cad
+            // 
+            this.lb_novo_cad.AutoSize = true;
+            this.lb_novo_cad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lb_novo_cad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_novo_cad.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lb_novo_cad.Location = new System.Drawing.Point(106, 247);
+            this.lb_novo_cad.Name = "lb_novo_cad";
+            this.lb_novo_cad.Size = new System.Drawing.Size(121, 13);
+            this.lb_novo_cad.TabIndex = 5;
+            this.lb_novo_cad.Text = "Criar Novo Cadastro";
+            this.lb_novo_cad.Click += new System.EventHandler(this.lb_novo_cad_Click);
+            // 
+            // pl_login
+            // 
+            this.pl_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
+            this.pl_login.Controls.Add(this.lb_novo_cad);
+            this.pl_login.Controls.Add(this.bt_entrar);
+            this.pl_login.Controls.Add(this.lb_login);
+            this.pl_login.Controls.Add(this.txt_senha);
+            this.pl_login.Controls.Add(this.txt_login);
+            this.pl_login.Location = new System.Drawing.Point(1, 54);
+            this.pl_login.Name = "pl_login";
+            this.pl_login.Size = new System.Drawing.Size(340, 287);
+            this.pl_login.TabIndex = 0;
+            this.pl_login.MouseDown += new System.Windows.Forms.MouseEventHandler(this.login_MouseDown);
+            this.pl_login.MouseMove += new System.Windows.Forms.MouseEventHandler(this.login_MouseMove);
+            this.pl_login.MouseUp += new System.Windows.Forms.MouseEventHandler(this.login_MouseUp);
             // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(343, 389);
-            this.Controls.Add(this.txt_versao);
             this.Controls.Add(this.bt_fechar);
+            this.Controls.Add(this.txt_versao);
             this.Controls.Add(this.pl_login);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -171,15 +171,14 @@ namespace Mir4
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pl_login;
-        private System.Windows.Forms.TextBox txt_login;
-        private System.Windows.Forms.Label lb_login;
-        private System.Windows.Forms.TextBox txt_senha;
         private System.Windows.Forms.Label txt_versao;
+        private System.Windows.Forms.Button bt_fechar;
+        private System.Windows.Forms.TextBox txt_login;
+        private System.Windows.Forms.TextBox txt_senha;
+        private System.Windows.Forms.Label lb_login;
         private System.Windows.Forms.Button bt_entrar;
         private System.Windows.Forms.Label lb_novo_cad;
-        private System.Windows.Forms.Button bt_fechar;
+        private System.Windows.Forms.Panel pl_login;
     }
 }
 

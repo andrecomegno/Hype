@@ -29,227 +29,63 @@ namespace Mir4
         /// </summary>
         private void InitializeComponent()
         {
-            this.gb_zero = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_patente = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.gp_um = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_vem = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txt_nick = new System.Windows.Forms.TextBox();
-            this.txt_nome = new System.Windows.Forms.Label();
-            this.bt_cancelar = new System.Windows.Forms.Button();
-            this.bt_cadastrar = new System.Windows.Forms.Button();
             this.pl_top = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lb_cadastramento = new System.Windows.Forms.Label();
             this.bt_minimizar = new System.Windows.Forms.Button();
             this.bt_fechar = new System.Windows.Forms.Button();
-            this.gb_zero.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.gp_um.SuspendLayout();
+            this.pl_geral = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pl_login = new System.Windows.Forms.Panel();
+            this.txt_conf_senha = new System.Windows.Forms.TextBox();
+            this.txt_login = new System.Windows.Forms.TextBox();
+            this.lb_conf_senha = new System.Windows.Forms.Label();
+            this.lb_login = new System.Windows.Forms.Label();
+            this.lb_senha = new System.Windows.Forms.Label();
+            this.txt_senha = new System.Windows.Forms.TextBox();
+            this.pl_nome_cla = new System.Windows.Forms.Panel();
+            this.txt_patente_cla = new System.Windows.Forms.ComboBox();
+            this.txt_nome_cla = new System.Windows.Forms.TextBox();
+            this.lb_patente_cla = new System.Windows.Forms.Label();
+            this.lb_nome_cla = new System.Windows.Forms.Label();
+            this.pl_espaco = new System.Windows.Forms.Panel();
+            this.pl_conta = new System.Windows.Forms.Panel();
+            this.foto_perfil = new Mir4.script.RJCircularPictureBox();
+            this.lb_patente = new System.Windows.Forms.Label();
+            this.lb_nick = new System.Windows.Forms.Label();
+            this.bt_cancelar = new System.Windows.Forms.Button();
+            this.bt_cadastrar = new System.Windows.Forms.Button();
             this.pl_top.SuspendLayout();
+            this.pl_geral.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.pl_login.SuspendLayout();
+            this.pl_nome_cla.SuspendLayout();
+            this.pl_conta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gb_zero
-            // 
-            this.gb_zero.Controls.Add(this.groupBox1);
-            this.gb_zero.Controls.Add(this.gp_um);
-            this.gb_zero.Controls.Add(this.bt_cancelar);
-            this.gb_zero.Controls.Add(this.bt_cadastrar);
-            this.gb_zero.Location = new System.Drawing.Point(4, 42);
-            this.gb_zero.Name = "gb_zero";
-            this.gb_zero.Size = new System.Drawing.Size(544, 279);
-            this.gb_zero.TabIndex = 48;
-            this.gb_zero.TabStop = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox1.Controls.Add(this.txt_patente);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(27, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(486, 82);
-            this.groupBox1.TabIndex = 20;
-            this.groupBox1.TabStop = false;
-            // 
-            // txt_patente
-            // 
-            this.txt_patente.FormattingEnabled = true;
-            this.txt_patente.Items.AddRange(new object[] {
-            "Ancião",
-            "Égide Sombria",
-            "Lider"});
-            this.txt_patente.Location = new System.Drawing.Point(199, 44);
-            this.txt_patente.Name = "txt_patente";
-            this.txt_patente.Size = new System.Drawing.Size(167, 21);
-            this.txt_patente.TabIndex = 13;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(136, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 17);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Patente";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(199, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(167, 20);
-            this.textBox4.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(104, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Nome do Cla";
-            // 
-            // gp_um
-            // 
-            this.gp_um.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gp_um.Controls.Add(this.textBox1);
-            this.gp_um.Controls.Add(this.label1);
-            this.gp_um.Controls.Add(this.txt_vem);
-            this.gp_um.Controls.Add(this.label9);
-            this.gp_um.Controls.Add(this.txt_nick);
-            this.gp_um.Controls.Add(this.txt_nome);
-            this.gp_um.Location = new System.Drawing.Point(27, 100);
-            this.gp_um.Name = "gp_um";
-            this.gp_um.Size = new System.Drawing.Size(486, 112);
-            this.gp_um.TabIndex = 14;
-            this.gp_um.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(199, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 20);
-            this.textBox1.TabIndex = 19;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(79, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 17);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Confirmar Senha";
-            // 
-            // txt_vem
-            // 
-            this.txt_vem.Location = new System.Drawing.Point(199, 45);
-            this.txt_vem.Name = "txt_vem";
-            this.txt_vem.Size = new System.Drawing.Size(167, 20);
-            this.txt_vem.TabIndex = 17;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(144, 48);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 17);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Senha";
-            // 
-            // txt_nick
-            // 
-            this.txt_nick.Location = new System.Drawing.Point(199, 19);
-            this.txt_nick.Name = "txt_nick";
-            this.txt_nick.Size = new System.Drawing.Size(167, 20);
-            this.txt_nick.TabIndex = 1;
-            // 
-            // txt_nome
-            // 
-            this.txt_nome.AutoSize = true;
-            this.txt_nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nome.ForeColor = System.Drawing.Color.White;
-            this.txt_nome.Location = new System.Drawing.Point(150, 22);
-            this.txt_nome.Name = "txt_nome";
-            this.txt_nome.Size = new System.Drawing.Size(43, 17);
-            this.txt_nome.TabIndex = 0;
-            this.txt_nome.Text = "Login";
-            // 
-            // bt_cancelar
-            // 
-            this.bt_cancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bt_cancelar.BackColor = System.Drawing.Color.Tomato;
-            this.bt_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cancelar.FlatAppearance.BorderSize = 0;
-            this.bt_cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
-            this.bt_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
-            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
-            this.bt_cancelar.Location = new System.Drawing.Point(403, 229);
-            this.bt_cancelar.Name = "bt_cancelar";
-            this.bt_cancelar.Size = new System.Drawing.Size(128, 42);
-            this.bt_cancelar.TabIndex = 41;
-            this.bt_cancelar.Text = "Cancelar";
-            this.bt_cancelar.UseVisualStyleBackColor = false;
-            // 
-            // bt_cadastrar
-            // 
-            this.bt_cadastrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bt_cadastrar.BackColor = System.Drawing.Color.YellowGreen;
-            this.bt_cadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cadastrar.FlatAppearance.BorderSize = 0;
-            this.bt_cadastrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.bt_cadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.bt_cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cadastrar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cadastrar.ForeColor = System.Drawing.Color.White;
-            this.bt_cadastrar.Location = new System.Drawing.Point(264, 229);
-            this.bt_cadastrar.Name = "bt_cadastrar";
-            this.bt_cadastrar.Size = new System.Drawing.Size(128, 42);
-            this.bt_cadastrar.TabIndex = 42;
-            this.bt_cadastrar.Text = "Cadastrar";
-            this.bt_cadastrar.UseVisualStyleBackColor = false;
             // 
             // pl_top
             // 
-            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pl_top.Controls.Add(this.label2);
+            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
+            this.pl_top.Controls.Add(this.lb_cadastramento);
             this.pl_top.Controls.Add(this.bt_minimizar);
             this.pl_top.Controls.Add(this.bt_fechar);
             this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_top.Location = new System.Drawing.Point(0, 0);
             this.pl_top.Name = "pl_top";
-            this.pl_top.Size = new System.Drawing.Size(554, 36);
+            this.pl_top.Size = new System.Drawing.Size(699, 36);
             this.pl_top.TabIndex = 49;
             this.pl_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseDown);
-            this.pl_top.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseMove);
-            this.pl_top.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseUp);
             // 
-            // label2
+            // lb_cadastramento
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 25);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Cadastramento";
+            this.lb_cadastramento.AutoSize = true;
+            this.lb_cadastramento.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_cadastramento.ForeColor = System.Drawing.Color.White;
+            this.lb_cadastramento.Location = new System.Drawing.Point(12, 5);
+            this.lb_cadastramento.Name = "lb_cadastramento";
+            this.lb_cadastramento.Size = new System.Drawing.Size(146, 25);
+            this.lb_cadastramento.TabIndex = 14;
+            this.lb_cadastramento.Text = "Cadastramento";
             // 
             // bt_minimizar
             // 
@@ -257,12 +93,10 @@ namespace Mir4
             this.bt_minimizar.BackColor = System.Drawing.Color.Gray;
             this.bt_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_minimizar.FlatAppearance.BorderSize = 0;
-            this.bt_minimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.bt_minimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.bt_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_minimizar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_minimizar.ForeColor = System.Drawing.Color.White;
-            this.bt_minimizar.Location = new System.Drawing.Point(476, 5);
+            this.bt_minimizar.Location = new System.Drawing.Point(629, 5);
             this.bt_minimizar.Name = "bt_minimizar";
             this.bt_minimizar.Size = new System.Drawing.Size(29, 21);
             this.bt_minimizar.TabIndex = 55;
@@ -281,7 +115,7 @@ namespace Mir4
             this.bt_fechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_fechar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_fechar.ForeColor = System.Drawing.Color.White;
-            this.bt_fechar.Location = new System.Drawing.Point(519, 5);
+            this.bt_fechar.Location = new System.Drawing.Point(664, 5);
             this.bt_fechar.Name = "bt_fechar";
             this.bt_fechar.Size = new System.Drawing.Size(29, 21);
             this.bt_fechar.TabIndex = 54;
@@ -289,50 +123,302 @@ namespace Mir4
             this.bt_fechar.UseVisualStyleBackColor = false;
             this.bt_fechar.Click += new System.EventHandler(this.bt_fechar_Click);
             // 
+            // pl_geral
+            // 
+            this.pl_geral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.pl_geral.Controls.Add(this.bt_cancelar);
+            this.pl_geral.Controls.Add(this.panel2);
+            this.pl_geral.Controls.Add(this.bt_cadastrar);
+            this.pl_geral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pl_geral.Location = new System.Drawing.Point(0, 36);
+            this.pl_geral.Name = "pl_geral";
+            this.pl_geral.Size = new System.Drawing.Size(699, 301);
+            this.pl_geral.TabIndex = 50;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.panel2.Controls.Add(this.pl_conta);
+            this.panel2.Controls.Add(this.pl_espaco);
+            this.panel2.Controls.Add(this.pl_login);
+            this.panel2.Controls.Add(this.pl_nome_cla);
+            this.panel2.Location = new System.Drawing.Point(17, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(670, 238);
+            this.panel2.TabIndex = 0;
+            // 
+            // pl_login
+            // 
+            this.pl_login.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pl_login.Controls.Add(this.txt_conf_senha);
+            this.pl_login.Controls.Add(this.txt_login);
+            this.pl_login.Controls.Add(this.lb_conf_senha);
+            this.pl_login.Controls.Add(this.lb_login);
+            this.pl_login.Controls.Add(this.lb_senha);
+            this.pl_login.Controls.Add(this.txt_senha);
+            this.pl_login.Location = new System.Drawing.Point(222, 89);
+            this.pl_login.Name = "pl_login";
+            this.pl_login.Size = new System.Drawing.Size(428, 88);
+            this.pl_login.TabIndex = 27;
+            // 
+            // txt_conf_senha
+            // 
+            this.txt_conf_senha.Location = new System.Drawing.Point(178, 59);
+            this.txt_conf_senha.Name = "txt_conf_senha";
+            this.txt_conf_senha.Size = new System.Drawing.Size(167, 20);
+            this.txt_conf_senha.TabIndex = 19;
+            // 
+            // txt_login
+            // 
+            this.txt_login.Location = new System.Drawing.Point(178, 7);
+            this.txt_login.Name = "txt_login";
+            this.txt_login.Size = new System.Drawing.Size(167, 20);
+            this.txt_login.TabIndex = 1;
+            // 
+            // lb_conf_senha
+            // 
+            this.lb_conf_senha.AutoSize = true;
+            this.lb_conf_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_conf_senha.ForeColor = System.Drawing.Color.White;
+            this.lb_conf_senha.Location = new System.Drawing.Point(58, 60);
+            this.lb_conf_senha.Name = "lb_conf_senha";
+            this.lb_conf_senha.Size = new System.Drawing.Size(114, 17);
+            this.lb_conf_senha.TabIndex = 18;
+            this.lb_conf_senha.Text = "Confirmar Senha";
+            // 
+            // lb_login
+            // 
+            this.lb_login.AutoSize = true;
+            this.lb_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_login.ForeColor = System.Drawing.Color.White;
+            this.lb_login.Location = new System.Drawing.Point(129, 10);
+            this.lb_login.Name = "lb_login";
+            this.lb_login.Size = new System.Drawing.Size(43, 17);
+            this.lb_login.TabIndex = 0;
+            this.lb_login.Text = "Login";
+            // 
+            // lb_senha
+            // 
+            this.lb_senha.AutoSize = true;
+            this.lb_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_senha.ForeColor = System.Drawing.Color.White;
+            this.lb_senha.Location = new System.Drawing.Point(123, 36);
+            this.lb_senha.Name = "lb_senha";
+            this.lb_senha.Size = new System.Drawing.Size(49, 17);
+            this.lb_senha.TabIndex = 12;
+            this.lb_senha.Text = "Senha";
+            // 
+            // txt_senha
+            // 
+            this.txt_senha.Location = new System.Drawing.Point(178, 33);
+            this.txt_senha.Name = "txt_senha";
+            this.txt_senha.Size = new System.Drawing.Size(167, 20);
+            this.txt_senha.TabIndex = 17;
+            // 
+            // pl_nome_cla
+            // 
+            this.pl_nome_cla.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pl_nome_cla.Controls.Add(this.txt_patente_cla);
+            this.pl_nome_cla.Controls.Add(this.txt_nome_cla);
+            this.pl_nome_cla.Controls.Add(this.lb_patente_cla);
+            this.pl_nome_cla.Controls.Add(this.lb_nome_cla);
+            this.pl_nome_cla.Location = new System.Drawing.Point(222, 3);
+            this.pl_nome_cla.Name = "pl_nome_cla";
+            this.pl_nome_cla.Size = new System.Drawing.Size(428, 87);
+            this.pl_nome_cla.TabIndex = 26;
+            // 
+            // txt_patente_cla
+            // 
+            this.txt_patente_cla.FormattingEnabled = true;
+            this.txt_patente_cla.Items.AddRange(new object[] {
+            "Ancião",
+            "Égide Sombria",
+            "Lider"});
+            this.txt_patente_cla.Location = new System.Drawing.Point(181, 58);
+            this.txt_patente_cla.Name = "txt_patente_cla";
+            this.txt_patente_cla.Size = new System.Drawing.Size(167, 21);
+            this.txt_patente_cla.TabIndex = 13;
+            // 
+            // txt_nome_cla
+            // 
+            this.txt_nome_cla.Location = new System.Drawing.Point(181, 29);
+            this.txt_nome_cla.Name = "txt_nome_cla";
+            this.txt_nome_cla.Size = new System.Drawing.Size(167, 20);
+            this.txt_nome_cla.TabIndex = 1;
+            // 
+            // lb_patente_cla
+            // 
+            this.lb_patente_cla.AutoSize = true;
+            this.lb_patente_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_patente_cla.ForeColor = System.Drawing.Color.White;
+            this.lb_patente_cla.Location = new System.Drawing.Point(118, 58);
+            this.lb_patente_cla.Name = "lb_patente_cla";
+            this.lb_patente_cla.Size = new System.Drawing.Size(57, 17);
+            this.lb_patente_cla.TabIndex = 12;
+            this.lb_patente_cla.Text = "Patente";
+            // 
+            // lb_nome_cla
+            // 
+            this.lb_nome_cla.AutoSize = true;
+            this.lb_nome_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nome_cla.ForeColor = System.Drawing.Color.White;
+            this.lb_nome_cla.Location = new System.Drawing.Point(86, 32);
+            this.lb_nome_cla.Name = "lb_nome_cla";
+            this.lb_nome_cla.Size = new System.Drawing.Size(89, 17);
+            this.lb_nome_cla.TabIndex = 0;
+            this.lb_nome_cla.Text = "Nome do Cla";
+            // 
+            // pl_espaco
+            // 
+            this.pl_espaco.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pl_espaco.Location = new System.Drawing.Point(7, 183);
+            this.pl_espaco.Name = "pl_espaco";
+            this.pl_espaco.Size = new System.Drawing.Size(643, 42);
+            this.pl_espaco.TabIndex = 27;
+            // 
+            // pl_conta
+            // 
+            this.pl_conta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pl_conta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.pl_conta.Controls.Add(this.foto_perfil);
+            this.pl_conta.Controls.Add(this.lb_patente);
+            this.pl_conta.Controls.Add(this.lb_nick);
+            this.pl_conta.Location = new System.Drawing.Point(7, 3);
+            this.pl_conta.Name = "pl_conta";
+            this.pl_conta.Size = new System.Drawing.Size(206, 174);
+            this.pl_conta.TabIndex = 29;
+            // 
+            // foto_perfil
+            // 
+            this.foto_perfil.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.foto_perfil.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.foto_perfil.BorderColor2 = System.Drawing.Color.HotPink;
+            this.foto_perfil.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.foto_perfil.BorderSize = 2;
+            this.foto_perfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.foto_perfil.GradientAngle = 50F;
+            this.foto_perfil.Image = global::Mir4.Properties.Resources.HYPE_03;
+            this.foto_perfil.Location = new System.Drawing.Point(53, 26);
+            this.foto_perfil.Name = "foto_perfil";
+            this.foto_perfil.Size = new System.Drawing.Size(94, 94);
+            this.foto_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.foto_perfil.TabIndex = 0;
+            this.foto_perfil.TabStop = false;
+            this.foto_perfil.Click += new System.EventHandler(this.foto_perfil_Click);
+            // 
+            // lb_patente
+            // 
+            this.lb_patente.AutoSize = true;
+            this.lb_patente.BackColor = System.Drawing.Color.Transparent;
+            this.lb_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_patente.ForeColor = System.Drawing.Color.Gray;
+            this.lb_patente.Location = new System.Drawing.Point(75, 146);
+            this.lb_patente.Name = "lb_patente";
+            this.lb_patente.Size = new System.Drawing.Size(49, 20);
+            this.lb_patente.TabIndex = 50;
+            this.lb_patente.Text = "Lider";
+            // 
+            // lb_nick
+            // 
+            this.lb_nick.AutoSize = true;
+            this.lb_nick.BackColor = System.Drawing.Color.Transparent;
+            this.lb_nick.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nick.ForeColor = System.Drawing.Color.White;
+            this.lb_nick.Location = new System.Drawing.Point(50, 126);
+            this.lb_nick.Name = "lb_nick";
+            this.lb_nick.Size = new System.Drawing.Size(107, 20);
+            this.lb_nick.TabIndex = 48;
+            this.lb_nick.Text = "Andy Makler";
+            // 
+            // bt_cancelar
+            // 
+            this.bt_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_cancelar.BackColor = System.Drawing.Color.Tomato;
+            this.bt_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cancelar.FlatAppearance.BorderSize = 0;
+            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
+            this.bt_cancelar.Location = new System.Drawing.Point(559, 247);
+            this.bt_cancelar.Name = "bt_cancelar";
+            this.bt_cancelar.Size = new System.Drawing.Size(128, 42);
+            this.bt_cancelar.TabIndex = 43;
+            this.bt_cancelar.Text = "Cancelar";
+            this.bt_cancelar.UseVisualStyleBackColor = false;
+            // 
+            // bt_cadastrar
+            // 
+            this.bt_cadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_cadastrar.BackColor = System.Drawing.Color.YellowGreen;
+            this.bt_cadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cadastrar.FlatAppearance.BorderSize = 0;
+            this.bt_cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cadastrar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cadastrar.ForeColor = System.Drawing.Color.White;
+            this.bt_cadastrar.Location = new System.Drawing.Point(417, 247);
+            this.bt_cadastrar.Name = "bt_cadastrar";
+            this.bt_cadastrar.Size = new System.Drawing.Size(128, 42);
+            this.bt_cadastrar.TabIndex = 44;
+            this.bt_cadastrar.Text = "Cadastrar";
+            this.bt_cadastrar.UseVisualStyleBackColor = false;
+            // 
             // criar_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(554, 325);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(699, 337);
+            this.Controls.Add(this.pl_geral);
             this.Controls.Add(this.pl_top);
-            this.Controls.Add(this.gb_zero);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "criar_login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HYPE - Criar Novo Login";
-            this.gb_zero.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.gp_um.ResumeLayout(false);
-            this.gp_um.PerformLayout();
             this.pl_top.ResumeLayout(false);
             this.pl_top.PerformLayout();
+            this.pl_geral.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.pl_login.ResumeLayout(false);
+            this.pl_login.PerformLayout();
+            this.pl_nome_cla.ResumeLayout(false);
+            this.pl_nome_cla.PerformLayout();
+            this.pl_conta.ResumeLayout(false);
+            this.pl_conta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox gb_zero;
-        private System.Windows.Forms.GroupBox gp_um;
-        private System.Windows.Forms.TextBox txt_vem;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txt_nick;
-        private System.Windows.Forms.Label txt_nome;
-        private System.Windows.Forms.Button bt_cancelar;
-        private System.Windows.Forms.Button bt_cadastrar;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox txt_patente;
         private System.Windows.Forms.Panel pl_top;
         private System.Windows.Forms.Button bt_minimizar;
         private System.Windows.Forms.Button bt_fechar;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lb_cadastramento;
+        private System.Windows.Forms.Panel pl_geral;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pl_login;
+        private System.Windows.Forms.TextBox txt_conf_senha;
+        private System.Windows.Forms.TextBox txt_login;
+        private System.Windows.Forms.Label lb_conf_senha;
+        private System.Windows.Forms.Label lb_login;
+        private System.Windows.Forms.Label lb_senha;
+        private System.Windows.Forms.TextBox txt_senha;
+        private System.Windows.Forms.Panel pl_nome_cla;
+        private System.Windows.Forms.ComboBox txt_patente_cla;
+        private System.Windows.Forms.TextBox txt_nome_cla;
+        private System.Windows.Forms.Label lb_patente_cla;
+        private System.Windows.Forms.Label lb_nome_cla;
+        private System.Windows.Forms.Panel pl_espaco;
+        private System.Windows.Forms.Panel pl_conta;
+        private script.RJCircularPictureBox foto_perfil;
+        private System.Windows.Forms.Label lb_patente;
+        private System.Windows.Forms.Label lb_nick;
+        private System.Windows.Forms.Button bt_cancelar;
+        private System.Windows.Forms.Button bt_cadastrar;
     }
 }
