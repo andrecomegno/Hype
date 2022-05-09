@@ -16,5 +16,25 @@ namespace Mir4.painel
         {
             InitializeComponent();
         }
+
+        private void bt_novo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_editar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_deletar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_procurar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

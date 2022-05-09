@@ -31,10 +31,9 @@ namespace Mir4.painel
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bt_painel = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.bt_novo = new FontAwesome.Sharp.IconButton();
+            this.bt_deletar = new FontAwesome.Sharp.IconButton();
+            this.bt_editar = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.bt_procurar = new System.Windows.Forms.Button();
             this.txt_procurar = new System.Windows.Forms.TextBox();
@@ -62,110 +61,88 @@ namespace Mir4.painel
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.bt_painel);
-            this.panel2.Controls.Add(this.iconButton1);
-            this.panel2.Controls.Add(this.iconButton3);
-            this.panel2.Controls.Add(this.iconButton2);
+            this.panel2.Controls.Add(this.bt_novo);
+            this.panel2.Controls.Add(this.bt_deletar);
+            this.panel2.Controls.Add(this.bt_editar);
             this.panel2.Location = new System.Drawing.Point(27, 17);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1153, 48);
             this.panel2.TabIndex = 77;
             // 
-            // bt_painel
+            // bt_novo
             // 
-            this.bt_painel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_painel.BackColor = System.Drawing.Color.YellowGreen;
-            this.bt_painel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_painel.FlatAppearance.BorderSize = 0;
-            this.bt_painel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_painel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_painel.ForeColor = System.Drawing.Color.White;
-            this.bt_painel.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
-            this.bt_painel.IconColor = System.Drawing.Color.White;
-            this.bt_painel.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_painel.IconSize = 35;
-            this.bt_painel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_painel.Location = new System.Drawing.Point(310, 3);
-            this.bt_painel.Name = "bt_painel";
-            this.bt_painel.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_painel.Size = new System.Drawing.Size(120, 40);
-            this.bt_painel.TabIndex = 63;
-            this.bt_painel.Tag = "Painel";
-            this.bt_painel.Text = "Painel";
-            this.bt_painel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bt_painel.UseVisualStyleBackColor = false;
+            this.bt_novo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_novo.BackColor = System.Drawing.Color.YellowGreen;
+            this.bt_novo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_novo.FlatAppearance.BorderSize = 0;
+            this.bt_novo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_novo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_novo.ForeColor = System.Drawing.Color.White;
+            this.bt_novo.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.bt_novo.IconColor = System.Drawing.Color.White;
+            this.bt_novo.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_novo.IconSize = 35;
+            this.bt_novo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_novo.Location = new System.Drawing.Point(388, 4);
+            this.bt_novo.Name = "bt_novo";
+            this.bt_novo.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_novo.Size = new System.Drawing.Size(120, 40);
+            this.bt_novo.TabIndex = 63;
+            this.bt_novo.Tag = "";
+            this.bt_novo.Text = "Novo";
+            this.bt_novo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bt_novo.UseVisualStyleBackColor = false;
+            this.bt_novo.Click += new System.EventHandler(this.bt_novo_Click);
             // 
-            // iconButton1
+            // bt_deletar
             // 
-            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton1.BackColor = System.Drawing.Color.YellowGreen;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton1.IconSize = 35;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(436, 3);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.iconButton1.Size = new System.Drawing.Size(120, 40);
-            this.iconButton1.TabIndex = 64;
-            this.iconButton1.Tag = "Painel";
-            this.iconButton1.Text = "Painel";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.bt_deletar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_deletar.BackColor = System.Drawing.Color.DarkSalmon;
+            this.bt_deletar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_deletar.FlatAppearance.BorderSize = 0;
+            this.bt_deletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_deletar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_deletar.ForeColor = System.Drawing.Color.White;
+            this.bt_deletar.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
+            this.bt_deletar.IconColor = System.Drawing.Color.White;
+            this.bt_deletar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_deletar.IconSize = 35;
+            this.bt_deletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_deletar.Location = new System.Drawing.Point(640, 4);
+            this.bt_deletar.Name = "bt_deletar";
+            this.bt_deletar.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_deletar.Size = new System.Drawing.Size(125, 40);
+            this.bt_deletar.TabIndex = 64;
+            this.bt_deletar.Tag = "";
+            this.bt_deletar.Text = "Deletar";
+            this.bt_deletar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bt_deletar.UseVisualStyleBackColor = false;
+            this.bt_deletar.Click += new System.EventHandler(this.bt_deletar_Click);
             // 
-            // iconButton3
+            // bt_editar
             // 
-            this.iconButton3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton3.BackColor = System.Drawing.Color.YellowGreen;
-            this.iconButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.ForeColor = System.Drawing.Color.White;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
-            this.iconButton3.IconColor = System.Drawing.Color.White;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton3.IconSize = 35;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(688, 3);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.iconButton3.Size = new System.Drawing.Size(120, 40);
-            this.iconButton3.TabIndex = 66;
-            this.iconButton3.Tag = "Painel";
-            this.iconButton3.Text = "Painel";
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = false;
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton2.BackColor = System.Drawing.Color.YellowGreen;
-            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.Color.White;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
-            this.iconButton2.IconColor = System.Drawing.Color.White;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton2.IconSize = 35;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(562, 3);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.iconButton2.Size = new System.Drawing.Size(120, 40);
-            this.iconButton2.TabIndex = 65;
-            this.iconButton2.Tag = "Painel";
-            this.iconButton2.Text = "Painel";
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = false;
+            this.bt_editar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_editar.BackColor = System.Drawing.Color.Gold;
+            this.bt_editar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_editar.FlatAppearance.BorderSize = 0;
+            this.bt_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_editar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_editar.ForeColor = System.Drawing.Color.White;
+            this.bt_editar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.bt_editar.IconColor = System.Drawing.Color.White;
+            this.bt_editar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_editar.IconSize = 35;
+            this.bt_editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_editar.Location = new System.Drawing.Point(514, 4);
+            this.bt_editar.Name = "bt_editar";
+            this.bt_editar.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_editar.Size = new System.Drawing.Size(120, 40);
+            this.bt_editar.TabIndex = 65;
+            this.bt_editar.Tag = "";
+            this.bt_editar.Text = "Editar";
+            this.bt_editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bt_editar.UseVisualStyleBackColor = false;
+            this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
             // 
             // panel3
             // 
@@ -181,7 +158,7 @@ namespace Mir4.painel
             // bt_procurar
             // 
             this.bt_procurar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_procurar.BackColor = System.Drawing.Color.Gold;
+            this.bt_procurar.BackColor = System.Drawing.Color.CadetBlue;
             this.bt_procurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_procurar.FlatAppearance.BorderSize = 0;
             this.bt_procurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -193,6 +170,7 @@ namespace Mir4.painel
             this.bt_procurar.TabIndex = 61;
             this.bt_procurar.Text = "Procurar";
             this.bt_procurar.UseVisualStyleBackColor = false;
+            this.bt_procurar.Click += new System.EventHandler(this.bt_procurar_Click);
             // 
             // txt_procurar
             // 
@@ -245,10 +223,9 @@ namespace Mir4.painel
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconButton bt_painel;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton bt_novo;
+        private FontAwesome.Sharp.IconButton bt_deletar;
+        private FontAwesome.Sharp.IconButton bt_editar;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button bt_procurar;
         private System.Windows.Forms.TextBox txt_procurar;

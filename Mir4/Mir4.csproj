@@ -103,6 +103,12 @@
     <Compile Include="painel\membros.Designer.cs">
       <DependentUpon>membros.cs</DependentUpon>
     </Compile>
+    <Compile Include="painel\membros_detalhes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="painel\membros_detalhes.Designer.cs">
+      <DependentUpon>membros_detalhes.cs</DependentUpon>
+    </Compile>
     <Compile Include="painel\novo_cla.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="painel\membros.resx">
       <DependentUpon>membros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="painel\membros_detalhes.resx">
+      <DependentUpon>membros_detalhes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="painel\novo_cla.resx">
       <DependentUpon>novo_cla.cs</DependentUpon>

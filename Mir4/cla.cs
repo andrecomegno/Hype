@@ -95,9 +95,6 @@ namespace Mir4
 
         public void addControl(UserControl userControl)
         {
-            //if (this.pl_conteudo.Controls.Count > 0)
-            //    this.pl_conteudo.Controls.RemoveAt(0);
-
             userControl.Dock = DockStyle.Fill;
             pl_conteudo.Controls.Clear();
             pl_conteudo.Controls.Add(userControl);

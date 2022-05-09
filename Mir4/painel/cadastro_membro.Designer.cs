@@ -30,6 +30,28 @@ namespace Mir4.painel
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lb_obser = new System.Windows.Forms.Label();
+            this.bt_cadastrar = new System.Windows.Forms.Button();
+            this.txt_obser = new System.Windows.Forms.TextBox();
+            this.bt_cancelar = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_nick_alt = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_classe_alt = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.rd_nao_alt = new System.Windows.Forms.RadioButton();
+            this.rd_sim_alt = new System.Windows.Forms.RadioButton();
+            this.txt_para_alt = new System.Windows.Forms.ComboBox();
+            this.lb_alt = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_poder_alt = new System.Windows.Forms.TextBox();
+            this.txt_nivel_alt = new System.Windows.Forms.ComboBox();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txt_nick = new System.Windows.Forms.TextBox();
             this.txt_classe = new System.Windows.Forms.ComboBox();
@@ -48,36 +70,14 @@ namespace Mir4.painel
             this.rd_sim = new System.Windows.Forms.RadioButton();
             this.txt_patente = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lb_obser = new System.Windows.Forms.Label();
-            this.bt_cadastrar = new System.Windows.Forms.Button();
-            this.txt_obser = new System.Windows.Forms.TextBox();
-            this.bt_cancelar = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txt_nick_alt = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txt_classe_alt = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.rd_nao_alt = new System.Windows.Forms.RadioButton();
-            this.rd_sim_alt = new System.Windows.Forms.RadioButton();
-            this.txt_para_alt = new System.Windows.Forms.ComboBox();
-            this.lb_alt = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txt_poder_alt = new System.Windows.Forms.TextBox();
-            this.txt_nivel_alt = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -91,6 +91,418 @@ namespace Mir4.painel
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1200, 720);
             this.panel1.TabIndex = 0;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.panel4);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 194);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1200, 416);
+            this.panel8.TabIndex = 60;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.Controls.Add(this.lb_obser);
+            this.panel4.Controls.Add(this.bt_cadastrar);
+            this.panel4.Controls.Add(this.txt_obser);
+            this.panel4.Controls.Add(this.bt_cancelar);
+            this.panel4.Location = new System.Drawing.Point(103, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1010, 369);
+            this.panel4.TabIndex = 56;
+            // 
+            // lb_obser
+            // 
+            this.lb_obser.AutoSize = true;
+            this.lb_obser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_obser.ForeColor = System.Drawing.Color.Black;
+            this.lb_obser.Location = new System.Drawing.Point(407, 7);
+            this.lb_obser.Name = "lb_obser";
+            this.lb_obser.Size = new System.Drawing.Size(129, 25);
+            this.lb_obser.TabIndex = 16;
+            this.lb_obser.Text = "Observações";
+            // 
+            // bt_cadastrar
+            // 
+            this.bt_cadastrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bt_cadastrar.BackColor = System.Drawing.Color.YellowGreen;
+            this.bt_cadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cadastrar.FlatAppearance.BorderSize = 0;
+            this.bt_cadastrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.bt_cadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.bt_cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cadastrar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cadastrar.ForeColor = System.Drawing.Color.White;
+            this.bt_cadastrar.Location = new System.Drawing.Point(658, 268);
+            this.bt_cadastrar.Name = "bt_cadastrar";
+            this.bt_cadastrar.Size = new System.Drawing.Size(128, 42);
+            this.bt_cadastrar.TabIndex = 47;
+            this.bt_cadastrar.Text = "Cadastrar";
+            this.bt_cadastrar.UseVisualStyleBackColor = false;
+            // 
+            // txt_obser
+            // 
+            this.txt_obser.Location = new System.Drawing.Point(67, 35);
+            this.txt_obser.Multiline = true;
+            this.txt_obser.Name = "txt_obser";
+            this.txt_obser.Size = new System.Drawing.Size(853, 227);
+            this.txt_obser.TabIndex = 16;
+            // 
+            // bt_cancelar
+            // 
+            this.bt_cancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bt_cancelar.BackColor = System.Drawing.Color.DarkSalmon;
+            this.bt_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cancelar.FlatAppearance.BorderSize = 0;
+            this.bt_cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
+            this.bt_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
+            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
+            this.bt_cancelar.Location = new System.Drawing.Point(792, 268);
+            this.bt_cancelar.Name = "bt_cancelar";
+            this.bt_cancelar.Size = new System.Drawing.Size(128, 42);
+            this.bt_cancelar.TabIndex = 46;
+            this.bt_cancelar.Text = "Cancelar";
+            this.bt_cancelar.UseVisualStyleBackColor = false;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.panel2);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 117);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1200, 77);
+            this.panel7.TabIndex = 59;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.Controls.Add(this.txt_nick_alt);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.txt_classe_alt);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.rd_nao_alt);
+            this.panel2.Controls.Add(this.rd_sim_alt);
+            this.panel2.Controls.Add(this.txt_para_alt);
+            this.panel2.Controls.Add(this.lb_alt);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.txt_poder_alt);
+            this.panel2.Controls.Add(this.txt_nivel_alt);
+            this.panel2.ForeColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(103, -9);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1010, 87);
+            this.panel2.TabIndex = 54;
+            // 
+            // txt_nick_alt
+            // 
+            this.txt_nick_alt.BackColor = System.Drawing.Color.White;
+            this.txt_nick_alt.Location = new System.Drawing.Point(132, 22);
+            this.txt_nick_alt.Name = "txt_nick_alt";
+            this.txt_nick_alt.Size = new System.Drawing.Size(290, 20);
+            this.txt_nick_alt.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(432, 25);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 17);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Nivel";
+            // 
+            // txt_classe_alt
+            // 
+            this.txt_classe_alt.BackColor = System.Drawing.Color.White;
+            this.txt_classe_alt.FormattingEnabled = true;
+            this.txt_classe_alt.Items.AddRange(new object[] {
+            "Besteira",
+            "Feiticeira",
+            "Guerreiro",
+            "Lanceiro",
+            "Taoista"});
+            this.txt_classe_alt.Location = new System.Drawing.Point(800, 20);
+            this.txt_classe_alt.Name = "txt_classe_alt";
+            this.txt_classe_alt.Size = new System.Drawing.Size(129, 21);
+            this.txt_classe_alt.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(744, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 17);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Classe";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(556, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 17);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Poder";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(78, 52);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(48, 17);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Clã Alt";
+            // 
+            // rd_nao_alt
+            // 
+            this.rd_nao_alt.AutoSize = true;
+            this.rd_nao_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rd_nao_alt.ForeColor = System.Drawing.Color.Black;
+            this.rd_nao_alt.Location = new System.Drawing.Point(499, 50);
+            this.rd_nao_alt.Name = "rd_nao_alt";
+            this.rd_nao_alt.Size = new System.Drawing.Size(52, 21);
+            this.rd_nao_alt.TabIndex = 18;
+            this.rd_nao_alt.TabStop = true;
+            this.rd_nao_alt.Text = "Não";
+            this.rd_nao_alt.UseVisualStyleBackColor = true;
+            // 
+            // rd_sim_alt
+            // 
+            this.rd_sim_alt.AutoSize = true;
+            this.rd_sim_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rd_sim_alt.ForeColor = System.Drawing.Color.Black;
+            this.rd_sim_alt.Location = new System.Drawing.Point(444, 50);
+            this.rd_sim_alt.Name = "rd_sim_alt";
+            this.rd_sim_alt.Size = new System.Drawing.Size(49, 21);
+            this.rd_sim_alt.TabIndex = 17;
+            this.rd_sim_alt.TabStop = true;
+            this.rd_sim_alt.Text = "Sim";
+            this.rd_sim_alt.UseVisualStyleBackColor = true;
+            // 
+            // txt_para_alt
+            // 
+            this.txt_para_alt.FormattingEnabled = true;
+            this.txt_para_alt.Items.AddRange(new object[] {
+            "THE ANCIENTS"});
+            this.txt_para_alt.Location = new System.Drawing.Point(132, 48);
+            this.txt_para_alt.Name = "txt_para_alt";
+            this.txt_para_alt.Size = new System.Drawing.Size(157, 21);
+            this.txt_para_alt.TabIndex = 17;
+            // 
+            // lb_alt
+            // 
+            this.lb_alt.AutoSize = true;
+            this.lb_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_alt.ForeColor = System.Drawing.Color.Black;
+            this.lb_alt.Location = new System.Drawing.Point(305, 52);
+            this.lb_alt.Name = "lb_alt";
+            this.lb_alt.Size = new System.Drawing.Size(133, 17);
+            this.lb_alt.TabIndex = 17;
+            this.lb_alt.Text = "Alt de Progressão ?";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(91, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 17);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Nick";
+            // 
+            // txt_poder_alt
+            // 
+            this.txt_poder_alt.BackColor = System.Drawing.Color.White;
+            this.txt_poder_alt.Location = new System.Drawing.Point(608, 21);
+            this.txt_poder_alt.Name = "txt_poder_alt";
+            this.txt_poder_alt.Size = new System.Drawing.Size(126, 20);
+            this.txt_poder_alt.TabIndex = 17;
+            // 
+            // txt_nivel_alt
+            // 
+            this.txt_nivel_alt.BackColor = System.Drawing.Color.White;
+            this.txt_nivel_alt.FormattingEnabled = true;
+            this.txt_nivel_alt.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99",
+            "100",
+            "101",
+            "102",
+            "103",
+            "104",
+            "105",
+            "106",
+            "107",
+            "108",
+            "109",
+            "110",
+            "111",
+            "112",
+            "113",
+            "114",
+            "115",
+            "116",
+            "117",
+            "118",
+            "119",
+            "120",
+            "121",
+            "122",
+            "123",
+            "124",
+            "125",
+            "126",
+            "127",
+            "128",
+            "129",
+            "130",
+            "131",
+            "132",
+            "133",
+            "134",
+            "135",
+            "136",
+            "137",
+            "138",
+            "139",
+            "140",
+            "141",
+            "142",
+            "143",
+            "144",
+            "145",
+            "146",
+            "147",
+            "148",
+            "149",
+            "150"});
+            this.txt_nivel_alt.Location = new System.Drawing.Point(477, 21);
+            this.txt_nivel_alt.Name = "txt_nivel_alt";
+            this.txt_nivel_alt.Size = new System.Drawing.Size(69, 21);
+            this.txt_nivel_alt.TabIndex = 14;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panel3);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 31);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1200, 86);
+            this.panel6.TabIndex = 58;
             // 
             // panel3
             // 
@@ -454,391 +866,6 @@ namespace Mir4.painel
             this.label1.TabIndex = 3;
             this.label1.Text = "Nivel";
             // 
-            // panel4
-            // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel4.BackColor = System.Drawing.SystemColors.Control;
-            this.panel4.Controls.Add(this.lb_obser);
-            this.panel4.Controls.Add(this.bt_cadastrar);
-            this.panel4.Controls.Add(this.txt_obser);
-            this.panel4.Controls.Add(this.bt_cancelar);
-            this.panel4.Location = new System.Drawing.Point(103, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1010, 369);
-            this.panel4.TabIndex = 56;
-            // 
-            // lb_obser
-            // 
-            this.lb_obser.AutoSize = true;
-            this.lb_obser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_obser.ForeColor = System.Drawing.Color.Black;
-            this.lb_obser.Location = new System.Drawing.Point(407, 7);
-            this.lb_obser.Name = "lb_obser";
-            this.lb_obser.Size = new System.Drawing.Size(129, 25);
-            this.lb_obser.TabIndex = 16;
-            this.lb_obser.Text = "Observações";
-            // 
-            // bt_cadastrar
-            // 
-            this.bt_cadastrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bt_cadastrar.BackColor = System.Drawing.Color.YellowGreen;
-            this.bt_cadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cadastrar.FlatAppearance.BorderSize = 0;
-            this.bt_cadastrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.bt_cadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.bt_cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cadastrar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cadastrar.ForeColor = System.Drawing.Color.White;
-            this.bt_cadastrar.Location = new System.Drawing.Point(658, 268);
-            this.bt_cadastrar.Name = "bt_cadastrar";
-            this.bt_cadastrar.Size = new System.Drawing.Size(128, 42);
-            this.bt_cadastrar.TabIndex = 47;
-            this.bt_cadastrar.Text = "Cadastrar";
-            this.bt_cadastrar.UseVisualStyleBackColor = false;
-            // 
-            // txt_obser
-            // 
-            this.txt_obser.Location = new System.Drawing.Point(67, 35);
-            this.txt_obser.Multiline = true;
-            this.txt_obser.Name = "txt_obser";
-            this.txt_obser.Size = new System.Drawing.Size(853, 227);
-            this.txt_obser.TabIndex = 16;
-            // 
-            // bt_cancelar
-            // 
-            this.bt_cancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bt_cancelar.BackColor = System.Drawing.Color.Tomato;
-            this.bt_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cancelar.FlatAppearance.BorderSize = 0;
-            this.bt_cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
-            this.bt_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
-            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
-            this.bt_cancelar.Location = new System.Drawing.Point(792, 268);
-            this.bt_cancelar.Name = "bt_cancelar";
-            this.bt_cancelar.Size = new System.Drawing.Size(128, 42);
-            this.bt_cancelar.TabIndex = 46;
-            this.bt_cancelar.Text = "Cancelar";
-            this.bt_cancelar.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Controls.Add(this.txt_nick_alt);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.txt_classe_alt);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.rd_nao_alt);
-            this.panel2.Controls.Add(this.rd_sim_alt);
-            this.panel2.Controls.Add(this.txt_para_alt);
-            this.panel2.Controls.Add(this.lb_alt);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.txt_poder_alt);
-            this.panel2.Controls.Add(this.txt_nivel_alt);
-            this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(103, -9);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1010, 87);
-            this.panel2.TabIndex = 54;
-            // 
-            // txt_nick_alt
-            // 
-            this.txt_nick_alt.BackColor = System.Drawing.Color.White;
-            this.txt_nick_alt.Location = new System.Drawing.Point(132, 22);
-            this.txt_nick_alt.Name = "txt_nick_alt";
-            this.txt_nick_alt.Size = new System.Drawing.Size(290, 20);
-            this.txt_nick_alt.TabIndex = 12;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(432, 25);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 17);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Nivel";
-            // 
-            // txt_classe_alt
-            // 
-            this.txt_classe_alt.BackColor = System.Drawing.Color.White;
-            this.txt_classe_alt.FormattingEnabled = true;
-            this.txt_classe_alt.Items.AddRange(new object[] {
-            "Besteira",
-            "Feiticeira",
-            "Guerreiro",
-            "Lanceiro",
-            "Taoista"});
-            this.txt_classe_alt.Location = new System.Drawing.Point(800, 20);
-            this.txt_classe_alt.Name = "txt_classe_alt";
-            this.txt_classe_alt.Size = new System.Drawing.Size(129, 21);
-            this.txt_classe_alt.TabIndex = 15;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(744, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 17);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Classe";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(556, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Poder";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(78, 52);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 17);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Clã Alt";
-            // 
-            // rd_nao_alt
-            // 
-            this.rd_nao_alt.AutoSize = true;
-            this.rd_nao_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rd_nao_alt.ForeColor = System.Drawing.Color.Black;
-            this.rd_nao_alt.Location = new System.Drawing.Point(499, 50);
-            this.rd_nao_alt.Name = "rd_nao_alt";
-            this.rd_nao_alt.Size = new System.Drawing.Size(52, 21);
-            this.rd_nao_alt.TabIndex = 18;
-            this.rd_nao_alt.TabStop = true;
-            this.rd_nao_alt.Text = "Não";
-            this.rd_nao_alt.UseVisualStyleBackColor = true;
-            // 
-            // rd_sim_alt
-            // 
-            this.rd_sim_alt.AutoSize = true;
-            this.rd_sim_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rd_sim_alt.ForeColor = System.Drawing.Color.Black;
-            this.rd_sim_alt.Location = new System.Drawing.Point(444, 50);
-            this.rd_sim_alt.Name = "rd_sim_alt";
-            this.rd_sim_alt.Size = new System.Drawing.Size(49, 21);
-            this.rd_sim_alt.TabIndex = 17;
-            this.rd_sim_alt.TabStop = true;
-            this.rd_sim_alt.Text = "Sim";
-            this.rd_sim_alt.UseVisualStyleBackColor = true;
-            // 
-            // txt_para_alt
-            // 
-            this.txt_para_alt.FormattingEnabled = true;
-            this.txt_para_alt.Items.AddRange(new object[] {
-            "THE ANCIENTS"});
-            this.txt_para_alt.Location = new System.Drawing.Point(132, 48);
-            this.txt_para_alt.Name = "txt_para_alt";
-            this.txt_para_alt.Size = new System.Drawing.Size(157, 21);
-            this.txt_para_alt.TabIndex = 17;
-            // 
-            // lb_alt
-            // 
-            this.lb_alt.AutoSize = true;
-            this.lb_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_alt.ForeColor = System.Drawing.Color.Black;
-            this.lb_alt.Location = new System.Drawing.Point(305, 52);
-            this.lb_alt.Name = "lb_alt";
-            this.lb_alt.Size = new System.Drawing.Size(133, 17);
-            this.lb_alt.TabIndex = 17;
-            this.lb_alt.Text = "Alt de Progressão ?";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(91, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 17);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Nick";
-            // 
-            // txt_poder_alt
-            // 
-            this.txt_poder_alt.BackColor = System.Drawing.Color.White;
-            this.txt_poder_alt.Location = new System.Drawing.Point(608, 21);
-            this.txt_poder_alt.Name = "txt_poder_alt";
-            this.txt_poder_alt.Size = new System.Drawing.Size(126, 20);
-            this.txt_poder_alt.TabIndex = 17;
-            // 
-            // txt_nivel_alt
-            // 
-            this.txt_nivel_alt.BackColor = System.Drawing.Color.White;
-            this.txt_nivel_alt.FormattingEnabled = true;
-            this.txt_nivel_alt.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47",
-            "48",
-            "49",
-            "50",
-            "51",
-            "52",
-            "53",
-            "54",
-            "55",
-            "56",
-            "57",
-            "58",
-            "59",
-            "60",
-            "61",
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
-            "67",
-            "68",
-            "69",
-            "70",
-            "71",
-            "72",
-            "73",
-            "74",
-            "75",
-            "76",
-            "77",
-            "78",
-            "79",
-            "80",
-            "81",
-            "82",
-            "83",
-            "84",
-            "85",
-            "85",
-            "86",
-            "87",
-            "88",
-            "89",
-            "90",
-            "91",
-            "92",
-            "93",
-            "94",
-            "95",
-            "96",
-            "97",
-            "98",
-            "99",
-            "100",
-            "101",
-            "102",
-            "103",
-            "104",
-            "105",
-            "106",
-            "107",
-            "108",
-            "109",
-            "110",
-            "111",
-            "112",
-            "113",
-            "114",
-            "115",
-            "116",
-            "117",
-            "118",
-            "119",
-            "120",
-            "121",
-            "122",
-            "123",
-            "124",
-            "125",
-            "126",
-            "127",
-            "128",
-            "129",
-            "130",
-            "131",
-            "132",
-            "133",
-            "134",
-            "135",
-            "136",
-            "137",
-            "138",
-            "139",
-            "140",
-            "141",
-            "142",
-            "143",
-            "144",
-            "145",
-            "146",
-            "147",
-            "148",
-            "149",
-            "150"});
-            this.txt_nivel_alt.Location = new System.Drawing.Point(477, 21);
-            this.txt_nivel_alt.Name = "txt_nivel_alt";
-            this.txt_nivel_alt.Size = new System.Drawing.Size(69, 21);
-            this.txt_nivel_alt.TabIndex = 14;
-            // 
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -846,33 +873,6 @@ namespace Mir4.painel
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1200, 31);
             this.panel5.TabIndex = 57;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panel3);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 31);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1200, 86);
-            this.panel6.TabIndex = 58;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.panel2);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 117);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1200, 77);
-            this.panel7.TabIndex = 59;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.panel4);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 194);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1200, 416);
-            this.panel8.TabIndex = 60;
             // 
             // cadastro_membro
             // 
@@ -884,15 +884,15 @@ namespace Mir4.painel
             this.Name = "cadastro_membro";
             this.Size = new System.Drawing.Size(1200, 720);
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel8.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel7.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }

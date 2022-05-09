@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Mir4.painel
 {
-    public partial class doacoes : UserControl
+    public partial class membros_detalhes : UserControl
     {
-        public doacoes()
+        public membros_detalhes()
         {
             InitializeComponent();
         }
@@ -23,11 +23,12 @@ namespace Mir4.painel
             pl_conteudo.Controls.Clear();
             pl_conteudo.Controls.Add(userControl);
             userControl.BringToFront();
+            
         }
 
-        private void bt_procurar_Click(object sender, EventArgs e)
+        private void bt_cancelar_Click(object sender, EventArgs e)
         {
-            membros_detalhes uc = new membros_detalhes();
+            doacoes uc = new doacoes();
             addControl(uc);
         }
     }
