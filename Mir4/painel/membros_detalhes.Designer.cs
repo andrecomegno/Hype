@@ -30,6 +30,12 @@ namespace Mir4.painel
         private void InitializeComponent()
         {
             this.pl_conteudo = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.bt_sair = new System.Windows.Forms.Button();
+            this.bt_novo = new FontAwesome.Sharp.IconButton();
+            this.bt_deletar = new FontAwesome.Sharp.IconButton();
+            this.bt_editar = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txt_nick = new System.Windows.Forms.TextBox();
             this.txt_classe = new System.Windows.Forms.ComboBox();
@@ -40,11 +46,17 @@ namespace Mir4.painel
             this.txt_nome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -52,7 +64,6 @@ namespace Mir4.painel
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
@@ -65,27 +76,17 @@ namespace Mir4.painel
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pl_procurar = new System.Windows.Forms.Panel();
             this.pl_botoes = new System.Windows.Forms.Panel();
-            this.bt_novo = new FontAwesome.Sharp.IconButton();
-            this.bt_deletar = new FontAwesome.Sharp.IconButton();
-            this.bt_editar = new FontAwesome.Sharp.IconButton();
-            this.txt_procurar = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pl_procurar = new System.Windows.Forms.Panel();
             this.bt_procurar = new FontAwesome.Sharp.IconButton();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.bt_sair = new System.Windows.Forms.Button();
+            this.txt_procurar = new System.Windows.Forms.TextBox();
             this.pl_conteudo.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.pl_procurar.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.pl_procurar.SuspendLayout();
             this.SuspendLayout();
             // 
             // pl_conteudo
@@ -101,6 +102,121 @@ namespace Mir4.painel
             this.pl_conteudo.Name = "pl_conteudo";
             this.pl_conteudo.Size = new System.Drawing.Size(1200, 720);
             this.pl_conteudo.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.Controls.Add(this.bt_novo);
+            this.panel2.Controls.Add(this.bt_deletar);
+            this.panel2.Controls.Add(this.bt_editar);
+            this.panel2.ForeColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(27, 431);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1153, 84);
+            this.panel2.TabIndex = 74;
+            // 
+            // bt_sair
+            // 
+            this.bt_sair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_sair.BackColor = System.Drawing.Color.Tomato;
+            this.bt_sair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_sair.FlatAppearance.BorderSize = 0;
+            this.bt_sair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
+            this.bt_sair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
+            this.bt_sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_sair.ForeColor = System.Drawing.Color.White;
+            this.bt_sair.Location = new System.Drawing.Point(908, 108);
+            this.bt_sair.Name = "bt_sair";
+            this.bt_sair.Size = new System.Drawing.Size(102, 36);
+            this.bt_sair.TabIndex = 74;
+            this.bt_sair.Text = "Sair";
+            this.bt_sair.UseVisualStyleBackColor = false;
+            // 
+            // bt_novo
+            // 
+            this.bt_novo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_novo.BackColor = System.Drawing.Color.YellowGreen;
+            this.bt_novo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_novo.FlatAppearance.BorderSize = 0;
+            this.bt_novo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_novo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_novo.ForeColor = System.Drawing.Color.White;
+            this.bt_novo.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.bt_novo.IconColor = System.Drawing.Color.White;
+            this.bt_novo.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_novo.IconSize = 35;
+            this.bt_novo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_novo.Location = new System.Drawing.Point(346, 12);
+            this.bt_novo.Name = "bt_novo";
+            this.bt_novo.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_novo.Size = new System.Drawing.Size(120, 40);
+            this.bt_novo.TabIndex = 71;
+            this.bt_novo.Tag = "";
+            this.bt_novo.Text = "Salvar";
+            this.bt_novo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bt_novo.UseVisualStyleBackColor = false;
+            // 
+            // bt_deletar
+            // 
+            this.bt_deletar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_deletar.BackColor = System.Drawing.Color.DarkSalmon;
+            this.bt_deletar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_deletar.FlatAppearance.BorderSize = 0;
+            this.bt_deletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_deletar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_deletar.ForeColor = System.Drawing.Color.White;
+            this.bt_deletar.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.bt_deletar.IconColor = System.Drawing.Color.White;
+            this.bt_deletar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_deletar.IconSize = 35;
+            this.bt_deletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_deletar.Location = new System.Drawing.Point(598, 12);
+            this.bt_deletar.Name = "bt_deletar";
+            this.bt_deletar.Size = new System.Drawing.Size(129, 40);
+            this.bt_deletar.TabIndex = 72;
+            this.bt_deletar.Tag = "";
+            this.bt_deletar.Text = "Cancelar";
+            this.bt_deletar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bt_deletar.UseVisualStyleBackColor = false;
+            // 
+            // bt_editar
+            // 
+            this.bt_editar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_editar.BackColor = System.Drawing.Color.Gold;
+            this.bt_editar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_editar.FlatAppearance.BorderSize = 0;
+            this.bt_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_editar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_editar.ForeColor = System.Drawing.Color.White;
+            this.bt_editar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.bt_editar.IconColor = System.Drawing.Color.White;
+            this.bt_editar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_editar.IconSize = 35;
+            this.bt_editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_editar.Location = new System.Drawing.Point(472, 12);
+            this.bt_editar.Name = "bt_editar";
+            this.bt_editar.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_editar.Size = new System.Drawing.Size(120, 40);
+            this.bt_editar.TabIndex = 73;
+            this.bt_editar.Tag = "";
+            this.bt_editar.Text = "Editar";
+            this.bt_editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bt_editar.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.bt_sair);
+            this.panel1.ForeColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(27, 521);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1153, 147);
+            this.panel1.TabIndex = 73;
             // 
             // panel3
             // 
@@ -395,6 +511,72 @@ namespace Mir4.painel
             this.panel4.Size = new System.Drawing.Size(1153, 194);
             this.panel4.TabIndex = 73;
             // 
+            // panel5
+            // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.textBox2);
+            this.panel5.Controls.Add(this.textBox4);
+            this.panel5.Controls.Add(this.textBox3);
+            this.panel5.Controls.Add(this.textBox17);
+            this.panel5.Location = new System.Drawing.Point(342, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(136, 176);
+            this.panel5.TabIndex = 75;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(49, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Mês 1";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.Location = new System.Drawing.Point(3, 39);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(132, 20);
+            this.textBox1.TabIndex = 11;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox2.Location = new System.Drawing.Point(3, 65);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(132, 20);
+            this.textBox2.TabIndex = 48;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox4.Location = new System.Drawing.Point(3, 91);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(132, 20);
+            this.textBox4.TabIndex = 49;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox3.Location = new System.Drawing.Point(3, 117);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(132, 20);
+            this.textBox3.TabIndex = 50;
+            // 
+            // textBox17
+            // 
+            this.textBox17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox17.Location = new System.Drawing.Point(3, 143);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(132, 20);
+            this.textBox17.TabIndex = 70;
+            // 
             // textBox20
             // 
             this.textBox20.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -431,14 +613,6 @@ namespace Mir4.painel
             this.label12.TabIndex = 71;
             this.label12.Text = "TOTAL";
             // 
-            // textBox17
-            // 
-            this.textBox17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox17.Location = new System.Drawing.Point(3, 143);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(132, 20);
-            this.textBox17.TabIndex = 70;
-            // 
             // label11
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -449,7 +623,7 @@ namespace Mir4.painel
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(72, 17);
             this.label11.TabIndex = 69;
-            this.label11.Text = "Semana 1";
+            this.label11.Text = "Semana 4";
             // 
             // label10
             // 
@@ -461,7 +635,7 @@ namespace Mir4.painel
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 17);
             this.label10.TabIndex = 68;
-            this.label10.Text = "Semana 1";
+            this.label10.Text = "Semana 3";
             // 
             // label9
             // 
@@ -473,7 +647,7 @@ namespace Mir4.painel
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 17);
             this.label9.TabIndex = 67;
-            this.label9.Text = "Semana 1";
+            this.label9.Text = "Semana 2";
             // 
             // label8
             // 
@@ -522,18 +696,6 @@ namespace Mir4.painel
             this.label5.Size = new System.Drawing.Size(46, 17);
             this.label5.TabIndex = 63;
             this.label5.Text = "Mês 2";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(49, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Mês 1";
             // 
             // textBox13
             // 
@@ -631,37 +793,14 @@ namespace Mir4.painel
             this.textBox8.Size = new System.Drawing.Size(132, 20);
             this.textBox8.TabIndex = 51;
             // 
-            // textBox3
+            // pl_botoes
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Location = new System.Drawing.Point(3, 117);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(132, 20);
-            this.textBox3.TabIndex = 50;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.Location = new System.Drawing.Point(3, 91);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(132, 20);
-            this.textBox4.TabIndex = 49;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(3, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 20);
-            this.textBox2.TabIndex = 48;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(3, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 20);
-            this.textBox1.TabIndex = 11;
+            this.pl_botoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pl_botoes.Location = new System.Drawing.Point(27, 17);
+            this.pl_botoes.Name = "pl_botoes";
+            this.pl_botoes.Size = new System.Drawing.Size(1153, 48);
+            this.pl_botoes.TabIndex = 71;
             // 
             // pl_procurar
             // 
@@ -673,121 +812,6 @@ namespace Mir4.painel
             this.pl_procurar.Name = "pl_procurar";
             this.pl_procurar.Size = new System.Drawing.Size(1153, 61);
             this.pl_procurar.TabIndex = 70;
-            // 
-            // pl_botoes
-            // 
-            this.pl_botoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pl_botoes.Location = new System.Drawing.Point(27, 17);
-            this.pl_botoes.Name = "pl_botoes";
-            this.pl_botoes.Size = new System.Drawing.Size(1153, 48);
-            this.pl_botoes.TabIndex = 71;
-            // 
-            // bt_novo
-            // 
-            this.bt_novo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_novo.BackColor = System.Drawing.Color.YellowGreen;
-            this.bt_novo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_novo.FlatAppearance.BorderSize = 0;
-            this.bt_novo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_novo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_novo.ForeColor = System.Drawing.Color.White;
-            this.bt_novo.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.bt_novo.IconColor = System.Drawing.Color.White;
-            this.bt_novo.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_novo.IconSize = 35;
-            this.bt_novo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_novo.Location = new System.Drawing.Point(346, 12);
-            this.bt_novo.Name = "bt_novo";
-            this.bt_novo.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_novo.Size = new System.Drawing.Size(120, 40);
-            this.bt_novo.TabIndex = 71;
-            this.bt_novo.Tag = "";
-            this.bt_novo.Text = "Salvar";
-            this.bt_novo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bt_novo.UseVisualStyleBackColor = false;
-            // 
-            // bt_deletar
-            // 
-            this.bt_deletar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_deletar.BackColor = System.Drawing.Color.DarkSalmon;
-            this.bt_deletar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_deletar.FlatAppearance.BorderSize = 0;
-            this.bt_deletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_deletar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_deletar.ForeColor = System.Drawing.Color.White;
-            this.bt_deletar.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.bt_deletar.IconColor = System.Drawing.Color.White;
-            this.bt_deletar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_deletar.IconSize = 35;
-            this.bt_deletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_deletar.Location = new System.Drawing.Point(598, 12);
-            this.bt_deletar.Name = "bt_deletar";
-            this.bt_deletar.Size = new System.Drawing.Size(129, 40);
-            this.bt_deletar.TabIndex = 72;
-            this.bt_deletar.Tag = "";
-            this.bt_deletar.Text = "Cancelar";
-            this.bt_deletar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bt_deletar.UseVisualStyleBackColor = false;
-            // 
-            // bt_editar
-            // 
-            this.bt_editar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_editar.BackColor = System.Drawing.Color.Gold;
-            this.bt_editar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_editar.FlatAppearance.BorderSize = 0;
-            this.bt_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_editar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_editar.ForeColor = System.Drawing.Color.White;
-            this.bt_editar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.bt_editar.IconColor = System.Drawing.Color.White;
-            this.bt_editar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_editar.IconSize = 35;
-            this.bt_editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_editar.Location = new System.Drawing.Point(472, 12);
-            this.bt_editar.Name = "bt_editar";
-            this.bt_editar.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_editar.Size = new System.Drawing.Size(120, 40);
-            this.bt_editar.TabIndex = 73;
-            this.bt_editar.Tag = "";
-            this.bt_editar.Text = "Editar";
-            this.bt_editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bt_editar.UseVisualStyleBackColor = false;
-            // 
-            // txt_procurar
-            // 
-            this.txt_procurar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_procurar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_procurar.Location = new System.Drawing.Point(267, 21);
-            this.txt_procurar.Name = "txt_procurar";
-            this.txt_procurar.Size = new System.Drawing.Size(621, 23);
-            this.txt_procurar.TabIndex = 69;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(27, 521);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1153, 147);
-            this.panel1.TabIndex = 73;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Controls.Add(this.bt_sair);
-            this.panel2.Controls.Add(this.bt_novo);
-            this.panel2.Controls.Add(this.bt_deletar);
-            this.panel2.Controls.Add(this.bt_editar);
-            this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(27, 431);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1153, 84);
-            this.panel2.TabIndex = 74;
             // 
             // bt_procurar
             // 
@@ -811,37 +835,14 @@ namespace Mir4.painel
             this.bt_procurar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bt_procurar.UseVisualStyleBackColor = false;
             // 
-            // panel5
+            // txt_procurar
             // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.textBox1);
-            this.panel5.Controls.Add(this.textBox2);
-            this.panel5.Controls.Add(this.textBox4);
-            this.panel5.Controls.Add(this.textBox3);
-            this.panel5.Controls.Add(this.textBox17);
-            this.panel5.Location = new System.Drawing.Point(342, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(136, 176);
-            this.panel5.TabIndex = 75;
-            // 
-            // bt_sair
-            // 
-            this.bt_sair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_sair.BackColor = System.Drawing.Color.Tomato;
-            this.bt_sair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_sair.FlatAppearance.BorderSize = 0;
-            this.bt_sair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
-            this.bt_sair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
-            this.bt_sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_sair.ForeColor = System.Drawing.Color.White;
-            this.bt_sair.Location = new System.Drawing.Point(786, 12);
-            this.bt_sair.Name = "bt_sair";
-            this.bt_sair.Size = new System.Drawing.Size(102, 36);
-            this.bt_sair.TabIndex = 74;
-            this.bt_sair.Text = "Cancelar";
-            this.bt_sair.UseVisualStyleBackColor = false;
+            this.txt_procurar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_procurar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_procurar.Location = new System.Drawing.Point(267, 21);
+            this.txt_procurar.Name = "txt_procurar";
+            this.txt_procurar.Size = new System.Drawing.Size(621, 23);
+            this.txt_procurar.TabIndex = 69;
             // 
             // membros_detalhes
             // 
@@ -851,15 +852,16 @@ namespace Mir4.painel
             this.Name = "membros_detalhes";
             this.Size = new System.Drawing.Size(1200, 720);
             this.pl_conteudo.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.pl_procurar.ResumeLayout(false);
-            this.pl_procurar.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.pl_procurar.ResumeLayout(false);
+            this.pl_procurar.PerformLayout();
             this.ResumeLayout(false);
 
         }
