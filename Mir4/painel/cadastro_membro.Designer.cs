@@ -79,6 +79,7 @@ namespace Mir4.painel
             this.bt_cadastrar = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bt_remover = new System.Windows.Forms.Button();
             this.bt_adicionar = new FontAwesome.Sharp.IconButton();
             this.txt_nick_alt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -114,7 +115,6 @@ namespace Mir4.painel
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lb_titulo = new System.Windows.Forms.Label();
-            this.bt_remover = new System.Windows.Forms.Button();
             this.pL_conteudo.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -1196,6 +1196,24 @@ namespace Mir4.painel
             this.panel2.TabIndex = 54;
             this.panel2.Visible = false;
             // 
+            // bt_remover
+            // 
+            this.bt_remover.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bt_remover.BackColor = System.Drawing.Color.DarkSalmon;
+            this.bt_remover.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_remover.FlatAppearance.BorderSize = 0;
+            this.bt_remover.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
+            this.bt_remover.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
+            this.bt_remover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_remover.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_remover.ForeColor = System.Drawing.Color.White;
+            this.bt_remover.Location = new System.Drawing.Point(951, 44);
+            this.bt_remover.Name = "bt_remover";
+            this.bt_remover.Size = new System.Drawing.Size(31, 27);
+            this.bt_remover.TabIndex = 62;
+            this.bt_remover.Text = "-";
+            this.bt_remover.UseVisualStyleBackColor = false;
+            // 
             // bt_adicionar
             // 
             this.bt_adicionar.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1899,29 +1917,11 @@ namespace Mir4.painel
             this.lb_titulo.AutoSize = true;
             this.lb_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_titulo.ForeColor = System.Drawing.Color.Black;
-            this.lb_titulo.Location = new System.Drawing.Point(405, 19);
+            this.lb_titulo.Location = new System.Drawing.Point(388, 22);
             this.lb_titulo.Name = "lb_titulo";
             this.lb_titulo.Size = new System.Drawing.Size(450, 39);
             this.lb_titulo.TabIndex = 19;
             this.lb_titulo.Text = "CADASTRO DE MEMBROS";
-            // 
-            // bt_remover
-            // 
-            this.bt_remover.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bt_remover.BackColor = System.Drawing.Color.DarkSalmon;
-            this.bt_remover.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_remover.FlatAppearance.BorderSize = 0;
-            this.bt_remover.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
-            this.bt_remover.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
-            this.bt_remover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_remover.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_remover.ForeColor = System.Drawing.Color.White;
-            this.bt_remover.Location = new System.Drawing.Point(951, 44);
-            this.bt_remover.Name = "bt_remover";
-            this.bt_remover.Size = new System.Drawing.Size(31, 27);
-            this.bt_remover.TabIndex = 62;
-            this.bt_remover.Text = "-";
-            this.bt_remover.UseVisualStyleBackColor = false;
             // 
             // cadastro_membro
             // 

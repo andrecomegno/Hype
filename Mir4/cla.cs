@@ -18,30 +18,27 @@ namespace Mir4
         public cla()
         {
             InitializeComponent();
-
-            //RecolherMenu();
-
             this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void bt_menu_Click(object sender, EventArgs e)
         {
-            RecolherMenu();
+            MenuPrincipal();
         }
 
-        private void RecolherMenu()
+
+        private void MenuPrincipal()
         {
             if (this.pl_menu.Width > 200)
             {
-                pl_menu.Width = 60;
-                foto_perfil.Visible = false;
-
-                lb_patente.Visible = false;
+                pl_menu.Width = 60;                     
                 lb_nick.Visible = false;
 
-                bt_deslogar.Visible = false;
+                bt_sair.Visible = false;
                 bt_menu.Dock = DockStyle.Left;
                 bt_menu.Width = 60;
+
+                bt_menu.IconChar = IconChar.AngleRight;
 
                 foreach (Button menuButton in pl_menu.Controls.OfType<Button>())
                 {
@@ -53,12 +50,11 @@ namespace Mir4
             else
             {
                 pl_menu.Width = 210;
-                foto_perfil.Visible = true;
-                lb_patente.Visible = false;
-                lb_nick.Visible = true;
-                bt_deslogar.Visible = true;
+                bt_sair.Visible = true;
                 bt_menu.Dock = DockStyle.None;
                 bt_menu.Width = 44;
+
+                bt_menu.IconChar = IconChar.AngleLeft;
 
                 foreach (Button menuButton in pl_menu.Controls.OfType<Button>())
                 {
@@ -66,6 +62,25 @@ namespace Mir4
                     menuButton.ImageAlign = ContentAlignment.MiddleLeft;
                     menuButton.Padding = new Padding(10, 0, 0, 0);
                 }
+            }
+        }
+
+        private void bt_menu_conta_Click(object sender, EventArgs e)
+        {
+            MenuConta();
+        }
+
+        private void MenuConta()
+        {
+            this.pl_conta.BringToFront();
+
+            if (pl_conta.Visible == true)
+            {
+                pl_conta.Visible = false;                
+            }
+            else
+            {
+                pl_conta.Visible = true;
             }
         }
 
@@ -136,6 +151,7 @@ namespace Mir4
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
 
 
     }
