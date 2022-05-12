@@ -34,7 +34,6 @@ namespace Mir4
             this.pl_nick = new System.Windows.Forms.Panel();
             this.lb_patente = new System.Windows.Forms.Label();
             this.lb_nick = new System.Windows.Forms.Label();
-            this.im_logo_cla = new Mir4.script.RJCircularPictureBox();
             this.pl_dados = new System.Windows.Forms.Panel();
             this.txt_strike = new System.Windows.Forms.TextBox();
             this.txt_doacao = new System.Windows.Forms.TextBox();
@@ -44,10 +43,11 @@ namespace Mir4
             this.lb_doacao = new System.Windows.Forms.Label();
             this.lb_veio_cla = new System.Windows.Forms.Label();
             this.lb_data = new System.Windows.Forms.Label();
+            this.im_logo_cla = new Mir4.script.RJCircularPictureBox();
             this.pl_top.SuspendLayout();
             this.pl_nick.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.im_logo_cla)).BeginInit();
             this.pl_dados.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.im_logo_cla)).BeginInit();
             this.SuspendLayout();
             // 
             // pl_top
@@ -83,9 +83,9 @@ namespace Mir4
             // pl_nick
             // 
             this.pl_nick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
-            this.pl_nick.Controls.Add(this.im_logo_cla);
             this.pl_nick.Controls.Add(this.lb_patente);
             this.pl_nick.Controls.Add(this.lb_nick);
+            this.pl_nick.Controls.Add(this.im_logo_cla);
             this.pl_nick.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_nick.Location = new System.Drawing.Point(0, 34);
             this.pl_nick.Name = "pl_nick";
@@ -94,44 +94,29 @@ namespace Mir4
             // 
             // lb_patente
             // 
-            this.lb_patente.AutoSize = true;
+            this.lb_patente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lb_patente.BackColor = System.Drawing.Color.Transparent;
             this.lb_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_patente.ForeColor = System.Drawing.Color.Gray;
-            this.lb_patente.Location = new System.Drawing.Point(95, 111);
+            this.lb_patente.Location = new System.Drawing.Point(3, 108);
             this.lb_patente.Name = "lb_patente";
-            this.lb_patente.Size = new System.Drawing.Size(49, 20);
+            this.lb_patente.Size = new System.Drawing.Size(234, 20);
             this.lb_patente.TabIndex = 54;
-            this.lb_patente.Text = "Lider";
+            this.lb_patente.Text = "Patente";
+            this.lb_patente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lb_nick
             // 
-            this.lb_nick.AutoSize = true;
+            this.lb_nick.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lb_nick.BackColor = System.Drawing.Color.Transparent;
             this.lb_nick.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_nick.ForeColor = System.Drawing.Color.White;
-            this.lb_nick.Location = new System.Drawing.Point(67, 91);
+            this.lb_nick.Location = new System.Drawing.Point(3, 88);
             this.lb_nick.Name = "lb_nick";
-            this.lb_nick.Size = new System.Drawing.Size(107, 20);
+            this.lb_nick.Size = new System.Drawing.Size(234, 20);
             this.lb_nick.TabIndex = 53;
-            this.lb_nick.Text = "Andy Makler";
-            // 
-            // im_logo_cla
-            // 
-            this.im_logo_cla.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.im_logo_cla.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.im_logo_cla.BorderColor2 = System.Drawing.Color.HotPink;
-            this.im_logo_cla.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.im_logo_cla.BorderSize = 2;
-            this.im_logo_cla.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.im_logo_cla.GradientAngle = 50F;
-            this.im_logo_cla.Image = global::Mir4.Properties.Resources.HYPE_03;
-            this.im_logo_cla.Location = new System.Drawing.Point(81, 9);
-            this.im_logo_cla.Name = "im_logo_cla";
-            this.im_logo_cla.Size = new System.Drawing.Size(80, 80);
-            this.im_logo_cla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.im_logo_cla.TabIndex = 55;
-            this.im_logo_cla.TabStop = false;
+            this.lb_nick.Text = "Nick";
+            this.lb_nick.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pl_dados
             // 
@@ -236,6 +221,24 @@ namespace Mir4
             this.lb_data.TabIndex = 0;
             this.lb_data.Text = "Data de Adesão";
             // 
+            // im_logo_cla
+            // 
+            this.im_logo_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.im_logo_cla.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.im_logo_cla.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.im_logo_cla.BorderColor2 = System.Drawing.Color.HotPink;
+            this.im_logo_cla.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.im_logo_cla.BorderSize = 2;
+            this.im_logo_cla.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.im_logo_cla.GradientAngle = 50F;
+            this.im_logo_cla.Image = global::Mir4.Properties.Resources.HYPE_03;
+            this.im_logo_cla.Location = new System.Drawing.Point(80, 5);
+            this.im_logo_cla.Name = "im_logo_cla";
+            this.im_logo_cla.Size = new System.Drawing.Size(80, 80);
+            this.im_logo_cla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.im_logo_cla.TabIndex = 55;
+            this.im_logo_cla.TabStop = false;
+            // 
             // membros_info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,12 +252,12 @@ namespace Mir4
             this.Name = "membros_info";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "membros_info";
+            this.Load += new System.EventHandler(this.membros_info_Load);
             this.pl_top.ResumeLayout(false);
             this.pl_nick.ResumeLayout(false);
-            this.pl_nick.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.im_logo_cla)).EndInit();
             this.pl_dados.ResumeLayout(false);
             this.pl_dados.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.im_logo_cla)).EndInit();
             this.ResumeLayout(false);
 
         }

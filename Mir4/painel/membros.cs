@@ -14,11 +14,14 @@ namespace Mir4.painel
 {
     public partial class membros : UserControl
     {
+
+        public static string id = "";
+        public static string nick = "";
+        public static string patente = "";
+
         public membros()
         {
-            InitializeComponent();
-
-            ListaMembros();
+            InitializeComponent();            
         }
 
         public void ListaMembros()
@@ -48,17 +51,36 @@ namespace Mir4.painel
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            MostrarDadosTabela();
+        }
+
+        public void MostrarDadosTabela()
+        {
+            try
             {
-                DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
 
-                //id = dr["ID"].ToString();
-                //txt_produto.Text = dr["NOME"].ToString();
-
-                membros_info mb = new membros_info();
-                mb.Show();
-
+                    nick = dr["NICK"].ToString();
+                    patente = dr["PATENTE"].ToString();
+                }
             }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                membros_info mb = new membros_info();
+                mb.ShowDialog();
+            }
+
+        }
+
+        private void membros_Load(object sender, EventArgs e)
+        {
+            ListaMembros();
         }
     }
 }

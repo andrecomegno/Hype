@@ -8,15 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Mir4.painel;
 
 namespace Mir4
 {
     public partial class membros_info : Form
     {
+
         public membros_info()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
+            this.FormBorderStyle = FormBorderStyle.None;            
         }
 
         //Drag Form
@@ -34,6 +36,17 @@ namespace Mir4
         private void bt_fechar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        public void DadosMembros()
+        {
+            lb_nick.Text = Mir4.painel.membros.nick;
+            lb_patente.Text = Mir4.painel.membros.patente;
+        }
+
+        private void membros_info_Load(object sender, EventArgs e)
+        {
+            DadosMembros();
         }
     }
 }
