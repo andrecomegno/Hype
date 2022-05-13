@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Mir4.script;
 using MySql.Data.MySqlClient;
+using Mir4.painel;
 
 namespace Mir4.painel
 {
@@ -19,10 +20,29 @@ namespace Mir4.painel
         public static string nick = "";
         public static string patente = "";
 
+        public static membros Instance;
+
         public membros()
         {
-            InitializeComponent();            
+            InitializeComponent();
+
+            Instance = this;
         }
+
+        public void addControl(UserControl userControl)
+        {
+            userControl.Dock = DockStyle.Fill;
+            pl_membros.Controls.Clear();
+            pl_membros.Controls.Add(userControl);
+            userControl.BringToFront();
+        }
+
+        private void bt_progressao_Click(object sender, EventArgs e)
+        {
+            co_progressao uc = new co_progressao();
+            addControl(uc);
+        }
+
 
         public void ListaMembros()
         {
@@ -81,6 +101,8 @@ namespace Mir4.painel
         private void membros_Load(object sender, EventArgs e)
         {
             ListaMembros();
+
+            
         }
     }
 }

@@ -16,8 +16,6 @@ namespace Mir4
     public partial class cla : Form
     {
 
-        private Form form;
-
         public cla()
         {
             InitializeComponent();
@@ -28,7 +26,6 @@ namespace Mir4
         {
             MenuPrincipal();
         }
-
 
         private void MenuPrincipal()
         {

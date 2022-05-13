@@ -175,17 +175,23 @@
     <Compile Include="painel\painel_inicio.Designer.cs">
       <DependentUpon>painel_inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="painel\Teste.cs">
-      <SubType>Form</SubType>
+    <Compile Include="painel\progressao.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="painel\Teste.Designer.cs">
-      <DependentUpon>Teste.cs</DependentUpon>
+    <Compile Include="painel\progressao.Designer.cs">
+      <DependentUpon>progressao.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="script\database.cs" />
     <Compile Include="script\RJCircularPictureBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="script\RJTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="script\RJTextBox.Designer.cs">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="criar_login.resx">
       <DependentUpon>criar_login.cs</DependentUpon>
@@ -223,8 +229,8 @@
     <EmbeddedResource Include="painel\painel_inicio.resx">
       <DependentUpon>painel_inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\Teste.resx">
-      <DependentUpon>Teste.cs</DependentUpon>
+    <EmbeddedResource Include="painel\progressao.resx">
+      <DependentUpon>progressao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -236,6 +242,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="script\RJTextBox.resx">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="mydbDataSet.xsc">
       <DependentUpon>mydbDataSet.xsd</DependentUpon>
     </None>
@@ -263,6 +272,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HYPE_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
