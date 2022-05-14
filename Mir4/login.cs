@@ -7,14 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Mir4
 {
     public partial class login : Form
     {
-
-        bool mouseDown;
-        private Point offset;
 
         public login()
         {
@@ -42,30 +40,21 @@ namespace Mir4
             new criar_login().ShowDialog();
         }
 
-        private void login_MouseDown(object sender, MouseEventArgs e)
-        {
-            offset.X = e.X;
-            offset.Y = e.Y;
-            mouseDown = true;
-        }
-
-        private void login_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (mouseDown == true)
-            {
-                Point po = PointToScreen(e.Location);
-                Location = new Point(po.X - offset.X, po.Y - offset.Y);
-            }
-        }
-
-        private void login_MouseUp(object sender, MouseEventArgs e)
-        {
-            mouseDown = false;
-        }
-
         private void bt_fechar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        //Drag Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void pl_top_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

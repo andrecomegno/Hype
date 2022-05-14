@@ -13,9 +13,6 @@ namespace Mir4
 {
     public partial class criar_login : Form
     {
-        bool mouseDown;
-        private Point offset;
-
         public criar_login()
         {
             InitializeComponent();

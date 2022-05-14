@@ -9,18 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Mir4.script;
 using MySql.Data.MySqlClient;
-using Mir4.painel;
 
 namespace Mir4.painel
 {
     public partial class membros : UserControl
     {
-
-        public static string id = "";
-        public static string nick = "";
-        public static string patente = "";
-
         public static membros Instance;
+
+        public string id = "";
+        public string nick = "";
+        public string patente = "";
 
         public membros()
         {
@@ -29,18 +27,22 @@ namespace Mir4.painel
             Instance = this;
         }
 
-        public void addControl(UserControl userControl)
-        {
-            userControl.Dock = DockStyle.Fill;
-            pl_membros.Controls.Clear();
-            pl_membros.Controls.Add(userControl);
-            userControl.BringToFront();
-        }
-
         private void bt_progressao_Click(object sender, EventArgs e)
         {
-            co_progressao uc = new co_progressao();
-            addControl(uc);
+            progressao uc = new progressao();
+            cla.Instance.addControl(uc);
+        }
+
+        private void bt_ouro_Click(object sender, EventArgs e)
+        {
+            ouro uc = new ouro();
+            cla.Instance.addControl(uc);
+        }
+
+        private void bt_alts_Click(object sender, EventArgs e)
+        {
+            alts uc = new alts();
+            cla.Instance.addControl(uc);
         }
 
 
@@ -61,12 +63,6 @@ namespace Mir4.painel
             }
 
             database.closeConnection();
-        }
-
-
-        private void bt_procurar_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -100,9 +96,13 @@ namespace Mir4.painel
 
         private void membros_Load(object sender, EventArgs e)
         {
-            ListaMembros();
+            ListaMembros();            
+        }
 
-            
+        private void bt_add_membro_Click(object sender, EventArgs e)
+        {
+            add_membros uc = new add_membros();
+            cla.Instance.addControl(uc);
         }
     }
 }

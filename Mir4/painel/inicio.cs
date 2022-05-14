@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Mir4.painel
 {
-    public partial class cadastro_membro : UserControl
+    public partial class inicio : UserControl
     {
-        public cadastro_membro()
+        public inicio()
         {
             InitializeComponent();
         }

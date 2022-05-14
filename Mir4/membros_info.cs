@@ -40,8 +40,8 @@ namespace Mir4
 
         public void DadosMembros()
         {
-            lb_nick.Text = Mir4.painel.membros.nick;
-            lb_patente.Text = Mir4.painel.membros.patente;
+            lb_nick.Text = membros.Instance.nick;
+            lb_patente.Text = membros.Instance.patente;
         }
 
         private void membros_info_Load(object sender, EventArgs e)

@@ -104,12 +104,6 @@
     <Compile Include="criar_login.Designer.cs">
       <DependentUpon>criar_login.cs</DependentUpon>
     </Compile>
-    <Compile Include="detalhes_membros.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="detalhes_membros.Designer.cs">
-      <DependentUpon>detalhes_membros.cs</DependentUpon>
-    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,11 +127,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>mydbDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="painel\cadastro_membro.cs">
+    <Compile Include="painel\add_membros.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="painel\cadastro_membro.Designer.cs">
-      <DependentUpon>cadastro_membro.cs</DependentUpon>
+    <Compile Include="painel\add_membros.Designer.cs">
+      <DependentUpon>add_membros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="painel\alts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="painel\alts.Designer.cs">
+      <DependentUpon>alts.cs</DependentUpon>
     </Compile>
     <Compile Include="painel\configuracao.cs">
       <SubType>UserControl</SubType>
@@ -145,35 +145,23 @@
     <Compile Include="painel\configuracao.Designer.cs">
       <DependentUpon>configuracao.cs</DependentUpon>
     </Compile>
-    <Compile Include="painel\doacoes.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="painel\doacoes.Designer.cs">
-      <DependentUpon>doacoes.cs</DependentUpon>
-    </Compile>
     <Compile Include="painel\membros.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="painel\membros.Designer.cs">
       <DependentUpon>membros.cs</DependentUpon>
     </Compile>
-    <Compile Include="painel\membros_detalhes.cs">
+    <Compile Include="painel\ouro.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="painel\membros_detalhes.Designer.cs">
-      <DependentUpon>membros_detalhes.cs</DependentUpon>
+    <Compile Include="painel\ouro.Designer.cs">
+      <DependentUpon>ouro.cs</DependentUpon>
     </Compile>
-    <Compile Include="painel\novo_cla.cs">
+    <Compile Include="painel\inicio.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="painel\novo_cla.Designer.cs">
-      <DependentUpon>novo_cla.cs</DependentUpon>
-    </Compile>
-    <Compile Include="painel\painel_inicio.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="painel\painel_inicio.Designer.cs">
-      <DependentUpon>painel_inicio.cs</DependentUpon>
+    <Compile Include="painel\inicio.Designer.cs">
+      <DependentUpon>inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="painel\progressao.cs">
       <SubType>UserControl</SubType>
@@ -196,9 +184,6 @@
     <EmbeddedResource Include="criar_login.resx">
       <DependentUpon>criar_login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="detalhes_membros.resx">
-      <DependentUpon>detalhes_membros.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,26 +193,23 @@
     <EmbeddedResource Include="membros_info.resx">
       <DependentUpon>membros_info.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\cadastro_membro.resx">
-      <DependentUpon>cadastro_membro.cs</DependentUpon>
+    <EmbeddedResource Include="painel\add_membros.resx">
+      <DependentUpon>add_membros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="painel\alts.resx">
+      <DependentUpon>alts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="painel\configuracao.resx">
       <DependentUpon>configuracao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\doacoes.resx">
-      <DependentUpon>doacoes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="painel\membros.resx">
       <DependentUpon>membros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\membros_detalhes.resx">
-      <DependentUpon>membros_detalhes.cs</DependentUpon>
+    <EmbeddedResource Include="painel\ouro.resx">
+      <DependentUpon>ouro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\novo_cla.resx">
-      <DependentUpon>novo_cla.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="painel\painel_inicio.resx">
-      <DependentUpon>painel_inicio.cs</DependentUpon>
+    <EmbeddedResource Include="painel\inicio.resx">
+      <DependentUpon>inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="painel\progressao.resx">
       <DependentUpon>progressao.cs</DependentUpon>

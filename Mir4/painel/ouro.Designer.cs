@@ -1,7 +1,7 @@
 ﻿
 namespace Mir4.painel
 {
-    partial class progressao
+    partial class ouro
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -29,48 +29,36 @@ namespace Mir4.painel
         /// </summary>
         private void InitializeComponent()
         {
-            this.pl_progressao = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pl_ouro = new System.Windows.Forms.Panel();
             this.txt_buscar = new Mir4.painel.RJTextBox();
             this.bt_alts = new System.Windows.Forms.Button();
             this.bt_ouro = new System.Windows.Forms.Button();
             this.bt_progressao = new System.Windows.Forms.Button();
             this.bt_membros = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pl_progressao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pl_ouro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pl_progressao
+            // pl_ouro
             // 
-            this.pl_progressao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pl_ouro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pl_progressao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            this.pl_progressao.Controls.Add(this.pictureBox1);
-            this.pl_progressao.Controls.Add(this.txt_buscar);
-            this.pl_progressao.Controls.Add(this.bt_alts);
-            this.pl_progressao.Controls.Add(this.bt_ouro);
-            this.pl_progressao.Controls.Add(this.bt_progressao);
-            this.pl_progressao.Controls.Add(this.bt_membros);
-            this.pl_progressao.Controls.Add(this.dataGridView1);
-            this.pl_progressao.Location = new System.Drawing.Point(14, 3);
-            this.pl_progressao.Name = "pl_progressao";
-            this.pl_progressao.Size = new System.Drawing.Size(1172, 714);
-            this.pl_progressao.TabIndex = 76;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.pictureBox1.Image = global::Mir4.Properties.Resources.buscar;
-            this.pictureBox1.Location = new System.Drawing.Point(980, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 63;
-            this.pictureBox1.TabStop = false;
+            this.pl_ouro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.pl_ouro.Controls.Add(this.pictureBox1);
+            this.pl_ouro.Controls.Add(this.txt_buscar);
+            this.pl_ouro.Controls.Add(this.bt_alts);
+            this.pl_ouro.Controls.Add(this.bt_ouro);
+            this.pl_ouro.Controls.Add(this.bt_progressao);
+            this.pl_ouro.Controls.Add(this.bt_membros);
+            this.pl_ouro.Controls.Add(this.dataGridView1);
+            this.pl_ouro.Location = new System.Drawing.Point(14, 3);
+            this.pl_ouro.Name = "pl_ouro";
+            this.pl_ouro.Size = new System.Drawing.Size(1172, 714);
+            this.pl_ouro.TabIndex = 77;
             // 
             // txt_buscar
             // 
@@ -113,7 +101,7 @@ namespace Mir4.painel
             // 
             // bt_ouro
             // 
-            this.bt_ouro.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_ouro.BackColor = System.Drawing.Color.CornflowerBlue;
             this.bt_ouro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_ouro.FlatAppearance.BorderSize = 0;
             this.bt_ouro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -125,11 +113,10 @@ namespace Mir4.painel
             this.bt_ouro.TabIndex = 61;
             this.bt_ouro.Text = "Ouro";
             this.bt_ouro.UseVisualStyleBackColor = false;
-            this.bt_ouro.Click += new System.EventHandler(this.bt_ouro_Click);
             // 
             // bt_progressao
             // 
-            this.bt_progressao.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.bt_progressao.BackColor = System.Drawing.Color.LightSlateGray;
             this.bt_progressao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_progressao.FlatAppearance.BorderSize = 0;
             this.bt_progressao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -141,6 +128,7 @@ namespace Mir4.painel
             this.bt_progressao.TabIndex = 60;
             this.bt_progressao.Text = "Progressão";
             this.bt_progressao.UseVisualStyleBackColor = false;
+            this.bt_progressao.Click += new System.EventHandler(this.bt_progressao_Click);
             // 
             // bt_membros
             // 
@@ -173,24 +161,36 @@ namespace Mir4.painel
             this.dataGridView1.Size = new System.Drawing.Size(1172, 673);
             this.dataGridView1.TabIndex = 1;
             // 
-            // progressao
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.pictureBox1.Image = global::Mir4.Properties.Resources.buscar;
+            this.pictureBox1.Location = new System.Drawing.Point(980, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 63;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ouro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            this.Controls.Add(this.pl_progressao);
-            this.Name = "progressao";
+            this.Controls.Add(this.pl_ouro);
+            this.Name = "ouro";
             this.Size = new System.Drawing.Size(1200, 720);
-            this.pl_progressao.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pl_ouro.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pl_progressao;
+        private System.Windows.Forms.Panel pl_ouro;
         private System.Windows.Forms.PictureBox pictureBox1;
         private RJTextBox txt_buscar;
         private System.Windows.Forms.Button bt_alts;

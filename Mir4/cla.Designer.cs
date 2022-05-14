@@ -35,36 +35,34 @@ namespace Mir4
             this.lb_patente = new System.Windows.Forms.Label();
             this.pl_menu = new System.Windows.Forms.Panel();
             this.pl_conf = new System.Windows.Forms.Panel();
-            this.pl_conta = new System.Windows.Forms.Panel();
-            this.pl_top = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pl_nome_cla = new System.Windows.Forms.Panel();
-            this.bt_maximizar = new System.Windows.Forms.Button();
-            this.bt_minimizar = new System.Windows.Forms.Button();
-            this.bt_fechar = new System.Windows.Forms.Button();
-            this.pl_centro = new System.Windows.Forms.Panel();
-            this.pl_conteudo = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.bt_deslogar = new FontAwesome.Sharp.IconButton();
-            this.rjCircularPictureBox1 = new Mir4.script.RJCircularPictureBox();
             this.bt_menu = new FontAwesome.Sharp.IconButton();
             this.bt_configurar = new FontAwesome.Sharp.IconButton();
             this.bt_sair = new FontAwesome.Sharp.IconButton();
-            this.bt_gold = new FontAwesome.Sharp.IconButton();
             this.bt_painel = new FontAwesome.Sharp.IconButton();
             this.bt_membros = new FontAwesome.Sharp.IconButton();
-            this.bt_cadastro = new FontAwesome.Sharp.IconButton();
+            this.pl_conta = new System.Windows.Forms.Panel();
+            this.bt_deslogar = new FontAwesome.Sharp.IconButton();
+            this.rjCircularPictureBox1 = new Mir4.script.RJCircularPictureBox();
+            this.pl_top = new System.Windows.Forms.Panel();
+            this.bt_minimizar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.bt_menu_conta = new FontAwesome.Sharp.IconButton();
+            this.bt_fechar = new System.Windows.Forms.Button();
+            this.bt_maximizar = new System.Windows.Forms.Button();
+            this.pl_nome_cla = new System.Windows.Forms.Panel();
             this.foto_perfil = new Mir4.script.RJCircularPictureBox();
+            this.pl_centro = new System.Windows.Forms.Panel();
+            this.pl_conteudo = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pl_menu.SuspendLayout();
             this.pl_conf.SuspendLayout();
             this.pl_conta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.pl_top.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pl_nome_cla.SuspendLayout();
-            this.pl_centro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).BeginInit();
+            this.pl_centro.SuspendLayout();
             this.SuspendLayout();
             // 
             // lb_nick
@@ -107,10 +105,8 @@ namespace Mir4
             // 
             this.pl_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
             this.pl_menu.Controls.Add(this.pl_conf);
-            this.pl_menu.Controls.Add(this.bt_gold);
             this.pl_menu.Controls.Add(this.bt_painel);
             this.pl_menu.Controls.Add(this.bt_membros);
-            this.pl_menu.Controls.Add(this.bt_cadastro);
             this.pl_menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pl_menu.Location = new System.Drawing.Point(0, 63);
             this.pl_menu.Name = "pl_menu";
@@ -128,178 +124,6 @@ namespace Mir4
             this.pl_conf.Name = "pl_conf";
             this.pl_conf.Size = new System.Drawing.Size(204, 43);
             this.pl_conf.TabIndex = 0;
-            // 
-            // pl_conta
-            // 
-            this.pl_conta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pl_conta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
-            this.pl_conta.Controls.Add(this.bt_deslogar);
-            this.pl_conta.Controls.Add(this.rjCircularPictureBox1);
-            this.pl_conta.Controls.Add(this.lb_patente);
-            this.pl_conta.Controls.Add(this.lb_nick);
-            this.pl_conta.Location = new System.Drawing.Point(953, 34);
-            this.pl_conta.Name = "pl_conta";
-            this.pl_conta.Size = new System.Drawing.Size(208, 262);
-            this.pl_conta.TabIndex = 0;
-            this.pl_conta.Visible = false;
-            // 
-            // pl_top
-            // 
-            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
-            this.pl_top.Controls.Add(this.bt_minimizar);
-            this.pl_top.Controls.Add(this.panel1);
-            this.pl_top.Controls.Add(this.bt_fechar);
-            this.pl_top.Controls.Add(this.bt_maximizar);
-            this.pl_top.Controls.Add(this.pl_nome_cla);
-            this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_top.Location = new System.Drawing.Point(0, 0);
-            this.pl_top.Name = "pl_top";
-            this.pl_top.Size = new System.Drawing.Size(1295, 63);
-            this.pl_top.TabIndex = 0;
-            this.pl_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseDown);
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.bt_menu_conta);
-            this.panel1.Location = new System.Drawing.Point(1114, 7);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(42, 34);
-            this.panel1.TabIndex = 52;
-            // 
-            // pl_nome_cla
-            // 
-            this.pl_nome_cla.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.pl_nome_cla.Controls.Add(this.foto_perfil);
-            this.pl_nome_cla.Controls.Add(this.lb_nome_do_cla);
-            this.pl_nome_cla.Location = new System.Drawing.Point(35, 4);
-            this.pl_nome_cla.Name = "pl_nome_cla";
-            this.pl_nome_cla.Size = new System.Drawing.Size(319, 53);
-            this.pl_nome_cla.TabIndex = 47;
-            // 
-            // bt_maximizar
-            // 
-            this.bt_maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_maximizar.BackColor = System.Drawing.Color.Gray;
-            this.bt_maximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_maximizar.FlatAppearance.BorderSize = 0;
-            this.bt_maximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.bt_maximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.bt_maximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_maximizar.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_maximizar.ForeColor = System.Drawing.Color.White;
-            this.bt_maximizar.Location = new System.Drawing.Point(1231, 3);
-            this.bt_maximizar.Name = "bt_maximizar";
-            this.bt_maximizar.Size = new System.Drawing.Size(27, 26);
-            this.bt_maximizar.TabIndex = 46;
-            this.bt_maximizar.Text = "❐";
-            this.toolTip1.SetToolTip(this.bt_maximizar, "Maximizar");
-            this.bt_maximizar.UseVisualStyleBackColor = false;
-            this.bt_maximizar.Click += new System.EventHandler(this.bt_maximizar_Click);
-            // 
-            // bt_minimizar
-            // 
-            this.bt_minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_minimizar.BackColor = System.Drawing.Color.Gray;
-            this.bt_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_minimizar.FlatAppearance.BorderSize = 0;
-            this.bt_minimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.bt_minimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.bt_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_minimizar.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_minimizar.ForeColor = System.Drawing.Color.White;
-            this.bt_minimizar.Location = new System.Drawing.Point(1198, 3);
-            this.bt_minimizar.Name = "bt_minimizar";
-            this.bt_minimizar.Size = new System.Drawing.Size(27, 26);
-            this.bt_minimizar.TabIndex = 45;
-            this.bt_minimizar.Text = "🗕";
-            this.toolTip1.SetToolTip(this.bt_minimizar, "Minimizar");
-            this.bt_minimizar.UseVisualStyleBackColor = false;
-            this.bt_minimizar.Click += new System.EventHandler(this.bt_minimizar_Click);
-            // 
-            // bt_fechar
-            // 
-            this.bt_fechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_fechar.BackColor = System.Drawing.Color.Gray;
-            this.bt_fechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_fechar.FlatAppearance.BorderSize = 0;
-            this.bt_fechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Tomato;
-            this.bt_fechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
-            this.bt_fechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_fechar.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_fechar.ForeColor = System.Drawing.Color.White;
-            this.bt_fechar.Location = new System.Drawing.Point(1264, 3);
-            this.bt_fechar.Name = "bt_fechar";
-            this.bt_fechar.Size = new System.Drawing.Size(27, 26);
-            this.bt_fechar.TabIndex = 44;
-            this.bt_fechar.Text = "X";
-            this.toolTip1.SetToolTip(this.bt_fechar, "Fechar");
-            this.bt_fechar.UseVisualStyleBackColor = false;
-            this.bt_fechar.Click += new System.EventHandler(this.bt_fechar_Click);
-            // 
-            // pl_centro
-            // 
-            this.pl_centro.BackColor = System.Drawing.Color.SlateGray;
-            this.pl_centro.Controls.Add(this.pl_conteudo);
-            this.pl_centro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pl_centro.Location = new System.Drawing.Point(210, 63);
-            this.pl_centro.Name = "pl_centro";
-            this.pl_centro.Size = new System.Drawing.Size(1085, 720);
-            this.pl_centro.TabIndex = 53;
-            // 
-            // pl_conteudo
-            // 
-            this.pl_conteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            this.pl_conteudo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pl_conteudo.Location = new System.Drawing.Point(0, 0);
-            this.pl_conteudo.Name = "pl_conteudo";
-            this.pl_conteudo.Size = new System.Drawing.Size(1085, 720);
-            this.pl_conteudo.TabIndex = 49;
-            // 
-            // bt_deslogar
-            // 
-            this.bt_deslogar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_deslogar.BackColor = System.Drawing.Color.Transparent;
-            this.bt_deslogar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_deslogar.FlatAppearance.BorderSize = 0;
-            this.bt_deslogar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.bt_deslogar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.bt_deslogar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_deslogar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_deslogar.ForeColor = System.Drawing.Color.White;
-            this.bt_deslogar.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
-            this.bt_deslogar.IconColor = System.Drawing.Color.White;
-            this.bt_deslogar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_deslogar.IconSize = 35;
-            this.bt_deslogar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_deslogar.Location = new System.Drawing.Point(150, 213);
-            this.bt_deslogar.Name = "bt_deslogar";
-            this.bt_deslogar.Size = new System.Drawing.Size(41, 36);
-            this.bt_deslogar.TabIndex = 62;
-            this.bt_deslogar.Tag = "";
-            this.bt_deslogar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.bt_deslogar, "Deslogar");
-            this.bt_deslogar.UseVisualStyleBackColor = false;
-            this.bt_deslogar.Visible = false;
-            // 
-            // rjCircularPictureBox1
-            // 
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.rjCircularPictureBox1.BorderSize = 2;
-            this.rjCircularPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Image = global::Mir4.Properties.Resources.HYPE_03;
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(64, 14);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(80, 80);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox1.TabIndex = 52;
-            this.rjCircularPictureBox1.TabStop = false;
             // 
             // bt_menu
             // 
@@ -324,6 +148,7 @@ namespace Mir4
             this.bt_menu.TabIndex = 61;
             this.bt_menu.Tag = "";
             this.bt_menu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.bt_menu, "Recolher");
             this.bt_menu.UseVisualStyleBackColor = false;
             this.bt_menu.Click += new System.EventHandler(this.bt_menu_Click);
             // 
@@ -377,32 +202,8 @@ namespace Mir4
             this.bt_sair.TabIndex = 60;
             this.bt_sair.Tag = "";
             this.bt_sair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.bt_sair, "Sair");
+            this.toolTip1.SetToolTip(this.bt_sair, "Tela inicial");
             this.bt_sair.UseVisualStyleBackColor = false;
-            // 
-            // bt_gold
-            // 
-            this.bt_gold.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_gold.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_gold.FlatAppearance.BorderSize = 0;
-            this.bt_gold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_gold.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_gold.ForeColor = System.Drawing.Color.White;
-            this.bt_gold.IconChar = FontAwesome.Sharp.IconChar.Donate;
-            this.bt_gold.IconColor = System.Drawing.Color.White;
-            this.bt_gold.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_gold.IconSize = 35;
-            this.bt_gold.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_gold.Location = new System.Drawing.Point(0, 196);
-            this.bt_gold.Name = "bt_gold";
-            this.bt_gold.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_gold.Size = new System.Drawing.Size(210, 46);
-            this.bt_gold.TabIndex = 56;
-            this.bt_gold.Tag = "Doações";
-            this.bt_gold.Text = "Doações";
-            this.bt_gold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bt_gold.UseVisualStyleBackColor = false;
-            this.bt_gold.Click += new System.EventHandler(this.bt_gold_Click);
             // 
             // bt_painel
             // 
@@ -452,29 +253,107 @@ namespace Mir4
             this.bt_membros.UseVisualStyleBackColor = false;
             this.bt_membros.Click += new System.EventHandler(this.bt_membros_Click);
             // 
-            // bt_cadastro
+            // pl_conta
             // 
-            this.bt_cadastro.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_cadastro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cadastro.FlatAppearance.BorderSize = 0;
-            this.bt_cadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cadastro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cadastro.ForeColor = System.Drawing.Color.White;
-            this.bt_cadastro.IconChar = FontAwesome.Sharp.IconChar.IdCard;
-            this.bt_cadastro.IconColor = System.Drawing.Color.White;
-            this.bt_cadastro.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_cadastro.IconSize = 35;
-            this.bt_cadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_cadastro.Location = new System.Drawing.Point(0, 144);
-            this.bt_cadastro.Name = "bt_cadastro";
-            this.bt_cadastro.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_cadastro.Size = new System.Drawing.Size(210, 46);
-            this.bt_cadastro.TabIndex = 53;
-            this.bt_cadastro.Tag = "Cadastro";
-            this.bt_cadastro.Text = "Cadastro";
-            this.bt_cadastro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bt_cadastro.UseVisualStyleBackColor = false;
-            this.bt_cadastro.Click += new System.EventHandler(this.bt_cadastro_Click);
+            this.pl_conta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pl_conta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.pl_conta.Controls.Add(this.bt_deslogar);
+            this.pl_conta.Controls.Add(this.rjCircularPictureBox1);
+            this.pl_conta.Controls.Add(this.lb_patente);
+            this.pl_conta.Controls.Add(this.lb_nick);
+            this.pl_conta.Location = new System.Drawing.Point(953, 34);
+            this.pl_conta.Name = "pl_conta";
+            this.pl_conta.Size = new System.Drawing.Size(208, 262);
+            this.pl_conta.TabIndex = 0;
+            this.pl_conta.Visible = false;
+            // 
+            // bt_deslogar
+            // 
+            this.bt_deslogar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_deslogar.BackColor = System.Drawing.Color.Transparent;
+            this.bt_deslogar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_deslogar.FlatAppearance.BorderSize = 0;
+            this.bt_deslogar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bt_deslogar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.bt_deslogar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_deslogar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_deslogar.ForeColor = System.Drawing.Color.White;
+            this.bt_deslogar.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
+            this.bt_deslogar.IconColor = System.Drawing.Color.White;
+            this.bt_deslogar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_deslogar.IconSize = 35;
+            this.bt_deslogar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_deslogar.Location = new System.Drawing.Point(150, 213);
+            this.bt_deslogar.Name = "bt_deslogar";
+            this.bt_deslogar.Size = new System.Drawing.Size(41, 36);
+            this.bt_deslogar.TabIndex = 62;
+            this.bt_deslogar.Tag = "";
+            this.bt_deslogar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.bt_deslogar, "Deslogar");
+            this.bt_deslogar.UseVisualStyleBackColor = false;
+            this.bt_deslogar.Visible = false;
+            // 
+            // rjCircularPictureBox1
+            // 
+            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.rjCircularPictureBox1.BorderSize = 2;
+            this.rjCircularPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rjCircularPictureBox1.GradientAngle = 50F;
+            this.rjCircularPictureBox1.Image = global::Mir4.Properties.Resources.HYPE_03;
+            this.rjCircularPictureBox1.Location = new System.Drawing.Point(64, 14);
+            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
+            this.rjCircularPictureBox1.Size = new System.Drawing.Size(80, 80);
+            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox1.TabIndex = 52;
+            this.rjCircularPictureBox1.TabStop = false;
+            // 
+            // pl_top
+            // 
+            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.pl_top.Controls.Add(this.bt_minimizar);
+            this.pl_top.Controls.Add(this.panel1);
+            this.pl_top.Controls.Add(this.bt_fechar);
+            this.pl_top.Controls.Add(this.bt_maximizar);
+            this.pl_top.Controls.Add(this.pl_nome_cla);
+            this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_top.Location = new System.Drawing.Point(0, 0);
+            this.pl_top.Name = "pl_top";
+            this.pl_top.Size = new System.Drawing.Size(1295, 63);
+            this.pl_top.TabIndex = 0;
+            this.pl_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseDown);
+            // 
+            // bt_minimizar
+            // 
+            this.bt_minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_minimizar.BackColor = System.Drawing.Color.Gray;
+            this.bt_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_minimizar.FlatAppearance.BorderSize = 0;
+            this.bt_minimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.bt_minimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.bt_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_minimizar.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_minimizar.ForeColor = System.Drawing.Color.White;
+            this.bt_minimizar.Location = new System.Drawing.Point(1198, 3);
+            this.bt_minimizar.Name = "bt_minimizar";
+            this.bt_minimizar.Size = new System.Drawing.Size(27, 26);
+            this.bt_minimizar.TabIndex = 45;
+            this.bt_minimizar.Text = "🗕";
+            this.toolTip1.SetToolTip(this.bt_minimizar, "Minimizar");
+            this.bt_minimizar.UseVisualStyleBackColor = false;
+            this.bt_minimizar.Click += new System.EventHandler(this.bt_minimizar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.bt_menu_conta);
+            this.panel1.Location = new System.Drawing.Point(1114, 7);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(42, 34);
+            this.panel1.TabIndex = 52;
             // 
             // bt_menu_conta
             // 
@@ -492,6 +371,57 @@ namespace Mir4
             this.bt_menu_conta.UseVisualStyleBackColor = true;
             this.bt_menu_conta.Click += new System.EventHandler(this.bt_menu_conta_Click);
             // 
+            // bt_fechar
+            // 
+            this.bt_fechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_fechar.BackColor = System.Drawing.Color.Gray;
+            this.bt_fechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_fechar.FlatAppearance.BorderSize = 0;
+            this.bt_fechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Tomato;
+            this.bt_fechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
+            this.bt_fechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_fechar.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_fechar.ForeColor = System.Drawing.Color.White;
+            this.bt_fechar.Location = new System.Drawing.Point(1264, 3);
+            this.bt_fechar.Name = "bt_fechar";
+            this.bt_fechar.Size = new System.Drawing.Size(27, 26);
+            this.bt_fechar.TabIndex = 44;
+            this.bt_fechar.Text = "X";
+            this.toolTip1.SetToolTip(this.bt_fechar, "Fechar");
+            this.bt_fechar.UseVisualStyleBackColor = false;
+            this.bt_fechar.Click += new System.EventHandler(this.bt_fechar_Click);
+            // 
+            // bt_maximizar
+            // 
+            this.bt_maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_maximizar.BackColor = System.Drawing.Color.Gray;
+            this.bt_maximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_maximizar.FlatAppearance.BorderSize = 0;
+            this.bt_maximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.bt_maximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.bt_maximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_maximizar.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_maximizar.ForeColor = System.Drawing.Color.White;
+            this.bt_maximizar.Location = new System.Drawing.Point(1231, 3);
+            this.bt_maximizar.Name = "bt_maximizar";
+            this.bt_maximizar.Size = new System.Drawing.Size(27, 26);
+            this.bt_maximizar.TabIndex = 46;
+            this.bt_maximizar.Text = "❐";
+            this.toolTip1.SetToolTip(this.bt_maximizar, "Maximizar");
+            this.bt_maximizar.UseVisualStyleBackColor = false;
+            this.bt_maximizar.Click += new System.EventHandler(this.bt_maximizar_Click);
+            // 
+            // pl_nome_cla
+            // 
+            this.pl_nome_cla.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pl_nome_cla.Controls.Add(this.foto_perfil);
+            this.pl_nome_cla.Controls.Add(this.lb_nome_do_cla);
+            this.pl_nome_cla.Location = new System.Drawing.Point(35, 4);
+            this.pl_nome_cla.Name = "pl_nome_cla";
+            this.pl_nome_cla.Size = new System.Drawing.Size(319, 53);
+            this.pl_nome_cla.TabIndex = 47;
+            // 
             // foto_perfil
             // 
             this.foto_perfil.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
@@ -508,6 +438,25 @@ namespace Mir4
             this.foto_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.foto_perfil.TabIndex = 0;
             this.foto_perfil.TabStop = false;
+            // 
+            // pl_centro
+            // 
+            this.pl_centro.BackColor = System.Drawing.Color.SlateGray;
+            this.pl_centro.Controls.Add(this.pl_conteudo);
+            this.pl_centro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pl_centro.Location = new System.Drawing.Point(210, 63);
+            this.pl_centro.Name = "pl_centro";
+            this.pl_centro.Size = new System.Drawing.Size(1085, 720);
+            this.pl_centro.TabIndex = 53;
+            // 
+            // pl_conteudo
+            // 
+            this.pl_conteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.pl_conteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pl_conteudo.Location = new System.Drawing.Point(0, 0);
+            this.pl_conteudo.Name = "pl_conteudo";
+            this.pl_conteudo.Size = new System.Drawing.Size(1085, 720);
+            this.pl_conteudo.TabIndex = 49;
             // 
             // cla
             // 
@@ -528,13 +477,13 @@ namespace Mir4
             this.pl_conf.ResumeLayout(false);
             this.pl_conta.ResumeLayout(false);
             this.pl_conta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             this.pl_top.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pl_nome_cla.ResumeLayout(false);
             this.pl_nome_cla.PerformLayout();
-            this.pl_centro.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).EndInit();
+            this.pl_centro.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -549,9 +498,7 @@ namespace Mir4
         private System.Windows.Forms.Label lb_nome_do_cla;
         private System.Windows.Forms.Button bt_maximizar;
         private System.Windows.Forms.Panel pl_centro;
-        private FontAwesome.Sharp.IconButton bt_cadastro;
         private FontAwesome.Sharp.IconButton bt_configurar;
-        private FontAwesome.Sharp.IconButton bt_gold;
         private FontAwesome.Sharp.IconButton bt_painel;
         private FontAwesome.Sharp.IconButton bt_membros;
         private FontAwesome.Sharp.IconButton bt_menu_conta;

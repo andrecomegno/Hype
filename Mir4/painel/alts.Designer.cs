@@ -1,7 +1,7 @@
 ﻿
 namespace Mir4.painel
 {
-    partial class progressao
+    partial class alts
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -29,7 +29,7 @@ namespace Mir4.painel
         /// </summary>
         private void InitializeComponent()
         {
-            this.pl_progressao = new System.Windows.Forms.Panel();
+            this.pl_alts = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_buscar = new Mir4.painel.RJTextBox();
             this.bt_alts = new System.Windows.Forms.Button();
@@ -37,28 +37,28 @@ namespace Mir4.painel
             this.bt_progressao = new System.Windows.Forms.Button();
             this.bt_membros = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pl_progressao.SuspendLayout();
+            this.pl_alts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pl_progressao
+            // pl_alts
             // 
-            this.pl_progressao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pl_alts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pl_progressao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            this.pl_progressao.Controls.Add(this.pictureBox1);
-            this.pl_progressao.Controls.Add(this.txt_buscar);
-            this.pl_progressao.Controls.Add(this.bt_alts);
-            this.pl_progressao.Controls.Add(this.bt_ouro);
-            this.pl_progressao.Controls.Add(this.bt_progressao);
-            this.pl_progressao.Controls.Add(this.bt_membros);
-            this.pl_progressao.Controls.Add(this.dataGridView1);
-            this.pl_progressao.Location = new System.Drawing.Point(14, 3);
-            this.pl_progressao.Name = "pl_progressao";
-            this.pl_progressao.Size = new System.Drawing.Size(1172, 714);
-            this.pl_progressao.TabIndex = 76;
+            this.pl_alts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.pl_alts.Controls.Add(this.pictureBox1);
+            this.pl_alts.Controls.Add(this.txt_buscar);
+            this.pl_alts.Controls.Add(this.bt_alts);
+            this.pl_alts.Controls.Add(this.bt_ouro);
+            this.pl_alts.Controls.Add(this.bt_progressao);
+            this.pl_alts.Controls.Add(this.bt_membros);
+            this.pl_alts.Controls.Add(this.dataGridView1);
+            this.pl_alts.Location = new System.Drawing.Point(14, 3);
+            this.pl_alts.Name = "pl_alts";
+            this.pl_alts.Size = new System.Drawing.Size(1172, 714);
+            this.pl_alts.TabIndex = 78;
             // 
             // pictureBox1
             // 
@@ -97,7 +97,7 @@ namespace Mir4.painel
             // 
             // bt_alts
             // 
-            this.bt_alts.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_alts.BackColor = System.Drawing.Color.CornflowerBlue;
             this.bt_alts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_alts.FlatAppearance.BorderSize = 0;
             this.bt_alts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -109,7 +109,6 @@ namespace Mir4.painel
             this.bt_alts.TabIndex = 62;
             this.bt_alts.Text = "Alts";
             this.bt_alts.UseVisualStyleBackColor = false;
-            this.bt_alts.Click += new System.EventHandler(this.bt_alts_Click);
             // 
             // bt_ouro
             // 
@@ -129,7 +128,7 @@ namespace Mir4.painel
             // 
             // bt_progressao
             // 
-            this.bt_progressao.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.bt_progressao.BackColor = System.Drawing.Color.LightSlateGray;
             this.bt_progressao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_progressao.FlatAppearance.BorderSize = 0;
             this.bt_progressao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -141,6 +140,7 @@ namespace Mir4.painel
             this.bt_progressao.TabIndex = 60;
             this.bt_progressao.Text = "Progressão";
             this.bt_progressao.UseVisualStyleBackColor = false;
+            this.bt_progressao.Click += new System.EventHandler(this.bt_progressao_Click);
             // 
             // bt_membros
             // 
@@ -173,15 +173,15 @@ namespace Mir4.painel
             this.dataGridView1.Size = new System.Drawing.Size(1172, 673);
             this.dataGridView1.TabIndex = 1;
             // 
-            // progressao
+            // alts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            this.Controls.Add(this.pl_progressao);
-            this.Name = "progressao";
+            this.Controls.Add(this.pl_alts);
+            this.Name = "alts";
             this.Size = new System.Drawing.Size(1200, 720);
-            this.pl_progressao.ResumeLayout(false);
+            this.pl_alts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -190,7 +190,7 @@ namespace Mir4.painel
 
         #endregion
 
-        private System.Windows.Forms.Panel pl_progressao;
+        private System.Windows.Forms.Panel pl_alts;
         private System.Windows.Forms.PictureBox pictureBox1;
         private RJTextBox txt_buscar;
         private System.Windows.Forms.Button bt_alts;

@@ -30,25 +30,25 @@ namespace Mir4.painel
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.co_membros = new System.Windows.Forms.Panel();
-            this.rjTextBox1 = new Mir4.painel.RJTextBox();
+            this.membro = new System.Windows.Forms.Panel();
             this.pl_membros = new System.Windows.Forms.Panel();
             this.bt_alts = new System.Windows.Forms.Button();
             this.bt_ouro = new System.Windows.Forms.Button();
             this.bt_progressao = new System.Windows.Forms.Button();
             this.bt_membros = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cadastromembroBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mydbDataSet = new Mir4.mydbDataSet();
+            this.cadastro_membroTableAdapter = new Mir4.mydbDataSetTableAdapters.cadastro_membroTableAdapter();
+            this.pATENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nICKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nIVELDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pODERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cLASSEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pATENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cadastromembroBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mydbDataSet = new Mir4.mydbDataSet();
-            this.cadastro_membroTableAdapter = new Mir4.mydbDataSetTableAdapters.cadastro_membroTableAdapter();
+            this.bt_add_membro = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.co_membros.SuspendLayout();
+            this.txt_buscar = new Mir4.painel.RJTextBox();
+            this.membro.SuspendLayout();
             this.pl_membros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastromembroBindingSource)).BeginInit();
@@ -56,38 +56,15 @@ namespace Mir4.painel
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // co_membros
+            // membro
             // 
-            this.co_membros.BackColor = System.Drawing.SystemColors.Control;
-            this.co_membros.Controls.Add(this.pl_membros);
-            this.co_membros.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.co_membros.Location = new System.Drawing.Point(0, 0);
-            this.co_membros.Name = "co_membros";
-            this.co_membros.Size = new System.Drawing.Size(1200, 720);
-            this.co_membros.TabIndex = 0;
-            // 
-            // rjTextBox1
-            // 
-            this.rjTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.Transparent;
-            this.rjTextBox1.BorderRadius = 15;
-            this.rjTextBox1.BorderSize = 2;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox1.Location = new System.Drawing.Point(742, 9);
-            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox1.Multiline = false;
-            this.rjTextBox1.Name = "rjTextBox1";
-            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox1.PasswordChar = false;
-            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox1.PlaceholderText = "O que você procura ?";
-            this.rjTextBox1.Size = new System.Drawing.Size(268, 31);
-            this.rjTextBox1.TabIndex = 0;
-            this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = false;
+            this.membro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.membro.Controls.Add(this.pl_membros);
+            this.membro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.membro.Location = new System.Drawing.Point(0, 0);
+            this.membro.Name = "membro";
+            this.membro.Size = new System.Drawing.Size(1200, 720);
+            this.membro.TabIndex = 0;
             // 
             // pl_membros
             // 
@@ -95,13 +72,14 @@ namespace Mir4.painel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pl_membros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.pl_membros.Controls.Add(this.bt_add_membro);
+            this.pl_membros.Controls.Add(this.dataGridView1);
             this.pl_membros.Controls.Add(this.pictureBox1);
-            this.pl_membros.Controls.Add(this.rjTextBox1);
+            this.pl_membros.Controls.Add(this.txt_buscar);
             this.pl_membros.Controls.Add(this.bt_alts);
             this.pl_membros.Controls.Add(this.bt_ouro);
             this.pl_membros.Controls.Add(this.bt_progressao);
             this.pl_membros.Controls.Add(this.bt_membros);
-            this.pl_membros.Controls.Add(this.dataGridView1);
             this.pl_membros.Location = new System.Drawing.Point(15, 3);
             this.pl_membros.Name = "pl_membros";
             this.pl_membros.Size = new System.Drawing.Size(1172, 714);
@@ -121,6 +99,7 @@ namespace Mir4.painel
             this.bt_alts.TabIndex = 62;
             this.bt_alts.Text = "Alts";
             this.bt_alts.UseVisualStyleBackColor = false;
+            this.bt_alts.Click += new System.EventHandler(this.bt_alts_Click);
             // 
             // bt_ouro
             // 
@@ -136,6 +115,7 @@ namespace Mir4.painel
             this.bt_ouro.TabIndex = 61;
             this.bt_ouro.Text = "Ouro";
             this.bt_ouro.UseVisualStyleBackColor = false;
+            this.bt_ouro.Click += new System.EventHandler(this.bt_ouro_Click);
             // 
             // bt_progressao
             // 
@@ -171,69 +151,31 @@ namespace Mir4.painel
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
+            this.pATENTEDataGridViewTextBoxColumn,
             this.nICKDataGridViewTextBoxColumn,
             this.nIVELDataGridViewTextBoxColumn,
             this.pODERDataGridViewTextBoxColumn,
-            this.cLASSEDataGridViewTextBoxColumn,
-            this.pATENTEDataGridViewTextBoxColumn});
+            this.cLASSEDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.cadastromembroBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 41);
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 47);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1172, 673);
+            this.dataGridView1.Size = new System.Drawing.Size(1166, 664);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nICKDataGridViewTextBoxColumn
-            // 
-            this.nICKDataGridViewTextBoxColumn.DataPropertyName = "NICK";
-            this.nICKDataGridViewTextBoxColumn.HeaderText = "NICK";
-            this.nICKDataGridViewTextBoxColumn.Name = "nICKDataGridViewTextBoxColumn";
-            this.nICKDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nIVELDataGridViewTextBoxColumn
-            // 
-            this.nIVELDataGridViewTextBoxColumn.DataPropertyName = "NIVEL";
-            this.nIVELDataGridViewTextBoxColumn.HeaderText = "NIVEL";
-            this.nIVELDataGridViewTextBoxColumn.Name = "nIVELDataGridViewTextBoxColumn";
-            this.nIVELDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pODERDataGridViewTextBoxColumn
-            // 
-            this.pODERDataGridViewTextBoxColumn.DataPropertyName = "PODER";
-            this.pODERDataGridViewTextBoxColumn.HeaderText = "PODER";
-            this.pODERDataGridViewTextBoxColumn.Name = "pODERDataGridViewTextBoxColumn";
-            this.pODERDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cLASSEDataGridViewTextBoxColumn
-            // 
-            this.cLASSEDataGridViewTextBoxColumn.DataPropertyName = "CLASSE";
-            this.cLASSEDataGridViewTextBoxColumn.HeaderText = "CLASSE";
-            this.cLASSEDataGridViewTextBoxColumn.Name = "cLASSEDataGridViewTextBoxColumn";
-            this.cLASSEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pATENTEDataGridViewTextBoxColumn
-            // 
-            this.pATENTEDataGridViewTextBoxColumn.DataPropertyName = "PATENTE";
-            this.pATENTEDataGridViewTextBoxColumn.HeaderText = "PATENTE";
-            this.pATENTEDataGridViewTextBoxColumn.Name = "pATENTEDataGridViewTextBoxColumn";
-            this.pATENTEDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cadastromembroBindingSource
             // 
@@ -249,6 +191,52 @@ namespace Mir4.painel
             // 
             this.cadastro_membroTableAdapter.ClearBeforeFill = true;
             // 
+            // pATENTEDataGridViewTextBoxColumn
+            // 
+            this.pATENTEDataGridViewTextBoxColumn.DataPropertyName = "PATENTE";
+            this.pATENTEDataGridViewTextBoxColumn.HeaderText = "PATENTE";
+            this.pATENTEDataGridViewTextBoxColumn.Name = "pATENTEDataGridViewTextBoxColumn";
+            // 
+            // nICKDataGridViewTextBoxColumn
+            // 
+            this.nICKDataGridViewTextBoxColumn.DataPropertyName = "NICK";
+            this.nICKDataGridViewTextBoxColumn.HeaderText = "NICK";
+            this.nICKDataGridViewTextBoxColumn.Name = "nICKDataGridViewTextBoxColumn";
+            this.nICKDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // nIVELDataGridViewTextBoxColumn
+            // 
+            this.nIVELDataGridViewTextBoxColumn.DataPropertyName = "NIVEL";
+            this.nIVELDataGridViewTextBoxColumn.HeaderText = "NIVEL";
+            this.nIVELDataGridViewTextBoxColumn.Name = "nIVELDataGridViewTextBoxColumn";
+            // 
+            // pODERDataGridViewTextBoxColumn
+            // 
+            this.pODERDataGridViewTextBoxColumn.DataPropertyName = "PODER";
+            this.pODERDataGridViewTextBoxColumn.HeaderText = "PODER";
+            this.pODERDataGridViewTextBoxColumn.Name = "pODERDataGridViewTextBoxColumn";
+            // 
+            // cLASSEDataGridViewTextBoxColumn
+            // 
+            this.cLASSEDataGridViewTextBoxColumn.DataPropertyName = "CLASSE";
+            this.cLASSEDataGridViewTextBoxColumn.HeaderText = "CLASSE";
+            this.cLASSEDataGridViewTextBoxColumn.Name = "cLASSEDataGridViewTextBoxColumn";
+            // 
+            // bt_add_membro
+            // 
+            this.bt_add_membro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_add_membro.AutoSize = true;
+            this.bt_add_membro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.bt_add_membro.Font = new System.Drawing.Font("Microsoft Sans Serif", 70F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_add_membro.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.bt_add_membro.Location = new System.Drawing.Point(1002, 604);
+            this.bt_add_membro.Name = "bt_add_membro";
+            this.bt_add_membro.Size = new System.Drawing.Size(101, 107);
+            this.bt_add_membro.TabIndex = 64;
+            this.bt_add_membro.Text = "+";
+            this.bt_add_membro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bt_add_membro.Click += new System.EventHandler(this.bt_add_membro_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -261,17 +249,41 @@ namespace Mir4.painel
             this.pictureBox1.TabIndex = 63;
             this.pictureBox1.TabStop = false;
             // 
+            // txt_buscar
+            // 
+            this.txt_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_buscar.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_buscar.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_buscar.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.txt_buscar.BorderRadius = 15;
+            this.txt_buscar.BorderSize = 2;
+            this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_buscar.Location = new System.Drawing.Point(742, 9);
+            this.txt_buscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_buscar.Multiline = false;
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_buscar.PasswordChar = false;
+            this.txt_buscar.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_buscar.PlaceholderText = "O que você procura ?";
+            this.txt_buscar.Size = new System.Drawing.Size(268, 31);
+            this.txt_buscar.TabIndex = 0;
+            this.txt_buscar.Texts = "";
+            this.txt_buscar.UnderlinedStyle = false;
+            // 
             // membros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.co_membros);
+            this.Controls.Add(this.membro);
             this.Name = "membros";
             this.Size = new System.Drawing.Size(1200, 720);
             this.Load += new System.EventHandler(this.membros_Load);
-            this.co_membros.ResumeLayout(false);
+            this.membro.ResumeLayout(false);
             this.pl_membros.ResumeLayout(false);
+            this.pl_membros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastromembroBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mydbDataSet)).EndInit();
@@ -282,15 +294,8 @@ namespace Mir4.painel
 
         #endregion
 
-        private System.Windows.Forms.Panel co_membros;
+        private System.Windows.Forms.Panel membro;
         private System.Windows.Forms.Panel pl_membros;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nICKDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nIVELDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pODERDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cLASSEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pATENTEDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource cadastromembroBindingSource;
         private mydbDataSet mydbDataSet;
         private mydbDataSetTableAdapters.cadastro_membroTableAdapter cadastro_membroTableAdapter;
@@ -298,7 +303,14 @@ namespace Mir4.painel
         private System.Windows.Forms.Button bt_ouro;
         private System.Windows.Forms.Button bt_progressao;
         private System.Windows.Forms.Button bt_membros;
-        private RJTextBox rjTextBox1;
+        private RJTextBox txt_buscar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pATENTEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nICKDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nIVELDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pODERDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cLASSEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label bt_add_membro;
     }
 }

@@ -7,26 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Mir4.painel;
 
 namespace Mir4.painel
 {
-    public partial class progressao : UserControl
+    public partial class ouro : UserControl
     {
-        public progressao()
+        public ouro()
         {
             InitializeComponent();
         }
 
         private void bt_membros_Click(object sender, EventArgs e)
-        {       
+        {
             membros uc = new membros();
             cla.Instance.addControl(uc);
         }
 
-        private void bt_ouro_Click(object sender, EventArgs e)
+        private void bt_progressao_Click(object sender, EventArgs e)
         {
-            ouro uc = new ouro();
+            progressao uc = new progressao();
             cla.Instance.addControl(uc);
         }
 

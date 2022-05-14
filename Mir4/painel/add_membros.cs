@@ -10,26 +10,23 @@ using System.Windows.Forms;
 
 namespace Mir4.painel
 {
-    public partial class membros_detalhes : UserControl
+    public partial class add_membros : UserControl
     {
-        public membros_detalhes()
+        public add_membros()
         {
             InitializeComponent();
         }
 
-        public void addControl(UserControl userControl)
+        private void bt_salvar_Click(object sender, EventArgs e)
         {
-            userControl.Dock = DockStyle.Fill;
-            pl_conteudo.Controls.Clear();
-            pl_conteudo.Controls.Add(userControl);
-            userControl.BringToFront();
-            
+            membros uc = new membros();
+            cla.Instance.addControl(uc);
         }
 
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
-            doacoes uc = new doacoes();
-            addControl(uc);
+            membros uc = new membros();
+            cla.Instance.addControl(uc);
         }
     }
 }

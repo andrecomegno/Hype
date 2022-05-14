@@ -15,11 +15,14 @@ namespace Mir4
 {
     public partial class cla : Form
     {
+        public static cla Instance;
 
         public cla()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
+
+            Instance = this;            
         }
 
         private void bt_menu_Click(object sender, EventArgs e)
@@ -86,25 +89,19 @@ namespace Mir4
 
         private void bt_painel_Click(object sender, EventArgs e)
         {
-            painel_inicio uc = new painel_inicio();
+            bt_painel.BackColor = Color.CornflowerBlue;
+            bt_membros.BackColor = Color.LightSlateGray;
+
+            inicio uc = new inicio();
             addControl(uc);
         }
 
         private void bt_membros_Click(object sender, EventArgs e)
         {
+            bt_membros.BackColor = Color.CornflowerBlue;
+            bt_painel.BackColor = Color.LightSlateGray;
+
             membros uc = new membros();
-            addControl(uc);
-        }
-
-        private void bt_cadastro_Click(object sender, EventArgs e)
-        {
-            cadastro_membro uc = new cadastro_membro();
-            addControl(uc);
-        }
-
-        private void bt_gold_Click(object sender, EventArgs e)
-        {
-            doacoes uc = new doacoes();
             addControl(uc);
         }
 
@@ -151,8 +148,5 @@ namespace Mir4
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-
-
     }
 }
