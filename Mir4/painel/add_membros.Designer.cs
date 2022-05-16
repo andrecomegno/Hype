@@ -30,7 +30,12 @@ namespace Mir4.painel
         private void InitializeComponent()
         {
             this.pl_conteudo = new System.Windows.Forms.Panel();
+            this.pl_todos = new System.Windows.Forms.Panel();
+            this.pl_botao = new System.Windows.Forms.Panel();
+            this.bt_cancelar = new System.Windows.Forms.Button();
+            this.bt_salvar = new System.Windows.Forms.Button();
             this.pl_alt_1 = new System.Windows.Forms.Panel();
+            this.foto_classe_alt_1 = new Mir4.script.RJCircularPictureBox();
             this.txt_nick_alt_1 = new Mir4.painel.RJTextBox();
             this.txt_poder_alt_1 = new Mir4.painel.RJTextBox();
             this.lb_nivel_alt_1 = new System.Windows.Forms.Label();
@@ -39,6 +44,7 @@ namespace Mir4.painel
             this.txt_classe_alt_1 = new System.Windows.Forms.ComboBox();
             this.txt_foi_alt_1 = new Mir4.painel.RJTextBox();
             this.pl_alt_0 = new System.Windows.Forms.Panel();
+            this.foto_classe_alt_0 = new Mir4.script.RJCircularPictureBox();
             this.txt_nick_alt_0 = new Mir4.painel.RJTextBox();
             this.txt_poder_alt_0 = new Mir4.painel.RJTextBox();
             this.lb_nivel_alt_0 = new System.Windows.Forms.Label();
@@ -53,6 +59,7 @@ namespace Mir4.painel
             this.rd_nao = new System.Windows.Forms.RadioButton();
             this.rd_sim = new System.Windows.Forms.RadioButton();
             this.pl_membro = new System.Windows.Forms.Panel();
+            this.foto_classe = new Mir4.script.RJCircularPictureBox();
             this.txt_nick = new Mir4.painel.RJTextBox();
             this.txt_poder = new Mir4.painel.RJTextBox();
             this.lb_level = new System.Windows.Forms.Label();
@@ -63,21 +70,16 @@ namespace Mir4.painel
             this.txt_classe = new System.Windows.Forms.ComboBox();
             this.txt_foi = new Mir4.painel.RJTextBox();
             this.txt_vem = new Mir4.painel.RJTextBox();
-            this.foto_classe_alt_1 = new Mir4.script.RJCircularPictureBox();
-            this.foto_classe_alt_0 = new Mir4.script.RJCircularPictureBox();
-            this.foto_classe = new Mir4.script.RJCircularPictureBox();
-            this.pl_todos = new System.Windows.Forms.Panel();
-            this.bt_salvar = new System.Windows.Forms.Button();
-            this.bt_cancelar = new System.Windows.Forms.Button();
             this.pl_conteudo.SuspendLayout();
+            this.pl_todos.SuspendLayout();
+            this.pl_botao.SuspendLayout();
             this.pl_alt_1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_classe_alt_1)).BeginInit();
             this.pl_alt_0.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_classe_alt_0)).BeginInit();
             this.pl_pergunta.SuspendLayout();
             this.pl_membro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_classe_alt_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_classe_alt_0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.foto_classe)).BeginInit();
-            this.pl_todos.SuspendLayout();
             this.SuspendLayout();
             // 
             // pl_conteudo
@@ -87,12 +89,69 @@ namespace Mir4.painel
             this.pl_conteudo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_conteudo.Location = new System.Drawing.Point(0, 0);
             this.pl_conteudo.Name = "pl_conteudo";
-            this.pl_conteudo.Size = new System.Drawing.Size(1200, 717);
+            this.pl_conteudo.Size = new System.Drawing.Size(1200, 687);
             this.pl_conteudo.TabIndex = 2;
+            // 
+            // pl_todos
+            // 
+            this.pl_todos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pl_todos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.pl_todos.Controls.Add(this.pl_botao);
+            this.pl_todos.Controls.Add(this.pl_alt_1);
+            this.pl_todos.Controls.Add(this.pl_alt_0);
+            this.pl_todos.Controls.Add(this.pl_pergunta);
+            this.pl_todos.Controls.Add(this.pl_membro);
+            this.pl_todos.Location = new System.Drawing.Point(238, 3);
+            this.pl_todos.Name = "pl_todos";
+            this.pl_todos.Size = new System.Drawing.Size(725, 682);
+            this.pl_todos.TabIndex = 21;
+            // 
+            // pl_botao
+            // 
+            this.pl_botao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pl_botao.Controls.Add(this.bt_cancelar);
+            this.pl_botao.Controls.Add(this.bt_salvar);
+            this.pl_botao.Location = new System.Drawing.Point(0, 257);
+            this.pl_botao.Name = "pl_botao";
+            this.pl_botao.Size = new System.Drawing.Size(725, 61);
+            this.pl_botao.TabIndex = 64;
+            // 
+            // bt_cancelar
+            // 
+            this.bt_cancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_cancelar.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cancelar.FlatAppearance.BorderSize = 0;
+            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
+            this.bt_cancelar.Location = new System.Drawing.Point(556, 6);
+            this.bt_cancelar.Name = "bt_cancelar";
+            this.bt_cancelar.Size = new System.Drawing.Size(122, 36);
+            this.bt_cancelar.TabIndex = 62;
+            this.bt_cancelar.Text = "Cancelar";
+            this.bt_cancelar.UseVisualStyleBackColor = false;
+            this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
+            // 
+            // bt_salvar
+            // 
+            this.bt_salvar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_salvar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.bt_salvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_salvar.FlatAppearance.BorderSize = 0;
+            this.bt_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_salvar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_salvar.ForeColor = System.Drawing.Color.White;
+            this.bt_salvar.Location = new System.Drawing.Point(423, 6);
+            this.bt_salvar.Name = "bt_salvar";
+            this.bt_salvar.Size = new System.Drawing.Size(122, 36);
+            this.bt_salvar.TabIndex = 63;
+            this.bt_salvar.Text = "Salvar";
+            this.bt_salvar.UseVisualStyleBackColor = false;
+            this.bt_salvar.Click += new System.EventHandler(this.bt_salvar_Click);
             // 
             // pl_alt_1
             // 
-            this.pl_alt_1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pl_alt_1.Controls.Add(this.foto_classe_alt_1);
             this.pl_alt_1.Controls.Add(this.txt_nick_alt_1);
             this.pl_alt_1.Controls.Add(this.txt_poder_alt_1);
@@ -101,10 +160,28 @@ namespace Mir4.painel
             this.pl_alt_1.Controls.Add(this.txt_nivel_alt_1);
             this.pl_alt_1.Controls.Add(this.txt_classe_alt_1);
             this.pl_alt_1.Controls.Add(this.txt_foi_alt_1);
-            this.pl_alt_1.Location = new System.Drawing.Point(25, 449);
+            this.pl_alt_1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_alt_1.Location = new System.Drawing.Point(0, 409);
             this.pl_alt_1.Name = "pl_alt_1";
-            this.pl_alt_1.Size = new System.Drawing.Size(674, 175);
+            this.pl_alt_1.Size = new System.Drawing.Size(725, 149);
             this.pl_alt_1.TabIndex = 20;
+            this.pl_alt_1.Visible = false;
+            // 
+            // foto_classe_alt_1
+            // 
+            this.foto_classe_alt_1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.foto_classe_alt_1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.foto_classe_alt_1.BorderColor2 = System.Drawing.Color.White;
+            this.foto_classe_alt_1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.foto_classe_alt_1.BorderSize = 2;
+            this.foto_classe_alt_1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.foto_classe_alt_1.GradientAngle = 50F;
+            this.foto_classe_alt_1.Location = new System.Drawing.Point(47, 19);
+            this.foto_classe_alt_1.Name = "foto_classe_alt_1";
+            this.foto_classe_alt_1.Size = new System.Drawing.Size(110, 110);
+            this.foto_classe_alt_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.foto_classe_alt_1.TabIndex = 14;
+            this.foto_classe_alt_1.TabStop = false;
             // 
             // txt_nick_alt_1
             // 
@@ -115,7 +192,7 @@ namespace Mir4.painel
             this.txt_nick_alt_1.BorderSize = 1;
             this.txt_nick_alt_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nick_alt_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_nick_alt_1.Location = new System.Drawing.Point(153, 63);
+            this.txt_nick_alt_1.Location = new System.Drawing.Point(178, 50);
             this.txt_nick_alt_1.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nick_alt_1.Multiline = false;
             this.txt_nick_alt_1.Name = "txt_nick_alt_1";
@@ -137,7 +214,7 @@ namespace Mir4.painel
             this.txt_poder_alt_1.BorderSize = 1;
             this.txt_poder_alt_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_poder_alt_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder_alt_1.Location = new System.Drawing.Point(398, 63);
+            this.txt_poder_alt_1.Location = new System.Drawing.Point(423, 50);
             this.txt_poder_alt_1.Margin = new System.Windows.Forms.Padding(4);
             this.txt_poder_alt_1.Multiline = false;
             this.txt_poder_alt_1.Name = "txt_poder_alt_1";
@@ -154,7 +231,7 @@ namespace Mir4.painel
             // 
             this.lb_nivel_alt_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_nivel_alt_1.ForeColor = System.Drawing.Color.White;
-            this.lb_nivel_alt_1.Location = new System.Drawing.Point(322, 53);
+            this.lb_nivel_alt_1.Location = new System.Drawing.Point(347, 40);
             this.lb_nivel_alt_1.Name = "lb_nivel_alt_1";
             this.lb_nivel_alt_1.Size = new System.Drawing.Size(69, 17);
             this.lb_nivel_alt_1.TabIndex = 5;
@@ -165,7 +242,7 @@ namespace Mir4.painel
             // 
             this.lb_classe_alt_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_classe_alt_1.ForeColor = System.Drawing.Color.White;
-            this.lb_classe_alt_1.Location = new System.Drawing.Point(524, 53);
+            this.lb_classe_alt_1.Location = new System.Drawing.Point(549, 40);
             this.lb_classe_alt_1.Name = "lb_classe_alt_1";
             this.lb_classe_alt_1.Size = new System.Drawing.Size(129, 17);
             this.lb_classe_alt_1.TabIndex = 6;
@@ -329,7 +406,7 @@ namespace Mir4.painel
             "148",
             "149",
             "150"});
-            this.txt_nivel_alt_1.Location = new System.Drawing.Point(322, 73);
+            this.txt_nivel_alt_1.Location = new System.Drawing.Point(347, 60);
             this.txt_nivel_alt_1.Name = "txt_nivel_alt_1";
             this.txt_nivel_alt_1.Size = new System.Drawing.Size(69, 21);
             this.txt_nivel_alt_1.TabIndex = 8;
@@ -345,10 +422,11 @@ namespace Mir4.painel
             "Guerreiro",
             "Lanceiro",
             "Taoista"});
-            this.txt_classe_alt_1.Location = new System.Drawing.Point(524, 73);
+            this.txt_classe_alt_1.Location = new System.Drawing.Point(549, 60);
             this.txt_classe_alt_1.Name = "txt_classe_alt_1";
             this.txt_classe_alt_1.Size = new System.Drawing.Size(129, 21);
             this.txt_classe_alt_1.TabIndex = 9;
+            this.txt_classe_alt_1.SelectedIndexChanged += new System.EventHandler(this.txt_classe_alt_1_SelectedIndexChanged);
             // 
             // txt_foi_alt_1
             // 
@@ -359,7 +437,7 @@ namespace Mir4.painel
             this.txt_foi_alt_1.BorderSize = 1;
             this.txt_foi_alt_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_foi_alt_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_foi_alt_1.Location = new System.Drawing.Point(153, 103);
+            this.txt_foi_alt_1.Location = new System.Drawing.Point(178, 90);
             this.txt_foi_alt_1.Margin = new System.Windows.Forms.Padding(4);
             this.txt_foi_alt_1.Multiline = false;
             this.txt_foi_alt_1.Name = "txt_foi_alt_1";
@@ -374,7 +452,6 @@ namespace Mir4.painel
             // 
             // pl_alt_0
             // 
-            this.pl_alt_0.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pl_alt_0.Controls.Add(this.foto_classe_alt_0);
             this.pl_alt_0.Controls.Add(this.txt_nick_alt_0);
             this.pl_alt_0.Controls.Add(this.txt_poder_alt_0);
@@ -383,10 +460,28 @@ namespace Mir4.painel
             this.pl_alt_0.Controls.Add(this.txt_nivel_alt_0);
             this.pl_alt_0.Controls.Add(this.txt_classe_alt_0);
             this.pl_alt_0.Controls.Add(this.txt_foi_alt_0);
-            this.pl_alt_0.Location = new System.Drawing.Point(25, 268);
+            this.pl_alt_0.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_alt_0.Location = new System.Drawing.Point(0, 260);
             this.pl_alt_0.Name = "pl_alt_0";
-            this.pl_alt_0.Size = new System.Drawing.Size(674, 175);
+            this.pl_alt_0.Size = new System.Drawing.Size(725, 149);
             this.pl_alt_0.TabIndex = 19;
+            this.pl_alt_0.Visible = false;
+            // 
+            // foto_classe_alt_0
+            // 
+            this.foto_classe_alt_0.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.foto_classe_alt_0.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.foto_classe_alt_0.BorderColor2 = System.Drawing.Color.White;
+            this.foto_classe_alt_0.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.foto_classe_alt_0.BorderSize = 2;
+            this.foto_classe_alt_0.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.foto_classe_alt_0.GradientAngle = 50F;
+            this.foto_classe_alt_0.Location = new System.Drawing.Point(47, 19);
+            this.foto_classe_alt_0.Name = "foto_classe_alt_0";
+            this.foto_classe_alt_0.Size = new System.Drawing.Size(110, 110);
+            this.foto_classe_alt_0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.foto_classe_alt_0.TabIndex = 14;
+            this.foto_classe_alt_0.TabStop = false;
             // 
             // txt_nick_alt_0
             // 
@@ -397,7 +492,7 @@ namespace Mir4.painel
             this.txt_nick_alt_0.BorderSize = 1;
             this.txt_nick_alt_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nick_alt_0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_nick_alt_0.Location = new System.Drawing.Point(153, 63);
+            this.txt_nick_alt_0.Location = new System.Drawing.Point(178, 50);
             this.txt_nick_alt_0.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nick_alt_0.Multiline = false;
             this.txt_nick_alt_0.Name = "txt_nick_alt_0";
@@ -419,7 +514,7 @@ namespace Mir4.painel
             this.txt_poder_alt_0.BorderSize = 1;
             this.txt_poder_alt_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_poder_alt_0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder_alt_0.Location = new System.Drawing.Point(398, 63);
+            this.txt_poder_alt_0.Location = new System.Drawing.Point(423, 50);
             this.txt_poder_alt_0.Margin = new System.Windows.Forms.Padding(4);
             this.txt_poder_alt_0.Multiline = false;
             this.txt_poder_alt_0.Name = "txt_poder_alt_0";
@@ -436,7 +531,7 @@ namespace Mir4.painel
             // 
             this.lb_nivel_alt_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_nivel_alt_0.ForeColor = System.Drawing.Color.White;
-            this.lb_nivel_alt_0.Location = new System.Drawing.Point(322, 53);
+            this.lb_nivel_alt_0.Location = new System.Drawing.Point(347, 40);
             this.lb_nivel_alt_0.Name = "lb_nivel_alt_0";
             this.lb_nivel_alt_0.Size = new System.Drawing.Size(69, 17);
             this.lb_nivel_alt_0.TabIndex = 5;
@@ -447,7 +542,7 @@ namespace Mir4.painel
             // 
             this.lb_classe_alt_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_classe_alt_0.ForeColor = System.Drawing.Color.White;
-            this.lb_classe_alt_0.Location = new System.Drawing.Point(524, 53);
+            this.lb_classe_alt_0.Location = new System.Drawing.Point(549, 40);
             this.lb_classe_alt_0.Name = "lb_classe_alt_0";
             this.lb_classe_alt_0.Size = new System.Drawing.Size(129, 17);
             this.lb_classe_alt_0.TabIndex = 6;
@@ -611,7 +706,7 @@ namespace Mir4.painel
             "148",
             "149",
             "150"});
-            this.txt_nivel_alt_0.Location = new System.Drawing.Point(322, 73);
+            this.txt_nivel_alt_0.Location = new System.Drawing.Point(347, 60);
             this.txt_nivel_alt_0.Name = "txt_nivel_alt_0";
             this.txt_nivel_alt_0.Size = new System.Drawing.Size(69, 21);
             this.txt_nivel_alt_0.TabIndex = 8;
@@ -627,10 +722,11 @@ namespace Mir4.painel
             "Guerreiro",
             "Lanceiro",
             "Taoista"});
-            this.txt_classe_alt_0.Location = new System.Drawing.Point(524, 73);
+            this.txt_classe_alt_0.Location = new System.Drawing.Point(549, 60);
             this.txt_classe_alt_0.Name = "txt_classe_alt_0";
             this.txt_classe_alt_0.Size = new System.Drawing.Size(129, 21);
             this.txt_classe_alt_0.TabIndex = 9;
+            this.txt_classe_alt_0.SelectedIndexChanged += new System.EventHandler(this.txt_classe_alt_0_SelectedIndexChanged);
             // 
             // txt_foi_alt_0
             // 
@@ -641,7 +737,7 @@ namespace Mir4.painel
             this.txt_foi_alt_0.BorderSize = 1;
             this.txt_foi_alt_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_foi_alt_0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_foi_alt_0.Location = new System.Drawing.Point(153, 103);
+            this.txt_foi_alt_0.Location = new System.Drawing.Point(178, 90);
             this.txt_foi_alt_0.Margin = new System.Windows.Forms.Padding(4);
             this.txt_foi_alt_0.Multiline = false;
             this.txt_foi_alt_0.Name = "txt_foi_alt_0";
@@ -656,22 +752,22 @@ namespace Mir4.painel
             // 
             // pl_pergunta
             // 
-            this.pl_pergunta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pl_pergunta.Controls.Add(this.lb_quantas_alts);
             this.pl_pergunta.Controls.Add(this.txt_quantidade_alt);
             this.pl_pergunta.Controls.Add(this.lb_possui_alt);
             this.pl_pergunta.Controls.Add(this.rd_nao);
             this.pl_pergunta.Controls.Add(this.rd_sim);
-            this.pl_pergunta.Location = new System.Drawing.Point(25, 189);
+            this.pl_pergunta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_pergunta.Location = new System.Drawing.Point(0, 200);
             this.pl_pergunta.Name = "pl_pergunta";
-            this.pl_pergunta.Size = new System.Drawing.Size(674, 73);
+            this.pl_pergunta.Size = new System.Drawing.Size(725, 60);
             this.pl_pergunta.TabIndex = 19;
             // 
             // lb_quantas_alts
             // 
             this.lb_quantas_alts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_quantas_alts.ForeColor = System.Drawing.Color.White;
-            this.lb_quantas_alts.Location = new System.Drawing.Point(411, 10);
+            this.lb_quantas_alts.Location = new System.Drawing.Point(411, 5);
             this.lb_quantas_alts.Name = "lb_quantas_alts";
             this.lb_quantas_alts.Size = new System.Drawing.Size(89, 17);
             this.lb_quantas_alts.TabIndex = 15;
@@ -682,22 +778,25 @@ namespace Mir4.painel
             // 
             this.txt_quantidade_alt.BackColor = System.Drawing.Color.White;
             this.txt_quantidade_alt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_quantidade_alt.Enabled = false;
             this.txt_quantidade_alt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txt_quantidade_alt.FormattingEnabled = true;
             this.txt_quantidade_alt.Items.AddRange(new object[] {
+            "0",
             "1",
             "2"});
-            this.txt_quantidade_alt.Location = new System.Drawing.Point(420, 30);
+            this.txt_quantidade_alt.Location = new System.Drawing.Point(420, 25);
             this.txt_quantidade_alt.Name = "txt_quantidade_alt";
             this.txt_quantidade_alt.Size = new System.Drawing.Size(69, 21);
             this.txt_quantidade_alt.TabIndex = 15;
+            this.txt_quantidade_alt.SelectedIndexChanged += new System.EventHandler(this.txt_quantidade_alt_SelectedIndexChanged);
             // 
             // lb_possui_alt
             // 
             this.lb_possui_alt.AutoSize = true;
             this.lb_possui_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_possui_alt.ForeColor = System.Drawing.Color.White;
-            this.lb_possui_alt.Location = new System.Drawing.Point(175, 30);
+            this.lb_possui_alt.Location = new System.Drawing.Point(175, 25);
             this.lb_possui_alt.Name = "lb_possui_alt";
             this.lb_possui_alt.Size = new System.Drawing.Size(93, 17);
             this.lb_possui_alt.TabIndex = 17;
@@ -706,32 +805,33 @@ namespace Mir4.painel
             // rd_nao
             // 
             this.rd_nao.AutoSize = true;
+            this.rd_nao.Checked = true;
             this.rd_nao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rd_nao.ForeColor = System.Drawing.Color.White;
-            this.rd_nao.Location = new System.Drawing.Point(338, 29);
+            this.rd_nao.Location = new System.Drawing.Point(338, 24);
             this.rd_nao.Name = "rd_nao";
             this.rd_nao.Size = new System.Drawing.Size(55, 21);
             this.rd_nao.TabIndex = 16;
             this.rd_nao.TabStop = true;
             this.rd_nao.Text = "Não";
             this.rd_nao.UseVisualStyleBackColor = true;
+            this.rd_nao.CheckedChanged += new System.EventHandler(this.rd_nao_CheckedChanged);
             // 
             // rd_sim
             // 
             this.rd_sim.AutoSize = true;
             this.rd_sim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rd_sim.ForeColor = System.Drawing.Color.White;
-            this.rd_sim.Location = new System.Drawing.Point(283, 29);
+            this.rd_sim.Location = new System.Drawing.Point(283, 24);
             this.rd_sim.Name = "rd_sim";
             this.rd_sim.Size = new System.Drawing.Size(52, 21);
             this.rd_sim.TabIndex = 15;
-            this.rd_sim.TabStop = true;
             this.rd_sim.Text = "Sim";
             this.rd_sim.UseVisualStyleBackColor = true;
+            this.rd_sim.CheckedChanged += new System.EventHandler(this.rd_sim_CheckedChanged);
             // 
             // pl_membro
             // 
-            this.pl_membro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pl_membro.Controls.Add(this.foto_classe);
             this.pl_membro.Controls.Add(this.txt_nick);
             this.pl_membro.Controls.Add(this.txt_poder);
@@ -743,10 +843,28 @@ namespace Mir4.painel
             this.pl_membro.Controls.Add(this.txt_classe);
             this.pl_membro.Controls.Add(this.txt_foi);
             this.pl_membro.Controls.Add(this.txt_vem);
-            this.pl_membro.Location = new System.Drawing.Point(25, 8);
+            this.pl_membro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_membro.Location = new System.Drawing.Point(0, 0);
             this.pl_membro.Name = "pl_membro";
-            this.pl_membro.Size = new System.Drawing.Size(674, 175);
+            this.pl_membro.Size = new System.Drawing.Size(725, 200);
             this.pl_membro.TabIndex = 18;
+            // 
+            // foto_classe
+            // 
+            this.foto_classe.BackColor = System.Drawing.Color.Transparent;
+            this.foto_classe.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.foto_classe.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.foto_classe.BorderColor2 = System.Drawing.Color.White;
+            this.foto_classe.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.foto_classe.BorderSize = 2;
+            this.foto_classe.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.foto_classe.GradientAngle = 50F;
+            this.foto_classe.Location = new System.Drawing.Point(47, 55);
+            this.foto_classe.Name = "foto_classe";
+            this.foto_classe.Size = new System.Drawing.Size(110, 110);
+            this.foto_classe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.foto_classe.TabIndex = 14;
+            this.foto_classe.TabStop = false;
             // 
             // txt_nick
             // 
@@ -757,7 +875,7 @@ namespace Mir4.painel
             this.txt_nick.BorderSize = 1;
             this.txt_nick.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nick.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_nick.Location = new System.Drawing.Point(153, 65);
+            this.txt_nick.Location = new System.Drawing.Point(178, 94);
             this.txt_nick.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nick.Multiline = false;
             this.txt_nick.Name = "txt_nick";
@@ -779,7 +897,7 @@ namespace Mir4.painel
             this.txt_poder.BorderSize = 1;
             this.txt_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_poder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder.Location = new System.Drawing.Point(398, 65);
+            this.txt_poder.Location = new System.Drawing.Point(423, 94);
             this.txt_poder.Margin = new System.Windows.Forms.Padding(4);
             this.txt_poder.Multiline = false;
             this.txt_poder.Name = "txt_poder";
@@ -796,7 +914,7 @@ namespace Mir4.painel
             // 
             this.lb_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_level.ForeColor = System.Drawing.Color.White;
-            this.lb_level.Location = new System.Drawing.Point(322, 55);
+            this.lb_level.Location = new System.Drawing.Point(347, 84);
             this.lb_level.Name = "lb_level";
             this.lb_level.Size = new System.Drawing.Size(69, 17);
             this.lb_level.TabIndex = 5;
@@ -807,7 +925,7 @@ namespace Mir4.painel
             // 
             this.lb_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_classe.ForeColor = System.Drawing.Color.White;
-            this.lb_classe.Location = new System.Drawing.Point(524, 55);
+            this.lb_classe.Location = new System.Drawing.Point(549, 84);
             this.lb_classe.Name = "lb_classe";
             this.lb_classe.Size = new System.Drawing.Size(129, 17);
             this.lb_classe.TabIndex = 6;
@@ -818,7 +936,7 @@ namespace Mir4.painel
             // 
             this.lb_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_patente.ForeColor = System.Drawing.Color.White;
-            this.lb_patente.Location = new System.Drawing.Point(153, 6);
+            this.lb_patente.Location = new System.Drawing.Point(178, 35);
             this.lb_patente.Name = "lb_patente";
             this.lb_patente.Size = new System.Drawing.Size(103, 17);
             this.lb_patente.TabIndex = 13;
@@ -982,7 +1100,7 @@ namespace Mir4.painel
             "148",
             "149",
             "150"});
-            this.txt_level.Location = new System.Drawing.Point(322, 75);
+            this.txt_level.Location = new System.Drawing.Point(347, 104);
             this.txt_level.Name = "txt_level";
             this.txt_level.Size = new System.Drawing.Size(69, 21);
             this.txt_level.TabIndex = 8;
@@ -998,7 +1116,7 @@ namespace Mir4.painel
             "Lider",
             "Membro",
             "Novo Membro"});
-            this.txt_patente.Location = new System.Drawing.Point(153, 26);
+            this.txt_patente.Location = new System.Drawing.Point(178, 55);
             this.txt_patente.Name = "txt_patente";
             this.txt_patente.Size = new System.Drawing.Size(103, 21);
             this.txt_patente.TabIndex = 12;
@@ -1009,15 +1127,16 @@ namespace Mir4.painel
             this.txt_classe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txt_classe.FormattingEnabled = true;
             this.txt_classe.Items.AddRange(new object[] {
-            "Besteira",
+            "Arbalista",
             "Feiticeira",
             "Guerreiro",
             "Lanceiro",
             "Taoista"});
-            this.txt_classe.Location = new System.Drawing.Point(524, 75);
+            this.txt_classe.Location = new System.Drawing.Point(549, 104);
             this.txt_classe.Name = "txt_classe";
             this.txt_classe.Size = new System.Drawing.Size(129, 21);
             this.txt_classe.TabIndex = 9;
+            this.txt_classe.SelectedIndexChanged += new System.EventHandler(this.txt_classe_SelectedIndexChanged);
             // 
             // txt_foi
             // 
@@ -1028,7 +1147,7 @@ namespace Mir4.painel
             this.txt_foi.BorderSize = 1;
             this.txt_foi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_foi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_foi.Location = new System.Drawing.Point(399, 104);
+            this.txt_foi.Location = new System.Drawing.Point(424, 133);
             this.txt_foi.Margin = new System.Windows.Forms.Padding(4);
             this.txt_foi.Multiline = false;
             this.txt_foi.Name = "txt_foi";
@@ -1050,7 +1169,7 @@ namespace Mir4.painel
             this.txt_vem.BorderSize = 1;
             this.txt_vem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_vem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_vem.Location = new System.Drawing.Point(153, 104);
+            this.txt_vem.Location = new System.Drawing.Point(178, 133);
             this.txt_vem.Margin = new System.Windows.Forms.Padding(4);
             this.txt_vem.Multiline = false;
             this.txt_vem.Name = "txt_vem";
@@ -1063,106 +1182,6 @@ namespace Mir4.painel
             this.txt_vem.Texts = "";
             this.txt_vem.UnderlinedStyle = false;
             // 
-            // foto_classe_alt_1
-            // 
-            this.foto_classe_alt_1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.foto_classe_alt_1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.foto_classe_alt_1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.foto_classe_alt_1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.foto_classe_alt_1.BorderSize = 2;
-            this.foto_classe_alt_1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.foto_classe_alt_1.GradientAngle = 50F;
-            this.foto_classe_alt_1.Image = global::Mir4.Properties.Resources.HYPE_03;
-            this.foto_classe_alt_1.Location = new System.Drawing.Point(22, 32);
-            this.foto_classe_alt_1.Name = "foto_classe_alt_1";
-            this.foto_classe_alt_1.Size = new System.Drawing.Size(110, 110);
-            this.foto_classe_alt_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.foto_classe_alt_1.TabIndex = 14;
-            this.foto_classe_alt_1.TabStop = false;
-            // 
-            // foto_classe_alt_0
-            // 
-            this.foto_classe_alt_0.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.foto_classe_alt_0.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.foto_classe_alt_0.BorderColor2 = System.Drawing.Color.HotPink;
-            this.foto_classe_alt_0.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.foto_classe_alt_0.BorderSize = 2;
-            this.foto_classe_alt_0.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.foto_classe_alt_0.GradientAngle = 50F;
-            this.foto_classe_alt_0.Image = global::Mir4.Properties.Resources.HYPE_03;
-            this.foto_classe_alt_0.Location = new System.Drawing.Point(22, 32);
-            this.foto_classe_alt_0.Name = "foto_classe_alt_0";
-            this.foto_classe_alt_0.Size = new System.Drawing.Size(110, 110);
-            this.foto_classe_alt_0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.foto_classe_alt_0.TabIndex = 14;
-            this.foto_classe_alt_0.TabStop = false;
-            // 
-            // foto_classe
-            // 
-            this.foto_classe.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.foto_classe.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.foto_classe.BorderColor2 = System.Drawing.Color.HotPink;
-            this.foto_classe.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.foto_classe.BorderSize = 2;
-            this.foto_classe.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.foto_classe.GradientAngle = 50F;
-            this.foto_classe.Image = global::Mir4.Properties.Resources.HYPE_03;
-            this.foto_classe.Location = new System.Drawing.Point(22, 26);
-            this.foto_classe.Name = "foto_classe";
-            this.foto_classe.Size = new System.Drawing.Size(110, 110);
-            this.foto_classe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.foto_classe.TabIndex = 14;
-            this.foto_classe.TabStop = false;
-            // 
-            // pl_todos
-            // 
-            this.pl_todos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pl_todos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            this.pl_todos.Controls.Add(this.bt_cancelar);
-            this.pl_todos.Controls.Add(this.bt_salvar);
-            this.pl_todos.Controls.Add(this.pl_membro);
-            this.pl_todos.Controls.Add(this.pl_alt_1);
-            this.pl_todos.Controls.Add(this.pl_pergunta);
-            this.pl_todos.Controls.Add(this.pl_alt_0);
-            this.pl_todos.Location = new System.Drawing.Point(238, 18);
-            this.pl_todos.Name = "pl_todos";
-            this.pl_todos.Size = new System.Drawing.Size(725, 682);
-            this.pl_todos.TabIndex = 21;
-            // 
-            // bt_salvar
-            // 
-            this.bt_salvar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_salvar.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.bt_salvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_salvar.FlatAppearance.BorderSize = 0;
-            this.bt_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_salvar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_salvar.ForeColor = System.Drawing.Color.White;
-            this.bt_salvar.Location = new System.Drawing.Point(428, 630);
-            this.bt_salvar.Name = "bt_salvar";
-            this.bt_salvar.Size = new System.Drawing.Size(122, 36);
-            this.bt_salvar.TabIndex = 61;
-            this.bt_salvar.Text = "Salvar";
-            this.bt_salvar.UseVisualStyleBackColor = false;
-            this.bt_salvar.Click += new System.EventHandler(this.bt_salvar_Click);
-            // 
-            // bt_cancelar
-            // 
-            this.bt_cancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cancelar.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cancelar.FlatAppearance.BorderSize = 0;
-            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
-            this.bt_cancelar.Location = new System.Drawing.Point(556, 630);
-            this.bt_cancelar.Name = "bt_cancelar";
-            this.bt_cancelar.Size = new System.Drawing.Size(122, 36);
-            this.bt_cancelar.TabIndex = 62;
-            this.bt_cancelar.Text = "Cancelar";
-            this.bt_cancelar.UseVisualStyleBackColor = false;
-            this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
-            // 
             // add_membros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1170,16 +1189,18 @@ namespace Mir4.painel
             this.Controls.Add(this.pl_conteudo);
             this.Name = "add_membros";
             this.Size = new System.Drawing.Size(1200, 720);
+            this.Load += new System.EventHandler(this.add_membros_Load);
             this.pl_conteudo.ResumeLayout(false);
+            this.pl_todos.ResumeLayout(false);
+            this.pl_botao.ResumeLayout(false);
             this.pl_alt_1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.foto_classe_alt_1)).EndInit();
             this.pl_alt_0.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.foto_classe_alt_0)).EndInit();
             this.pl_pergunta.ResumeLayout(false);
             this.pl_pergunta.PerformLayout();
             this.pl_membro.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.foto_classe_alt_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_classe_alt_0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.foto_classe)).EndInit();
-            this.pl_todos.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1187,15 +1208,6 @@ namespace Mir4.painel
         #endregion
 
         private System.Windows.Forms.Panel pl_conteudo;
-        private System.Windows.Forms.Panel pl_alt_1;
-        private script.RJCircularPictureBox foto_classe_alt_1;
-        private RJTextBox txt_nick_alt_1;
-        private RJTextBox txt_poder_alt_1;
-        private System.Windows.Forms.Label lb_nivel_alt_1;
-        private System.Windows.Forms.Label lb_classe_alt_1;
-        private System.Windows.Forms.ComboBox txt_nivel_alt_1;
-        private System.Windows.Forms.ComboBox txt_classe_alt_1;
-        private RJTextBox txt_foi_alt_1;
         private System.Windows.Forms.Panel pl_alt_0;
         private script.RJCircularPictureBox foto_classe_alt_0;
         private RJTextBox txt_nick_alt_0;
@@ -1226,5 +1238,15 @@ namespace Mir4.painel
         private System.Windows.Forms.Panel pl_todos;
         private System.Windows.Forms.Button bt_cancelar;
         private System.Windows.Forms.Button bt_salvar;
+        private System.Windows.Forms.Panel pl_alt_1;
+        private script.RJCircularPictureBox foto_classe_alt_1;
+        private RJTextBox txt_nick_alt_1;
+        private RJTextBox txt_poder_alt_1;
+        private System.Windows.Forms.Label lb_nivel_alt_1;
+        private System.Windows.Forms.Label lb_classe_alt_1;
+        private System.Windows.Forms.ComboBox txt_nivel_alt_1;
+        private System.Windows.Forms.ComboBox txt_classe_alt_1;
+        private RJTextBox txt_foi_alt_1;
+        private System.Windows.Forms.Panel pl_botao;
     }
 }

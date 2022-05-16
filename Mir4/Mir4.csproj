@@ -258,5 +258,20 @@
   <ItemGroup>
     <None Include="Resources\buscar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guerreiro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arbalista.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mago.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Taoista.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lanceiro.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

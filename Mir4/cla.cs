@@ -22,7 +22,7 @@ namespace Mir4
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
 
-            Instance = this;            
+            Instance = this;
         }
 
         private void bt_menu_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace Mir4
         {
             if (this.pl_menu.Width > 200)
             {
-                pl_menu.Width = 60;                     
+                pl_menu.Width = 60;
                 lb_nick.Visible = false;
 
                 bt_sair.Visible = false;
@@ -79,7 +79,7 @@ namespace Mir4
 
             if (pl_conta.Visible == true)
             {
-                pl_conta.Visible = false;                
+                pl_conta.Visible = false;
             }
             else
             {
@@ -147,6 +147,16 @@ namespace Mir4
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pl_conta_MouseLeave(object sender, EventArgs e)
+        {
+            //pl_conta.Visible = false;            
+        }
+
+        private void pl_conta_MouseEnter(object sender, EventArgs e)
+        {
+            pl_conta.Visible = true;
         }
     }
 }
