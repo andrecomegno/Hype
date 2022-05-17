@@ -9,7 +9,7 @@ namespace Mir4.script
 {
     class database
     {
-        private MySqlConnection connection = new MySqlConnection("server = localhost; user id = root; database = mydb; password = 123456");
+        private MySqlConnection connection = new MySqlConnection("server = localhost; user id = root; database = hypedb; password = 123456");
 
         public void openConnection()
         {

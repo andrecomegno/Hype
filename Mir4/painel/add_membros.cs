@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using Mir4.script;
 using System.Windows.Forms;
 using Mir4.Properties;
 
@@ -24,10 +26,81 @@ namespace Mir4.painel
                 txt_quantidade_alt.SelectedIndex = 0;
         }
 
+        private void AddMembros()
+        {
+            database database = new database();
+            database.openConnection();
+
+
+            // INSERT TABELA REMANEJAMENTO
+            MySqlCommand objCmdRemanejamento = new MySqlCommand("insert into remanejamento (id, vem_do_cla, foi_para_cla, data_entrada, data_saida) values (null, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdRemanejamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
+            objCmdRemanejamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
+            objCmdRemanejamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdRemanejamento.Parameters.Add("@data_saida", MySqlDbType.Date).Value = DateTime.Now;
+
+            objCmdRemanejamento.ExecuteNonQuery();
+            long idRemanejamento = objCmdRemanejamento.LastInsertedId;
+
+            // INSERT TABELA CADASTRO MEMBROS
+            MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into cadastro_membro (id, nick, level, poder, classe, patente, remanejamento_id) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.VarChar, 256).Value = txt_level.Text;
+            objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.VarChar, 256).Value = txt_poder.Texts;
+            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+            objCmdCadastroMembros.Parameters.Add("@remanejamento_id", MySqlDbType.VarChar, 2).Value = idRemanejamento;
+
+            objCmdCadastroMembros.ExecuteNonQuery();
+            long idCadMembros = objCmdCadastroMembros.LastInsertedId;
+
+            database.closeConnection();
+        }
+
+
         private void bt_salvar_Click(object sender, EventArgs e)
         {
-            membros uc = new membros();
-            cla.Instance.addControl(uc);
+            try
+            {
+                AddMembros();
+                DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Código de Erro Interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                LimparTextos(pl_membro.Controls);
+                LimparTextos(pl_pergunta.Controls);
+                LimparTextos(pl_alt_0.Controls);
+                LimparTextos(pl_alt_1.Controls);
+
+                rd_nao.Checked = true;
+            }
+            
+            
+        }
+
+        public void LimparTextos(Control.ControlCollection control)
+        {
+            foreach (Control c in control)
+            {
+                if (c is RJTextBox)
+                {
+                    ((RJTextBox)(c)).Texts = string.Empty;
+                }
+            }
+
+            foreach (Control c in control)
+            {
+                if (c is ComboBox)
+                {
+                    ((ComboBox)(c)).SelectedIndex = -1;
+                }
+            }
         }
 
         private void bt_cancelar_Click(object sender, EventArgs e)

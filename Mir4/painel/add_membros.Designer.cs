@@ -111,7 +111,7 @@ namespace Mir4.painel
             this.pl_botao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pl_botao.Controls.Add(this.bt_cancelar);
             this.pl_botao.Controls.Add(this.bt_salvar);
-            this.pl_botao.Location = new System.Drawing.Point(0, 257);
+            this.pl_botao.Location = new System.Drawing.Point(0, 259);
             this.pl_botao.Name = "pl_botao";
             this.pl_botao.Size = new System.Drawing.Size(725, 61);
             this.pl_botao.TabIndex = 64;
@@ -235,7 +235,7 @@ namespace Mir4.painel
             this.lb_nivel_alt_1.Name = "lb_nivel_alt_1";
             this.lb_nivel_alt_1.Size = new System.Drawing.Size(69, 17);
             this.lb_nivel_alt_1.TabIndex = 5;
-            this.lb_nivel_alt_1.Text = "Nivel";
+            this.lb_nivel_alt_1.Text = "Level";
             this.lb_nivel_alt_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb_classe_alt_1
@@ -535,7 +535,7 @@ namespace Mir4.painel
             this.lb_nivel_alt_0.Name = "lb_nivel_alt_0";
             this.lb_nivel_alt_0.Size = new System.Drawing.Size(69, 17);
             this.lb_nivel_alt_0.TabIndex = 5;
-            this.lb_nivel_alt_0.Text = "Nivel";
+            this.lb_nivel_alt_0.Text = "Level";
             this.lb_nivel_alt_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb_classe_alt_0
@@ -918,7 +918,7 @@ namespace Mir4.painel
             this.lb_level.Name = "lb_level";
             this.lb_level.Size = new System.Drawing.Size(69, 17);
             this.lb_level.TabIndex = 5;
-            this.lb_level.Text = "Nivel";
+            this.lb_level.Text = "Level";
             this.lb_level.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb_classe

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Mir4.Properties;
 using Mir4.painel;
 
 namespace Mir4
@@ -40,13 +41,53 @@ namespace Mir4
 
         public void DadosMembros()
         {
-            lb_nick.Text = membros.Instance.nick;
-            lb_patente.Text = membros.Instance.patente;
+            txt_data_entrada.Texts = membros.Instance.data_entrada;
+            //membros.Instance.data_saida;
+            //membros.Instance.data_remanejamento;
+            txt_nick.Texts = membros.Instance.nick;
+            txt_level.Texts = membros.Instance.level;
+            txt_poder.Texts = membros.Instance.poder;
+            txt_patente.Text = membros.Instance.patente;
+            txt_classe.Text = membros.Instance.classe;
+            txt_veio_cla.Texts =  membros.Instance.vem_do_cla;
+            txt_esta_cla.Texts = membros.Instance.foi_para_cla;
+
+            txt_esta_cla_rema.Texts = membros.Instance.foi_para_cla;
         }
 
         private void membros_info_Load(object sender, EventArgs e)
         {
             DadosMembros();
+        }
+
+        private void txt_data_entrada__TextChanged(object sender, EventArgs e)
+        {
+            txt_data_entrada.Texts = DateTime.Now.Date.ToShortDateString();
+        }
+
+        private void txt_classe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txt_classe.SelectedIndex == 0)
+            {
+                foto_classe.Image = Resources.Arbalista;
+
+            }
+            else if (txt_classe.SelectedIndex == 1)
+            {
+                foto_classe.Image = Resources.Mago;
+            }
+            else if (txt_classe.SelectedIndex == 2)
+            {
+                foto_classe.Image = Resources.Guerreiro;
+            }
+            else if (txt_classe.SelectedIndex == 3)
+            {
+                foto_classe.Image = Resources.Lanceiro;
+            }
+            else if (txt_classe.SelectedIndex == 4)
+            {
+                foto_classe.Image = Resources.Taoista;
+            }
         }
     }
 }
