@@ -29,7 +29,6 @@ namespace Mir4.painel
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.membro = new System.Windows.Forms.Panel();
             this.pl_membros = new System.Windows.Forms.Panel();
             this.bt_add_membro = new System.Windows.Forms.Label();
@@ -40,21 +39,10 @@ namespace Mir4.painel
             this.bt_ouro = new System.Windows.Forms.Button();
             this.bt_progressao = new System.Windows.Forms.Button();
             this.bt_membros = new System.Windows.Forms.Button();
-            this.mydbDataSet = new Mir4.mydbDataSet();
-            this.cadastromembroBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cadastro_membroTableAdapter = new Mir4.mydbDataSetTableAdapters.cadastro_membroTableAdapter();
-            this.nICKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATAENTRADA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lEVELDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pODERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cLASSEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pATENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.membro.SuspendLayout();
             this.pl_membros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mydbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cadastromembroBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // membro
@@ -109,18 +97,9 @@ namespace Mir4.painel
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nICKDataGridViewTextBoxColumn,
-            this.DATAENTRADA,
-            this.lEVELDataGridViewTextBoxColumn,
-            this.pODERDataGridViewTextBoxColumn,
-            this.cLASSEDataGridViewTextBoxColumn,
-            this.pATENTEDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.cadastromembroBindingSource;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(3, 47);
             this.dataGridView1.Name = "dataGridView1";
@@ -229,55 +208,6 @@ namespace Mir4.painel
             this.bt_membros.Text = "Membros";
             this.bt_membros.UseVisualStyleBackColor = false;
             // 
-            // mydbDataSet
-            // 
-            this.mydbDataSet.DataSetName = "mydbDataSet";
-            this.mydbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cadastromembroBindingSource
-            // 
-            this.cadastromembroBindingSource.DataMember = "cadastro_membro";
-            this.cadastromembroBindingSource.DataSource = this.mydbDataSet;
-            // 
-            // cadastro_membroTableAdapter
-            // 
-            this.cadastro_membroTableAdapter.ClearBeforeFill = true;
-            // 
-            // nICKDataGridViewTextBoxColumn
-            // 
-            this.nICKDataGridViewTextBoxColumn.DataPropertyName = "NICK";
-            this.nICKDataGridViewTextBoxColumn.HeaderText = "NICK";
-            this.nICKDataGridViewTextBoxColumn.Name = "nICKDataGridViewTextBoxColumn";
-            // 
-            // DATAENTRADA
-            // 
-            this.DATAENTRADA.HeaderText = "DATA ENTRADA";
-            this.DATAENTRADA.Name = "DATAENTRADA";
-            // 
-            // lEVELDataGridViewTextBoxColumn
-            // 
-            this.lEVELDataGridViewTextBoxColumn.DataPropertyName = "LEVEL";
-            this.lEVELDataGridViewTextBoxColumn.HeaderText = "LEVEL";
-            this.lEVELDataGridViewTextBoxColumn.Name = "lEVELDataGridViewTextBoxColumn";
-            // 
-            // pODERDataGridViewTextBoxColumn
-            // 
-            this.pODERDataGridViewTextBoxColumn.DataPropertyName = "PODER";
-            this.pODERDataGridViewTextBoxColumn.HeaderText = "PODER";
-            this.pODERDataGridViewTextBoxColumn.Name = "pODERDataGridViewTextBoxColumn";
-            // 
-            // cLASSEDataGridViewTextBoxColumn
-            // 
-            this.cLASSEDataGridViewTextBoxColumn.DataPropertyName = "CLASSE";
-            this.cLASSEDataGridViewTextBoxColumn.HeaderText = "CLASSE";
-            this.cLASSEDataGridViewTextBoxColumn.Name = "cLASSEDataGridViewTextBoxColumn";
-            // 
-            // pATENTEDataGridViewTextBoxColumn
-            // 
-            this.pATENTEDataGridViewTextBoxColumn.DataPropertyName = "PATENTE";
-            this.pATENTEDataGridViewTextBoxColumn.HeaderText = "PATENTE";
-            this.pATENTEDataGridViewTextBoxColumn.Name = "pATENTEDataGridViewTextBoxColumn";
-            // 
             // membros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,8 +222,6 @@ namespace Mir4.painel
             this.pl_membros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mydbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cadastromembroBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,14 +239,5 @@ namespace Mir4.painel
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label bt_add_membro;
         private System.Windows.Forms.DataGridViewTextBoxColumn nIVELDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nICKDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DATAENTRADA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lEVELDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pODERDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cLASSEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pATENTEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource cadastromembroBindingSource;
-        private mydbDataSet mydbDataSet;
-        private mydbDataSetTableAdapters.cadastro_membroTableAdapter cadastro_membroTableAdapter;
     }
 }
