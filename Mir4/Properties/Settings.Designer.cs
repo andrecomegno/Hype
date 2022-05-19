@@ -26,10 +26,10 @@ namespace Mir4.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;database=mydb")]
-        public string mydbConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;database=hypedb")]
+        public string hypedbConnectionString {
             get {
-                return ((string)(this["mydbConnectionString"]));
+                return ((string)(this["hypedbConnectionString"]));
             }
         }
     }

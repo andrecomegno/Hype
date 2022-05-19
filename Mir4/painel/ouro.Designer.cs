@@ -30,16 +30,16 @@ namespace Mir4.painel
         private void InitializeComponent()
         {
             this.pl_ouro = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_buscar = new Mir4.painel.RJTextBox();
             this.bt_alts = new System.Windows.Forms.Button();
             this.bt_ouro = new System.Windows.Forms.Button();
             this.bt_progressao = new System.Windows.Forms.Button();
             this.bt_membros = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pl_ouro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pl_ouro
@@ -48,17 +48,29 @@ namespace Mir4.painel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pl_ouro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.pl_ouro.Controls.Add(this.dataGridView1);
             this.pl_ouro.Controls.Add(this.pictureBox1);
             this.pl_ouro.Controls.Add(this.txt_buscar);
             this.pl_ouro.Controls.Add(this.bt_alts);
             this.pl_ouro.Controls.Add(this.bt_ouro);
             this.pl_ouro.Controls.Add(this.bt_progressao);
             this.pl_ouro.Controls.Add(this.bt_membros);
-            this.pl_ouro.Controls.Add(this.dataGridView1);
             this.pl_ouro.Location = new System.Drawing.Point(14, 3);
             this.pl_ouro.Name = "pl_ouro";
             this.pl_ouro.Size = new System.Drawing.Size(1172, 714);
             this.pl_ouro.TabIndex = 77;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.pictureBox1.Image = global::Mir4.Properties.Resources.buscar;
+            this.pictureBox1.Location = new System.Drawing.Point(980, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 63;
+            this.pictureBox1.TabStop = false;
             // 
             // txt_buscar
             // 
@@ -148,30 +160,19 @@ namespace Mir4.painel
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 41);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 41);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1172, 673);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.pictureBox1.Image = global::Mir4.Properties.Resources.buscar;
-            this.pictureBox1.Location = new System.Drawing.Point(980, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 63;
-            this.pictureBox1.TabStop = false;
+            this.dataGridView1.Size = new System.Drawing.Size(1166, 670);
+            this.dataGridView1.TabIndex = 66;
             // 
             // ouro
             // 
@@ -181,9 +182,10 @@ namespace Mir4.painel
             this.Controls.Add(this.pl_ouro);
             this.Name = "ouro";
             this.Size = new System.Drawing.Size(1200, 720);
+            this.Load += new System.EventHandler(this.ouro_Load);
             this.pl_ouro.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

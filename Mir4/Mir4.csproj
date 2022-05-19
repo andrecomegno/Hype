@@ -122,11 +122,6 @@
     <Compile Include="membros_info.Designer.cs">
       <DependentUpon>membros_info.cs</DependentUpon>
     </Compile>
-    <Compile Include="mydbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>mydbDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="painel\add_membros.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -227,17 +222,6 @@
     <EmbeddedResource Include="script\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="mydbDataSet.xsc">
-      <DependentUpon>mydbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="mydbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>mydbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="mydbDataSet.xss">
-      <DependentUpon>mydbDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Mir4.Properties;
 using Mir4.painel;
+using Mir4.script;
+using MySql.Data.MySqlClient;
 
 namespace Mir4
 {
     public partial class membros_info : Form
     {
+
+        private string id_cad_mb = "";
+        private string id_rema = "";
 
         public membros_info()
         {
@@ -60,11 +65,6 @@ namespace Mir4
             DadosMembros();
         }
 
-        private void txt_data_entrada__TextChanged(object sender, EventArgs e)
-        {
-            txt_data_entrada.Texts = DateTime.Now.Date.ToShortDateString();
-        }
-
         private void txt_classe_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (txt_classe.SelectedIndex == 0)
@@ -88,6 +88,22 @@ namespace Mir4
             {
                 foto_classe.Image = Resources.Taoista;
             }
+        }
+
+        private void bt_salvar_Click(object sender, EventArgs e)
+        {
+            database database = new database();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("update c.CLASSE, c.PATENTE, r.FOI_PARA_CLA from hypedb.cadastro_membro c join hypedb.remanejamento r on c.id = r.id", database.getConnection());
+
+            cmd.Parameters.AddWithValue("@id", id_cad_mb);
+            cmd.Parameters.Add("@CLASSE", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+            cmd.Parameters.Add("@PATENTE", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+            cmd.Parameters.Add("@FOI_PARA_CLA", MySqlDbType.VarChar, 256).Value = txt_vai_cla_rema.Texts;
+
+            cmd.ExecuteNonQuery();
+            database.closeConnection();
         }
     }
 }

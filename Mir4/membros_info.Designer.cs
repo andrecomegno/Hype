@@ -165,6 +165,7 @@ namespace Mir4
             this.bt_salvar.TabIndex = 63;
             this.bt_salvar.Text = "Salvar";
             this.bt_salvar.UseVisualStyleBackColor = false;
+            this.bt_salvar.Click += new System.EventHandler(this.bt_salvar_Click);
             // 
             // pl_remanejamento
             // 
@@ -217,13 +218,13 @@ namespace Mir4
             // 
             // txt_data_rema
             // 
-            this.txt_data_rema.BackColor = System.Drawing.Color.White;
-            this.txt_data_rema.BorderColor = System.Drawing.Color.White;
+            this.txt_data_rema.BackColor = System.Drawing.Color.Lavender;
+            this.txt_data_rema.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.txt_data_rema.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
             this.txt_data_rema.BorderRadius = 0;
             this.txt_data_rema.BorderSize = 1;
             this.txt_data_rema.Enabled = false;
-            this.txt_data_rema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_data_rema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_data_rema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_data_rema.Location = new System.Drawing.Point(53, 81);
             this.txt_data_rema.Margin = new System.Windows.Forms.Padding(4);
@@ -275,13 +276,13 @@ namespace Mir4
             // 
             // txt_esta_cla_rema
             // 
-            this.txt_esta_cla_rema.BackColor = System.Drawing.Color.White;
-            this.txt_esta_cla_rema.BorderColor = System.Drawing.Color.White;
+            this.txt_esta_cla_rema.BackColor = System.Drawing.Color.Lavender;
+            this.txt_esta_cla_rema.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.txt_esta_cla_rema.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
             this.txt_esta_cla_rema.BorderRadius = 0;
             this.txt_esta_cla_rema.BorderSize = 1;
             this.txt_esta_cla_rema.Enabled = false;
-            this.txt_esta_cla_rema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_esta_cla_rema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_esta_cla_rema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_esta_cla_rema.Location = new System.Drawing.Point(172, 81);
             this.txt_esta_cla_rema.Margin = new System.Windows.Forms.Padding(4);
@@ -427,7 +428,6 @@ namespace Mir4
             this.txt_data_entrada.TabIndex = 15;
             this.txt_data_entrada.Texts = "";
             this.txt_data_entrada.UnderlinedStyle = false;
-            this.txt_data_entrada._TextChanged += new System.EventHandler(this.txt_data_entrada__TextChanged);
             // 
             // foto_classe
             // 
@@ -562,12 +562,13 @@ namespace Mir4
             // 
             // txt_esta_cla
             // 
-            this.txt_esta_cla.BackColor = System.Drawing.Color.White;
-            this.txt_esta_cla.BorderColor = System.Drawing.Color.White;
+            this.txt_esta_cla.BackColor = System.Drawing.Color.Lavender;
+            this.txt_esta_cla.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.txt_esta_cla.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
             this.txt_esta_cla.BorderRadius = 0;
             this.txt_esta_cla.BorderSize = 1;
-            this.txt_esta_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_esta_cla.Enabled = false;
+            this.txt_esta_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_esta_cla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_esta_cla.Location = new System.Drawing.Point(358, 265);
             this.txt_esta_cla.Margin = new System.Windows.Forms.Padding(4);
@@ -584,12 +585,13 @@ namespace Mir4
             // 
             // txt_veio_cla
             // 
-            this.txt_veio_cla.BackColor = System.Drawing.Color.White;
-            this.txt_veio_cla.BorderColor = System.Drawing.Color.White;
+            this.txt_veio_cla.BackColor = System.Drawing.Color.Lavender;
+            this.txt_veio_cla.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.txt_veio_cla.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
             this.txt_veio_cla.BorderRadius = 0;
             this.txt_veio_cla.BorderSize = 1;
-            this.txt_veio_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_veio_cla.Enabled = false;
+            this.txt_veio_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_veio_cla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_veio_cla.Location = new System.Drawing.Point(112, 265);
             this.txt_veio_cla.Margin = new System.Windows.Forms.Padding(4);

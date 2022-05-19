@@ -32,17 +32,17 @@ namespace Mir4.painel
             this.membro = new System.Windows.Forms.Panel();
             this.pl_membros = new System.Windows.Forms.Panel();
             this.bt_add_membro = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_buscar = new Mir4.painel.RJTextBox();
             this.bt_alts = new System.Windows.Forms.Button();
             this.bt_ouro = new System.Windows.Forms.Button();
             this.bt_progressao = new System.Windows.Forms.Button();
             this.bt_membros = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.membro.SuspendLayout();
             this.pl_membros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // membro
@@ -62,13 +62,13 @@ namespace Mir4.painel
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pl_membros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
             this.pl_membros.Controls.Add(this.bt_add_membro);
-            this.pl_membros.Controls.Add(this.dataGridView1);
             this.pl_membros.Controls.Add(this.pictureBox1);
             this.pl_membros.Controls.Add(this.txt_buscar);
             this.pl_membros.Controls.Add(this.bt_alts);
             this.pl_membros.Controls.Add(this.bt_ouro);
             this.pl_membros.Controls.Add(this.bt_progressao);
             this.pl_membros.Controls.Add(this.bt_membros);
+            this.pl_membros.Controls.Add(this.dataGridView1);
             this.pl_membros.Location = new System.Drawing.Point(15, 3);
             this.pl_membros.Name = "pl_membros";
             this.pl_membros.Size = new System.Drawing.Size(1172, 714);
@@ -81,34 +81,13 @@ namespace Mir4.painel
             this.bt_add_membro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
             this.bt_add_membro.Font = new System.Drawing.Font("Microsoft Sans Serif", 70F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_add_membro.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.bt_add_membro.Location = new System.Drawing.Point(1002, 604);
+            this.bt_add_membro.Location = new System.Drawing.Point(971, 602);
             this.bt_add_membro.Name = "bt_add_membro";
             this.bt_add_membro.Size = new System.Drawing.Size(101, 107);
             this.bt_add_membro.TabIndex = 64;
             this.bt_add_membro.Text = "+";
             this.bt_add_membro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bt_add_membro.Click += new System.EventHandler(this.bt_add_membro_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 47);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1166, 664);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // pictureBox1
             // 
@@ -208,6 +187,27 @@ namespace Mir4.painel
             this.bt_membros.Text = "Membros";
             this.bt_membros.UseVisualStyleBackColor = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 41);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1166, 670);
+            this.dataGridView1.TabIndex = 65;
+            this.dataGridView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDoubleClick);
+            // 
             // membros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,8 +220,8 @@ namespace Mir4.painel
             this.membro.ResumeLayout(false);
             this.pl_membros.ResumeLayout(false);
             this.pl_membros.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -236,8 +236,7 @@ namespace Mir4.painel
         private System.Windows.Forms.Button bt_membros;
         private RJTextBox txt_buscar;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label bt_add_membro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nIVELDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
