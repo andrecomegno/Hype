@@ -17,13 +17,32 @@ namespace Mir4
 {
     public partial class membros_info : Form
     {
-
-        private string id_cad_mb = "";
-        private string id_rema = "";
+        public static membros_info Instance;
 
         public membros_info()
         {
             InitializeComponent();
+            Instance = this;
+        }
+
+        public void addControl(UserControl userControl)
+        {
+            userControl.Dock = DockStyle.Fill;
+            pl_todos.Controls.Clear();
+            pl_todos.Controls.Add(userControl);
+            userControl.BringToFront();
+        }
+
+        private void bt_fechar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void membros_info_Load(object sender, EventArgs e)
+        {
+            perfil_membros uc = new perfil_membros();
+            addControl(uc);
+
             this.FormBorderStyle = FormBorderStyle.None;            
         }
 
@@ -37,73 +56,6 @@ namespace Mir4
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void bt_fechar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        public void DadosMembros()
-        {
-            txt_data_entrada.Texts = membros.Instance.data_entrada;
-            //membros.Instance.data_saida;
-            //membros.Instance.data_remanejamento;
-            txt_nick.Texts = membros.Instance.nick;
-            txt_level.Texts = membros.Instance.level;
-            txt_poder.Texts = membros.Instance.poder;
-            txt_patente.Text = membros.Instance.patente;
-            txt_classe.Text = membros.Instance.classe;
-            txt_veio_cla.Texts =  membros.Instance.vem_do_cla;
-            txt_esta_cla.Texts = membros.Instance.foi_para_cla;
-
-            txt_esta_cla_rema.Texts = membros.Instance.foi_para_cla;
-        }
-
-        private void membros_info_Load(object sender, EventArgs e)
-        {
-            DadosMembros();
-        }
-
-        private void txt_classe_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (txt_classe.SelectedIndex == 0)
-            {
-                foto_classe.Image = Resources.Arbalista;
-
-            }
-            else if (txt_classe.SelectedIndex == 1)
-            {
-                foto_classe.Image = Resources.Mago;
-            }
-            else if (txt_classe.SelectedIndex == 2)
-            {
-                foto_classe.Image = Resources.Guerreiro;
-            }
-            else if (txt_classe.SelectedIndex == 3)
-            {
-                foto_classe.Image = Resources.Lanceiro;
-            }
-            else if (txt_classe.SelectedIndex == 4)
-            {
-                foto_classe.Image = Resources.Taoista;
-            }
-        }
-
-        private void bt_salvar_Click(object sender, EventArgs e)
-        {
-            database database = new database();
-            database.openConnection();
-
-            MySqlCommand cmd = new MySqlCommand("update c.CLASSE, c.PATENTE, r.FOI_PARA_CLA from hypedb.cadastro_membro c join hypedb.remanejamento r on c.id = r.id", database.getConnection());
-
-            cmd.Parameters.AddWithValue("@id", id_cad_mb);
-            cmd.Parameters.Add("@CLASSE", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-            cmd.Parameters.Add("@PATENTE", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
-            cmd.Parameters.Add("@FOI_PARA_CLA", MySqlDbType.VarChar, 256).Value = txt_vai_cla_rema.Texts;
-
-            cmd.ExecuteNonQuery();
-            database.closeConnection();
         }
     }
 }

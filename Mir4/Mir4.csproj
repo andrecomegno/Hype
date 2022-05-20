@@ -146,6 +146,12 @@
     <Compile Include="painel\membros.Designer.cs">
       <DependentUpon>membros.cs</DependentUpon>
     </Compile>
+    <Compile Include="painel\membro_excluir.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="painel\membro_excluir.Designer.cs">
+      <DependentUpon>membro_excluir.cs</DependentUpon>
+    </Compile>
     <Compile Include="painel\ouro.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -157,6 +163,12 @@
     </Compile>
     <Compile Include="painel\inicio.Designer.cs">
       <DependentUpon>inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="painel\perfil_membros.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="painel\perfil_membros.Designer.cs">
+      <DependentUpon>perfil_membros.cs</DependentUpon>
     </Compile>
     <Compile Include="painel\progressao.cs">
       <SubType>UserControl</SubType>
@@ -200,11 +212,17 @@
     <EmbeddedResource Include="painel\membros.resx">
       <DependentUpon>membros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="painel\membro_excluir.resx">
+      <DependentUpon>membro_excluir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="painel\ouro.resx">
       <DependentUpon>ouro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="painel\inicio.resx">
       <DependentUpon>inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="painel\perfil_membros.resx">
+      <DependentUpon>perfil_membros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="painel\progressao.resx">
       <DependentUpon>progressao.cs</DependentUpon>

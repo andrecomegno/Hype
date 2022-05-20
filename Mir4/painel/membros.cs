@@ -121,7 +121,7 @@ namespace Mir4.painel
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
 
                     data_entrada = ((DateTime)dr["DATA_ENTRADA"]).ToShortDateString();
-                    data_saida = dr["DATA_SAIDA"].ToString();
+                    //data_saida = dr["DATA_SAIDA"].ToString();
                     // data_remanejamento = dr["DATA_ENTRADA"].ToString();
                     nick = dr["NICK"].ToString();
                     level = dr["LEVEL"].ToString();
