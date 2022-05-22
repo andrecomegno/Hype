@@ -57,5 +57,10 @@ namespace Mir4
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        public void FecharJanela()
+        {
+            Close();
+        }
     }
 }

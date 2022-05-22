@@ -35,11 +35,25 @@ namespace Mir4.painel
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.bt_salvar = new System.Windows.Forms.Button();
             this.pl_alt_1 = new System.Windows.Forms.Panel();
+            this.txt_fake3 = new Mir4.painel.RJTextBox();
+            this.txt_nivel_alt_1 = new Mir4.painel.RJTextBox();
+            this.txt_fake4 = new Mir4.painel.RJTextBox();
+            this.foto_classe_alt_1 = new Mir4.script.RJCircularPictureBox();
+            this.txt_nick_alt_1 = new Mir4.painel.RJTextBox();
+            this.txt_poder_alt_1 = new Mir4.painel.RJTextBox();
             this.lb_classe_alt_1 = new System.Windows.Forms.Label();
             this.txt_classe_alt_1 = new System.Windows.Forms.ComboBox();
+            this.txt_foi_alt_1 = new Mir4.painel.RJTextBox();
             this.pl_alt_0 = new System.Windows.Forms.Panel();
+            this.txt_fake1 = new Mir4.painel.RJTextBox();
+            this.txt_fake2 = new Mir4.painel.RJTextBox();
+            this.txt_nivel_alt_0 = new Mir4.painel.RJTextBox();
+            this.foto_classe_alt_0 = new Mir4.script.RJCircularPictureBox();
+            this.txt_nick_alt_0 = new Mir4.painel.RJTextBox();
+            this.txt_poder_alt_0 = new Mir4.painel.RJTextBox();
             this.lb_classe_alt_0 = new System.Windows.Forms.Label();
             this.txt_classe_alt_0 = new System.Windows.Forms.ComboBox();
+            this.txt_foi_alt_0 = new Mir4.painel.RJTextBox();
             this.pl_pergunta = new System.Windows.Forms.Panel();
             this.lb_quantas_alts = new System.Windows.Forms.Label();
             this.txt_quantidade_alt = new System.Windows.Forms.ComboBox();
@@ -47,39 +61,25 @@ namespace Mir4.painel
             this.rd_nao = new System.Windows.Forms.RadioButton();
             this.rd_sim = new System.Windows.Forms.RadioButton();
             this.pl_membro = new System.Windows.Forms.Panel();
-            this.lb_classe = new System.Windows.Forms.Label();
-            this.lb_patente = new System.Windows.Forms.Label();
-            this.txt_patente = new System.Windows.Forms.ComboBox();
-            this.txt_classe = new System.Windows.Forms.ComboBox();
-            this.txt_fake3 = new Mir4.painel.RJTextBox();
-            this.txt_nivel_alt_1 = new Mir4.painel.RJTextBox();
-            this.txt_fake4 = new Mir4.painel.RJTextBox();
-            this.foto_classe_alt_1 = new Mir4.script.RJCircularPictureBox();
-            this.txt_nick_alt_1 = new Mir4.painel.RJTextBox();
-            this.txt_poder_alt_1 = new Mir4.painel.RJTextBox();
-            this.txt_foi_alt_1 = new Mir4.painel.RJTextBox();
-            this.txt_fake1 = new Mir4.painel.RJTextBox();
-            this.txt_fake2 = new Mir4.painel.RJTextBox();
-            this.txt_nivel_alt_0 = new Mir4.painel.RJTextBox();
-            this.foto_classe_alt_0 = new Mir4.script.RJCircularPictureBox();
-            this.txt_nick_alt_0 = new Mir4.painel.RJTextBox();
-            this.txt_poder_alt_0 = new Mir4.painel.RJTextBox();
-            this.txt_foi_alt_0 = new Mir4.painel.RJTextBox();
             this.txt_level = new Mir4.painel.RJTextBox();
             this.foto_classe = new Mir4.script.RJCircularPictureBox();
             this.txt_nick = new Mir4.painel.RJTextBox();
             this.txt_poder = new Mir4.painel.RJTextBox();
+            this.lb_classe = new System.Windows.Forms.Label();
+            this.lb_patente = new System.Windows.Forms.Label();
+            this.txt_patente = new System.Windows.Forms.ComboBox();
+            this.txt_classe = new System.Windows.Forms.ComboBox();
             this.txt_foi = new Mir4.painel.RJTextBox();
             this.txt_vem = new Mir4.painel.RJTextBox();
             this.pl_conteudo.SuspendLayout();
             this.pl_todos.SuspendLayout();
             this.pl_botao.SuspendLayout();
             this.pl_alt_1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_classe_alt_1)).BeginInit();
             this.pl_alt_0.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_classe_alt_0)).BeginInit();
             this.pl_pergunta.SuspendLayout();
             this.pl_membro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_classe_alt_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_classe_alt_0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.foto_classe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +90,7 @@ namespace Mir4.painel
             this.pl_conteudo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_conteudo.Location = new System.Drawing.Point(0, 0);
             this.pl_conteudo.Name = "pl_conteudo";
-            this.pl_conteudo.Size = new System.Drawing.Size(1200, 687);
+            this.pl_conteudo.Size = new System.Drawing.Size(1200, 720);
             this.pl_conteudo.TabIndex = 2;
             // 
             // pl_todos
@@ -102,7 +102,7 @@ namespace Mir4.painel
             this.pl_todos.Controls.Add(this.pl_alt_0);
             this.pl_todos.Controls.Add(this.pl_pergunta);
             this.pl_todos.Controls.Add(this.pl_membro);
-            this.pl_todos.Location = new System.Drawing.Point(238, 3);
+            this.pl_todos.Location = new System.Drawing.Point(238, 7);
             this.pl_todos.Name = "pl_todos";
             this.pl_todos.Size = new System.Drawing.Size(725, 682);
             this.pl_todos.TabIndex = 21;
@@ -168,233 +168,6 @@ namespace Mir4.painel
             this.pl_alt_1.Size = new System.Drawing.Size(725, 181);
             this.pl_alt_1.TabIndex = 20;
             this.pl_alt_1.Visible = false;
-            // 
-            // lb_classe_alt_1
-            // 
-            this.lb_classe_alt_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_classe_alt_1.ForeColor = System.Drawing.Color.White;
-            this.lb_classe_alt_1.Location = new System.Drawing.Point(22, 124);
-            this.lb_classe_alt_1.Name = "lb_classe_alt_1";
-            this.lb_classe_alt_1.Size = new System.Drawing.Size(129, 17);
-            this.lb_classe_alt_1.TabIndex = 6;
-            this.lb_classe_alt_1.Text = "Classe";
-            this.lb_classe_alt_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txt_classe_alt_1
-            // 
-            this.txt_classe_alt_1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_classe_alt_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txt_classe_alt_1.FormattingEnabled = true;
-            this.txt_classe_alt_1.Items.AddRange(new object[] {
-            "Besteira",
-            "Feiticeira",
-            "Guerreiro",
-            "Lanceiro",
-            "Taoista"});
-            this.txt_classe_alt_1.Location = new System.Drawing.Point(22, 144);
-            this.txt_classe_alt_1.Name = "txt_classe_alt_1";
-            this.txt_classe_alt_1.Size = new System.Drawing.Size(129, 21);
-            this.txt_classe_alt_1.TabIndex = 9;
-            this.txt_classe_alt_1.SelectedIndexChanged += new System.EventHandler(this.txt_classe_alt_1_SelectedIndexChanged);
-            // 
-            // pl_alt_0
-            // 
-            this.pl_alt_0.Controls.Add(this.txt_fake1);
-            this.pl_alt_0.Controls.Add(this.txt_fake2);
-            this.pl_alt_0.Controls.Add(this.txt_nivel_alt_0);
-            this.pl_alt_0.Controls.Add(this.foto_classe_alt_0);
-            this.pl_alt_0.Controls.Add(this.txt_nick_alt_0);
-            this.pl_alt_0.Controls.Add(this.txt_poder_alt_0);
-            this.pl_alt_0.Controls.Add(this.lb_classe_alt_0);
-            this.pl_alt_0.Controls.Add(this.txt_classe_alt_0);
-            this.pl_alt_0.Controls.Add(this.txt_foi_alt_0);
-            this.pl_alt_0.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_alt_0.Location = new System.Drawing.Point(0, 241);
-            this.pl_alt_0.Name = "pl_alt_0";
-            this.pl_alt_0.Size = new System.Drawing.Size(725, 181);
-            this.pl_alt_0.TabIndex = 19;
-            this.pl_alt_0.Visible = false;
-            // 
-            // lb_classe_alt_0
-            // 
-            this.lb_classe_alt_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_classe_alt_0.ForeColor = System.Drawing.Color.White;
-            this.lb_classe_alt_0.Location = new System.Drawing.Point(25, 124);
-            this.lb_classe_alt_0.Name = "lb_classe_alt_0";
-            this.lb_classe_alt_0.Size = new System.Drawing.Size(129, 17);
-            this.lb_classe_alt_0.TabIndex = 6;
-            this.lb_classe_alt_0.Text = "Classe";
-            this.lb_classe_alt_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txt_classe_alt_0
-            // 
-            this.txt_classe_alt_0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_classe_alt_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txt_classe_alt_0.FormattingEnabled = true;
-            this.txt_classe_alt_0.Items.AddRange(new object[] {
-            "Besteira",
-            "Feiticeira",
-            "Guerreiro",
-            "Lanceiro",
-            "Taoista"});
-            this.txt_classe_alt_0.Location = new System.Drawing.Point(25, 144);
-            this.txt_classe_alt_0.Name = "txt_classe_alt_0";
-            this.txt_classe_alt_0.Size = new System.Drawing.Size(129, 21);
-            this.txt_classe_alt_0.TabIndex = 9;
-            this.txt_classe_alt_0.SelectedIndexChanged += new System.EventHandler(this.txt_classe_alt_0_SelectedIndexChanged);
-            // 
-            // pl_pergunta
-            // 
-            this.pl_pergunta.Controls.Add(this.lb_quantas_alts);
-            this.pl_pergunta.Controls.Add(this.txt_quantidade_alt);
-            this.pl_pergunta.Controls.Add(this.lb_possui_alt);
-            this.pl_pergunta.Controls.Add(this.rd_nao);
-            this.pl_pergunta.Controls.Add(this.rd_sim);
-            this.pl_pergunta.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_pergunta.Location = new System.Drawing.Point(0, 181);
-            this.pl_pergunta.Name = "pl_pergunta";
-            this.pl_pergunta.Size = new System.Drawing.Size(725, 60);
-            this.pl_pergunta.TabIndex = 19;
-            // 
-            // lb_quantas_alts
-            // 
-            this.lb_quantas_alts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_quantas_alts.ForeColor = System.Drawing.Color.White;
-            this.lb_quantas_alts.Location = new System.Drawing.Point(411, 5);
-            this.lb_quantas_alts.Name = "lb_quantas_alts";
-            this.lb_quantas_alts.Size = new System.Drawing.Size(89, 17);
-            this.lb_quantas_alts.TabIndex = 15;
-            this.lb_quantas_alts.Text = "Quantas ?";
-            this.lb_quantas_alts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txt_quantidade_alt
-            // 
-            this.txt_quantidade_alt.BackColor = System.Drawing.Color.White;
-            this.txt_quantidade_alt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_quantidade_alt.Enabled = false;
-            this.txt_quantidade_alt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txt_quantidade_alt.FormattingEnabled = true;
-            this.txt_quantidade_alt.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2"});
-            this.txt_quantidade_alt.Location = new System.Drawing.Point(420, 25);
-            this.txt_quantidade_alt.Name = "txt_quantidade_alt";
-            this.txt_quantidade_alt.Size = new System.Drawing.Size(69, 21);
-            this.txt_quantidade_alt.TabIndex = 15;
-            this.txt_quantidade_alt.SelectedIndexChanged += new System.EventHandler(this.txt_quantidade_alt_SelectedIndexChanged);
-            // 
-            // lb_possui_alt
-            // 
-            this.lb_possui_alt.AutoSize = true;
-            this.lb_possui_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_possui_alt.ForeColor = System.Drawing.Color.White;
-            this.lb_possui_alt.Location = new System.Drawing.Point(175, 25);
-            this.lb_possui_alt.Name = "lb_possui_alt";
-            this.lb_possui_alt.Size = new System.Drawing.Size(93, 17);
-            this.lb_possui_alt.TabIndex = 17;
-            this.lb_possui_alt.Text = "Possui alt ?";
-            // 
-            // rd_nao
-            // 
-            this.rd_nao.AutoSize = true;
-            this.rd_nao.Checked = true;
-            this.rd_nao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rd_nao.ForeColor = System.Drawing.Color.White;
-            this.rd_nao.Location = new System.Drawing.Point(338, 24);
-            this.rd_nao.Name = "rd_nao";
-            this.rd_nao.Size = new System.Drawing.Size(55, 21);
-            this.rd_nao.TabIndex = 16;
-            this.rd_nao.TabStop = true;
-            this.rd_nao.Text = "Não";
-            this.rd_nao.UseVisualStyleBackColor = true;
-            this.rd_nao.CheckedChanged += new System.EventHandler(this.rd_nao_CheckedChanged);
-            // 
-            // rd_sim
-            // 
-            this.rd_sim.AutoSize = true;
-            this.rd_sim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rd_sim.ForeColor = System.Drawing.Color.White;
-            this.rd_sim.Location = new System.Drawing.Point(283, 24);
-            this.rd_sim.Name = "rd_sim";
-            this.rd_sim.Size = new System.Drawing.Size(52, 21);
-            this.rd_sim.TabIndex = 15;
-            this.rd_sim.Text = "Sim";
-            this.rd_sim.UseVisualStyleBackColor = true;
-            this.rd_sim.CheckedChanged += new System.EventHandler(this.rd_sim_CheckedChanged);
-            // 
-            // pl_membro
-            // 
-            this.pl_membro.Controls.Add(this.txt_level);
-            this.pl_membro.Controls.Add(this.foto_classe);
-            this.pl_membro.Controls.Add(this.txt_nick);
-            this.pl_membro.Controls.Add(this.txt_poder);
-            this.pl_membro.Controls.Add(this.lb_classe);
-            this.pl_membro.Controls.Add(this.lb_patente);
-            this.pl_membro.Controls.Add(this.txt_patente);
-            this.pl_membro.Controls.Add(this.txt_classe);
-            this.pl_membro.Controls.Add(this.txt_foi);
-            this.pl_membro.Controls.Add(this.txt_vem);
-            this.pl_membro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_membro.Location = new System.Drawing.Point(0, 0);
-            this.pl_membro.Name = "pl_membro";
-            this.pl_membro.Size = new System.Drawing.Size(725, 181);
-            this.pl_membro.TabIndex = 18;
-            // 
-            // lb_classe
-            // 
-            this.lb_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_classe.ForeColor = System.Drawing.Color.White;
-            this.lb_classe.Location = new System.Drawing.Point(28, 123);
-            this.lb_classe.Name = "lb_classe";
-            this.lb_classe.Size = new System.Drawing.Size(129, 17);
-            this.lb_classe.TabIndex = 6;
-            this.lb_classe.Text = "Classe";
-            this.lb_classe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_patente
-            // 
-            this.lb_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_patente.ForeColor = System.Drawing.Color.White;
-            this.lb_patente.Location = new System.Drawing.Point(552, 50);
-            this.lb_patente.Name = "lb_patente";
-            this.lb_patente.Size = new System.Drawing.Size(126, 17);
-            this.lb_patente.TabIndex = 13;
-            this.lb_patente.Text = "Patente";
-            this.lb_patente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txt_patente
-            // 
-            this.txt_patente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_patente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txt_patente.FormattingEnabled = true;
-            this.txt_patente.Items.AddRange(new object[] {
-            "Ancião",
-            "Égide Sombria",
-            "Lider",
-            "Membro",
-            "Novo Membro"});
-            this.txt_patente.Location = new System.Drawing.Point(552, 70);
-            this.txt_patente.Name = "txt_patente";
-            this.txt_patente.Size = new System.Drawing.Size(126, 21);
-            this.txt_patente.TabIndex = 12;
-            // 
-            // txt_classe
-            // 
-            this.txt_classe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_classe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txt_classe.FormattingEnabled = true;
-            this.txt_classe.Items.AddRange(new object[] {
-            "Arbalista",
-            "Feiticeira",
-            "Guerreiro",
-            "Lanceiro",
-            "Taoista"});
-            this.txt_classe.Location = new System.Drawing.Point(28, 143);
-            this.txt_classe.Name = "txt_classe";
-            this.txt_classe.Size = new System.Drawing.Size(129, 21);
-            this.txt_classe.TabIndex = 9;
-            this.txt_classe.SelectedIndexChanged += new System.EventHandler(this.txt_classe_SelectedIndexChanged);
             // 
             // txt_fake3
             // 
@@ -524,6 +297,34 @@ namespace Mir4.painel
             this.txt_poder_alt_1.Texts = "";
             this.txt_poder_alt_1.UnderlinedStyle = false;
             // 
+            // lb_classe_alt_1
+            // 
+            this.lb_classe_alt_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_classe_alt_1.ForeColor = System.Drawing.Color.White;
+            this.lb_classe_alt_1.Location = new System.Drawing.Point(22, 124);
+            this.lb_classe_alt_1.Name = "lb_classe_alt_1";
+            this.lb_classe_alt_1.Size = new System.Drawing.Size(129, 17);
+            this.lb_classe_alt_1.TabIndex = 6;
+            this.lb_classe_alt_1.Text = "Classe";
+            this.lb_classe_alt_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_classe_alt_1
+            // 
+            this.txt_classe_alt_1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_classe_alt_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txt_classe_alt_1.FormattingEnabled = true;
+            this.txt_classe_alt_1.Items.AddRange(new object[] {
+            "Besteira",
+            "Feiticeira",
+            "Guerreiro",
+            "Lanceiro",
+            "Taoista"});
+            this.txt_classe_alt_1.Location = new System.Drawing.Point(22, 144);
+            this.txt_classe_alt_1.Name = "txt_classe_alt_1";
+            this.txt_classe_alt_1.Size = new System.Drawing.Size(129, 21);
+            this.txt_classe_alt_1.TabIndex = 9;
+            this.txt_classe_alt_1.SelectedIndexChanged += new System.EventHandler(this.txt_classe_alt_1_SelectedIndexChanged);
+            // 
             // txt_foi_alt_1
             // 
             this.txt_foi_alt_1.BackColor = System.Drawing.SystemColors.Window;
@@ -545,6 +346,24 @@ namespace Mir4.painel
             this.txt_foi_alt_1.TabIndex = 11;
             this.txt_foi_alt_1.Texts = "";
             this.txt_foi_alt_1.UnderlinedStyle = false;
+            // 
+            // pl_alt_0
+            // 
+            this.pl_alt_0.Controls.Add(this.txt_fake1);
+            this.pl_alt_0.Controls.Add(this.txt_fake2);
+            this.pl_alt_0.Controls.Add(this.txt_nivel_alt_0);
+            this.pl_alt_0.Controls.Add(this.foto_classe_alt_0);
+            this.pl_alt_0.Controls.Add(this.txt_nick_alt_0);
+            this.pl_alt_0.Controls.Add(this.txt_poder_alt_0);
+            this.pl_alt_0.Controls.Add(this.lb_classe_alt_0);
+            this.pl_alt_0.Controls.Add(this.txt_classe_alt_0);
+            this.pl_alt_0.Controls.Add(this.txt_foi_alt_0);
+            this.pl_alt_0.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_alt_0.Location = new System.Drawing.Point(0, 241);
+            this.pl_alt_0.Name = "pl_alt_0";
+            this.pl_alt_0.Size = new System.Drawing.Size(725, 181);
+            this.pl_alt_0.TabIndex = 19;
+            this.pl_alt_0.Visible = false;
             // 
             // txt_fake1
             // 
@@ -674,6 +493,34 @@ namespace Mir4.painel
             this.txt_poder_alt_0.Texts = "";
             this.txt_poder_alt_0.UnderlinedStyle = false;
             // 
+            // lb_classe_alt_0
+            // 
+            this.lb_classe_alt_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_classe_alt_0.ForeColor = System.Drawing.Color.White;
+            this.lb_classe_alt_0.Location = new System.Drawing.Point(25, 124);
+            this.lb_classe_alt_0.Name = "lb_classe_alt_0";
+            this.lb_classe_alt_0.Size = new System.Drawing.Size(129, 17);
+            this.lb_classe_alt_0.TabIndex = 6;
+            this.lb_classe_alt_0.Text = "Classe";
+            this.lb_classe_alt_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_classe_alt_0
+            // 
+            this.txt_classe_alt_0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_classe_alt_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txt_classe_alt_0.FormattingEnabled = true;
+            this.txt_classe_alt_0.Items.AddRange(new object[] {
+            "Besteira",
+            "Feiticeira",
+            "Guerreiro",
+            "Lanceiro",
+            "Taoista"});
+            this.txt_classe_alt_0.Location = new System.Drawing.Point(25, 144);
+            this.txt_classe_alt_0.Name = "txt_classe_alt_0";
+            this.txt_classe_alt_0.Size = new System.Drawing.Size(129, 21);
+            this.txt_classe_alt_0.TabIndex = 9;
+            this.txt_classe_alt_0.SelectedIndexChanged += new System.EventHandler(this.txt_classe_alt_0_SelectedIndexChanged);
+            // 
             // txt_foi_alt_0
             // 
             this.txt_foi_alt_0.BackColor = System.Drawing.SystemColors.Window;
@@ -695,6 +542,104 @@ namespace Mir4.painel
             this.txt_foi_alt_0.TabIndex = 11;
             this.txt_foi_alt_0.Texts = "";
             this.txt_foi_alt_0.UnderlinedStyle = false;
+            // 
+            // pl_pergunta
+            // 
+            this.pl_pergunta.Controls.Add(this.lb_quantas_alts);
+            this.pl_pergunta.Controls.Add(this.txt_quantidade_alt);
+            this.pl_pergunta.Controls.Add(this.lb_possui_alt);
+            this.pl_pergunta.Controls.Add(this.rd_nao);
+            this.pl_pergunta.Controls.Add(this.rd_sim);
+            this.pl_pergunta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_pergunta.Location = new System.Drawing.Point(0, 181);
+            this.pl_pergunta.Name = "pl_pergunta";
+            this.pl_pergunta.Size = new System.Drawing.Size(725, 60);
+            this.pl_pergunta.TabIndex = 19;
+            // 
+            // lb_quantas_alts
+            // 
+            this.lb_quantas_alts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_quantas_alts.ForeColor = System.Drawing.Color.White;
+            this.lb_quantas_alts.Location = new System.Drawing.Point(411, 5);
+            this.lb_quantas_alts.Name = "lb_quantas_alts";
+            this.lb_quantas_alts.Size = new System.Drawing.Size(89, 17);
+            this.lb_quantas_alts.TabIndex = 15;
+            this.lb_quantas_alts.Text = "Quantas ?";
+            this.lb_quantas_alts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_quantidade_alt
+            // 
+            this.txt_quantidade_alt.BackColor = System.Drawing.Color.White;
+            this.txt_quantidade_alt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_quantidade_alt.Enabled = false;
+            this.txt_quantidade_alt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txt_quantidade_alt.FormattingEnabled = true;
+            this.txt_quantidade_alt.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2"});
+            this.txt_quantidade_alt.Location = new System.Drawing.Point(420, 25);
+            this.txt_quantidade_alt.Name = "txt_quantidade_alt";
+            this.txt_quantidade_alt.Size = new System.Drawing.Size(69, 21);
+            this.txt_quantidade_alt.TabIndex = 15;
+            this.txt_quantidade_alt.SelectedIndexChanged += new System.EventHandler(this.txt_quantidade_alt_SelectedIndexChanged);
+            // 
+            // lb_possui_alt
+            // 
+            this.lb_possui_alt.AutoSize = true;
+            this.lb_possui_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_possui_alt.ForeColor = System.Drawing.Color.White;
+            this.lb_possui_alt.Location = new System.Drawing.Point(175, 25);
+            this.lb_possui_alt.Name = "lb_possui_alt";
+            this.lb_possui_alt.Size = new System.Drawing.Size(93, 17);
+            this.lb_possui_alt.TabIndex = 17;
+            this.lb_possui_alt.Text = "Possui alt ?";
+            // 
+            // rd_nao
+            // 
+            this.rd_nao.AutoSize = true;
+            this.rd_nao.Checked = true;
+            this.rd_nao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rd_nao.ForeColor = System.Drawing.Color.White;
+            this.rd_nao.Location = new System.Drawing.Point(338, 24);
+            this.rd_nao.Name = "rd_nao";
+            this.rd_nao.Size = new System.Drawing.Size(55, 21);
+            this.rd_nao.TabIndex = 16;
+            this.rd_nao.TabStop = true;
+            this.rd_nao.Text = "Não";
+            this.rd_nao.UseVisualStyleBackColor = true;
+            this.rd_nao.CheckedChanged += new System.EventHandler(this.rd_nao_CheckedChanged);
+            // 
+            // rd_sim
+            // 
+            this.rd_sim.AutoSize = true;
+            this.rd_sim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rd_sim.ForeColor = System.Drawing.Color.White;
+            this.rd_sim.Location = new System.Drawing.Point(283, 24);
+            this.rd_sim.Name = "rd_sim";
+            this.rd_sim.Size = new System.Drawing.Size(52, 21);
+            this.rd_sim.TabIndex = 15;
+            this.rd_sim.Text = "Sim";
+            this.rd_sim.UseVisualStyleBackColor = true;
+            this.rd_sim.CheckedChanged += new System.EventHandler(this.rd_sim_CheckedChanged);
+            // 
+            // pl_membro
+            // 
+            this.pl_membro.Controls.Add(this.txt_level);
+            this.pl_membro.Controls.Add(this.foto_classe);
+            this.pl_membro.Controls.Add(this.txt_nick);
+            this.pl_membro.Controls.Add(this.txt_poder);
+            this.pl_membro.Controls.Add(this.lb_classe);
+            this.pl_membro.Controls.Add(this.lb_patente);
+            this.pl_membro.Controls.Add(this.txt_patente);
+            this.pl_membro.Controls.Add(this.txt_classe);
+            this.pl_membro.Controls.Add(this.txt_foi);
+            this.pl_membro.Controls.Add(this.txt_vem);
+            this.pl_membro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_membro.Location = new System.Drawing.Point(0, 0);
+            this.pl_membro.Name = "pl_membro";
+            this.pl_membro.Size = new System.Drawing.Size(725, 181);
+            this.pl_membro.TabIndex = 18;
             // 
             // txt_level
             // 
@@ -779,6 +724,61 @@ namespace Mir4.painel
             this.txt_poder.Texts = "";
             this.txt_poder.UnderlinedStyle = false;
             // 
+            // lb_classe
+            // 
+            this.lb_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_classe.ForeColor = System.Drawing.Color.White;
+            this.lb_classe.Location = new System.Drawing.Point(28, 123);
+            this.lb_classe.Name = "lb_classe";
+            this.lb_classe.Size = new System.Drawing.Size(129, 17);
+            this.lb_classe.TabIndex = 6;
+            this.lb_classe.Text = "Classe";
+            this.lb_classe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_patente
+            // 
+            this.lb_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_patente.ForeColor = System.Drawing.Color.White;
+            this.lb_patente.Location = new System.Drawing.Point(552, 50);
+            this.lb_patente.Name = "lb_patente";
+            this.lb_patente.Size = new System.Drawing.Size(126, 17);
+            this.lb_patente.TabIndex = 13;
+            this.lb_patente.Text = "Patente";
+            this.lb_patente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_patente
+            // 
+            this.txt_patente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_patente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txt_patente.FormattingEnabled = true;
+            this.txt_patente.Items.AddRange(new object[] {
+            "Ancião",
+            "Égide Sombria",
+            "Lider",
+            "Membro",
+            "Novo Membro"});
+            this.txt_patente.Location = new System.Drawing.Point(552, 70);
+            this.txt_patente.Name = "txt_patente";
+            this.txt_patente.Size = new System.Drawing.Size(126, 21);
+            this.txt_patente.TabIndex = 12;
+            // 
+            // txt_classe
+            // 
+            this.txt_classe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_classe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txt_classe.FormattingEnabled = true;
+            this.txt_classe.Items.AddRange(new object[] {
+            "Arbalista",
+            "Feiticeira",
+            "Guerreiro",
+            "Lanceiro",
+            "Taoista"});
+            this.txt_classe.Location = new System.Drawing.Point(28, 143);
+            this.txt_classe.Name = "txt_classe";
+            this.txt_classe.Size = new System.Drawing.Size(129, 21);
+            this.txt_classe.TabIndex = 9;
+            this.txt_classe.SelectedIndexChanged += new System.EventHandler(this.txt_classe_SelectedIndexChanged);
+            // 
             // txt_foi
             // 
             this.txt_foi.BackColor = System.Drawing.SystemColors.Window;
@@ -835,12 +835,12 @@ namespace Mir4.painel
             this.pl_todos.ResumeLayout(false);
             this.pl_botao.ResumeLayout(false);
             this.pl_alt_1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.foto_classe_alt_1)).EndInit();
             this.pl_alt_0.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.foto_classe_alt_0)).EndInit();
             this.pl_pergunta.ResumeLayout(false);
             this.pl_pergunta.PerformLayout();
             this.pl_membro.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.foto_classe_alt_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_classe_alt_0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.foto_classe)).EndInit();
             this.ResumeLayout(false);
 

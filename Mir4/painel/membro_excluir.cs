@@ -16,6 +16,8 @@ namespace Mir4.painel
 {
     public partial class membro_excluir : UserControl
     {
+        string id = string.Empty;
+
         public membro_excluir()
         {
             InitializeComponent();
@@ -46,6 +48,23 @@ namespace Mir4.painel
         private void bt_excluir_Click(object sender, EventArgs e)
         {
             //BANCO DE DADOS
+
+            try
+            {
+                database database = new database();
+                database.openConnection();
+
+                MySqlCommand cmd = new MySqlCommand("delete from hypedb.cadastro_membro c join hypedb.remanejamento r where ID=@id", database.getConnection());
+                cmd.Parameters.AddWithValue("@id", id);
+
+                cmd.ExecuteNonQuery();
+
+                database.closeConnection();
+            }
+            catch
+            {
+                MessageBox.Show("Código de Erro Interno ", "ERRO FATAL");
+            }
         }
     }
 }

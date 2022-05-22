@@ -47,7 +47,7 @@ namespace Mir4.painel
             MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into cadastro_membro (id, nick, level, poder, classe, patente, remanejamento_id) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
             objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.VarChar, 256).Value = txt_level.Text;
+            objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.VarChar, 256).Value = txt_level.Texts;
             objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.VarChar, 256).Value = txt_poder.Texts;
             objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
             objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;

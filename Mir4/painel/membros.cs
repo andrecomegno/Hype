@@ -31,7 +31,7 @@ namespace Mir4.painel
         {
             InitializeComponent();
 
-            Instance = this;
+            Instance = this;            
         }
 
         private void bt_progressao_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace Mir4.painel
             database database = new database();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select r.DATA_ENTRADA, r.DATA_SAIDA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, r.VEM_DO_CLA, r.FOI_PARA_CLA from hypedb.cadastro_membro c join hypedb.remanejamento r on c.id = r.id", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.id, r.DATA_ENTRADA, r.DATA_SAIDA, r.VEM_DO_CLA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, r.FOI_PARA_CLA from hypedb.cadastro_membro c join hypedb.remanejamento r on c.id = r.id", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -70,41 +70,43 @@ namespace Mir4.painel
 
             database.closeConnection();
 
-            NomeDasTabelas();
+            Tabela();
         }
 
-        public void NomeDasTabelas()
+        public void Tabela()
         {
-            dataGridView1.Columns["DATA_ENTRADA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[0].HeaderText = "DATA ENTRADA";
+            dataGridView1.Columns[0].Visible = false; // ID
+            dataGridView1.Columns[1].Visible = false; // DATA ENTRADA
+            dataGridView1.Columns[2].Visible = false; // DATA SAIDA
+            dataGridView1.Columns[3].Visible = false; // VEM DO CLA
 
-            dataGridView1.Columns["DATA_SAIDA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[1].HeaderText = "DATA SAIDA";
-
-            dataGridView1.Columns[2].HeaderText = "NICK";
+            dataGridView1.Columns[4].HeaderText = "NICK";
+            dataGridView1.Columns[5].HeaderText = "LEVEL";            
+            dataGridView1.Columns[6].HeaderText = "PODER";
+            dataGridView1.Columns[7].HeaderText = "CLASSE";
+            dataGridView1.Columns[8].HeaderText = "PATENTE";
+            dataGridView1.Columns[9].HeaderText = "ESTÁ NO CLA"; // FOI PARA O CLA
 
             dataGridView1.Columns["LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[3].HeaderText = "LEVEL";
-
             dataGridView1.Columns["PODER"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[4].HeaderText = "PODER";
-
-            dataGridView1.Columns[5].HeaderText = "CLASSE";
-
-            dataGridView1.Columns[6].HeaderText = "PATENTE";
-
-            dataGridView1.Columns[7].HeaderText = "VEM DO CLA";
-
-            dataGridView1.Columns[8].HeaderText = "FOI PARA CLA";
+            dataGridView1.Columns["CLASSE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns["PATENTE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                if (column.DataPropertyName == "DATA_ENTRADA")
-                    column.Width = 120;
-                else if (column.DataPropertyName == "FOI_PARA_CLA")
-                    column.Width = 120;
+                if (column.DataPropertyName == "NICK")
+                    column.Width = 220;
+                else if (column.DataPropertyName == "LEVEL")
+                    column.Width = 150;
+                else if (column.DataPropertyName == "PODER")
+                    column.Width = 150;
+                else if (column.DataPropertyName == "CLASSE")
+                    column.Width = 200;
+                else if (column.DataPropertyName == "PATENTE")
+                    column.Width = 200;
+                else if (column.DataPropertyName == "FOI_PARA_CLA") // ESTÁ NO CLA
+                    column.Width = 220;
             }
-
         }
 
         private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -120,6 +122,7 @@ namespace Mir4.painel
                 {
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
 
+                    id = dr["ID"].ToString();
                     data_entrada = ((DateTime)dr["DATA_ENTRADA"]).ToShortDateString();
                     //data_saida = dr["DATA_SAIDA"].ToString();
                     // data_remanejamento = dr["DATA_ENTRADA"].ToString();
@@ -134,7 +137,7 @@ namespace Mir4.painel
             }
             catch
             {
-                MessageBox.Show("Código =/ de Erro Interno ", "ERRO FATAL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro Interno", "ERRO FATAL", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -147,6 +150,9 @@ namespace Mir4.painel
         private void membros_Load(object sender, EventArgs e)
         {
             ListaMembros();
+
+            // COLORIR O TITULO DA TABELA
+            dataGridView1.EnableHeadersVisualStyles = false;
         }
 
         private void bt_add_membro_Click(object sender, EventArgs e)

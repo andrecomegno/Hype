@@ -17,7 +17,7 @@ namespace Mir4.painel
 {
     public partial class perfil_membros : UserControl
     {
-        private string id_cad_mb = "";
+        string id = string.Empty;
 
         public perfil_membros()
         {
@@ -26,7 +26,8 @@ namespace Mir4.painel
 
         public void DadosMembros()
         {
-            txt_data_entrada.Texts = membros.Instance.data_entrada;
+            id = membros.Instance.id;
+            lb_data_entrada.Text = membros.Instance.data_entrada;
             //membros.Instance.data_saida;
             //membros.Instance.data_remanejamento;
             txt_nick.Texts = membros.Instance.nick;
@@ -45,7 +46,6 @@ namespace Mir4.painel
             if (txt_classe.SelectedIndex == 0)
             {
                 foto_classe.Image = Resources.Arbalista;
-
             }
             else if (txt_classe.SelectedIndex == 1)
             {
@@ -64,18 +64,27 @@ namespace Mir4.painel
                 foto_classe.Image = Resources.Taoista;
             }
         }
-
+        
         private void bt_salvar_Click(object sender, EventArgs e)
+        {
+            EditarCadastroMembro();
+
+            //ATUALIZAR A LISTA DE MEMBROS
+            membros.Instance.ListaMembros();
+        }
+
+        private void EditarCadastroMembro()
         {
             database database = new database();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("update c.CLASSE, c.PATENTE, r.FOI_PARA_CLA from hypedb.cadastro_membro c join hypedb.remanejamento r on c.id = r.id", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("update cadastro_membro c join remanejamento r on r.id = c.id set c.CLASSE=@CLASSE, c.PATENTE=@PATENTE, r.FOI_PARA_CLA=@FOI_PARA_CLA where c.ID=@ID", database.getConnection());
 
-            cmd.Parameters.AddWithValue("@id", id_cad_mb);
             cmd.Parameters.Add("@CLASSE", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
             cmd.Parameters.Add("@PATENTE", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
             cmd.Parameters.Add("@FOI_PARA_CLA", MySqlDbType.VarChar, 256).Value = txt_vai_cla_rema.Texts;
+
+            cmd.Parameters.AddWithValue("@id", id);
 
             cmd.ExecuteNonQuery();
             database.closeConnection();
@@ -102,6 +111,11 @@ namespace Mir4.painel
         private void perfil_membros_Load(object sender, EventArgs e)
         {
             DadosMembros();
+        }
+
+        private void bt_cancelar_Click(object sender, EventArgs e)
+        {
+            membros_info.Instance.FecharJanela();
         }
     }
 }
