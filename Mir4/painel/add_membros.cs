@@ -15,6 +15,8 @@ namespace Mir4.painel
 {
     public partial class add_membros : UserControl
     {
+        string pergunta = string.Empty;
+
         public add_membros()
         {
             InitializeComponent();
@@ -31,30 +33,78 @@ namespace Mir4.painel
             database database = new database();
             database.openConnection();
 
+            if (pergunta == "SIM")
+            {
+                // INSERT TABELA PEGUNTA ALT
+                MySqlCommand objCmdPerguntaAlt = new MySqlCommand("insert into pergunta_alt (id, pergunta) values (null, ?)", database.getConnection());
 
-            // INSERT TABELA REMANEJAMENTO
-            MySqlCommand objCmdRemanejamento = new MySqlCommand("insert into remanejamento (id, vem_do_cla, foi_para_cla, data_entrada, data_saida) values (null, ?, ?, ?, ?)", database.getConnection());
+                objCmdPerguntaAlt.Parameters.Add("@pergunta", MySqlDbType.VarChar, 5).Value = pergunta;
 
-            objCmdRemanejamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
-            objCmdRemanejamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
-            objCmdRemanejamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdRemanejamento.Parameters.Add("@data_saida", MySqlDbType.Date).Value = DateTime.Now;
+                objCmdPerguntaAlt.ExecuteNonQuery();
+                long idPergunta = objCmdPerguntaAlt.LastInsertedId;
 
-            objCmdRemanejamento.ExecuteNonQuery();
-            long idRemanejamento = objCmdRemanejamento.LastInsertedId;
+                // INSERT TABELA ALT 0
+                MySqlCommand objCmdAlt0 = new MySqlCommand("insert into alt (id, nick, level, poder, classe, cla, data, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-            // INSERT TABELA CADASTRO MEMBROS
-            MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into cadastro_membro (id, nick, level, poder, classe, patente, remanejamento_id) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
+                objCmdAlt0.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick_alt_0.Texts;
+                objCmdAlt0.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level_alt_0.Texts;
+                objCmdAlt0.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder_alt_0.Texts;
+                objCmdAlt0.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe_alt_0.Text;
+                objCmdAlt0.Parameters.Add("@cla", MySqlDbType.VarChar, 256).Value = txt_foi_alt_0.Texts;
+                objCmdAlt0.Parameters.Add("@data", MySqlDbType.Date).Value = DateTime.Now;
+                objCmdAlt0.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPergunta;
 
-            objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.VarChar, 256).Value = txt_level.Texts;
-            objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.VarChar, 256).Value = txt_poder.Texts;
-            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
-            objCmdCadastroMembros.Parameters.Add("@remanejamento_id", MySqlDbType.VarChar, 2).Value = idRemanejamento;
+                objCmdAlt0.ExecuteNonQuery();
 
-            objCmdCadastroMembros.ExecuteNonQuery();
-            long idCadMembros = objCmdCadastroMembros.LastInsertedId;
+                // INSERT TABELA ALT 1
+                MySqlCommand objCmdAlt1 = new MySqlCommand("insert into alt (id, nick, level, poder, classe, cla, data, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+                objCmdAlt1.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick_alt_1.Texts;
+                objCmdAlt1.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level_alt_1.Texts;
+                objCmdAlt1.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder_alt_1.Texts;
+                objCmdAlt1.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe_alt_1.Text;
+                objCmdAlt1.Parameters.Add("@cla", MySqlDbType.VarChar, 256).Value = txt_foi_alt_1.Texts;
+                objCmdAlt1.Parameters.Add("@data", MySqlDbType.Date).Value = DateTime.Now;
+                objCmdAlt1.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPergunta;
+
+                objCmdAlt1.ExecuteNonQuery();
+            }
+            else
+            {
+                // INSERT TABELA PEGUNTA ALT
+                MySqlCommand objCmdPerguntaAlt = new MySqlCommand("insert into pergunta_alt (id, pergunta) values (null, ?)", database.getConnection());
+
+                objCmdPerguntaAlt.Parameters.Add("@pergunta", MySqlDbType.VarChar, 5).Value = pergunta;
+
+                objCmdPerguntaAlt.ExecuteNonQuery();
+                long idPergunta = objCmdPerguntaAlt.LastInsertedId;
+
+                // INSERT TABELA REMANEJAMENTO
+                MySqlCommand objCmdRemanejamento = new MySqlCommand("insert into remanejamento (id, vem_do_cla, foi_para_cla, data_entrada, data_remanejamento) values (null, ?, ?, ?, ?)", database.getConnection());
+
+                objCmdRemanejamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
+                objCmdRemanejamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
+                objCmdRemanejamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+                objCmdRemanejamento.Parameters.Add("@data_remanejamento", MySqlDbType.Date).Value = DateTime.Now;
+
+                objCmdRemanejamento.ExecuteNonQuery();
+                long idRemanejamento = objCmdRemanejamento.LastInsertedId;
+
+                // INSERT TABELA CADASTRO MEMBROS
+                MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into cadastro_membro (id, nick, level, poder, classe, patente, remanejamento_id, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+                objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+                objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
+                objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+                objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+                objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+                objCmdCadastroMembros.Parameters.Add("@remanejamento_id", MySqlDbType.Int32).Value = idRemanejamento;
+                objCmdCadastroMembros.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPergunta;
+
+                objCmdCadastroMembros.ExecuteNonQuery();
+
+                MessageBox.Show(pergunta);
+            }
 
             database.closeConnection();
         }
@@ -67,10 +117,10 @@ namespace Mir4.painel
                 AddMembros();
                 DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch
+            catch (Exception erro)
             {
-                MessageBox.Show("Código de Erro Interno ", "ERRO FATAL");
-            }
+                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
+            }            
             finally
             {
                 LimparTextos(pl_membro.Controls);
@@ -79,8 +129,7 @@ namespace Mir4.painel
                 LimparTextos(pl_alt_1.Controls);
 
                 rd_nao.Checked = true;
-            }
-            
+            }            
             
         }
 
@@ -114,16 +163,26 @@ namespace Mir4.painel
             txt_quantidade_alt.Enabled = true;
 
             txt_quantidade_alt.SelectedIndex = 1;
+
+            pergunta = "SIM";
         }
 
         private void rd_nao_CheckedChanged(object sender, EventArgs e)
         {
+
+            LimparTextos(pl_alt_0.Controls);
+            LimparTextos(pl_alt_1.Controls);
+
+            //limpar avatar
+
             txt_quantidade_alt.Enabled = false;
 
             pl_alt_0.Visible = false;
             pl_alt_1.Visible = false;
 
             txt_quantidade_alt.SelectedIndex = 0;
+
+            pergunta = "NÃO";
         }
 
         private void txt_quantidade_alt_SelectedIndexChanged(object sender, EventArgs e)

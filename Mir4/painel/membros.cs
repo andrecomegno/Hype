@@ -58,7 +58,7 @@ namespace Mir4.painel
             database database = new database();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.id, r.DATA_ENTRADA, r.DATA_SAIDA, r.VEM_DO_CLA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, r.FOI_PARA_CLA from hypedb.cadastro_membro c join hypedb.remanejamento r on c.id = r.id", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.id, r.DATA_ENTRADA, r.DATA_REMANEJAMENTO, r.VEM_DO_CLA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE,  r.FOI_PARA_CLA from hypedb.cadastro_membro c join hypedb.remanejamento r on c.REMANEJAMENTO_ID = r.ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID; ", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {

@@ -36,7 +36,7 @@ namespace Mir4.painel
             this.bt_salvar = new System.Windows.Forms.Button();
             this.pl_alt_1 = new System.Windows.Forms.Panel();
             this.txt_fake3 = new Mir4.painel.RJTextBox();
-            this.txt_nivel_alt_1 = new Mir4.painel.RJTextBox();
+            this.txt_level_alt_1 = new Mir4.painel.RJTextBox();
             this.txt_fake4 = new Mir4.painel.RJTextBox();
             this.foto_classe_alt_1 = new Mir4.script.RJCircularPictureBox();
             this.txt_nick_alt_1 = new Mir4.painel.RJTextBox();
@@ -47,7 +47,7 @@ namespace Mir4.painel
             this.pl_alt_0 = new System.Windows.Forms.Panel();
             this.txt_fake1 = new Mir4.painel.RJTextBox();
             this.txt_fake2 = new Mir4.painel.RJTextBox();
-            this.txt_nivel_alt_0 = new Mir4.painel.RJTextBox();
+            this.txt_level_alt_0 = new Mir4.painel.RJTextBox();
             this.foto_classe_alt_0 = new Mir4.script.RJCircularPictureBox();
             this.txt_nick_alt_0 = new Mir4.painel.RJTextBox();
             this.txt_poder_alt_0 = new Mir4.painel.RJTextBox();
@@ -154,7 +154,7 @@ namespace Mir4.painel
             // pl_alt_1
             // 
             this.pl_alt_1.Controls.Add(this.txt_fake3);
-            this.pl_alt_1.Controls.Add(this.txt_nivel_alt_1);
+            this.pl_alt_1.Controls.Add(this.txt_level_alt_1);
             this.pl_alt_1.Controls.Add(this.txt_fake4);
             this.pl_alt_1.Controls.Add(this.foto_classe_alt_1);
             this.pl_alt_1.Controls.Add(this.txt_nick_alt_1);
@@ -192,27 +192,27 @@ namespace Mir4.painel
             this.txt_fake3.Texts = "";
             this.txt_fake3.UnderlinedStyle = false;
             // 
-            // txt_nivel_alt_1
+            // txt_level_alt_1
             // 
-            this.txt_nivel_alt_1.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_nivel_alt_1.BorderColor = System.Drawing.Color.White;
-            this.txt_nivel_alt_1.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_nivel_alt_1.BorderRadius = 0;
-            this.txt_nivel_alt_1.BorderSize = 1;
-            this.txt_nivel_alt_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nivel_alt_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_nivel_alt_1.Location = new System.Drawing.Point(348, 60);
-            this.txt_nivel_alt_1.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nivel_alt_1.Multiline = false;
-            this.txt_nivel_alt_1.Name = "txt_nivel_alt_1";
-            this.txt_nivel_alt_1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_nivel_alt_1.PasswordChar = false;
-            this.txt_nivel_alt_1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_nivel_alt_1.PlaceholderText = "Level";
-            this.txt_nivel_alt_1.Size = new System.Drawing.Size(69, 31);
-            this.txt_nivel_alt_1.TabIndex = 17;
-            this.txt_nivel_alt_1.Texts = "";
-            this.txt_nivel_alt_1.UnderlinedStyle = false;
+            this.txt_level_alt_1.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_level_alt_1.BorderColor = System.Drawing.Color.White;
+            this.txt_level_alt_1.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_level_alt_1.BorderRadius = 0;
+            this.txt_level_alt_1.BorderSize = 1;
+            this.txt_level_alt_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_level_alt_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_level_alt_1.Location = new System.Drawing.Point(348, 60);
+            this.txt_level_alt_1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_level_alt_1.Multiline = false;
+            this.txt_level_alt_1.Name = "txt_level_alt_1";
+            this.txt_level_alt_1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_level_alt_1.PasswordChar = false;
+            this.txt_level_alt_1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_level_alt_1.PlaceholderText = "Level";
+            this.txt_level_alt_1.Size = new System.Drawing.Size(69, 31);
+            this.txt_level_alt_1.TabIndex = 17;
+            this.txt_level_alt_1.Texts = "";
+            this.txt_level_alt_1.UnderlinedStyle = false;
             // 
             // txt_fake4
             // 
@@ -351,7 +351,7 @@ namespace Mir4.painel
             // 
             this.pl_alt_0.Controls.Add(this.txt_fake1);
             this.pl_alt_0.Controls.Add(this.txt_fake2);
-            this.pl_alt_0.Controls.Add(this.txt_nivel_alt_0);
+            this.pl_alt_0.Controls.Add(this.txt_level_alt_0);
             this.pl_alt_0.Controls.Add(this.foto_classe_alt_0);
             this.pl_alt_0.Controls.Add(this.txt_nick_alt_0);
             this.pl_alt_0.Controls.Add(this.txt_poder_alt_0);
@@ -411,27 +411,27 @@ namespace Mir4.painel
             this.txt_fake2.Texts = "";
             this.txt_fake2.UnderlinedStyle = false;
             // 
-            // txt_nivel_alt_0
+            // txt_level_alt_0
             // 
-            this.txt_nivel_alt_0.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_nivel_alt_0.BorderColor = System.Drawing.Color.White;
-            this.txt_nivel_alt_0.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_nivel_alt_0.BorderRadius = 0;
-            this.txt_nivel_alt_0.BorderSize = 1;
-            this.txt_nivel_alt_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nivel_alt_0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_nivel_alt_0.Location = new System.Drawing.Point(348, 55);
-            this.txt_nivel_alt_0.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nivel_alt_0.Multiline = false;
-            this.txt_nivel_alt_0.Name = "txt_nivel_alt_0";
-            this.txt_nivel_alt_0.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_nivel_alt_0.PasswordChar = false;
-            this.txt_nivel_alt_0.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_nivel_alt_0.PlaceholderText = "Level";
-            this.txt_nivel_alt_0.Size = new System.Drawing.Size(69, 31);
-            this.txt_nivel_alt_0.TabIndex = 16;
-            this.txt_nivel_alt_0.Texts = "";
-            this.txt_nivel_alt_0.UnderlinedStyle = false;
+            this.txt_level_alt_0.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_level_alt_0.BorderColor = System.Drawing.Color.White;
+            this.txt_level_alt_0.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_level_alt_0.BorderRadius = 0;
+            this.txt_level_alt_0.BorderSize = 1;
+            this.txt_level_alt_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_level_alt_0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_level_alt_0.Location = new System.Drawing.Point(348, 55);
+            this.txt_level_alt_0.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_level_alt_0.Multiline = false;
+            this.txt_level_alt_0.Name = "txt_level_alt_0";
+            this.txt_level_alt_0.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_level_alt_0.PasswordChar = false;
+            this.txt_level_alt_0.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_level_alt_0.PlaceholderText = "Level";
+            this.txt_level_alt_0.Size = new System.Drawing.Size(69, 31);
+            this.txt_level_alt_0.TabIndex = 16;
+            this.txt_level_alt_0.Texts = "";
+            this.txt_level_alt_0.UnderlinedStyle = false;
             // 
             // foto_classe_alt_0
             // 
@@ -598,14 +598,12 @@ namespace Mir4.painel
             // rd_nao
             // 
             this.rd_nao.AutoSize = true;
-            this.rd_nao.Checked = true;
             this.rd_nao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rd_nao.ForeColor = System.Drawing.Color.White;
             this.rd_nao.Location = new System.Drawing.Point(338, 24);
             this.rd_nao.Name = "rd_nao";
             this.rd_nao.Size = new System.Drawing.Size(55, 21);
             this.rd_nao.TabIndex = 16;
-            this.rd_nao.TabStop = true;
             this.rd_nao.Text = "Não";
             this.rd_nao.UseVisualStyleBackColor = true;
             this.rd_nao.CheckedChanged += new System.EventHandler(this.rd_nao_CheckedChanged);
@@ -884,8 +882,8 @@ namespace Mir4.painel
         private RJTextBox txt_foi_alt_1;
         private System.Windows.Forms.Panel pl_botao;
         private RJTextBox txt_level;
-        private RJTextBox txt_nivel_alt_1;
-        private RJTextBox txt_nivel_alt_0;
+        private RJTextBox txt_level_alt_1;
+        private RJTextBox txt_level_alt_0;
         private RJTextBox txt_fake3;
         private RJTextBox txt_fake4;
         private RJTextBox txt_fake1;
