@@ -129,7 +129,6 @@ namespace Hype.painel
                 membros_info mb = new membros_info();
                 mb.ShowDialog();
             }
-
         }
 
         private void membros_Load(object sender, EventArgs e)
