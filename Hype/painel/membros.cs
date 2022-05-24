@@ -30,7 +30,6 @@ namespace Hype.painel
         public membros()
         {
             InitializeComponent();
-
             Instance = this;            
         }
 
