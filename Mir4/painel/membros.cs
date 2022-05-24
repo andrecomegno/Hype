@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Mir4.script;
 using MySql.Data.MySqlClient;
+using Google.Cloud.Firestore;
 
 namespace Mir4.painel
 {
