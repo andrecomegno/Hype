@@ -55,7 +55,6 @@ namespace Hype.painel
 
         public void ListaMembros()
         {
-
             Tabela();
         }
 
