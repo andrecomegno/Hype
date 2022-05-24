@@ -34,7 +34,13 @@ namespace Hype
             this.bt_minimizar = new System.Windows.Forms.Button();
             this.bt_fechar = new System.Windows.Forms.Button();
             this.pl_geral = new System.Windows.Forms.Panel();
+            this.bt_cancelar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pl_conta = new System.Windows.Forms.Panel();
+            this.foto_perfil = new Mir4.script.RJCircularPictureBox();
+            this.lb_patente = new System.Windows.Forms.Label();
+            this.lb_nick = new System.Windows.Forms.Label();
+            this.pl_espaco = new System.Windows.Forms.Panel();
             this.pl_login = new System.Windows.Forms.Panel();
             this.txt_conf_senha = new System.Windows.Forms.TextBox();
             this.txt_login = new System.Windows.Forms.TextBox();
@@ -47,20 +53,23 @@ namespace Hype
             this.txt_nome_cla = new System.Windows.Forms.TextBox();
             this.lb_patente_cla = new System.Windows.Forms.Label();
             this.lb_nome_cla = new System.Windows.Forms.Label();
+<<<<<<< HEAD:Mir4/criar_login.Designer.cs
+=======
             this.pl_espaco = new System.Windows.Forms.Panel();
             this.pl_conta = new System.Windows.Forms.Panel();
             this.foto_perfil = new Hype.script.RJCircularPictureBox();
             this.lb_patente = new System.Windows.Forms.Label();
             this.lb_nick = new System.Windows.Forms.Label();
             this.bt_cancelar = new System.Windows.Forms.Button();
+>>>>>>> 94b763e13a6146e21b3d4061b67de767abc09116:Hype/criar_login.Designer.cs
             this.bt_cadastrar = new System.Windows.Forms.Button();
             this.pl_top.SuspendLayout();
             this.pl_geral.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.pl_login.SuspendLayout();
-            this.pl_nome_cla.SuspendLayout();
             this.pl_conta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).BeginInit();
+            this.pl_login.SuspendLayout();
+            this.pl_nome_cla.SuspendLayout();
             this.SuspendLayout();
             // 
             // pl_top
@@ -135,6 +144,22 @@ namespace Hype
             this.pl_geral.Size = new System.Drawing.Size(699, 301);
             this.pl_geral.TabIndex = 50;
             // 
+            // bt_cancelar
+            // 
+            this.bt_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_cancelar.BackColor = System.Drawing.Color.Tomato;
+            this.bt_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cancelar.FlatAppearance.BorderSize = 0;
+            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
+            this.bt_cancelar.Location = new System.Drawing.Point(559, 247);
+            this.bt_cancelar.Name = "bt_cancelar";
+            this.bt_cancelar.Size = new System.Drawing.Size(128, 42);
+            this.bt_cancelar.TabIndex = 43;
+            this.bt_cancelar.Text = "Cancelar";
+            this.bt_cancelar.UseVisualStyleBackColor = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
@@ -146,6 +171,70 @@ namespace Hype
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(670, 238);
             this.panel2.TabIndex = 0;
+            // 
+            // pl_conta
+            // 
+            this.pl_conta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pl_conta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.pl_conta.Controls.Add(this.foto_perfil);
+            this.pl_conta.Controls.Add(this.lb_patente);
+            this.pl_conta.Controls.Add(this.lb_nick);
+            this.pl_conta.Location = new System.Drawing.Point(7, 3);
+            this.pl_conta.Name = "pl_conta";
+            this.pl_conta.Size = new System.Drawing.Size(206, 174);
+            this.pl_conta.TabIndex = 29;
+            // 
+            // foto_perfil
+            // 
+            this.foto_perfil.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.foto_perfil.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.foto_perfil.BorderColor2 = System.Drawing.Color.HotPink;
+            this.foto_perfil.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.foto_perfil.BorderSize = 2;
+            this.foto_perfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.foto_perfil.GradientAngle = 50F;
+            this.foto_perfil.Image = global::Mir4.Properties.Resources.HYPE_03;
+            this.foto_perfil.Location = new System.Drawing.Point(53, 26);
+            this.foto_perfil.Name = "foto_perfil";
+            this.foto_perfil.Size = new System.Drawing.Size(94, 94);
+            this.foto_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.foto_perfil.TabIndex = 0;
+            this.foto_perfil.TabStop = false;
+            this.foto_perfil.Click += new System.EventHandler(this.foto_perfil_Click);
+            // 
+            // lb_patente
+            // 
+            this.lb_patente.AutoSize = true;
+            this.lb_patente.BackColor = System.Drawing.Color.Transparent;
+            this.lb_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_patente.ForeColor = System.Drawing.Color.Gray;
+            this.lb_patente.Location = new System.Drawing.Point(75, 146);
+            this.lb_patente.Name = "lb_patente";
+            this.lb_patente.Size = new System.Drawing.Size(49, 20);
+            this.lb_patente.TabIndex = 50;
+            this.lb_patente.Text = "Lider";
+            // 
+            // lb_nick
+            // 
+            this.lb_nick.AutoSize = true;
+            this.lb_nick.BackColor = System.Drawing.Color.Transparent;
+            this.lb_nick.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nick.ForeColor = System.Drawing.Color.White;
+            this.lb_nick.Location = new System.Drawing.Point(50, 126);
+            this.lb_nick.Name = "lb_nick";
+            this.lb_nick.Size = new System.Drawing.Size(107, 20);
+            this.lb_nick.TabIndex = 48;
+            this.lb_nick.Text = "Andy Makler";
+            // 
+            // pl_espaco
+            // 
+            this.pl_espaco.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pl_espaco.Location = new System.Drawing.Point(7, 183);
+            this.pl_espaco.Name = "pl_espaco";
+            this.pl_espaco.Size = new System.Drawing.Size(643, 42);
+            this.pl_espaco.TabIndex = 27;
             // 
             // pl_login
             // 
@@ -270,6 +359,8 @@ namespace Hype
             this.lb_nome_cla.TabIndex = 0;
             this.lb_nome_cla.Text = "Nome do Cla";
             // 
+<<<<<<< HEAD:Mir4/criar_login.Designer.cs
+=======
             // pl_espaco
             // 
             this.pl_espaco.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -350,6 +441,7 @@ namespace Hype
             this.bt_cancelar.Text = "Cancelar";
             this.bt_cancelar.UseVisualStyleBackColor = false;
             // 
+>>>>>>> 94b763e13a6146e21b3d4061b67de767abc09116:Hype/criar_login.Designer.cs
             // bt_cadastrar
             // 
             this.bt_cadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -359,7 +451,7 @@ namespace Hype
             this.bt_cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_cadastrar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_cadastrar.ForeColor = System.Drawing.Color.White;
-            this.bt_cadastrar.Location = new System.Drawing.Point(417, 247);
+            this.bt_cadastrar.Location = new System.Drawing.Point(300, 247);
             this.bt_cadastrar.Name = "bt_cadastrar";
             this.bt_cadastrar.Size = new System.Drawing.Size(128, 42);
             this.bt_cadastrar.TabIndex = 44;
@@ -383,13 +475,13 @@ namespace Hype
             this.pl_top.PerformLayout();
             this.pl_geral.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.pl_conta.ResumeLayout(false);
+            this.pl_conta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).EndInit();
             this.pl_login.ResumeLayout(false);
             this.pl_login.PerformLayout();
             this.pl_nome_cla.ResumeLayout(false);
             this.pl_nome_cla.PerformLayout();
-            this.pl_conta.ResumeLayout(false);
-            this.pl_conta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).EndInit();
             this.ResumeLayout(false);
 
         }
