@@ -37,7 +37,7 @@ namespace Hype
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pl_conta = new System.Windows.Forms.Panel();
-            this.foto_perfil = new Mir4.script.RJCircularPictureBox();
+            this.foto_perfil = new Hype.script.RJCircularPictureBox();
             this.lb_patente = new System.Windows.Forms.Label();
             this.lb_nick = new System.Windows.Forms.Label();
             this.pl_espaco = new System.Windows.Forms.Panel();
@@ -53,15 +53,12 @@ namespace Hype
             this.txt_nome_cla = new System.Windows.Forms.TextBox();
             this.lb_patente_cla = new System.Windows.Forms.Label();
             this.lb_nome_cla = new System.Windows.Forms.Label();
-<<<<<<< HEAD:Mir4/criar_login.Designer.cs
-=======
             this.pl_espaco = new System.Windows.Forms.Panel();
             this.pl_conta = new System.Windows.Forms.Panel();
             this.foto_perfil = new Hype.script.RJCircularPictureBox();
             this.lb_patente = new System.Windows.Forms.Label();
             this.lb_nick = new System.Windows.Forms.Label();
             this.bt_cancelar = new System.Windows.Forms.Button();
->>>>>>> 94b763e13a6146e21b3d4061b67de767abc09116:Hype/criar_login.Designer.cs
             this.bt_cadastrar = new System.Windows.Forms.Button();
             this.pl_top.SuspendLayout();
             this.pl_geral.SuspendLayout();
@@ -194,7 +191,7 @@ namespace Hype
             this.foto_perfil.BorderSize = 2;
             this.foto_perfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.foto_perfil.GradientAngle = 50F;
-            this.foto_perfil.Image = global::Mir4.Properties.Resources.HYPE_03;
+            this.foto_perfil.Image = global::Hype.Properties.Resources.HYPE_03;
             this.foto_perfil.Location = new System.Drawing.Point(53, 26);
             this.foto_perfil.Name = "foto_perfil";
             this.foto_perfil.Size = new System.Drawing.Size(94, 94);
@@ -359,8 +356,6 @@ namespace Hype
             this.lb_nome_cla.TabIndex = 0;
             this.lb_nome_cla.Text = "Nome do Cla";
             // 
-<<<<<<< HEAD:Mir4/criar_login.Designer.cs
-=======
             // pl_espaco
             // 
             this.pl_espaco.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -441,7 +436,6 @@ namespace Hype
             this.bt_cancelar.Text = "Cancelar";
             this.bt_cancelar.UseVisualStyleBackColor = false;
             // 
->>>>>>> 94b763e13a6146e21b3d4061b67de767abc09116:Hype/criar_login.Designer.cs
             // bt_cadastrar
             // 
             this.bt_cadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));

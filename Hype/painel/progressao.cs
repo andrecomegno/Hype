@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using Hype.script;
 
 namespace Hype.painel
@@ -51,10 +52,24 @@ namespace Hype.painel
             cla.Instance.addControl(uc);
         }
 
-        public void ListaMembros()
+        public void ListaProgressao()
         {
+            configdb database = new configdb();
+            database.openConnection();
 
-            Tabela();
+            MySqlCommand cmd = new MySqlCommand("select al.ID, al.DATA, al.NICK, al.LEVEL, al.PODER, al.CLASSE, al.CLA, c.NICK from cadastro_membro c join remanejamento r on c.REMANEJAMENTO_ID = r.ID join pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join alt al on al.PERGUNTA_ALT_ID = p.ID", database.getConnection());
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+            }
+
+            database.closeConnection();
+
+            //Tabela();
         }
 
         public void Tabela()
@@ -126,7 +141,7 @@ namespace Hype.painel
 
         private void bt_add_progresso_Click(object sender, EventArgs e)
         {
-
+            new progressao_info().ShowDialog();
         }
 
         private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -136,7 +151,10 @@ namespace Hype.painel
 
         private void progressao_Load(object sender, EventArgs e)
         {
-            ListaMembros();
+            ListaProgressao();
+
+            // COLORIR O TITULO DA TABELA
+            dataGridView1.EnableHeadersVisualStyles = false;
         }
     }
 }

@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using Hype.script;
-using Google.Cloud.Firestore;
 
 namespace Hype.painel
 {
@@ -54,23 +54,39 @@ namespace Hype.painel
 
         public void ListaMembros()
         {
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select c.id, r.DATA_REMANEJAMENTO, r.VEM_DO_CLA, r.FOI_PARA_CLA, c.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE from cadastro_membro c join remanejamento r on c.REMANEJAMENTO_ID = r.ID join pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID; ", database.getConnection());
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+            }
+
+            database.closeConnection();
+            
             Tabela();
         }
 
         public void Tabela()
         {
             dataGridView1.Columns[0].Visible = false; // ID
-            dataGridView1.Columns[1].Visible = false; // DATA ENTRADA
-            dataGridView1.Columns[2].Visible = false; // DATA SAIDA
-            dataGridView1.Columns[3].Visible = false; // VEM DO CLA
+            dataGridView1.Columns[1].Visible = false; // DATA REMANEJAMENTO
+            dataGridView1.Columns[2].Visible = false; // VEM DO CLA
+            dataGridView1.Columns[3].Visible = false; // ESTÁ NO CLA
 
-            dataGridView1.Columns[4].HeaderText = "NICK";
-            dataGridView1.Columns[5].HeaderText = "LEVEL";            
-            dataGridView1.Columns[6].HeaderText = "PODER";
-            dataGridView1.Columns[7].HeaderText = "CLASSE";
-            dataGridView1.Columns[8].HeaderText = "PATENTE";
-            dataGridView1.Columns[9].HeaderText = "ESTÁ NO CLA"; // FOI PARA O CLA
+            dataGridView1.Columns[4].HeaderText = "DATA ENTRADA";
+            dataGridView1.Columns[5].HeaderText = "NICK";
+            dataGridView1.Columns[6].HeaderText = "LEVEL";
+            dataGridView1.Columns[7].HeaderText = "PODER";
+            dataGridView1.Columns[8].HeaderText = "CLASSE";
+            dataGridView1.Columns[9].HeaderText = "PATENTE";
 
+            dataGridView1.Columns["DATA_ENTRADA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["PODER"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["CLASSE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -78,18 +94,18 @@ namespace Hype.painel
 
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                if (column.DataPropertyName == "NICK")
+                if (column.DataPropertyName == "DATA_ENTRADA")
+                    column.Width = 200;
+                else if(column.DataPropertyName == "NICK")
                     column.Width = 220;
                 else if (column.DataPropertyName == "LEVEL")
-                    column.Width = 150;
+                    column.Width = 130;
                 else if (column.DataPropertyName == "PODER")
-                    column.Width = 150;
+                    column.Width = 130;
                 else if (column.DataPropertyName == "CLASSE")
-                    column.Width = 200;
+                    column.Width = 150;
                 else if (column.DataPropertyName == "PATENTE")
                     column.Width = 200;
-                else if (column.DataPropertyName == "FOI_PARA_CLA") // ESTÁ NO CLA
-                    column.Width = 220;
             }
         }
 
@@ -108,8 +124,6 @@ namespace Hype.painel
 
                     id = dr["ID"].ToString();
                     data_entrada = ((DateTime)dr["DATA_ENTRADA"]).ToShortDateString();
-                    //data_saida = dr["DATA_SAIDA"].ToString();
-                    // data_remanejamento = dr["DATA_ENTRADA"].ToString();
                     nick = dr["NICK"].ToString();
                     level = dr["LEVEL"].ToString();
                     poder = dr["PODER"].ToString();
