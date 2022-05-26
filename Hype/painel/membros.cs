@@ -57,7 +57,7 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.id, r.DATA_REMANEJAMENTO, r.VEM_DO_CLA, r.FOI_PARA_CLA, c.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE from cadastro_membro c join remanejamento r on c.REMANEJAMENTO_ID = r.ID join pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID; ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.id, c.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE from hypedb.cadastro_membro c join hypedb.expedicao e on e.ID = c.EXPEDICAO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID ", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -69,7 +69,7 @@ namespace Hype.painel
 
             database.closeConnection();
             
-            Tabela();
+            //Tabela();
         }
 
         public void Tabela()

@@ -18,7 +18,6 @@ namespace Hype.painel
         public static add_membros Instance;
 
         string pergunta = string.Empty;
-        public long idRemanejamento;
 
         public add_membros()
         {
@@ -47,27 +46,27 @@ namespace Hype.painel
                 objCmdPerguntaAlt.ExecuteNonQuery();
                 long idPergunta = objCmdPerguntaAlt.LastInsertedId;
 
+
                 if (txt_quantidade_alt.SelectedIndex == 1)
                 {
-                    // INSERT TABELA REMANEJAMENTO
-                    MySqlCommand objCmdRemanejamento = new MySqlCommand("insert into remanejamento (id, data_remanejamento, vem_do_cla, foi_para_cla) values (null, null, ?, ?)", database.getConnection());
+                    // INSERT TABELA EXPEDICAO
+                    MySqlCommand objCmdExpedicao = new MySqlCommand("insert into expedicao (id, pergunta) values (null, null)", database.getConnection());
 
-                    objCmdRemanejamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
-                    objCmdRemanejamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
-
-                    objCmdRemanejamento.ExecuteNonQuery();
-                    idRemanejamento = objCmdRemanejamento.LastInsertedId;
+                    objCmdExpedicao.ExecuteNonQuery();
+                    long idExpedicao = objCmdExpedicao.LastInsertedId;
 
                     // INSERT TABELA CADASTRO MEMBROS
-                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into cadastro_membro (id, data_entrada, nick, level, poder, classe, patente, remanejamento_id, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into cadastro_membro (id, data_entrada, vem_do_cla, foi_para_cla, nick, level, poder, classe, patente, expedicao_id, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
                     objCmdCadastroMembros.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+                    objCmdCadastroMembros.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
+                    objCmdCadastroMembros.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
                     objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                     objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
                     objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
                     objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
                     objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
-                    objCmdCadastroMembros.Parameters.Add("@remanejamento_id", MySqlDbType.Int32).Value = idRemanejamento;
+                    objCmdCadastroMembros.Parameters.Add("@expedicao_id", MySqlDbType.Int32).Value = idExpedicao;
                     objCmdCadastroMembros.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPergunta;
 
                     objCmdCadastroMembros.ExecuteNonQuery();
@@ -87,25 +86,24 @@ namespace Hype.painel
                 }
                 else if(txt_quantidade_alt.SelectedIndex == 2)
                 {
-                    // INSERT TABELA REMANEJAMENTO
-                    MySqlCommand objCmdRemanejamento = new MySqlCommand("insert into remanejamento (id, data_remanejamento, vem_do_cla, foi_para_cla) values (null, null, ?, ?)", database.getConnection());
+                    // INSERT TABELA EXPEDICAO
+                    MySqlCommand objCmdExpedicao = new MySqlCommand("insert into expedicao (id, pergunta) values (null, null)", database.getConnection());
 
-                    objCmdRemanejamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
-                    objCmdRemanejamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
-
-                    objCmdRemanejamento.ExecuteNonQuery();
-                    long idRemanejamento = objCmdRemanejamento.LastInsertedId;
+                    objCmdExpedicao.ExecuteNonQuery();
+                    long idExpedicao = objCmdExpedicao.LastInsertedId;
 
                     // INSERT TABELA CADASTRO MEMBROS
-                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into cadastro_membro (id, data_entrada, nick, level, poder, classe, patente, remanejamento_id, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into cadastro_membro (id, data_entrada, vem_do_cla, foi_para_cla, nick, level, poder, classe, patente, expedicao_id, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
                     objCmdCadastroMembros.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+                    objCmdCadastroMembros.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
+                    objCmdCadastroMembros.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
                     objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                     objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
                     objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
                     objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
                     objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
-                    objCmdCadastroMembros.Parameters.Add("@remanejamento_id", MySqlDbType.Int32).Value = idRemanejamento;
+                    objCmdCadastroMembros.Parameters.Add("@expedicao_id", MySqlDbType.Int32).Value = idExpedicao;
                     objCmdCadastroMembros.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPergunta;
 
                     objCmdCadastroMembros.ExecuteNonQuery();
@@ -148,17 +146,14 @@ namespace Hype.painel
                 objCmdPerguntaAlt.ExecuteNonQuery();
                 long idPergunta = objCmdPerguntaAlt.LastInsertedId;
 
-                // INSERT TABELA REMANEJAMENTO
-                MySqlCommand objCmdRemanejamento = new MySqlCommand("insert into remanejamento (id, data_remanejamento, vem_do_cla, foi_para_cla) values (null, null, ?, ?)", database.getConnection());
+                // INSERT TABELA EXPEDICAO
+                MySqlCommand objCmdExpedicao = new MySqlCommand("insert into expedicao (id, pergunta) values (null, null)", database.getConnection());
 
-                objCmdRemanejamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
-                objCmdRemanejamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
-
-                objCmdRemanejamento.ExecuteNonQuery();
-                long idRemanejamento = objCmdRemanejamento.LastInsertedId;
+                objCmdExpedicao.ExecuteNonQuery();
+                long idExpedicao = objCmdExpedicao.LastInsertedId;
 
                 // INSERT TABELA CADASTRO MEMBROS
-                MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into cadastro_membro (id, data_entrada, nick, level, poder, classe, patente, remanejamento_id, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+                MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into cadastro_membro (id, data_entrada, nick, level, poder, classe, patente, expedicao_id, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
                 objCmdCadastroMembros.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
                 objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
@@ -166,7 +161,7 @@ namespace Hype.painel
                 objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
                 objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
                 objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
-                objCmdCadastroMembros.Parameters.Add("@remanejamento_id", MySqlDbType.Int32).Value = idRemanejamento;
+                objCmdCadastroMembros.Parameters.Add("@expedicao_id", MySqlDbType.Int32).Value = idExpedicao;
                 objCmdCadastroMembros.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPergunta;
 
                 objCmdCadastroMembros.ExecuteNonQuery();
@@ -183,7 +178,7 @@ namespace Hype.painel
                 AddMembros();
                 DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception erro)
+            catch //(Exception erro)
             {
                 //MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
             }            
