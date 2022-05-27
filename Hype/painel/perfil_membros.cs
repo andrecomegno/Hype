@@ -18,17 +18,17 @@ namespace Hype.painel
     {
         string id = string.Empty;
 
+        public string teste;
+
         public perfil_membros()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
 
         public void DadosMembros()
         {
             id = membros.Instance.id;
             lb_data_entrada.Text = membros.Instance.data_entrada;
-            //membros.Instance.data_saida;
-            //membros.Instance.data_remanejamento;
             txt_nick.Texts = membros.Instance.nick;
             txt_level.Texts = membros.Instance.level;
             txt_poder.Texts = membros.Instance.poder;
@@ -37,7 +37,8 @@ namespace Hype.painel
             txt_veio_cla.Texts = membros.Instance.vem_do_cla;
             txt_esta_cla.Texts = membros.Instance.foi_para_cla;
 
-            txt_esta_cla_rema.Texts = membros.Instance.foi_para_cla;
+            // REMANEJAMENTO
+            txt_vai_cla_rema.Texts = membros.Instance.foi_para_cla;
         }
 
         private void txt_classe_SelectedIndexChanged(object sender, EventArgs e)
@@ -74,6 +75,8 @@ namespace Hype.painel
 
         private void EditarCadastroMembro()
         {
+            // BANCO DE DADOS
+
         }
 
         private void rd_sim_CheckedChanged(object sender, EventArgs e)
@@ -91,7 +94,7 @@ namespace Hype.painel
         private void bt_excluir_Click(object sender, EventArgs e)
         {
             membro_excluir uc = new membro_excluir();
-            membros_info.Instance.addControl(uc);
+            informacao.Instance.addControl(uc);
         }
 
         private void perfil_membros_Load(object sender, EventArgs e)
@@ -101,7 +104,7 @@ namespace Hype.painel
 
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
-            membros_info.Instance.FecharJanela();
+            informacao.Instance.FecharJanela();
         }
     }
 }

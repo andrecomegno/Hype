@@ -14,11 +14,11 @@ using Hype.script;
 
 namespace Hype
 {
-    public partial class membros_info : Form
+    public partial class informacao : Form
     {
-        public static membros_info Instance;
+        public static informacao Instance;
 
-        public membros_info()
+        public informacao()
         {
             InitializeComponent();
             Instance = this;
@@ -39,8 +39,15 @@ namespace Hype
 
         private void membros_info_Load(object sender, EventArgs e)
         {
-            perfil_membros uc = new perfil_membros();
-            addControl(uc);
+            if(membros.Instance.perfilMembros == true)
+            {
+                perfil_membros uc = new perfil_membros();
+                addControl(uc);
+            }
+            else if(alts.Instance.perfilAlt == true)
+            {
+
+            }
 
             this.FormBorderStyle = FormBorderStyle.None;            
         }

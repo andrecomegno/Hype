@@ -1,7 +1,7 @@
 ﻿
 namespace Hype
 {
-    partial class membros_info
+    partial class informacao
     {
         /// <summary>
         /// Required designer variable.
@@ -86,7 +86,7 @@ namespace Hype
             this.pl_todos.Size = new System.Drawing.Size(725, 534);
             this.pl_todos.TabIndex = 22;
             // 
-            // membros_info
+            // informacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -94,9 +94,8 @@ namespace Hype
             this.ClientSize = new System.Drawing.Size(748, 588);
             this.Controls.Add(this.pl_dados);
             this.Controls.Add(this.pl_top);
-            this.Name = "membros_info";
+            this.Name = "informacao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "membros_info";
             this.Load += new System.EventHandler(this.membros_info_Load);
             this.pl_top.ResumeLayout(false);
             this.pl_dados.ResumeLayout(false);

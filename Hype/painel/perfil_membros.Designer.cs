@@ -32,8 +32,8 @@ namespace Hype.painel
             this.pl_todos = new System.Windows.Forms.Panel();
             this.pl_remanejamento = new System.Windows.Forms.Panel();
             this.lb_data_rema = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lb_vai_para_cla = new System.Windows.Forms.Label();
+            this.lb_esta_no_cla = new System.Windows.Forms.Label();
             this.txt_data_rema = new Hype.painel.RJTextBox();
             this.txt_vai_cla_rema = new Hype.painel.RJTextBox();
             this.txt_esta_cla_rema = new Hype.painel.RJTextBox();
@@ -45,6 +45,7 @@ namespace Hype.painel
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.bt_salvar = new System.Windows.Forms.Button();
             this.pl_membro = new System.Windows.Forms.Panel();
+            this.lb_data_entrada = new System.Windows.Forms.Label();
             this.txt_level = new Hype.painel.RJTextBox();
             this.lb_esta_cla = new System.Windows.Forms.Label();
             this.lb_veio_cla = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@ namespace Hype.painel
             this.txt_classe = new System.Windows.Forms.ComboBox();
             this.txt_esta_cla = new Hype.painel.RJTextBox();
             this.txt_veio_cla = new Hype.painel.RJTextBox();
-            this.lb_data_entrada = new System.Windows.Forms.Label();
             this.pl_todos.SuspendLayout();
             this.pl_remanejamento.SuspendLayout();
             this.pl_pergunta.SuspendLayout();
@@ -87,8 +87,8 @@ namespace Hype.painel
             // 
             this.pl_remanejamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
             this.pl_remanejamento.Controls.Add(this.lb_data_rema);
-            this.pl_remanejamento.Controls.Add(this.label2);
-            this.pl_remanejamento.Controls.Add(this.label1);
+            this.pl_remanejamento.Controls.Add(this.lb_vai_para_cla);
+            this.pl_remanejamento.Controls.Add(this.lb_esta_no_cla);
             this.pl_remanejamento.Controls.Add(this.txt_data_rema);
             this.pl_remanejamento.Controls.Add(this.txt_vai_cla_rema);
             this.pl_remanejamento.Controls.Add(this.txt_esta_cla_rema);
@@ -110,27 +110,27 @@ namespace Hype.painel
             this.lb_data_rema.Text = "Data";
             this.lb_data_rema.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lb_vai_para_cla
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(416, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(256, 17);
-            this.label2.TabIndex = 70;
-            this.label2.Text = "Vai para o Clã";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_vai_para_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_vai_para_cla.ForeColor = System.Drawing.Color.White;
+            this.lb_vai_para_cla.Location = new System.Drawing.Point(416, 26);
+            this.lb_vai_para_cla.Name = "lb_vai_para_cla";
+            this.lb_vai_para_cla.Size = new System.Drawing.Size(256, 17);
+            this.lb_vai_para_cla.TabIndex = 70;
+            this.lb_vai_para_cla.Text = "Vai para o Clã";
+            this.lb_vai_para_cla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lb_esta_no_cla
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(172, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(238, 17);
-            this.label1.TabIndex = 69;
-            this.label1.Text = "Está no Clã";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_esta_no_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_esta_no_cla.ForeColor = System.Drawing.Color.White;
+            this.lb_esta_no_cla.Location = new System.Drawing.Point(172, 26);
+            this.lb_esta_no_cla.Name = "lb_esta_no_cla";
+            this.lb_esta_no_cla.Size = new System.Drawing.Size(238, 17);
+            this.lb_esta_no_cla.TabIndex = 69;
+            this.lb_esta_no_cla.Text = "Está no Clã";
+            this.lb_esta_no_cla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_data_rema
             // 
@@ -322,6 +322,17 @@ namespace Hype.painel
             this.pl_membro.Name = "pl_membro";
             this.pl_membro.Size = new System.Drawing.Size(725, 322);
             this.pl_membro.TabIndex = 18;
+            // 
+            // lb_data_entrada
+            // 
+            this.lb_data_entrada.AutoSize = true;
+            this.lb_data_entrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_data_entrada.ForeColor = System.Drawing.Color.White;
+            this.lb_data_entrada.Location = new System.Drawing.Point(17, 15);
+            this.lb_data_entrada.Name = "lb_data_entrada";
+            this.lb_data_entrada.Size = new System.Drawing.Size(99, 20);
+            this.lb_data_entrada.TabIndex = 70;
+            this.lb_data_entrada.Text = "00/00/0000";
             // 
             // txt_level
             // 
@@ -584,17 +595,6 @@ namespace Hype.painel
             this.txt_veio_cla.Texts = "";
             this.txt_veio_cla.UnderlinedStyle = false;
             // 
-            // lb_data_entrada
-            // 
-            this.lb_data_entrada.AutoSize = true;
-            this.lb_data_entrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_data_entrada.ForeColor = System.Drawing.Color.White;
-            this.lb_data_entrada.Location = new System.Drawing.Point(17, 15);
-            this.lb_data_entrada.Name = "lb_data_entrada";
-            this.lb_data_entrada.Size = new System.Drawing.Size(99, 20);
-            this.lb_data_entrada.TabIndex = 70;
-            this.lb_data_entrada.Text = "00/00/0000";
-            // 
             // perfil_membros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -621,8 +621,8 @@ namespace Hype.painel
         private System.Windows.Forms.Panel pl_todos;
         private System.Windows.Forms.Panel pl_remanejamento;
         private System.Windows.Forms.Label lb_data_rema;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_vai_para_cla;
+        private System.Windows.Forms.Label lb_esta_no_cla;
         private RJTextBox txt_data_rema;
         private RJTextBox txt_vai_cla_rema;
         private RJTextBox txt_esta_cla_rema;

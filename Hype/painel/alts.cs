@@ -14,9 +14,21 @@ namespace Hype.painel
 {
     public partial class alts : UserControl
     {
+        public static alts Instance;
+        public bool perfilAlt = false;
+
+        public string id = "";
+        public string data_entrada = "";
+        public string nick = "";
+        public string level = "";
+        public string poder = "";
+        public string classe = "";
+        public string foi_para_cla = "";
+
         public alts()
         {
             InitializeComponent();
+            Instance = this;
         }
 
         public void ListaAlts()
@@ -74,6 +86,41 @@ namespace Hype.painel
             }
         }
 
+        private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            MostrarDadosTabela();
+        }
+
+        public void MostrarDadosTabela()
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+
+                    id = dr["ID"].ToString();
+                    data_entrada = ((DateTime)dr["DATA_ENTRADA"]).ToShortDateString();
+                    nick = dr["NICK"].ToString();
+                    level = dr["LEVEL"].ToString();
+                    poder = dr["PODER"].ToString();
+                    classe = dr["CLASSE"].ToString();
+                    foi_para_cla = dr["FOI_PARA_CLA"].ToString();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro Interno", "ERRO FATAL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                perfilAlt = true;
+
+                informacao mb = new informacao();
+                mb.ShowDialog();
+            }
+        }
+
         private void bt_membros_Click(object sender, EventArgs e)
         {
             membros uc = new membros();
@@ -99,5 +146,6 @@ namespace Hype.painel
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
         }
+
     }
 }

@@ -133,7 +133,7 @@ namespace Hype.painel
             }
             finally
             {
-                membros_info mb = new membros_info();
+                informacao mb = new informacao();
                 mb.ShowDialog();
             }
 

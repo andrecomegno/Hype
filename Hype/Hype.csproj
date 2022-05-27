@@ -204,11 +204,11 @@
     <Compile Include="cla.Designer.cs">
       <DependentUpon>cla.cs</DependentUpon>
     </Compile>
-    <Compile Include="membros_info.cs">
+    <Compile Include="informacao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="membros_info.Designer.cs">
-      <DependentUpon>membros_info.cs</DependentUpon>
+    <Compile Include="informacao.Designer.cs">
+      <DependentUpon>informacao.cs</DependentUpon>
     </Compile>
     <Compile Include="painel\add_membros.cs">
       <SubType>UserControl</SubType>
@@ -291,8 +291,8 @@
     <EmbeddedResource Include="cla.resx">
       <DependentUpon>cla.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="membros_info.resx">
-      <DependentUpon>membros_info.cs</DependentUpon>
+    <EmbeddedResource Include="informacao.resx">
+      <DependentUpon>informacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="painel\add_membros.resx">
       <DependentUpon>add_membros.cs</DependentUpon>

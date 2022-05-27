@@ -16,14 +16,15 @@ namespace Hype.painel
     {
         public static membros Instance;
 
+        public bool perfilMembros = false;
+
         public string id = "";
+        public string data_entrada = "";
         public string nick = "";
         public string level = "";
         public string poder = "";
         public string classe = "";
         public string patente = "";
-        public string data_entrada = "";
-        public string data_saida = "";
         public string vem_do_cla = "";
         public string foi_para_cla = "";
 
@@ -57,7 +58,7 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.id, c.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE from hypedb.cadastro_membro c join hypedb.expedicao e on e.ID = c.EXPEDICAO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.id, c.VEM_DO_CLA, c.FOI_PARA_CLA, c.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE from hypedb.cadastro_membro c join hypedb.expedicao e on e.ID = c.EXPEDICAO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID ", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -69,22 +70,21 @@ namespace Hype.painel
 
             database.closeConnection();
             
-            //Tabela();
+            Tabela();
         }
 
         public void Tabela()
         {
             dataGridView1.Columns[0].Visible = false; // ID
-            dataGridView1.Columns[1].Visible = false; // DATA REMANEJAMENTO
-            dataGridView1.Columns[2].Visible = false; // VEM DO CLA
-            dataGridView1.Columns[3].Visible = false; // ESTÁ NO CLA
+            dataGridView1.Columns[1].Visible = false; // VEM DO CLA
+            dataGridView1.Columns[2].Visible = false; // FOI NO CLA
 
-            dataGridView1.Columns[4].HeaderText = "DATA ENTRADA";
-            dataGridView1.Columns[5].HeaderText = "NICK";
-            dataGridView1.Columns[6].HeaderText = "LEVEL";
-            dataGridView1.Columns[7].HeaderText = "PODER";
-            dataGridView1.Columns[8].HeaderText = "CLASSE";
-            dataGridView1.Columns[9].HeaderText = "PATENTE";
+            dataGridView1.Columns[3].HeaderText = "DATA ENTRADA";
+            dataGridView1.Columns[4].HeaderText = "NICK";
+            dataGridView1.Columns[5].HeaderText = "LEVEL";
+            dataGridView1.Columns[6].HeaderText = "PODER";
+            dataGridView1.Columns[7].HeaderText = "CLASSE";
+            dataGridView1.Columns[8].HeaderText = "PATENTE";
 
             dataGridView1.Columns["DATA_ENTRADA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -139,7 +139,9 @@ namespace Hype.painel
             }
             finally
             {
-                membros_info mb = new membros_info();
+                perfilMembros = true;
+
+                informacao mb = new informacao();
                 mb.ShowDialog();
             }
         }

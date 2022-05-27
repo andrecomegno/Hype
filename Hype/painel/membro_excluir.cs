@@ -41,7 +41,7 @@ namespace Hype.painel
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
             perfil_membros uc = new perfil_membros();
-            membros_info.Instance.addControl(uc);
+            informacao.Instance.addControl(uc);
         }
 
         private void bt_excluir_Click(object sender, EventArgs e)
