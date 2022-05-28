@@ -252,6 +252,12 @@
     <Compile Include="painel\inicio.Designer.cs">
       <DependentUpon>inicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="painel\perfil_alt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="painel\perfil_alt.Designer.cs">
+      <DependentUpon>perfil_alt.cs</DependentUpon>
+    </Compile>
     <Compile Include="painel\perfil_membros.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -314,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="painel\inicio.resx">
       <DependentUpon>inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="painel\perfil_alt.resx">
+      <DependentUpon>perfil_alt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="painel\perfil_membros.resx">
       <DependentUpon>perfil_membros.cs</DependentUpon>

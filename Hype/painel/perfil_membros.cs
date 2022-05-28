@@ -18,8 +18,6 @@ namespace Hype.painel
     {
         string id = string.Empty;
 
-        public string teste;
-
         public perfil_membros()
         {
             InitializeComponent();           

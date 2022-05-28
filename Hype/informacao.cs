@@ -46,7 +46,8 @@ namespace Hype
             }
             else if(alts.Instance.perfilAlt == true)
             {
-
+                perfil_alt uc = new perfil_alt();
+                addControl(uc);
             }
 
             this.FormBorderStyle = FormBorderStyle.None;            
