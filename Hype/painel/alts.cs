@@ -23,7 +23,8 @@ namespace Hype.painel
         public string level = "";
         public string poder = "";
         public string classe = "";
-        public string foi_para_cla = "";
+        public string esta_no_cla = "";
+        public string nickMain = "";
 
         public alts()
         {
@@ -36,7 +37,7 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select al.id, al.DATA, al.NICK, al.LEVEL, al.PODER, al.CLASSE, al.CLA, c.NICK from hypedb.cadastro_membro c join hypedb.expedicao e on e.ID = c.EXPEDICAO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.alt al on al.PERGUNTA_ALT_ID = p.ID", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select al.id, al.DATA, al.NICK, al.LEVEL, al.PODER, al.CLASSE, al.CLA, c.NICK from hypedb.cadastro_membro c join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.alt al on al.PERGUNTA_ALT_ID = p.ID", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -100,17 +101,18 @@ namespace Hype.painel
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
 
                     id = dr["ID"].ToString();
-                    data_entrada = ((DateTime)dr["DATA_ENTRADA"]).ToShortDateString();
+                    data_entrada = ((DateTime)dr["DATA"]).ToShortDateString();
                     nick = dr["NICK"].ToString();
                     level = dr["LEVEL"].ToString();
                     poder = dr["PODER"].ToString();
                     classe = dr["CLASSE"].ToString();
-                    foi_para_cla = dr["FOI_PARA_CLA"].ToString();
+                    esta_no_cla = dr["CLA"].ToString();
+                    nickMain = dr["NICK1"].ToString();
                 }
             }
-            catch
+            catch (Exception erro)
             {
-                MessageBox.Show("Erro Interno", "ERRO FATAL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro Interno" + erro + "ERRO FATAL");
             }
             finally
             {

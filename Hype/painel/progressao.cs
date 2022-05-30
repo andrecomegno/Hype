@@ -57,7 +57,7 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select al.ID, al.DATA, al.NICK, al.LEVEL, al.PODER, al.CLASSE, al.CLA, c.NICK from cadastro_membro c join remanejamento r on c.REMANEJAMENTO_ID = r.ID join pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join alt al on al.PERGUNTA_ALT_ID = p.ID", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select id, NICK, LEVEL, PODER from hypedb.cadastro_membro", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {

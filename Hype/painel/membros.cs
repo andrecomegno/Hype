@@ -52,13 +52,12 @@ namespace Hype.painel
             cla.Instance.addControl(uc);
         }
 
-
         public void ListaMembros()
         {
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.id, c.VEM_DO_CLA, c.FOI_PARA_CLA, c.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE from hypedb.cadastro_membro c join hypedb.expedicao e on e.ID = c.EXPEDICAO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.id, r.VEM_DO_CLA, r.FOI_PARA_CLA, r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE from hypedb.cadastro_membro c join hypedb.expedicao e on e.ID = c.EXPEDICAO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.recrutamento r on r.ID = c.RECRUTAMENTO_ID ", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {

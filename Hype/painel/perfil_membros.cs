@@ -17,6 +17,7 @@ namespace Hype.painel
     public partial class perfil_membros : UserControl
     {
         string id = string.Empty;
+        public string cla_rema = string.Empty;
 
         public perfil_membros()
         {
@@ -36,7 +37,8 @@ namespace Hype.painel
             txt_esta_cla.Texts = membros.Instance.foi_para_cla;
 
             // REMANEJAMENTO
-            txt_vai_cla_rema.Texts = membros.Instance.foi_para_cla;
+            txt_esta_cla_rema.Texts = membros.Instance.foi_para_cla;
+            txt_vai_cla_rema.Texts = cla_rema;
         }
 
         private void txt_classe_SelectedIndexChanged(object sender, EventArgs e)
@@ -74,6 +76,12 @@ namespace Hype.painel
         private void EditarCadastroMembro()
         {
             // BANCO DE DADOS
+            configdb database = new configdb();
+            database.openConnection();
+
+
+
+            database.closeConnection();
 
         }
 
