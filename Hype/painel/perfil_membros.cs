@@ -17,11 +17,11 @@ namespace Hype.painel
     public partial class perfil_membros : UserControl
     {
         string id = string.Empty;
-        public string cla_rema = string.Empty;
+        string cla_rema = string.Empty;
 
         public perfil_membros()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
         public void DadosMembros()
@@ -64,7 +64,7 @@ namespace Hype.painel
                 foto_classe.Image = Resources.Taoista;
             }
         }
-        
+
         private void bt_salvar_Click(object sender, EventArgs e)
         {
             EditarCadastroMembro();
@@ -72,6 +72,12 @@ namespace Hype.painel
             //ATUALIZAR A LISTA DE MEMBROS
             membros.Instance.ListaMembros();
         }
+
+        public void Remanejamento()
+        {
+
+        }
+
 
         private void EditarCadastroMembro()
         {

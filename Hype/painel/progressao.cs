@@ -151,7 +151,7 @@ namespace Hype.painel
 
         private void progressao_Load(object sender, EventArgs e)
         {
-            ListaProgressao();
+            //ListaProgressao();
 
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;

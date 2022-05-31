@@ -37,7 +37,7 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select al.id, al.DATA, al.NICK, al.LEVEL, al.PODER, al.CLASSE, al.CLA, c.NICK from hypedb.cadastro_membro c join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.alt al on al.PERGUNTA_ALT_ID = p.ID", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select al.id, al.DATA, al.NICK_ALT, al.LEVEL_ALT, al.PODER_ALT, al.CLASSE_ALT, al.CLA, c.NICK from hypedb.cadastro_membro c join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.alt al on al.PERGUNTA_ALT_ID = p.ID", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -64,25 +64,25 @@ namespace Hype.painel
             dataGridView1.Columns[6].HeaderText = "CLA";
             dataGridView1.Columns[7].HeaderText = "NICK MAIN";
 
-            dataGridView1.Columns["LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns["PODER"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns["CLASSE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns["LEVEL_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns["PODER_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns["CLASSE_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
                 if (column.DataPropertyName == "DATA")
                     column.Width = 200;
-                else if (column.DataPropertyName == "NICK")
+                else if (column.DataPropertyName == "NICK_ALT")
                     column.Width = 220;
-                else if (column.DataPropertyName == "LEVEL")
+                else if (column.DataPropertyName == "LEVEL_ALT")
                     column.Width = 130;
-                else if (column.DataPropertyName == "PODER")
+                else if (column.DataPropertyName == "PODER_ALT")
                     column.Width = 130;
-                else if (column.DataPropertyName == "CLASSE")
+                else if (column.DataPropertyName == "CLASSE_ALT")
                     column.Width = 150;
                 else if (column.DataPropertyName == "CLA")
                     column.Width = 150;
-                else if (column.DataPropertyName == "NICK1") // NICK DA ALT
+                else if (column.DataPropertyName == "NICK") // NICK MAIN
                     column.Width = 220;
             }
         }
@@ -102,12 +102,12 @@ namespace Hype.painel
 
                     id = dr["ID"].ToString();
                     data_entrada = ((DateTime)dr["DATA"]).ToShortDateString();
-                    nick = dr["NICK"].ToString();
-                    level = dr["LEVEL"].ToString();
-                    poder = dr["PODER"].ToString();
-                    classe = dr["CLASSE"].ToString();
+                    nick = dr["NICK_ALT"].ToString();
+                    level = dr["LEVEL_ALT"].ToString();
+                    poder = dr["PODER_ALT"].ToString();
+                    classe = dr["CLASSE_ALT"].ToString();
                     esta_no_cla = dr["CLA"].ToString();
-                    nickMain = dr["NICK1"].ToString();
+                    nickMain = dr["NICK"].ToString();
                 }
             }
             catch (Exception erro)
