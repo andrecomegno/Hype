@@ -73,12 +73,6 @@ namespace Hype.painel
             membros.Instance.ListaMembros();
         }
 
-        public void Remanejamento()
-        {
-
-        }
-
-
         private void EditarCadastroMembro()
         {
             // BANCO DE DADOS
