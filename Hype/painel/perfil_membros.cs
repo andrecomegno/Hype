@@ -43,25 +43,23 @@ namespace Hype.painel
 
         private void txt_classe_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (txt_classe.SelectedIndex == 0)
+            switch (txt_classe.SelectedIndex)
             {
-                foto_classe.Image = Resources.Arbalista;
-            }
-            else if (txt_classe.SelectedIndex == 1)
-            {
-                foto_classe.Image = Resources.Mago;
-            }
-            else if (txt_classe.SelectedIndex == 2)
-            {
-                foto_classe.Image = Resources.Guerreiro;
-            }
-            else if (txt_classe.SelectedIndex == 3)
-            {
-                foto_classe.Image = Resources.Lanceiro;
-            }
-            else if (txt_classe.SelectedIndex == 4)
-            {
-                foto_classe.Image = Resources.Taoista;
+                case 0:
+                    foto_classe.Image = Resources.Arbalista;
+                    break;
+                case 1:
+                    foto_classe.Image = Resources.Mago;
+                    break;
+                case 2:
+                    foto_classe.Image = Resources.Guerreiro;
+                    break;
+                case 3:
+                    foto_classe.Image = Resources.Lanceiro;
+                    break;
+                case 4:
+                    foto_classe.Image = Resources.Taoista;
+                    break;
             }
         }
 

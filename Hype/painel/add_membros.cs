@@ -102,7 +102,6 @@ namespace Hype.painel
             database.closeConnection();
         }
 
-
         private void UmaAlt()
         {
             configdb database = new configdb();
@@ -300,7 +299,6 @@ namespace Hype.painel
             }            
         }
 
-
         private void bt_salvar_Click(object sender, EventArgs e)
         {
             try
@@ -364,6 +362,7 @@ namespace Hype.painel
             LimparTextos(pl_alt_1.Controls);
 
             //limpar avatar
+            //foto_classe.Image = Resources.Padrao;
 
             txt_quantidade_alt.Enabled = false;
 
@@ -377,22 +376,22 @@ namespace Hype.painel
 
         private void txt_quantidade_alt_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (txt_quantidade_alt.SelectedIndex == 1)
+            switch (txt_quantidade_alt.SelectedIndex)
             {
-                pl_alt_0.Visible = true;
-                pl_alt_1.Visible = false;
-            }
-            else if (txt_quantidade_alt.SelectedIndex == 2)
-            {
-                pl_alt_0.Visible = true;
-                pl_alt_1.Visible = true;
-            }
-            else
-            {
-                pl_alt_0.Visible = false;
-                pl_alt_1.Visible = false;
-
-                txt_quantidade_alt.SelectedIndex = 0;
+                case 0:
+                    pl_alt_0.Visible = false;
+                    pl_alt_1.Visible = false;
+                    break;
+                case 1:
+                    pl_alt_0.Visible = true;
+                    pl_alt_1.Visible = false;
+                    break;
+                case 2:
+                    pl_alt_0.Visible = true;
+                    pl_alt_1.Visible = true;
+                    break;
+                default:
+                    break;
             }
         }
 
