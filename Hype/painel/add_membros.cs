@@ -376,6 +376,8 @@ namespace Hype.painel
 
         private void txt_quantidade_alt_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            // QUANTIDADE DE ALT QUE FOI SELECIONADO 
             switch (txt_quantidade_alt.SelectedIndex)
             {
                 case 0:
@@ -466,8 +468,5 @@ namespace Hype.painel
                     break;
             }
         }
-
-
-
     }
 }
