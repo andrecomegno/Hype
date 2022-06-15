@@ -11,12 +11,14 @@ using System.Runtime.InteropServices;
 using Hype.Properties;
 using Hype.painel;
 using Hype.script;
+using MySql.Data.MySqlClient;
 
 namespace Hype.painel
 {
     public partial class perfil_membros : UserControl
     {
-        string id = string.Empty;
+        string id_membro = string.Empty;
+        string id_remane = string.Empty;
         string cla_rema = string.Empty;
 
         public perfil_membros()
@@ -26,7 +28,8 @@ namespace Hype.painel
 
         public void DadosMembros()
         {
-            id = membros.Instance.id;
+            id_membro = membros.Instance.id_membro;
+            id_remane = membros.Instance.id_remane;
             lb_data_entrada.Text = membros.Instance.data_entrada;
             txt_nick.Texts = membros.Instance.nick;
             txt_level.Texts = membros.Instance.level;
@@ -38,7 +41,7 @@ namespace Hype.painel
 
             // REMANEJAMENTO
             txt_esta_cla_rema.Texts = membros.Instance.foi_para_cla;
-            txt_vai_cla_rema.Texts = cla_rema;
+            txt_vai_cla_rema.Texts = cla_rema;            
         }
 
         private void txt_classe_SelectedIndexChanged(object sender, EventArgs e)
@@ -77,7 +80,37 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
+            if(rd_sim.Checked == true)
+            {
+                // CADASTRO DE MEMBROS
+                MySqlCommand cadastro_membros = new MySqlCommand("update cadastro_membro set classe=@classe, patente=@patente where (id=@id)", database.getConnection());
 
+                cadastro_membros.Parameters.AddWithValue("@id", id_membro);
+                cadastro_membros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+                cadastro_membros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+
+                cadastro_membros.ExecuteNonQuery();
+
+                // REMANEJAMENTOS
+                MySqlCommand remanejamento = new MySqlCommand("update remanejamento set data_remanejamento=@data_remanejamento, vai_para_cla=@vai_para_cla where (id=@id)", database.getConnection());
+
+                remanejamento.Parameters.AddWithValue("@id", id_remane);
+                remanejamento.Parameters.Add("@data_remanejamento", MySqlDbType.Date).Value = DateTime.Now;
+                remanejamento.Parameters.Add("@vai_para_cla", MySqlDbType.VarChar, 256).Value = txt_vai_cla_rema.Texts;
+
+                remanejamento.ExecuteNonQuery();
+            }
+            else
+            {
+                // CADASTRO DE MEMBROS
+                MySqlCommand cadastro_membros = new MySqlCommand("update cadastro_membro set classe=@classe, patente=@patente where (id=@id)", database.getConnection());
+
+                cadastro_membros.Parameters.AddWithValue("@id", id_membro);
+                cadastro_membros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+                cadastro_membros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+
+                cadastro_membros.ExecuteNonQuery();
+            } 
 
             database.closeConnection();
 

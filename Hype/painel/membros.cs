@@ -18,7 +18,8 @@ namespace Hype.painel
 
         public bool perfilMembros = false;
 
-        public string id = "";
+        public string id_membro = "";
+        public string id_remane = "";
         public string data_entrada = "";
         public string nick = "";
         public string level = "";
@@ -57,7 +58,7 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.id, r.VEM_DO_CLA, r.FOI_PARA_CLA, r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE from hypedb.cadastro_membro c join hypedb.expedicao e on e.ID = c.EXPEDICAO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.recrutamento r on r.ID = c.RECRUTAMENTO_ID ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.id, r.id, r.VEM_DO_CLA, r.FOI_PARA_CLA, r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE from hypedb.cadastro_membro c join hypedb.expedicao e on e.ID = c.EXPEDICAO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.recrutamento r on r.ID = c.RECRUTAMENTO_ID ", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -74,16 +75,17 @@ namespace Hype.painel
 
         public void Tabela()
         {
-            dataGridView1.Columns[0].Visible = false; // ID
-            dataGridView1.Columns[1].Visible = false; // VEM DO CLA
-            dataGridView1.Columns[2].Visible = false; // FOI NO CLA
+            dataGridView1.Columns[0].Visible = false; // ID Membros
+            dataGridView1.Columns[1].Visible = false; // ID Remanejamento
+            dataGridView1.Columns[2].Visible = false; // VEM DO CLA
+            dataGridView1.Columns[3].Visible = false; // FOI NO CLA
 
-            dataGridView1.Columns[3].HeaderText = "DATA ENTRADA";
-            dataGridView1.Columns[4].HeaderText = "NICK";
-            dataGridView1.Columns[5].HeaderText = "LEVEL";
-            dataGridView1.Columns[6].HeaderText = "PODER";
-            dataGridView1.Columns[7].HeaderText = "CLASSE";
-            dataGridView1.Columns[8].HeaderText = "PATENTE";
+            dataGridView1.Columns[4].HeaderText = "DATA ENTRADA";
+            dataGridView1.Columns[5].HeaderText = "NICK";
+            dataGridView1.Columns[6].HeaderText = "LEVEL";
+            dataGridView1.Columns[7].HeaderText = "PODER";
+            dataGridView1.Columns[8].HeaderText = "CLASSE";
+            dataGridView1.Columns[9].HeaderText = "PATENTE";
 
             dataGridView1.Columns["DATA_ENTRADA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -121,7 +123,8 @@ namespace Hype.painel
                 {
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
 
-                    id = dr["ID"].ToString();
+                    id_membro = dr["ID"].ToString();
+                    id_remane = dr["ID"].ToString();
                     data_entrada = ((DateTime)dr["DATA_ENTRADA"]).ToShortDateString();
                     nick = dr["NICK"].ToString();
                     level = dr["LEVEL"].ToString();
