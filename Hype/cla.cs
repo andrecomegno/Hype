@@ -149,14 +149,21 @@ namespace Hype
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void pl_conta_MouseLeave(object sender, EventArgs e)
+        //PAINEL CONTA MENU
+        private void foto_perfil_Click(object sender, EventArgs e)
         {
-            //pl_conta.Visible = false;            
+            pl_conta.Visible = false;
+
+            configuracao uc = new configuracao();
+            addControl(uc);
         }
 
-        private void pl_conta_MouseEnter(object sender, EventArgs e)
+        private void bt_config_Click(object sender, EventArgs e)
         {
-            pl_conta.Visible = true;
+            pl_conta.Visible = false;
+
+            configuracao uc = new configuracao();
+            addControl(uc);
         }
     }
 }

@@ -161,5 +161,24 @@ namespace Hype.painel
             add_membros uc = new add_membros();
             cla.Instance.addControl(uc);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE from hypedb.cadastro_membro c join hypedb.expedicao e on e.ID = c.EXPEDICAO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.recrutamento r on r.ID = c.RECRUTAMENTO_ID where nick like @nick '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@nick", txt_buscar.Texts);
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+            }
+
+            database.closeConnection();
+        }
     }
 }

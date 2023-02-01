@@ -54,6 +54,7 @@ namespace Hype
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.foto_perfil = new Hype.script.RJCircularPictureBox();
             this.foto_perfil_cla = new Hype.script.RJCircularPictureBox();
+            this.bt_config = new FontAwesome.Sharp.IconButton();
             this.pl_menu.SuspendLayout();
             this.pl_conf.SuspendLayout();
             this.pl_conta.SuspendLayout();
@@ -67,15 +68,15 @@ namespace Hype
             // 
             // lb_nick
             // 
-            this.lb_nick.AutoSize = true;
             this.lb_nick.BackColor = System.Drawing.Color.Transparent;
             this.lb_nick.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_nick.ForeColor = System.Drawing.Color.White;
-            this.lb_nick.Location = new System.Drawing.Point(51, 99);
+            this.lb_nick.Location = new System.Drawing.Point(3, 99);
             this.lb_nick.Name = "lb_nick";
-            this.lb_nick.Size = new System.Drawing.Size(107, 20);
+            this.lb_nick.Size = new System.Drawing.Size(200, 20);
             this.lb_nick.TabIndex = 48;
-            this.lb_nick.Text = "Andy Makler";
+            this.lb_nick.Text = "Nome Usuario";
+            this.lb_nick.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lb_nome_do_cla
             // 
@@ -91,15 +92,15 @@ namespace Hype
             // 
             // lb_patente
             // 
-            this.lb_patente.AutoSize = true;
             this.lb_patente.BackColor = System.Drawing.Color.Transparent;
             this.lb_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_patente.ForeColor = System.Drawing.Color.Gray;
-            this.lb_patente.Location = new System.Drawing.Point(79, 119);
+            this.lb_patente.Location = new System.Drawing.Point(3, 119);
             this.lb_patente.Name = "lb_patente";
-            this.lb_patente.Size = new System.Drawing.Size(49, 20);
+            this.lb_patente.Size = new System.Drawing.Size(209, 20);
             this.lb_patente.TabIndex = 50;
-            this.lb_patente.Text = "Lider";
+            this.lb_patente.Text = "Patente";
+            this.lb_patente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pl_menu
             // 
@@ -257,20 +258,21 @@ namespace Hype
             // 
             this.pl_conta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pl_conta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.pl_conta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pl_conta.Controls.Add(this.bt_config);
+            this.pl_conta.Controls.Add(this.bt_deslogar);
             this.pl_conta.Controls.Add(this.foto_perfil);
             this.pl_conta.Controls.Add(this.lb_nick);
-            this.pl_conta.Controls.Add(this.bt_deslogar);
             this.pl_conta.Controls.Add(this.lb_patente);
-            this.pl_conta.Location = new System.Drawing.Point(953, 34);
+            this.pl_conta.Location = new System.Drawing.Point(948, 31);
             this.pl_conta.Name = "pl_conta";
-            this.pl_conta.Size = new System.Drawing.Size(208, 262);
+            this.pl_conta.Size = new System.Drawing.Size(208, 170);
             this.pl_conta.TabIndex = 0;
             this.pl_conta.Visible = false;
             // 
             // bt_deslogar
             // 
-            this.bt_deslogar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_deslogar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_deslogar.BackColor = System.Drawing.Color.Transparent;
             this.bt_deslogar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_deslogar.FlatAppearance.BorderSize = 0;
@@ -284,7 +286,7 @@ namespace Hype
             this.bt_deslogar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.bt_deslogar.IconSize = 35;
             this.bt_deslogar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_deslogar.Location = new System.Drawing.Point(161, 223);
+            this.bt_deslogar.Location = new System.Drawing.Point(162, 130);
             this.bt_deslogar.Name = "bt_deslogar";
             this.bt_deslogar.Size = new System.Drawing.Size(41, 36);
             this.bt_deslogar.TabIndex = 62;
@@ -292,7 +294,6 @@ namespace Hype
             this.bt_deslogar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip1.SetToolTip(this.bt_deslogar, "Deslogar");
             this.bt_deslogar.UseVisualStyleBackColor = false;
-            this.bt_deslogar.Visible = false;
             // 
             // pl_top
             // 
@@ -440,6 +441,7 @@ namespace Hype
             this.foto_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.foto_perfil.TabIndex = 52;
             this.foto_perfil.TabStop = false;
+            this.foto_perfil.Click += new System.EventHandler(this.foto_perfil_Click);
             // 
             // foto_perfil_cla
             // 
@@ -457,6 +459,33 @@ namespace Hype
             this.foto_perfil_cla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.foto_perfil_cla.TabIndex = 0;
             this.foto_perfil_cla.TabStop = false;
+            // 
+            // bt_config
+            // 
+            this.bt_config.AccessibleName = "";
+            this.bt_config.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bt_config.BackColor = System.Drawing.Color.Transparent;
+            this.bt_config.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_config.FlatAppearance.BorderSize = 0;
+            this.bt_config.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bt_config.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.bt_config.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_config.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_config.ForeColor = System.Drawing.Color.White;
+            this.bt_config.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.bt_config.IconColor = System.Drawing.Color.White;
+            this.bt_config.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_config.IconSize = 35;
+            this.bt_config.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_config.Location = new System.Drawing.Point(2, 130);
+            this.bt_config.Name = "bt_config";
+            this.bt_config.Size = new System.Drawing.Size(40, 36);
+            this.bt_config.TabIndex = 63;
+            this.bt_config.Tag = "";
+            this.bt_config.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.bt_config, "Configuração");
+            this.bt_config.UseVisualStyleBackColor = false;
+            this.bt_config.Click += new System.EventHandler(this.bt_config_Click);
             // 
             // cla
             // 
@@ -476,7 +505,6 @@ namespace Hype
             this.pl_menu.ResumeLayout(false);
             this.pl_conf.ResumeLayout(false);
             this.pl_conta.ResumeLayout(false);
-            this.pl_conta.PerformLayout();
             this.pl_top.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pl_nome_cla.ResumeLayout(false);
@@ -513,5 +541,6 @@ namespace Hype
         private FontAwesome.Sharp.IconButton bt_deslogar;
         private script.RJCircularPictureBox foto_perfil;
         private System.Windows.Forms.Panel panel1;
+        private FontAwesome.Sharp.IconButton bt_config;
     }
 }

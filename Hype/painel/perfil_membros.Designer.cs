@@ -601,6 +601,7 @@ namespace Hype.painel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
             this.Controls.Add(this.pl_todos);
+            this.Margin = new System.Windows.Forms.Padding(50);
             this.Name = "perfil_membros";
             this.Size = new System.Drawing.Size(764, 627);
             this.Load += new System.EventHandler(this.perfil_membros_Load);

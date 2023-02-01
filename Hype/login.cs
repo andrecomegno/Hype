@@ -37,7 +37,7 @@ namespace Hype
 
         private void lb_novo_cad_Click(object sender, EventArgs e)
         {
-            new criar_login().ShowDialog();
+            //new criar_login().ShowDialog();
         }
 
         private void bt_fechar_Click(object sender, EventArgs e)
