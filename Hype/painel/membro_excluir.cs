@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Hype.Properties;
 using Hype.painel;
 using Hype.script;
+using MySql.Data.MySqlClient;
 
 namespace Hype.painel
 {
@@ -50,10 +51,24 @@ namespace Hype.painel
 
             try
             {
+
+                configdb database = new configdb();
+                database.openConnection();
+
+                MySqlCommand cmd = new MySqlCommand("delete from hypedb.cadastro_membro where ID=@id", database.getConnection());
+                cmd.Parameters.AddWithValue("@id", id);
+
+                cmd.ExecuteNonQuery();
+
+                database.closeConnection();
             }
             catch
             {
                 MessageBox.Show("Código de Erro Interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                MessageBox.Show("DELETADO COM SUCESSO ! ", "DELETADO");
             }
         }
     }

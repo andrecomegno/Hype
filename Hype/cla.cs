@@ -25,6 +25,7 @@ namespace Hype
             Instance = this;
         }
 
+        // MENU RECOLHER
         private void bt_menu_Click(object sender, EventArgs e)
         {
             MenuPrincipal();
@@ -37,7 +38,7 @@ namespace Hype
                 pl_menu.Width = 60;
                 lb_nick.Visible = false;
 
-                bt_sair.Visible = false;
+                bt_inicio.Visible = false;
                 bt_menu.Dock = DockStyle.Left;
                 bt_menu.Width = 60;
 
@@ -53,7 +54,7 @@ namespace Hype
             else
             {
                 pl_menu.Width = 210;
-                bt_sair.Visible = true;
+                bt_inicio.Visible = true;
                 bt_menu.Dock = DockStyle.None;
                 bt_menu.Width = 44;
 
@@ -66,6 +67,18 @@ namespace Hype
                     menuButton.Padding = new Padding(10, 0, 0, 0);
                 }
             }
+        }
+
+        // BOTÃO DO INICIO DO PAINEL MOVER
+        private void bt_configurar_Click(object sender, EventArgs e)
+        {
+            configuracao uc = new configuracao();
+            addControl(uc);
+        }
+
+        private void bt_inicio_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void bt_menu_conta_Click(object sender, EventArgs e)
@@ -111,12 +124,6 @@ namespace Hype
             pl_conteudo.Controls.Clear();
             pl_conteudo.Controls.Add(userControl);
             userControl.BringToFront();
-        }
-
-        private void bt_configurar_Click(object sender, EventArgs e)
-        {
-            configuracao uc = new configuracao();
-            addControl(uc);
         }
 
         private void bt_fechar_Click(object sender, EventArgs e)

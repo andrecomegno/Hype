@@ -37,10 +37,11 @@ namespace Hype
             this.pl_conf = new System.Windows.Forms.Panel();
             this.bt_menu = new FontAwesome.Sharp.IconButton();
             this.bt_configurar = new FontAwesome.Sharp.IconButton();
-            this.bt_sair = new FontAwesome.Sharp.IconButton();
+            this.bt_inicio = new FontAwesome.Sharp.IconButton();
             this.bt_painel = new FontAwesome.Sharp.IconButton();
             this.bt_membros = new FontAwesome.Sharp.IconButton();
             this.pl_conta = new System.Windows.Forms.Panel();
+            this.bt_config = new FontAwesome.Sharp.IconButton();
             this.bt_deslogar = new FontAwesome.Sharp.IconButton();
             this.pl_top = new System.Windows.Forms.Panel();
             this.bt_minimizar = new System.Windows.Forms.Button();
@@ -54,7 +55,6 @@ namespace Hype
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.foto_perfil = new Hype.script.RJCircularPictureBox();
             this.foto_perfil_cla = new Hype.script.RJCircularPictureBox();
-            this.bt_config = new FontAwesome.Sharp.IconButton();
             this.pl_menu.SuspendLayout();
             this.pl_conf.SuspendLayout();
             this.pl_conta.SuspendLayout();
@@ -120,7 +120,7 @@ namespace Hype
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pl_conf.Controls.Add(this.bt_menu);
             this.pl_conf.Controls.Add(this.bt_configurar);
-            this.pl_conf.Controls.Add(this.bt_sair);
+            this.pl_conf.Controls.Add(this.bt_inicio);
             this.pl_conf.Location = new System.Drawing.Point(3, 674);
             this.pl_conf.Name = "pl_conf";
             this.pl_conf.Size = new System.Drawing.Size(204, 43);
@@ -180,31 +180,32 @@ namespace Hype
             this.bt_configurar.UseVisualStyleBackColor = false;
             this.bt_configurar.Click += new System.EventHandler(this.bt_configurar_Click);
             // 
-            // bt_sair
+            // bt_inicio
             // 
-            this.bt_sair.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.bt_inicio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_sair.BackColor = System.Drawing.Color.Transparent;
-            this.bt_sair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_sair.FlatAppearance.BorderSize = 0;
-            this.bt_sair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.bt_sair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.bt_sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_sair.ForeColor = System.Drawing.Color.White;
-            this.bt_sair.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.bt_sair.IconColor = System.Drawing.Color.White;
-            this.bt_sair.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_sair.IconSize = 35;
-            this.bt_sair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_sair.Location = new System.Drawing.Point(159, 3);
-            this.bt_sair.Name = "bt_sair";
-            this.bt_sair.Size = new System.Drawing.Size(41, 36);
-            this.bt_sair.TabIndex = 60;
-            this.bt_sair.Tag = "";
-            this.bt_sair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.bt_sair, "Tela inicial");
-            this.bt_sair.UseVisualStyleBackColor = false;
+            this.bt_inicio.BackColor = System.Drawing.Color.Transparent;
+            this.bt_inicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_inicio.FlatAppearance.BorderSize = 0;
+            this.bt_inicio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bt_inicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.bt_inicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_inicio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_inicio.ForeColor = System.Drawing.Color.White;
+            this.bt_inicio.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.bt_inicio.IconColor = System.Drawing.Color.White;
+            this.bt_inicio.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_inicio.IconSize = 35;
+            this.bt_inicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_inicio.Location = new System.Drawing.Point(159, 3);
+            this.bt_inicio.Name = "bt_inicio";
+            this.bt_inicio.Size = new System.Drawing.Size(41, 36);
+            this.bt_inicio.TabIndex = 60;
+            this.bt_inicio.Tag = "";
+            this.bt_inicio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.bt_inicio, "Tela inicial");
+            this.bt_inicio.UseVisualStyleBackColor = false;
+            this.bt_inicio.Click += new System.EventHandler(this.bt_inicio_Click);
             // 
             // bt_painel
             // 
@@ -269,6 +270,33 @@ namespace Hype
             this.pl_conta.Size = new System.Drawing.Size(208, 170);
             this.pl_conta.TabIndex = 0;
             this.pl_conta.Visible = false;
+            // 
+            // bt_config
+            // 
+            this.bt_config.AccessibleName = "";
+            this.bt_config.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bt_config.BackColor = System.Drawing.Color.Transparent;
+            this.bt_config.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_config.FlatAppearance.BorderSize = 0;
+            this.bt_config.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bt_config.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.bt_config.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_config.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_config.ForeColor = System.Drawing.Color.White;
+            this.bt_config.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.bt_config.IconColor = System.Drawing.Color.White;
+            this.bt_config.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_config.IconSize = 35;
+            this.bt_config.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_config.Location = new System.Drawing.Point(2, 130);
+            this.bt_config.Name = "bt_config";
+            this.bt_config.Size = new System.Drawing.Size(40, 36);
+            this.bt_config.TabIndex = 63;
+            this.bt_config.Tag = "";
+            this.bt_config.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.bt_config, "Configuração");
+            this.bt_config.UseVisualStyleBackColor = false;
+            this.bt_config.Click += new System.EventHandler(this.bt_config_Click);
             // 
             // bt_deslogar
             // 
@@ -460,33 +488,6 @@ namespace Hype
             this.foto_perfil_cla.TabIndex = 0;
             this.foto_perfil_cla.TabStop = false;
             // 
-            // bt_config
-            // 
-            this.bt_config.AccessibleName = "";
-            this.bt_config.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bt_config.BackColor = System.Drawing.Color.Transparent;
-            this.bt_config.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_config.FlatAppearance.BorderSize = 0;
-            this.bt_config.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.bt_config.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.bt_config.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_config.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_config.ForeColor = System.Drawing.Color.White;
-            this.bt_config.IconChar = FontAwesome.Sharp.IconChar.Cog;
-            this.bt_config.IconColor = System.Drawing.Color.White;
-            this.bt_config.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_config.IconSize = 35;
-            this.bt_config.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_config.Location = new System.Drawing.Point(2, 130);
-            this.bt_config.Name = "bt_config";
-            this.bt_config.Size = new System.Drawing.Size(40, 36);
-            this.bt_config.TabIndex = 63;
-            this.bt_config.Tag = "";
-            this.bt_config.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.bt_config, "Configuração");
-            this.bt_config.UseVisualStyleBackColor = false;
-            this.bt_config.Click += new System.EventHandler(this.bt_config_Click);
-            // 
             // cla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,7 +531,7 @@ namespace Hype
         private FontAwesome.Sharp.IconButton bt_painel;
         private FontAwesome.Sharp.IconButton bt_membros;
         private FontAwesome.Sharp.IconButton bt_menu_conta;
-        private FontAwesome.Sharp.IconButton bt_sair;
+        private FontAwesome.Sharp.IconButton bt_inicio;
         private System.Windows.Forms.ToolTip toolTip1;
         private script.RJCircularPictureBox foto_perfil_cla;
         private System.Windows.Forms.Panel pl_conf;

@@ -29,6 +29,7 @@ namespace Hype.painel
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -41,6 +42,7 @@ namespace Hype.painel
             this.bt_ouro = new System.Windows.Forms.Button();
             this.bt_progressao = new System.Windows.Forms.Button();
             this.bt_membros = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pl_alts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -242,5 +244,6 @@ namespace Hype.painel
         private System.Windows.Forms.Button bt_progressao;
         private System.Windows.Forms.Button bt_membros;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

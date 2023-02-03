@@ -15,7 +15,6 @@ namespace Hype.painel
     public partial class membros : UserControl
     {
         public static membros Instance;
-
         public bool perfilMembros = false;
 
         public string id_membro = "";
