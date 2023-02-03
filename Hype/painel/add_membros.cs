@@ -68,7 +68,7 @@ namespace Hype.painel
             long idProgre = objCmdProgressao.LastInsertedId;
 
             // INSERT TABELA SAIDA DO CLA
-            MySqlCommand objCmdSaidaCla = new MySqlCommand("insert into saida_do_cla (id, data, anotacao) values (null, null, null)", database.getConnection());
+            MySqlCommand objCmdSaidaCla = new MySqlCommand("insert into saida_do_cla (id, data_saida, nick, level, poder, classe, patente, anotacao) values (null, null, null, null, null, null, null, null)", database.getConnection());
 
             objCmdSaidaCla.ExecuteNonQuery();
             long idSaida = objCmdSaidaCla.LastInsertedId;
@@ -138,7 +138,7 @@ namespace Hype.painel
             long idProgre = objCmdProgressao.LastInsertedId;
 
             // INSERT TABELA SAIDA DO CLA
-            MySqlCommand objCmdSaidaCla = new MySqlCommand("insert into saida_do_cla (id, data, anotacao) values (null, null, null)", database.getConnection());
+            MySqlCommand objCmdSaidaCla = new MySqlCommand("insert into saida_do_cla (id, data_saida, nick, level, poder, classe, patente, anotacao) values (null, null, null, null, null, null, null, null)", database.getConnection());
 
             objCmdSaidaCla.ExecuteNonQuery();
             long idSaida = objCmdSaidaCla.LastInsertedId;
@@ -221,7 +221,7 @@ namespace Hype.painel
             long idProgre = objCmdProgressao.LastInsertedId;
 
             // INSERT TABELA SAIDA DO CLA
-            MySqlCommand objCmdSaidaCla = new MySqlCommand("insert into saida_do_cla (id, data, anotacao) values (null, null, null)", database.getConnection());
+            MySqlCommand objCmdSaidaCla = new MySqlCommand("insert into saida_do_cla (id, data_saida, nick, level, poder, classe, patente, anotacao) values (null, null, null, null, null, null, null, null)", database.getConnection());
 
             objCmdSaidaCla.ExecuteNonQuery();
             long idSaida = objCmdSaidaCla.LastInsertedId;

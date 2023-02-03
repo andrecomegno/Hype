@@ -28,6 +28,7 @@ namespace Hype.painel
 
         public void DadosMembros()
         {
+            // CADASTRO
             id_membro = membros.Instance.id_membro;
             id_remane = membros.Instance.id_remane;
             lb_data_entrada.Text = membros.Instance.data_entrada;
@@ -36,7 +37,7 @@ namespace Hype.painel
             txt_poder.Texts = membros.Instance.poder;
             txt_patente.Text = membros.Instance.patente;
             txt_classe.Text = membros.Instance.classe;
-            txt_veio_cla.Texts = membros.Instance.vem_do_cla;
+            txt_vem_do_cla.Texts = membros.Instance.vem_do_cla;
             txt_esta_cla.Texts = membros.Instance.foi_para_cla;
 
             // REMANEJAMENTO
@@ -92,13 +93,22 @@ namespace Hype.painel
                 cadastro_membros.ExecuteNonQuery();
 
                 // REMANEJAMENTOS
-                MySqlCommand remanejamento = new MySqlCommand("update remanejamento set data_remanejamento=@data_remanejamento, vai_para_cla=@vai_para_cla where (id=@id)", database.getConnection());
+                MySqlCommand remanejamento = new MySqlCommand("update remanejamento set data_remanejamento=@data_remanejamento, esta_no_cla=@esta_no_cla, vai_para_cla=@vai_para_cla where (id=@id)", database.getConnection());
 
                 remanejamento.Parameters.AddWithValue("@id", id_remane);
                 remanejamento.Parameters.Add("@data_remanejamento", MySqlDbType.Date).Value = DateTime.Now;
+                remanejamento.Parameters.Add("@esta_no_cla", MySqlDbType.VarChar, 256).Value = txt_esta_cla_rema.Texts;
                 remanejamento.Parameters.Add("@vai_para_cla", MySqlDbType.VarChar, 256).Value = txt_vai_cla_rema.Texts;
 
                 remanejamento.ExecuteNonQuery();
+
+
+                // RECRUTAMENTO
+                MySqlCommand recrutamento = new MySqlCommand("update recrutamento set foi_para_cla=@foi_para_cla", database.getConnection());
+
+                recrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_vai_cla_rema.Texts;
+
+                recrutamento.ExecuteNonQuery();
             }
             else
             {
@@ -142,6 +152,7 @@ namespace Hype.painel
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
             informacao.Instance.FecharJanela();
+            membros.Instance.perfilMembros = false; // Limpa o formulario 
         }
     }
 }

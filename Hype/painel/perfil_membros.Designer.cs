@@ -61,7 +61,7 @@ namespace Hype.painel
             this.lb_classe = new System.Windows.Forms.Label();
             this.txt_classe = new System.Windows.Forms.ComboBox();
             this.txt_esta_cla = new Hype.painel.RJTextBox();
-            this.txt_veio_cla = new Hype.painel.RJTextBox();
+            this.txt_vem_do_cla = new Hype.painel.RJTextBox();
             this.pl_todos.SuspendLayout();
             this.pl_remanejamento.SuspendLayout();
             this.pl_pergunta.SuspendLayout();
@@ -316,7 +316,7 @@ namespace Hype.painel
             this.pl_membro.Controls.Add(this.lb_classe);
             this.pl_membro.Controls.Add(this.txt_classe);
             this.pl_membro.Controls.Add(this.txt_esta_cla);
-            this.pl_membro.Controls.Add(this.txt_veio_cla);
+            this.pl_membro.Controls.Add(this.txt_vem_do_cla);
             this.pl_membro.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_membro.Location = new System.Drawing.Point(0, 0);
             this.pl_membro.Name = "pl_membro";
@@ -574,26 +574,26 @@ namespace Hype.painel
             // 
             // txt_veio_cla
             // 
-            this.txt_veio_cla.BackColor = System.Drawing.Color.Lavender;
-            this.txt_veio_cla.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_veio_cla.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_veio_cla.BorderRadius = 0;
-            this.txt_veio_cla.BorderSize = 1;
-            this.txt_veio_cla.Enabled = false;
-            this.txt_veio_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_veio_cla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_veio_cla.Location = new System.Drawing.Point(112, 265);
-            this.txt_veio_cla.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_veio_cla.Multiline = false;
-            this.txt_veio_cla.Name = "txt_veio_cla";
-            this.txt_veio_cla.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_veio_cla.PasswordChar = false;
-            this.txt_veio_cla.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_veio_cla.PlaceholderText = "";
-            this.txt_veio_cla.Size = new System.Drawing.Size(238, 31);
-            this.txt_veio_cla.TabIndex = 10;
-            this.txt_veio_cla.Texts = "";
-            this.txt_veio_cla.UnderlinedStyle = false;
+            this.txt_vem_do_cla.BackColor = System.Drawing.Color.Lavender;
+            this.txt_vem_do_cla.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_vem_do_cla.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_vem_do_cla.BorderRadius = 0;
+            this.txt_vem_do_cla.BorderSize = 1;
+            this.txt_vem_do_cla.Enabled = false;
+            this.txt_vem_do_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_vem_do_cla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_vem_do_cla.Location = new System.Drawing.Point(112, 265);
+            this.txt_vem_do_cla.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_vem_do_cla.Multiline = false;
+            this.txt_vem_do_cla.Name = "txt_veio_cla";
+            this.txt_vem_do_cla.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_vem_do_cla.PasswordChar = false;
+            this.txt_vem_do_cla.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_vem_do_cla.PlaceholderText = "";
+            this.txt_vem_do_cla.Size = new System.Drawing.Size(238, 31);
+            this.txt_vem_do_cla.TabIndex = 10;
+            this.txt_vem_do_cla.Texts = "";
+            this.txt_vem_do_cla.UnderlinedStyle = false;
             // 
             // perfil_membros
             // 
@@ -650,7 +650,7 @@ namespace Hype.painel
         private System.Windows.Forms.Label lb_classe;
         private System.Windows.Forms.ComboBox txt_classe;
         private RJTextBox txt_esta_cla;
-        private RJTextBox txt_veio_cla;
+        private RJTextBox txt_vem_do_cla;
         private System.Windows.Forms.Label lb_data_entrada;
     }
 }

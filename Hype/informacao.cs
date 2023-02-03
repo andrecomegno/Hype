@@ -35,6 +35,8 @@ namespace Hype
         private void bt_fechar_Click(object sender, EventArgs e)
         {
             Close();
+            membros.Instance.perfilMembros = false; // Limpa o formulario 
+
         }
 
         private void membros_info_Load(object sender, EventArgs e)
@@ -42,7 +44,7 @@ namespace Hype
             if(membros.Instance.perfilMembros == true)
             {
                 perfil_membros uc = new perfil_membros();
-                addControl(uc);
+                addControl(uc);                
             }
             else if(alts.Instance.perfilAlt == true)
             {

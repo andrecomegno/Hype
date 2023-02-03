@@ -25,6 +25,7 @@ namespace Hype.painel
 
         public void DadosMembros()
         {
+            id = membros.Instance.id_membro;
             txt_nick.Texts = membros.Instance.nick;
             txt_level.Texts = membros.Instance.level;
             txt_poder.Texts = membros.Instance.poder;
@@ -47,29 +48,46 @@ namespace Hype.painel
 
         private void bt_excluir_Click(object sender, EventArgs e)
         {
-            //BANCO DE DADOS
-
             try
             {
-
                 configdb database = new configdb();
                 database.openConnection();
 
-                MySqlCommand cmd = new MySqlCommand("delete from hypedb.cadastro_membro where ID=@id", database.getConnection());
-                cmd.Parameters.AddWithValue("@id", id);
+                MySqlCommand objCmdRecrutamento = new MySqlCommand("delete from cadastro_membro where ID=@id", database.getConnection());
+                objCmdRecrutamento.Parameters.AddWithValue("@id", id);
 
-                cmd.ExecuteNonQuery();
+                objCmdRecrutamento.ExecuteNonQuery();
+
+                MessageBox.Show(id);
+
+
+                /*
+                // CAMPO ANOTAÇÃO
+                MySqlCommand objCmdSaidaDoCla = new MySqlCommand("insert into hypedb.saida_do_cla (id, data_saida, nick, level, poder, classe, patente, anotacao) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+                objCmdSaidaDoCla.Parameters.Add("@data_saida", MySqlDbType.Date).Value = DateTime.Now;
+                objCmdSaidaDoCla.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+                objCmdSaidaDoCla.Parameters.Add("@level", MySqlDbType.Int32, 256).Value = txt_level.Texts;
+                objCmdSaidaDoCla.Parameters.Add("@poder", MySqlDbType.Decimal, 256).Value = txt_poder.Texts;
+                objCmdSaidaDoCla.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
+                objCmdSaidaDoCla.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
+                objCmdSaidaDoCla.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = txt_motivo.Text;
+
+                objCmdSaidaDoCla.ExecuteNonQuery();
+                */
 
                 database.closeConnection();
+
+                DialogResult dr = MessageBox.Show("Deletado Com Sucesso !", "DELETADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch
+            catch (Exception erro)
             {
-                MessageBox.Show("Código de Erro Interno ", "ERRO FATAL");
-            }
-            finally
-            {
-                MessageBox.Show("DELETADO COM SUCESSO ! ", "DELETADO");
+                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
             }
         }
+
+
+
+
     }
 }
