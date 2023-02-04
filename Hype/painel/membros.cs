@@ -18,7 +18,11 @@ namespace Hype.painel
         public bool perfilMembros = false;
 
         public string id_membro = "";
-        public string id_remane = "";
+        public string id_remanejamento = "";
+        public string id_pergunta_alt = "";
+        public string id_pergunta_expedicao = "";
+        public string id_recrutamento = "";
+
         public string data_entrada = "";
         public string nick = "";
         public string level = "";
@@ -27,6 +31,9 @@ namespace Hype.painel
         public string patente = "";
         public string vem_do_cla = "";
         public string foi_para_cla = "";
+        public string esta_no_cla = "";
+        public string vai_para_cla = "";
+
 
         public membros()
         {
@@ -57,7 +64,7 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.id, r.id, r.VEM_DO_CLA, r.FOI_PARA_CLA, r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE from hypedb.cadastro_membro c join hypedb.expedicao e on e.ID = c.EXPEDICAO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.recrutamento r on r.ID = c.RECRUTAMENTO_ID ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.id, re.id, p.id, e.id, r.id, r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, p.PERGUNTA_ALT, e.PERGUNTA_EXPEDICAO, r.VEM_DO_CLA, r.FOI_PARA_CLA, re.ESTA_NO_CLA, re.VAI_PARA_CLA from hypedb.cadastro_membro c join hypedb.remanejamento re on re.ID = c.REMANEJAMENTO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.pergunta_expedicao e on e.ID = c.PERGUNTA_EXPEDICAO_ID join hypedb.recrutamento r on r.ID = c.RECRUTAMENTO_ID", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -74,17 +81,24 @@ namespace Hype.painel
 
         public void Tabela()
         {
-            dataGridView1.Columns[0].Visible = false; // ID Membros
-            dataGridView1.Columns[1].Visible = false; // ID Remanejamento
-            dataGridView1.Columns[2].Visible = false; // VEM DO CLA
-            dataGridView1.Columns[3].Visible = false; // FOI NO CLA
+            dataGridView1.Columns[0].Visible = false; // c.id ID Membros
+            dataGridView1.Columns[1].Visible = false; // re.di ID Remanejamento
+            dataGridView1.Columns[2].Visible = false; // p.id ID Pergunta Alt
+            dataGridView1.Columns[3].Visible = false; // e.id ID Expedicao
+            dataGridView1.Columns[4].Visible = false; // r.id ID Recrutamento
 
-            dataGridView1.Columns[4].HeaderText = "DATA ENTRADA";
-            dataGridView1.Columns[5].HeaderText = "NICK";
-            dataGridView1.Columns[6].HeaderText = "LEVEL";
-            dataGridView1.Columns[7].HeaderText = "PODER";
-            dataGridView1.Columns[8].HeaderText = "CLASSE";
-            dataGridView1.Columns[9].HeaderText = "PATENTE";
+            dataGridView1.Columns[5].HeaderText = "DATA ENTRADA";
+            dataGridView1.Columns[6].HeaderText = "NICK";
+            dataGridView1.Columns[7].HeaderText = "LEVEL";
+            dataGridView1.Columns[8].HeaderText = "PODER";
+            dataGridView1.Columns[9].HeaderText = "CLASSE";
+            dataGridView1.Columns[10].HeaderText = "PATENTE";
+            dataGridView1.Columns[11].Visible = false; // pergunta alt
+            dataGridView1.Columns[12].Visible = false; // pergunta expedição
+            dataGridView1.Columns[13].Visible = false; // veio do cla
+            dataGridView1.Columns[14].Visible = false; // foi para o cla
+            dataGridView1.Columns[15].Visible = false; // esta no cla
+            dataGridView1.Columns[16].Visible = false; // vai para o cla 
 
             dataGridView1.Columns["DATA_ENTRADA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -123,7 +137,8 @@ namespace Hype.painel
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
 
                     id_membro = dr["ID"].ToString();
-                    id_remane = dr["ID"].ToString();
+                    id_remanejamento = dr["ID"].ToString();
+
                     data_entrada = ((DateTime)dr["DATA_ENTRADA"]).ToShortDateString();
                     nick = dr["NICK"].ToString();
                     level = dr["LEVEL"].ToString();
@@ -132,11 +147,13 @@ namespace Hype.painel
                     classe = dr["CLASSE"].ToString();
                     vem_do_cla = dr["VEM_DO_CLA"].ToString();
                     foi_para_cla = dr["FOI_PARA_CLA"].ToString();
+                    esta_no_cla = dr["ESTA_NO_CLA"].ToString();
+                    vai_para_cla = dr["VAI_PARA_CLA"].ToString();
                 }
             }
-            catch
+            catch (Exception erro)
             {
-                MessageBox.Show("Erro Interno", "ERRO FATAL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
             }
             finally
             {
@@ -161,12 +178,13 @@ namespace Hype.painel
             cla.Instance.addControl(uc);
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        // CAMPO DE BUSCA
+        private void bt_buscar_Click(object sender, EventArgs e)
         {
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE from hypedb.cadastro_membro c join hypedb.expedicao e on e.ID = c.EXPEDICAO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.recrutamento r on r.ID = c.RECRUTAMENTO_ID where nick like @nick '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.id, re.id, p.id, e.id, r.id, r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, p.PERGUNTA_ALT, e.PERGUNTA_EXPEDICAO from hypedb.cadastro_membro c join hypedb.remanejamento re on re.ID = c.REMANEJAMENTO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.expedicao e on e.ID = c.EXPEDICAO_ID join hypedb.recrutamento r on r.ID = c.RECRUTAMENTO_ID where nick like @nick '%' ", database.getConnection());
             cmd.Parameters.AddWithValue("@nick", txt_buscar.Texts);
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))

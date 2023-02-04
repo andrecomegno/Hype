@@ -18,8 +18,8 @@ namespace Hype.painel
     public partial class perfil_membros : UserControl
     {
         string id_membro = string.Empty;
-        string id_remane = string.Empty;
-        string cla_rema = string.Empty;
+        string id_remanejamento = string.Empty;
+        string id_recrutamento = string.Empty;
 
         public perfil_membros()
         {
@@ -30,7 +30,8 @@ namespace Hype.painel
         {
             // CADASTRO
             id_membro = membros.Instance.id_membro;
-            id_remane = membros.Instance.id_remane;
+            id_remanejamento = membros.Instance.id_remanejamento;
+            id_recrutamento = membros.Instance.id_recrutamento;
             lb_data_entrada.Text = membros.Instance.data_entrada;
             txt_nick.Texts = membros.Instance.nick;
             txt_level.Texts = membros.Instance.level;
@@ -41,8 +42,8 @@ namespace Hype.painel
             txt_esta_cla.Texts = membros.Instance.foi_para_cla;
 
             // REMANEJAMENTO
-            txt_esta_cla_rema.Texts = membros.Instance.foi_para_cla;
-            txt_vai_cla_rema.Texts = cla_rema;            
+            txt_esta_cla_rema.Texts = membros.Instance.esta_no_cla;
+            txt_vai_cla_rema.Texts = membros.Instance.vai_para_cla;            
         }
 
         private void txt_classe_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,23 +93,26 @@ namespace Hype.painel
 
                 cadastro_membros.ExecuteNonQuery();
 
+                
                 // REMANEJAMENTOS
-                MySqlCommand remanejamento = new MySqlCommand("update remanejamento set data_remanejamento=@data_remanejamento, esta_no_cla=@esta_no_cla, vai_para_cla=@vai_para_cla where (id=@id)", database.getConnection());
+                MySqlCommand remanejamento = new MySqlCommand("update remanejamento set data_remanejamento=@data_remanejamento, esta_no_cla=@esta_no_cla, vai_para_cla=@vai_para_cla where (id=@id) ", database.getConnection());
 
-                remanejamento.Parameters.AddWithValue("@id", id_remane);
+                remanejamento.Parameters.AddWithValue("@id", id_remanejamento);
                 remanejamento.Parameters.Add("@data_remanejamento", MySqlDbType.Date).Value = DateTime.Now;
-                remanejamento.Parameters.Add("@esta_no_cla", MySqlDbType.VarChar, 256).Value = txt_esta_cla_rema.Texts;
+                remanejamento.Parameters.Add("@esta_no_cla", MySqlDbType.VarChar, 256).Value = txt_esta_cla.Texts;
                 remanejamento.Parameters.Add("@vai_para_cla", MySqlDbType.VarChar, 256).Value = txt_vai_cla_rema.Texts;
+               // remanejamento.Parameters.AddWithValue("@progressao_id", progressao_id);
 
                 remanejamento.ExecuteNonQuery();
-
 
                 // RECRUTAMENTO
                 MySqlCommand recrutamento = new MySqlCommand("update recrutamento set foi_para_cla=@foi_para_cla", database.getConnection());
 
+                recrutamento.Parameters.AddWithValue("@id", id_remanejamento);
                 recrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_vai_cla_rema.Texts;
 
                 recrutamento.ExecuteNonQuery();
+                
             }
             else
             {
@@ -151,7 +155,7 @@ namespace Hype.painel
 
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
-            informacao.Instance.FecharJanela();
+            informacao.Instance.FecharJanela();  
             membros.Instance.perfilMembros = false; // Limpa o formulario 
         }
     }
