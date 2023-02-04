@@ -21,6 +21,8 @@ namespace Hype.painel
         string id_remanejamento = string.Empty;
         string id_recrutamento = string.Empty;
 
+        string remanejamentos = string.Empty;
+
         public perfil_membros()
         {
             InitializeComponent();
@@ -43,7 +45,8 @@ namespace Hype.painel
 
             // REMANEJAMENTO
             txt_esta_cla_rema.Texts = membros.Instance.esta_no_cla;
-            txt_vai_cla_rema.Texts = membros.Instance.vai_para_cla;            
+            //txt_vai_cla_rema.Texts = membros.Instance.esta_no_cla;
+
         }
 
         private void txt_classe_SelectedIndexChanged(object sender, EventArgs e)
@@ -71,6 +74,7 @@ namespace Hype.painel
         private void bt_salvar_Click(object sender, EventArgs e)
         {
             EditarCadastroMembro();
+            
 
             //ATUALIZAR A LISTA DE MEMBROS
             membros.Instance.ListaMembros();
@@ -85,45 +89,46 @@ namespace Hype.painel
             if(rd_sim.Checked == true)
             {
                 // CADASTRO DE MEMBROS
-                MySqlCommand cadastro_membros = new MySqlCommand("update cadastro_membro set classe=@classe, patente=@patente where (id=@id)", database.getConnection());
+                MySqlCommand objCmdCadastro_membros = new MySqlCommand("update cadastro_membro set classe=@classe, patente=@patente where (id=@id)", database.getConnection());
 
-                cadastro_membros.Parameters.AddWithValue("@id", id_membro);
-                cadastro_membros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-                cadastro_membros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+                objCmdCadastro_membros.Parameters.AddWithValue("@id", id_membro);
+                objCmdCadastro_membros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+                objCmdCadastro_membros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
 
-                cadastro_membros.ExecuteNonQuery();
-
-                
-                // REMANEJAMENTOS
-                MySqlCommand remanejamento = new MySqlCommand("update remanejamento set data_remanejamento=@data_remanejamento, esta_no_cla=@esta_no_cla, vai_para_cla=@vai_para_cla where (id=@id) ", database.getConnection());
-
-                remanejamento.Parameters.AddWithValue("@id", id_remanejamento);
-                remanejamento.Parameters.Add("@data_remanejamento", MySqlDbType.Date).Value = DateTime.Now;
-                remanejamento.Parameters.Add("@esta_no_cla", MySqlDbType.VarChar, 256).Value = txt_esta_cla.Texts;
-                remanejamento.Parameters.Add("@vai_para_cla", MySqlDbType.VarChar, 256).Value = txt_vai_cla_rema.Texts;
-               // remanejamento.Parameters.AddWithValue("@progressao_id", progressao_id);
-
-                remanejamento.ExecuteNonQuery();
+                objCmdCadastro_membros.ExecuteNonQuery();
 
                 // RECRUTAMENTO
-                MySqlCommand recrutamento = new MySqlCommand("update recrutamento set foi_para_cla=@foi_para_cla", database.getConnection());
+                MySqlCommand objCmdRecrutamento = new MySqlCommand("update recrutamento set  vem_do_cla=@vem_do_cla, foi_para_cla=@foi_para_cla", database.getConnection());
 
-                recrutamento.Parameters.AddWithValue("@id", id_remanejamento);
-                recrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_vai_cla_rema.Texts;
+                objCmdRecrutamento.Parameters.AddWithValue("@id", id_remanejamento);
+                objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem_do_cla.Texts;
+                objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_esta_cla.Texts;
 
-                recrutamento.ExecuteNonQuery();
+                objCmdRecrutamento.ExecuteNonQuery();
+
+                // REMANEJAMENTOS
+                MySqlCommand objCmdRemanejamento = new MySqlCommand("update remanejamento set data_remanejamento=@data_remanejamento, esta_no_cla=@esta_no_cla, vai_para_cla=@vai_para_cla where (id=@id) ", database.getConnection());
+
+                objCmdRemanejamento.Parameters.AddWithValue("@id", id_remanejamento);
+                objCmdRemanejamento.Parameters.Add("@data_remanejamento", MySqlDbType.Date).Value = DateTime.Now;
+                objCmdRemanejamento.Parameters.Add("@esta_no_cla", MySqlDbType.VarChar, 256).Value = txt_vem_do_cla.Texts;
+                objCmdRemanejamento.Parameters.Add("@vai_para_cla", MySqlDbType.VarChar, 256).Value = txt_esta_cla.Texts;
+
+                // remanejamento.Parameters.AddWithValue("@progressao_id", progressao_id);
+
+                objCmdRemanejamento.ExecuteNonQuery();
                 
             }
             else
             {
                 // CADASTRO DE MEMBROS
-                MySqlCommand cadastro_membros = new MySqlCommand("update cadastro_membro set classe=@classe, patente=@patente where (id=@id)", database.getConnection());
+                MySqlCommand objCmdcadastro_membros = new MySqlCommand("update cadastro_membro set classe=@classe, patente=@patente where (id=@id)", database.getConnection());
 
-                cadastro_membros.Parameters.AddWithValue("@id", id_membro);
-                cadastro_membros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-                cadastro_membros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+                objCmdcadastro_membros.Parameters.AddWithValue("@id", id_membro);
+                objCmdcadastro_membros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+                objCmdcadastro_membros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
 
-                cadastro_membros.ExecuteNonQuery();
+                objCmdcadastro_membros.ExecuteNonQuery();
             } 
 
             database.closeConnection();
