@@ -133,15 +133,15 @@ namespace Hype.painel
             }
             finally
             {
-                informacao mb = new informacao();
-                mb.ShowDialog();
+                //informacao mb = new informacao();
+                //mb.ShowDialog();
             }
 
         }
 
         private void bt_add_progresso_Click(object sender, EventArgs e)
         {
-            new progressao_info().ShowDialog();
+           // new progressao_info().ShowDialog();
         }
 
         private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)

@@ -15,7 +15,6 @@ namespace Hype.painel
     public partial class membros : UserControl
     {
         public static membros Instance;
-        public bool perfilMembros = false;
 
         public string id_membro = "";
         public string id_remanejamento = "";
@@ -157,19 +156,9 @@ namespace Hype.painel
             }
             finally
             {
-                perfilMembros = true;
-
-                informacao mb = new informacao();
-                mb.ShowDialog();
+                conta_principal uc = new conta_principal();
+                cla.Instance.addControl(uc);
             }
-        }
-
-        private void membros_Load(object sender, EventArgs e)
-        {
-            ListaMembros();
-
-            // COLORIR O TITULO DA TABELA
-            dataGridView1.EnableHeadersVisualStyles = false;
         }
 
         private void bt_add_membro_Click(object sender, EventArgs e)
@@ -196,6 +185,14 @@ namespace Hype.painel
             }
 
             database.closeConnection();
+        }
+
+        private void membros_Load(object sender, EventArgs e)
+        {
+            ListaMembros();
+
+            // COLORIR O TITULO DA TABELA
+            dataGridView1.EnableHeadersVisualStyles = false;
         }
     }
 }
