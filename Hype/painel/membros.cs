@@ -33,11 +33,10 @@ namespace Hype.painel
         public string esta_no_cla = "";
         public string vai_para_cla = "";
 
-
         public membros()
         {
             InitializeComponent();
-            Instance = this;            
+            Instance = this;
         }
 
         private void bt_progressao_Click(object sender, EventArgs e)
@@ -58,7 +57,7 @@ namespace Hype.painel
             cla.Instance.addControl(uc);
         }
 
-        public void ListaMembros()
+        private void ListaMembros()
         {
             configdb database = new configdb();
             database.openConnection();
@@ -78,7 +77,7 @@ namespace Hype.painel
             Tabela();
         }
 
-        public void Tabela()
+        private void Tabela()
         {
             dataGridView1.Columns[0].Visible = false; // c.id ID Membros
             dataGridView1.Columns[1].Visible = false; // re.di ID Remanejamento
@@ -127,7 +126,7 @@ namespace Hype.painel
             MostrarDadosTabela();
         }
 
-        public void MostrarDadosTabela()
+        private void MostrarDadosTabela()
         {
             try
             {
@@ -159,7 +158,7 @@ namespace Hype.painel
                 conta_principal uc = new conta_principal();
                 cla.Instance.addControl(uc);
             }
-        }
+        }       
 
         private void bt_add_membro_Click(object sender, EventArgs e)
         {
@@ -194,5 +193,6 @@ namespace Hype.painel
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
         }
+
     }
 }
