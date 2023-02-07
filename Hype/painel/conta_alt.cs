@@ -25,6 +25,7 @@ namespace Hype.painel
 
             // BUSCADOR SETADO NO NICK CONTA PRINCIPAL
             txt_nickMain.Texts = alts.Instance.nickMain;
+            txt_nickMain.Enabled = false;
         }
 
         public void DadosMembros()
@@ -91,22 +92,49 @@ namespace Hype.painel
                 else if (column.DataPropertyName == "NICK_ALT")
                     column.Width = 220;
                 else if (column.DataPropertyName == "LEVEL_ALT")
-                    column.Width = 130;
+                    column.Width = 80;
                 else if (column.DataPropertyName == "PODER_ALT")
                     column.Width = 130;
                 else if (column.DataPropertyName == "CLASSE_ALT")
-                    column.Width = 150;
+                    column.Width = 100;
                 else if (column.DataPropertyName == "CLA_ALT")
-                    column.Width = 240;
+                    column.Width = 185;
             }
-
         }
-
 
         private void conta_alt_Load(object sender, EventArgs e)
         {
             ListaAlts();
             DadosMembros();
+
+            dataGridView1.EnableHeadersVisualStyles = false;
+        }
+
+        private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            MostrarDadosTabela();
+        }
+
+        private void MostrarDadosTabela()
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+
+                    id_alt = dr["ID"].ToString();
+                    txt_nick.Texts = dr["NICK_ALT"].ToString();
+                    txt_level.Texts = dr["LEVEL_ALT"].ToString();
+                    txt_poder.Texts = dr["PODER_ALT"].ToString();
+                    txt_classe.Text = dr["CLASSE_ALT"].ToString();
+                    txt_cla.Texts = dr["CLA_ALT"].ToString();
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
+            }
         }
     }
 }

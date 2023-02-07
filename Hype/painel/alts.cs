@@ -150,6 +150,7 @@ namespace Hype.painel
 
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
+            
         }
     }
 }
