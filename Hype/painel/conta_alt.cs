@@ -26,6 +26,7 @@ namespace Hype.painel
             // BUSCADOR SETADO NO NICK CONTA PRINCIPAL
             txt_nickMain.Texts = alts.Instance.nickMain;
             txt_nickMain.Enabled = false;
+            txt_nickMain.BackColor = Color.FromArgb(235, 235, 235);
         }
 
         public void DadosMembros()
@@ -135,6 +136,89 @@ namespace Hype.painel
             {
                 MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
             }
+        }
+
+        private void bt_salvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // BANCO DE DADOS
+                configdb database = new configdb();
+                database.openConnection();
+
+
+                // CADASTRO DE MEMBROS
+                MySqlCommand objCmdCadastro_membros = new MySqlCommand("update hypedb.cadastro_alt set nick_alt=@nick_alt, level_alt=@level_alt, poder_alt=@poder_alt, classe_alt=@classe_alt, cla_alt=@cla_alt where (id=@id)", database.getConnection());
+
+                objCmdCadastro_membros.Parameters.AddWithValue("@id", id_alt);
+                objCmdCadastro_membros.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+                objCmdCadastro_membros.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level.Texts;
+                objCmdCadastro_membros.Parameters.Add("@poder_alt", MySqlDbType.Decimal).Value = txt_poder.Texts;
+                objCmdCadastro_membros.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+                objCmdCadastro_membros.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_cla.Texts;
+
+                objCmdCadastro_membros.ExecuteNonQuery();
+
+                DialogResult dr = MessageBox.Show("Editado Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                database.closeConnection();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                TabelaCadastroAlt();
+            }
+        }
+
+        private void TabelaCadastroAlt()
+        {
+            // BANCO DE DADOS
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand objCmdCadastro_alt = new MySqlCommand("select al.ID, c.ID, c.NICK, al.DATA_ENTRADA, al.NICK_ALT, al.LEVEL_ALT, al.PODER_ALT, al.CLASSE_ALT, al.CLA_ALT from hypedb.cadastro_membro c join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.cadastro_alt al on al.PERGUNTA_ALT_ID = p.ID where nick like @nickMain '%' ", database.getConnection());
+
+            objCmdCadastro_alt.Parameters.AddWithValue("@nickMain", txt_nickMain.Texts);
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(objCmdCadastro_alt))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+            }
+
+            database.closeConnection();
+        }
+
+        private void bt_cancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TabelaCadastroAlt();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                BotaoVoltar();
+            }
+        }
+
+        private void BotaoVoltar()
+        {
+            alts uc = new alts();
+            cla.Instance.addControl(uc);
+        }
+
+        private void bt_voltar_Click(object sender, EventArgs e)
+        {
+            BotaoVoltar();
         }
     }
 }
