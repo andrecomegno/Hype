@@ -36,7 +36,7 @@ namespace Hype.painel
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pl_alts = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bt_buscar = new System.Windows.Forms.PictureBox();
             this.txt_buscar = new Hype.painel.RJTextBox();
             this.bt_alts = new System.Windows.Forms.Button();
             this.bt_ouro = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@ namespace Hype.painel
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pl_alts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).BeginInit();
             this.SuspendLayout();
             // 
             // pl_alts
@@ -55,7 +55,7 @@ namespace Hype.painel
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pl_alts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
             this.pl_alts.Controls.Add(this.dataGridView1);
-            this.pl_alts.Controls.Add(this.pictureBox1);
+            this.pl_alts.Controls.Add(this.bt_buscar);
             this.pl_alts.Controls.Add(this.txt_buscar);
             this.pl_alts.Controls.Add(this.bt_alts);
             this.pl_alts.Controls.Add(this.bt_ouro);
@@ -120,17 +120,18 @@ namespace Hype.painel
             this.dataGridView1.TabIndex = 66;
             this.dataGridView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDoubleClick);
             // 
-            // pictureBox1
+            // bt_buscar
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.pictureBox1.Image = global::Hype.Properties.Resources.buscar;
-            this.pictureBox1.Location = new System.Drawing.Point(980, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 63;
-            this.pictureBox1.TabStop = false;
+            this.bt_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_buscar.BackColor = System.Drawing.SystemColors.Window;
+            this.bt_buscar.Image = global::Hype.Properties.Resources.buscar;
+            this.bt_buscar.Location = new System.Drawing.Point(980, 15);
+            this.bt_buscar.Name = "bt_buscar";
+            this.bt_buscar.Size = new System.Drawing.Size(20, 20);
+            this.bt_buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bt_buscar.TabIndex = 63;
+            this.bt_buscar.TabStop = false;
+            this.bt_buscar.Click += new System.EventHandler(this.bt_buscar_Click);
             // 
             // txt_buscar
             // 
@@ -229,7 +230,7 @@ namespace Hype.painel
             this.Load += new System.EventHandler(this.alts_Load);
             this.pl_alts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -237,7 +238,7 @@ namespace Hype.painel
         #endregion
 
         private System.Windows.Forms.Panel pl_alts;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox bt_buscar;
         private RJTextBox txt_buscar;
         private System.Windows.Forms.Button bt_alts;
         private System.Windows.Forms.Button bt_ouro;

@@ -58,9 +58,9 @@ namespace Hype.painel
         private void Tabela()
         {
 
-            dataGridView1.Columns[0].Visible = false; // c.id ID Membros
-            dataGridView1.Columns[1].Visible = false; // re.di ID Remanejamento
-            dataGridView1.Columns[2].Visible = false; // p.id ID Pergunta Alt
+            dataGridView1.Columns[0].Visible = false; // al.id ID Membros
+            dataGridView1.Columns[1].Visible = false; // c.id ID Remanejamento
+            dataGridView1.Columns[2].Visible = false; // c.nick ID Pergunta Alt
 
             dataGridView1.Columns[3].HeaderText = "DATA ENTRADA";
             dataGridView1.Columns[4].HeaderText = "NICK";
@@ -151,6 +151,25 @@ namespace Hype.painel
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
             
+        }
+
+        private void bt_buscar_Click(object sender, EventArgs e)
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select al.ID, c.ID, c.NICK, al.DATA_ENTRADA, al.NICK_ALT, al.LEVEL_ALT, al.PODER_ALT, al.CLASSE_ALT, al.CLA_ALT from hypedb.cadastro_membro c join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.cadastro_alt al on al.PERGUNTA_ALT_ID = p.ID where al.nick_alt like @nick '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@nick", txt_buscar.Texts);
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+            }
+
+            database.closeConnection();
         }
     }
 }

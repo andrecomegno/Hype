@@ -172,7 +172,7 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.id, re.id, p.id, e.id, r.id, r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, p.PERGUNTA_ALT, e.PERGUNTA_EXPEDICAO from hypedb.cadastro_membro c join hypedb.remanejamento re on re.ID = c.REMANEJAMENTO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.expedicao e on e.ID = c.EXPEDICAO_ID join hypedb.recrutamento r on r.ID = c.RECRUTAMENTO_ID where nick like @nick '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select  from hypedb.cadastro_membro c join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.cadastro_alt al on al.PERGUNTA_ALT_ID = p.ID where c.nick like @nick '%' ", database.getConnection());
             cmd.Parameters.AddWithValue("@nick", txt_buscar.Texts);
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
