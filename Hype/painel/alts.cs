@@ -51,7 +51,7 @@ namespace Hype.painel
             }
 
             database.closeConnection();
-            
+
             Tabela();
         }
 
@@ -144,16 +144,21 @@ namespace Hype.painel
 
         }
 
-        private void alts_Load(object sender, EventArgs e)
+        // CAMPO DE BUSCA
+        private void bt_buscar_Click(object sender, EventArgs e)
         {
-            ListaAlts();
-
-            // COLORIR O TITULO DA TABELA
-            dataGridView1.EnableHeadersVisualStyles = false;
-            
+            buscar();
         }
 
-        private void bt_buscar_Click(object sender, EventArgs e)
+        private void txt_buscar__TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txt_buscar.Texts))
+            {
+                buscar();
+            }
+        }
+
+        private void buscar()
         {
             configdb database = new configdb();
             database.openConnection();
@@ -171,5 +176,16 @@ namespace Hype.painel
 
             database.closeConnection();
         }
+
+        private void alts_Load(object sender, EventArgs e)
+        {
+            ListaAlts();
+
+            // COLORIR O TITULO DA TABELA
+            dataGridView1.EnableHeadersVisualStyles = false;
+
+        }
+
+
     }
 }

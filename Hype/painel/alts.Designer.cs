@@ -155,6 +155,7 @@ namespace Hype.painel
             this.txt_buscar.TabIndex = 0;
             this.txt_buscar.Texts = "";
             this.txt_buscar.UnderlinedStyle = false;
+            this.txt_buscar._TextChanged += new System.EventHandler(this.txt_buscar__TextChanged);
             // 
             // bt_alts
             // 

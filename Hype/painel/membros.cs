@@ -73,7 +73,7 @@ namespace Hype.painel
             }
 
             database.closeConnection();
-            
+
             Tabela();
         }
 
@@ -108,7 +108,7 @@ namespace Hype.painel
             {
                 if (column.DataPropertyName == "DATA_ENTRADA")
                     column.Width = 200;
-                else if(column.DataPropertyName == "NICK")
+                else if (column.DataPropertyName == "NICK")
                     column.Width = 220;
                 else if (column.DataPropertyName == "LEVEL")
                     column.Width = 130;
@@ -158,7 +158,7 @@ namespace Hype.painel
                 conta_principal uc = new conta_principal();
                 cla.Instance.addControl(uc);
             }
-        }       
+        }
 
         private void bt_add_membro_Click(object sender, EventArgs e)
         {
@@ -169,10 +169,15 @@ namespace Hype.painel
         // CAMPO DE BUSCA
         private void bt_buscar_Click(object sender, EventArgs e)
         {
+            buscar();
+        }
+
+        private void buscar()
+        {
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select  from hypedb.cadastro_membro c join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.cadastro_alt al on al.PERGUNTA_ALT_ID = p.ID where c.nick like @nick '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.id, re.id, p.id, e.id, r.id, r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, p.PERGUNTA_ALT, e.PERGUNTA_EXPEDICAO, r.VEM_DO_CLA, r.FOI_PARA_CLA, re.ESTA_NO_CLA, re.VAI_PARA_CLA from hypedb.cadastro_membro c join hypedb.remanejamento re on re.ID = c.REMANEJAMENTO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.pergunta_expedicao e on e.ID = c.PERGUNTA_EXPEDICAO_ID join hypedb.recrutamento r on r.ID = c.RECRUTAMENTO_ID where c.nick like @nick '%' ", database.getConnection());
             cmd.Parameters.AddWithValue("@nick", txt_buscar.Texts);
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
@@ -186,6 +191,14 @@ namespace Hype.painel
             database.closeConnection();
         }
 
+        private void txt_buscar__TextChanged(object sender, EventArgs e)
+        {
+            if(String.IsNullOrEmpty(txt_buscar.Texts))
+            {
+                buscar();
+            }
+        }
+
         private void membros_Load(object sender, EventArgs e)
         {
             ListaMembros();
@@ -193,6 +206,7 @@ namespace Hype.painel
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
         }
+
 
     }
 }
