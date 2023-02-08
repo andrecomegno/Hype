@@ -39,7 +39,6 @@ namespace Hype.painel
             id_alt = alts.Instance.id_alt;
             txt_nick.Texts = alts.Instance.nick_alt;
             txt_level.Texts = alts.Instance.level_alt;
-            txt_poder.Texts = alts.Instance.poder_alt;
             txt_classe.Text = alts.Instance.classe_alt;
             txt_cla.Texts = alts.Instance.cla_alt;
         }
@@ -78,12 +77,11 @@ namespace Hype.painel
             dataGridView1.Columns[3].Visible = false; // data entrada
             dataGridView1.Columns[4].HeaderText = "NICK";
             dataGridView1.Columns[5].HeaderText = "LEVEL";
-            dataGridView1.Columns[6].HeaderText = "PODER";
+            dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].HeaderText = "CLASSE";
             dataGridView1.Columns[8].HeaderText = "CLÃ";
 
             dataGridView1.Columns["LEVEL_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns["PODER_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["CLASSE_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             foreach (DataGridViewColumn column in dataGridView1.Columns)
@@ -94,8 +92,6 @@ namespace Hype.painel
                     column.Width = 220;
                 else if (column.DataPropertyName == "LEVEL_ALT")
                     column.Width = 80;
-                else if (column.DataPropertyName == "PODER_ALT")
-                    column.Width = 130;
                 else if (column.DataPropertyName == "CLASSE_ALT")
                     column.Width = 100;
                 else if (column.DataPropertyName == "CLA_ALT")
@@ -127,7 +123,6 @@ namespace Hype.painel
                     id_alt = dr["ID"].ToString();
                     txt_nick.Texts = dr["NICK_ALT"].ToString();
                     txt_level.Texts = dr["LEVEL_ALT"].ToString();
-                    txt_poder.Texts = dr["PODER_ALT"].ToString();
                     txt_classe.Text = dr["CLASSE_ALT"].ToString();
                     txt_cla.Texts = dr["CLA_ALT"].ToString();
                 }
@@ -148,12 +143,11 @@ namespace Hype.painel
 
 
                 // CADASTRO DE MEMBROS
-                MySqlCommand objCmdCadastro_membros = new MySqlCommand("update hypedb.cadastro_alt set nick_alt=@nick_alt, level_alt=@level_alt, poder_alt=@poder_alt, classe_alt=@classe_alt, cla_alt=@cla_alt where (id=@id)", database.getConnection());
+                MySqlCommand objCmdCadastro_membros = new MySqlCommand("update hypedb.cadastro_alt set nick_alt=@nick_alt, level_alt=@level_alt, classe_alt=@classe_alt, cla_alt=@cla_alt where (id=@id)", database.getConnection());
 
                 objCmdCadastro_membros.Parameters.AddWithValue("@id", id_alt);
                 objCmdCadastro_membros.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                 objCmdCadastro_membros.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level.Texts;
-                objCmdCadastro_membros.Parameters.Add("@poder_alt", MySqlDbType.Decimal).Value = txt_poder.Texts;
                 objCmdCadastro_membros.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
                 objCmdCadastro_membros.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_cla.Texts;
 

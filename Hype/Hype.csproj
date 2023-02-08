@@ -222,6 +222,12 @@
     <Compile Include="painel\conta_alt.Designer.cs">
       <DependentUpon>conta_alt.cs</DependentUpon>
     </Compile>
+    <Compile Include="painel\conta_excluir.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="painel\conta_excluir.Designer.cs">
+      <DependentUpon>conta_excluir.cs</DependentUpon>
+    </Compile>
     <Compile Include="painel\conta_principal.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -299,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="painel\conta_alt.resx">
       <DependentUpon>conta_alt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="painel\conta_excluir.resx">
+      <DependentUpon>conta_excluir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="painel\conta_principal.resx">
       <DependentUpon>conta_principal.cs</DependentUpon>

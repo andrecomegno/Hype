@@ -88,51 +88,8 @@ namespace Hype.painel
 
         private void bt_excluir_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DialogResult dr = MessageBox.Show("Tem Certeza Que Deseja Excluir ?", "AVISO !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                switch (dr)
-                {
-                    case DialogResult.Yes:
-                        ExcluirConta();
-                        break;
-                    case DialogResult.No:
-
-                        break;
-                    default:
-                        break;
-                }
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
-            }
-            finally
-            {
-                TabelaCadastroMembros();
-                BotaoVoltar();
-            }
-        }
-
-        private void ExcluirConta()
-        {
-            try
-            {
-                configdb database = new configdb();
-                database.openConnection();
-
-                MySqlCommand cmd = new MySqlCommand("delete from hypedb.remanejamento where ID=@id", database.getConnection());
-                cmd.Parameters.AddWithValue("@id", id_membro);
-
-                cmd.ExecuteNonQuery();
-
-                database.closeConnection();
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
-            }
+            conta_excluir uc = new conta_excluir();
+            cla.Instance.addControl(uc);
         }
 
         private void TabelaCadastroMembros()
