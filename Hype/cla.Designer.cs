@@ -43,6 +43,7 @@ namespace Hype
             this.pl_conta = new System.Windows.Forms.Panel();
             this.bt_config = new FontAwesome.Sharp.IconButton();
             this.bt_deslogar = new FontAwesome.Sharp.IconButton();
+            this.foto_perfil = new Hype.script.RJCircularPictureBox();
             this.pl_top = new System.Windows.Forms.Panel();
             this.bt_minimizar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,20 +51,19 @@ namespace Hype
             this.bt_fechar = new System.Windows.Forms.Button();
             this.bt_maximizar = new System.Windows.Forms.Button();
             this.pl_nome_cla = new System.Windows.Forms.Panel();
+            this.foto_perfil_cla = new Hype.script.RJCircularPictureBox();
             this.pl_centro = new System.Windows.Forms.Panel();
             this.pl_conteudo = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.foto_perfil = new Hype.script.RJCircularPictureBox();
-            this.foto_perfil_cla = new Hype.script.RJCircularPictureBox();
             this.pl_menu.SuspendLayout();
             this.pl_conf.SuspendLayout();
             this.pl_conta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).BeginInit();
             this.pl_top.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pl_nome_cla.SuspendLayout();
-            this.pl_centro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.foto_perfil_cla)).BeginInit();
+            this.pl_centro.SuspendLayout();
             this.SuspendLayout();
             // 
             // lb_nick
@@ -323,6 +323,24 @@ namespace Hype
             this.toolTip1.SetToolTip(this.bt_deslogar, "Deslogar");
             this.bt_deslogar.UseVisualStyleBackColor = false;
             // 
+            // foto_perfil
+            // 
+            this.foto_perfil.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.foto_perfil.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.foto_perfil.BorderColor2 = System.Drawing.Color.HotPink;
+            this.foto_perfil.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.foto_perfil.BorderSize = 2;
+            this.foto_perfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.foto_perfil.GradientAngle = 50F;
+            this.foto_perfil.Image = global::Hype.Properties.Resources.HYPE_03;
+            this.foto_perfil.Location = new System.Drawing.Point(65, 17);
+            this.foto_perfil.Name = "foto_perfil";
+            this.foto_perfil.Size = new System.Drawing.Size(80, 80);
+            this.foto_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.foto_perfil.TabIndex = 52;
+            this.foto_perfil.TabStop = false;
+            this.foto_perfil.Click += new System.EventHandler(this.foto_perfil_Click);
+            // 
             // pl_top
             // 
             this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
@@ -434,6 +452,23 @@ namespace Hype
             this.pl_nome_cla.Size = new System.Drawing.Size(319, 53);
             this.pl_nome_cla.TabIndex = 47;
             // 
+            // foto_perfil_cla
+            // 
+            this.foto_perfil_cla.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.foto_perfil_cla.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.foto_perfil_cla.BorderColor2 = System.Drawing.Color.HotPink;
+            this.foto_perfil_cla.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.foto_perfil_cla.BorderSize = 2;
+            this.foto_perfil_cla.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.foto_perfil_cla.GradientAngle = 50F;
+            this.foto_perfil_cla.Image = global::Hype.Properties.Resources.HYPE_03;
+            this.foto_perfil_cla.Location = new System.Drawing.Point(14, -1);
+            this.foto_perfil_cla.Name = "foto_perfil_cla";
+            this.foto_perfil_cla.Size = new System.Drawing.Size(52, 52);
+            this.foto_perfil_cla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.foto_perfil_cla.TabIndex = 0;
+            this.foto_perfil_cla.TabStop = false;
+            // 
             // pl_centro
             // 
             this.pl_centro.BackColor = System.Drawing.Color.SlateGray;
@@ -453,41 +488,6 @@ namespace Hype
             this.pl_conteudo.Size = new System.Drawing.Size(1085, 720);
             this.pl_conteudo.TabIndex = 49;
             // 
-            // foto_perfil
-            // 
-            this.foto_perfil.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.foto_perfil.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.foto_perfil.BorderColor2 = System.Drawing.Color.HotPink;
-            this.foto_perfil.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.foto_perfil.BorderSize = 2;
-            this.foto_perfil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.foto_perfil.GradientAngle = 50F;
-            this.foto_perfil.Image = global::Hype.Properties.Resources.HYPE_03;
-            this.foto_perfil.Location = new System.Drawing.Point(65, 17);
-            this.foto_perfil.Name = "foto_perfil";
-            this.foto_perfil.Size = new System.Drawing.Size(80, 80);
-            this.foto_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.foto_perfil.TabIndex = 52;
-            this.foto_perfil.TabStop = false;
-            this.foto_perfil.Click += new System.EventHandler(this.foto_perfil_Click);
-            // 
-            // foto_perfil_cla
-            // 
-            this.foto_perfil_cla.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.foto_perfil_cla.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.foto_perfil_cla.BorderColor2 = System.Drawing.Color.HotPink;
-            this.foto_perfil_cla.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.foto_perfil_cla.BorderSize = 2;
-            this.foto_perfil_cla.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.foto_perfil_cla.GradientAngle = 50F;
-            this.foto_perfil_cla.Image = global::Hype.Properties.Resources.HYPE_03;
-            this.foto_perfil_cla.Location = new System.Drawing.Point(14, -1);
-            this.foto_perfil_cla.Name = "foto_perfil_cla";
-            this.foto_perfil_cla.Size = new System.Drawing.Size(52, 52);
-            this.foto_perfil_cla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.foto_perfil_cla.TabIndex = 0;
-            this.foto_perfil_cla.TabStop = false;
-            // 
             // cla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -506,13 +506,13 @@ namespace Hype
             this.pl_menu.ResumeLayout(false);
             this.pl_conf.ResumeLayout(false);
             this.pl_conta.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).EndInit();
             this.pl_top.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pl_nome_cla.ResumeLayout(false);
             this.pl_nome_cla.PerformLayout();
-            this.pl_centro.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.foto_perfil_cla)).EndInit();
+            this.pl_centro.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
