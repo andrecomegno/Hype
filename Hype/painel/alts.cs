@@ -16,7 +16,6 @@ namespace Hype.painel
     {
         public static alts Instance;
 
-        public string id_conta = "";
         public string nickMain = "";
 
         public string id_alt = "";
@@ -31,6 +30,8 @@ namespace Hype.painel
         {
             InitializeComponent();
             Instance = this;
+
+            nickMain = membros.Instance.nick;
         }
 
         private void ListaAlts()
@@ -38,7 +39,7 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select al.ID, c.ID, c.NICK, al.DATA_ENTRADA, al.NICK_ALT, al.LEVEL_ALT, al.PODER_ALT, al.CLASSE_ALT, al.CLA_ALT from hypedb.cadastro_membro c join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.cadastro_alt al on al.PERGUNTA_ALT_ID = p.ID", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select ID, DATA_ENTRADA, NICK_ALT, LEVEL_ALT, PODER_ALT, CLASSE_ALT, CLA_ALT from hypedb.cadastro_alt", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -56,16 +57,13 @@ namespace Hype.painel
         private void Tabela()
         {
 
-            dataGridView1.Columns[0].Visible = false; // al.id ID Membros
-            dataGridView1.Columns[1].Visible = false; // c.id ID Remanejamento
-            dataGridView1.Columns[2].Visible = false; // c.nick ID Pergunta Alt
-
-            dataGridView1.Columns[3].HeaderText = "DATA ENTRADA";
-            dataGridView1.Columns[4].HeaderText = "NICK";
-            dataGridView1.Columns[5].HeaderText = "LEVEL";
-            dataGridView1.Columns[6].Visible = false; // poder alt
-            dataGridView1.Columns[7].HeaderText = "CLASSE";
-            dataGridView1.Columns[8].HeaderText = "CLÃ";
+            dataGridView1.Columns[0].Visible = false; // ID alt
+            dataGridView1.Columns[1].HeaderText = "DATA ENTRADA";
+            dataGridView1.Columns[2].HeaderText = "NICK";
+            dataGridView1.Columns[3].HeaderText = "LEVEL";
+            dataGridView1.Columns[4].Visible = false; // poder alt
+            dataGridView1.Columns[5].HeaderText = "CLASSE";
+            dataGridView1.Columns[6].HeaderText = "CLÃ";
 
             dataGridView1.Columns["DATA_ENTRADA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["LEVEL_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -101,9 +99,6 @@ namespace Hype.painel
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
 
                     id_alt = dr["ID"].ToString();
-                    id_conta = dr["ID"].ToString();
-                    nickMain = dr["NICK"].ToString();
-
                     data_entrada = ((DateTime)dr["DATA_ENTRADA"]).ToShortDateString();
                     nick_alt = dr["NICK_ALT"].ToString();
                     level_alt = dr["LEVEL_ALT"].ToString();

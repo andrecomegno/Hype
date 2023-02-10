@@ -22,7 +22,6 @@ namespace Hype.painel
         public string data_saida = "";
         public string nick_alt = "";
         public string level_alt = "";
-        public string poder_alt = "";
         public string classe_alt = "";
         public string cla_alt = "";
 
@@ -37,8 +36,7 @@ namespace Hype.painel
         {
             // CADASTRO
             id_membro = membros.Instance.id_membro;
-            //lb_data_saida.Text = DateTime.Now;
-            //txt_nick.Texts = membros.Instance.nick;
+            //lb_data_saida.Text = DateTime.Now;            
             txt_level.Texts = membros.Instance.level;
             txt_poder.Texts = membros.Instance.poder;
             txt_patente.Text = membros.Instance.patente;
@@ -69,8 +67,7 @@ namespace Hype.painel
         }
 
         private void Tabela()
-        {
-
+        {         
             dataGridView1.Columns[0].Visible = false; // al.id ID Membros
             dataGridView1.Columns[1].Visible = false; // c.id ID Remanejamento
             dataGridView1.Columns[2].Visible = false; // c.nick ID Pergunta Alt
@@ -81,48 +78,57 @@ namespace Hype.painel
             dataGridView1.Columns[7].HeaderText = "CLASSE";
             dataGridView1.Columns[8].HeaderText = "CLÃ";
 
+            dataGridView1.Columns[4].ReadOnly = true;
+            dataGridView1.Columns[5].ReadOnly = true;
+            dataGridView1.Columns[6].ReadOnly = true;
+            dataGridView1.Columns[7].ReadOnly = true;
+            dataGridView1.Columns[8].ReadOnly = true;
+
+            DataGridViewCheckBoxColumn selecionar = new DataGridViewCheckBoxColumn();
+            selecionar.Name = "SELECIONAR";
+            selecionar.DataPropertyName = "SELECIONAR";
+            selecionar.HeaderText = "";
+
+            dataGridView1.Columns.Insert(0, selecionar);
+
             dataGridView1.Columns["DATA_ENTRADA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["LEVEL_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["CLASSE_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                if (column.DataPropertyName == "DATA_ENTRADA")
-                    column.Width = 200;
-                else if (column.DataPropertyName == "NICK_ALT")
+                if (column.DataPropertyName == "NICK_ALT")
                     column.Width = 220;
                 else if (column.DataPropertyName == "LEVEL_ALT")
-                    column.Width = 130;
+                    column.Width = 100;
                 else if (column.DataPropertyName == "CLASSE_ALT")
                     column.Width = 150;
                 else if (column.DataPropertyName == "CLA_ALT")
                     column.Width = 200;
+                else if (column.DataPropertyName == "SELECIONAR")
+                    column.Width = 30;
             }
 
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            MostrarDadosTabela();
         }
 
         private void MostrarDadosTabela()
         {
             try
             {
-                if (dataGridView1.SelectedRows.Count > 0)
-                {
-                    DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
-
-                    id_alt = dr["ID"].ToString();
-
-                    data_saida = ((DateTime)dr["DATA_ENTRADA"]).ToShortDateString();
-                    nick_alt = dr["NICK_ALT"].ToString();
-                    level_alt = dr["LEVEL_ALT"].ToString();
-                    poder_alt = dr["PODER_ALT"].ToString();
-                    classe_alt = dr["CLASSE_ALT"].ToString();
-                    cla_alt = dr["CLA_ALT"].ToString();
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {                    
+                    bool _selecionar = Convert.ToBoolean(row.Cells["SELECIONAR"].Value);
+                    if (_selecionar)
+                    {
+                        id_alt += row.Cells["ID"].Value.ToString();
+                        nick_alt += row.Cells["NICK_ALT"].Value.ToString();
+                        level_alt += row.Cells["LEVEL_ALT"].Value.ToString();
+                        classe_alt += row.Cells["CLASSE_ALT"].Value.ToString();
+                        cla_alt += row.Cells["CLA_ALT"].Value.ToString();
+                    }                    
                 }
+
+                MessageBox.Show(id_alt);
             }
             catch (Exception erro)
             {
@@ -155,7 +161,7 @@ namespace Hype.painel
                         ExcluirConta();
                         break;
                     case DialogResult.No:
-
+                        
                         break;
                     default:
                         break;
@@ -178,12 +184,19 @@ namespace Hype.painel
                 configdb database = new configdb();
                 database.openConnection();
 
-                MySqlCommand cmd = new MySqlCommand("delete from hypedb.remanejamento where ID=@id", database.getConnection());
-                cmd.Parameters.AddWithValue("@id", id_membro);
+                MySqlCommand objCmdRemanejamento = new MySqlCommand("delete from hypedb.remanejamento where ID=@id", database.getConnection());
+                objCmdRemanejamento.Parameters.AddWithValue("@id", id_membro);
 
-                cmd.ExecuteNonQuery();
+                objCmdRemanejamento.ExecuteNonQuery();
+
+                MySqlCommand objCmdContaAlt = new MySqlCommand("delete from hypedb.pergunta_alt where ID=@id", database.getConnection());
+                objCmdContaAlt.Parameters.AddWithValue("@id", id_alt);
+
+                objCmdContaAlt.ExecuteNonQuery();
 
                 database.closeConnection();
+
+                MostrarDadosTabela();
             }
             catch (Exception erro)
             {
@@ -204,13 +217,10 @@ namespace Hype.painel
         private void conta_excluir_Load(object sender, EventArgs e)
         {
             ListaAlts();
+            DadosMembros();
 
             // COLORIR O TITULO DA TABELA
-            dataGridView1.EnableHeadersVisualStyles = false;
-
-            DadosMembros();
+            dataGridView1.EnableHeadersVisualStyles = false;            
         }
-
-
     }
 }

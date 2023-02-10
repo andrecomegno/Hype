@@ -15,7 +15,6 @@ namespace Hype.painel
 {
     public partial class conta_alt : UserControl
     {
-        string id_conta = "";
         string id_alt = "";
 
 
@@ -23,19 +22,13 @@ namespace Hype.painel
         {
             InitializeComponent();
 
-            // BUSCADOR SETADO NO NICK CONTA PRINCIPAL
             txt_nickMain.Texts = alts.Instance.nickMain;
-            txt_nickMain.Enabled = false;
-            txt_nickMain.BackColor = Color.FromArgb(235, 235, 235);
         }
 
         public void DadosMembros()
         {
             // ALT SELECIONADA - ALT.CS
-            lb_data_entrada.Text = alts.Instance.data_entrada;
-
-            id_conta = alts.Instance.id_conta;          
-
+            lb_data_entrada.Text = alts.Instance.data_entrada;   
             id_alt = alts.Instance.id_alt;
             txt_nick.Texts = alts.Instance.nick_alt;
             txt_level.Texts = alts.Instance.level_alt;
@@ -70,8 +63,8 @@ namespace Hype.painel
         private void Tabela()
         {
 
-            dataGridView1.Columns[0].Visible = false; // al.id ID Cadastro Alt
-            dataGridView1.Columns[1].Visible = false; // c.id ID Cadastro Membro
+            dataGridView1.Columns[0].Visible = false; // al.id Cadastro Alt
+            dataGridView1.Columns[1].Visible = false; // c.id Cadastro Membro
 
             dataGridView1.Columns[2].HeaderText = "CONTA PRINCIPAL";
             dataGridView1.Columns[3].Visible = false; // data entrada
@@ -119,7 +112,10 @@ namespace Hype.painel
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+                    // CONTA PRINCIPAL
+                    txt_nickMain.Texts = dr["NICK"].ToString();
 
+                    // ALT
                     id_alt = dr["ID"].ToString();
                     txt_nick.Texts = dr["NICK_ALT"].ToString();
                     txt_level.Texts = dr["LEVEL_ALT"].ToString();
