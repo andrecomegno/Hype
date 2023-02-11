@@ -62,7 +62,7 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.id, re.id, p.id, e.id, r.id, r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, p.PERGUNTA_ALT, e.PERGUNTA_EXPEDICAO, r.VEM_DO_CLA, r.FOI_PARA_CLA, re.ESTA_NO_CLA, re.VAI_PARA_CLA from hypedb.cadastro_membro c join hypedb.remanejamento re on re.ID = c.REMANEJAMENTO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.pergunta_expedicao e on e.ID = c.PERGUNTA_EXPEDICAO_ID join hypedb.recrutamento r on r.ID = c.RECRUTAMENTO_ID", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.id, pro.id, p.id, e.id, r.id, r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, p.PERGUNTA_ALT, e.PERGUNTA_EXPEDICAO, r.VEM_DO_CLA, r.FOI_PARA_CLA from hypedb.cadastro_membro c join hypedb.progressao pro on pro.ID = c.PROGRESSAO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.pergunta_expedicao e on e.ID = c.PERGUNTA_EXPEDICAO_ID join hypedb.recrutamento r on r.ID = c.RECRUTAMENTO_ID", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -80,7 +80,7 @@ namespace Hype.painel
         private void Tabela()
         {
             dataGridView1.Columns[0].Visible = false; // c.id ID Membros
-            dataGridView1.Columns[1].Visible = false; // re.di ID Remanejamento
+            dataGridView1.Columns[1].Visible = false; // re.di ID Progressão
             dataGridView1.Columns[2].Visible = false; // p.id ID Pergunta Alt
             dataGridView1.Columns[3].Visible = false; // e.id ID Expedicao
             dataGridView1.Columns[4].Visible = false; // r.id ID Recrutamento
@@ -93,10 +93,8 @@ namespace Hype.painel
             dataGridView1.Columns[10].HeaderText = "PATENTE";
             dataGridView1.Columns[11].Visible = false; // pergunta alt
             dataGridView1.Columns[12].Visible = false; // pergunta expedição
-            dataGridView1.Columns[13].Visible = false; // veio do cla
+            dataGridView1.Columns[13].Visible = false; // vem do cla
             dataGridView1.Columns[14].Visible = false; // foi para o cla
-            dataGridView1.Columns[15].Visible = false; // esta no cla
-            dataGridView1.Columns[16].Visible = false; // vai para o cla 
 
             dataGridView1.Columns["DATA_ENTRADA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -145,8 +143,6 @@ namespace Hype.painel
                     classe = dr["CLASSE"].ToString();
                     vem_do_cla = dr["VEM_DO_CLA"].ToString();
                     foi_para_cla = dr["FOI_PARA_CLA"].ToString();
-                    esta_no_cla = dr["ESTA_NO_CLA"].ToString();
-                    vai_para_cla = dr["VAI_PARA_CLA"].ToString();
                 }
             }
             catch (Exception erro)

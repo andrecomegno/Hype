@@ -34,12 +34,12 @@ namespace Hype.painel
             nickMain = membros.Instance.nick;
         }
 
-        private void ListaAlts()
+        private void TabelaAlt()
         {
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select ID, DATA_ENTRADA, NICK_ALT, LEVEL_ALT, PODER_ALT, CLASSE_ALT, CLA_ALT from hypedb.cadastro_alt", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select ID, DATA_ENTRADA, NICK_PRINCIPAL, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT from hypedb.cadastro_alt", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -57,11 +57,11 @@ namespace Hype.painel
         private void Tabela()
         {
 
-            dataGridView1.Columns[0].Visible = false; // ID alt
+            dataGridView1.Columns[0].Visible = false; // ID
             dataGridView1.Columns[1].HeaderText = "DATA ENTRADA";
-            dataGridView1.Columns[2].HeaderText = "NICK";
-            dataGridView1.Columns[3].HeaderText = "LEVEL";
-            dataGridView1.Columns[4].Visible = false; // poder alt
+            dataGridView1.Columns[2].Visible = false; // NICK_PRINCIPAL
+            dataGridView1.Columns[3].HeaderText = "NICK";
+            dataGridView1.Columns[4].HeaderText = "LEVEL";
             dataGridView1.Columns[5].HeaderText = "CLASSE";
             dataGridView1.Columns[6].HeaderText = "CLÃ";
 
@@ -100,6 +100,7 @@ namespace Hype.painel
 
                     id_alt = dr["ID"].ToString();
                     data_entrada = ((DateTime)dr["DATA_ENTRADA"]).ToShortDateString();
+                    nick_alt = dr["NICK_PRINCIPAL"].ToString();
                     nick_alt = dr["NICK_ALT"].ToString();
                     level_alt = dr["LEVEL_ALT"].ToString();
                     classe_alt = dr["CLASSE_ALT"].ToString();
@@ -152,7 +153,7 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select al.ID, c.ID, c.NICK, al.DATA_ENTRADA, al.NICK_ALT, al.LEVEL_ALT, al.PODER_ALT, al.CLASSE_ALT, al.CLA_ALT from hypedb.cadastro_membro c join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.cadastro_alt al on al.PERGUNTA_ALT_ID = p.ID where al.nick_alt like @nick '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select DATA_ENTRADA, ID, NICK_PRINCIPAL, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT from hypedb.cadastro_alt where nick_alt like @nick '%' ", database.getConnection());
             cmd.Parameters.AddWithValue("@nick", txt_buscar.Texts);
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
@@ -168,7 +169,7 @@ namespace Hype.painel
 
         private void alts_Load(object sender, EventArgs e)
         {
-            ListaAlts();
+            TabelaAlt();
 
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;

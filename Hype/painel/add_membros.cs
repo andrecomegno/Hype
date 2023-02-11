@@ -18,10 +18,8 @@ namespace Hype.painel
     {
         public static add_membros Instance;
 
-        string pergunta_alt = string.Empty;
+        long idPerguntaAlt;
         string pergunta_expedicao = string.Empty;
-        string vaiparacla = string.Empty;
-
         decimal novo_poder = 0;
         int novo_level = 0;
 
@@ -29,267 +27,8 @@ namespace Hype.painel
         {
             InitializeComponent();
             Instance = this;
-        }
 
-        public void RadioSelecao()
-        {
-            if (rd_nao.Checked == true)
-                txt_quantidade_alt.SelectedIndex = 0;
-        }
-
-        private void SemAlt()
-        {
-            configdb database = new configdb();
-            database.openConnection();
-
-            // INSERT TABELA PEGUNTA ALT
-            MySqlCommand objCmdPerguntaAlt = new MySqlCommand("insert into hypedb.pergunta_alt (id, pergunta_alt) values (null, ?)", database.getConnection());
-
-            objCmdPerguntaAlt.Parameters.Add("@pergunta_alt", MySqlDbType.VarChar, 5).Value = pergunta_alt;
-
-            objCmdPerguntaAlt.ExecuteNonQuery();
-            long idPerguntaAlt = objCmdPerguntaAlt.LastInsertedId;
-
-            // INSERT TABELA EXPEDICAO
-            MySqlCommand objCmdExpedicao = new MySqlCommand("insert into hypedb.pergunta_expedicao (id, pergunta_expedicao) values (null, ?)", database.getConnection());
-
-            objCmdExpedicao.Parameters.Add("@pergunta_expedicao", MySqlDbType.VarChar, 5).Value = pergunta_expedicao;
-
-            objCmdExpedicao.ExecuteNonQuery();
-            long idPerguntaExpedicao = objCmdExpedicao.LastInsertedId;
-
-            // INSERT TABELA RECRUTAMENTO
-            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
-
-            objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
-            objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
-
-            objCmdRecrutamento.ExecuteNonQuery();
-            long idRecruta = objCmdRecrutamento.LastInsertedId;
-
-            // INSERT TABELA PROGRESSÃO
-            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
-
-            objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novo_poder;
-            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novo_level;
-            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
-
-            objCmdProgressao.ExecuteNonQuery();
-            long idProgressao = objCmdProgressao.LastInsertedId;
-
-            // INSERT TABELA REMANEJAMENTO
-            MySqlCommand objCmdRemanejamento = new MySqlCommand("insert into hypedb.remanejamento (id, data_remanejamento, esta_no_cla, vai_para_cla, progressao_id) values (null, ?, ?, ?, ?)", database.getConnection());
-
-            objCmdRemanejamento.Parameters.Add("@data_remanejamento", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdRemanejamento.Parameters.Add("@esta_no_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
-            objCmdRemanejamento.Parameters.Add("@vai_para_cla", MySqlDbType.VarChar, 256).Value = vaiparacla;
-            objCmdRemanejamento.Parameters.Add("@progressao_id", MySqlDbType.Int32).Value = idProgressao;
-
-            objCmdRemanejamento.ExecuteNonQuery();
-            long idRemanejamento = objCmdRemanejamento.LastInsertedId;
-
-            // INSERT TABELA CADASTRO MEMBROS
-            MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into hypedb.cadastro_membro (id, nick, level, poder, classe, patente, remanejamento_id, pergunta_alt_id, recrutamento_id, pergunta_expedicao_id) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
-
-            objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
-            objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
-            objCmdCadastroMembros.Parameters.Add("@remanejamento_id", MySqlDbType.Int32).Value = idRemanejamento;
-            objCmdCadastroMembros.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPerguntaAlt;
-            objCmdCadastroMembros.Parameters.Add("@pergunta_expedicao_id", MySqlDbType.Int32).Value = idPerguntaExpedicao;
-            objCmdCadastroMembros.Parameters.Add("@recrutamento_id", MySqlDbType.Int32).Value = idRecruta;
-
-            objCmdCadastroMembros.ExecuteNonQuery();
-
-            database.closeConnection();
-        }
-
-        private void UmaAlt()
-        {
-            configdb database = new configdb();
-            database.openConnection();
-
-            // INSERT TABELA PEGUNTA ALT
-            MySqlCommand objCmdPerguntaAlt = new MySqlCommand("insert into hypedb.pergunta_alt (id, pergunta_alt) values (null, ?)", database.getConnection());
-
-            objCmdPerguntaAlt.Parameters.Add("@pergunta_alt", MySqlDbType.VarChar, 5).Value = pergunta_alt;
-
-            objCmdPerguntaAlt.ExecuteNonQuery();
-            long idPerguntaAlt = objCmdPerguntaAlt.LastInsertedId;
-
-            // INSERT TABELA EXPEDICAO
-            MySqlCommand objCmdExpedicao = new MySqlCommand("insert into hypedb.pergunta_expedicao (id, pergunta_expedicao) values (null, ?)", database.getConnection());
-
-            objCmdExpedicao.Parameters.Add("@pergunta_expedicao", MySqlDbType.VarChar, 5).Value = pergunta_expedicao;
-
-            objCmdExpedicao.ExecuteNonQuery();
-            long idPerguntaExpedicao = objCmdExpedicao.LastInsertedId;
-
-            // INSERT TABELA RECRUTAMENTO
-            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
-
-            objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
-            objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
-
-            objCmdRecrutamento.ExecuteNonQuery();
-            long idRecruta = objCmdRecrutamento.LastInsertedId;
-
-            // INSERT TABELA PROGRESSÃO
-            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
-
-            objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novo_poder;
-            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novo_level;
-            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
-
-            objCmdProgressao.ExecuteNonQuery();
-            long idProgressao = objCmdProgressao.LastInsertedId;
-
-            // INSERT TABELA REMANEJAMENTO
-            MySqlCommand objCmdRemanejamento = new MySqlCommand("insert into hypedb.remanejamento (id, data_remanejamento, esta_no_cla, vai_para_cla, progressao_id) values (null, ?, ?, ?, ?)", database.getConnection());
-
-            objCmdRemanejamento.Parameters.Add("@data_remanejamento", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdRemanejamento.Parameters.Add("@esta_no_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
-            objCmdRemanejamento.Parameters.Add("@vai_para_cla", MySqlDbType.VarChar, 256).Value = vaiparacla;
-            objCmdRemanejamento.Parameters.Add("@progressao_id", MySqlDbType.Int32).Value = idProgressao;
-
-            objCmdRemanejamento.ExecuteNonQuery();
-            long idRemanejamento = objCmdRemanejamento.LastInsertedId;
-
-            // INSERT TABELA CADASTRO MEMBROS
-            MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into hypedb.cadastro_membro (id, nick, level, poder, classe, patente, remanejamento_id, pergunta_alt_id, recrutamento_id, pergunta_expedicao_id) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
-
-            objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
-            objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
-            objCmdCadastroMembros.Parameters.Add("@remanejamento_id", MySqlDbType.Int32).Value = idRemanejamento;
-            objCmdCadastroMembros.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPerguntaAlt;
-            objCmdCadastroMembros.Parameters.Add("@pergunta_expedicao_id", MySqlDbType.Int32).Value = idPerguntaExpedicao;
-            objCmdCadastroMembros.Parameters.Add("@recrutamento_id", MySqlDbType.Int32).Value = idRecruta;
-
-            objCmdCadastroMembros.ExecuteNonQuery();
-
-            // INSERT TABELA ALT 0
-            MySqlCommand objCmdAlt0 = new MySqlCommand("insert into hypedb.cadastro_alt (id, nick_alt, level_alt, poder_alt, classe_alt, cla_alt, data_entrada, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
-
-            objCmdAlt0.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_0.Texts;
-            objCmdAlt0.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_0.Texts;
-            objCmdAlt0.Parameters.Add("@poder_alt", MySqlDbType.Decimal).Value = txt_poder_alt_0.Texts;
-            objCmdAlt0.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_0.Text;
-            objCmdAlt0.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_0.Texts;
-            objCmdAlt0.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdAlt0.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPerguntaAlt;
-
-            objCmdAlt0.ExecuteNonQuery();
-
-            database.closeConnection();
-        }
-
-        private void DuasAlt()
-        {
-            configdb database = new configdb();
-            database.openConnection();
-
-            // INSERT TABELA PEGUNTA ALT
-            MySqlCommand objCmdPerguntaAlt = new MySqlCommand("insert into hypedb.pergunta_alt (id, pergunta_alt) values (null, ?)", database.getConnection());
-
-            objCmdPerguntaAlt.Parameters.Add("@pergunta_alt", MySqlDbType.VarChar, 5).Value = pergunta_alt;
-
-            objCmdPerguntaAlt.ExecuteNonQuery();
-            long idPerguntaAlt = objCmdPerguntaAlt.LastInsertedId;
-
-            // INSERT TABELA EXPEDICAO
-            MySqlCommand objCmdExpedicao = new MySqlCommand("insert into hypedb.pergunta_expedicao (id, pergunta_expedicao) values (null, ?)", database.getConnection());
-
-            objCmdExpedicao.Parameters.Add("@pergunta_expedicao", MySqlDbType.VarChar, 5).Value = pergunta_expedicao;
-
-            objCmdExpedicao.ExecuteNonQuery();
-            long idPerguntaExpedicao = objCmdExpedicao.LastInsertedId;
-
-            // INSERT TABELA RECRUTAMENTO
-            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
-
-            objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
-            objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
-
-            objCmdRecrutamento.ExecuteNonQuery();
-            long idRecruta = objCmdRecrutamento.LastInsertedId;
-
-            // INSERT TABELA PROGRESSÃO
-            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
-
-            objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novo_poder;
-            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novo_level;
-            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
-
-            objCmdProgressao.ExecuteNonQuery();
-            long idProgressao = objCmdProgressao.LastInsertedId;
-
-            // INSERT TABELA REMANEJAMENTO
-            MySqlCommand objCmdRemanejamento = new MySqlCommand("insert into hypedb.remanejamento (id, data_remanejamento, esta_no_cla, vai_para_cla, progressao_id) values (null, ?, ?, ?, ?)", database.getConnection());
-
-            objCmdRemanejamento.Parameters.Add("@data_remanejamento", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdRemanejamento.Parameters.Add("@esta_no_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
-            objCmdRemanejamento.Parameters.Add("@vai_para_cla", MySqlDbType.VarChar, 256).Value = vaiparacla;
-            objCmdRemanejamento.Parameters.Add("@progressao_id", MySqlDbType.Int32).Value = idProgressao;
-
-            objCmdRemanejamento.ExecuteNonQuery();
-            long idRemanejamento = objCmdRemanejamento.LastInsertedId;
-
-            // INSERT TABELA CADASTRO MEMBROS
-            MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into hypedb.cadastro_membro (id, nick, level, poder, classe, patente, remanejamento_id, pergunta_alt_id, recrutamento_id, pergunta_expedicao_id) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
-
-            objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
-            objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
-            objCmdCadastroMembros.Parameters.Add("@remanejamento_id", MySqlDbType.Int32).Value = idRemanejamento;
-            objCmdCadastroMembros.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPerguntaAlt;
-            objCmdCadastroMembros.Parameters.Add("@pergunta_expedicao_id", MySqlDbType.Int32).Value = idPerguntaExpedicao;
-            objCmdCadastroMembros.Parameters.Add("@recrutamento_id", MySqlDbType.Int32).Value = idRecruta;
-
-            objCmdCadastroMembros.ExecuteNonQuery();
-
-            // INSERT TABELA ALT 0
-            MySqlCommand objCmdAlt0 = new MySqlCommand("insert into hypedb.cadastro_alt (id, nick_alt, level_alt, poder_alt, classe_alt, cla_alt, data_entrada, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
-
-            objCmdAlt0.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_0.Texts;
-            objCmdAlt0.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_0.Texts;
-            objCmdAlt0.Parameters.Add("@poder_alt", MySqlDbType.Decimal).Value = txt_poder_alt_0.Texts;
-            objCmdAlt0.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_0.Text;
-            objCmdAlt0.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_0.Texts;
-            objCmdAlt0.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdAlt0.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPerguntaAlt;
-
-            objCmdAlt0.ExecuteNonQuery();
-
-            // INSERT TABELA ALT 1
-            MySqlCommand objCmdAlt1 = new MySqlCommand("insert into hypedb.cadastro_alt (id, nick_alt, level_alt, poder_alt, classe_alt, cla_alt, data_entrada, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
-
-            objCmdAlt1.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_1.Texts;
-            objCmdAlt1.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_1.Texts;
-            objCmdAlt1.Parameters.Add("@poder_alt", MySqlDbType.Decimal).Value = txt_poder_alt_1.Texts;
-            objCmdAlt1.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_1.Text;
-            objCmdAlt1.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_1.Texts;
-            objCmdAlt1.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdAlt1.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPerguntaAlt;
-
-            objCmdAlt1.ExecuteNonQuery();
-
-            database.closeConnection();
+            txt_quantidade_alt.SelectedIndex = 0;
         }
 
         private void AddMembros()
@@ -297,19 +36,201 @@ namespace Hype.painel
             switch (txt_quantidade_alt.SelectedIndex)
             {
                 case 0:
-                    SemAlt();
+                    CadastroMembro();
                     break;
                 case 1:
-                    UmaAlt();
+                    CadastroAlt_01();
                     break;
                 case 2:
-                    DuasAlt();
+                    CadastroAlt_02();
+                    break;
+                case 3:
+                    CadastroAlt_03();
+                    break;
+                case 4:
+                    CadastroAlt_04();
+                    break;
+                case 5:
+                    CadastroAlt_05();
                     break;
                 default:
                     break;
-            }            
+            }
         }
 
+        private void CadastroMembro()
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            // INSERT TABELA PEGUNTA ALT
+            MySqlCommand objCmdPerguntaAlt = new MySqlCommand("insert into hypedb.pergunta_alt (id, pergunta_alt) values (null, ?)", database.getConnection());
+
+            objCmdPerguntaAlt.Parameters.Add("@pergunta_alt", MySqlDbType.VarChar, 5).Value = txt_quantidade_alt.Text;
+
+            objCmdPerguntaAlt.ExecuteNonQuery();
+            idPerguntaAlt = objCmdPerguntaAlt.LastInsertedId;
+
+            // INSERT TABELA RECRUTAMENTO
+            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
+
+            objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
+            objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
+
+            objCmdRecrutamento.ExecuteNonQuery();
+            long idRecruta = objCmdRecrutamento.LastInsertedId;
+
+            // INSERT TABELA PEGUNTA EXPEDIÇÃO
+            MySqlCommand objCmdExpedicao = new MySqlCommand("insert into hypedb.pergunta_expedicao (id, pergunta_expedicao) values (null, ?)", database.getConnection());
+
+            objCmdExpedicao.Parameters.Add("@pergunta_expedicao", MySqlDbType.VarChar, 5).Value = pergunta_expedicao;
+
+            objCmdExpedicao.ExecuteNonQuery();
+            long idPerguntaExpedicao = objCmdExpedicao.LastInsertedId;
+
+            // INSERT TABELA PROGRESSÃO
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novo_poder;
+            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novo_level;
+            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
+
+            objCmdProgressao.ExecuteNonQuery();
+            long idProgressao = objCmdProgressao.LastInsertedId;
+
+            // INSERT TABELA CADASTRO MEMBROS
+            MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into hypedb.cadastro_membro (id, nick, level, poder, classe, patente, pergunta_alt_id, recrutamento_id, pergunta_expedicao_id, progressao_id) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+            objCmdCadastroMembros.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPerguntaAlt;
+            objCmdCadastroMembros.Parameters.Add("@recrutamento_id", MySqlDbType.Int32).Value = idRecruta;
+            objCmdCadastroMembros.Parameters.Add("@pergunta_expedicao_id", MySqlDbType.Int32).Value = idPerguntaExpedicao;
+            objCmdCadastroMembros.Parameters.Add("@progressao_id", MySqlDbType.Int32).Value = idProgressao;
+
+            objCmdCadastroMembros.ExecuteNonQuery();
+
+            database.closeConnection();
+        }
+
+        private void CadastroAlt_01()
+        {
+            CadastroMembro();
+
+            configdb database = new configdb();
+            database.openConnection();
+           
+            MySqlCommand objCmdAlt1 = new MySqlCommand("insert into hypedb.cadastro_alt (id, data_entrada, nick_principal, nick_alt, level_alt, classe_alt, cla_alt, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdAlt1.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdAlt1.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdAlt1.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_01.Texts;
+            objCmdAlt1.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_01.Texts;
+            objCmdAlt1.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Text;
+            objCmdAlt1.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_01.Texts;
+            objCmdAlt1.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPerguntaAlt;
+
+            objCmdAlt1.ExecuteNonQuery();
+
+            database.closeConnection();
+        }
+
+        private void CadastroAlt_02()
+        {
+            CadastroAlt_01();
+
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand objCmdAlt2 = new MySqlCommand("insert into hypedb.cadastro_alt (id, data_entrada, nick_principal, nick_alt, level_alt, classe_alt, cla_alt, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdAlt2.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdAlt2.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_02.Texts;
+            objCmdAlt2.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_02.Texts;
+            objCmdAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_02.Text;
+            objCmdAlt2.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_02.Texts;
+            objCmdAlt2.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPerguntaAlt;
+
+            objCmdAlt2.ExecuteNonQuery();
+
+            database.closeConnection();
+        }
+
+        private void CadastroAlt_03()
+        {
+            CadastroAlt_01();
+
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand objCmdAlt2 = new MySqlCommand("insert into hypedb.cadastro_alt (id, data_entrada, nick_principal, nick_alt, level_alt, classe_alt, cla_alt, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdAlt2.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdAlt2.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_03.Texts;
+            objCmdAlt2.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_03.Texts;
+            objCmdAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_03.Text;
+            objCmdAlt2.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_03.Texts;
+            objCmdAlt2.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPerguntaAlt;
+
+            objCmdAlt2.ExecuteNonQuery();
+
+            database.closeConnection();
+        }
+
+        private void CadastroAlt_04()
+        {
+            CadastroAlt_01();
+
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand objCmdAlt2 = new MySqlCommand("insert into hypedb.cadastro_alt (id, data_entrada, nick_principal, nick_alt, level_alt, classe_alt, cla_alt, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdAlt2.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdAlt2.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_04.Texts;
+            objCmdAlt2.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_04.Texts;
+            objCmdAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_04.Text;
+            objCmdAlt2.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_04.Texts;
+            objCmdAlt2.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPerguntaAlt;
+
+            objCmdAlt2.ExecuteNonQuery();
+
+            database.closeConnection();
+        }
+
+        private void CadastroAlt_05()
+        {
+            CadastroAlt_01();
+
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand objCmdAlt2 = new MySqlCommand("insert into hypedb.cadastro_alt (id, data_entrada, nick_principal, nick_alt, level_alt, classe_alt, cla_alt, pergunta_alt_id) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdAlt2.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdAlt2.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_05.Texts;
+            objCmdAlt2.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_05.Texts;
+            objCmdAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_05.Text;
+            objCmdAlt2.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_05.Texts;
+            objCmdAlt2.Parameters.Add("@pergunta_alt_id", MySqlDbType.Int32).Value = idPerguntaAlt;
+
+            objCmdAlt2.ExecuteNonQuery();
+
+            database.closeConnection();
+        }
+
+
+        // BOTÕES
         private void bt_salvar_Click(object sender, EventArgs e)
         {
             try
@@ -323,13 +244,37 @@ namespace Hype.painel
             }
             finally
             {
-                LimparTextos(pl_membro.Controls);
-                LimparTextos(pl_pergunta.Controls);
-                LimparTextos(pl_alt_0.Controls);
-                LimparTextos(pl_alt_1.Controls);
+                LimparCadastro();
 
                 rd_nao.Checked = true;
             }
+        }
+
+        private void VoltarMembros()
+        {
+            membros uc = new membros();
+            cla.Instance.addControl(uc);
+        }
+
+        private void bt_cancelar_Click(object sender, EventArgs e)
+        {
+            LimparCadastro();
+        }
+
+        private void bt_voltar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                VoltarMembros();
+                LimparCadastro();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
+            }
+
+
         }
 
         public void LimparTextos(Control.ControlCollection control)
@@ -351,133 +296,238 @@ namespace Hype.painel
             }
         }
 
-        private void bt_cancelar_Click(object sender, EventArgs e)
-        {
-            membros uc = new membros();
-            cla.Instance.addControl(uc);
-        }
-
         private void rd_sim_CheckedChanged(object sender, EventArgs e)
         {
             txt_quantidade_alt.Enabled = true;
 
             txt_quantidade_alt.SelectedIndex = 1;
-
-            pergunta_alt = "SIM";
         }
 
         private void rd_nao_CheckedChanged(object sender, EventArgs e)
         {
-
-            LimparTextos(pl_alt_0.Controls);
-            LimparTextos(pl_alt_1.Controls);
-
-            //limpar avatar
-            //foto_classe.Image = Resources.Padrao;
-
             txt_quantidade_alt.Enabled = false;
-
-            pl_alt_0.Visible = false;
-            pl_alt_1.Visible = false;
-
             txt_quantidade_alt.SelectedIndex = 0;
 
-            pergunta_alt = "NÃO";
+            LimparTextos(pl_conta_alt_01.Controls);
+            LimparTextos(pl_conta_alt_02.Controls);
+            LimparTextos(pl_conta_alt_03.Controls);
+            LimparTextos(pl_conta_alt_04.Controls);
+            LimparTextos(pl_conta_alt_05.Controls);
+
+            CampoTextoAltDesativado(this.pl_conta_alt_01.Controls);
+        }
+
+        private void LimparCadastro()
+        {
+            txt_quantidade_alt.Enabled = false;
+            txt_quantidade_alt.SelectedIndex = 0;
+
+            LimparTextos(pl_conta_principal.Controls);
+
+            LimparTextos(pl_conta_alt_01.Controls);
+            LimparTextos(pl_conta_alt_02.Controls);
+            LimparTextos(pl_conta_alt_03.Controls);
+            LimparTextos(pl_conta_alt_04.Controls);
+            LimparTextos(pl_conta_alt_05.Controls);
+
+            CampoTextoAltDesativado(this.pl_conta_alt_01.Controls);
         }
 
         private void txt_quantidade_alt_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+        {            
             // QUANTIDADE DE ALT QUE FOI SELECIONADO 
             switch (txt_quantidade_alt.SelectedIndex)
             {
                 case 0:
-                    pl_alt_0.Visible = false;
-                    pl_alt_1.Visible = false;
+                    PainelAlt00();
                     break;
                 case 1:
-                    pl_alt_0.Visible = true;
-                    pl_alt_1.Visible = false;
+                    PainelAlt01();
                     break;
                 case 2:
-                    pl_alt_0.Visible = true;
-                    pl_alt_1.Visible = true;
+                    PainelAlt02();
+                    break;
+                case 3:
+                    PainelAlt03();
+                    break;
+                case 4:
+                    PainelAlt04();
+                    break;
+                case 5:
+                    PainelAlt05();
                     break;
                 default:
                     break;
             }
         }
 
-        private void add_membros_Load(object sender, EventArgs e)
+        private void PainelContaALT()
         {
-            RadioSelecao();
-            pl_botao.Dock = DockStyle.Top;
+            if (txt_quantidade_alt.SelectedIndex == 0)
+                rd_nao.Checked = true;
+
+            CampoTextoAltDesativado(this.pl_conta_alt_01.Controls);
+            CampoTextoAltDesativado(this.pl_conta_alt_02.Controls);
+            CampoTextoAltDesativado(this.pl_conta_alt_03.Controls);
+            CampoTextoAltDesativado(this.pl_conta_alt_04.Controls);
+            CampoTextoAltDesativado(this.pl_conta_alt_05.Controls);
         }
 
-        private void txt_classe_SelectedIndexChanged(object sender, EventArgs e)
+        private void CampoTextoAltDesativado(Control.ControlCollection control)
         {
-            switch (txt_classe.SelectedIndex)
+            foreach (Control c in control)
             {
-                case 0:
-                    foto_classe.Image = Resources.Arbalista;
-                    break;
-                case 1:
-                    foto_classe.Image = Resources.Mago;
-                    break;
-                case 2:
-                    foto_classe.Image = Resources.Guerreiro;
-                    break;
-                case 3:
-                    foto_classe.Image = Resources.Lanceiro;
-                    break;
-                case 4:
-                    foto_classe.Image = Resources.Taoista;
-                    break;
+                if (c is RJTextBox)
+                {
+                    ((RJTextBox)c).Enabled = false;
+                    ((RJTextBox)c).BackColor = Color.FromArgb(39, 44, 70);
+                    ((RJTextBox)c).PlaceholderText = "";
+                }
+
+                if (c is ComboBox)
+                {
+                    ((ComboBox)c).Enabled = false;
+                    ((ComboBox)c).BackColor = Color.FromArgb(39, 44, 70);
+                    ((ComboBox)c).SelectedIndex = -1;
+
+                }
             }
         }
 
-        private void txt_classe_alt_0_SelectedIndexChanged(object sender, EventArgs e)
+        private void CampoTextoAltHabilitado(Control.ControlCollection control)
         {
-            switch (txt_classe_alt_0.SelectedIndex)
+            foreach (Control c in control)
             {
-                case 0:
-                    foto_classe_alt_0.Image = Resources.Arbalista;
-                    break;
-                case 1:
-                    foto_classe_alt_0.Image = Resources.Mago;
-                    break;
-                case 2:
-                    foto_classe_alt_0.Image = Resources.Guerreiro;
-                    break;
-                case 3:
-                    foto_classe_alt_0.Image = Resources.Lanceiro;
-                    break;
-                case 4:
-                    foto_classe_alt_0.Image = Resources.Taoista;
-                    break;
+                if (c is RJTextBox)
+                {
+                    ((RJTextBox)c).Enabled = true;
+                    ((RJTextBox)c).BackColor = Color.White;                  
+                }
+
+                if (c is ComboBox)
+                {
+                    ((ComboBox)c).Enabled = true;
+                    ((ComboBox)c).BackColor = Color.White;
+                }
             }
         }
 
-        private void txt_classe_alt_1_SelectedIndexChanged(object sender, EventArgs e)
+        private void PainelAlt00()
         {
-            switch (txt_classe_alt_1.SelectedIndex)
-            {
-                case 0:
-                    foto_classe_alt_1.Image = Resources.Arbalista;
-                    break;
-                case 1:
-                    foto_classe_alt_1.Image = Resources.Mago;
-                    break;
-                case 2:
-                    foto_classe_alt_1.Image = Resources.Guerreiro;
-                    break;
-                case 3:
-                    foto_classe_alt_1.Image = Resources.Lanceiro;
-                    break;
-                case 4:
-                    foto_classe_alt_1.Image = Resources.Taoista;
-                    break;
-            }
+            PainelContaALT();
         }
+
+        private void PainelAlt01()
+        {
+            txt_nick_alt_01.PlaceholderText = "Qual é o Nick ?";
+            txt_level_alt_01.PlaceholderText = "Level";
+            txt_foi_alt_01.PlaceholderText = "Foi para o clã";
+
+            CampoTextoAltHabilitado(this.pl_conta_alt_01.Controls);        
+
+            CampoTextoAltDesativado(this.pl_conta_alt_02.Controls);
+            CampoTextoAltDesativado(this.pl_conta_alt_03.Controls);
+            CampoTextoAltDesativado(this.pl_conta_alt_04.Controls);
+            CampoTextoAltDesativado(this.pl_conta_alt_05.Controls);
+
+        }
+
+        private void PainelAlt02()
+        {
+            txt_nick_alt_01.PlaceholderText = "Qual é o Nick ?";
+            txt_level_alt_01.PlaceholderText = "Level";
+            txt_foi_alt_01.PlaceholderText = "Foi para o clã";
+
+            txt_nick_alt_02.PlaceholderText = "Qual é o Nick ?";
+            txt_level_alt_02.PlaceholderText = "Level";
+            txt_foi_alt_02.PlaceholderText = "Foi para o clã";
+
+            CampoTextoAltHabilitado(this.pl_conta_alt_01.Controls);
+            CampoTextoAltHabilitado(this.pl_conta_alt_02.Controls);
+
+            CampoTextoAltDesativado(this.pl_conta_alt_03.Controls);
+            CampoTextoAltDesativado(this.pl_conta_alt_04.Controls);
+            CampoTextoAltDesativado(this.pl_conta_alt_05.Controls);
+        }
+
+        private void PainelAlt03()
+        {
+            txt_nick_alt_01.PlaceholderText = "Qual é o Nick ?";
+            txt_level_alt_01.PlaceholderText = "Level";
+            txt_foi_alt_01.PlaceholderText = "Foi para o clã";
+
+            txt_nick_alt_02.PlaceholderText = "Qual é o Nick ?";
+            txt_level_alt_02.PlaceholderText = "Level";
+            txt_foi_alt_02.PlaceholderText = "Foi para o clã";
+
+            txt_nick_alt_03.PlaceholderText = "Qual é o Nick ?";
+            txt_level_alt_03.PlaceholderText = "Level";
+            txt_foi_alt_03.PlaceholderText = "Foi para o clã";
+
+            CampoTextoAltHabilitado(this.pl_conta_alt_01.Controls);
+            CampoTextoAltHabilitado(this.pl_conta_alt_02.Controls);
+            CampoTextoAltHabilitado(this.pl_conta_alt_03.Controls);
+
+            CampoTextoAltDesativado(this.pl_conta_alt_04.Controls);
+            CampoTextoAltDesativado(this.pl_conta_alt_05.Controls);
+
+        }
+
+        private void PainelAlt04()
+        {
+            txt_nick_alt_01.PlaceholderText = "Qual é o Nick ?";
+            txt_level_alt_01.PlaceholderText = "Level";
+            txt_foi_alt_01.PlaceholderText = "Foi para o clã";
+
+            txt_nick_alt_02.PlaceholderText = "Qual é o Nick ?";
+            txt_level_alt_02.PlaceholderText = "Level";
+            txt_foi_alt_02.PlaceholderText = "Foi para o clã";
+
+            txt_nick_alt_03.PlaceholderText = "Qual é o Nick ?";
+            txt_level_alt_03.PlaceholderText = "Level";
+            txt_foi_alt_03.PlaceholderText = "Foi para o clã";
+
+            txt_nick_alt_04.PlaceholderText = "Qual é o Nick ?";
+            txt_level_alt_04.PlaceholderText = "Level";
+            txt_foi_alt_04.PlaceholderText = "Foi para o clã";
+
+            CampoTextoAltHabilitado(this.pl_conta_alt_01.Controls);
+            CampoTextoAltHabilitado(this.pl_conta_alt_02.Controls);
+            CampoTextoAltHabilitado(this.pl_conta_alt_03.Controls);
+            CampoTextoAltHabilitado(this.pl_conta_alt_04.Controls);
+
+            CampoTextoAltDesativado(this.pl_conta_alt_05.Controls);
+        }
+
+        private void PainelAlt05()
+        {
+            txt_nick_alt_01.PlaceholderText = "Qual é o Nick ?";
+            txt_level_alt_01.PlaceholderText = "Level";
+            txt_foi_alt_01.PlaceholderText = "Foi para o clã";
+
+            txt_nick_alt_02.PlaceholderText = "Qual é o Nick ?";
+            txt_level_alt_02.PlaceholderText = "Level";
+            txt_foi_alt_02.PlaceholderText = "Foi para o clã";
+
+            txt_nick_alt_03.PlaceholderText = "Qual é o Nick ?";
+            txt_level_alt_03.PlaceholderText = "Level";
+            txt_foi_alt_03.PlaceholderText = "Foi para o clã";
+
+            txt_nick_alt_04.PlaceholderText = "Qual é o Nick ?";
+            txt_level_alt_04.PlaceholderText = "Level";
+            txt_foi_alt_04.PlaceholderText = "Foi para o clã";
+
+            txt_nick_alt_05.PlaceholderText = "Qual é o Nick ?";
+            txt_level_alt_05.PlaceholderText = "Level";
+            txt_foi_alt_05.PlaceholderText = "Foi para o clã";
+
+            CampoTextoAltHabilitado(this.pl_conta_alt_01.Controls);
+            CampoTextoAltHabilitado(this.pl_conta_alt_02.Controls);
+            CampoTextoAltHabilitado(this.pl_conta_alt_03.Controls);
+            CampoTextoAltHabilitado(this.pl_conta_alt_04.Controls);
+            CampoTextoAltHabilitado(this.pl_conta_alt_05.Controls);
+        }
+
+
     }
 }

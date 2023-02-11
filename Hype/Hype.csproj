@@ -276,6 +276,12 @@
     <Compile Include="painel\progressao.Designer.cs">
       <DependentUpon>progressao.cs</DependentUpon>
     </Compile>
+    <Compile Include="painel\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="painel\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="script\configdb.cs" />
@@ -332,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="painel\progressao.resx">
       <DependentUpon>progressao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="painel\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
