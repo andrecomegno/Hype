@@ -16,8 +16,8 @@ namespace Hype.painel
     public partial class conta_principal : UserControl
     {
         string id_membro = string.Empty;
-        string id_remanejamento = string.Empty;
-        string id_recrutamento = string.Empty;
+        string id_alt = string.Empty;
+        string id_pergunta_alt = string.Empty;
 
         public conta_principal()
         {
@@ -46,14 +46,24 @@ namespace Hype.painel
 
 
                 // CADASTRO DE MEMBROS
-                MySqlCommand objCmdCadastro_membros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, classe=@classe, patente=@patente where (id=@id)", database.getConnection());
+                MySqlCommand objCmdCadastro_membros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, classe=@classe, patente=@patente where (ID_MEMBROS=@ID_MEMBROS)", database.getConnection());
 
-                objCmdCadastro_membros.Parameters.AddWithValue("@id", id_membro);
+                objCmdCadastro_membros.Parameters.AddWithValue("@ID_MEMBROS", id_membro);
                 objCmdCadastro_membros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                 objCmdCadastro_membros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
                 objCmdCadastro_membros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
 
                 objCmdCadastro_membros.ExecuteNonQuery();
+
+                MySqlCommand objCmdAlt2 = new MySqlCommand("update hypedb.cadastro_alt set nick_principal=@nick_principal where (ID_ALT=@ID_ALT) and (ID_PERGUNTA_ALT=@ID_PERGUNTA_ALT)", database.getConnection());
+
+                objCmdAlt2.Parameters.AddWithValue("@ID_ALT", id_alt);
+                objCmdAlt2.Parameters.AddWithValue("@ID_PERGUNTA_ALT", id_pergunta_alt);
+                objCmdAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;               
+
+                objCmdAlt2.ExecuteNonQuery();
+
+                MessageBox.Show(id_pergunta_alt);
 
                 DialogResult dr = MessageBox.Show("Editado Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -107,10 +117,10 @@ namespace Hype.painel
 
         public void DadosMembros()
         {
+            id_pergunta_alt = membros.Instance.id_pergunta_alt;
+
             // CADASTRO
             id_membro = membros.Instance.id_membro;
-            id_remanejamento = membros.Instance.id_remanejamento;
-            id_recrutamento = membros.Instance.id_recrutamento;
             lb_data_entrada.Text = membros.Instance.data_entrada;
             txt_nick.Texts = membros.Instance.nick;
             txt_level.Texts = membros.Instance.level;

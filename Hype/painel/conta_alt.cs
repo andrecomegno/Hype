@@ -21,8 +21,6 @@ namespace Hype.painel
         public conta_alt()
         {
             InitializeComponent();
-
-            txt_nickMain.Texts = alts.Instance.nickMain;
         }
 
         public void DadosMembros()

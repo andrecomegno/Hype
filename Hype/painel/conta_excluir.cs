@@ -19,6 +19,9 @@ namespace Hype.painel
         string id_membro = string.Empty;
 
         public string id_alt = "";
+
+        public string id_pergunta_alt = "";
+
         public string data_saida = "";
         public string nick_alt = "";
         public string level_alt = "";
@@ -29,19 +32,22 @@ namespace Hype.painel
         {
             InitializeComponent();
 
-            txt_nick.Texts = membros.Instance.nick;
+            txt_nick.Texts = "andy";
         }
 
         public void DadosMembros()
         {
             // CADASTRO
             id_membro = membros.Instance.id_membro;
-            //lb_data_saida.Text = DateTime.Now;            
+            id_pergunta_alt = membros.Instance.id_pergunta_alt;
+
+            //lb_data_saida.Text = DateTime.Now;  
+
             txt_level.Texts = membros.Instance.level;
             txt_poder.Texts = membros.Instance.poder;
             txt_patente.Text = membros.Instance.patente;
             txt_classe.Text = membros.Instance.classe;
-            txt_cla.Texts = membros.Instance.esta_no_cla;
+            txt_cla.Texts = membros.Instance.foi_para_cla;
         }
 
         private void ListaAlts()
@@ -49,9 +55,9 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select al.ID, c.ID, c.NICK, al.DATA_ENTRADA, al.NICK_ALT, al.LEVEL_ALT, al.PODER_ALT, al.CLASSE_ALT, al.CLA_ALT from hypedb.cadastro_membro c join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.cadastro_alt al on al.PERGUNTA_ALT_ID = p.ID where nick like @nickMain '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select ID_ALT, DATA_ENTRADA, NICK_PRINCIPAL, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT from hypedb.cadastro_alt where NICK_PRINCIPAL like @nick_alt '%' ", database.getConnection());
 
-            cmd.Parameters.AddWithValue("@nickMain", txt_nick.Texts);
+            cmd.Parameters.AddWithValue("@nick_alt", txt_nick.Texts);
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -68,21 +74,18 @@ namespace Hype.painel
 
         private void Tabela()
         {         
-            dataGridView1.Columns[0].Visible = false; // al.id ID Membros
-            dataGridView1.Columns[1].Visible = false; // c.id ID Remanejamento
-            dataGridView1.Columns[2].Visible = false; // c.nick ID Pergunta Alt
-            dataGridView1.Columns[3].Visible = false; // Data da Entrada
-            dataGridView1.Columns[4].HeaderText = "NICK";
-            dataGridView1.Columns[5].HeaderText = "LEVEL";
-            dataGridView1.Columns[6].Visible = false; // poder alt
-            dataGridView1.Columns[7].HeaderText = "CLASSE";
-            dataGridView1.Columns[8].HeaderText = "CLÃ";
+            dataGridView1.Columns[0].Visible = false; // ID_ALT
+            dataGridView1.Columns[1].Visible = false; // DATA_ENTRADA
+            dataGridView1.Columns[2].Visible = false; // NICK_PRINCIPAL
+            dataGridView1.Columns[3].HeaderText = "NICK";
+            dataGridView1.Columns[4].HeaderText = "LEVEL";
+            dataGridView1.Columns[5].HeaderText = "CLASSE";
+            dataGridView1.Columns[6].HeaderText = "CLÃ";
 
+            dataGridView1.Columns[3].ReadOnly = true;
             dataGridView1.Columns[4].ReadOnly = true;
             dataGridView1.Columns[5].ReadOnly = true;
             dataGridView1.Columns[6].ReadOnly = true;
-            dataGridView1.Columns[7].ReadOnly = true;
-            dataGridView1.Columns[8].ReadOnly = true;
 
             DataGridViewCheckBoxColumn selecionar = new DataGridViewCheckBoxColumn();
             selecionar.Name = "SELECIONAR";
@@ -120,7 +123,7 @@ namespace Hype.painel
                     bool _selecionar = Convert.ToBoolean(row.Cells["SELECIONAR"].Value);
                     if (_selecionar)
                     {
-                        id_alt += row.Cells["ID"].Value.ToString();
+                        id_alt += row.Cells["ID_ALT"].Value.ToString();
                         nick_alt += row.Cells["NICK_ALT"].Value.ToString();
                         level_alt += row.Cells["LEVEL_ALT"].Value.ToString();
                         classe_alt += row.Cells["CLASSE_ALT"].Value.ToString();
@@ -184,13 +187,13 @@ namespace Hype.painel
                 configdb database = new configdb();
                 database.openConnection();
 
-                MySqlCommand objCmdRemanejamento = new MySqlCommand("delete from hypedb.remanejamento where ID=@id", database.getConnection());
-                objCmdRemanejamento.Parameters.AddWithValue("@id", id_membro);
+                MySqlCommand objCmdRemanejamento = new MySqlCommand("delete from hypedb.remanejamento where ID_REMANEJAMENTO=@ID_REMANEJAMENTO", database.getConnection());
+                objCmdRemanejamento.Parameters.AddWithValue("@ID_REMANEJAMENTO", id_membro);
 
                 objCmdRemanejamento.ExecuteNonQuery();
 
-                MySqlCommand objCmdContaAlt = new MySqlCommand("delete from hypedb.pergunta_alt where ID=@id", database.getConnection());
-                objCmdContaAlt.Parameters.AddWithValue("@id", id_alt);
+                MySqlCommand objCmdContaAlt = new MySqlCommand("delete from hypedb.pergunta_alt where ID_ALT=@ID_ALT", database.getConnection());
+                objCmdContaAlt.Parameters.AddWithValue("@ID_ALT", id_alt);
 
                 objCmdContaAlt.ExecuteNonQuery();
 

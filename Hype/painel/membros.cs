@@ -16,13 +16,8 @@ namespace Hype.painel
     {
         public static membros Instance;
 
-        public string id_membro = "";
-        public string id_remanejamento = "";
-        public string id_pergunta_alt = "";
-        public string id_pergunta_expedicao = "";
-        public string id_recrutamento = "";
-
         public string data_entrada = "";
+        public string id_membro = "";
         public string nick = "";
         public string level = "";
         public string poder = "";
@@ -30,8 +25,10 @@ namespace Hype.painel
         public string patente = "";
         public string vem_do_cla = "";
         public string foi_para_cla = "";
-        public string esta_no_cla = "";
-        public string vai_para_cla = "";
+
+        public string id_pergunta_alt = "";
+        public string id_pergunta_expedicao = "";
+        public string id_recrutamento = "";
 
         public membros()
         {
@@ -57,12 +54,12 @@ namespace Hype.painel
             cla.Instance.addControl(uc);
         }
 
-        private void ListaMembros()
+        private void TabelaMembros()
         {
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.id, pro.id, p.id, e.id, r.id, r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, p.PERGUNTA_ALT, e.PERGUNTA_EXPEDICAO, r.VEM_DO_CLA, r.FOI_PARA_CLA from hypedb.cadastro_membro c join hypedb.progressao pro on pro.ID = c.PROGRESSAO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.pergunta_expedicao e on e.ID = c.PERGUNTA_EXPEDICAO_ID join hypedb.recrutamento r on r.ID = c.RECRUTAMENTO_ID", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, pro.ID_PROGRESSAO, p.ID_PERGUNTA_ALT, e.ID_PERGUNTA_EXPEDICAO, r.ID_RECRUTAMENTO, r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, p.PERGUNTA_ALT, e.PERGUNTA_EXPEDICAO, r.VEM_DO_CLA, r.FOI_PARA_CLA from hypedb.cadastro_membro c join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO join hypedb.pergunta_alt p on p.ID_PERGUNTA_ALT = c.ID_PERGUNTA_ALT join hypedb.pergunta_expedicao e on e.ID_PERGUNTA_EXPEDICAO = c.ID_PERGUNTA_EXPEDICAO join hypedb.recrutamento r on r.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -79,11 +76,11 @@ namespace Hype.painel
 
         private void Tabela()
         {
-            dataGridView1.Columns[0].Visible = false; // c.id ID Membros
-            dataGridView1.Columns[1].Visible = false; // re.di ID Progressão
-            dataGridView1.Columns[2].Visible = false; // p.id ID Pergunta Alt
-            dataGridView1.Columns[3].Visible = false; // e.id ID Expedicao
-            dataGridView1.Columns[4].Visible = false; // r.id ID Recrutamento
+            dataGridView1.Columns[0].Visible = false; // ID_MEMBROS
+            dataGridView1.Columns[1].Visible = false; // ID_PROGRESSAO
+            dataGridView1.Columns[2].Visible = false; // ID_PERGUNTA_ALT
+            dataGridView1.Columns[3].Visible = false; // ID_PERGUNTA_EXPEDICAO
+            dataGridView1.Columns[4].Visible = false; // ID_RECRUTAMENTO
 
             dataGridView1.Columns[5].HeaderText = "DATA ENTRADA";
             dataGridView1.Columns[6].HeaderText = "NICK";
@@ -132,8 +129,8 @@ namespace Hype.painel
                 {
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
 
-                    id_membro = dr["ID"].ToString();
-                    id_remanejamento = dr["ID"].ToString();
+                    id_membro = dr["ID_MEMBROS"].ToString();
+                    id_pergunta_alt = dr["ID_PERGUNTA_ALT"].ToString();
 
                     data_entrada = ((DateTime)dr["DATA_ENTRADA"]).ToShortDateString();
                     nick = dr["NICK"].ToString();
@@ -197,7 +194,7 @@ namespace Hype.painel
 
         private void membros_Load(object sender, EventArgs e)
         {
-            ListaMembros();
+            TabelaMembros();
 
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;

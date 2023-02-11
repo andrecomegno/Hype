@@ -246,18 +246,6 @@
     <Compile Include="painel\membros.Designer.cs">
       <DependentUpon>membros.cs</DependentUpon>
     </Compile>
-    <Compile Include="painel\membros_perfil.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="painel\membros_perfil.Designer.cs">
-      <DependentUpon>membros_perfil.cs</DependentUpon>
-    </Compile>
-    <Compile Include="painel\membro_excluir.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="painel\membro_excluir.Designer.cs">
-      <DependentUpon>membro_excluir.cs</DependentUpon>
-    </Compile>
     <Compile Include="painel\ouro.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -275,12 +263,6 @@
     </Compile>
     <Compile Include="painel\progressao.Designer.cs">
       <DependentUpon>progressao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="painel\UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="painel\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -324,12 +306,6 @@
     <EmbeddedResource Include="painel\membros.resx">
       <DependentUpon>membros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\membros_perfil.resx">
-      <DependentUpon>membros_perfil.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="painel\membro_excluir.resx">
-      <DependentUpon>membro_excluir.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="painel\ouro.resx">
       <DependentUpon>ouro.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,9 +314,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="painel\progressao.resx">
       <DependentUpon>progressao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="painel\UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
