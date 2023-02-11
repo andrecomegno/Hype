@@ -18,7 +18,7 @@ namespace Hype.painel
 
         public string id_alt = "";
         public string data_entrada = "";
-        public string ninck_principal = "";
+        public string nick_principal = "";
         public string nick_alt = "";
         public string level_alt = "";
         public string poder_alt = "";
@@ -97,7 +97,7 @@ namespace Hype.painel
 
                     id_alt = dr["ID_ALT"].ToString();
                     data_entrada = ((DateTime)dr["DATA_ENTRADA"]).ToShortDateString();
-                    ninck_principal = dr["NICK_PRINCIPAL"].ToString();
+                    nick_principal = dr["NICK_PRINCIPAL"].ToString();
                     nick_alt = dr["NICK_ALT"].ToString();
                     level_alt = dr["LEVEL_ALT"].ToString();
                     classe_alt = dr["CLASSE_ALT"].ToString();

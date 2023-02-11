@@ -21,6 +21,8 @@ namespace Hype.painel
         public conta_alt()
         {
             InitializeComponent();
+
+            txt_nick_principal.Texts = alts.Instance.nick_principal;
         }
 
         public void DadosMembros()
@@ -34,16 +36,16 @@ namespace Hype.painel
             txt_cla.Texts = alts.Instance.cla_alt;
         }
 
-        private void ListaAlts()
+        private void TabelaCadastroAlt()
         {
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand objCmdCadastro_membros = new MySqlCommand("select al.ID, c.ID, c.NICK, al.DATA_ENTRADA, al.NICK_ALT, al.LEVEL_ALT, al.PODER_ALT, al.CLASSE_ALT, al.CLA_ALT from hypedb.cadastro_membro c join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.cadastro_alt al on al.PERGUNTA_ALT_ID = p.ID where nick like @nickMain '%' ", database.getConnection());
+            MySqlCommand objCmdCadastroAlt = new MySqlCommand("select DATA_ENTRADA, ID_ALT, NICK_PRINCIPAL, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT from hypedb.cadastro_alt where NICK_PRINCIPAL like @NICK_PRINCIPAL '%' ", database.getConnection());
 
-            objCmdCadastro_membros.Parameters.AddWithValue("@nickMain", txt_nickMain.Texts);
+            objCmdCadastroAlt.Parameters.AddWithValue("@NICK_PRINCIPAL", txt_nick_principal.Texts);
 
-            using (MySqlDataAdapter da = new MySqlDataAdapter(objCmdCadastro_membros))
+            using (MySqlDataAdapter da = new MySqlDataAdapter(objCmdCadastroAlt))
             {
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -51,7 +53,7 @@ namespace Hype.painel
                 dataGridView1.DataSource = dt;
             }            
 
-            objCmdCadastro_membros.ExecuteNonQuery();
+            objCmdCadastroAlt.ExecuteNonQuery();
 
             database.closeConnection();
 
@@ -61,23 +63,20 @@ namespace Hype.painel
         private void Tabela()
         {
 
-            dataGridView1.Columns[0].Visible = false; // al.id Cadastro Alt
-            dataGridView1.Columns[1].Visible = false; // c.id Cadastro Membro
-
+            dataGridView1.Columns[0].Visible = false; // DATA_ENTRADA
+            dataGridView1.Columns[1].Visible = false; // ID_ALT
             dataGridView1.Columns[2].HeaderText = "CONTA PRINCIPAL";
-            dataGridView1.Columns[3].Visible = false; // data entrada
-            dataGridView1.Columns[4].HeaderText = "NICK";
-            dataGridView1.Columns[5].HeaderText = "LEVEL";
-            dataGridView1.Columns[6].Visible = false;
-            dataGridView1.Columns[7].HeaderText = "CLASSE";
-            dataGridView1.Columns[8].HeaderText = "CLÃ";
+            dataGridView1.Columns[3].HeaderText = "NICK";
+            dataGridView1.Columns[4].HeaderText = "LEVEL";
+            dataGridView1.Columns[5].HeaderText = "CLASSE";
+            dataGridView1.Columns[6].HeaderText = "CLÃ";
 
             dataGridView1.Columns["LEVEL_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["CLASSE_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                if (column.DataPropertyName == "NICK")
+                if (column.DataPropertyName == "NICK_PRINCIPAL")
                     column.Width = 220;
                 else if (column.DataPropertyName == "NICK_ALT")
                     column.Width = 220;
@@ -92,7 +91,7 @@ namespace Hype.painel
 
         private void conta_alt_Load(object sender, EventArgs e)
         {
-            ListaAlts();
+            TabelaCadastroAlt();
             DadosMembros();
 
             dataGridView1.EnableHeadersVisualStyles = false;
@@ -111,10 +110,10 @@ namespace Hype.painel
                 {
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
                     // CONTA PRINCIPAL
-                    txt_nickMain.Texts = dr["NICK"].ToString();
+                    txt_nick_principal.Texts = dr["NICK_PRINCIPAL"].ToString();
 
                     // ALT
-                    id_alt = dr["ID"].ToString();
+                    id_alt = dr["ID_ALT"].ToString();
                     txt_nick.Texts = dr["NICK_ALT"].ToString();
                     txt_level.Texts = dr["LEVEL_ALT"].ToString();
                     txt_classe.Text = dr["CLASSE_ALT"].ToString();
@@ -137,15 +136,15 @@ namespace Hype.painel
 
 
                 // CADASTRO DE MEMBROS
-                MySqlCommand objCmdCadastro_membros = new MySqlCommand("update hypedb.cadastro_alt set nick_alt=@nick_alt, level_alt=@level_alt, classe_alt=@classe_alt, cla_alt=@cla_alt where (id=@id)", database.getConnection());
+                MySqlCommand objCmdCadastroAlt = new MySqlCommand("update hypedb.cadastro_alt set nick_alt=@nick_alt, level_alt=@level_alt, classe_alt=@classe_alt, cla_alt=@cla_alt where (ID_ALT=@ID_ALT)", database.getConnection());
 
-                objCmdCadastro_membros.Parameters.AddWithValue("@id", id_alt);
-                objCmdCadastro_membros.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                objCmdCadastro_membros.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level.Texts;
-                objCmdCadastro_membros.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-                objCmdCadastro_membros.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_cla.Texts;
+                objCmdCadastroAlt.Parameters.AddWithValue("@ID_ALT", id_alt);
+                objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+                objCmdCadastroAlt.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level.Texts;
+                objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+                objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_cla.Texts;
 
-                objCmdCadastro_membros.ExecuteNonQuery();
+                objCmdCadastroAlt.ExecuteNonQuery();
 
                 DialogResult dr = MessageBox.Show("Editado Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -159,27 +158,6 @@ namespace Hype.painel
             {
                 TabelaCadastroAlt();
             }
-        }
-
-        private void TabelaCadastroAlt()
-        {
-            // BANCO DE DADOS
-            configdb database = new configdb();
-            database.openConnection();
-
-            MySqlCommand objCmdCadastro_alt = new MySqlCommand("select al.ID, c.ID, c.NICK, al.DATA_ENTRADA, al.NICK_ALT, al.LEVEL_ALT, al.PODER_ALT, al.CLASSE_ALT, al.CLA_ALT from hypedb.cadastro_membro c join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.cadastro_alt al on al.PERGUNTA_ALT_ID = p.ID where nick like @nickMain '%' ", database.getConnection());
-
-            objCmdCadastro_alt.Parameters.AddWithValue("@nickMain", txt_nickMain.Texts);
-
-            using (MySqlDataAdapter da = new MySqlDataAdapter(objCmdCadastro_alt))
-            {
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                dataGridView1.DataSource = dt;
-            }
-
-            database.closeConnection();
         }
 
         private void bt_cancelar_Click(object sender, EventArgs e)

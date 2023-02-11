@@ -16,38 +16,45 @@ namespace Hype.painel
     public partial class conta_excluir : UserControl
     {
 
-        string id_membro = string.Empty;
+        string id_membro = "";
 
         public string id_alt = "";
-
-        public string id_pergunta_alt = "";
-
         public string data_saida = "";
         public string nick_alt = "";
         public string level_alt = "";
         public string classe_alt = "";
         public string cla_alt = "";
 
+        public string id_pergunta_alt = "";
+        public string id_progressao = "";
+        public string id_pergunta_expedicao = "";
+        public string id_recrutamento = "";
+
         public conta_excluir()
         {
             InitializeComponent();
+            CampoDesabilitado(pl_conteudo_01.Controls);
 
-            txt_nick.Texts = "andy";
+            txt_nick.Texts = membros.Instance.nick;
         }
 
         public void DadosMembros()
         {
             // CADASTRO
-            id_membro = membros.Instance.id_membro;
-            id_pergunta_alt = membros.Instance.id_pergunta_alt;
-
             //lb_data_saida.Text = DateTime.Now;  
 
+            id_membro = membros.Instance.id_membro;
             txt_level.Texts = membros.Instance.level;
             txt_poder.Texts = membros.Instance.poder;
-            txt_patente.Text = membros.Instance.patente;
-            txt_classe.Text = membros.Instance.classe;
+            txt_patente.Texts = membros.Instance.patente;
+            txt_classe.Texts = membros.Instance.classe;
             txt_cla.Texts = membros.Instance.foi_para_cla;
+
+            id_pergunta_alt = membros.Instance.id_pergunta_alt;
+            id_progressao = membros.Instance.id_progressao;
+            id_pergunta_expedicao = membros.Instance.id_pergunta_expedicao;
+            id_recrutamento = membros.Instance.id_recrutamento;
+
         }
 
         private void ListaAlts()
@@ -111,7 +118,6 @@ namespace Hype.painel
                 else if (column.DataPropertyName == "SELECIONAR")
                     column.Width = 30;
             }
-
         }
 
         private void MostrarDadosTabela()
@@ -130,15 +136,12 @@ namespace Hype.painel
                         cla_alt += row.Cells["CLA_ALT"].Value.ToString();
                     }                    
                 }
-
-                MessageBox.Show(id_alt);
             }
             catch (Exception erro)
             {
                 MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
             }
         }
-
 
         private void BotaoVoltar()
         {
@@ -187,15 +190,49 @@ namespace Hype.painel
                 configdb database = new configdb();
                 database.openConnection();
 
-                MySqlCommand objCmdRemanejamento = new MySqlCommand("delete from hypedb.remanejamento where ID_REMANEJAMENTO=@ID_REMANEJAMENTO", database.getConnection());
-                objCmdRemanejamento.Parameters.AddWithValue("@ID_REMANEJAMENTO", id_membro);
+                // EXCLUIR CONTA PRINCIPAL
+                MySqlCommand objCmdCadastroMembro = new MySqlCommand("delete from hypedb.cadastro_membro where ID_MEMBROS=@ID_MEMBROS", database.getConnection());
+                objCmdCadastroMembro.Parameters.AddWithValue("@ID_MEMBROS", id_membro);
 
-                objCmdRemanejamento.ExecuteNonQuery();
+                objCmdCadastroMembro.ExecuteNonQuery();
 
-                MySqlCommand objCmdContaAlt = new MySqlCommand("delete from hypedb.pergunta_alt where ID_ALT=@ID_ALT", database.getConnection());
-                objCmdContaAlt.Parameters.AddWithValue("@ID_ALT", id_alt);
+                MySqlCommand objCmdRecrutamento = new MySqlCommand("delete from hypedb.recrutamento where ID_RECRUTAMENTO=@ID_RECRUTAMENTO", database.getConnection());
+                objCmdRecrutamento.Parameters.AddWithValue("@ID_RECRUTAMENTO", id_recrutamento);
 
-                objCmdContaAlt.ExecuteNonQuery();
+                objCmdRecrutamento.ExecuteNonQuery();
+
+                MySqlCommand objCmdProgressao = new MySqlCommand("delete from hypedb.progressao where ID_PROGRESSAO=@ID_PROGRESSAO", database.getConnection());
+                objCmdProgressao.Parameters.AddWithValue("@ID_PROGRESSAO", id_progressao);
+
+                objCmdProgressao.ExecuteNonQuery();
+
+                MySqlCommand objCmdPerguntaExpedicao = new MySqlCommand("delete from hypedb.pergunta_expedicao where ID_PERGUNTA_EXPEDICAO=@ID_PERGUNTA_EXPEDICAO", database.getConnection());
+                objCmdPerguntaExpedicao.Parameters.AddWithValue("@ID_PERGUNTA_EXPEDICAO", id_pergunta_expedicao);
+
+                objCmdPerguntaExpedicao.ExecuteNonQuery();
+
+                // EXCLUIR ALT
+                MySqlCommand objCmdCadastroAlt = new MySqlCommand("delete from hypedb.cadastro_alt where ID_ALT=@ID_ALT", database.getConnection());
+                objCmdCadastroAlt.Parameters.AddWithValue("@ID_ALT", id_alt);                
+
+                objCmdPerguntaExpedicao.ExecuteNonQuery();
+
+                MySqlCommand objCmdPerguntaAlt = new MySqlCommand("delete from hypedb.pergunta_alt where ID_PERGUNTA_ALT=@ID_PERGUNTA_ALT", database.getConnection());
+                objCmdPerguntaAlt.Parameters.AddWithValue("@ID_PERGUNTA_ALT", id_pergunta_alt);
+
+                objCmdPerguntaAlt.ExecuteNonQuery();
+
+                // SAIDA DO CLA
+                MySqlCommand objCmdSaidaCla = new MySqlCommand("insert into hypedb.saida_do_cla (id_saida_do_cla, data_saida, nick, level, poder, classe, patente, anotacao) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+                objCmdSaidaCla.Parameters.Add("@data_saida", MySqlDbType.Date).Value = DateTime.Now;
+                objCmdSaidaCla.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+                objCmdSaidaCla.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
+                objCmdSaidaCla.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+                objCmdSaidaCla.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
+                objCmdSaidaCla.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
+                objCmdSaidaCla.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = txt_motivo.Text;
+
+                objCmdSaidaCla.ExecuteNonQuery();
 
                 database.closeConnection();
 
@@ -204,6 +241,10 @@ namespace Hype.painel
             catch (Exception erro)
             {
                 MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                MessageBox.Show(id_pergunta_alt);
             }
         }
 
@@ -215,6 +256,19 @@ namespace Hype.painel
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
             BotaoCancelar();
+        }
+
+        private void CampoDesabilitado(Control.ControlCollection control)
+        {
+            foreach (Control c in control)
+            {
+                if (c is RJTextBox)
+                {
+                    ((RJTextBox)(c)).Enabled = false;
+                    ((RJTextBox)(c)).BackColor = Color.FromArgb(235, 235, 235);
+                }
+            }
+
         }
 
         private void conta_excluir_Load(object sender, EventArgs e)

@@ -16,7 +16,6 @@ namespace Hype.painel
     public partial class conta_principal : UserControl
     {
         string id_membro = string.Empty;
-        string id_alt = string.Empty;
         string id_pergunta_alt = string.Empty;
 
         public conta_principal()
@@ -55,9 +54,8 @@ namespace Hype.painel
 
                 objCmdCadastro_membros.ExecuteNonQuery();
 
-                MySqlCommand objCmdAlt2 = new MySqlCommand("update hypedb.cadastro_alt set nick_principal=@nick_principal where (ID_ALT=@ID_ALT) and (ID_PERGUNTA_ALT=@ID_PERGUNTA_ALT)", database.getConnection());
+                MySqlCommand objCmdAlt2 = new MySqlCommand("update hypedb.cadastro_alt set nick_principal=@nick_principal where (ID_PERGUNTA_ALT=@ID_PERGUNTA_ALT)", database.getConnection());
 
-                objCmdAlt2.Parameters.AddWithValue("@ID_ALT", id_alt);
                 objCmdAlt2.Parameters.AddWithValue("@ID_PERGUNTA_ALT", id_pergunta_alt);
                 objCmdAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;               
 

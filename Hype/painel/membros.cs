@@ -27,6 +27,7 @@ namespace Hype.painel
         public string foi_para_cla = "";
 
         public string id_pergunta_alt = "";
+        public string id_progressao = "";
         public string id_pergunta_expedicao = "";
         public string id_recrutamento = "";
 
@@ -131,6 +132,9 @@ namespace Hype.painel
 
                     id_membro = dr["ID_MEMBROS"].ToString();
                     id_pergunta_alt = dr["ID_PERGUNTA_ALT"].ToString();
+                    id_recrutamento = dr["ID_RECRUTAMENTO"].ToString();
+                    id_progressao = dr["ID_PROGRESSAO"].ToString();
+                    id_pergunta_expedicao = dr["ID_PERGUNTA_EXPEDICAO"].ToString();
 
                     data_entrada = ((DateTime)dr["DATA_ENTRADA"]).ToShortDateString();
                     nick = dr["NICK"].ToString();
@@ -170,7 +174,7 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.id, re.id, p.id, e.id, r.id, r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, p.PERGUNTA_ALT, e.PERGUNTA_EXPEDICAO, r.VEM_DO_CLA, r.FOI_PARA_CLA, re.ESTA_NO_CLA, re.VAI_PARA_CLA from hypedb.cadastro_membro c join hypedb.remanejamento re on re.ID = c.REMANEJAMENTO_ID join hypedb.pergunta_alt p on p.ID = c.PERGUNTA_ALT_ID join hypedb.pergunta_expedicao e on e.ID = c.PERGUNTA_EXPEDICAO_ID join hypedb.recrutamento r on r.ID = c.RECRUTAMENTO_ID where c.nick like @nick '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, pro.ID_PROGRESSAO, p.ID_PERGUNTA_ALT, e.ID_PERGUNTA_EXPEDICAO, r.ID_RECRUTAMENTO, r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, p.PERGUNTA_ALT, e.PERGUNTA_EXPEDICAO, r.VEM_DO_CLA, r.FOI_PARA_CLA from hypedb.cadastro_membro c join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO join hypedb.pergunta_alt p on p.ID_PERGUNTA_ALT = c.ID_PERGUNTA_ALT join hypedb.pergunta_expedicao e on e.ID_PERGUNTA_EXPEDICAO = c.ID_PERGUNTA_EXPEDICAO join hypedb.recrutamento r on r.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO where NICK like @nick '%' ", database.getConnection());
             cmd.Parameters.AddWithValue("@nick", txt_buscar.Texts);
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
