@@ -16,12 +16,12 @@ namespace Hype.painel
     public partial class conta_principal : UserControl
     {
         string id_membro = string.Empty;
-        string id_pergunta_alt = string.Empty;
+        string id_alt = string.Empty;
 
         public conta_principal()
         {
             InitializeComponent();
-            CampoTexto();
+            CampoTexto();            
         }
 
         private void bt_voltar_Click(object sender, EventArgs e)
@@ -54,14 +54,12 @@ namespace Hype.painel
 
                 objCmdCadastro_membros.ExecuteNonQuery();
 
-                MySqlCommand objCmdAlt2 = new MySqlCommand("update hypedb.cadastro_alt set nick_principal=@nick_principal where (ID_PERGUNTA_ALT=@ID_PERGUNTA_ALT)", database.getConnection());
+                MySqlCommand objCmdAlt2 = new MySqlCommand("update hypedb.cadastro_alt set nick_principal=@nick_principal where (ID_ALT=@ID_ALT)", database.getConnection());
 
-                objCmdAlt2.Parameters.AddWithValue("@ID_PERGUNTA_ALT", id_pergunta_alt);
+                objCmdAlt2.Parameters.AddWithValue("@ID_ALT", id_alt);
                 objCmdAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;               
 
                 objCmdAlt2.ExecuteNonQuery();
-
-                MessageBox.Show(id_pergunta_alt);
 
                 DialogResult dr = MessageBox.Show("Editado Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -73,7 +71,7 @@ namespace Hype.painel
             }
             finally
             {
-                TabelaCadastroMembros();
+                AtualizarTabelas();
             }            
         }
 
@@ -81,7 +79,7 @@ namespace Hype.painel
         {
             try
             {
-                TabelaCadastroMembros();
+                AtualizarTabelas();
             }
             catch (Exception erro)
             {
@@ -96,11 +94,22 @@ namespace Hype.painel
 
         private void bt_excluir_Click(object sender, EventArgs e)
         {
-            conta_excluir uc = new conta_excluir();
-            cla.Instance.addControl(uc);
+            try
+            {
+                conta_excluir uc = new conta_excluir();
+                cla.Instance.addControl(uc);
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                AtualizarTabelas();
+            }
         }
 
-        private void TabelaCadastroMembros()
+        private void AtualizarTabelas()
         {
             // BANCO DE DADOS
             configdb database = new configdb();
@@ -109,6 +118,10 @@ namespace Hype.painel
             MySqlCommand objCmdCadastro_membros = new MySqlCommand("select * from hypedb.cadastro_membro", database.getConnection());
 
             objCmdCadastro_membros.ExecuteNonQuery();
+
+            MySqlCommand objCmdCadastro_alt = new MySqlCommand("select * from hypedb.cadastro_alt", database.getConnection());
+
+            objCmdCadastro_alt.ExecuteNonQuery();
 
             database.closeConnection();
         }
@@ -123,6 +136,9 @@ namespace Hype.painel
             txt_poder.Texts = membros.Instance.poder;
             txt_patente.Text = membros.Instance.patente;
             txt_classe.Text = membros.Instance.classe;
+
+            // ALT
+            id_alt = membros.Instance.id_alt;
         }
 
         private void CampoTexto()

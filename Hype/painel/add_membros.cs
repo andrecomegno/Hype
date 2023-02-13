@@ -22,7 +22,6 @@ namespace Hype.painel
         int novoLevel = 0;
 
         string tem_alt = string.Empty;
-        string pergunta_expedicao = string.Empty;
 
         public add_membros()
         {
@@ -42,7 +41,7 @@ namespace Hype.painel
                 // INSERT TABELA PROGRESSAO
                 MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
 
-                objCmdProgressao.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+                objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
                 objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
                 objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
                 objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
@@ -79,7 +78,7 @@ namespace Hype.painel
                 // INSERT TABELA PROGRESSAO
                 MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
 
-                objCmdProgressao.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+                objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
                 objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
                 objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
                 objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
@@ -113,7 +112,7 @@ namespace Hype.painel
                 long idMembro = objCmdCadastroMembros.LastInsertedId;
 
                 // INSERT TABELA CADASTRO ALT 01
-                MySqlCommand objCmdCadastroAlt = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt, id_membros, id_recrutamento) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+                MySqlCommand objCmdCadastroAlt = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
                 objCmdCadastroAlt.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
                 objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_01.Texts;
@@ -122,8 +121,6 @@ namespace Hype.painel
                 objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_01.Texts;
                 objCmdCadastroAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                 objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
-                objCmdCadastroAlt.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = idMembro;
-                objCmdCadastroAlt.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
 
                 objCmdCadastroAlt.ExecuteNonQuery();
 
@@ -167,7 +164,7 @@ namespace Hype.painel
                 long idMembro = objCmdCadastroMembros.LastInsertedId;
 
                 // INSERT TABELA CADASTRO ALT 01
-                MySqlCommand objCmdCadastroAlt = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt, id_membros, id_recrutamento) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+                MySqlCommand objCmdCadastroAlt = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
                 objCmdCadastroAlt.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
                 objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_01.Texts;
@@ -176,13 +173,11 @@ namespace Hype.painel
                 objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_01.Texts;
                 objCmdCadastroAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                 objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
-                objCmdCadastroAlt.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = idMembro;
-                objCmdCadastroAlt.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
 
                 objCmdCadastroAlt.ExecuteNonQuery();
 
                 // INSERT TABELA CADASTRO ALT 02
-                MySqlCommand objCmdCadastroAlt2 = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt, id_membros, id_recrutamento) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+                MySqlCommand objCmdCadastroAlt2 = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
                 objCmdCadastroAlt2.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
                 objCmdCadastroAlt2.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_02.Texts;
@@ -191,8 +186,6 @@ namespace Hype.painel
                 objCmdCadastroAlt2.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_02.Texts;
                 objCmdCadastroAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                 objCmdCadastroAlt2.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
-                objCmdCadastroAlt2.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = idMembro;
-                objCmdCadastroAlt2.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
 
                 objCmdCadastroAlt2.ExecuteNonQuery();
             }         
