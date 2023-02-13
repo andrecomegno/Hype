@@ -115,8 +115,6 @@ namespace Hype.painel
 
         public void DadosMembros()
         {
-            id_pergunta_alt = membros.Instance.id_pergunta_alt;
-
             // CADASTRO
             id_membro = membros.Instance.id_membro;
             lb_data_entrada.Text = membros.Instance.data_entrada;

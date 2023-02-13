@@ -16,7 +16,9 @@ namespace Hype.painel
     public partial class conta_excluir : UserControl
     {
 
-        string id_membro = "";
+        private string verificar;
+
+        public string id_membro = "";
 
         public string id_alt = "";
         public string data_saida = "";
@@ -30,6 +32,8 @@ namespace Hype.painel
         public string id_pergunta_expedicao = "";
         public string id_recrutamento = "";
 
+        string teste = "";
+
         public conta_excluir()
         {
             InitializeComponent();
@@ -42,7 +46,6 @@ namespace Hype.painel
         {
             // CADASTRO
             //lb_data_saida.Text = DateTime.Now;  
-
             id_membro = membros.Instance.id_membro;
             txt_level.Texts = membros.Instance.level;
             txt_poder.Texts = membros.Instance.poder;
@@ -50,14 +53,12 @@ namespace Hype.painel
             txt_classe.Texts = membros.Instance.classe;
             txt_cla.Texts = membros.Instance.foi_para_cla;
 
-            id_pergunta_alt = membros.Instance.id_pergunta_alt;
             id_progressao = membros.Instance.id_progressao;
-            id_pergunta_expedicao = membros.Instance.id_pergunta_expedicao;
-            id_recrutamento = membros.Instance.id_recrutamento;
+            id_recrutamento = membros.Instance.id_recrutamento;         
 
         }
 
-        private void ListaAlts()
+        private void TabelaAlt()
         {
             configdb database = new configdb();
             database.openConnection();
@@ -143,6 +144,20 @@ namespace Hype.painel
             }
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["SELECIONAR"].Index)
+            {
+                //interrompe a edição
+                dataGridView1.EndEdit();
+
+                verificar = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+                //exibe os valores da célula quando clicada: verdadeiro (true) ou falso (false)
+                //MessageBox.Show("=> " + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() + verificar);
+            }
+        }
+
         private void BotaoVoltar()
         {
             conta_principal uc = new conta_principal();
@@ -190,6 +205,7 @@ namespace Hype.painel
                 configdb database = new configdb();
                 database.openConnection();
 
+                /*
                 // EXCLUIR CONTA PRINCIPAL
                 MySqlCommand objCmdCadastroMembro = new MySqlCommand("delete from hypedb.cadastro_membro where ID_MEMBROS=@ID_MEMBROS", database.getConnection());
                 objCmdCadastroMembro.Parameters.AddWithValue("@ID_MEMBROS", id_membro);
@@ -210,17 +226,24 @@ namespace Hype.painel
                 objCmdPerguntaExpedicao.Parameters.AddWithValue("@ID_PERGUNTA_EXPEDICAO", id_pergunta_expedicao);
 
                 objCmdPerguntaExpedicao.ExecuteNonQuery();
+                */
 
-                // EXCLUIR ALT
-                MySqlCommand objCmdCadastroAlt = new MySqlCommand("delete from hypedb.cadastro_alt where ID_ALT=@ID_ALT", database.getConnection());
-                objCmdCadastroAlt.Parameters.AddWithValue("@ID_ALT", id_alt);                
+                if(verificar == "True")
+                {
 
-                objCmdPerguntaExpedicao.ExecuteNonQuery();
+                    // EXCLUIR ALT
+                    MySqlCommand objCmdCadastroAlt = new MySqlCommand("delete from hypedb.cadastro_alt where ID_ALT=@ID_ALT", database.getConnection());
+                    objCmdCadastroAlt.Parameters.AddWithValue("@ID_ALT", teste);
 
-                MySqlCommand objCmdPerguntaAlt = new MySqlCommand("delete from hypedb.pergunta_alt where ID_PERGUNTA_ALT=@ID_PERGUNTA_ALT", database.getConnection());
-                objCmdPerguntaAlt.Parameters.AddWithValue("@ID_PERGUNTA_ALT", id_pergunta_alt);
+                    objCmdCadastroAlt.ExecuteNonQuery();
 
-                objCmdPerguntaAlt.ExecuteNonQuery();
+                    //MySqlCommand objCmdPerguntaAlt = new MySqlCommand("delete from hypedb.pergunta_alt where ID_PERGUNTA_ALT=@ID_PERGUNTA_ALT", database.getConnection());
+                    //objCmdPerguntaAlt.Parameters.AddWithValue("@ID_PERGUNTA_ALT", id_pergunta_alt);
+
+                    //objCmdPerguntaAlt.ExecuteNonQuery();
+                }
+
+
 
                 // SAIDA DO CLA
                 MySqlCommand objCmdSaidaCla = new MySqlCommand("insert into hypedb.saida_do_cla (id_saida_do_cla, data_saida, nick, level, poder, classe, patente, anotacao) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
@@ -236,15 +259,11 @@ namespace Hype.painel
 
                 database.closeConnection();
 
-                MostrarDadosTabela();
+                //MostrarDadosTabela();
             }
             catch (Exception erro)
             {
                 MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
-            }
-            finally
-            {
-                MessageBox.Show(id_pergunta_alt);
             }
         }
 
@@ -273,11 +292,13 @@ namespace Hype.painel
 
         private void conta_excluir_Load(object sender, EventArgs e)
         {
-            ListaAlts();
+            TabelaAlt();
             DadosMembros();
 
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;            
         }
+
+
     }
 }

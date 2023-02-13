@@ -17,7 +17,6 @@ namespace Hype.painel
         public static membros Instance;
 
         public string data_entrada = "";
-        public string id_membro = "";
         public string nick = "";
         public string level = "";
         public string poder = "";
@@ -26,9 +25,9 @@ namespace Hype.painel
         public string vem_do_cla = "";
         public string foi_para_cla = "";
 
-        public string id_pergunta_alt = "";
+        public string id_membro = "";
+        public string id_alt = "";
         public string id_progressao = "";
-        public string id_pergunta_expedicao = "";
         public string id_recrutamento = "";
 
         public membros()
@@ -60,7 +59,7 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, pro.ID_PROGRESSAO, p.ID_PERGUNTA_ALT, e.ID_PERGUNTA_EXPEDICAO, r.ID_RECRUTAMENTO, r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, p.PERGUNTA_ALT, e.PERGUNTA_EXPEDICAO, r.VEM_DO_CLA, r.FOI_PARA_CLA from hypedb.cadastro_membro c join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO join hypedb.pergunta_alt p on p.ID_PERGUNTA_ALT = c.ID_PERGUNTA_ALT join hypedb.pergunta_expedicao e on e.ID_PERGUNTA_EXPEDICAO = c.ID_PERGUNTA_EXPEDICAO join hypedb.recrutamento r on r.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select re.ID_RECRUTAMENTO, pro.ID_PROGRESSAO, alt.ID_ALT, c.ID_MEMBROS, re.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -77,22 +76,18 @@ namespace Hype.painel
 
         private void Tabela()
         {
-            dataGridView1.Columns[0].Visible = false; // ID_MEMBROS
+            dataGridView1.Columns[0].Visible = false; // ID_RECRUTAMENTO
             dataGridView1.Columns[1].Visible = false; // ID_PROGRESSAO
-            dataGridView1.Columns[2].Visible = false; // ID_PERGUNTA_ALT
-            dataGridView1.Columns[3].Visible = false; // ID_PERGUNTA_EXPEDICAO
-            dataGridView1.Columns[4].Visible = false; // ID_RECRUTAMENTO
-
-            dataGridView1.Columns[5].HeaderText = "DATA ENTRADA";
-            dataGridView1.Columns[6].HeaderText = "NICK";
-            dataGridView1.Columns[7].HeaderText = "LEVEL";
-            dataGridView1.Columns[8].HeaderText = "PODER";
-            dataGridView1.Columns[9].HeaderText = "CLASSE";
-            dataGridView1.Columns[10].HeaderText = "PATENTE";
-            dataGridView1.Columns[11].Visible = false; // pergunta alt
-            dataGridView1.Columns[12].Visible = false; // pergunta expedição
-            dataGridView1.Columns[13].Visible = false; // vem do cla
-            dataGridView1.Columns[14].Visible = false; // foi para o cla
+            dataGridView1.Columns[2].Visible = false; // ID_ALT
+            dataGridView1.Columns[3].Visible = false; // ID_MEMBROS
+            dataGridView1.Columns[4].HeaderText = "DATA ENTRADA";
+            dataGridView1.Columns[5].HeaderText = "NICK";
+            dataGridView1.Columns[6].HeaderText = "LEVEL";
+            dataGridView1.Columns[7].HeaderText = "PODER";
+            dataGridView1.Columns[8].HeaderText = "CLASSE";
+            dataGridView1.Columns[9].HeaderText = "PATENTE";
+            dataGridView1.Columns[10].Visible = false; // vem do cla
+            dataGridView1.Columns[11].Visible = false; // foi para o cla
 
             dataGridView1.Columns["DATA_ENTRADA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -131,10 +126,9 @@ namespace Hype.painel
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
 
                     id_membro = dr["ID_MEMBROS"].ToString();
-                    id_pergunta_alt = dr["ID_PERGUNTA_ALT"].ToString();
+                    id_alt = dr["ID_ALT"].ToString();
                     id_recrutamento = dr["ID_RECRUTAMENTO"].ToString();
                     id_progressao = dr["ID_PROGRESSAO"].ToString();
-                    id_pergunta_expedicao = dr["ID_PERGUNTA_EXPEDICAO"].ToString();
 
                     data_entrada = ((DateTime)dr["DATA_ENTRADA"]).ToShortDateString();
                     nick = dr["NICK"].ToString();
@@ -174,7 +168,7 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, pro.ID_PROGRESSAO, p.ID_PERGUNTA_ALT, e.ID_PERGUNTA_EXPEDICAO, r.ID_RECRUTAMENTO, r.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, p.PERGUNTA_ALT, e.PERGUNTA_EXPEDICAO, r.VEM_DO_CLA, r.FOI_PARA_CLA from hypedb.cadastro_membro c join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO join hypedb.pergunta_alt p on p.ID_PERGUNTA_ALT = c.ID_PERGUNTA_ALT join hypedb.pergunta_expedicao e on e.ID_PERGUNTA_EXPEDICAO = c.ID_PERGUNTA_EXPEDICAO join hypedb.recrutamento r on r.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO where NICK like @nick '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select re.ID_RECRUTAMENTO, pro.ID_PROGRESSAO, alt.ID_ALT, c.ID_MEMBROS, re.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO where NICK like @nick '%' ", database.getConnection());
             cmd.Parameters.AddWithValue("@nick", txt_buscar.Texts);
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
