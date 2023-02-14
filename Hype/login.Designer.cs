@@ -49,7 +49,7 @@ namespace Hype
             this.txt_versao.Name = "txt_versao";
             this.txt_versao.Size = new System.Drawing.Size(63, 13);
             this.txt_versao.TabIndex = 0;
-            this.txt_versao.Text = "V.  1.0.1a";
+            this.txt_versao.Text = "V.  1.0.2a";
             // 
             // bt_fechar
             // 

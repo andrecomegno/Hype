@@ -29,6 +29,8 @@ namespace Hype.painel
             Instance = this;
 
             txt_quantidade_alt.SelectedIndex = 0;
+            txt_classe.SelectedIndex = 0;
+            txt_patente.SelectedIndex = 0;
         }
 
         private void Cadastro()
@@ -93,8 +95,8 @@ namespace Hype.painel
             objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
             objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
             objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
+            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
             objCmdCadastroMembros.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
             objCmdCadastroMembros.Parameters.Add("@id_progressao", MySqlDbType.Int32).Value = idProgressao;
 
@@ -136,13 +138,12 @@ namespace Hype.painel
             objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
             objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
             objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
+            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
             objCmdCadastroMembros.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
             objCmdCadastroMembros.Parameters.Add("@id_progressao", MySqlDbType.Int32).Value = idProgressao;
 
             objCmdCadastroMembros.ExecuteNonQuery();
-            long idMembro = objCmdCadastroMembros.LastInsertedId;
 
             // INSERT TABELA CADASTRO ALT 01
             MySqlCommand objCmdCadastroAlt = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
@@ -150,10 +151,10 @@ namespace Hype.painel
             objCmdCadastroAlt.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
             objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_01.Texts;
             objCmdCadastroAlt.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_01.Texts;
-            objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Text;
+            objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Texts;
             objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_01.Texts;
             objCmdCadastroAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Texts;
 
             objCmdCadastroAlt.ExecuteNonQuery();
 
@@ -193,13 +194,12 @@ namespace Hype.painel
             objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
             objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
             objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
+            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
             objCmdCadastroMembros.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
             objCmdCadastroMembros.Parameters.Add("@id_progressao", MySqlDbType.Int32).Value = idProgressao;
 
             objCmdCadastroMembros.ExecuteNonQuery();
-            long idMembro = objCmdCadastroMembros.LastInsertedId;
 
             // INSERT TABELA CADASTRO ALT 01
             MySqlCommand objCmdCadastroAlt = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
@@ -207,10 +207,10 @@ namespace Hype.painel
             objCmdCadastroAlt.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
             objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_01.Texts;
             objCmdCadastroAlt.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_01.Texts;
-            objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Text;
+            objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Texts;
             objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_01.Texts;
             objCmdCadastroAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Texts;
 
             objCmdCadastroAlt.ExecuteNonQuery();
 
@@ -220,10 +220,10 @@ namespace Hype.painel
             objCmdCadastroAlt2.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
             objCmdCadastroAlt2.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_02.Texts;
             objCmdCadastroAlt2.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_02.Texts;
-            objCmdCadastroAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_02.Text;
+            objCmdCadastroAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_02.Texts;
             objCmdCadastroAlt2.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_02.Texts;
             objCmdCadastroAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroAlt2.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdCadastroAlt2.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Texts;
 
             objCmdCadastroAlt2.ExecuteNonQuery();
 
@@ -263,13 +263,12 @@ namespace Hype.painel
             objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
             objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
             objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
+            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
             objCmdCadastroMembros.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
             objCmdCadastroMembros.Parameters.Add("@id_progressao", MySqlDbType.Int32).Value = idProgressao;
 
             objCmdCadastroMembros.ExecuteNonQuery();
-            long idMembro = objCmdCadastroMembros.LastInsertedId;
 
             // INSERT TABELA CADASTRO ALT 01
             MySqlCommand objCmdCadastroAlt = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
@@ -277,10 +276,10 @@ namespace Hype.painel
             objCmdCadastroAlt.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
             objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_01.Texts;
             objCmdCadastroAlt.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_01.Texts;
-            objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Text;
+            objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Texts;
             objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_01.Texts;
             objCmdCadastroAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Texts;
 
             objCmdCadastroAlt.ExecuteNonQuery();
 
@@ -290,10 +289,10 @@ namespace Hype.painel
             objCmdCadastroAlt2.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
             objCmdCadastroAlt2.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_02.Texts;
             objCmdCadastroAlt2.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_02.Texts;
-            objCmdCadastroAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_02.Text;
+            objCmdCadastroAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_02.Texts;
             objCmdCadastroAlt2.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_02.Texts;
             objCmdCadastroAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroAlt2.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdCadastroAlt2.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Texts;
 
             objCmdCadastroAlt2.ExecuteNonQuery();
 
@@ -303,10 +302,10 @@ namespace Hype.painel
             objCmdCadastroAlt3.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
             objCmdCadastroAlt3.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_03.Texts;
             objCmdCadastroAlt3.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_03.Texts;
-            objCmdCadastroAlt3.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_03.Text;
+            objCmdCadastroAlt3.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_03.Texts;
             objCmdCadastroAlt3.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_03.Texts;
             objCmdCadastroAlt3.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroAlt3.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdCadastroAlt3.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Texts;
 
             objCmdCadastroAlt3.ExecuteNonQuery();
 
@@ -346,13 +345,12 @@ namespace Hype.painel
             objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
             objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
             objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
+            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
             objCmdCadastroMembros.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
             objCmdCadastroMembros.Parameters.Add("@id_progressao", MySqlDbType.Int32).Value = idProgressao;
 
             objCmdCadastroMembros.ExecuteNonQuery();
-            long idMembro = objCmdCadastroMembros.LastInsertedId;
 
             // INSERT TABELA CADASTRO ALT 01
             MySqlCommand objCmdCadastroAlt = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
@@ -360,10 +358,10 @@ namespace Hype.painel
             objCmdCadastroAlt.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
             objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_01.Texts;
             objCmdCadastroAlt.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_01.Texts;
-            objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Text;
+            objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Texts;
             objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_01.Texts;
             objCmdCadastroAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Texts;
 
             objCmdCadastroAlt.ExecuteNonQuery();
 
@@ -373,10 +371,10 @@ namespace Hype.painel
             objCmdCadastroAlt2.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
             objCmdCadastroAlt2.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_02.Texts;
             objCmdCadastroAlt2.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_02.Texts;
-            objCmdCadastroAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_02.Text;
+            objCmdCadastroAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_02.Texts;
             objCmdCadastroAlt2.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_02.Texts;
             objCmdCadastroAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroAlt2.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdCadastroAlt2.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Texts;
 
             objCmdCadastroAlt2.ExecuteNonQuery();
 
@@ -386,10 +384,10 @@ namespace Hype.painel
             objCmdCadastroAlt3.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
             objCmdCadastroAlt3.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_03.Texts;
             objCmdCadastroAlt3.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_03.Texts;
-            objCmdCadastroAlt3.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_03.Text;
+            objCmdCadastroAlt3.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_03.Texts;
             objCmdCadastroAlt3.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_03.Texts;
             objCmdCadastroAlt3.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroAlt3.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdCadastroAlt3.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Texts;
 
             objCmdCadastroAlt3.ExecuteNonQuery();
 
@@ -399,10 +397,10 @@ namespace Hype.painel
             objCmdCadastroAlt4.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
             objCmdCadastroAlt4.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_04.Texts;
             objCmdCadastroAlt4.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_04.Texts;
-            objCmdCadastroAlt4.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_04.Text;
+            objCmdCadastroAlt4.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_04.Texts;
             objCmdCadastroAlt4.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_04.Texts;
             objCmdCadastroAlt4.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroAlt4.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdCadastroAlt4.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Texts;
 
             objCmdCadastroAlt4.ExecuteNonQuery();
 
@@ -442,13 +440,12 @@ namespace Hype.painel
             objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
             objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
             objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
+            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
             objCmdCadastroMembros.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
             objCmdCadastroMembros.Parameters.Add("@id_progressao", MySqlDbType.Int32).Value = idProgressao;
 
             objCmdCadastroMembros.ExecuteNonQuery();
-            long idMembro = objCmdCadastroMembros.LastInsertedId;
 
             // INSERT TABELA CADASTRO ALT 01
             MySqlCommand objCmdCadastroAlt = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
@@ -456,10 +453,10 @@ namespace Hype.painel
             objCmdCadastroAlt.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
             objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_01.Texts;
             objCmdCadastroAlt.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_01.Texts;
-            objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Text;
+            objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Texts;
             objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_01.Texts;
             objCmdCadastroAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Texts;
 
             objCmdCadastroAlt.ExecuteNonQuery();
 
@@ -469,10 +466,10 @@ namespace Hype.painel
             objCmdCadastroAlt2.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
             objCmdCadastroAlt2.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_02.Texts;
             objCmdCadastroAlt2.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_02.Texts;
-            objCmdCadastroAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_02.Text;
+            objCmdCadastroAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_02.Texts;
             objCmdCadastroAlt2.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_02.Texts;
             objCmdCadastroAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroAlt2.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdCadastroAlt2.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Texts;
 
             objCmdCadastroAlt2.ExecuteNonQuery();
 
@@ -482,10 +479,10 @@ namespace Hype.painel
             objCmdCadastroAlt3.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
             objCmdCadastroAlt3.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_03.Texts;
             objCmdCadastroAlt3.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_03.Texts;
-            objCmdCadastroAlt3.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_03.Text;
+            objCmdCadastroAlt3.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_03.Texts;
             objCmdCadastroAlt3.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_03.Texts;
             objCmdCadastroAlt3.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroAlt3.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdCadastroAlt3.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Texts;
 
             objCmdCadastroAlt3.ExecuteNonQuery();
 
@@ -495,10 +492,10 @@ namespace Hype.painel
             objCmdCadastroAlt4.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
             objCmdCadastroAlt4.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_04.Texts;
             objCmdCadastroAlt4.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_04.Texts;
-            objCmdCadastroAlt4.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_04.Text;
+            objCmdCadastroAlt4.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_04.Texts;
             objCmdCadastroAlt4.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_04.Texts;
             objCmdCadastroAlt4.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroAlt4.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdCadastroAlt4.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Texts;
 
             objCmdCadastroAlt4.ExecuteNonQuery();
 
@@ -508,10 +505,10 @@ namespace Hype.painel
             objCmdCadastroAlt5.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
             objCmdCadastroAlt5.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_05.Texts;
             objCmdCadastroAlt5.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_05.Texts;
-            objCmdCadastroAlt5.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_05.Text;
+            objCmdCadastroAlt5.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_05.Texts;
             objCmdCadastroAlt5.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_05.Texts;
             objCmdCadastroAlt5.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdCadastroAlt5.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdCadastroAlt5.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Texts;
 
             objCmdCadastroAlt5.ExecuteNonQuery();
 
@@ -523,18 +520,11 @@ namespace Hype.painel
         {
             try
             {
-                Cadastro();                
-                DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Alertas();
             }
             catch (Exception erro)
             {
                 MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
-            }
-            finally
-            {
-                LimparCadastro();
-
-                rd_nao.Checked = true;
             }
         }
 
@@ -551,7 +541,6 @@ namespace Hype.painel
 
         private void bt_voltar_Click(object sender, EventArgs e)
         {
-
             try
             {
                 VoltarMembros();
@@ -561,11 +550,9 @@ namespace Hype.painel
             {
                 MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
             }
-
-
         }
 
-        public void LimparTextos(Control.ControlCollection control)
+        private void LimparTextoAlt(Control.ControlCollection control)
         {
             foreach (Control c in control)
             {
@@ -573,13 +560,26 @@ namespace Hype.painel
                 {
                     ((RJTextBox)(c)).Texts = string.Empty;
                 }
-            }
 
-            foreach (Control c in control)
-            {
                 if (c is RJComboBox)
                 {
                     ((RJComboBox)(c)).SelectedIndex = -1;
+                }
+            }
+        }
+
+        private void LimparTextoCadastro(Control.ControlCollection control)
+        {
+            foreach (Control c in control)
+            {
+                if (c is RJTextBox)
+                {
+                    ((RJTextBox)(c)).Texts = string.Empty;
+                }
+
+                if (c is RJComboBox)
+                {
+                    ((RJComboBox)(c)).SelectedIndex = 0;
                 }
             }
         }
@@ -595,14 +595,15 @@ namespace Hype.painel
 
         private void rd_nao_CheckedChanged(object sender, EventArgs e)
         {
+            
             txt_quantidade_alt.Enabled = false;
             txt_quantidade_alt.SelectedIndex = 0;
 
-            LimparTextos(pl_conta_alt_01.Controls);
-            LimparTextos(pl_conta_alt_02.Controls);
-            LimparTextos(pl_conta_alt_03.Controls);
-            LimparTextos(pl_conta_alt_04.Controls);
-            LimparTextos(pl_conta_alt_05.Controls);
+            LimparTextoAlt(pl_conta_alt_01.Controls);
+            LimparTextoAlt(pl_conta_alt_02.Controls);
+            LimparTextoAlt(pl_conta_alt_03.Controls);
+            LimparTextoAlt(pl_conta_alt_04.Controls);
+            LimparTextoAlt(pl_conta_alt_05.Controls);
 
             CampoTextoAltDesativado(this.pl_conta_alt_01.Controls);
 
@@ -614,13 +615,15 @@ namespace Hype.painel
             txt_quantidade_alt.Enabled = false;
             txt_quantidade_alt.SelectedIndex = 0;
 
-            LimparTextos(pl_conta_principal.Controls);
+            txt_patente.SelectedIndex = 0;
 
-            LimparTextos(pl_conta_alt_01.Controls);
-            LimparTextos(pl_conta_alt_02.Controls);
-            LimparTextos(pl_conta_alt_03.Controls);
-            LimparTextos(pl_conta_alt_04.Controls);
-            LimparTextos(pl_conta_alt_05.Controls);
+            LimparTextoCadastro(pl_conta_principal.Controls);
+
+            LimparTextoAlt(pl_conta_alt_01.Controls);
+            LimparTextoAlt(pl_conta_alt_02.Controls);
+            LimparTextoAlt(pl_conta_alt_03.Controls);
+            LimparTextoAlt(pl_conta_alt_04.Controls);
+            LimparTextoAlt(pl_conta_alt_05.Controls);
 
             CampoTextoAltDesativado(this.pl_conta_alt_01.Controls);
         }
@@ -702,11 +705,425 @@ namespace Hype.painel
                 {
                     ((RJComboBox)c).Enabled = true;
                     ((RJComboBox)c).BackColor = Color.White;
+                    ((RJComboBox)c).SelectedIndex = 0;
                 }
             }
         }
 
-        // PAINEIS DOS CADASTROS
+        #region CAMPO DO TEXTO EM BRANCO - ALERTAS
+        private void Alertas()
+        {
+            if (txt_quantidade_alt.SelectedIndex == 0)
+            {
+                // CADASTRO
+                if (String.IsNullOrEmpty(txt_nick.Texts))
+                {
+                    txt_nick.BorderColor = Color.Red;
+                    txt_nick.BorderSize = 1;
+                }
+                else if (String.IsNullOrEmpty(txt_level.Texts))
+                {
+                    txt_level.BorderColor = Color.Red;
+                    txt_level.BorderSize = 1;
+                }
+                else if (String.IsNullOrEmpty(txt_poder.Texts))
+                {
+                    txt_poder.BorderColor = Color.Red;
+                    txt_poder.BorderSize = 1;
+                }
+                else if (txt_classe.SelectedIndex == 0)
+                {
+                    txt_classe.BorderColor = Color.Red;
+                    txt_classe.BorderSize = 1;
+                }
+                else if (txt_patente.SelectedIndex == 0)
+                {
+                    txt_patente.BorderColor = Color.Red;
+                    txt_patente.BorderSize = 1;
+                }
+                else if (String.IsNullOrEmpty(txt_vem.Texts))
+                {
+                    txt_vem.BorderColor = Color.Red;
+                    txt_vem.BorderSize = 1;
+                }
+                else if (String.IsNullOrEmpty(txt_foi.Texts))
+                {
+                    txt_foi.BorderColor = Color.Red;
+                    txt_foi.BorderSize = 1;
+                }
+                else
+                {
+                    try
+                    {
+                        Cadastro();
+                        DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    finally
+                    {
+                        LimparCadastro();
+                        rd_nao.Checked = true;
+                    }
+                }
+            }
+
+            if (txt_quantidade_alt.SelectedIndex == 1)
+            {
+                // ALT 01
+                if (String.IsNullOrEmpty(txt_nick_alt_01.Texts))
+                {
+                    txt_nick_alt_01.BorderColor = Color.Red;
+                    txt_nick_alt_01.BorderSize = 1;
+                }
+                else if (String.IsNullOrEmpty(txt_level_alt_01.Texts))
+                {
+                    txt_level_alt_01.BorderColor = Color.Red;
+                    txt_level_alt_01.BorderSize = 1;
+                }
+                else if (txt_classe_alt_01.SelectedIndex == 0)
+                {
+                    txt_classe_alt_01.BorderColor = Color.Red;
+                    txt_classe_alt_01.BorderSize = 1;
+                }
+                else if (String.IsNullOrEmpty(txt_foi_alt_01.Texts))
+                {
+                    txt_foi_alt_01.BorderColor = Color.Red;
+                    txt_foi_alt_01.BorderSize = 1;
+                }
+                else
+                {
+                    try
+                    {
+                        Cadastro();
+                        DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    finally
+                    {
+                        LimparCadastro();
+                        rd_nao.Checked = true;
+                    }
+                }
+            }
+
+            if (txt_quantidade_alt.SelectedIndex == 2)
+            {
+                // ALT 02
+                if (String.IsNullOrEmpty(txt_nick_alt_02.Texts))
+                {
+                    txt_nick_alt_02.BorderColor = Color.Red;
+                    txt_nick_alt_02.BorderSize = 1;
+                }
+                else if (String.IsNullOrEmpty(txt_level_alt_02.Texts))
+                {
+                    txt_level_alt_02.BorderColor = Color.Red;
+                    txt_level_alt_02.BorderSize = 1;
+                }
+                else if (txt_classe_alt_02.SelectedIndex == 0)
+                {
+                    txt_classe_alt_02.BorderColor = Color.Red;
+                    txt_classe_alt_02.BorderSize = 1;
+                }
+                else if (String.IsNullOrEmpty(txt_foi_alt_02.Texts))
+                {
+                    txt_foi_alt_02.BorderColor = Color.Red;
+                    txt_foi_alt_02.BorderSize = 1;
+                }
+                else
+                {
+                    try
+                    {
+                        Cadastro();
+                        DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    finally
+                    {
+                        LimparCadastro();
+                        rd_nao.Checked = true;
+                    }
+                }
+            }
+
+            if (txt_quantidade_alt.SelectedIndex == 3)
+            {
+                // ALT 03
+                if (String.IsNullOrEmpty(txt_nick_alt_03.Texts))
+                {
+                    txt_nick_alt_03.BorderColor = Color.Red;
+                    txt_nick_alt_03.BorderSize = 1;
+                }
+                else if (String.IsNullOrEmpty(txt_level_alt_03.Texts))
+                {
+                    txt_level_alt_03.BorderColor = Color.Red;
+                    txt_level_alt_03.BorderSize = 1;
+                }
+                else if (txt_classe_alt_03.SelectedIndex == 0)
+                {
+                    txt_classe_alt_03.BorderColor = Color.Red;
+                    txt_classe_alt_03.BorderSize = 1;
+                }
+                else if (String.IsNullOrEmpty(txt_foi_alt_03.Texts))
+                {
+                    txt_foi_alt_03.BorderColor = Color.Red;
+                    txt_foi_alt_03.BorderSize = 1;
+                }
+                else
+                {
+                    try
+                    {
+                        Cadastro();
+                        DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    finally
+                    {
+                        LimparCadastro();
+                        rd_nao.Checked = true;
+                    }
+                }
+            }
+
+            if (txt_quantidade_alt.SelectedIndex == 4)
+            {
+            
+                // ALT 04
+                if (String.IsNullOrEmpty(txt_nick_alt_04.Texts))
+                {
+                    txt_nick_alt_04.BorderColor = Color.Red;
+                    txt_nick_alt_04.BorderSize = 1;
+                }
+                else if (String.IsNullOrEmpty(txt_level_alt_04.Texts))
+                {
+                    txt_level_alt_04.BorderColor = Color.Red;
+                    txt_level_alt_04.BorderSize = 1;
+                }
+                else if (txt_classe_alt_04.SelectedIndex == 0)
+                {
+                    txt_classe_alt_04.BorderColor = Color.Red;
+                    txt_classe_alt_04.BorderSize = 1;
+                }
+                else if (String.IsNullOrEmpty(txt_foi_alt_04.Texts))
+                {
+                    txt_foi_alt_04.BorderColor = Color.Red;
+                    txt_foi_alt_04.BorderSize = 1;
+                }
+                else
+                {
+                    try
+                    {
+                        Cadastro();
+                        DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    finally
+                    {
+                        LimparCadastro();
+                        rd_nao.Checked = true;
+                    }
+                }
+            }
+
+            if (txt_quantidade_alt.SelectedIndex == 5)
+            {
+                // ALT 05
+                if (String.IsNullOrEmpty(txt_nick_alt_05.Texts))
+                {
+                    txt_nick_alt_05.BorderColor = Color.Red;
+                    txt_nick_alt_05.BorderSize = 1;
+                }
+                else if (String.IsNullOrEmpty(txt_level_alt_05.Texts))
+                {
+                    txt_level_alt_05.BorderColor = Color.Red;
+                    txt_level_alt_05.BorderSize = 1;
+                }
+                else if (txt_classe_alt_05.SelectedIndex == 0)
+                {
+                    txt_classe_alt_05.BorderColor = Color.Red;
+                    txt_classe_alt_05.BorderSize = 1;
+                }
+                else if (String.IsNullOrEmpty(txt_foi_alt_05.Texts))
+                {
+                    txt_foi_alt_05.BorderColor = Color.Red;
+                    txt_foi_alt_05.BorderSize = 1;
+                }
+                else
+                {
+                    try
+                    {
+                        Cadastro();
+                        DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    finally
+                    {
+                        LimparCadastro();
+                        rd_nao.Checked = true;
+                    }
+                }
+            }
+        }
+
+        // Campo Texto Normal
+        private void txt_nick_Leave(object sender, EventArgs e)
+        {
+            txt_nick.BorderColor = Color.Transparent;
+            txt_nick.BorderSize = 0;
+        }
+
+        private void txt_level_Leave(object sender, EventArgs e)
+        {
+            txt_level.BorderColor = Color.Transparent;
+            txt_level.BorderSize = 0;
+        }
+
+        private void txt_poder_Leave(object sender, EventArgs e)
+        {
+            txt_poder.BorderColor = Color.Transparent;
+            txt_poder.BorderSize = 0;
+        }
+
+        private void txt_classe_Leave(object sender, EventArgs e)
+        {
+            txt_classe.BorderColor = Color.Transparent;
+            txt_classe.BorderSize = 0;
+        }
+
+        private void txt_patente_Leave(object sender, EventArgs e)
+        {
+            txt_patente.BorderColor = Color.Transparent;
+            txt_patente.BorderSize = 0;
+        }
+
+        private void txt_vem_Leave(object sender, EventArgs e)
+        {
+            txt_vem.BorderColor = Color.Transparent;
+            txt_vem.BorderSize = 0;
+        }
+
+        private void txt_foi_Leave(object sender, EventArgs e)
+        {
+            txt_foi.BorderColor = Color.Transparent;
+            txt_foi.BorderSize = 0;
+        }
+
+        private void txt_nick_alt_01_Leave(object sender, EventArgs e)
+        {
+            txt_nick_alt_01.BorderColor = Color.Transparent;
+            txt_nick_alt_01.BorderSize = 0;
+        }
+
+        private void txt_level_alt_01_Leave(object sender, EventArgs e)
+        {
+            txt_level_alt_01.BorderColor = Color.Transparent;
+            txt_level_alt_01.BorderSize = 0;
+        }
+
+        private void txt_classe_alt_01_Leave(object sender, EventArgs e)
+        {
+            txt_classe_alt_01.BorderColor = Color.Transparent;
+            txt_classe_alt_01.BorderSize = 0;
+        }
+
+        private void txt_foi_alt_01_Leave(object sender, EventArgs e)
+        {
+            txt_foi_alt_01.BorderColor = Color.Transparent;
+            txt_foi_alt_01.BorderSize = 0;
+        }
+
+        private void txt_nick_alt_02_Leave(object sender, EventArgs e)
+        {
+            txt_nick_alt_02.BorderColor = Color.Transparent;
+            txt_nick_alt_02.BorderSize = 0;
+        }
+
+        private void txt_level_alt_02_Leave(object sender, EventArgs e)
+        {
+            txt_level_alt_02.BorderColor = Color.Transparent;
+            txt_level_alt_02.BorderSize = 0;
+        }
+
+        private void txt_classe_alt_02_Leave(object sender, EventArgs e)
+        {
+            txt_classe_alt_02.BorderColor = Color.Transparent;
+            txt_classe_alt_02.BorderSize = 0;
+        }
+
+        private void txt_foi_alt_02_Leave(object sender, EventArgs e)
+        {
+            txt_foi_alt_02.BorderColor = Color.Transparent;
+            txt_foi_alt_02.BorderSize = 0;
+        }
+
+        private void txt_nick_alt_03_Leave(object sender, EventArgs e)
+        {
+            txt_nick_alt_03.BorderColor = Color.Transparent;
+            txt_nick_alt_03.BorderSize = 0;
+        }
+
+        private void txt_level_alt_03_Leave(object sender, EventArgs e)
+        {
+            txt_level_alt_03.BorderColor = Color.Transparent;
+            txt_level_alt_03.BorderSize = 0;
+        }
+
+        private void txt_classe_alt_03_Leave(object sender, EventArgs e)
+        {
+            txt_classe_alt_03.BorderColor = Color.Transparent;
+            txt_classe_alt_03.BorderSize = 0;
+        }
+
+        private void txt_foi_alt_03_Leave(object sender, EventArgs e)
+        {
+            txt_foi_alt_03.BorderColor = Color.Transparent;
+            txt_foi_alt_03.BorderSize = 0;
+        }
+
+        private void txt_nick_alt_04_Leave(object sender, EventArgs e)
+        {
+            txt_nick_alt_04.BorderColor = Color.Transparent;
+            txt_nick_alt_04.BorderSize = 0;
+        }
+
+        private void txt_level_alt_04_Leave(object sender, EventArgs e)
+        {
+            txt_level_alt_04.BorderColor = Color.Transparent;
+            txt_level_alt_04.BorderSize = 0;
+        }
+
+        private void txt_classe_alt_04_Leave(object sender, EventArgs e)
+        {
+            txt_classe_alt_04.BorderColor = Color.Transparent;
+            txt_classe_alt_04.BorderSize = 0;
+        }
+
+        private void txt_foi_alt_04_Leave(object sender, EventArgs e)
+        {
+            txt_foi_alt_04.BorderColor = Color.Transparent;
+            txt_foi_alt_04.BorderSize = 0;
+        }
+
+        private void txt_nick_alt_05_Leave(object sender, EventArgs e)
+        {
+            txt_nick_alt_05.BorderColor = Color.Transparent;
+            txt_nick_alt_05.BorderSize = 0;
+        }
+
+        private void txt_level_alt_05_Leave(object sender, EventArgs e)
+        {
+            txt_level_alt_05.BorderColor = Color.Transparent;
+            txt_level_alt_05.BorderSize = 0;
+        }
+
+        private void txt_classe_alt_05_Leave(object sender, EventArgs e)
+        {
+            txt_classe_alt_05.BorderColor = Color.Transparent;
+            txt_classe_alt_05.BorderSize = 0;
+        }
+
+        private void txt_foi_alt_05_Leave(object sender, EventArgs e)
+        {
+            txt_foi_alt_05.BorderColor = Color.Transparent;
+            txt_foi_alt_05.BorderSize = 0;
+        }
+
+        #endregion
+
+        #region PAINEIS DOS CADASTROS
         private void PainelAlt_00()
         {
             PainelContaALT();
@@ -821,5 +1238,8 @@ namespace Hype.painel
             CampoTextoAltHabilitado(this.pl_conta_alt_04.Controls);
             CampoTextoAltHabilitado(this.pl_conta_alt_05.Controls);
         }
+        #endregion
+
+
     }
 }
