@@ -35,6 +35,7 @@ namespace Hype.painel
 
             // PALAVRA CHAVE PARA BUSCAR ALT
             txt_nick.Texts = membros.Instance.nick;
+
         }
 
         public void DadosMembros()
@@ -67,7 +68,7 @@ namespace Hype.painel
 
                 dataGridView1.DataSource = dt;
             }
-
+            
             database.closeConnection();
 
             Tabela();
@@ -88,6 +89,7 @@ namespace Hype.painel
             dataGridView1.Columns[5].ReadOnly = true;
             dataGridView1.Columns[6].ReadOnly = true;
 
+            // ADICIONA A CAIXA DE SELECAO NA TABELA 
             DataGridViewCheckBoxColumn selecionar = new DataGridViewCheckBoxColumn();
             selecionar.Name = "SELECIONAR";
             selecionar.DataPropertyName = "SELECIONAR";
@@ -124,17 +126,17 @@ namespace Hype.painel
                 // EXIBE OS VALORES DA CELULA VERDADEIRO OU FASO
                 verificar = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-                if(verificar == "True")
+                // VERIFICA SE A CAIXA DE SELEÇÃO FOI SELECIONADA
+                if (verificar == "True")
                 {
                     MostrarDadosTabela();
-
-                    //MessageBox.Show(id_alt);
                 }
 
                 //MessageBox.Show("" + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
         }
 
+        // SETA O ID DA ALT 
         private void MostrarDadosTabela()
         {
             try
@@ -188,8 +190,7 @@ namespace Hype.painel
             }
             finally
             {
-                // BotaoCancelar();
-                TabelaMembrosAlt();
+                BotaoCancelar();                
             }
         }
 
@@ -198,7 +199,6 @@ namespace Hype.painel
             configdb database = new configdb();
             database.openConnection();
 
-
             try
             {
                 // EXCLUIR CONTA PRINCIPAL
@@ -206,7 +206,6 @@ namespace Hype.painel
                 objCmdRecrutamento.Parameters.AddWithValue("@ID_RECRUTAMENTO", id_recrutamento);
 
                 objCmdRecrutamento.ExecuteNonQuery();
-                long IdRecrutamento = objCmdRecrutamento.LastInsertedId;
 
                 MySqlCommand objCmdProgressao = new MySqlCommand("delete from hypedb.progressao where ID_PROGRESSAO=@ID_PROGRESSAO", database.getConnection());
                 objCmdProgressao.Parameters.AddWithValue("@ID_PROGRESSAO", id_progressao);
@@ -228,21 +227,15 @@ namespace Hype.painel
                 objCmdSaidaCla.ExecuteNonQuery();
                 */
 
-
+                // VERIFICA SE A CAIXA DE SELEÇÃO FOI SELECIONADA
                 if (verificar == "True")
                 {
-
                     // EXCLUIR ALT
                     MySqlCommand objCmdCadastroAlt = new MySqlCommand("delete from hypedb.cadastro_alt where ID_ALT=@ID_ALT", database.getConnection());
                     objCmdCadastroAlt.Parameters.AddWithValue("@ID_ALT", id_alt);
 
                     objCmdCadastroAlt.ExecuteNonQuery();
-
-                    MessageBox.Show(id_alt);
                 }
-
-
-
 
             }
             catch (Exception erro)

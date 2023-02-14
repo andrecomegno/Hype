@@ -57,13 +57,13 @@ namespace Hype.painel
             this.panel1.Size = new System.Drawing.Size(200, 100);
             this.panel1.TabIndex = 0;
             // 
-            // painel
+            // inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "painel";
+            this.Name = "inicio";
             this.Size = new System.Drawing.Size(1200, 720);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

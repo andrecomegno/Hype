@@ -29,10 +29,10 @@ namespace Hype.painel
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pl_conta_excluir = new System.Windows.Forms.Panel();
             this.pl_conteudo_03 = new System.Windows.Forms.Panel();
             this.txt_motivo = new System.Windows.Forms.TextBox();
@@ -45,25 +45,25 @@ namespace Hype.painel
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pl_espaco_02 = new System.Windows.Forms.Panel();
             this.pl_conteudo_01 = new System.Windows.Forms.Panel();
+            this.txt_patente = new Hype.painel.RJTextBox();
+            this.txt_classe = new Hype.painel.RJTextBox();
             this.lb_conta_principal = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.txt_cla = new Hype.painel.RJTextBox();
+            this.txt_level = new Hype.painel.RJTextBox();
             this.lb_poder = new System.Windows.Forms.Label();
+            this.txt_poder = new Hype.painel.RJTextBox();
             this.lb_level = new System.Windows.Forms.Label();
             this.lb_nick = new System.Windows.Forms.Label();
             this.lb_patente = new System.Windows.Forms.Label();
+            this.txt_nick = new Hype.painel.RJTextBox();
             this.lb_classe = new System.Windows.Forms.Label();
             this.pl_espaco_01 = new System.Windows.Forms.Panel();
             this.pl_top = new System.Windows.Forms.Panel();
-            this.bt_voltar = new System.Windows.Forms.Button();
             this.txt_data_saida = new System.Windows.Forms.Label();
             this.lb_data_saida = new System.Windows.Forms.Label();
             this.lb_titulo = new System.Windows.Forms.Label();
-            this.txt_patente = new Hype.painel.RJTextBox();
-            this.txt_classe = new Hype.painel.RJTextBox();
-            this.txt_cla = new Hype.painel.RJTextBox();
-            this.txt_level = new Hype.painel.RJTextBox();
-            this.txt_poder = new Hype.painel.RJTextBox();
-            this.txt_nick = new Hype.painel.RJTextBox();
+            this.bt_voltar = new System.Windows.Forms.Button();
             this.pl_conta_excluir.SuspendLayout();
             this.pl_conteudo_03.SuspendLayout();
             this.pl_conteudo_02.SuspendLayout();
@@ -77,7 +77,7 @@ namespace Hype.painel
             this.pl_conta_excluir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pl_conta_excluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.pl_conta_excluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.pl_conta_excluir.Controls.Add(this.pl_conteudo_03);
             this.pl_conta_excluir.Controls.Add(this.pl_espaco_03);
             this.pl_conta_excluir.Controls.Add(this.pl_conteudo_02);
@@ -92,7 +92,7 @@ namespace Hype.painel
             // 
             // pl_conteudo_03
             // 
-            this.pl_conteudo_03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
+            this.pl_conteudo_03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.pl_conteudo_03.Controls.Add(this.txt_motivo);
             this.pl_conteudo_03.Controls.Add(this.bt_excluir);
             this.pl_conteudo_03.Controls.Add(this.bt_cancelar);
@@ -162,7 +162,7 @@ namespace Hype.painel
             // 
             // pl_espaco_03
             // 
-            this.pl_espaco_03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.pl_espaco_03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.pl_espaco_03.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_espaco_03.Location = new System.Drawing.Point(0, 452);
             this.pl_espaco_03.Name = "pl_espaco_03";
@@ -171,7 +171,7 @@ namespace Hype.painel
             // 
             // pl_conteudo_02
             // 
-            this.pl_conteudo_02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
+            this.pl_conteudo_02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.pl_conteudo_02.Controls.Add(this.lb_conta_alt);
             this.pl_conteudo_02.Controls.Add(this.dataGridView1);
             this.pl_conteudo_02.Dock = System.Windows.Forms.DockStyle.Top;
@@ -202,42 +202,42 @@ namespace Hype.painel
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridView1.ColumnHeadersHeight = 50;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
             this.dataGridView1.Location = new System.Drawing.Point(237, 45);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
@@ -249,7 +249,7 @@ namespace Hype.painel
             // 
             // pl_espaco_02
             // 
-            this.pl_espaco_02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.pl_espaco_02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.pl_espaco_02.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_espaco_02.Location = new System.Drawing.Point(0, 197);
             this.pl_espaco_02.Name = "pl_espaco_02";
@@ -258,7 +258,7 @@ namespace Hype.painel
             // 
             // pl_conteudo_01
             // 
-            this.pl_conteudo_01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
+            this.pl_conteudo_01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.pl_conteudo_01.Controls.Add(this.txt_patente);
             this.pl_conteudo_01.Controls.Add(this.txt_classe);
             this.pl_conteudo_01.Controls.Add(this.lb_conta_principal);
@@ -277,166 +277,6 @@ namespace Hype.painel
             this.pl_conteudo_01.Name = "pl_conteudo_01";
             this.pl_conteudo_01.Size = new System.Drawing.Size(1172, 114);
             this.pl_conteudo_01.TabIndex = 64;
-            // 
-            // lb_conta_principal
-            // 
-            this.lb_conta_principal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_conta_principal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_conta_principal.ForeColor = System.Drawing.Color.White;
-            this.lb_conta_principal.Location = new System.Drawing.Point(3, 3);
-            this.lb_conta_principal.Name = "lb_conta_principal";
-            this.lb_conta_principal.Size = new System.Drawing.Size(1166, 31);
-            this.lb_conta_principal.TabIndex = 246;
-            this.lb_conta_principal.Text = "CONTA PRINCIPAL";
-            this.lb_conta_principal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(826, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 17);
-            this.label4.TabIndex = 245;
-            this.label4.Text = "Clã";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_poder
-            // 
-            this.lb_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_poder.ForeColor = System.Drawing.Color.White;
-            this.lb_poder.Location = new System.Drawing.Point(435, 44);
-            this.lb_poder.Name = "lb_poder";
-            this.lb_poder.Size = new System.Drawing.Size(120, 17);
-            this.lb_poder.TabIndex = 240;
-            this.lb_poder.Text = "Poder";
-            this.lb_poder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_level
-            // 
-            this.lb_level.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_level.ForeColor = System.Drawing.Color.White;
-            this.lb_level.Location = new System.Drawing.Point(360, 44);
-            this.lb_level.Name = "lb_level";
-            this.lb_level.Size = new System.Drawing.Size(68, 17);
-            this.lb_level.TabIndex = 239;
-            this.lb_level.Text = "Level";
-            this.lb_level.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_nick
-            // 
-            this.lb_nick.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_nick.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_nick.ForeColor = System.Drawing.Color.White;
-            this.lb_nick.Location = new System.Drawing.Point(160, 44);
-            this.lb_nick.Name = "lb_nick";
-            this.lb_nick.Size = new System.Drawing.Size(162, 17);
-            this.lb_nick.TabIndex = 237;
-            this.lb_nick.Text = "Nick";
-            this.lb_nick.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_patente
-            // 
-            this.lb_patente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_patente.ForeColor = System.Drawing.Color.White;
-            this.lb_patente.Location = new System.Drawing.Point(690, 44);
-            this.lb_patente.Name = "lb_patente";
-            this.lb_patente.Size = new System.Drawing.Size(130, 17);
-            this.lb_patente.TabIndex = 236;
-            this.lb_patente.Text = "Patente";
-            this.lb_patente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_classe
-            // 
-            this.lb_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_classe.ForeColor = System.Drawing.Color.White;
-            this.lb_classe.Location = new System.Drawing.Point(563, 44);
-            this.lb_classe.Name = "lb_classe";
-            this.lb_classe.Size = new System.Drawing.Size(119, 17);
-            this.lb_classe.TabIndex = 235;
-            this.lb_classe.Text = "Classe";
-            this.lb_classe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pl_espaco_01
-            // 
-            this.pl_espaco_01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            this.pl_espaco_01.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_espaco_01.Location = new System.Drawing.Point(0, 73);
-            this.pl_espaco_01.Name = "pl_espaco_01";
-            this.pl_espaco_01.Size = new System.Drawing.Size(1172, 10);
-            this.pl_espaco_01.TabIndex = 77;
-            // 
-            // pl_top
-            // 
-            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            this.pl_top.Controls.Add(this.bt_voltar);
-            this.pl_top.Controls.Add(this.txt_data_saida);
-            this.pl_top.Controls.Add(this.lb_data_saida);
-            this.pl_top.Controls.Add(this.lb_titulo);
-            this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_top.Location = new System.Drawing.Point(0, 0);
-            this.pl_top.Name = "pl_top";
-            this.pl_top.Size = new System.Drawing.Size(1172, 73);
-            this.pl_top.TabIndex = 76;
-            // 
-            // bt_voltar
-            // 
-            this.bt_voltar.BackColor = System.Drawing.Color.Gray;
-            this.bt_voltar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_voltar.FlatAppearance.BorderSize = 0;
-            this.bt_voltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_voltar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_voltar.ForeColor = System.Drawing.Color.White;
-            this.bt_voltar.Location = new System.Drawing.Point(8, 7);
-            this.bt_voltar.Name = "bt_voltar";
-            this.bt_voltar.Size = new System.Drawing.Size(102, 36);
-            this.bt_voltar.TabIndex = 59;
-            this.bt_voltar.Text = "Voltar";
-            this.bt_voltar.UseVisualStyleBackColor = false;
-            this.bt_voltar.Click += new System.EventHandler(this.bt_voltar_Click);
-            // 
-            // txt_data_saida
-            // 
-            this.txt_data_saida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_data_saida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_data_saida.ForeColor = System.Drawing.Color.White;
-            this.txt_data_saida.Location = new System.Drawing.Point(1037, 6);
-            this.txt_data_saida.Name = "txt_data_saida";
-            this.txt_data_saida.Size = new System.Drawing.Size(132, 17);
-            this.txt_data_saida.TabIndex = 73;
-            this.txt_data_saida.Text = "Data da Saída";
-            this.txt_data_saida.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_data_saida
-            // 
-            this.lb_data_saida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_data_saida.AutoSize = true;
-            this.lb_data_saida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_data_saida.ForeColor = System.Drawing.Color.White;
-            this.lb_data_saida.Location = new System.Drawing.Point(1054, 23);
-            this.lb_data_saida.Name = "lb_data_saida";
-            this.lb_data_saida.Size = new System.Drawing.Size(99, 20);
-            this.lb_data_saida.TabIndex = 70;
-            this.lb_data_saida.Text = "00/00/0000";
-            // 
-            // lb_titulo
-            // 
-            this.lb_titulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_titulo.ForeColor = System.Drawing.Color.White;
-            this.lb_titulo.Location = new System.Drawing.Point(-1, 6);
-            this.lb_titulo.Name = "lb_titulo";
-            this.lb_titulo.Size = new System.Drawing.Size(1166, 31);
-            this.lb_titulo.TabIndex = 96;
-            this.lb_titulo.Text = "EXCLUIR CONTA";
-            this.lb_titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_patente
             // 
@@ -483,6 +323,31 @@ namespace Hype.painel
             this.txt_classe.TabIndex = 247;
             this.txt_classe.Texts = "";
             this.txt_classe.UnderlinedStyle = false;
+            // 
+            // lb_conta_principal
+            // 
+            this.lb_conta_principal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_conta_principal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_conta_principal.ForeColor = System.Drawing.Color.White;
+            this.lb_conta_principal.Location = new System.Drawing.Point(3, 3);
+            this.lb_conta_principal.Name = "lb_conta_principal";
+            this.lb_conta_principal.Size = new System.Drawing.Size(1166, 31);
+            this.lb_conta_principal.TabIndex = 246;
+            this.lb_conta_principal.Text = "CONTA PRINCIPAL";
+            this.lb_conta_principal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(826, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(194, 17);
+            this.label4.TabIndex = 245;
+            this.label4.Text = "Clã";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_cla
             // 
@@ -531,6 +396,18 @@ namespace Hype.painel
             this.txt_level.Texts = "";
             this.txt_level.UnderlinedStyle = false;
             // 
+            // lb_poder
+            // 
+            this.lb_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_poder.ForeColor = System.Drawing.Color.White;
+            this.lb_poder.Location = new System.Drawing.Point(435, 44);
+            this.lb_poder.Name = "lb_poder";
+            this.lb_poder.Size = new System.Drawing.Size(120, 17);
+            this.lb_poder.TabIndex = 240;
+            this.lb_poder.Text = "Poder";
+            this.lb_poder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // txt_poder
             // 
             this.txt_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -553,6 +430,42 @@ namespace Hype.painel
             this.txt_poder.TabIndex = 238;
             this.txt_poder.Texts = "";
             this.txt_poder.UnderlinedStyle = false;
+            // 
+            // lb_level
+            // 
+            this.lb_level.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_level.ForeColor = System.Drawing.Color.White;
+            this.lb_level.Location = new System.Drawing.Point(360, 44);
+            this.lb_level.Name = "lb_level";
+            this.lb_level.Size = new System.Drawing.Size(68, 17);
+            this.lb_level.TabIndex = 239;
+            this.lb_level.Text = "Level";
+            this.lb_level.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_nick
+            // 
+            this.lb_nick.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_nick.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nick.ForeColor = System.Drawing.Color.White;
+            this.lb_nick.Location = new System.Drawing.Point(160, 44);
+            this.lb_nick.Name = "lb_nick";
+            this.lb_nick.Size = new System.Drawing.Size(162, 17);
+            this.lb_nick.TabIndex = 237;
+            this.lb_nick.Text = "Nick";
+            this.lb_nick.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_patente
+            // 
+            this.lb_patente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_patente.ForeColor = System.Drawing.Color.White;
+            this.lb_patente.Location = new System.Drawing.Point(690, 44);
+            this.lb_patente.Name = "lb_patente";
+            this.lb_patente.Size = new System.Drawing.Size(130, 17);
+            this.lb_patente.TabIndex = 236;
+            this.lb_patente.Text = "Patente";
+            this.lb_patente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_nick
             // 
@@ -577,11 +490,98 @@ namespace Hype.painel
             this.txt_nick.Texts = "";
             this.txt_nick.UnderlinedStyle = false;
             // 
+            // lb_classe
+            // 
+            this.lb_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_classe.ForeColor = System.Drawing.Color.White;
+            this.lb_classe.Location = new System.Drawing.Point(563, 44);
+            this.lb_classe.Name = "lb_classe";
+            this.lb_classe.Size = new System.Drawing.Size(119, 17);
+            this.lb_classe.TabIndex = 235;
+            this.lb_classe.Text = "Classe";
+            this.lb_classe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pl_espaco_01
+            // 
+            this.pl_espaco_01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_espaco_01.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_espaco_01.Location = new System.Drawing.Point(0, 73);
+            this.pl_espaco_01.Name = "pl_espaco_01";
+            this.pl_espaco_01.Size = new System.Drawing.Size(1172, 10);
+            this.pl_espaco_01.TabIndex = 77;
+            // 
+            // pl_top
+            // 
+            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_top.Controls.Add(this.bt_voltar);
+            this.pl_top.Controls.Add(this.txt_data_saida);
+            this.pl_top.Controls.Add(this.lb_data_saida);
+            this.pl_top.Controls.Add(this.lb_titulo);
+            this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_top.Location = new System.Drawing.Point(0, 0);
+            this.pl_top.Name = "pl_top";
+            this.pl_top.Size = new System.Drawing.Size(1172, 73);
+            this.pl_top.TabIndex = 76;
+            // 
+            // txt_data_saida
+            // 
+            this.txt_data_saida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_data_saida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_data_saida.ForeColor = System.Drawing.Color.White;
+            this.txt_data_saida.Location = new System.Drawing.Point(1037, 6);
+            this.txt_data_saida.Name = "txt_data_saida";
+            this.txt_data_saida.Size = new System.Drawing.Size(132, 17);
+            this.txt_data_saida.TabIndex = 73;
+            this.txt_data_saida.Text = "Data da Saída";
+            this.txt_data_saida.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_data_saida
+            // 
+            this.lb_data_saida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_data_saida.AutoSize = true;
+            this.lb_data_saida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_data_saida.ForeColor = System.Drawing.Color.White;
+            this.lb_data_saida.Location = new System.Drawing.Point(1054, 23);
+            this.lb_data_saida.Name = "lb_data_saida";
+            this.lb_data_saida.Size = new System.Drawing.Size(99, 20);
+            this.lb_data_saida.TabIndex = 70;
+            this.lb_data_saida.Text = "00/00/0000";
+            // 
+            // lb_titulo
+            // 
+            this.lb_titulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_titulo.ForeColor = System.Drawing.Color.White;
+            this.lb_titulo.Location = new System.Drawing.Point(-1, 6);
+            this.lb_titulo.Name = "lb_titulo";
+            this.lb_titulo.Size = new System.Drawing.Size(1166, 31);
+            this.lb_titulo.TabIndex = 96;
+            this.lb_titulo.Text = "EXCLUIR CONTA";
+            this.lb_titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bt_voltar
+            // 
+            this.bt_voltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_voltar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_voltar.FlatAppearance.BorderSize = 0;
+            this.bt_voltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_voltar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_voltar.ForeColor = System.Drawing.Color.White;
+            this.bt_voltar.Location = new System.Drawing.Point(0, 6);
+            this.bt_voltar.Name = "bt_voltar";
+            this.bt_voltar.Size = new System.Drawing.Size(73, 36);
+            this.bt_voltar.TabIndex = 97;
+            this.bt_voltar.Text = "<<";
+            this.bt_voltar.UseVisualStyleBackColor = false;
+            this.bt_voltar.Click += new System.EventHandler(this.bt_voltar_Click);
+            // 
             // conta_excluir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.Controls.Add(this.pl_conta_excluir);
             this.Name = "conta_excluir";
             this.Size = new System.Drawing.Size(1200, 720);
@@ -604,7 +604,6 @@ namespace Hype.painel
         private System.Windows.Forms.Panel pl_conteudo_01;
         private System.Windows.Forms.Panel pl_espaco_01;
         private System.Windows.Forms.Panel pl_top;
-        private System.Windows.Forms.Button bt_voltar;
         private System.Windows.Forms.Label txt_data_saida;
         private System.Windows.Forms.Label lb_data_saida;
         private System.Windows.Forms.Label lb_titulo;
@@ -631,5 +630,6 @@ namespace Hype.painel
         private System.Windows.Forms.Button bt_cancelar;
         private RJTextBox txt_patente;
         private RJTextBox txt_classe;
+        private System.Windows.Forms.Button bt_voltar;
     }
 }

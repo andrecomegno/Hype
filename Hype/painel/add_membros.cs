@@ -31,164 +31,489 @@ namespace Hype.painel
             txt_quantidade_alt.SelectedIndex = 0;
         }
 
-        private void CadastroMembro()
+        private void Cadastro()
+        {
+            switch (txt_quantidade_alt.SelectedIndex)
+            {
+                case 0:
+                    NovoMembro();
+                    break;
+                case 1:
+                    NovaAlt_01();
+                    break;
+                case 2:
+                    NovaAlt_02();
+                    break;
+                case 3:
+                    NovaAlt_03();
+                    break;
+                case 4:
+                    NovaAlt_04();
+                    break;
+                case 5:
+                    NovaAlt_05();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        // NOVO CADASTRO
+        private void NovoMembro()
         {
             configdb database = new configdb();
             database.openConnection();
-            
-            if (txt_quantidade_alt.SelectedIndex == 0)
-            {
-                // INSERT TABELA PROGRESSAO
-                MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
 
-                objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
-                objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
-                objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
-                objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-                objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            // INSERT TABELA PROGRESSAO
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
 
-                objCmdProgressao.ExecuteNonQuery();
-                long idProgressao = objCmdProgressao.LastInsertedId;
+            objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
+            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
+            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
 
-                // INSERT TABELA RECRUTAMENTO
-                MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
+            objCmdProgressao.ExecuteNonQuery();
+            long idProgressao = objCmdProgressao.LastInsertedId;
 
-                objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-                objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
-                objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
+            // INSERT TABELA RECRUTAMENTO
+            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
 
-                objCmdRecrutamento.ExecuteNonQuery();
-                long idRecruta = objCmdRecrutamento.LastInsertedId;
+            objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
+            objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
 
-                // INSERT TABELA CADASTRO MEMBROS
-                MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into hypedb.cadastro_membro (id_membros, nick, level, poder, classe, patente, id_recrutamento, id_progressao) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+            objCmdRecrutamento.ExecuteNonQuery();
+            long idRecruta = objCmdRecrutamento.LastInsertedId;
 
-                objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
-                objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-                objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-                objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
-                objCmdCadastroMembros.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
-                objCmdCadastroMembros.Parameters.Add("@id_progressao", MySqlDbType.Int32).Value = idProgressao;
+            // INSERT TABELA CADASTRO MEMBROS
+            MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into hypedb.cadastro_membro (id_membros, nick, level, poder, classe, patente, id_recrutamento, id_progressao) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-                objCmdCadastroMembros.ExecuteNonQuery();
-            }
-            else if (txt_quantidade_alt.SelectedIndex == 1)
-            {
-                // INSERT TABELA PROGRESSAO
-                MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
+            objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+            objCmdCadastroMembros.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
+            objCmdCadastroMembros.Parameters.Add("@id_progressao", MySqlDbType.Int32).Value = idProgressao;
 
-                objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
-                objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
-                objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
-                objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-                objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdCadastroMembros.ExecuteNonQuery();
 
-                objCmdProgressao.ExecuteNonQuery();
-                long idProgressao = objCmdProgressao.LastInsertedId;
+            database.closeConnection();
+        }
 
-                // INSERT TABELA RECRUTAMENTO
-                MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
+        private void NovaAlt_01()
+        {
+            configdb database = new configdb();
+            database.openConnection();
 
-                objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-                objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
-                objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
+            // INSERT TABELA PROGRESSAO
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
 
-                objCmdRecrutamento.ExecuteNonQuery();
-                long idRecruta = objCmdRecrutamento.LastInsertedId;
+            objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
+            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
+            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
 
-                // INSERT TABELA CADASTRO MEMBROS
-                MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into hypedb.cadastro_membro (id_membros, nick, level, poder, classe, patente, id_recrutamento, id_progressao) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+            objCmdProgressao.ExecuteNonQuery();
+            long idProgressao = objCmdProgressao.LastInsertedId;
 
-                objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
-                objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-                objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-                objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
-                objCmdCadastroMembros.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
-                objCmdCadastroMembros.Parameters.Add("@id_progressao", MySqlDbType.Int32).Value = idProgressao;
+            // INSERT TABELA RECRUTAMENTO
+            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
 
-                objCmdCadastroMembros.ExecuteNonQuery();
-                long idMembro = objCmdCadastroMembros.LastInsertedId;
+            objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
+            objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
 
-                // INSERT TABELA CADASTRO ALT 01
-                MySqlCommand objCmdCadastroAlt = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+            objCmdRecrutamento.ExecuteNonQuery();
+            long idRecruta = objCmdRecrutamento.LastInsertedId;
 
-                objCmdCadastroAlt.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-                objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_01.Texts;
-                objCmdCadastroAlt.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_01.Texts;
-                objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Text;
-                objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_01.Texts;
-                objCmdCadastroAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            // INSERT TABELA CADASTRO MEMBROS
+            MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into hypedb.cadastro_membro (id_membros, nick, level, poder, classe, patente, id_recrutamento, id_progressao) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-                objCmdCadastroAlt.ExecuteNonQuery();
+            objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+            objCmdCadastroMembros.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
+            objCmdCadastroMembros.Parameters.Add("@id_progressao", MySqlDbType.Int32).Value = idProgressao;
 
-            }
-            else if(txt_quantidade_alt.SelectedIndex == 2)
-            {
-                // INSERT TABELA PROGRESSAO
-                MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
+            objCmdCadastroMembros.ExecuteNonQuery();
+            long idMembro = objCmdCadastroMembros.LastInsertedId;
 
-                objCmdProgressao.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-                objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
-                objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
-                objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-                objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            // INSERT TABELA CADASTRO ALT 01
+            MySqlCommand objCmdCadastroAlt = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-                objCmdProgressao.ExecuteNonQuery();
-                long idProgressao = objCmdProgressao.LastInsertedId;
+            objCmdCadastroAlt.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_01.Texts;
+            objCmdCadastroAlt.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_01.Texts;
+            objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Text;
+            objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_01.Texts;
+            objCmdCadastroAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
 
-                // INSERT TABELA RECRUTAMENTO
-                MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
+            objCmdCadastroAlt.ExecuteNonQuery();
 
-                objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-                objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
-                objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
+            database.closeConnection();
+        }
 
-                objCmdRecrutamento.ExecuteNonQuery();
-                long idRecruta = objCmdRecrutamento.LastInsertedId;
+        private void NovaAlt_02()
+        {
+            configdb database = new configdb();
+            database.openConnection();
 
-                // INSERT TABELA CADASTRO MEMBROS
-                MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into hypedb.cadastro_membro (id_membros, nick, level, poder, classe, patente, id_recrutamento, id_progressao) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+            // INSERT TABELA PROGRESSAO
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
 
-                objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
-                objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-                objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
-                objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
-                objCmdCadastroMembros.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
-                objCmdCadastroMembros.Parameters.Add("@id_progressao", MySqlDbType.Int32).Value = idProgressao;
+            objCmdProgressao.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
+            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
+            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
 
-                objCmdCadastroMembros.ExecuteNonQuery();
-                long idMembro = objCmdCadastroMembros.LastInsertedId;
+            objCmdProgressao.ExecuteNonQuery();
+            long idProgressao = objCmdProgressao.LastInsertedId;
 
-                // INSERT TABELA CADASTRO ALT 01
-                MySqlCommand objCmdCadastroAlt = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+            // INSERT TABELA RECRUTAMENTO
+            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
 
-                objCmdCadastroAlt.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-                objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_01.Texts;
-                objCmdCadastroAlt.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_01.Texts;
-                objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Text;
-                objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_01.Texts;
-                objCmdCadastroAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
+            objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
 
-                objCmdCadastroAlt.ExecuteNonQuery();
+            objCmdRecrutamento.ExecuteNonQuery();
+            long idRecruta = objCmdRecrutamento.LastInsertedId;
 
-                // INSERT TABELA CADASTRO ALT 02
-                MySqlCommand objCmdCadastroAlt2 = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+            // INSERT TABELA CADASTRO MEMBROS
+            MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into hypedb.cadastro_membro (id_membros, nick, level, poder, classe, patente, id_recrutamento, id_progressao) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-                objCmdCadastroAlt2.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-                objCmdCadastroAlt2.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_02.Texts;
-                objCmdCadastroAlt2.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_02.Texts;
-                objCmdCadastroAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_02.Text;
-                objCmdCadastroAlt2.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_02.Texts;
-                objCmdCadastroAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                objCmdCadastroAlt2.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+            objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+            objCmdCadastroMembros.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
+            objCmdCadastroMembros.Parameters.Add("@id_progressao", MySqlDbType.Int32).Value = idProgressao;
 
-                objCmdCadastroAlt2.ExecuteNonQuery();
-            }         
+            objCmdCadastroMembros.ExecuteNonQuery();
+            long idMembro = objCmdCadastroMembros.LastInsertedId;
+
+            // INSERT TABELA CADASTRO ALT 01
+            MySqlCommand objCmdCadastroAlt = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroAlt.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_01.Texts;
+            objCmdCadastroAlt.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_01.Texts;
+            objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Text;
+            objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_01.Texts;
+            objCmdCadastroAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+
+            objCmdCadastroAlt.ExecuteNonQuery();
+
+            // INSERT TABELA CADASTRO ALT 02
+            MySqlCommand objCmdCadastroAlt2 = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroAlt2.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdCadastroAlt2.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_02.Texts;
+            objCmdCadastroAlt2.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_02.Texts;
+            objCmdCadastroAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_02.Text;
+            objCmdCadastroAlt2.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_02.Texts;
+            objCmdCadastroAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroAlt2.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+
+            objCmdCadastroAlt2.ExecuteNonQuery();
+
+            database.closeConnection();
+        }
+
+        private void NovaAlt_03()
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            // INSERT TABELA PROGRESSAO
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdProgressao.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
+            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
+            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
+
+            objCmdProgressao.ExecuteNonQuery();
+            long idProgressao = objCmdProgressao.LastInsertedId;
+
+            // INSERT TABELA RECRUTAMENTO
+            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
+
+            objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
+            objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
+
+            objCmdRecrutamento.ExecuteNonQuery();
+            long idRecruta = objCmdRecrutamento.LastInsertedId;
+
+            // INSERT TABELA CADASTRO MEMBROS
+            MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into hypedb.cadastro_membro (id_membros, nick, level, poder, classe, patente, id_recrutamento, id_progressao) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+            objCmdCadastroMembros.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
+            objCmdCadastroMembros.Parameters.Add("@id_progressao", MySqlDbType.Int32).Value = idProgressao;
+
+            objCmdCadastroMembros.ExecuteNonQuery();
+            long idMembro = objCmdCadastroMembros.LastInsertedId;
+
+            // INSERT TABELA CADASTRO ALT 01
+            MySqlCommand objCmdCadastroAlt = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroAlt.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_01.Texts;
+            objCmdCadastroAlt.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_01.Texts;
+            objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Text;
+            objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_01.Texts;
+            objCmdCadastroAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+
+            objCmdCadastroAlt.ExecuteNonQuery();
+
+            // INSERT TABELA CADASTRO ALT 02
+            MySqlCommand objCmdCadastroAlt2 = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroAlt2.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdCadastroAlt2.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_02.Texts;
+            objCmdCadastroAlt2.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_02.Texts;
+            objCmdCadastroAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_02.Text;
+            objCmdCadastroAlt2.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_02.Texts;
+            objCmdCadastroAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroAlt2.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+
+            objCmdCadastroAlt2.ExecuteNonQuery();
+
+            // INSERT TABELA CADASTRO ALT 03
+            MySqlCommand objCmdCadastroAlt3 = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroAlt3.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdCadastroAlt3.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_03.Texts;
+            objCmdCadastroAlt3.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_03.Texts;
+            objCmdCadastroAlt3.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_03.Text;
+            objCmdCadastroAlt3.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_03.Texts;
+            objCmdCadastroAlt3.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroAlt3.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+
+            objCmdCadastroAlt3.ExecuteNonQuery();
+
+            database.closeConnection();
+        }
+
+        private void NovaAlt_04()
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            // INSERT TABELA PROGRESSAO
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdProgressao.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
+            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
+            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
+
+            objCmdProgressao.ExecuteNonQuery();
+            long idProgressao = objCmdProgressao.LastInsertedId;
+
+            // INSERT TABELA RECRUTAMENTO
+            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
+
+            objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
+            objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
+
+            objCmdRecrutamento.ExecuteNonQuery();
+            long idRecruta = objCmdRecrutamento.LastInsertedId;
+
+            // INSERT TABELA CADASTRO MEMBROS
+            MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into hypedb.cadastro_membro (id_membros, nick, level, poder, classe, patente, id_recrutamento, id_progressao) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+            objCmdCadastroMembros.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
+            objCmdCadastroMembros.Parameters.Add("@id_progressao", MySqlDbType.Int32).Value = idProgressao;
+
+            objCmdCadastroMembros.ExecuteNonQuery();
+            long idMembro = objCmdCadastroMembros.LastInsertedId;
+
+            // INSERT TABELA CADASTRO ALT 01
+            MySqlCommand objCmdCadastroAlt = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroAlt.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_01.Texts;
+            objCmdCadastroAlt.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_01.Texts;
+            objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Text;
+            objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_01.Texts;
+            objCmdCadastroAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+
+            objCmdCadastroAlt.ExecuteNonQuery();
+
+            // INSERT TABELA CADASTRO ALT 02
+            MySqlCommand objCmdCadastroAlt2 = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroAlt2.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdCadastroAlt2.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_02.Texts;
+            objCmdCadastroAlt2.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_02.Texts;
+            objCmdCadastroAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_02.Text;
+            objCmdCadastroAlt2.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_02.Texts;
+            objCmdCadastroAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroAlt2.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+
+            objCmdCadastroAlt2.ExecuteNonQuery();
+
+            // INSERT TABELA CADASTRO ALT 03
+            MySqlCommand objCmdCadastroAlt3 = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroAlt3.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdCadastroAlt3.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_03.Texts;
+            objCmdCadastroAlt3.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_03.Texts;
+            objCmdCadastroAlt3.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_03.Text;
+            objCmdCadastroAlt3.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_03.Texts;
+            objCmdCadastroAlt3.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroAlt3.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+
+            objCmdCadastroAlt3.ExecuteNonQuery();
+
+            // INSERT TABELA CADASTRO ALT 04
+            MySqlCommand objCmdCadastroAlt4 = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroAlt4.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdCadastroAlt4.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_04.Texts;
+            objCmdCadastroAlt4.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_04.Texts;
+            objCmdCadastroAlt4.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_04.Text;
+            objCmdCadastroAlt4.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_04.Texts;
+            objCmdCadastroAlt4.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroAlt4.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+
+            objCmdCadastroAlt4.ExecuteNonQuery();
+
+            database.closeConnection();
+        }
+
+        private void NovaAlt_05()
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            // INSERT TABELA PROGRESSAO
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdProgressao.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
+            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
+            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
+
+            objCmdProgressao.ExecuteNonQuery();
+            long idProgressao = objCmdProgressao.LastInsertedId;
+
+            // INSERT TABELA RECRUTAMENTO
+            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
+
+            objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
+            objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
+
+            objCmdRecrutamento.ExecuteNonQuery();
+            long idRecruta = objCmdRecrutamento.LastInsertedId;
+
+            // INSERT TABELA CADASTRO MEMBROS
+            MySqlCommand objCmdCadastroMembros = new MySqlCommand("insert into hypedb.cadastro_membro (id_membros, nick, level, poder, classe, patente, id_recrutamento, id_progressao) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Text;
+            objCmdCadastroMembros.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = idRecruta;
+            objCmdCadastroMembros.Parameters.Add("@id_progressao", MySqlDbType.Int32).Value = idProgressao;
+
+            objCmdCadastroMembros.ExecuteNonQuery();
+            long idMembro = objCmdCadastroMembros.LastInsertedId;
+
+            // INSERT TABELA CADASTRO ALT 01
+            MySqlCommand objCmdCadastroAlt = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroAlt.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_01.Texts;
+            objCmdCadastroAlt.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_01.Texts;
+            objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_01.Text;
+            objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_01.Texts;
+            objCmdCadastroAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroAlt.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+
+            objCmdCadastroAlt.ExecuteNonQuery();
+
+            // INSERT TABELA CADASTRO ALT 02
+            MySqlCommand objCmdCadastroAlt2 = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroAlt2.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdCadastroAlt2.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_02.Texts;
+            objCmdCadastroAlt2.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_02.Texts;
+            objCmdCadastroAlt2.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_02.Text;
+            objCmdCadastroAlt2.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_02.Texts;
+            objCmdCadastroAlt2.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroAlt2.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+
+            objCmdCadastroAlt2.ExecuteNonQuery();
+
+            // INSERT TABELA CADASTRO ALT 03
+            MySqlCommand objCmdCadastroAlt3 = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroAlt3.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdCadastroAlt3.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_03.Texts;
+            objCmdCadastroAlt3.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_03.Texts;
+            objCmdCadastroAlt3.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_03.Text;
+            objCmdCadastroAlt3.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_03.Texts;
+            objCmdCadastroAlt3.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroAlt3.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+
+            objCmdCadastroAlt3.ExecuteNonQuery();
+
+            // INSERT TABELA CADASTRO ALT 04
+            MySqlCommand objCmdCadastroAlt4 = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroAlt4.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdCadastroAlt4.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_04.Texts;
+            objCmdCadastroAlt4.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_04.Texts;
+            objCmdCadastroAlt4.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_04.Text;
+            objCmdCadastroAlt4.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_04.Texts;
+            objCmdCadastroAlt4.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroAlt4.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+
+            objCmdCadastroAlt4.ExecuteNonQuery();
+
+            // INSERT TABELA CADASTRO ALT 05
+            MySqlCommand objCmdCadastroAlt5 = new MySqlCommand("insert into hypedb.cadastro_alt (id_alt, data_entrada, nick_alt, level_alt, classe_alt, cla_alt, nick_principal, quantas_alt) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCadastroAlt5.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdCadastroAlt5.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick_alt_05.Texts;
+            objCmdCadastroAlt5.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level_alt_05.Texts;
+            objCmdCadastroAlt5.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe_alt_05.Text;
+            objCmdCadastroAlt5.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_foi_alt_05.Texts;
+            objCmdCadastroAlt5.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdCadastroAlt5.Parameters.Add("@quantas_alt", MySqlDbType.Int32).Value = txt_quantidade_alt.Text;
+
+            objCmdCadastroAlt5.ExecuteNonQuery();
 
             database.closeConnection();
         }
@@ -198,9 +523,7 @@ namespace Hype.painel
         {
             try
             {
-                //AddMembros();
-
-                CadastroMembro();
+                Cadastro();                
                 DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception erro)
@@ -254,9 +577,9 @@ namespace Hype.painel
 
             foreach (Control c in control)
             {
-                if (c is ComboBox)
+                if (c is RJComboBox)
                 {
-                    ((ComboBox)(c)).SelectedIndex = -1;
+                    ((RJComboBox)(c)).SelectedIndex = -1;
                 }
             }
         }
@@ -309,22 +632,22 @@ namespace Hype.painel
             switch (txt_quantidade_alt.SelectedIndex)
             {
                 case 0:
-                    PainelAlt00();
+                    PainelAlt_00();
                     break;
                 case 1:
-                    PainelAlt01();
+                    PainelAlt_01();
                     break;
                 case 2:
-                    PainelAlt02();
+                    PainelAlt_02();
                     break;
                 case 3:
-                    PainelAlt03();
+                    PainelAlt_03();
                     break;
                 case 4:
-                    PainelAlt04();
+                    PainelAlt_04();
                     break;
                 case 5:
-                    PainelAlt05();
+                    PainelAlt_05();
                     break;
                 default:
                     break;
@@ -351,15 +674,15 @@ namespace Hype.painel
                 if (c is RJTextBox)
                 {
                     ((RJTextBox)c).Enabled = false;
-                    ((RJTextBox)c).BackColor = Color.FromArgb(39, 44, 70);
+                    ((RJTextBox)c).BackColor = Color.FromArgb(32, 34, 37);
                     ((RJTextBox)c).PlaceholderText = "";
                 }
 
-                if (c is ComboBox)
+                if (c is RJComboBox)
                 {
-                    ((ComboBox)c).Enabled = false;
-                    ((ComboBox)c).BackColor = Color.FromArgb(39, 44, 70);
-                    ((ComboBox)c).SelectedIndex = -1;
+                    ((RJComboBox)c).Enabled = false;
+                    ((RJComboBox)c).BackColor = Color.FromArgb(32, 34, 37);
+                    ((RJComboBox)c).SelectedIndex = -1;
 
                 }
             }
@@ -375,20 +698,21 @@ namespace Hype.painel
                     ((RJTextBox)c).BackColor = Color.White;                  
                 }
 
-                if (c is ComboBox)
+                if (c is RJComboBox)
                 {
-                    ((ComboBox)c).Enabled = true;
-                    ((ComboBox)c).BackColor = Color.White;
+                    ((RJComboBox)c).Enabled = true;
+                    ((RJComboBox)c).BackColor = Color.White;
                 }
             }
         }
 
-        private void PainelAlt00()
+        // PAINEIS DOS CADASTROS
+        private void PainelAlt_00()
         {
             PainelContaALT();
         }
 
-        private void PainelAlt01()
+        private void PainelAlt_01()
         {
             txt_nick_alt_01.PlaceholderText = "Qual é o Nick ?";
             txt_level_alt_01.PlaceholderText = "Level";
@@ -402,7 +726,7 @@ namespace Hype.painel
             CampoTextoAltDesativado(this.pl_conta_alt_05.Controls);
         }
 
-        private void PainelAlt02()
+        private void PainelAlt_02()
         {
             txt_nick_alt_01.PlaceholderText = "Qual é o Nick ?";
             txt_level_alt_01.PlaceholderText = "Level";
@@ -420,7 +744,7 @@ namespace Hype.painel
             CampoTextoAltDesativado(this.pl_conta_alt_05.Controls);
         }
 
-        private void PainelAlt03()
+        private void PainelAlt_03()
         {
             txt_nick_alt_01.PlaceholderText = "Qual é o Nick ?";
             txt_level_alt_01.PlaceholderText = "Level";
@@ -443,7 +767,7 @@ namespace Hype.painel
 
         }
 
-        private void PainelAlt04()
+        private void PainelAlt_04()
         {
             txt_nick_alt_01.PlaceholderText = "Qual é o Nick ?";
             txt_level_alt_01.PlaceholderText = "Level";
@@ -469,7 +793,7 @@ namespace Hype.painel
             CampoTextoAltDesativado(this.pl_conta_alt_05.Controls);
         }
 
-        private void PainelAlt05()
+        private void PainelAlt_05()
         {
             txt_nick_alt_01.PlaceholderText = "Qual é o Nick ?";
             txt_level_alt_01.PlaceholderText = "Level";
@@ -497,7 +821,5 @@ namespace Hype.painel
             CampoTextoAltHabilitado(this.pl_conta_alt_04.Controls);
             CampoTextoAltHabilitado(this.pl_conta_alt_05.Controls);
         }
-
-
     }
 }

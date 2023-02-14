@@ -30,6 +30,9 @@ namespace Hype.painel
         private void InitializeComponent()
         {
             this.pl_central = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.bt_salvar = new System.Windows.Forms.Button();
+            this.bt_cancelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,18 +42,15 @@ namespace Hype.painel
             this.rjTextBox2 = new Hype.painel.RJTextBox();
             this.rjTextBox4 = new Hype.painel.RJTextBox();
             this.rjTextBox3 = new Hype.painel.RJTextBox();
-            this.bt_cancelar = new System.Windows.Forms.Button();
-            this.bt_salvar = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.pl_central.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pl_central
             // 
-            this.pl_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.pl_central.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.pl_central.Controls.Add(this.panel3);
             this.pl_central.Controls.Add(this.panel1);
             this.pl_central.Controls.Add(this.panel2);
@@ -59,6 +59,50 @@ namespace Hype.painel
             this.pl_central.Name = "pl_central";
             this.pl_central.Size = new System.Drawing.Size(1200, 720);
             this.pl_central.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.bt_salvar);
+            this.panel3.Controls.Add(this.bt_cancelar);
+            this.panel3.Location = new System.Drawing.Point(59, 403);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1076, 66);
+            this.panel3.TabIndex = 66;
+            // 
+            // bt_salvar
+            // 
+            this.bt_salvar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_salvar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.bt_salvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_salvar.FlatAppearance.BorderSize = 0;
+            this.bt_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_salvar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_salvar.ForeColor = System.Drawing.Color.White;
+            this.bt_salvar.Location = new System.Drawing.Point(413, 3);
+            this.bt_salvar.Name = "bt_salvar";
+            this.bt_salvar.Size = new System.Drawing.Size(122, 36);
+            this.bt_salvar.TabIndex = 65;
+            this.bt_salvar.Text = "Salvar";
+            this.bt_salvar.UseVisualStyleBackColor = false;
+            // 
+            // bt_cancelar
+            // 
+            this.bt_cancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_cancelar.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cancelar.FlatAppearance.BorderSize = 0;
+            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
+            this.bt_cancelar.Location = new System.Drawing.Point(541, 3);
+            this.bt_cancelar.Name = "bt_cancelar";
+            this.bt_cancelar.Size = new System.Drawing.Size(122, 36);
+            this.bt_cancelar.TabIndex = 64;
+            this.bt_cancelar.Text = "Cancelar";
+            this.bt_cancelar.UseVisualStyleBackColor = false;
+            this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
             // 
             // panel1
             // 
@@ -236,50 +280,6 @@ namespace Hype.painel
             this.rjTextBox3.Texts = "";
             this.rjTextBox3.UnderlinedStyle = false;
             // 
-            // bt_cancelar
-            // 
-            this.bt_cancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cancelar.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cancelar.FlatAppearance.BorderSize = 0;
-            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
-            this.bt_cancelar.Location = new System.Drawing.Point(541, 3);
-            this.bt_cancelar.Name = "bt_cancelar";
-            this.bt_cancelar.Size = new System.Drawing.Size(122, 36);
-            this.bt_cancelar.TabIndex = 64;
-            this.bt_cancelar.Text = "Cancelar";
-            this.bt_cancelar.UseVisualStyleBackColor = false;
-            this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
-            // 
-            // bt_salvar
-            // 
-            this.bt_salvar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_salvar.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.bt_salvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_salvar.FlatAppearance.BorderSize = 0;
-            this.bt_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_salvar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_salvar.ForeColor = System.Drawing.Color.White;
-            this.bt_salvar.Location = new System.Drawing.Point(413, 3);
-            this.bt_salvar.Name = "bt_salvar";
-            this.bt_salvar.Size = new System.Drawing.Size(122, 36);
-            this.bt_salvar.TabIndex = 65;
-            this.bt_salvar.Text = "Salvar";
-            this.bt_salvar.UseVisualStyleBackColor = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.bt_salvar);
-            this.panel3.Controls.Add(this.bt_cancelar);
-            this.panel3.Location = new System.Drawing.Point(59, 403);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1076, 66);
-            this.panel3.TabIndex = 66;
-            // 
             // configuracao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,10 +288,10 @@ namespace Hype.painel
             this.Name = "configuracao";
             this.Size = new System.Drawing.Size(1200, 720);
             this.pl_central.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

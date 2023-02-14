@@ -34,6 +34,9 @@ namespace Hype.painel
         {
             InitializeComponent();
             Instance = this;
+
+            txt_sem_dados.Visible = false;
+            txt_clique_aqui.Visible = false;
         }
 
         private void bt_progressao_Click(object sender, EventArgs e)
@@ -68,8 +71,24 @@ namespace Hype.painel
 
                 dataGridView1.DataSource = dt;
             }
-
+            
             database.closeConnection();
+
+
+            if (dataGridView1.Rows.Count == 0)
+            {
+                txt_sem_dados.Visible = true;
+                txt_clique_aqui.Visible = true;
+
+                dataGridView1.Visible = false;
+            }
+            else
+            {
+                txt_sem_dados.Visible = false;
+                txt_clique_aqui.Visible = false;
+
+                dataGridView1.Visible = true;
+            }
 
             Tabela();
         }
@@ -112,9 +131,22 @@ namespace Hype.painel
             }
         }
 
-        private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            MostrarDadosTabela();
+            if (dataGridView1.Rows.Count > 0)
+            {
+                MostrarDadosTabela();
+            }
+        }
+
+        private void dataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.Cursor = Cursors.Hand;
+        }
+
+        private void dataGridView1_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.Cursor = Cursors.Default;
         }
 
         private void MostrarDadosTabela()
@@ -157,6 +189,21 @@ namespace Hype.painel
             cla.Instance.addControl(uc);
         }
 
+        private void txt_clique_aqui_Click(object sender, EventArgs e)
+        {
+            add_membros uc = new add_membros();
+            cla.Instance.addControl(uc);
+        }
+        private void bt_add_membro_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void bt_add_membro_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+        }
+
         // CAMPO DE BUSCA
         private void bt_buscar_Click(object sender, EventArgs e)
         {
@@ -188,6 +235,16 @@ namespace Hype.painel
             {
                 buscar();
             }
+        }
+
+        private void bt_buscar_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void bt_buscar_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
         }
 
         private void membros_Load(object sender, EventArgs e)

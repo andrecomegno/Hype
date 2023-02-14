@@ -481,7 +481,7 @@ namespace Hype
             // 
             // pl_conteudo
             // 
-            this.pl_conteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.pl_conteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.pl_conteudo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pl_conteudo.Location = new System.Drawing.Point(0, 0);
             this.pl_conteudo.Name = "pl_conteudo";

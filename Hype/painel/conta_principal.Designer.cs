@@ -42,9 +42,7 @@ namespace Hype.painel
             this.bt_excluir = new System.Windows.Forms.Button();
             this.txt_patente = new System.Windows.Forms.ComboBox();
             this.txt_classe = new System.Windows.Forms.ComboBox();
-            this.txt_level = new Hype.painel.RJTextBox();
             this.lb_poder = new System.Windows.Forms.Label();
-            this.txt_poder = new Hype.painel.RJTextBox();
             this.lb_level = new System.Windows.Forms.Label();
             this.lb_dezembro = new System.Windows.Forms.Label();
             this.lb_novembro = new System.Windows.Forms.Label();
@@ -54,6 +52,28 @@ namespace Hype.painel
             this.lb_julho = new System.Windows.Forms.Label();
             this.lb_junho = new System.Windows.Forms.Label();
             this.lb_maio = new System.Windows.Forms.Label();
+            this.lb_poder_col_02 = new System.Windows.Forms.Label();
+            this.lb_level_col_02 = new System.Windows.Forms.Label();
+            this.lb_abril = new System.Windows.Forms.Label();
+            this.lb_marco = new System.Windows.Forms.Label();
+            this.lb_fevereiro = new System.Windows.Forms.Label();
+            this.lb_janeiro = new System.Windows.Forms.Label();
+            this.bt_cancelar = new System.Windows.Forms.Button();
+            this.bt_salvar = new System.Windows.Forms.Button();
+            this.lb_poder_col_01 = new System.Windows.Forms.Label();
+            this.lb_nick = new System.Windows.Forms.Label();
+            this.lb_patente = new System.Windows.Forms.Label();
+            this.lb_level_col_01 = new System.Windows.Forms.Label();
+            this.lb_classe = new System.Windows.Forms.Label();
+            this.lb_progressao = new System.Windows.Forms.Label();
+            this.pl_espaco_01 = new System.Windows.Forms.Panel();
+            this.pl_top = new System.Windows.Forms.Panel();
+            this.bt_voltar = new System.Windows.Forms.Button();
+            this.txt_data_entrada = new System.Windows.Forms.Label();
+            this.lb_data_entrada = new System.Windows.Forms.Label();
+            this.lb_titulo = new System.Windows.Forms.Label();
+            this.txt_level = new Hype.painel.RJTextBox();
+            this.txt_poder = new Hype.painel.RJTextBox();
             this.txt_level_dez = new Hype.painel.RJTextBox();
             this.txt_poder_dez = new Hype.painel.RJTextBox();
             this.txt_level_nov = new Hype.painel.RJTextBox();
@@ -65,13 +85,7 @@ namespace Hype.painel
             this.txt_level_ago = new Hype.painel.RJTextBox();
             this.txt_poder_ago = new Hype.painel.RJTextBox();
             this.txt_level_jul = new Hype.painel.RJTextBox();
-            this.lb_poder_col_02 = new System.Windows.Forms.Label();
             this.txt_poder_jul = new Hype.painel.RJTextBox();
-            this.lb_level_col_02 = new System.Windows.Forms.Label();
-            this.lb_abril = new System.Windows.Forms.Label();
-            this.lb_marco = new System.Windows.Forms.Label();
-            this.lb_fevereiro = new System.Windows.Forms.Label();
-            this.lb_janeiro = new System.Windows.Forms.Label();
             this.txt_level_jun = new Hype.painel.RJTextBox();
             this.txt_poder_jun = new Hype.painel.RJTextBox();
             this.txt_level_mai = new Hype.painel.RJTextBox();
@@ -82,23 +96,9 @@ namespace Hype.painel
             this.txt_poder_mar = new Hype.painel.RJTextBox();
             this.txt_level_fe = new Hype.painel.RJTextBox();
             this.txt_poder_fe = new Hype.painel.RJTextBox();
-            this.bt_cancelar = new System.Windows.Forms.Button();
-            this.bt_salvar = new System.Windows.Forms.Button();
             this.txt_level_ja = new Hype.painel.RJTextBox();
-            this.lb_poder_col_01 = new System.Windows.Forms.Label();
-            this.lb_nick = new System.Windows.Forms.Label();
-            this.lb_patente = new System.Windows.Forms.Label();
             this.txt_nick = new Hype.painel.RJTextBox();
             this.txt_poder_ja = new Hype.painel.RJTextBox();
-            this.lb_level_col_01 = new System.Windows.Forms.Label();
-            this.lb_classe = new System.Windows.Forms.Label();
-            this.lb_progressao = new System.Windows.Forms.Label();
-            this.pl_espaco_01 = new System.Windows.Forms.Panel();
-            this.pl_top = new System.Windows.Forms.Panel();
-            this.bt_voltar = new System.Windows.Forms.Button();
-            this.txt_data_entrada = new System.Windows.Forms.Label();
-            this.lb_data_entrada = new System.Windows.Forms.Label();
-            this.lb_titulo = new System.Windows.Forms.Label();
             this.pl_conta_principal.SuspendLayout();
             this.pl_remanejamento.SuspendLayout();
             this.pl_conta_alt.SuspendLayout();
@@ -111,7 +111,7 @@ namespace Hype.painel
             this.pl_conta_principal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pl_conta_principal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.pl_conta_principal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.pl_conta_principal.Controls.Add(this.pl_remanejamento);
             this.pl_conta_principal.Controls.Add(this.pl_espaco_03);
             this.pl_conta_principal.Controls.Add(this.pl_conta_alt);
@@ -126,7 +126,7 @@ namespace Hype.painel
             // 
             // pl_remanejamento
             // 
-            this.pl_remanejamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
+            this.pl_remanejamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.pl_remanejamento.Controls.Add(this.bt_editar_rema);
             this.pl_remanejamento.Controls.Add(this.lb_remanejamento);
             this.pl_remanejamento.Dock = System.Windows.Forms.DockStyle.Top;
@@ -165,7 +165,7 @@ namespace Hype.painel
             // 
             // pl_espaco_03
             // 
-            this.pl_espaco_03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.pl_espaco_03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.pl_espaco_03.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_espaco_03.Location = new System.Drawing.Point(0, 628);
             this.pl_espaco_03.Name = "pl_espaco_03";
@@ -174,7 +174,7 @@ namespace Hype.painel
             // 
             // pl_conta_alt
             // 
-            this.pl_conta_alt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
+            this.pl_conta_alt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.pl_conta_alt.Controls.Add(this.bt_editar_alt);
             this.pl_conta_alt.Controls.Add(this.lb_conta_alt);
             this.pl_conta_alt.Dock = System.Windows.Forms.DockStyle.Top;
@@ -213,7 +213,7 @@ namespace Hype.painel
             // 
             // pl_espaco_02
             // 
-            this.pl_espaco_02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.pl_espaco_02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.pl_espaco_02.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_espaco_02.Location = new System.Drawing.Point(0, 561);
             this.pl_espaco_02.Name = "pl_espaco_02";
@@ -222,7 +222,7 @@ namespace Hype.painel
             // 
             // pl_conteudo
             // 
-            this.pl_conteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
+            this.pl_conteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.pl_conteudo.Controls.Add(this.bt_excluir);
             this.pl_conteudo.Controls.Add(this.txt_patente);
             this.pl_conteudo.Controls.Add(this.txt_classe);
@@ -336,30 +336,6 @@ namespace Hype.painel
             this.txt_classe.Size = new System.Drawing.Size(129, 21);
             this.txt_classe.TabIndex = 152;
             // 
-            // txt_level
-            // 
-            this.txt_level.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level.BackColor = System.Drawing.Color.White;
-            this.txt_level.BorderColor = System.Drawing.Color.White;
-            this.txt_level.BorderFocusColor = System.Drawing.Color.White;
-            this.txt_level.BorderRadius = 0;
-            this.txt_level.BorderSize = 1;
-            this.txt_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level.Location = new System.Drawing.Point(449, 53);
-            this.txt_level.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level.Multiline = false;
-            this.txt_level.Name = "txt_level";
-            this.txt_level.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level.PasswordChar = false;
-            this.txt_level.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_level.PlaceholderText = "";
-            this.txt_level.Size = new System.Drawing.Size(68, 31);
-            this.txt_level.TabIndex = 151;
-            this.txt_level.Tag = "";
-            this.txt_level.Texts = "";
-            this.txt_level.UnderlinedStyle = false;
-            // 
             // lb_poder
             // 
             this.lb_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -371,29 +347,6 @@ namespace Hype.painel
             this.lb_poder.TabIndex = 150;
             this.lb_poder.Text = "Poder";
             this.lb_poder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txt_poder
-            // 
-            this.txt_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder.BackColor = System.Drawing.Color.White;
-            this.txt_poder.BorderColor = System.Drawing.Color.White;
-            this.txt_poder.BorderFocusColor = System.Drawing.Color.White;
-            this.txt_poder.BorderRadius = 0;
-            this.txt_poder.BorderSize = 1;
-            this.txt_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder.Location = new System.Drawing.Point(525, 53);
-            this.txt_poder.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder.Multiline = false;
-            this.txt_poder.Name = "txt_poder";
-            this.txt_poder.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder.PasswordChar = false;
-            this.txt_poder.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_poder.PlaceholderText = "";
-            this.txt_poder.Size = new System.Drawing.Size(119, 31);
-            this.txt_poder.TabIndex = 148;
-            this.txt_poder.Texts = "";
-            this.txt_poder.UnderlinedStyle = false;
             // 
             // lb_level
             // 
@@ -502,6 +455,307 @@ namespace Hype.painel
             this.lb_maio.TabIndex = 138;
             this.lb_maio.Text = "Maio";
             this.lb_maio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_poder_col_02
+            // 
+            this.lb_poder_col_02.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_poder_col_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_poder_col_02.ForeColor = System.Drawing.Color.White;
+            this.lb_poder_col_02.Location = new System.Drawing.Point(729, 169);
+            this.lb_poder_col_02.Name = "lb_poder_col_02";
+            this.lb_poder_col_02.Size = new System.Drawing.Size(120, 17);
+            this.lb_poder_col_02.TabIndex = 126;
+            this.lb_poder_col_02.Text = "Poder";
+            this.lb_poder_col_02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_level_col_02
+            // 
+            this.lb_level_col_02.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_level_col_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_level_col_02.ForeColor = System.Drawing.Color.White;
+            this.lb_level_col_02.Location = new System.Drawing.Point(654, 169);
+            this.lb_level_col_02.Name = "lb_level_col_02";
+            this.lb_level_col_02.Size = new System.Drawing.Size(68, 17);
+            this.lb_level_col_02.TabIndex = 125;
+            this.lb_level_col_02.Text = "Level";
+            this.lb_level_col_02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_abril
+            // 
+            this.lb_abril.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_abril.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_abril.ForeColor = System.Drawing.Color.White;
+            this.lb_abril.Location = new System.Drawing.Point(240, 322);
+            this.lb_abril.Name = "lb_abril";
+            this.lb_abril.Size = new System.Drawing.Size(86, 16);
+            this.lb_abril.TabIndex = 123;
+            this.lb_abril.Text = "Abril";
+            this.lb_abril.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_marco
+            // 
+            this.lb_marco.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_marco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_marco.ForeColor = System.Drawing.Color.White;
+            this.lb_marco.Location = new System.Drawing.Point(240, 283);
+            this.lb_marco.Name = "lb_marco";
+            this.lb_marco.Size = new System.Drawing.Size(86, 16);
+            this.lb_marco.TabIndex = 122;
+            this.lb_marco.Text = "Março";
+            this.lb_marco.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_fevereiro
+            // 
+            this.lb_fevereiro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_fevereiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_fevereiro.ForeColor = System.Drawing.Color.White;
+            this.lb_fevereiro.Location = new System.Drawing.Point(240, 244);
+            this.lb_fevereiro.Name = "lb_fevereiro";
+            this.lb_fevereiro.Size = new System.Drawing.Size(86, 16);
+            this.lb_fevereiro.TabIndex = 121;
+            this.lb_fevereiro.Text = "Fevereiro";
+            this.lb_fevereiro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_janeiro
+            // 
+            this.lb_janeiro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_janeiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_janeiro.ForeColor = System.Drawing.Color.White;
+            this.lb_janeiro.Location = new System.Drawing.Point(258, 204);
+            this.lb_janeiro.Name = "lb_janeiro";
+            this.lb_janeiro.Size = new System.Drawing.Size(68, 17);
+            this.lb_janeiro.TabIndex = 120;
+            this.lb_janeiro.Text = "Janeiro";
+            this.lb_janeiro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bt_cancelar
+            // 
+            this.bt_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_cancelar.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cancelar.FlatAppearance.BorderSize = 0;
+            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
+            this.bt_cancelar.Location = new System.Drawing.Point(1058, 436);
+            this.bt_cancelar.Name = "bt_cancelar";
+            this.bt_cancelar.Size = new System.Drawing.Size(102, 36);
+            this.bt_cancelar.TabIndex = 104;
+            this.bt_cancelar.Text = "Cancelar";
+            this.bt_cancelar.UseVisualStyleBackColor = false;
+            this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
+            // 
+            // bt_salvar
+            // 
+            this.bt_salvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_salvar.BackColor = System.Drawing.Color.OliveDrab;
+            this.bt_salvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_salvar.FlatAppearance.BorderSize = 0;
+            this.bt_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_salvar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_salvar.ForeColor = System.Drawing.Color.White;
+            this.bt_salvar.Location = new System.Drawing.Point(950, 436);
+            this.bt_salvar.Name = "bt_salvar";
+            this.bt_salvar.Size = new System.Drawing.Size(102, 36);
+            this.bt_salvar.TabIndex = 103;
+            this.bt_salvar.Text = "Salvar";
+            this.bt_salvar.UseVisualStyleBackColor = false;
+            this.bt_salvar.Click += new System.EventHandler(this.bt_salvar_Click);
+            // 
+            // lb_poder_col_01
+            // 
+            this.lb_poder_col_01.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_poder_col_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_poder_col_01.ForeColor = System.Drawing.Color.White;
+            this.lb_poder_col_01.Location = new System.Drawing.Point(408, 169);
+            this.lb_poder_col_01.Name = "lb_poder_col_01";
+            this.lb_poder_col_01.Size = new System.Drawing.Size(120, 17);
+            this.lb_poder_col_01.TabIndex = 66;
+            this.lb_poder_col_01.Text = "Poder";
+            this.lb_poder_col_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_nick
+            // 
+            this.lb_nick.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_nick.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nick.ForeColor = System.Drawing.Color.White;
+            this.lb_nick.Location = new System.Drawing.Point(249, 32);
+            this.lb_nick.Name = "lb_nick";
+            this.lb_nick.Size = new System.Drawing.Size(162, 17);
+            this.lb_nick.TabIndex = 65;
+            this.lb_nick.Text = "Nick";
+            this.lb_nick.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_patente
+            // 
+            this.lb_patente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_patente.ForeColor = System.Drawing.Color.White;
+            this.lb_patente.Location = new System.Drawing.Point(790, 43);
+            this.lb_patente.Name = "lb_patente";
+            this.lb_patente.Size = new System.Drawing.Size(126, 17);
+            this.lb_patente.TabIndex = 13;
+            this.lb_patente.Text = "Patente";
+            this.lb_patente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_level_col_01
+            // 
+            this.lb_level_col_01.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_level_col_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_level_col_01.ForeColor = System.Drawing.Color.White;
+            this.lb_level_col_01.Location = new System.Drawing.Point(333, 169);
+            this.lb_level_col_01.Name = "lb_level_col_01";
+            this.lb_level_col_01.Size = new System.Drawing.Size(68, 17);
+            this.lb_level_col_01.TabIndex = 5;
+            this.lb_level_col_01.Text = "Level";
+            this.lb_level_col_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_classe
+            // 
+            this.lb_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_classe.ForeColor = System.Drawing.Color.White;
+            this.lb_classe.Location = new System.Drawing.Point(651, 43);
+            this.lb_classe.Name = "lb_classe";
+            this.lb_classe.Size = new System.Drawing.Size(129, 17);
+            this.lb_classe.TabIndex = 6;
+            this.lb_classe.Text = "Classe";
+            this.lb_classe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_progressao
+            // 
+            this.lb_progressao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_progressao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_progressao.ForeColor = System.Drawing.Color.White;
+            this.lb_progressao.Location = new System.Drawing.Point(3, 119);
+            this.lb_progressao.Name = "lb_progressao";
+            this.lb_progressao.Size = new System.Drawing.Size(1166, 31);
+            this.lb_progressao.TabIndex = 97;
+            this.lb_progressao.Text = "PROGRESSÃO";
+            this.lb_progressao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pl_espaco_01
+            // 
+            this.pl_espaco_01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_espaco_01.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_espaco_01.Location = new System.Drawing.Point(0, 73);
+            this.pl_espaco_01.Name = "pl_espaco_01";
+            this.pl_espaco_01.Size = new System.Drawing.Size(1172, 10);
+            this.pl_espaco_01.TabIndex = 77;
+            // 
+            // pl_top
+            // 
+            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_top.Controls.Add(this.bt_voltar);
+            this.pl_top.Controls.Add(this.txt_data_entrada);
+            this.pl_top.Controls.Add(this.lb_data_entrada);
+            this.pl_top.Controls.Add(this.lb_titulo);
+            this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_top.Location = new System.Drawing.Point(0, 0);
+            this.pl_top.Name = "pl_top";
+            this.pl_top.Size = new System.Drawing.Size(1172, 73);
+            this.pl_top.TabIndex = 76;
+            // 
+            // bt_voltar
+            // 
+            this.bt_voltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bt_voltar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_voltar.FlatAppearance.BorderSize = 0;
+            this.bt_voltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_voltar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_voltar.ForeColor = System.Drawing.Color.White;
+            this.bt_voltar.Location = new System.Drawing.Point(0, 6);
+            this.bt_voltar.Name = "bt_voltar";
+            this.bt_voltar.Size = new System.Drawing.Size(73, 36);
+            this.bt_voltar.TabIndex = 59;
+            this.bt_voltar.Text = "<<";
+            this.bt_voltar.UseVisualStyleBackColor = false;
+            this.bt_voltar.Click += new System.EventHandler(this.bt_voltar_Click);
+            // 
+            // txt_data_entrada
+            // 
+            this.txt_data_entrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_data_entrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_data_entrada.ForeColor = System.Drawing.Color.White;
+            this.txt_data_entrada.Location = new System.Drawing.Point(1037, 6);
+            this.txt_data_entrada.Name = "txt_data_entrada";
+            this.txt_data_entrada.Size = new System.Drawing.Size(132, 17);
+            this.txt_data_entrada.TabIndex = 73;
+            this.txt_data_entrada.Text = "Data da Entrada";
+            this.txt_data_entrada.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_data_entrada
+            // 
+            this.lb_data_entrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_data_entrada.AutoSize = true;
+            this.lb_data_entrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_data_entrada.ForeColor = System.Drawing.Color.White;
+            this.lb_data_entrada.Location = new System.Drawing.Point(1054, 23);
+            this.lb_data_entrada.Name = "lb_data_entrada";
+            this.lb_data_entrada.Size = new System.Drawing.Size(99, 20);
+            this.lb_data_entrada.TabIndex = 70;
+            this.lb_data_entrada.Text = "00/00/0000";
+            // 
+            // lb_titulo
+            // 
+            this.lb_titulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_titulo.ForeColor = System.Drawing.Color.White;
+            this.lb_titulo.Location = new System.Drawing.Point(-1, 6);
+            this.lb_titulo.Name = "lb_titulo";
+            this.lb_titulo.Size = new System.Drawing.Size(1166, 31);
+            this.lb_titulo.TabIndex = 96;
+            this.lb_titulo.Text = "CONTA PRINCIPAL";
+            this.lb_titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_level
+            // 
+            this.txt_level.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_level.BackColor = System.Drawing.Color.White;
+            this.txt_level.BorderColor = System.Drawing.Color.White;
+            this.txt_level.BorderFocusColor = System.Drawing.Color.White;
+            this.txt_level.BorderRadius = 0;
+            this.txt_level.BorderSize = 1;
+            this.txt_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_level.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_level.Location = new System.Drawing.Point(449, 53);
+            this.txt_level.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_level.Multiline = false;
+            this.txt_level.Name = "txt_level";
+            this.txt_level.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_level.PasswordChar = false;
+            this.txt_level.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_level.PlaceholderText = "";
+            this.txt_level.Size = new System.Drawing.Size(68, 31);
+            this.txt_level.TabIndex = 151;
+            this.txt_level.Tag = "";
+            this.txt_level.Texts = "";
+            this.txt_level.UnderlinedStyle = false;
+            // 
+            // txt_poder
+            // 
+            this.txt_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_poder.BackColor = System.Drawing.Color.White;
+            this.txt_poder.BorderColor = System.Drawing.Color.White;
+            this.txt_poder.BorderFocusColor = System.Drawing.Color.White;
+            this.txt_poder.BorderRadius = 0;
+            this.txt_poder.BorderSize = 1;
+            this.txt_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_poder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_poder.Location = new System.Drawing.Point(525, 53);
+            this.txt_poder.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_poder.Multiline = false;
+            this.txt_poder.Name = "txt_poder";
+            this.txt_poder.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_poder.PasswordChar = false;
+            this.txt_poder.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_poder.PlaceholderText = "";
+            this.txt_poder.Size = new System.Drawing.Size(119, 31);
+            this.txt_poder.TabIndex = 148;
+            this.txt_poder.Texts = "";
+            this.txt_poder.UnderlinedStyle = false;
             // 
             // txt_level_dez
             // 
@@ -762,18 +1016,6 @@ namespace Hype.painel
             this.txt_level_jul.Texts = "";
             this.txt_level_jul.UnderlinedStyle = false;
             // 
-            // lb_poder_col_02
-            // 
-            this.lb_poder_col_02.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_poder_col_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_poder_col_02.ForeColor = System.Drawing.Color.White;
-            this.lb_poder_col_02.Location = new System.Drawing.Point(729, 169);
-            this.lb_poder_col_02.Name = "lb_poder_col_02";
-            this.lb_poder_col_02.Size = new System.Drawing.Size(120, 17);
-            this.lb_poder_col_02.TabIndex = 126;
-            this.lb_poder_col_02.Text = "Poder";
-            this.lb_poder_col_02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // txt_poder_jul
             // 
             this.txt_poder_jul.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -796,66 +1038,6 @@ namespace Hype.painel
             this.txt_poder_jul.TabIndex = 124;
             this.txt_poder_jul.Texts = "";
             this.txt_poder_jul.UnderlinedStyle = false;
-            // 
-            // lb_level_col_02
-            // 
-            this.lb_level_col_02.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_level_col_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_level_col_02.ForeColor = System.Drawing.Color.White;
-            this.lb_level_col_02.Location = new System.Drawing.Point(654, 169);
-            this.lb_level_col_02.Name = "lb_level_col_02";
-            this.lb_level_col_02.Size = new System.Drawing.Size(68, 17);
-            this.lb_level_col_02.TabIndex = 125;
-            this.lb_level_col_02.Text = "Level";
-            this.lb_level_col_02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_abril
-            // 
-            this.lb_abril.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_abril.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_abril.ForeColor = System.Drawing.Color.White;
-            this.lb_abril.Location = new System.Drawing.Point(240, 322);
-            this.lb_abril.Name = "lb_abril";
-            this.lb_abril.Size = new System.Drawing.Size(86, 16);
-            this.lb_abril.TabIndex = 123;
-            this.lb_abril.Text = "Abril";
-            this.lb_abril.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_marco
-            // 
-            this.lb_marco.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_marco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_marco.ForeColor = System.Drawing.Color.White;
-            this.lb_marco.Location = new System.Drawing.Point(240, 283);
-            this.lb_marco.Name = "lb_marco";
-            this.lb_marco.Size = new System.Drawing.Size(86, 16);
-            this.lb_marco.TabIndex = 122;
-            this.lb_marco.Text = "Março";
-            this.lb_marco.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_fevereiro
-            // 
-            this.lb_fevereiro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_fevereiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_fevereiro.ForeColor = System.Drawing.Color.White;
-            this.lb_fevereiro.Location = new System.Drawing.Point(240, 244);
-            this.lb_fevereiro.Name = "lb_fevereiro";
-            this.lb_fevereiro.Size = new System.Drawing.Size(86, 16);
-            this.lb_fevereiro.TabIndex = 121;
-            this.lb_fevereiro.Text = "Fevereiro";
-            this.lb_fevereiro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_janeiro
-            // 
-            this.lb_janeiro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_janeiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_janeiro.ForeColor = System.Drawing.Color.White;
-            this.lb_janeiro.Location = new System.Drawing.Point(258, 204);
-            this.lb_janeiro.Name = "lb_janeiro";
-            this.lb_janeiro.Size = new System.Drawing.Size(68, 17);
-            this.lb_janeiro.TabIndex = 120;
-            this.lb_janeiro.Text = "Janeiro";
-            this.lb_janeiro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_level_jun
             // 
@@ -1092,40 +1274,6 @@ namespace Hype.painel
             this.txt_poder_fe.Texts = "";
             this.txt_poder_fe.UnderlinedStyle = false;
             // 
-            // bt_cancelar
-            // 
-            this.bt_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_cancelar.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cancelar.FlatAppearance.BorderSize = 0;
-            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
-            this.bt_cancelar.Location = new System.Drawing.Point(1058, 436);
-            this.bt_cancelar.Name = "bt_cancelar";
-            this.bt_cancelar.Size = new System.Drawing.Size(102, 36);
-            this.bt_cancelar.TabIndex = 104;
-            this.bt_cancelar.Text = "Cancelar";
-            this.bt_cancelar.UseVisualStyleBackColor = false;
-            this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
-            // 
-            // bt_salvar
-            // 
-            this.bt_salvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_salvar.BackColor = System.Drawing.Color.OliveDrab;
-            this.bt_salvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_salvar.FlatAppearance.BorderSize = 0;
-            this.bt_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_salvar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_salvar.ForeColor = System.Drawing.Color.White;
-            this.bt_salvar.Location = new System.Drawing.Point(950, 436);
-            this.bt_salvar.Name = "bt_salvar";
-            this.bt_salvar.Size = new System.Drawing.Size(102, 36);
-            this.bt_salvar.TabIndex = 103;
-            this.bt_salvar.Text = "Salvar";
-            this.bt_salvar.UseVisualStyleBackColor = false;
-            this.bt_salvar.Click += new System.EventHandler(this.bt_salvar_Click);
-            // 
             // txt_level_ja
             // 
             this.txt_level_ja.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1149,42 +1297,6 @@ namespace Hype.painel
             this.txt_level_ja.Tag = "";
             this.txt_level_ja.Texts = "";
             this.txt_level_ja.UnderlinedStyle = false;
-            // 
-            // lb_poder_col_01
-            // 
-            this.lb_poder_col_01.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_poder_col_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_poder_col_01.ForeColor = System.Drawing.Color.White;
-            this.lb_poder_col_01.Location = new System.Drawing.Point(408, 169);
-            this.lb_poder_col_01.Name = "lb_poder_col_01";
-            this.lb_poder_col_01.Size = new System.Drawing.Size(120, 17);
-            this.lb_poder_col_01.TabIndex = 66;
-            this.lb_poder_col_01.Text = "Poder";
-            this.lb_poder_col_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_nick
-            // 
-            this.lb_nick.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_nick.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_nick.ForeColor = System.Drawing.Color.White;
-            this.lb_nick.Location = new System.Drawing.Point(249, 32);
-            this.lb_nick.Name = "lb_nick";
-            this.lb_nick.Size = new System.Drawing.Size(162, 17);
-            this.lb_nick.TabIndex = 65;
-            this.lb_nick.Text = "Nick";
-            this.lb_nick.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_patente
-            // 
-            this.lb_patente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_patente.ForeColor = System.Drawing.Color.White;
-            this.lb_patente.Location = new System.Drawing.Point(790, 43);
-            this.lb_patente.Name = "lb_patente";
-            this.lb_patente.Size = new System.Drawing.Size(126, 17);
-            this.lb_patente.TabIndex = 13;
-            this.lb_patente.Text = "Patente";
-            this.lb_patente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_nick
             // 
@@ -1232,123 +1344,11 @@ namespace Hype.painel
             this.txt_poder_ja.Texts = "";
             this.txt_poder_ja.UnderlinedStyle = false;
             // 
-            // lb_level_col_01
-            // 
-            this.lb_level_col_01.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_level_col_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_level_col_01.ForeColor = System.Drawing.Color.White;
-            this.lb_level_col_01.Location = new System.Drawing.Point(333, 169);
-            this.lb_level_col_01.Name = "lb_level_col_01";
-            this.lb_level_col_01.Size = new System.Drawing.Size(68, 17);
-            this.lb_level_col_01.TabIndex = 5;
-            this.lb_level_col_01.Text = "Level";
-            this.lb_level_col_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_classe
-            // 
-            this.lb_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_classe.ForeColor = System.Drawing.Color.White;
-            this.lb_classe.Location = new System.Drawing.Point(651, 43);
-            this.lb_classe.Name = "lb_classe";
-            this.lb_classe.Size = new System.Drawing.Size(129, 17);
-            this.lb_classe.TabIndex = 6;
-            this.lb_classe.Text = "Classe";
-            this.lb_classe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_progressao
-            // 
-            this.lb_progressao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_progressao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_progressao.ForeColor = System.Drawing.Color.White;
-            this.lb_progressao.Location = new System.Drawing.Point(3, 119);
-            this.lb_progressao.Name = "lb_progressao";
-            this.lb_progressao.Size = new System.Drawing.Size(1166, 31);
-            this.lb_progressao.TabIndex = 97;
-            this.lb_progressao.Text = "PROGRESSÃO";
-            this.lb_progressao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pl_espaco_01
-            // 
-            this.pl_espaco_01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            this.pl_espaco_01.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_espaco_01.Location = new System.Drawing.Point(0, 73);
-            this.pl_espaco_01.Name = "pl_espaco_01";
-            this.pl_espaco_01.Size = new System.Drawing.Size(1172, 10);
-            this.pl_espaco_01.TabIndex = 77;
-            // 
-            // pl_top
-            // 
-            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            this.pl_top.Controls.Add(this.bt_voltar);
-            this.pl_top.Controls.Add(this.txt_data_entrada);
-            this.pl_top.Controls.Add(this.lb_data_entrada);
-            this.pl_top.Controls.Add(this.lb_titulo);
-            this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_top.Location = new System.Drawing.Point(0, 0);
-            this.pl_top.Name = "pl_top";
-            this.pl_top.Size = new System.Drawing.Size(1172, 73);
-            this.pl_top.TabIndex = 76;
-            // 
-            // bt_voltar
-            // 
-            this.bt_voltar.BackColor = System.Drawing.Color.Gray;
-            this.bt_voltar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_voltar.FlatAppearance.BorderSize = 0;
-            this.bt_voltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_voltar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_voltar.ForeColor = System.Drawing.Color.White;
-            this.bt_voltar.Location = new System.Drawing.Point(8, 7);
-            this.bt_voltar.Name = "bt_voltar";
-            this.bt_voltar.Size = new System.Drawing.Size(102, 36);
-            this.bt_voltar.TabIndex = 59;
-            this.bt_voltar.Text = "Voltar";
-            this.bt_voltar.UseVisualStyleBackColor = false;
-            this.bt_voltar.Click += new System.EventHandler(this.bt_voltar_Click);
-            // 
-            // txt_data_entrada
-            // 
-            this.txt_data_entrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_data_entrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_data_entrada.ForeColor = System.Drawing.Color.White;
-            this.txt_data_entrada.Location = new System.Drawing.Point(1037, 6);
-            this.txt_data_entrada.Name = "txt_data_entrada";
-            this.txt_data_entrada.Size = new System.Drawing.Size(132, 17);
-            this.txt_data_entrada.TabIndex = 73;
-            this.txt_data_entrada.Text = "Data da Entrada";
-            this.txt_data_entrada.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_data_entrada
-            // 
-            this.lb_data_entrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_data_entrada.AutoSize = true;
-            this.lb_data_entrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_data_entrada.ForeColor = System.Drawing.Color.White;
-            this.lb_data_entrada.Location = new System.Drawing.Point(1054, 23);
-            this.lb_data_entrada.Name = "lb_data_entrada";
-            this.lb_data_entrada.Size = new System.Drawing.Size(99, 20);
-            this.lb_data_entrada.TabIndex = 70;
-            this.lb_data_entrada.Text = "00/00/0000";
-            // 
-            // lb_titulo
-            // 
-            this.lb_titulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_titulo.ForeColor = System.Drawing.Color.White;
-            this.lb_titulo.Location = new System.Drawing.Point(-1, 6);
-            this.lb_titulo.Name = "lb_titulo";
-            this.lb_titulo.Size = new System.Drawing.Size(1166, 31);
-            this.lb_titulo.TabIndex = 96;
-            this.lb_titulo.Text = "CONTA PRINCIPAL";
-            this.lb_titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // conta_principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.Controls.Add(this.pl_conta_principal);
             this.Name = "conta_principal";
             this.Size = new System.Drawing.Size(1200, 720);
