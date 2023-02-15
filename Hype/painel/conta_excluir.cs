@@ -36,22 +36,10 @@ namespace Hype.painel
             // PALAVRA CHAVE PARA BUSCAR ALT
             txt_nick.Texts = membros.Instance.nick;
 
+            lb_data_saida.Text = DateTime.Now.ToShortDateString();
         }
 
-        public void DadosMembros()
-        {
-            // CADASTRO
-            //lb_data_saida.Text = DateTime.Now;  
-            id_membro = membros.Instance.id_membro;            
-            txt_level.Texts = membros.Instance.level;
-            txt_poder.Texts = membros.Instance.poder;
-            txt_patente.Texts = membros.Instance.patente;
-            txt_classe.Texts = membros.Instance.classe;
-            txt_cla.Texts = membros.Instance.foi_para_cla;
-            id_progressao = membros.Instance.id_progressao;
-            id_recrutamento = membros.Instance.id_recrutamento;
-        }
-
+        #region TABELA MEMBROS ALT
         private void TabelaMembrosAlt()
         {
             configdb database = new configdb();
@@ -146,6 +134,7 @@ namespace Hype.painel
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
 
                     id_alt += dr["ID_ALT"].ToString();
+                    nick_alt += dr["NICK_ALT"].ToString();
                 }
             }
             catch (Exception erro)
@@ -153,7 +142,22 @@ namespace Hype.painel
                 MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
             }
         }
-        
+
+        public void DadosMembros()
+        {
+            // CADASTRO              
+            id_membro = membros.Instance.id_membro;
+            txt_level.Texts = membros.Instance.level;
+            txt_poder.Texts = membros.Instance.poder;
+            txt_patente.Texts = membros.Instance.patente;
+            txt_classe.Texts = membros.Instance.classe;
+            txt_cla.Texts = membros.Instance.foi_para_cla;
+            id_progressao = membros.Instance.id_progressao;
+            id_recrutamento = membros.Instance.id_recrutamento;
+        }
+        #endregion
+
+        #region BOTOES
         private void BotaoVoltar()
         {
             conta_principal uc = new conta_principal();
@@ -212,10 +216,8 @@ namespace Hype.painel
 
                 objCmdProgressao.ExecuteNonQuery();
 
-                /*
-                
                 // SAIDA DO CLA
-                MySqlCommand objCmdSaidaCla = new MySqlCommand("insert into hypedb.saida_do_cla (id_saida_do_cla, data_saida, nick, level, poder, classe, patente, anotacao) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+                MySqlCommand objCmdSaidaCla = new MySqlCommand("insert into hypedb.saida_do_cla (id_saida_do_cla, data_saida, nick, level, poder, classe, patente, anotacao, nick_alt) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
                 objCmdSaidaCla.Parameters.Add("@data_saida", MySqlDbType.Date).Value = DateTime.Now;
                 objCmdSaidaCla.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                 objCmdSaidaCla.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
@@ -223,9 +225,9 @@ namespace Hype.painel
                 objCmdSaidaCla.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
                 objCmdSaidaCla.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
                 objCmdSaidaCla.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = txt_motivo.Text;
+                objCmdSaidaCla.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = nick_alt;
 
                 objCmdSaidaCla.ExecuteNonQuery();
-                */
 
                 // VERIFICA SE A CAIXA DE SELEÇÃO FOI SELECIONADA
                 if (verificar == "True")
@@ -269,6 +271,7 @@ namespace Hype.painel
             }
 
         }
+        #endregion
 
         private void conta_excluir_Load(object sender, EventArgs e)
         {

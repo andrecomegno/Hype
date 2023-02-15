@@ -13,17 +13,16 @@ using MySql.Data.MySqlClient;
 
 namespace Hype.painel
 {
-
-    public partial class add_membros : UserControl
+    public partial class cadastro : UserControl
     {
-        public static add_membros Instance;
+        public static cadastro Instance;
 
         Decimal novoPoder = 0;
         int novoLevel = 0;
 
         string tem_alt = string.Empty;
 
-        public add_membros()
+        public cadastro()
         {
             InitializeComponent();
             Instance = this;
@@ -61,7 +60,7 @@ namespace Hype.painel
             }
         }
 
-        // NOVO CADASTRO
+        #region NOVO CADASTRO
         private void NovoMembro()
         {
             configdb database = new configdb();
@@ -514,8 +513,9 @@ namespace Hype.painel
 
             database.closeConnection();
         }
+        #endregion
 
-        // BOTÕES
+        #region BOTÕES
         private void bt_salvar_Click(object sender, EventArgs e)
         {
             try
@@ -552,38 +552,6 @@ namespace Hype.painel
             }
         }
 
-        private void LimparTextoAlt(Control.ControlCollection control)
-        {
-            foreach (Control c in control)
-            {
-                if (c is RJTextBox)
-                {
-                    ((RJTextBox)(c)).Texts = string.Empty;
-                }
-
-                if (c is RJComboBox)
-                {
-                    ((RJComboBox)(c)).SelectedIndex = -1;
-                }
-            }
-        }
-
-        private void LimparTextoCadastro(Control.ControlCollection control)
-        {
-            foreach (Control c in control)
-            {
-                if (c is RJTextBox)
-                {
-                    ((RJTextBox)(c)).Texts = string.Empty;
-                }
-
-                if (c is RJComboBox)
-                {
-                    ((RJComboBox)(c)).SelectedIndex = 0;
-                }
-            }
-        }
-
         private void rd_sim_CheckedChanged(object sender, EventArgs e)
         {
             txt_quantidade_alt.Enabled = true;
@@ -608,25 +576,7 @@ namespace Hype.painel
             CampoTextoAltDesativado(this.pl_conta_alt_01.Controls);
 
             tem_alt = "NÃO";
-        }
-
-        private void LimparCadastro()
-        {
-            txt_quantidade_alt.Enabled = false;
-            txt_quantidade_alt.SelectedIndex = 0;
-
-            txt_patente.SelectedIndex = 0;
-
-            LimparTextoCadastro(pl_conta_principal.Controls);
-
-            LimparTextoAlt(pl_conta_alt_01.Controls);
-            LimparTextoAlt(pl_conta_alt_02.Controls);
-            LimparTextoAlt(pl_conta_alt_03.Controls);
-            LimparTextoAlt(pl_conta_alt_04.Controls);
-            LimparTextoAlt(pl_conta_alt_05.Controls);
-
-            CampoTextoAltDesativado(this.pl_conta_alt_01.Controls);
-        }
+        }      
 
         private void txt_quantidade_alt_SelectedIndexChanged(object sender, EventArgs e)
         { 
@@ -657,17 +607,57 @@ namespace Hype.painel
             }
             
         }
+        #endregion
 
-        private void PainelContaALT()
+        #region Limpar Cadastro
+        private void LimparCadastro()
         {
-            if (txt_quantidade_alt.SelectedIndex == 0)
-                rd_nao.Checked = true;
+            txt_quantidade_alt.Enabled = false;
+            txt_quantidade_alt.SelectedIndex = 0;
+
+            txt_patente.SelectedIndex = 0;
+
+            LimparTextoCadastro(pl_conta_principal.Controls);
+
+            LimparTextoAlt(pl_conta_alt_01.Controls);
+            LimparTextoAlt(pl_conta_alt_02.Controls);
+            LimparTextoAlt(pl_conta_alt_03.Controls);
+            LimparTextoAlt(pl_conta_alt_04.Controls);
+            LimparTextoAlt(pl_conta_alt_05.Controls);
 
             CampoTextoAltDesativado(this.pl_conta_alt_01.Controls);
-            CampoTextoAltDesativado(this.pl_conta_alt_02.Controls);
-            CampoTextoAltDesativado(this.pl_conta_alt_03.Controls);
-            CampoTextoAltDesativado(this.pl_conta_alt_04.Controls);
-            CampoTextoAltDesativado(this.pl_conta_alt_05.Controls);
+        }
+
+        private void LimparTextoAlt(Control.ControlCollection control)
+        {
+            foreach (Control c in control)
+            {
+                if (c is RJTextBox)
+                {
+                    ((RJTextBox)(c)).Texts = string.Empty;
+                }
+
+                if (c is RJComboBox)
+                {
+                    ((RJComboBox)(c)).SelectedIndex = -1;
+                }
+            }
+        }
+
+        private void LimparTextoCadastro(Control.ControlCollection control)
+        {
+            foreach (Control c in control)
+            {
+                if (c is RJTextBox)
+                {
+                    ((RJTextBox)(c)).Texts = string.Empty;
+                }
+
+                if (c is RJComboBox)
+                {
+                    ((RJComboBox)(c)).SelectedIndex = 0;
+                }
+            }
         }
 
         private void CampoTextoAltDesativado(Control.ControlCollection control)
@@ -709,6 +699,7 @@ namespace Hype.painel
                 }
             }
         }
+        #endregion
 
         #region CAMPO DO TEXTO EM BRANCO - ALERTAS
         private void Alertas()
@@ -1129,6 +1120,18 @@ namespace Hype.painel
             PainelContaALT();
         }
 
+        private void PainelContaALT()
+        {
+            if (txt_quantidade_alt.SelectedIndex == 0)
+                rd_nao.Checked = true;
+
+            CampoTextoAltDesativado(this.pl_conta_alt_01.Controls);
+            CampoTextoAltDesativado(this.pl_conta_alt_02.Controls);
+            CampoTextoAltDesativado(this.pl_conta_alt_03.Controls);
+            CampoTextoAltDesativado(this.pl_conta_alt_04.Controls);
+            CampoTextoAltDesativado(this.pl_conta_alt_05.Controls);
+        }
+
         private void PainelAlt_01()
         {
             txt_nick_alt_01.PlaceholderText = "Qual é o Nick ?";
@@ -1239,7 +1242,6 @@ namespace Hype.painel
             CampoTextoAltHabilitado(this.pl_conta_alt_05.Controls);
         }
         #endregion
-
 
     }
 }

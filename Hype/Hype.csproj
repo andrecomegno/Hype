@@ -198,17 +198,23 @@
     <Compile Include="cla.Designer.cs">
       <DependentUpon>cla.cs</DependentUpon>
     </Compile>
-    <Compile Include="painel\add_membros.cs">
+    <Compile Include="painel\cadastro.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="painel\add_membros.Designer.cs">
-      <DependentUpon>add_membros.cs</DependentUpon>
+    <Compile Include="painel\cadastro.Designer.cs">
+      <DependentUpon>cadastro.cs</DependentUpon>
     </Compile>
     <Compile Include="painel\alts.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="painel\alts.Designer.cs">
       <DependentUpon>alts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="painel\cadastro_alt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="painel\cadastro_alt.Designer.cs">
+      <DependentUpon>cadastro_alt.cs</DependentUpon>
     </Compile>
     <Compile Include="painel\configuracao.cs">
       <SubType>UserControl</SubType>
@@ -291,11 +297,14 @@
     <EmbeddedResource Include="cla.resx">
       <DependentUpon>cla.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\add_membros.resx">
-      <DependentUpon>add_membros.cs</DependentUpon>
+    <EmbeddedResource Include="painel\cadastro.resx">
+      <DependentUpon>cadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="painel\alts.resx">
       <DependentUpon>alts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="painel\cadastro_alt.resx">
+      <DependentUpon>cadastro_alt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="painel\configuracao.resx">
       <DependentUpon>configuracao.cs</DependentUpon>

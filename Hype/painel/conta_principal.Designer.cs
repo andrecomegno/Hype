@@ -40,8 +40,6 @@ namespace Hype.painel
             this.pl_espaco_02 = new System.Windows.Forms.Panel();
             this.pl_conteudo = new System.Windows.Forms.Panel();
             this.bt_excluir = new System.Windows.Forms.Button();
-            this.txt_patente = new System.Windows.Forms.ComboBox();
-            this.txt_classe = new System.Windows.Forms.ComboBox();
             this.lb_poder = new System.Windows.Forms.Label();
             this.lb_level = new System.Windows.Forms.Label();
             this.lb_dezembro = new System.Windows.Forms.Label();
@@ -64,7 +62,6 @@ namespace Hype.painel
             this.lb_nick = new System.Windows.Forms.Label();
             this.lb_patente = new System.Windows.Forms.Label();
             this.lb_level_col_01 = new System.Windows.Forms.Label();
-            this.lb_classe = new System.Windows.Forms.Label();
             this.lb_progressao = new System.Windows.Forms.Label();
             this.pl_espaco_01 = new System.Windows.Forms.Panel();
             this.pl_top = new System.Windows.Forms.Panel();
@@ -72,6 +69,9 @@ namespace Hype.painel
             this.txt_data_entrada = new System.Windows.Forms.Label();
             this.lb_data_entrada = new System.Windows.Forms.Label();
             this.lb_titulo = new System.Windows.Forms.Label();
+            this.lb_classe = new System.Windows.Forms.Label();
+            this.txt_patente = new Hype.script.RJComboBox();
+            this.txt_classe = new Hype.script.RJComboBox();
             this.txt_level = new Hype.painel.RJTextBox();
             this.txt_poder = new Hype.painel.RJTextBox();
             this.txt_level_dez = new Hype.painel.RJTextBox();
@@ -223,9 +223,9 @@ namespace Hype.painel
             // pl_conteudo
             // 
             this.pl_conteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.pl_conteudo.Controls.Add(this.bt_excluir);
             this.pl_conteudo.Controls.Add(this.txt_patente);
             this.pl_conteudo.Controls.Add(this.txt_classe);
+            this.pl_conteudo.Controls.Add(this.bt_excluir);
             this.pl_conteudo.Controls.Add(this.txt_level);
             this.pl_conteudo.Controls.Add(this.lb_poder);
             this.pl_conteudo.Controls.Add(this.txt_poder);
@@ -299,42 +299,6 @@ namespace Hype.painel
             this.bt_excluir.Text = "Excluir";
             this.bt_excluir.UseVisualStyleBackColor = false;
             this.bt_excluir.Click += new System.EventHandler(this.bt_excluir_Click);
-            // 
-            // txt_patente
-            // 
-            this.txt_patente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_patente.BackColor = System.Drawing.Color.White;
-            this.txt_patente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_patente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txt_patente.FormattingEnabled = true;
-            this.txt_patente.Items.AddRange(new object[] {
-            "Ancião",
-            "Égide Sombria",
-            "Lider",
-            "Membro",
-            "Novo Membro"});
-            this.txt_patente.Location = new System.Drawing.Point(793, 63);
-            this.txt_patente.Name = "txt_patente";
-            this.txt_patente.Size = new System.Drawing.Size(129, 21);
-            this.txt_patente.TabIndex = 153;
-            // 
-            // txt_classe
-            // 
-            this.txt_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_classe.BackColor = System.Drawing.Color.White;
-            this.txt_classe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_classe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txt_classe.FormattingEnabled = true;
-            this.txt_classe.Items.AddRange(new object[] {
-            "Arbalista",
-            "Feiticeira",
-            "Guerreiro",
-            "Lanceiro",
-            "Taoista"});
-            this.txt_classe.Location = new System.Drawing.Point(651, 63);
-            this.txt_classe.Name = "txt_classe";
-            this.txt_classe.Size = new System.Drawing.Size(129, 21);
-            this.txt_classe.TabIndex = 152;
             // 
             // lb_poder
             // 
@@ -591,7 +555,7 @@ namespace Hype.painel
             this.lb_patente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lb_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_patente.ForeColor = System.Drawing.Color.White;
-            this.lb_patente.Location = new System.Drawing.Point(790, 43);
+            this.lb_patente.Location = new System.Drawing.Point(790, 32);
             this.lb_patente.Name = "lb_patente";
             this.lb_patente.Size = new System.Drawing.Size(126, 17);
             this.lb_patente.TabIndex = 13;
@@ -609,18 +573,6 @@ namespace Hype.painel
             this.lb_level_col_01.TabIndex = 5;
             this.lb_level_col_01.Text = "Level";
             this.lb_level_col_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_classe
-            // 
-            this.lb_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_classe.ForeColor = System.Drawing.Color.White;
-            this.lb_classe.Location = new System.Drawing.Point(651, 43);
-            this.lb_classe.Name = "lb_classe";
-            this.lb_classe.Size = new System.Drawing.Size(129, 17);
-            this.lb_classe.TabIndex = 6;
-            this.lb_classe.Text = "Classe";
-            this.lb_classe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb_progressao
             // 
@@ -709,6 +661,72 @@ namespace Hype.painel
             this.lb_titulo.TabIndex = 96;
             this.lb_titulo.Text = "CONTA PRINCIPAL";
             this.lb_titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_classe
+            // 
+            this.lb_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_classe.ForeColor = System.Drawing.Color.White;
+            this.lb_classe.Location = new System.Drawing.Point(650, 32);
+            this.lb_classe.Name = "lb_classe";
+            this.lb_classe.Size = new System.Drawing.Size(129, 17);
+            this.lb_classe.TabIndex = 6;
+            this.lb_classe.Text = "Classe";
+            this.lb_classe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_patente
+            // 
+            this.txt_patente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_patente.BackColor = System.Drawing.Color.White;
+            this.txt_patente.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_patente.BorderSize = 0;
+            this.txt_patente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_patente.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_patente.IconColor = System.Drawing.Color.Black;
+            this.txt_patente.Items.AddRange(new object[] {
+            "Patente",
+            "Ancião",
+            "Égide Sombria",
+            "Lider",
+            "Membro",
+            "Novo Membro"});
+            this.txt_patente.ListBackColor = System.Drawing.Color.White;
+            this.txt_patente.ListTextColor = System.Drawing.Color.DimGray;
+            this.txt_patente.Location = new System.Drawing.Point(787, 53);
+            this.txt_patente.MinimumSize = new System.Drawing.Size(50, 30);
+            this.txt_patente.Name = "txt_patente";
+            this.txt_patente.Size = new System.Drawing.Size(130, 31);
+            this.txt_patente.TabIndex = 172;
+            this.txt_patente.Texts = "";
+            this.txt_patente.Leave += new System.EventHandler(this.txt_patente_Leave);
+            // 
+            // txt_classe
+            // 
+            this.txt_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_classe.BackColor = System.Drawing.Color.White;
+            this.txt_classe.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_classe.BorderSize = 0;
+            this.txt_classe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_classe.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_classe.IconColor = System.Drawing.Color.Black;
+            this.txt_classe.Items.AddRange(new object[] {
+            "Classe",
+            "Besteira",
+            "Feiticeira",
+            "Guerreiro",
+            "Lanceiro",
+            "Taoista"});
+            this.txt_classe.ListBackColor = System.Drawing.Color.White;
+            this.txt_classe.ListTextColor = System.Drawing.Color.DimGray;
+            this.txt_classe.Location = new System.Drawing.Point(651, 53);
+            this.txt_classe.MinimumSize = new System.Drawing.Size(50, 30);
+            this.txt_classe.Name = "txt_classe";
+            this.txt_classe.Size = new System.Drawing.Size(130, 31);
+            this.txt_classe.TabIndex = 171;
+            this.txt_classe.Texts = "";
+            this.txt_classe.Leave += new System.EventHandler(this.txt_classe_Leave);
             // 
             // txt_level
             // 
@@ -1320,6 +1338,7 @@ namespace Hype.painel
             this.txt_nick.TabIndex = 1;
             this.txt_nick.Texts = "";
             this.txt_nick.UnderlinedStyle = false;
+            this.txt_nick.Leave += new System.EventHandler(this.txt_nick_Leave);
             // 
             // txt_poder_ja
             // 
@@ -1384,7 +1403,6 @@ namespace Hype.painel
         private RJTextBox txt_nick;
         private RJTextBox txt_poder_ja;
         private System.Windows.Forms.Label lb_level_col_01;
-        private System.Windows.Forms.Label lb_classe;
         private System.Windows.Forms.Panel pl_espaco_01;
         private System.Windows.Forms.Panel pl_top;
         private System.Windows.Forms.Button bt_voltar;
@@ -1432,8 +1450,9 @@ namespace Hype.painel
         private RJTextBox txt_level_fe;
         private RJTextBox txt_poder_fe;
         private System.Windows.Forms.Label lb_progressao;
-        private System.Windows.Forms.ComboBox txt_patente;
-        private System.Windows.Forms.ComboBox txt_classe;
         private System.Windows.Forms.Button bt_excluir;
+        private script.RJComboBox txt_classe;
+        private System.Windows.Forms.Label lb_classe;
+        private script.RJComboBox txt_patente;
     }
 }

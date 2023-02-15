@@ -1,7 +1,7 @@
 ﻿
 namespace Hype.painel
 {
-    partial class add_membros
+    partial class cadastro
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -34,6 +34,7 @@ namespace Hype.painel
             this.lb_titulo = new System.Windows.Forms.Label();
             this.pl_espaco_01 = new System.Windows.Forms.Panel();
             this.pl_conta_principal = new System.Windows.Forms.Panel();
+            this.txt_classe = new Hype.script.RJComboBox();
             this.txt_patente = new Hype.script.RJComboBox();
             this.lb_conta_principal = new System.Windows.Forms.Label();
             this.txt_level = new Hype.painel.RJTextBox();
@@ -77,7 +78,6 @@ namespace Hype.painel
             this.txt_nick_alt_05 = new Hype.painel.RJTextBox();
             this.txt_foi_alt_05 = new Hype.painel.RJTextBox();
             this.txt_level_alt_05 = new Hype.painel.RJTextBox();
-            this.txt_classe = new Hype.script.RJComboBox();
             this.pl_top.SuspendLayout();
             this.pl_conta_principal.SuspendLayout();
             this.pl_possui_atl.SuspendLayout();
@@ -154,6 +154,33 @@ namespace Hype.painel
             this.pl_conta_principal.Name = "pl_conta_principal";
             this.pl_conta_principal.Size = new System.Drawing.Size(1200, 135);
             this.pl_conta_principal.TabIndex = 79;
+            // 
+            // txt_classe
+            // 
+            this.txt_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_classe.BackColor = System.Drawing.Color.White;
+            this.txt_classe.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_classe.BorderSize = 0;
+            this.txt_classe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_classe.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_classe.IconColor = System.Drawing.Color.Black;
+            this.txt_classe.Items.AddRange(new object[] {
+            "Classe",
+            "Besteira",
+            "Feiticeira",
+            "Guerreiro",
+            "Lanceiro",
+            "Taoista"});
+            this.txt_classe.ListBackColor = System.Drawing.Color.White;
+            this.txt_classe.ListTextColor = System.Drawing.Color.DimGray;
+            this.txt_classe.Location = new System.Drawing.Point(667, 49);
+            this.txt_classe.MinimumSize = new System.Drawing.Size(50, 30);
+            this.txt_classe.Name = "txt_classe";
+            this.txt_classe.Size = new System.Drawing.Size(130, 31);
+            this.txt_classe.TabIndex = 170;
+            this.txt_classe.Texts = "";
+            this.txt_classe.Leave += new System.EventHandler(this.txt_classe_Leave);
             // 
             // txt_patente
             // 
@@ -321,7 +348,7 @@ namespace Hype.painel
             this.pl_espaco_02.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_espaco_02.Location = new System.Drawing.Point(0, 218);
             this.pl_espaco_02.Name = "pl_espaco_02";
-            this.pl_espaco_02.Size = new System.Drawing.Size(1200, 19);
+            this.pl_espaco_02.Size = new System.Drawing.Size(1200, 10);
             this.pl_espaco_02.TabIndex = 80;
             // 
             // pl_possui_atl
@@ -332,7 +359,7 @@ namespace Hype.painel
             this.pl_possui_atl.Controls.Add(this.rd_nao);
             this.pl_possui_atl.Controls.Add(this.rd_sim);
             this.pl_possui_atl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_possui_atl.Location = new System.Drawing.Point(0, 237);
+            this.pl_possui_atl.Location = new System.Drawing.Point(0, 228);
             this.pl_possui_atl.Name = "pl_possui_atl";
             this.pl_possui_atl.Size = new System.Drawing.Size(1200, 42);
             this.pl_possui_atl.TabIndex = 164;
@@ -408,9 +435,9 @@ namespace Hype.painel
             // 
             this.pl_espaco_03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.pl_espaco_03.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_espaco_03.Location = new System.Drawing.Point(0, 279);
+            this.pl_espaco_03.Location = new System.Drawing.Point(0, 270);
             this.pl_espaco_03.Name = "pl_espaco_03";
-            this.pl_espaco_03.Size = new System.Drawing.Size(1200, 13);
+            this.pl_espaco_03.Size = new System.Drawing.Size(1200, 10);
             this.pl_espaco_03.TabIndex = 165;
             // 
             // pl_conta_alt_01
@@ -422,7 +449,7 @@ namespace Hype.painel
             this.pl_conta_alt_01.Controls.Add(this.txt_level_alt_01);
             this.pl_conta_alt_01.Controls.Add(this.txt_nick_alt_01);
             this.pl_conta_alt_01.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_conta_alt_01.Location = new System.Drawing.Point(0, 292);
+            this.pl_conta_alt_01.Location = new System.Drawing.Point(0, 280);
             this.pl_conta_alt_01.Name = "pl_conta_alt_01";
             this.pl_conta_alt_01.Size = new System.Drawing.Size(1200, 95);
             this.pl_conta_alt_01.TabIndex = 167;
@@ -547,7 +574,7 @@ namespace Hype.painel
             this.pl_conta_alt_02.Controls.Add(this.txt_foi_alt_02);
             this.pl_conta_alt_02.Controls.Add(this.txt_level_alt_02);
             this.pl_conta_alt_02.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_conta_alt_02.Location = new System.Drawing.Point(0, 387);
+            this.pl_conta_alt_02.Location = new System.Drawing.Point(0, 375);
             this.pl_conta_alt_02.Name = "pl_conta_alt_02";
             this.pl_conta_alt_02.Size = new System.Drawing.Size(1200, 59);
             this.pl_conta_alt_02.TabIndex = 170;
@@ -657,7 +684,7 @@ namespace Hype.painel
             this.pl_botao.Controls.Add(this.bt_cancelar);
             this.pl_botao.Controls.Add(this.bt_salvar);
             this.pl_botao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_botao.Location = new System.Drawing.Point(0, 623);
+            this.pl_botao.Location = new System.Drawing.Point(0, 611);
             this.pl_botao.Name = "pl_botao";
             this.pl_botao.Size = new System.Drawing.Size(1200, 72);
             this.pl_botao.TabIndex = 185;
@@ -704,7 +731,7 @@ namespace Hype.painel
             this.pl_conta_alt_03.Controls.Add(this.txt_foi_alt_03);
             this.pl_conta_alt_03.Controls.Add(this.txt_level_alt_03);
             this.pl_conta_alt_03.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_conta_alt_03.Location = new System.Drawing.Point(0, 446);
+            this.pl_conta_alt_03.Location = new System.Drawing.Point(0, 434);
             this.pl_conta_alt_03.Name = "pl_conta_alt_03";
             this.pl_conta_alt_03.Size = new System.Drawing.Size(1200, 59);
             this.pl_conta_alt_03.TabIndex = 186;
@@ -816,7 +843,7 @@ namespace Hype.painel
             this.pl_conta_alt_04.Controls.Add(this.txt_foi_alt_04);
             this.pl_conta_alt_04.Controls.Add(this.txt_level_alt_04);
             this.pl_conta_alt_04.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_conta_alt_04.Location = new System.Drawing.Point(0, 505);
+            this.pl_conta_alt_04.Location = new System.Drawing.Point(0, 493);
             this.pl_conta_alt_04.Name = "pl_conta_alt_04";
             this.pl_conta_alt_04.Size = new System.Drawing.Size(1200, 59);
             this.pl_conta_alt_04.TabIndex = 187;
@@ -928,7 +955,7 @@ namespace Hype.painel
             this.pl_conta_alt_05.Controls.Add(this.txt_foi_alt_05);
             this.pl_conta_alt_05.Controls.Add(this.txt_level_alt_05);
             this.pl_conta_alt_05.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_conta_alt_05.Location = new System.Drawing.Point(0, 564);
+            this.pl_conta_alt_05.Location = new System.Drawing.Point(0, 552);
             this.pl_conta_alt_05.Name = "pl_conta_alt_05";
             this.pl_conta_alt_05.Size = new System.Drawing.Size(1200, 59);
             this.pl_conta_alt_05.TabIndex = 192;
@@ -1031,33 +1058,6 @@ namespace Hype.painel
             this.txt_level_alt_05.Texts = "";
             this.txt_level_alt_05.UnderlinedStyle = false;
             this.txt_level_alt_05.Leave += new System.EventHandler(this.txt_level_alt_05_Leave);
-            // 
-            // txt_classe
-            // 
-            this.txt_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_classe.BackColor = System.Drawing.Color.White;
-            this.txt_classe.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_classe.BorderSize = 0;
-            this.txt_classe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txt_classe.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_classe.IconColor = System.Drawing.Color.Black;
-            this.txt_classe.Items.AddRange(new object[] {
-            "Classe",
-            "Besteira",
-            "Feiticeira",
-            "Guerreiro",
-            "Lanceiro",
-            "Taoista"});
-            this.txt_classe.ListBackColor = System.Drawing.Color.White;
-            this.txt_classe.ListTextColor = System.Drawing.Color.DimGray;
-            this.txt_classe.Location = new System.Drawing.Point(667, 49);
-            this.txt_classe.MinimumSize = new System.Drawing.Size(50, 30);
-            this.txt_classe.Name = "txt_classe";
-            this.txt_classe.Size = new System.Drawing.Size(130, 31);
-            this.txt_classe.TabIndex = 170;
-            this.txt_classe.Texts = "";
-            this.txt_classe.Leave += new System.EventHandler(this.txt_classe_Leave);
             // 
             // add_membros
             // 

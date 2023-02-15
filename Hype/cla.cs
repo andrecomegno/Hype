@@ -172,5 +172,6 @@ namespace Hype
             configuracao uc = new configuracao();
             addControl(uc);
         }
+
     }
 }

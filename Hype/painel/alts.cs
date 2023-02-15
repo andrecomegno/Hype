@@ -29,8 +29,12 @@ namespace Hype.painel
         {
             InitializeComponent();
             Instance = this;
+
+            txt_sem_dados.Visible = false;
+            txt_clique_aqui.Visible = false;
         }
 
+        #region TABELAS
         private void TabelaAlt()
         {
             configdb database = new configdb();
@@ -44,6 +48,21 @@ namespace Hype.painel
                 da.Fill(dt);
 
                 dataGridView1.DataSource = dt;
+            }
+
+            if (dataGridView1.Rows.Count == 0)
+            {
+                txt_sem_dados.Visible = true;
+                txt_clique_aqui.Visible = true;
+
+                dataGridView1.Visible = false;
+            }
+            else
+            {
+                txt_sem_dados.Visible = false;
+                txt_clique_aqui.Visible = false;
+
+                dataGridView1.Visible = true;
             }
 
             database.closeConnection();
@@ -71,7 +90,7 @@ namespace Hype.painel
                 if (column.DataPropertyName == "DATA_ENTRADA")
                     column.Width = 200;
                 else if (column.DataPropertyName == "NICK_ALT")
-                    column.Width = 220;
+                    column.Width = 350;
                 else if (column.DataPropertyName == "LEVEL_ALT")
                     column.Width = 130;
                 else if (column.DataPropertyName == "CLASSE_ALT")
@@ -80,11 +99,6 @@ namespace Hype.painel
                     column.Width = 200;
             }
 
-        }
-
-        private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            MostrarDadosTabela();
         }
 
         private void MostrarDadosTabela()
@@ -115,6 +129,26 @@ namespace Hype.painel
             }
         }
 
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                MostrarDadosTabela();
+            }
+        }
+
+        private void dataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.Cursor = Cursors.Hand;
+        }
+
+        private void dataGridView1_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.Cursor = Cursors.Default;
+        }
+        #endregion
+
+        #region MENU TOP
         private void bt_membros_Click(object sender, EventArgs e)
         {
             membros uc = new membros();
@@ -130,22 +164,23 @@ namespace Hype.painel
         {
 
         }
+        #endregion
 
-        // CAMPO DE BUSCA
+        #region CAMPO DE BUSCA
         private void bt_buscar_Click(object sender, EventArgs e)
         {
-            buscar();
+            Buscar();
         }
 
         private void txt_buscar__TextChanged(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txt_buscar.Texts))
             {
-                buscar();
+                Buscar();
             }
-        }
+        }       
 
-        private void buscar()
+        private void Buscar()
         {
             configdb database = new configdb();
             database.openConnection();
@@ -163,6 +198,31 @@ namespace Hype.painel
 
             database.closeConnection();
         }
+        #endregion
+
+        #region BOTOES
+        private void txt_clique_aqui_Click(object sender, EventArgs e)
+        {
+            cadastro_alt uc = new cadastro_alt();
+            cla.Instance.addControl(uc);
+        }
+
+        private void bt_add_membro_Click(object sender, EventArgs e)
+        {
+            cadastro_alt uc = new cadastro_alt();
+            cla.Instance.addControl(uc);
+        }
+
+        private void bt_add_membro_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void bt_add_membro_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+        }
+        #endregion
 
         private void alts_Load(object sender, EventArgs e)
         {
@@ -172,7 +232,5 @@ namespace Hype.painel
             dataGridView1.EnableHeadersVisualStyles = false;
 
         }
-
-
     }
 }

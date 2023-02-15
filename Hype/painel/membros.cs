@@ -39,6 +39,7 @@ namespace Hype.painel
             txt_clique_aqui.Visible = false;
         }
 
+        #region MENU TOPO
         private void bt_progressao_Click(object sender, EventArgs e)
         {
             progressao uc = new progressao();
@@ -56,7 +57,9 @@ namespace Hype.painel
             alts uc = new alts();
             cla.Instance.addControl(uc);
         }
+        #endregion
 
+        #region TABELAS
         private void TabelaMembros()
         {
             configdb database = new configdb();
@@ -183,15 +186,18 @@ namespace Hype.painel
             }
         }
 
+        #endregion
+
+        #region BOTOES
         private void bt_add_membro_Click(object sender, EventArgs e)
         {
-            add_membros uc = new add_membros();
+            cadastro uc = new cadastro();
             cla.Instance.addControl(uc);
         }
 
         private void txt_clique_aqui_Click(object sender, EventArgs e)
         {
-            add_membros uc = new add_membros();
+            cadastro uc = new cadastro();
             cla.Instance.addControl(uc);
         }
         private void bt_add_membro_MouseEnter(object sender, EventArgs e)
@@ -207,10 +213,10 @@ namespace Hype.painel
         // CAMPO DE BUSCA
         private void bt_buscar_Click(object sender, EventArgs e)
         {
-            buscar();
+            Buscar();
         }
 
-        private void buscar()
+        private void Buscar()
         {
             configdb database = new configdb();
             database.openConnection();
@@ -233,7 +239,7 @@ namespace Hype.painel
         {
             if(String.IsNullOrEmpty(txt_buscar.Texts))
             {
-                buscar();
+                Buscar();
             }
         }
 
@@ -246,6 +252,8 @@ namespace Hype.painel
         {
             Cursor = Cursors.Default;
         }
+
+        #endregion
 
         private void membros_Load(object sender, EventArgs e)
         {
