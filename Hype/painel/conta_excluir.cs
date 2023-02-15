@@ -39,7 +39,7 @@ namespace Hype.painel
             lb_data_saida.Text = DateTime.Now.ToShortDateString();
         }
 
-        #region TABELA MEMBROS ALT
+        #region TABELA MEMBROS E ALT
         private void TabelaMembrosAlt()
         {
             configdb database = new configdb();

@@ -21,7 +21,7 @@ namespace Hype.painel
         public conta_principal()
         {
             InitializeComponent();
-            CampoTexto();
+            CampoTextoDesativado();
         }
 
         #region BOTOES
@@ -142,7 +142,7 @@ namespace Hype.painel
             cla.Instance.addControl(uc);
         }
 
-        private void CampoTexto()
+        private void CampoTextoDesativado()
         {
             txt_level.Enabled = false;
             txt_poder.Enabled = false;

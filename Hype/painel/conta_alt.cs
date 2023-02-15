@@ -16,34 +16,27 @@ namespace Hype.painel
     public partial class conta_alt : UserControl
     {
         string id_alt = "";
+        string id = "";
 
+        string nick_principal = "";
+        private string verificar = "";
 
         public conta_alt()
         {
             InitializeComponent();
 
-            txt_nick_principal.Texts = alts.Instance.nick_principal;
+            nick_principal = alts.Instance.nick_principal;
         }
 
-        public void DadosMembros()
-        {
-            // ALT SELECIONADA - ALT.CS
-            lb_data_entrada.Text = alts.Instance.data_entrada;   
-            id_alt = alts.Instance.id_alt;
-            txt_nick.Texts = alts.Instance.nick_alt;
-            txt_level.Texts = alts.Instance.level_alt;
-            txt_classe.Text = alts.Instance.classe_alt;
-            txt_cla.Texts = alts.Instance.cla_alt;
-        }
-
-        private void TabelaCadastroAlt()
+        #region TABELAS
+        private void TabelaAlt()
         {
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand objCmdCadastroAlt = new MySqlCommand("select DATA_ENTRADA, ID_ALT, NICK_PRINCIPAL, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT from hypedb.cadastro_alt where NICK_PRINCIPAL like @NICK_PRINCIPAL '%' ", database.getConnection());
+            MySqlCommand objCmdCadastroAlt = new MySqlCommand("select DATA_ENTRADA, ID_ALT, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT, NICK_PRINCIPAL from hypedb.cadastro_alt where NICK_PRINCIPAL like @NICK_PRINCIPAL '%' ", database.getConnection());
 
-            objCmdCadastroAlt.Parameters.AddWithValue("@NICK_PRINCIPAL", txt_nick_principal.Texts);
+            objCmdCadastroAlt.Parameters.AddWithValue("@NICK_PRINCIPAL", nick_principal);
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(objCmdCadastroAlt))
             {
@@ -65,20 +58,32 @@ namespace Hype.painel
 
             dataGridView1.Columns[0].Visible = false; // DATA_ENTRADA
             dataGridView1.Columns[1].Visible = false; // ID_ALT
-            dataGridView1.Columns[2].HeaderText = "CONTA PRINCIPAL";
-            dataGridView1.Columns[3].HeaderText = "NICK";
-            dataGridView1.Columns[4].HeaderText = "LEVEL";
-            dataGridView1.Columns[5].HeaderText = "CLASSE";
-            dataGridView1.Columns[6].HeaderText = "CLÃ";
+            dataGridView1.Columns[2].HeaderText = "NICK";
+            dataGridView1.Columns[3].HeaderText = "LEVEL";
+            dataGridView1.Columns[4].HeaderText = "CLASSE";
+            dataGridView1.Columns[5].HeaderText = "CLÃ";
+            dataGridView1.Columns[6].HeaderText = "CONTA PRINCIPAL";
+
+            dataGridView1.Columns[2].ReadOnly = true;
+            dataGridView1.Columns[3].ReadOnly = true;
+            dataGridView1.Columns[4].ReadOnly = true;
+            dataGridView1.Columns[5].ReadOnly = true;
+            dataGridView1.Columns[6].ReadOnly = true;
+
+            // ADICIONA A CAIXA DE SELECAO NA TABELA 
+            DataGridViewCheckBoxColumn selecionar = new DataGridViewCheckBoxColumn();
+            selecionar.Name = "SELECIONAR";
+            selecionar.DataPropertyName = "SELECIONAR";
+            selecionar.HeaderText = "";
+
+            dataGridView1.Columns.Insert(0, selecionar);
 
             dataGridView1.Columns["LEVEL_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["CLASSE_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                if (column.DataPropertyName == "NICK_PRINCIPAL")
-                    column.Width = 220;
-                else if (column.DataPropertyName == "NICK_ALT")
+                if (column.DataPropertyName == "NICK_ALT")
                     column.Width = 220;
                 else if (column.DataPropertyName == "LEVEL_ALT")
                     column.Width = 80;
@@ -86,23 +91,37 @@ namespace Hype.painel
                     column.Width = 100;
                 else if (column.DataPropertyName == "CLA_ALT")
                     column.Width = 185;
+                else if (column.DataPropertyName == "NICK_PRINCIPAL")
+                    column.Width = 220;
+                else if (column.DataPropertyName == "SELECIONAR")
+                    column.Width = 30;
             }
         }
 
-        private void conta_alt_Load(object sender, EventArgs e)
-        {
-            TabelaCadastroAlt();
-            DadosMembros();
 
-            dataGridView1.EnableHeadersVisualStyles = false;
+        private void AtualizarTabela()
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand objCmdCadastroAlt = new MySqlCommand("select DATA_ENTRADA, ID_ALT, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT, NICK_PRINCIPAL from hypedb.cadastro_alt where NICK_PRINCIPAL like @NICK_PRINCIPAL '%' ", database.getConnection());
+
+            objCmdCadastroAlt.Parameters.AddWithValue("@NICK_PRINCIPAL", nick_principal);
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(objCmdCadastroAlt))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+            }
+
+            objCmdCadastroAlt.ExecuteNonQuery();
+
+            database.closeConnection();
         }
 
-        private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            MostrarDadosTabela();
-        }
-
-        private void MostrarDadosTabela()
+        private void SelecionarDadosTabela()
         {
             try
             {
@@ -110,13 +129,13 @@ namespace Hype.painel
                 {
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
                     // CONTA PRINCIPAL
-                    txt_nick_principal.Texts = dr["NICK_PRINCIPAL"].ToString();
+                    nick_principal = dr["NICK_PRINCIPAL"].ToString();
 
                     // ALT
                     id_alt = dr["ID_ALT"].ToString();
                     txt_nick.Texts = dr["NICK_ALT"].ToString();
                     txt_level.Texts = dr["LEVEL_ALT"].ToString();
-                    txt_classe.Text = dr["CLASSE_ALT"].ToString();
+                    txt_classe.Texts = dr["CLASSE_ALT"].ToString();
                     txt_cla.Texts = dr["CLA_ALT"].ToString();
                 }
             }
@@ -126,7 +145,169 @@ namespace Hype.painel
             }
         }
 
+        private void CaixaDeSelecao()
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+
+                    id_alt = dr["ID_ALT"].ToString();
+                    
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
+            }
+        }
+
+        public void DadosMembros()
+        {
+            // ALT SELECIONADA - ALT.CS
+            id_alt = alts.Instance.id_alt;
+            txt_nick.Texts = alts.Instance.nick_alt;
+            txt_level.Texts = alts.Instance.level_alt;
+            txt_classe.Texts = alts.Instance.classe_alt;
+            txt_cla.Texts = alts.Instance.cla_alt;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["SELECIONAR"].Index)
+            {
+                //INTERROMPE A EDICAO NO dataGridView1
+                dataGridView1.EndEdit();
+
+                // EXIBE OS VALORES DA CELULA VERDADEIRO OU FASO
+                verificar = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+                // VERIFICA SE A CAIXA DE SELEÇÃO FOI SELECIONADA
+                if (verificar == "True")
+                {
+                    CaixaDeSelecao();
+                }
+
+                //MessageBox.Show("" + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            }
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                SelecionarDadosTabela();
+            }
+        }
+
+        #endregion
+
+        #region BOTOES 
         private void bt_salvar_Click(object sender, EventArgs e)
+        {
+            Alertas();
+        }
+
+        private void bt_cancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TabelaAlt();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                Voltar();
+            }
+        }
+
+        private void bt_voltar_Click(object sender, EventArgs e)
+        {
+            Voltar();
+        }
+
+        private void bt_excluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult dr = MessageBox.Show("Tem Certeza Que Deseja Excluir ?", "AVISO !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                switch (dr)
+                {
+                    case DialogResult.Yes:
+                        ExcluirConta();
+                        break;
+                    case DialogResult.No:
+
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                AtualizarTabela();
+                //LimparCampos();
+            }
+        }
+
+        private void LimparCampos(Control.ControlCollection control)
+        {
+
+        }
+
+        private void ExcluirConta()
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            try
+            {
+                /*
+                // SAIDA DO CLA
+                MySqlCommand objCmdSaidaCla = new MySqlCommand("insert into hypedb.saida_do_cla (id_saida_do_cla, data_saida, nick, level, poder, classe, patente, anotacao, nick_alt) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+                objCmdSaidaCla.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+
+                objCmdSaidaCla.ExecuteNonQuery();
+                */
+
+                // VERIFICA SE A CAIXA DE SELEÇÃO FOI SELECIONADA
+                if (verificar == "True")
+                {
+                    // EXCLUIR ALT
+                    MySqlCommand objCmdCadastroAlt = new MySqlCommand("delete from hypedb.cadastro_alt where ID_ALT=@ID_ALT", database.getConnection());
+                    objCmdCadastroAlt.Parameters.AddWithValue("@ID_ALT", id_alt);
+
+                    objCmdCadastroAlt.ExecuteNonQuery();
+
+                    MessageBox.Show(id_alt);
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
+            }
+
+
+            database.closeConnection();
+        }
+
+        private void Voltar()
+        {
+            alts uc = new alts();
+            cla.Instance.addControl(uc);
+        }
+
+        private void Salvar()
         {
             try
             {
@@ -141,12 +322,12 @@ namespace Hype.painel
                 objCmdCadastroAlt.Parameters.AddWithValue("@ID_ALT", id_alt);
                 objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                 objCmdCadastroAlt.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level.Texts;
-                objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe.Text;
+                objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
                 objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_cla.Texts;
 
                 objCmdCadastroAlt.ExecuteNonQuery();
 
-                DialogResult dr = MessageBox.Show("Editado Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show("Editado Sucesso !", "Conta Alt", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 database.closeConnection();
             }
@@ -154,37 +335,48 @@ namespace Hype.painel
             {
                 MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
             }
-            finally
+        }
+
+        private void Alertas()
+        {
+            if (String.IsNullOrEmpty(txt_nick.Texts))
             {
-                TabelaCadastroAlt();
+                txt_nick.BorderColor = Color.Red;
+                txt_nick.BorderSize = 1;
+            }
+            else if (String.IsNullOrEmpty(txt_level.Texts))
+            {
+                txt_level.BorderColor = Color.Red;
+                txt_level.BorderSize = 1;
+            }
+            else if (String.IsNullOrEmpty(txt_cla.Texts))
+            {
+                txt_cla.BorderColor = Color.Red;
+                txt_cla.BorderSize = 1;
+            }
+            else
+            {
+                try
+                {
+                    Salvar();
+                }
+                finally
+                {
+                    TabelaAlt();
+                }
             }
         }
 
-        private void bt_cancelar_Click(object sender, EventArgs e)
+        #endregion
+
+        private void conta_alt_Load(object sender, EventArgs e)
         {
-            try
-            {
-                TabelaCadastroAlt();
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
-            }
-            finally
-            {
-                BotaoVoltar();
-            }
+            TabelaAlt();
+            DadosMembros();
+
+            dataGridView1.EnableHeadersVisualStyles = false;
         }
 
-        private void BotaoVoltar()
-        {
-            alts uc = new alts();
-            cla.Instance.addControl(uc);
-        }
 
-        private void bt_voltar_Click(object sender, EventArgs e)
-        {
-            BotaoVoltar();
-        }
     }
 }
