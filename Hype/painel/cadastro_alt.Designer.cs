@@ -68,7 +68,7 @@ namespace Hype.painel
             this.txt_level_alt_01 = new Hype.painel.RJTextBox();
             this.txt_nick_alt_01 = new Hype.painel.RJTextBox();
             this.pl_conta_principal = new System.Windows.Forms.Panel();
-            this.rjComboBox1 = new Hype.script.RJComboBox();
+            this.txt_quantidade_alt = new Hype.script.RJComboBox();
             this.lb_quantas_alt = new System.Windows.Forms.Label();
             this.txt_nick = new Hype.painel.RJTextBox();
             this.pl_top.SuspendLayout();
@@ -190,6 +190,7 @@ namespace Hype.painel
             this.txt_buscar.TabIndex = 69;
             this.txt_buscar.Texts = "";
             this.txt_buscar.UnderlinedStyle = false;
+            this.txt_buscar._TextChanged += new System.EventHandler(this.txt_buscar__TextChanged);
             // 
             // pl_conta_excluir
             // 
@@ -295,6 +296,7 @@ namespace Hype.painel
             this.txt_classe_alt_05.Size = new System.Drawing.Size(130, 31);
             this.txt_classe_alt_05.TabIndex = 183;
             this.txt_classe_alt_05.Texts = "";
+            this.txt_classe_alt_05.Leave += new System.EventHandler(this.txt_classe_alt_05_Leave);
             // 
             // txt_nick_alt_05
             // 
@@ -318,6 +320,7 @@ namespace Hype.painel
             this.txt_nick_alt_05.TabIndex = 180;
             this.txt_nick_alt_05.Texts = "";
             this.txt_nick_alt_05.UnderlinedStyle = false;
+            this.txt_nick_alt_05.Leave += new System.EventHandler(this.txt_nick_alt_05_Leave);
             // 
             // txt_foi_alt_05
             // 
@@ -341,6 +344,7 @@ namespace Hype.painel
             this.txt_foi_alt_05.TabIndex = 181;
             this.txt_foi_alt_05.Texts = "";
             this.txt_foi_alt_05.UnderlinedStyle = false;
+            this.txt_foi_alt_05.Leave += new System.EventHandler(this.txt_foi_alt_05_Leave);
             // 
             // txt_level_alt_05
             // 
@@ -364,6 +368,7 @@ namespace Hype.painel
             this.txt_level_alt_05.TabIndex = 182;
             this.txt_level_alt_05.Texts = "";
             this.txt_level_alt_05.UnderlinedStyle = false;
+            this.txt_level_alt_05.Leave += new System.EventHandler(this.txt_level_alt_05_Leave);
             // 
             // pl_conta_alt_04
             // 
@@ -403,6 +408,7 @@ namespace Hype.painel
             this.txt_classe_alt_04.Size = new System.Drawing.Size(130, 31);
             this.txt_classe_alt_04.TabIndex = 179;
             this.txt_classe_alt_04.Texts = "";
+            this.txt_classe_alt_04.Leave += new System.EventHandler(this.txt_classe_alt_04_Leave);
             // 
             // txt_nick_alt_04
             // 
@@ -426,6 +432,7 @@ namespace Hype.painel
             this.txt_nick_alt_04.TabIndex = 176;
             this.txt_nick_alt_04.Texts = "";
             this.txt_nick_alt_04.UnderlinedStyle = false;
+            this.txt_nick_alt_04.Leave += new System.EventHandler(this.txt_nick_alt_04_Leave);
             // 
             // txt_foi_alt_04
             // 
@@ -449,6 +456,7 @@ namespace Hype.painel
             this.txt_foi_alt_04.TabIndex = 177;
             this.txt_foi_alt_04.Texts = "";
             this.txt_foi_alt_04.UnderlinedStyle = false;
+            this.txt_foi_alt_04.Leave += new System.EventHandler(this.txt_foi_alt_04_Leave);
             // 
             // txt_level_alt_04
             // 
@@ -472,6 +480,7 @@ namespace Hype.painel
             this.txt_level_alt_04.TabIndex = 178;
             this.txt_level_alt_04.Texts = "";
             this.txt_level_alt_04.UnderlinedStyle = false;
+            this.txt_level_alt_04.Leave += new System.EventHandler(this.txt_level_alt_04_Leave);
             // 
             // pl_conta_alt_03
             // 
@@ -511,6 +520,7 @@ namespace Hype.painel
             this.txt_classe_alt_03.Size = new System.Drawing.Size(130, 31);
             this.txt_classe_alt_03.TabIndex = 175;
             this.txt_classe_alt_03.Texts = "";
+            this.txt_classe_alt_03.Leave += new System.EventHandler(this.txt_classe_alt_03_Leave);
             // 
             // txt_nick_alt_03
             // 
@@ -534,6 +544,7 @@ namespace Hype.painel
             this.txt_nick_alt_03.TabIndex = 172;
             this.txt_nick_alt_03.Texts = "";
             this.txt_nick_alt_03.UnderlinedStyle = false;
+            this.txt_nick_alt_03.Leave += new System.EventHandler(this.txt_nick_alt_03_Leave);
             // 
             // txt_foi_alt_03
             // 
@@ -557,6 +568,7 @@ namespace Hype.painel
             this.txt_foi_alt_03.TabIndex = 173;
             this.txt_foi_alt_03.Texts = "";
             this.txt_foi_alt_03.UnderlinedStyle = false;
+            this.txt_foi_alt_03.Leave += new System.EventHandler(this.txt_foi_alt_03_Leave);
             // 
             // txt_level_alt_03
             // 
@@ -580,6 +592,7 @@ namespace Hype.painel
             this.txt_level_alt_03.TabIndex = 174;
             this.txt_level_alt_03.Texts = "";
             this.txt_level_alt_03.UnderlinedStyle = false;
+            this.txt_level_alt_03.Leave += new System.EventHandler(this.txt_level_alt_03_Leave);
             // 
             // pl_conta_alt_02
             // 
@@ -619,6 +632,7 @@ namespace Hype.painel
             this.txt_classe_alt_02.Size = new System.Drawing.Size(130, 31);
             this.txt_classe_alt_02.TabIndex = 171;
             this.txt_classe_alt_02.Texts = "";
+            this.txt_classe_alt_02.Leave += new System.EventHandler(this.txt_classe_alt_02_Leave);
             // 
             // txt_nick_alt_02
             // 
@@ -642,6 +656,7 @@ namespace Hype.painel
             this.txt_nick_alt_02.TabIndex = 168;
             this.txt_nick_alt_02.Texts = "";
             this.txt_nick_alt_02.UnderlinedStyle = false;
+            this.txt_nick_alt_02.Leave += new System.EventHandler(this.txt_nick_alt_02_Leave);
             // 
             // txt_foi_alt_02
             // 
@@ -665,6 +680,7 @@ namespace Hype.painel
             this.txt_foi_alt_02.TabIndex = 169;
             this.txt_foi_alt_02.Texts = "";
             this.txt_foi_alt_02.UnderlinedStyle = false;
+            this.txt_foi_alt_02.Leave += new System.EventHandler(this.txt_foi_alt_02_Leave);
             // 
             // txt_level_alt_02
             // 
@@ -688,6 +704,7 @@ namespace Hype.painel
             this.txt_level_alt_02.TabIndex = 170;
             this.txt_level_alt_02.Texts = "";
             this.txt_level_alt_02.UnderlinedStyle = false;
+            this.txt_level_alt_02.Leave += new System.EventHandler(this.txt_level_alt_02_Leave);
             // 
             // pl_conta_alt_01
             // 
@@ -728,6 +745,7 @@ namespace Hype.painel
             this.txt_classe_alt_01.Size = new System.Drawing.Size(130, 31);
             this.txt_classe_alt_01.TabIndex = 167;
             this.txt_classe_alt_01.Texts = "";
+            this.txt_classe_alt_01.Leave += new System.EventHandler(this.txt_classe_alt_01_Leave);
             // 
             // lb_conta_alt
             // 
@@ -764,6 +782,7 @@ namespace Hype.painel
             this.txt_foi_alt_01.TabIndex = 20;
             this.txt_foi_alt_01.Texts = "";
             this.txt_foi_alt_01.UnderlinedStyle = false;
+            this.txt_foi_alt_01.Leave += new System.EventHandler(this.txt_foi_alt_01_Leave);
             // 
             // txt_level_alt_01
             // 
@@ -787,6 +806,7 @@ namespace Hype.painel
             this.txt_level_alt_01.TabIndex = 21;
             this.txt_level_alt_01.Texts = "";
             this.txt_level_alt_01.UnderlinedStyle = false;
+            this.txt_level_alt_01.Leave += new System.EventHandler(this.txt_level_alt_01_Leave);
             // 
             // txt_nick_alt_01
             // 
@@ -810,11 +830,12 @@ namespace Hype.painel
             this.txt_nick_alt_01.TabIndex = 17;
             this.txt_nick_alt_01.Texts = "";
             this.txt_nick_alt_01.UnderlinedStyle = false;
+            this.txt_nick_alt_01.Leave += new System.EventHandler(this.txt_nick_alt_01_Leave);
             // 
             // pl_conta_principal
             // 
             this.pl_conta_principal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.pl_conta_principal.Controls.Add(this.rjComboBox1);
+            this.pl_conta_principal.Controls.Add(this.txt_quantidade_alt);
             this.pl_conta_principal.Controls.Add(this.lb_quantas_alt);
             this.pl_conta_principal.Controls.Add(this.txt_nick);
             this.pl_conta_principal.Dock = System.Windows.Forms.DockStyle.Top;
@@ -823,31 +844,33 @@ namespace Hype.painel
             this.pl_conta_principal.Size = new System.Drawing.Size(1172, 91);
             this.pl_conta_principal.TabIndex = 193;
             // 
-            // rjComboBox1
+            // txt_quantidade_alt
             // 
-            this.rjComboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rjComboBox1.BackColor = System.Drawing.Color.White;
-            this.rjComboBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.rjComboBox1.BorderSize = 0;
-            this.rjComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.rjComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rjComboBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.rjComboBox1.IconColor = System.Drawing.Color.Black;
-            this.rjComboBox1.Items.AddRange(new object[] {
+            this.txt_quantidade_alt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_quantidade_alt.BackColor = System.Drawing.Color.White;
+            this.txt_quantidade_alt.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_quantidade_alt.BorderSize = 0;
+            this.txt_quantidade_alt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_quantidade_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_quantidade_alt.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_quantidade_alt.IconColor = System.Drawing.Color.Black;
+            this.txt_quantidade_alt.Items.AddRange(new object[] {
             "0",
             "1",
             "2",
             "3",
             "4",
             "5"});
-            this.rjComboBox1.ListBackColor = System.Drawing.Color.White;
-            this.rjComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.rjComboBox1.Location = new System.Drawing.Point(596, 43);
-            this.rjComboBox1.MinimumSize = new System.Drawing.Size(50, 30);
-            this.rjComboBox1.Name = "rjComboBox1";
-            this.rjComboBox1.Size = new System.Drawing.Size(81, 31);
-            this.rjComboBox1.TabIndex = 170;
-            this.rjComboBox1.Texts = "";
+            this.txt_quantidade_alt.ListBackColor = System.Drawing.Color.White;
+            this.txt_quantidade_alt.ListTextColor = System.Drawing.Color.DimGray;
+            this.txt_quantidade_alt.Location = new System.Drawing.Point(596, 43);
+            this.txt_quantidade_alt.MinimumSize = new System.Drawing.Size(50, 30);
+            this.txt_quantidade_alt.Name = "txt_quantidade_alt";
+            this.txt_quantidade_alt.Size = new System.Drawing.Size(81, 31);
+            this.txt_quantidade_alt.TabIndex = 170;
+            this.txt_quantidade_alt.Texts = "";
+            this.txt_quantidade_alt.OnSelectedIndexChanged += new System.EventHandler(this.txt_quantidade_alt_OnSelectedIndexChanged);
+            this.txt_quantidade_alt.Leave += new System.EventHandler(this.txt_quantidade_alt_Leave);
             // 
             // lb_quantas_alt
             // 
@@ -922,7 +945,7 @@ namespace Hype.painel
         private System.Windows.Forms.Label lb_quantas_alt;
         private RJTextBox txt_buscar;
         private RJTextBox txt_nick;
-        private script.RJComboBox rjComboBox1;
+        private script.RJComboBox txt_quantidade_alt;
         private System.Windows.Forms.Panel pl_conta_alt_05;
         private script.RJComboBox txt_classe_alt_05;
         private RJTextBox txt_nick_alt_05;

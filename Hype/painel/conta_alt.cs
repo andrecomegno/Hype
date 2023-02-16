@@ -16,7 +16,12 @@ namespace Hype.painel
     public partial class conta_alt : UserControl
     {
         string id_alt = "";
-        string id = "";
+
+        string id_01 = "";
+        string id_02 = "";
+        string id_03 = "";
+        string id_04 = "";
+        string id_05 = "";
 
         string nick_principal = "";
         private string verificar = "";
@@ -153,8 +158,12 @@ namespace Hype.painel
                 {
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
 
-                    id_alt = dr["ID_ALT"].ToString();
-                    
+                    id_01 = dr["ID_ALT"].ToString();
+                    id_02 = dr["ID_ALT"].ToString();
+                    id_03 = dr["ID_ALT"].ToString();
+                    id_04 = dr["ID_ALT"].ToString();
+                    id_05 = dr["ID_ALT"].ToString();
+
                 }
             }
             catch (Exception erro)
@@ -182,6 +191,7 @@ namespace Hype.painel
 
                 // EXIBE OS VALORES DA CELULA VERDADEIRO OU FASO
                 verificar = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                
 
                 // VERIFICA SE A CAIXA DE SELEÇÃO FOI SELECIONADA
                 if (verificar == "True")
@@ -282,14 +292,16 @@ namespace Hype.painel
 
                 // VERIFICA SE A CAIXA DE SELEÇÃO FOI SELECIONADA
                 if (verificar == "True")
-                {
+                {                 
                     // EXCLUIR ALT
-                    MySqlCommand objCmdCadastroAlt = new MySqlCommand("delete from hypedb.cadastro_alt where ID_ALT=@ID_ALT", database.getConnection());
-                    objCmdCadastroAlt.Parameters.AddWithValue("@ID_ALT", id_alt);
+                    MySqlCommand objCmdCadastroAlt = new MySqlCommand("delete from hypedb.cadastro_alt where ID_ALT in (@ID_01, @ID_02, @ID_03, @ID_04, @ID_05 )", database.getConnection());
+                    objCmdCadastroAlt.Parameters.AddWithValue("@ID_01", id_01);
+                    objCmdCadastroAlt.Parameters.AddWithValue("@ID_02", id_02);
+                    objCmdCadastroAlt.Parameters.AddWithValue("@ID_03", id_03);
+                    objCmdCadastroAlt.Parameters.AddWithValue("@ID_04", id_04);
+                    objCmdCadastroAlt.Parameters.AddWithValue("@ID_05", id_05);
 
                     objCmdCadastroAlt.ExecuteNonQuery();
-
-                    MessageBox.Show(id_alt);
                 }
             }
             catch (Exception erro)
