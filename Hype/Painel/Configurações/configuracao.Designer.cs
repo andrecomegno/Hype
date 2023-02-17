@@ -1,5 +1,5 @@
 ﻿
-namespace Hype.painel
+namespace Hype.Painel
 {
     partial class configuracao
     {
@@ -36,12 +36,12 @@ namespace Hype.painel
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.rjTextBox6 = new Hype.painel.RJTextBox();
-            this.rjTextBox1 = new Hype.painel.RJTextBox();
-            this.rjTextBox5 = new Hype.painel.RJTextBox();
-            this.rjTextBox2 = new Hype.painel.RJTextBox();
-            this.rjTextBox4 = new Hype.painel.RJTextBox();
-            this.rjTextBox3 = new Hype.painel.RJTextBox();
+            this.rjTextBox6 = new Hype.Painel.RJTextBox();
+            this.rjTextBox1 = new Hype.Painel.RJTextBox();
+            this.rjTextBox5 = new Hype.Painel.RJTextBox();
+            this.rjTextBox2 = new Hype.Painel.RJTextBox();
+            this.rjTextBox4 = new Hype.Painel.RJTextBox();
+            this.rjTextBox3 = new Hype.Painel.RJTextBox();
             this.pl_central.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();

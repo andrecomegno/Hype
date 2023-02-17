@@ -1,4 +1,4 @@
-﻿namespace Hype.painel
+﻿namespace Hype.Painel
 {
     partial class RJTextBox
     {

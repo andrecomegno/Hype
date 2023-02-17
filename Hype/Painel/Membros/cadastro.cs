@@ -11,7 +11,7 @@ using Hype.script;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace Hype.painel
+namespace Hype.Painel
 {
     public partial class cadastro : UserControl
     {

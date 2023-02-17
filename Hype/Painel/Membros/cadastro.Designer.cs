@@ -1,5 +1,5 @@
 ﻿
-namespace Hype.painel
+namespace Hype.Painel
 {
     partial class cadastro
     {
@@ -37,11 +37,11 @@ namespace Hype.painel
             this.txt_classe = new Hype.script.RJComboBox();
             this.txt_patente = new Hype.script.RJComboBox();
             this.lb_conta_principal = new System.Windows.Forms.Label();
-            this.txt_level = new Hype.painel.RJTextBox();
-            this.txt_nick = new Hype.painel.RJTextBox();
-            this.txt_poder = new Hype.painel.RJTextBox();
-            this.txt_foi = new Hype.painel.RJTextBox();
-            this.txt_vem = new Hype.painel.RJTextBox();
+            this.txt_level = new Hype.Painel.RJTextBox();
+            this.txt_nick = new Hype.Painel.RJTextBox();
+            this.txt_poder = new Hype.Painel.RJTextBox();
+            this.txt_foi = new Hype.Painel.RJTextBox();
+            this.txt_vem = new Hype.Painel.RJTextBox();
             this.pl_espaco_02 = new System.Windows.Forms.Panel();
             this.pl_possui_atl = new System.Windows.Forms.Panel();
             this.txt_quantidade_alt = new Hype.script.RJComboBox();
@@ -52,32 +52,32 @@ namespace Hype.painel
             this.pl_conta_alt_01 = new System.Windows.Forms.Panel();
             this.txt_classe_alt_01 = new Hype.script.RJComboBox();
             this.lb_conta_alt = new System.Windows.Forms.Label();
-            this.txt_foi_alt_01 = new Hype.painel.RJTextBox();
-            this.txt_level_alt_01 = new Hype.painel.RJTextBox();
-            this.txt_nick_alt_01 = new Hype.painel.RJTextBox();
+            this.txt_foi_alt_01 = new Hype.Painel.RJTextBox();
+            this.txt_level_alt_01 = new Hype.Painel.RJTextBox();
+            this.txt_nick_alt_01 = new Hype.Painel.RJTextBox();
             this.pl_conta_alt_02 = new System.Windows.Forms.Panel();
             this.txt_classe_alt_02 = new Hype.script.RJComboBox();
-            this.txt_nick_alt_02 = new Hype.painel.RJTextBox();
-            this.txt_foi_alt_02 = new Hype.painel.RJTextBox();
-            this.txt_level_alt_02 = new Hype.painel.RJTextBox();
+            this.txt_nick_alt_02 = new Hype.Painel.RJTextBox();
+            this.txt_foi_alt_02 = new Hype.Painel.RJTextBox();
+            this.txt_level_alt_02 = new Hype.Painel.RJTextBox();
             this.pl_botao = new System.Windows.Forms.Panel();
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.bt_salvar = new System.Windows.Forms.Button();
             this.pl_conta_alt_03 = new System.Windows.Forms.Panel();
             this.txt_classe_alt_03 = new Hype.script.RJComboBox();
-            this.txt_nick_alt_03 = new Hype.painel.RJTextBox();
-            this.txt_foi_alt_03 = new Hype.painel.RJTextBox();
-            this.txt_level_alt_03 = new Hype.painel.RJTextBox();
+            this.txt_nick_alt_03 = new Hype.Painel.RJTextBox();
+            this.txt_foi_alt_03 = new Hype.Painel.RJTextBox();
+            this.txt_level_alt_03 = new Hype.Painel.RJTextBox();
             this.pl_conta_alt_04 = new System.Windows.Forms.Panel();
             this.txt_classe_alt_04 = new Hype.script.RJComboBox();
-            this.txt_nick_alt_04 = new Hype.painel.RJTextBox();
-            this.txt_foi_alt_04 = new Hype.painel.RJTextBox();
-            this.txt_level_alt_04 = new Hype.painel.RJTextBox();
+            this.txt_nick_alt_04 = new Hype.Painel.RJTextBox();
+            this.txt_foi_alt_04 = new Hype.Painel.RJTextBox();
+            this.txt_level_alt_04 = new Hype.Painel.RJTextBox();
             this.pl_conta_alt_05 = new System.Windows.Forms.Panel();
             this.txt_classe_alt_05 = new Hype.script.RJComboBox();
-            this.txt_nick_alt_05 = new Hype.painel.RJTextBox();
-            this.txt_foi_alt_05 = new Hype.painel.RJTextBox();
-            this.txt_level_alt_05 = new Hype.painel.RJTextBox();
+            this.txt_nick_alt_05 = new Hype.Painel.RJTextBox();
+            this.txt_foi_alt_05 = new Hype.Painel.RJTextBox();
+            this.txt_level_alt_05 = new Hype.Painel.RJTextBox();
             this.pl_top.SuspendLayout();
             this.pl_conta_principal.SuspendLayout();
             this.pl_possui_atl.SuspendLayout();
@@ -709,7 +709,7 @@ namespace Hype.painel
             // bt_salvar
             // 
             this.bt_salvar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_salvar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.bt_salvar.BackColor = System.Drawing.Color.OliveDrab;
             this.bt_salvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_salvar.FlatAppearance.BorderSize = 0;
             this.bt_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1059,7 +1059,7 @@ namespace Hype.painel
             this.txt_level_alt_05.UnderlinedStyle = false;
             this.txt_level_alt_05.Leave += new System.EventHandler(this.txt_level_alt_05_Leave);
             // 
-            // add_membros
+            // cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1076,7 +1076,7 @@ namespace Hype.painel
             this.Controls.Add(this.pl_conta_principal);
             this.Controls.Add(this.pl_espaco_01);
             this.Controls.Add(this.pl_top);
-            this.Name = "add_membros";
+            this.Name = "cadastro";
             this.Size = new System.Drawing.Size(1200, 720);
             this.pl_top.ResumeLayout(false);
             this.pl_conta_principal.ResumeLayout(false);

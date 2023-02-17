@@ -1,7 +1,7 @@
 ﻿
-namespace Hype.painel
+namespace Hype.Painel
 {
-    partial class alts
+    partial class membros
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -44,11 +44,10 @@ namespace Hype.painel
             this.pl_top = new System.Windows.Forms.Panel();
             this.bt_buscar = new System.Windows.Forms.PictureBox();
             this.bt_alts = new System.Windows.Forms.Button();
-            this.bt_ouro = new System.Windows.Forms.Button();
-            this.bt_progressao = new System.Windows.Forms.Button();
+            this.bt_eventos = new System.Windows.Forms.Button();
             this.bt_membros = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.txt_buscar = new Hype.painel.RJTextBox();
+            this.txt_buscar = new Hype.Painel.RJTextBox();
             this.membro.SuspendLayout();
             this.pl_conta_excluir.SuspendLayout();
             this.pl_conteudo_02.SuspendLayout();
@@ -65,7 +64,7 @@ namespace Hype.painel
             this.membro.Location = new System.Drawing.Point(0, 0);
             this.membro.Name = "membro";
             this.membro.Size = new System.Drawing.Size(1200, 720);
-            this.membro.TabIndex = 1;
+            this.membro.TabIndex = 0;
             // 
             // pl_conta_excluir
             // 
@@ -101,7 +100,7 @@ namespace Hype.painel
             this.txt_clique_aqui.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txt_clique_aqui.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_clique_aqui.ForeColor = System.Drawing.Color.White;
-            this.txt_clique_aqui.Location = new System.Drawing.Point(485, 118);
+            this.txt_clique_aqui.Location = new System.Drawing.Point(485, 104);
             this.txt_clique_aqui.Name = "txt_clique_aqui";
             this.txt_clique_aqui.Size = new System.Drawing.Size(201, 31);
             this.txt_clique_aqui.TabIndex = 69;
@@ -115,7 +114,7 @@ namespace Hype.painel
             this.txt_sem_dados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.txt_sem_dados.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_sem_dados.ForeColor = System.Drawing.Color.White;
-            this.txt_sem_dados.Location = new System.Drawing.Point(82, 87);
+            this.txt_sem_dados.Location = new System.Drawing.Point(82, 73);
             this.txt_sem_dados.Name = "txt_sem_dados";
             this.txt_sem_dados.Size = new System.Drawing.Size(1004, 31);
             this.txt_sem_dados.TabIndex = 68;
@@ -129,7 +128,7 @@ namespace Hype.painel
             this.bt_add_membro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.bt_add_membro.Font = new System.Drawing.Font("Microsoft Sans Serif", 70F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_add_membro.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.bt_add_membro.Location = new System.Drawing.Point(985, 518);
+            this.bt_add_membro.Location = new System.Drawing.Point(985, 504);
             this.bt_add_membro.Name = "bt_add_membro";
             this.bt_add_membro.Size = new System.Drawing.Size(101, 107);
             this.bt_add_membro.TabIndex = 67;
@@ -168,7 +167,7 @@ namespace Hype.painel
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            this.dataGridView1.Location = new System.Drawing.Point(71, 17);
+            this.dataGridView1.Location = new System.Drawing.Point(71, 3);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -201,8 +200,7 @@ namespace Hype.painel
             this.pl_top.Controls.Add(this.bt_buscar);
             this.pl_top.Controls.Add(this.txt_buscar);
             this.pl_top.Controls.Add(this.bt_alts);
-            this.pl_top.Controls.Add(this.bt_ouro);
-            this.pl_top.Controls.Add(this.bt_progressao);
+            this.pl_top.Controls.Add(this.bt_eventos);
             this.pl_top.Controls.Add(this.bt_membros);
             this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_top.Location = new System.Drawing.Point(0, 0);
@@ -212,89 +210,71 @@ namespace Hype.painel
             // 
             // bt_buscar
             // 
-            this.bt_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bt_buscar.BackColor = System.Drawing.SystemColors.Window;
             this.bt_buscar.Image = global::Hype.Properties.Resources.buscar;
-            this.bt_buscar.Location = new System.Drawing.Point(1127, 14);
+            this.bt_buscar.Location = new System.Drawing.Point(1067, 12);
             this.bt_buscar.Name = "bt_buscar";
             this.bt_buscar.Size = new System.Drawing.Size(20, 20);
             this.bt_buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bt_buscar.TabIndex = 68;
             this.bt_buscar.TabStop = false;
             this.bt_buscar.Click += new System.EventHandler(this.bt_buscar_Click);
+            this.bt_buscar.MouseEnter += new System.EventHandler(this.bt_buscar_MouseEnter);
+            this.bt_buscar.MouseLeave += new System.EventHandler(this.bt_buscar_MouseLeave);
             // 
             // bt_alts
             // 
             this.bt_alts.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_alts.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.bt_alts.BackColor = System.Drawing.Color.LightSlateGray;
             this.bt_alts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_alts.FlatAppearance.BorderSize = 0;
             this.bt_alts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_alts.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_alts.ForeColor = System.Drawing.Color.White;
-            this.bt_alts.Location = new System.Drawing.Point(685, 4);
+            this.bt_alts.Location = new System.Drawing.Point(179, 3);
             this.bt_alts.Name = "bt_alts";
             this.bt_alts.Size = new System.Drawing.Size(122, 36);
             this.bt_alts.TabIndex = 66;
             this.bt_alts.Text = "Alts";
             this.bt_alts.UseVisualStyleBackColor = false;
+            this.bt_alts.Click += new System.EventHandler(this.bt_alts_Click);
             // 
-            // bt_ouro
+            // bt_eventos
             // 
-            this.bt_ouro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_ouro.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_ouro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_ouro.FlatAppearance.BorderSize = 0;
-            this.bt_ouro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_ouro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ouro.ForeColor = System.Drawing.Color.White;
-            this.bt_ouro.Location = new System.Drawing.Point(557, 4);
-            this.bt_ouro.Name = "bt_ouro";
-            this.bt_ouro.Size = new System.Drawing.Size(122, 36);
-            this.bt_ouro.TabIndex = 65;
-            this.bt_ouro.Text = "Ouro";
-            this.bt_ouro.UseVisualStyleBackColor = false;
-            this.bt_ouro.Click += new System.EventHandler(this.bt_ouro_Click);
-            // 
-            // bt_progressao
-            // 
-            this.bt_progressao.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_progressao.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_progressao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_progressao.FlatAppearance.BorderSize = 0;
-            this.bt_progressao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_progressao.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_progressao.ForeColor = System.Drawing.Color.White;
-            this.bt_progressao.Location = new System.Drawing.Point(429, 4);
-            this.bt_progressao.Name = "bt_progressao";
-            this.bt_progressao.Size = new System.Drawing.Size(122, 36);
-            this.bt_progressao.TabIndex = 64;
-            this.bt_progressao.Text = "Progressão";
-            this.bt_progressao.UseVisualStyleBackColor = false;
-            this.bt_progressao.Click += new System.EventHandler(this.bt_progressao_Click);
+            this.bt_eventos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_eventos.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_eventos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_eventos.FlatAppearance.BorderSize = 0;
+            this.bt_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_eventos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_eventos.ForeColor = System.Drawing.Color.White;
+            this.bt_eventos.Location = new System.Drawing.Point(307, 3);
+            this.bt_eventos.Name = "bt_eventos";
+            this.bt_eventos.Size = new System.Drawing.Size(122, 36);
+            this.bt_eventos.TabIndex = 65;
+            this.bt_eventos.Text = "Eventos";
+            this.bt_eventos.UseVisualStyleBackColor = false;
             // 
             // bt_membros
             // 
             this.bt_membros.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_membros.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_membros.BackColor = System.Drawing.Color.CornflowerBlue;
             this.bt_membros.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_membros.FlatAppearance.BorderSize = 0;
             this.bt_membros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_membros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_membros.ForeColor = System.Drawing.Color.White;
-            this.bt_membros.Location = new System.Drawing.Point(321, 4);
+            this.bt_membros.Location = new System.Drawing.Point(71, 3);
             this.bt_membros.Name = "bt_membros";
             this.bt_membros.Size = new System.Drawing.Size(102, 36);
             this.bt_membros.TabIndex = 63;
             this.bt_membros.Text = "Membros";
             this.bt_membros.UseVisualStyleBackColor = false;
-            this.bt_membros.Click += new System.EventHandler(this.bt_membros_Click);
             // 
             // txt_buscar
             // 
-            this.txt_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_buscar.BackColor = System.Drawing.SystemColors.Window;
             this.txt_buscar.BorderColor = System.Drawing.Color.Transparent;
             this.txt_buscar.BorderFocusColor = System.Drawing.Color.Transparent;
@@ -302,7 +282,7 @@ namespace Hype.painel
             this.txt_buscar.BorderSize = 2;
             this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_buscar.Location = new System.Drawing.Point(889, 8);
+            this.txt_buscar.Location = new System.Drawing.Point(436, 5);
             this.txt_buscar.Margin = new System.Windows.Forms.Padding(4);
             this.txt_buscar.Multiline = false;
             this.txt_buscar.Name = "txt_buscar";
@@ -310,21 +290,21 @@ namespace Hype.painel
             this.txt_buscar.PasswordChar = false;
             this.txt_buscar.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_buscar.PlaceholderText = "O que você procura ?";
-            this.txt_buscar.Size = new System.Drawing.Size(268, 31);
+            this.txt_buscar.Size = new System.Drawing.Size(661, 31);
             this.txt_buscar.TabIndex = 67;
             this.txt_buscar.Texts = "";
             this.txt_buscar.UnderlinedStyle = false;
             this.txt_buscar._TextChanged += new System.EventHandler(this.txt_buscar__TextChanged);
             // 
-            // alts
+            // membros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.membro);
-            this.Name = "alts";
+            this.Name = "membros";
             this.Size = new System.Drawing.Size(1200, 720);
-            this.Load += new System.EventHandler(this.alts_Load);
+            this.Load += new System.EventHandler(this.membros_Load);
             this.membro.ResumeLayout(false);
             this.pl_conta_excluir.ResumeLayout(false);
             this.pl_conteudo_02.ResumeLayout(false);
@@ -339,19 +319,18 @@ namespace Hype.painel
         #endregion
 
         private System.Windows.Forms.Panel membro;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Panel pl_conta_excluir;
         private System.Windows.Forms.Panel pl_conteudo_02;
-        private System.Windows.Forms.Label txt_clique_aqui;
-        private System.Windows.Forms.Label txt_sem_dados;
-        private System.Windows.Forms.Label bt_add_membro;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel pl_top;
+        private System.Windows.Forms.Button bt_alts;
+        private System.Windows.Forms.Button bt_eventos;
+        private System.Windows.Forms.Button bt_membros;
         private System.Windows.Forms.PictureBox bt_buscar;
         private RJTextBox txt_buscar;
-        private System.Windows.Forms.Button bt_alts;
-        private System.Windows.Forms.Button bt_ouro;
-        private System.Windows.Forms.Button bt_progressao;
-        private System.Windows.Forms.Button bt_membros;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label bt_add_membro;
+        private System.Windows.Forms.Label txt_clique_aqui;
+        private System.Windows.Forms.Label txt_sem_dados;
     }
 }

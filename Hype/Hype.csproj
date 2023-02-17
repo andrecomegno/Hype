@@ -198,82 +198,64 @@
     <Compile Include="cla.Designer.cs">
       <DependentUpon>cla.cs</DependentUpon>
     </Compile>
-    <Compile Include="painel\cadastro.cs">
+    <Compile Include="Painel\Membros\cadastro.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="painel\cadastro.Designer.cs">
+    <Compile Include="Painel\Membros\cadastro.Designer.cs">
       <DependentUpon>cadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="painel\alts.cs">
+    <Compile Include="Painel\Alts\alts.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="painel\alts.Designer.cs">
+    <Compile Include="Painel\Alts\alts.Designer.cs">
       <DependentUpon>alts.cs</DependentUpon>
     </Compile>
-    <Compile Include="painel\cadastro_alt.cs">
+    <Compile Include="Painel\Alts\cadastro_alt.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="painel\cadastro_alt.Designer.cs">
+    <Compile Include="Painel\Alts\cadastro_alt.Designer.cs">
       <DependentUpon>cadastro_alt.cs</DependentUpon>
     </Compile>
-    <Compile Include="painel\configuracao.cs">
+    <Compile Include="Painel\Configurações\configuracao.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="painel\configuracao.Designer.cs">
+    <Compile Include="Painel\Configurações\configuracao.Designer.cs">
       <DependentUpon>configuracao.cs</DependentUpon>
     </Compile>
-    <Compile Include="painel\conta_alt.cs">
+    <Compile Include="Painel\Alts\conta_alt.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="painel\conta_alt.Designer.cs">
+    <Compile Include="Painel\Alts\conta_alt.Designer.cs">
       <DependentUpon>conta_alt.cs</DependentUpon>
     </Compile>
-    <Compile Include="painel\conta_excluir.cs">
+    <Compile Include="Painel\Membros\conta_excluir.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="painel\conta_excluir.Designer.cs">
+    <Compile Include="Painel\Membros\conta_excluir.Designer.cs">
       <DependentUpon>conta_excluir.cs</DependentUpon>
     </Compile>
-    <Compile Include="painel\conta_principal.cs">
+    <Compile Include="Painel\Membros\conta_principal.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="painel\conta_principal.Designer.cs">
+    <Compile Include="Painel\Membros\conta_principal.Designer.cs">
       <DependentUpon>conta_principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="painel\conta_remanejamento.cs">
+    <Compile Include="Painel\Membros\membros.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="painel\conta_remanejamento.Designer.cs">
-      <DependentUpon>conta_remanejamento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="painel\membros.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="painel\membros.Designer.cs">
+    <Compile Include="Painel\Membros\membros.Designer.cs">
       <DependentUpon>membros.cs</DependentUpon>
     </Compile>
-    <Compile Include="painel\ouro.cs">
+    <Compile Include="Painel\inicio.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="painel\ouro.Designer.cs">
-      <DependentUpon>ouro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="painel\inicio.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="painel\inicio.Designer.cs">
+    <Compile Include="Painel\inicio.Designer.cs">
       <DependentUpon>inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="painel\progressao.cs">
+    <Compile Include="Painel\TESTE.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="painel\progressao.Designer.cs">
-      <DependentUpon>progressao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="painel\TESTE.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="painel\TESTE.Designer.cs">
+    <Compile Include="Painel\TESTE.Designer.cs">
       <DependentUpon>TESTE.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -297,43 +279,34 @@
     <EmbeddedResource Include="cla.resx">
       <DependentUpon>cla.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\cadastro.resx">
+    <EmbeddedResource Include="Painel\Membros\cadastro.resx">
       <DependentUpon>cadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\alts.resx">
+    <EmbeddedResource Include="Painel\Alts\alts.resx">
       <DependentUpon>alts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\cadastro_alt.resx">
+    <EmbeddedResource Include="Painel\Alts\cadastro_alt.resx">
       <DependentUpon>cadastro_alt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\configuracao.resx">
+    <EmbeddedResource Include="Painel\Configurações\configuracao.resx">
       <DependentUpon>configuracao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\conta_alt.resx">
+    <EmbeddedResource Include="Painel\Alts\conta_alt.resx">
       <DependentUpon>conta_alt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\conta_excluir.resx">
+    <EmbeddedResource Include="Painel\Membros\conta_excluir.resx">
       <DependentUpon>conta_excluir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\conta_principal.resx">
+    <EmbeddedResource Include="Painel\Membros\conta_principal.resx">
       <DependentUpon>conta_principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\conta_remanejamento.resx">
-      <DependentUpon>conta_remanejamento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="painel\membros.resx">
+    <EmbeddedResource Include="Painel\Membros\membros.resx">
       <DependentUpon>membros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\ouro.resx">
-      <DependentUpon>ouro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="painel\inicio.resx">
+    <EmbeddedResource Include="Painel\inicio.resx">
       <DependentUpon>inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="painel\progressao.resx">
-      <DependentUpon>progressao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="painel\TESTE.resx">
+    <EmbeddedResource Include="Painel\TESTE.resx">
       <DependentUpon>TESTE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -395,6 +368,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Painel\Eventos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />

@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Hype.painel;
+using Hype.Painel;
 using Hype.script;
 using MySql.Data.MySqlClient;
 
-namespace Hype.painel
+namespace Hype.Painel
 {
     public partial class conta_excluir : UserControl
     {

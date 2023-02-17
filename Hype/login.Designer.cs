@@ -35,8 +35,8 @@ namespace Hype
             this.bt_entrar = new System.Windows.Forms.Button();
             this.lb_novo_cad = new System.Windows.Forms.Label();
             this.pl_login = new System.Windows.Forms.Panel();
-            this.rjTextBox1 = new Hype.painel.RJTextBox();
-            this.txt_login = new Hype.painel.RJTextBox();
+            this.rjTextBox1 = new Hype.Painel.RJTextBox();
+            this.txt_login = new Hype.Painel.RJTextBox();
             this.pl_login.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -200,8 +200,8 @@ namespace Hype
         private System.Windows.Forms.Button bt_entrar;
         private System.Windows.Forms.Label lb_novo_cad;
         private System.Windows.Forms.Panel pl_login;
-        private painel.RJTextBox txt_login;
-        private painel.RJTextBox rjTextBox1;
+        private Painel.RJTextBox txt_login;
+        private Painel.RJTextBox rjTextBox1;
     }
 }
 

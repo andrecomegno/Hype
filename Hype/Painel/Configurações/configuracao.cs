@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Hype.painel;
+using Hype.Painel;
 
-namespace Hype.painel
+namespace Hype.Painel
 {
     public partial class configuracao : UserControl
     {

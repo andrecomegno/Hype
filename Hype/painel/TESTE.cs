@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Hype.painel
+namespace Hype.Painel
 {
     public partial class TESTE : UserControl
     {

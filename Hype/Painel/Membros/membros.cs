@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Hype.script;
 
-namespace Hype.painel
+namespace Hype.Painel
 {
     public partial class membros : UserControl
     {
@@ -40,17 +40,6 @@ namespace Hype.painel
         }
 
         #region MENU TOPO
-        private void bt_progressao_Click(object sender, EventArgs e)
-        {
-            progressao uc = new progressao();
-            cla.Instance.addControl(uc);
-        }
-
-        private void bt_ouro_Click(object sender, EventArgs e)
-        {
-            ouro uc = new ouro();
-            cla.Instance.addControl(uc);
-        }
 
         private void bt_alts_Click(object sender, EventArgs e)
         {

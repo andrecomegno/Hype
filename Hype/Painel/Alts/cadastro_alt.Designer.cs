@@ -1,5 +1,5 @@
 ﻿
-namespace Hype.painel
+namespace Hype.Painel
 {
     partial class cadastro_alt
     {
@@ -36,44 +36,45 @@ namespace Hype.painel
             this.pl_top = new System.Windows.Forms.Panel();
             this.lb_data_entrada = new System.Windows.Forms.Label();
             this.pl_buscar = new System.Windows.Forms.Panel();
-            this.txt_buscar = new Hype.painel.RJTextBox();
+            this.bt_buscar = new System.Windows.Forms.PictureBox();
+            this.txt_buscar = new Hype.Painel.RJTextBox();
             this.pl_conta_excluir = new System.Windows.Forms.Panel();
             this.pl_botao = new System.Windows.Forms.Panel();
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.bt_salvar = new System.Windows.Forms.Button();
             this.pl_conta_alt_05 = new System.Windows.Forms.Panel();
             this.txt_classe_alt_05 = new Hype.script.RJComboBox();
-            this.txt_nick_alt_05 = new Hype.painel.RJTextBox();
-            this.txt_foi_alt_05 = new Hype.painel.RJTextBox();
-            this.txt_level_alt_05 = new Hype.painel.RJTextBox();
+            this.txt_nick_alt_05 = new Hype.Painel.RJTextBox();
+            this.txt_foi_alt_05 = new Hype.Painel.RJTextBox();
+            this.txt_level_alt_05 = new Hype.Painel.RJTextBox();
             this.pl_conta_alt_04 = new System.Windows.Forms.Panel();
             this.txt_classe_alt_04 = new Hype.script.RJComboBox();
-            this.txt_nick_alt_04 = new Hype.painel.RJTextBox();
-            this.txt_foi_alt_04 = new Hype.painel.RJTextBox();
-            this.txt_level_alt_04 = new Hype.painel.RJTextBox();
+            this.txt_nick_alt_04 = new Hype.Painel.RJTextBox();
+            this.txt_foi_alt_04 = new Hype.Painel.RJTextBox();
+            this.txt_level_alt_04 = new Hype.Painel.RJTextBox();
             this.pl_conta_alt_03 = new System.Windows.Forms.Panel();
             this.txt_classe_alt_03 = new Hype.script.RJComboBox();
-            this.txt_nick_alt_03 = new Hype.painel.RJTextBox();
-            this.txt_foi_alt_03 = new Hype.painel.RJTextBox();
-            this.txt_level_alt_03 = new Hype.painel.RJTextBox();
+            this.txt_nick_alt_03 = new Hype.Painel.RJTextBox();
+            this.txt_foi_alt_03 = new Hype.Painel.RJTextBox();
+            this.txt_level_alt_03 = new Hype.Painel.RJTextBox();
             this.pl_conta_alt_02 = new System.Windows.Forms.Panel();
             this.txt_classe_alt_02 = new Hype.script.RJComboBox();
-            this.txt_nick_alt_02 = new Hype.painel.RJTextBox();
-            this.txt_foi_alt_02 = new Hype.painel.RJTextBox();
-            this.txt_level_alt_02 = new Hype.painel.RJTextBox();
+            this.txt_nick_alt_02 = new Hype.Painel.RJTextBox();
+            this.txt_foi_alt_02 = new Hype.Painel.RJTextBox();
+            this.txt_level_alt_02 = new Hype.Painel.RJTextBox();
             this.pl_conta_alt_01 = new System.Windows.Forms.Panel();
             this.txt_classe_alt_01 = new Hype.script.RJComboBox();
             this.lb_conta_alt = new System.Windows.Forms.Label();
-            this.txt_foi_alt_01 = new Hype.painel.RJTextBox();
-            this.txt_level_alt_01 = new Hype.painel.RJTextBox();
-            this.txt_nick_alt_01 = new Hype.painel.RJTextBox();
+            this.txt_foi_alt_01 = new Hype.Painel.RJTextBox();
+            this.txt_level_alt_01 = new Hype.Painel.RJTextBox();
+            this.txt_nick_alt_01 = new Hype.Painel.RJTextBox();
             this.pl_conta_principal = new System.Windows.Forms.Panel();
             this.txt_quantidade_alt = new Hype.script.RJComboBox();
             this.lb_quantas_alt = new System.Windows.Forms.Label();
-            this.txt_nick = new Hype.painel.RJTextBox();
-            this.bt_buscar = new System.Windows.Forms.PictureBox();
+            this.txt_nick = new Hype.Painel.RJTextBox();
             this.pl_top.SuspendLayout();
             this.pl_buscar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).BeginInit();
             this.pl_conta_excluir.SuspendLayout();
             this.pl_botao.SuspendLayout();
             this.pl_conta_alt_05.SuspendLayout();
@@ -82,7 +83,6 @@ namespace Hype.painel
             this.pl_conta_alt_02.SuspendLayout();
             this.pl_conta_alt_01.SuspendLayout();
             this.pl_conta_principal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_voltar
@@ -171,6 +171,19 @@ namespace Hype.painel
             this.pl_buscar.Size = new System.Drawing.Size(1172, 67);
             this.pl_buscar.TabIndex = 64;
             // 
+            // bt_buscar
+            // 
+            this.bt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_buscar.BackColor = System.Drawing.SystemColors.Window;
+            this.bt_buscar.Image = global::Hype.Properties.Resources.buscar;
+            this.bt_buscar.Location = new System.Drawing.Point(886, 23);
+            this.bt_buscar.Name = "bt_buscar";
+            this.bt_buscar.Size = new System.Drawing.Size(20, 20);
+            this.bt_buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bt_buscar.TabIndex = 80;
+            this.bt_buscar.TabStop = false;
+            this.bt_buscar.Click += new System.EventHandler(this.bt_buscar_Click);
+            // 
             // txt_buscar
             // 
             this.txt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -247,7 +260,7 @@ namespace Hype.painel
             // bt_salvar
             // 
             this.bt_salvar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_salvar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.bt_salvar.BackColor = System.Drawing.Color.OliveDrab;
             this.bt_salvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_salvar.FlatAppearance.BorderSize = 0;
             this.bt_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -910,19 +923,6 @@ namespace Hype.painel
             this.txt_nick.Texts = "";
             this.txt_nick.UnderlinedStyle = false;
             // 
-            // bt_buscar
-            // 
-            this.bt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_buscar.BackColor = System.Drawing.SystemColors.Window;
-            this.bt_buscar.Image = global::Hype.Properties.Resources.buscar;
-            this.bt_buscar.Location = new System.Drawing.Point(886, 23);
-            this.bt_buscar.Name = "bt_buscar";
-            this.bt_buscar.Size = new System.Drawing.Size(20, 20);
-            this.bt_buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bt_buscar.TabIndex = 80;
-            this.bt_buscar.TabStop = false;
-            this.bt_buscar.Click += new System.EventHandler(this.bt_buscar_Click);
-            // 
             // cadastro_alt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -934,6 +934,7 @@ namespace Hype.painel
             this.pl_top.ResumeLayout(false);
             this.pl_top.PerformLayout();
             this.pl_buscar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).EndInit();
             this.pl_conta_excluir.ResumeLayout(false);
             this.pl_botao.ResumeLayout(false);
             this.pl_conta_alt_05.ResumeLayout(false);
@@ -943,7 +944,6 @@ namespace Hype.painel
             this.pl_conta_alt_01.ResumeLayout(false);
             this.pl_conta_principal.ResumeLayout(false);
             this.pl_conta_principal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).EndInit();
             this.ResumeLayout(false);
 
         }

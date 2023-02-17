@@ -1,5 +1,5 @@
 ﻿
-namespace Hype.painel
+namespace Hype.Painel
 {
     partial class conta_excluir
     {
@@ -45,18 +45,18 @@ namespace Hype.painel
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pl_espaco_02 = new System.Windows.Forms.Panel();
             this.pl_conteudo_01 = new System.Windows.Forms.Panel();
-            this.txt_patente = new Hype.painel.RJTextBox();
-            this.txt_classe = new Hype.painel.RJTextBox();
+            this.txt_patente = new Hype.Painel.RJTextBox();
+            this.txt_classe = new Hype.Painel.RJTextBox();
             this.lb_conta_principal = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_cla = new Hype.painel.RJTextBox();
-            this.txt_level = new Hype.painel.RJTextBox();
+            this.txt_cla = new Hype.Painel.RJTextBox();
+            this.txt_level = new Hype.Painel.RJTextBox();
             this.lb_poder = new System.Windows.Forms.Label();
-            this.txt_poder = new Hype.painel.RJTextBox();
+            this.txt_poder = new Hype.Painel.RJTextBox();
             this.lb_level = new System.Windows.Forms.Label();
             this.lb_nick = new System.Windows.Forms.Label();
             this.lb_patente = new System.Windows.Forms.Label();
-            this.txt_nick = new Hype.painel.RJTextBox();
+            this.txt_nick = new Hype.Painel.RJTextBox();
             this.lb_classe = new System.Windows.Forms.Label();
             this.pl_espaco_01 = new System.Windows.Forms.Panel();
             this.pl_top = new System.Windows.Forms.Panel();

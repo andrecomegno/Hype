@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Hype.script;
 
-namespace Hype.painel
+namespace Hype.Painel
 {
     public partial class alts : UserControl
     {
