@@ -17,11 +17,9 @@ namespace Hype.painel
     {
         string id_alt = "";
 
-        string id_01 = "";
-        string id_02 = "";
-        string id_03 = "";
-        string id_04 = "";
-        string id_05 = "";
+        string[] id_01;
+
+        string teste = "";
 
         string nick_principal = "";
         private string verificar = "";
@@ -103,7 +101,6 @@ namespace Hype.painel
             }
         }
 
-
         private void AtualizarTabela()
         {
             configdb database = new configdb();
@@ -150,28 +147,6 @@ namespace Hype.painel
             }
         }
 
-        private void CaixaDeSelecao()
-        {
-            try
-            {
-                if (dataGridView1.SelectedRows.Count > 0)
-                {
-                    DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
-
-                    id_01 = dr["ID_ALT"].ToString();
-                    id_02 = dr["ID_ALT"].ToString();
-                    id_03 = dr["ID_ALT"].ToString();
-                    id_04 = dr["ID_ALT"].ToString();
-                    id_05 = dr["ID_ALT"].ToString();
-
-                }
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
-            }
-        }
-
         public void DadosMembros()
         {
             // ALT SELECIONADA - ALT.CS
@@ -191,13 +166,20 @@ namespace Hype.painel
 
                 // EXIBE OS VALORES DA CELULA VERDADEIRO OU FASO
                 verificar = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                
 
-                // VERIFICA SE A CAIXA DE SELEÇÃO FOI SELECIONADA
+
                 if (verificar == "True")
                 {
-                    CaixaDeSelecao();
+                    if (dataGridView1.SelectedRows.Count > 0)
+                    {
+
+                        DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+                        id_alt = dr["ID_ALT"].ToString();
+
+                    }
                 }
+
+
 
                 //MessageBox.Show("" + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
@@ -290,25 +272,44 @@ namespace Hype.painel
                 objCmdSaidaCla.ExecuteNonQuery();
                 */
 
+                /*
                 // VERIFICA SE A CAIXA DE SELEÇÃO FOI SELECIONADA
                 if (verificar == "True")
-                {                 
-                    // EXCLUIR ALT
-                    MySqlCommand objCmdCadastroAlt = new MySqlCommand("delete from hypedb.cadastro_alt where ID_ALT in (@ID_01, @ID_02, @ID_03, @ID_04, @ID_05 )", database.getConnection());
-                    objCmdCadastroAlt.Parameters.AddWithValue("@ID_01", id_01);
-                    objCmdCadastroAlt.Parameters.AddWithValue("@ID_02", id_02);
-                    objCmdCadastroAlt.Parameters.AddWithValue("@ID_03", id_03);
-                    objCmdCadastroAlt.Parameters.AddWithValue("@ID_04", id_04);
-                    objCmdCadastroAlt.Parameters.AddWithValue("@ID_05", id_05);
+                {      
+                    if (dataGridView1.SelectedRows.Count > 0)
+                    {
 
-                    objCmdCadastroAlt.ExecuteNonQuery();
+                        // EXCLUIR ALT
+                        MySqlCommand objCmdCadastroAlt = new MySqlCommand("delete from hypedb.cadastro_alt where ID_ALT in (@ID)", database.getConnection());
+                        objCmdCadastroAlt.Parameters.AddWithValue("@ID", id);
+
+                        objCmdCadastroAlt.ExecuteNonQuery();
+
+                        DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+                        id += dr["ID_ALT"].ToString().Replace("null", ",");
+
+                    }
                 }
+               */
+
+                if (verificar == "True")
+                {
+                    if (dataGridView1.SelectedRows.Count > 0)
+                    {
+
+                        // EXCLUIR ALT
+                        MySqlCommand objCmdCadastroAlt = new MySqlCommand("delete from hypedb.cadastro_alt where ID_ALT in (@ID)", database.getConnection());
+                        objCmdCadastroAlt.Parameters.AddWithValue("@ID", teste);
+
+                        objCmdCadastroAlt.ExecuteNonQuery();
+                    }
+                }
+
             }
             catch (Exception erro)
             {
                 MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
             }
-
 
             database.closeConnection();
         }

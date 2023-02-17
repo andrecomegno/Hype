@@ -883,6 +883,9 @@ namespace Hype.painel
             database.closeConnection();
         }
 
-
+        private void bt_buscar_Click(object sender, EventArgs e)
+        {
+            Buscar();
+        }
     }
 }
