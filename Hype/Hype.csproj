@@ -246,17 +246,11 @@
     <Compile Include="Painel\Membros\membros.Designer.cs">
       <DependentUpon>membros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Painel\inicio.cs">
+    <Compile Include="Painel\Inicio\inicio.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Painel\inicio.Designer.cs">
+    <Compile Include="Painel\Inicio\inicio.Designer.cs">
       <DependentUpon>inicio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Painel\TESTE.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Painel\TESTE.Designer.cs">
-      <DependentUpon>TESTE.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -303,11 +297,8 @@
     <EmbeddedResource Include="Painel\Membros\membros.resx">
       <DependentUpon>membros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Painel\inicio.resx">
+    <EmbeddedResource Include="Painel\Inicio\inicio.resx">
       <DependentUpon>inicio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Painel\TESTE.resx">
-      <DependentUpon>TESTE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -18,10 +18,12 @@ namespace Hype.Painel
         string id_membro = string.Empty;
         string id_alt = string.Empty;
 
+        bool _progressao = false;
+
         public conta_principal()
         {
             InitializeComponent();
-            CampoTextoDesativado();
+            CamposDesativados();
         }
 
         #region BOTOES
@@ -98,6 +100,12 @@ namespace Hype.Painel
                     AtualizarTabelas();
                 }
             }
+
+            // PROGRESSÃO
+            if(_progressao != false)
+            {
+
+            }
         }
 
         private void Salvar()
@@ -142,13 +150,20 @@ namespace Hype.Painel
             cla.Instance.addControl(uc);
         }
 
-        private void CampoTextoDesativado()
+        private void CamposDesativados()
         {
             txt_level.Enabled = false;
             txt_poder.Enabled = false;
 
             txt_level.BackColor = Color.FromArgb(235, 235, 235);
             txt_poder.BackColor = Color.FromArgb(235, 235, 235);
+
+            bt_cancelar_prog.Visible = false;
+            bt_cancelar_rema.Visible = false;
+            lb_seta.Visible = false;
+
+            CampoTextoDesativado(pl_progressao.Controls);
+            CampoTextoDesativado(pl_remanejamento.Controls);
         }
 
         private void txt_nick_Leave(object sender, EventArgs e)
@@ -167,6 +182,80 @@ namespace Hype.Painel
         {
             txt_patente.BorderColor = Color.Transparent;
             txt_patente.BorderSize = 0;
+        }
+
+        private void CampoTextoDesativado(Control.ControlCollection control)
+        {
+            foreach (Control c in control)
+            {
+                if (c is RJTextBox)
+                {
+                    ((RJTextBox)c).Enabled = false;
+                    ((RJTextBox)c).BackColor = Color.FromArgb(32, 34, 37);
+
+                }
+
+                if (c is Label)
+                {
+                    ((Label)c).ForeColor = Color.FromArgb(32, 34, 37);
+                }
+            }
+        }
+
+        private void CampoTextoHabilitado(Control.ControlCollection control)
+        {
+            foreach (Control c in control)
+            {
+                if (c is RJTextBox)
+                {
+                    ((RJTextBox)c).Enabled = true;
+                    ((RJTextBox)c).BackColor = Color.White;
+
+                }
+
+                if (c is Label)
+                {
+                    ((Label)c).ForeColor = Color.White;
+                }
+            }
+        }
+
+        private void bt_editar_prog_Click(object sender, EventArgs e)
+        {
+            CampoTextoHabilitado(pl_progressao.Controls);
+
+            bt_cancelar_prog.Visible = true;
+            bt_editar_prog.Visible = false;
+
+            _progressao = true;
+        }
+
+        private void bt_cancelar_prog_Click(object sender, EventArgs e)
+        {
+            bt_cancelar_prog.Visible = false;
+            bt_editar_prog.Visible = true;
+
+            CampoTextoDesativado(pl_progressao.Controls);
+        }
+
+        private void bt_editar_rema_Click(object sender, EventArgs e)
+        {
+            bt_cancelar_rema.Visible = true;
+            bt_editar_rema.Visible = false;
+            lb_seta.Visible = true;
+            txt_remanejamento.PlaceholderText = "Remanejamento";
+
+            CampoTextoHabilitado(pl_remanejamento.Controls);
+        }
+
+        private void bt_cancelar_rema_Click(object sender, EventArgs e)
+        {
+            bt_cancelar_rema.Visible = false;
+            bt_editar_rema.Visible = true;
+            lb_seta.Visible = false;
+            txt_remanejamento.PlaceholderText = "";
+
+            CampoTextoDesativado(pl_remanejamento.Controls);
         }
 
         #endregion
@@ -210,6 +299,6 @@ namespace Hype.Painel
             DadosMembros();
         }
 
-
+ 
     }
 }
