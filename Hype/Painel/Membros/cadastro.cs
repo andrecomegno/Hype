@@ -17,9 +17,6 @@ namespace Hype.Painel
     {
         public static cadastro Instance;
 
-        Decimal novoPoder = 0;
-        int novoLevel = 0;
-
         string tem_alt = string.Empty;
 
         public cadastro()
@@ -67,13 +64,15 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA PROGRESSAO
-            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, ano, mes, nick, atual_poder, atual_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
-            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
-            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@ano", MySqlDbType.VarChar, 256).Value = DateTime.Now.Year;
+            objCmdProgressao.Parameters.Add("@mes", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
+            objCmdProgressao.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = 0.00;
+            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = 0;
 
             objCmdProgressao.ExecuteNonQuery();
             long idProgressao = objCmdProgressao.LastInsertedId;
@@ -110,13 +109,15 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA PROGRESSAO
-            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, ano, mes, nick, atual_poder, atual_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
-            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
-            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@ano", MySqlDbType.VarChar, 256).Value = DateTime.Now.Year;
+            objCmdProgressao.Parameters.Add("@mes", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
+            objCmdProgressao.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = 0.00;
+            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = 0;
 
             objCmdProgressao.ExecuteNonQuery();
             long idProgressao = objCmdProgressao.LastInsertedId;
@@ -166,13 +167,15 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA PROGRESSAO
-            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, ano, mes, nick, atual_poder, atual_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdProgressao.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
-            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
-            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@ano", MySqlDbType.VarChar, 256).Value = DateTime.Now.Year;
+            objCmdProgressao.Parameters.Add("@mes", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
+            objCmdProgressao.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = 0.00;
+            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = 0;
 
             objCmdProgressao.ExecuteNonQuery();
             long idProgressao = objCmdProgressao.LastInsertedId;
@@ -235,13 +238,15 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA PROGRESSAO
-            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, ano, mes, nick, atual_poder, atual_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdProgressao.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
-            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
-            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@ano", MySqlDbType.VarChar, 256).Value = DateTime.Now.Year;
+            objCmdProgressao.Parameters.Add("@mes", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
+            objCmdProgressao.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = 0.00;
+            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = 0;
 
             objCmdProgressao.ExecuteNonQuery();
             long idProgressao = objCmdProgressao.LastInsertedId;
@@ -317,13 +322,15 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA PROGRESSAO
-            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, ano, mes, nick, atual_poder, atual_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdProgressao.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
-            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
-            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@ano", MySqlDbType.VarChar, 256).Value = DateTime.Now.Year;
+            objCmdProgressao.Parameters.Add("@mes", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
+            objCmdProgressao.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = 0.00;
+            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = 0;
 
             objCmdProgressao.ExecuteNonQuery();
             long idProgressao = objCmdProgressao.LastInsertedId;
@@ -412,13 +419,15 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA PROGRESSAO
-            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, novo_poder, novo_level, antigo_poder, antigo_level) values (null, ?, ?, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, ano, mes, nick, atual_poder, atual_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdProgressao.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novoPoder;
-            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novoLevel;
-            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@ano", MySqlDbType.VarChar, 256).Value = DateTime.Now.Year;
+            objCmdProgressao.Parameters.Add("@mes", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
+            objCmdProgressao.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+            objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = 0.00;
+            objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = 0;
 
             objCmdProgressao.ExecuteNonQuery();
             long idProgressao = objCmdProgressao.LastInsertedId;

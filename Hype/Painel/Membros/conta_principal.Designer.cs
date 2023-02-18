@@ -29,32 +29,31 @@ namespace Hype.Painel
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pl_conta_principal = new System.Windows.Forms.Panel();
             this.pl_botao = new System.Windows.Forms.Panel();
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.bt_salvar = new System.Windows.Forms.Button();
+            this.pl_espaco_04 = new System.Windows.Forms.Panel();
             this.pl_remanejamento = new System.Windows.Forms.Panel();
+            this.bt_editar_rema = new System.Windows.Forms.Button();
+            this.lb_esta_cla = new System.Windows.Forms.Label();
+            this.lb_vem_cla = new System.Windows.Forms.Label();
+            this.bt_cancelar_rema = new System.Windows.Forms.Button();
             this.lb_seta = new System.Windows.Forms.Label();
+            this.pl_titulo_rema = new System.Windows.Forms.Panel();
             this.lb_remanejamento = new System.Windows.Forms.Label();
             this.pl_espaco_03 = new System.Windows.Forms.Panel();
             this.pl_progressao = new System.Windows.Forms.Panel();
-            this.lb_dezembro = new System.Windows.Forms.Label();
-            this.lb_novembro = new System.Windows.Forms.Label();
-            this.lb_outubro = new System.Windows.Forms.Label();
-            this.lb_setembro = new System.Windows.Forms.Label();
-            this.lb_agosto = new System.Windows.Forms.Label();
-            this.lb_julho = new System.Windows.Forms.Label();
-            this.lb_junho = new System.Windows.Forms.Label();
-            this.lb_maio = new System.Windows.Forms.Label();
-            this.lb_poder_col_02 = new System.Windows.Forms.Label();
-            this.lb_level_col_02 = new System.Windows.Forms.Label();
-            this.lb_abril = new System.Windows.Forms.Label();
-            this.lb_marco = new System.Windows.Forms.Label();
-            this.lb_fevereiro = new System.Windows.Forms.Label();
-            this.lb_janeiro = new System.Windows.Forms.Label();
+            this.bt_editar_prog = new System.Windows.Forms.Button();
+            this.pl_pro_adicionar = new System.Windows.Forms.Panel();
             this.lb_poder_col_01 = new System.Windows.Forms.Label();
             this.lb_level_col_01 = new System.Windows.Forms.Label();
             this.lb_progressao = new System.Windows.Forms.Label();
+            this.bt_cancelar_prog = new System.Windows.Forms.Button();
             this.pl_espaco_02 = new System.Windows.Forms.Panel();
             this.pl_conta = new System.Windows.Forms.Panel();
             this.bt_excluir = new System.Windows.Forms.Button();
@@ -70,55 +69,26 @@ namespace Hype.Painel
             this.txt_data_entrada = new System.Windows.Forms.Label();
             this.lb_data_entrada = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txt_remanejamento = new Hype.Painel.RJTextBox();
             this.txt_esta_cla = new Hype.Painel.RJTextBox();
             this.txt_vem_cla = new Hype.Painel.RJTextBox();
-            this.txt_level_dez = new Hype.Painel.RJTextBox();
-            this.txt_poder_dez = new Hype.Painel.RJTextBox();
-            this.txt_level_nov = new Hype.Painel.RJTextBox();
-            this.txt_poder_nov = new Hype.Painel.RJTextBox();
-            this.txt_level_out = new Hype.Painel.RJTextBox();
-            this.txt_poder_out = new Hype.Painel.RJTextBox();
-            this.txt_level_set = new Hype.Painel.RJTextBox();
-            this.txt_poder_set = new Hype.Painel.RJTextBox();
-            this.txt_level_ago = new Hype.Painel.RJTextBox();
-            this.txt_poder_ago = new Hype.Painel.RJTextBox();
-            this.txt_level_jul = new Hype.Painel.RJTextBox();
-            this.txt_poder_jul = new Hype.Painel.RJTextBox();
-            this.txt_level_jun = new Hype.Painel.RJTextBox();
-            this.txt_poder_jun = new Hype.Painel.RJTextBox();
-            this.txt_level_mai = new Hype.Painel.RJTextBox();
-            this.txt_poder_mai = new Hype.Painel.RJTextBox();
-            this.txt_level_abr = new Hype.Painel.RJTextBox();
-            this.txt_poder_abr = new Hype.Painel.RJTextBox();
-            this.txt_level_mar = new Hype.Painel.RJTextBox();
-            this.txt_poder_mar = new Hype.Painel.RJTextBox();
-            this.txt_level_fe = new Hype.Painel.RJTextBox();
-            this.txt_poder_fe = new Hype.Painel.RJTextBox();
-            this.txt_level_ja = new Hype.Painel.RJTextBox();
             this.txt_poder_ja = new Hype.Painel.RJTextBox();
+            this.txt_level_ja = new Hype.Painel.RJTextBox();
             this.txt_patente = new Hype.script.RJComboBox();
             this.txt_classe = new Hype.script.RJComboBox();
             this.txt_level = new Hype.Painel.RJTextBox();
             this.txt_poder = new Hype.Painel.RJTextBox();
             this.txt_nick = new Hype.Painel.RJTextBox();
-            this.bt_cancelar_prog = new System.Windows.Forms.Button();
-            this.bt_cancelar_rema = new System.Windows.Forms.Button();
-            this.pl_titulo_pro = new System.Windows.Forms.Panel();
-            this.pl_espaco_04 = new System.Windows.Forms.Panel();
-            this.bt_editar_prog = new System.Windows.Forms.Button();
-            this.bt_editar_rema = new System.Windows.Forms.Button();
-            this.pl_titulo_rema = new System.Windows.Forms.Panel();
-            this.lb_vem_cla = new System.Windows.Forms.Label();
-            this.lb_esta_cla = new System.Windows.Forms.Label();
             this.pl_conta_principal.SuspendLayout();
             this.pl_botao.SuspendLayout();
             this.pl_remanejamento.SuspendLayout();
+            this.pl_titulo_rema.SuspendLayout();
             this.pl_progressao.SuspendLayout();
+            this.pl_pro_adicionar.SuspendLayout();
             this.pl_conta.SuspendLayout();
             this.pl_top.SuspendLayout();
-            this.pl_titulo_pro.SuspendLayout();
-            this.pl_titulo_rema.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pl_conta_principal
@@ -133,7 +103,6 @@ namespace Hype.Painel
             this.pl_conta_principal.Controls.Add(this.pl_titulo_rema);
             this.pl_conta_principal.Controls.Add(this.pl_espaco_03);
             this.pl_conta_principal.Controls.Add(this.pl_progressao);
-            this.pl_conta_principal.Controls.Add(this.pl_titulo_pro);
             this.pl_conta_principal.Controls.Add(this.pl_espaco_02);
             this.pl_conta_principal.Controls.Add(this.pl_conta);
             this.pl_conta_principal.Controls.Add(this.pl_espaco_01);
@@ -149,7 +118,7 @@ namespace Hype.Painel
             this.pl_botao.Controls.Add(this.bt_cancelar);
             this.pl_botao.Controls.Add(this.bt_salvar);
             this.pl_botao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_botao.Location = new System.Drawing.Point(0, 699);
+            this.pl_botao.Location = new System.Drawing.Point(0, 692);
             this.pl_botao.Name = "pl_botao";
             this.pl_botao.Size = new System.Drawing.Size(1172, 71);
             this.pl_botao.TabIndex = 98;
@@ -188,6 +157,15 @@ namespace Hype.Painel
             this.bt_salvar.UseVisualStyleBackColor = false;
             this.bt_salvar.Click += new System.EventHandler(this.bt_salvar_Click);
             // 
+            // pl_espaco_04
+            // 
+            this.pl_espaco_04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_espaco_04.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_espaco_04.Location = new System.Drawing.Point(0, 682);
+            this.pl_espaco_04.Name = "pl_espaco_04";
+            this.pl_espaco_04.Size = new System.Drawing.Size(1172, 10);
+            this.pl_espaco_04.TabIndex = 80;
+            // 
             // pl_remanejamento
             // 
             this.pl_remanejamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
@@ -200,10 +178,68 @@ namespace Hype.Painel
             this.pl_remanejamento.Controls.Add(this.txt_esta_cla);
             this.pl_remanejamento.Controls.Add(this.txt_vem_cla);
             this.pl_remanejamento.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_remanejamento.Location = new System.Drawing.Point(0, 592);
+            this.pl_remanejamento.Location = new System.Drawing.Point(0, 585);
             this.pl_remanejamento.Name = "pl_remanejamento";
             this.pl_remanejamento.Size = new System.Drawing.Size(1172, 97);
             this.pl_remanejamento.TabIndex = 96;
+            // 
+            // bt_editar_rema
+            // 
+            this.bt_editar_rema.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_editar_rema.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.bt_editar_rema.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_editar_rema.FlatAppearance.BorderSize = 0;
+            this.bt_editar_rema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_editar_rema.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_editar_rema.ForeColor = System.Drawing.Color.White;
+            this.bt_editar_rema.Location = new System.Drawing.Point(465, 25);
+            this.bt_editar_rema.Name = "bt_editar_rema";
+            this.bt_editar_rema.Size = new System.Drawing.Size(237, 36);
+            this.bt_editar_rema.TabIndex = 188;
+            this.bt_editar_rema.Text = "Clique para Editar";
+            this.bt_editar_rema.UseVisualStyleBackColor = false;
+            this.bt_editar_rema.Click += new System.EventHandler(this.bt_editar_rema_Click);
+            // 
+            // lb_esta_cla
+            // 
+            this.lb_esta_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_esta_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_esta_cla.ForeColor = System.Drawing.Color.White;
+            this.lb_esta_cla.Location = new System.Drawing.Point(491, 24);
+            this.lb_esta_cla.Name = "lb_esta_cla";
+            this.lb_esta_cla.Size = new System.Drawing.Size(192, 17);
+            this.lb_esta_cla.TabIndex = 189;
+            this.lb_esta_cla.Text = "Está no Clã";
+            this.lb_esta_cla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_vem_cla
+            // 
+            this.lb_vem_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_vem_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_vem_cla.ForeColor = System.Drawing.Color.White;
+            this.lb_vem_cla.Location = new System.Drawing.Point(255, 25);
+            this.lb_vem_cla.Name = "lb_vem_cla";
+            this.lb_vem_cla.Size = new System.Drawing.Size(192, 17);
+            this.lb_vem_cla.TabIndex = 188;
+            this.lb_vem_cla.Text = "Vem do Clã";
+            this.lb_vem_cla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bt_cancelar_rema
+            // 
+            this.bt_cancelar_rema.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bt_cancelar_rema.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_cancelar_rema.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cancelar_rema.FlatAppearance.BorderSize = 0;
+            this.bt_cancelar_rema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cancelar_rema.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cancelar_rema.ForeColor = System.Drawing.Color.White;
+            this.bt_cancelar_rema.Location = new System.Drawing.Point(5, 55);
+            this.bt_cancelar_rema.Name = "bt_cancelar_rema";
+            this.bt_cancelar_rema.Size = new System.Drawing.Size(102, 36);
+            this.bt_cancelar_rema.TabIndex = 187;
+            this.bt_cancelar_rema.Text = "Cancelar";
+            this.bt_cancelar_rema.UseVisualStyleBackColor = false;
+            this.bt_cancelar_rema.Click += new System.EventHandler(this.bt_cancelar_rema_Click);
             // 
             // lb_seta
             // 
@@ -216,6 +252,16 @@ namespace Hype.Painel
             this.lb_seta.TabIndex = 187;
             this.lb_seta.Text = "▶";
             this.lb_seta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pl_titulo_rema
+            // 
+            this.pl_titulo_rema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.pl_titulo_rema.Controls.Add(this.lb_remanejamento);
+            this.pl_titulo_rema.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_titulo_rema.Location = new System.Drawing.Point(0, 546);
+            this.pl_titulo_rema.Name = "pl_titulo_rema";
+            this.pl_titulo_rema.Size = new System.Drawing.Size(1172, 39);
+            this.pl_titulo_rema.TabIndex = 80;
             // 
             // lb_remanejamento
             // 
@@ -234,7 +280,7 @@ namespace Hype.Painel
             // 
             this.pl_espaco_03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.pl_espaco_03.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_espaco_03.Location = new System.Drawing.Point(0, 543);
+            this.pl_espaco_03.Location = new System.Drawing.Point(0, 536);
             this.pl_espaco_03.Name = "pl_espaco_03";
             this.pl_espaco_03.Size = new System.Drawing.Size(1172, 10);
             this.pl_espaco_03.TabIndex = 79;
@@ -242,228 +288,53 @@ namespace Hype.Painel
             // pl_progressao
             // 
             this.pl_progressao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.pl_progressao.Controls.Add(this.dataGridView1);
             this.pl_progressao.Controls.Add(this.bt_editar_prog);
+            this.pl_progressao.Controls.Add(this.pl_pro_adicionar);
+            this.pl_progressao.Controls.Add(this.lb_progressao);
             this.pl_progressao.Controls.Add(this.bt_cancelar_prog);
-            this.pl_progressao.Controls.Add(this.lb_dezembro);
-            this.pl_progressao.Controls.Add(this.lb_novembro);
-            this.pl_progressao.Controls.Add(this.lb_outubro);
-            this.pl_progressao.Controls.Add(this.lb_setembro);
-            this.pl_progressao.Controls.Add(this.lb_agosto);
-            this.pl_progressao.Controls.Add(this.lb_julho);
-            this.pl_progressao.Controls.Add(this.lb_junho);
-            this.pl_progressao.Controls.Add(this.lb_maio);
-            this.pl_progressao.Controls.Add(this.txt_level_dez);
-            this.pl_progressao.Controls.Add(this.txt_poder_dez);
-            this.pl_progressao.Controls.Add(this.txt_level_nov);
-            this.pl_progressao.Controls.Add(this.txt_poder_nov);
-            this.pl_progressao.Controls.Add(this.txt_level_out);
-            this.pl_progressao.Controls.Add(this.txt_poder_out);
-            this.pl_progressao.Controls.Add(this.txt_level_set);
-            this.pl_progressao.Controls.Add(this.txt_poder_set);
-            this.pl_progressao.Controls.Add(this.txt_level_ago);
-            this.pl_progressao.Controls.Add(this.txt_poder_ago);
-            this.pl_progressao.Controls.Add(this.txt_level_jul);
-            this.pl_progressao.Controls.Add(this.lb_poder_col_02);
-            this.pl_progressao.Controls.Add(this.txt_poder_jul);
-            this.pl_progressao.Controls.Add(this.lb_level_col_02);
-            this.pl_progressao.Controls.Add(this.lb_abril);
-            this.pl_progressao.Controls.Add(this.lb_marco);
-            this.pl_progressao.Controls.Add(this.lb_fevereiro);
-            this.pl_progressao.Controls.Add(this.lb_janeiro);
-            this.pl_progressao.Controls.Add(this.txt_level_jun);
-            this.pl_progressao.Controls.Add(this.txt_poder_jun);
-            this.pl_progressao.Controls.Add(this.txt_level_mai);
-            this.pl_progressao.Controls.Add(this.txt_poder_mai);
-            this.pl_progressao.Controls.Add(this.txt_level_abr);
-            this.pl_progressao.Controls.Add(this.txt_poder_abr);
-            this.pl_progressao.Controls.Add(this.txt_level_mar);
-            this.pl_progressao.Controls.Add(this.txt_poder_mar);
-            this.pl_progressao.Controls.Add(this.txt_level_fe);
-            this.pl_progressao.Controls.Add(this.txt_poder_fe);
-            this.pl_progressao.Controls.Add(this.txt_level_ja);
-            this.pl_progressao.Controls.Add(this.lb_poder_col_01);
-            this.pl_progressao.Controls.Add(this.txt_poder_ja);
-            this.pl_progressao.Controls.Add(this.lb_level_col_01);
             this.pl_progressao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_progressao.Location = new System.Drawing.Point(0, 262);
+            this.pl_progressao.Location = new System.Drawing.Point(0, 223);
             this.pl_progressao.Name = "pl_progressao";
-            this.pl_progressao.Size = new System.Drawing.Size(1172, 281);
+            this.pl_progressao.Size = new System.Drawing.Size(1172, 313);
             this.pl_progressao.TabIndex = 86;
             // 
-            // lb_dezembro
+            // bt_editar_prog
             // 
-            this.lb_dezembro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_dezembro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_dezembro.ForeColor = System.Drawing.Color.White;
-            this.lb_dezembro.Location = new System.Drawing.Point(555, 245);
-            this.lb_dezembro.Name = "lb_dezembro";
-            this.lb_dezembro.Size = new System.Drawing.Size(86, 16);
-            this.lb_dezembro.TabIndex = 185;
-            this.lb_dezembro.Text = "Dezembro";
-            this.lb_dezembro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bt_editar_prog.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_editar_prog.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.bt_editar_prog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_editar_prog.FlatAppearance.BorderSize = 0;
+            this.bt_editar_prog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_editar_prog.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_editar_prog.ForeColor = System.Drawing.Color.White;
+            this.bt_editar_prog.Location = new System.Drawing.Point(799, 39);
+            this.bt_editar_prog.Name = "bt_editar_prog";
+            this.bt_editar_prog.Size = new System.Drawing.Size(237, 36);
+            this.bt_editar_prog.TabIndex = 187;
+            this.bt_editar_prog.Text = "Clique para Editar";
+            this.bt_editar_prog.UseVisualStyleBackColor = false;
+            this.bt_editar_prog.Click += new System.EventHandler(this.bt_editar_prog_Click);
             // 
-            // lb_novembro
+            // pl_pro_adicionar
             // 
-            this.lb_novembro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_novembro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_novembro.ForeColor = System.Drawing.Color.White;
-            this.lb_novembro.Location = new System.Drawing.Point(555, 206);
-            this.lb_novembro.Name = "lb_novembro";
-            this.lb_novembro.Size = new System.Drawing.Size(86, 16);
-            this.lb_novembro.TabIndex = 184;
-            this.lb_novembro.Text = "Novembro";
-            this.lb_novembro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_outubro
-            // 
-            this.lb_outubro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_outubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_outubro.ForeColor = System.Drawing.Color.White;
-            this.lb_outubro.Location = new System.Drawing.Point(555, 167);
-            this.lb_outubro.Name = "lb_outubro";
-            this.lb_outubro.Size = new System.Drawing.Size(86, 16);
-            this.lb_outubro.TabIndex = 183;
-            this.lb_outubro.Text = "Outubro";
-            this.lb_outubro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_setembro
-            // 
-            this.lb_setembro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_setembro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_setembro.ForeColor = System.Drawing.Color.White;
-            this.lb_setembro.Location = new System.Drawing.Point(555, 128);
-            this.lb_setembro.Name = "lb_setembro";
-            this.lb_setembro.Size = new System.Drawing.Size(86, 16);
-            this.lb_setembro.TabIndex = 182;
-            this.lb_setembro.Text = "Setembro";
-            this.lb_setembro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_agosto
-            // 
-            this.lb_agosto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_agosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_agosto.ForeColor = System.Drawing.Color.White;
-            this.lb_agosto.Location = new System.Drawing.Point(555, 89);
-            this.lb_agosto.Name = "lb_agosto";
-            this.lb_agosto.Size = new System.Drawing.Size(86, 16);
-            this.lb_agosto.TabIndex = 181;
-            this.lb_agosto.Text = "Agosto";
-            this.lb_agosto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_julho
-            // 
-            this.lb_julho.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_julho.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_julho.ForeColor = System.Drawing.Color.White;
-            this.lb_julho.Location = new System.Drawing.Point(555, 50);
-            this.lb_julho.Name = "lb_julho";
-            this.lb_julho.Size = new System.Drawing.Size(86, 16);
-            this.lb_julho.TabIndex = 180;
-            this.lb_julho.Text = "Julho";
-            this.lb_julho.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_junho
-            // 
-            this.lb_junho.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_junho.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_junho.ForeColor = System.Drawing.Color.White;
-            this.lb_junho.Location = new System.Drawing.Point(234, 245);
-            this.lb_junho.Name = "lb_junho";
-            this.lb_junho.Size = new System.Drawing.Size(86, 16);
-            this.lb_junho.TabIndex = 179;
-            this.lb_junho.Text = "Junho";
-            this.lb_junho.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_maio
-            // 
-            this.lb_maio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_maio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_maio.ForeColor = System.Drawing.Color.White;
-            this.lb_maio.Location = new System.Drawing.Point(234, 206);
-            this.lb_maio.Name = "lb_maio";
-            this.lb_maio.Size = new System.Drawing.Size(86, 16);
-            this.lb_maio.TabIndex = 178;
-            this.lb_maio.Text = "Maio";
-            this.lb_maio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_poder_col_02
-            // 
-            this.lb_poder_col_02.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_poder_col_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_poder_col_02.ForeColor = System.Drawing.Color.White;
-            this.lb_poder_col_02.Location = new System.Drawing.Point(723, 14);
-            this.lb_poder_col_02.Name = "lb_poder_col_02";
-            this.lb_poder_col_02.Size = new System.Drawing.Size(120, 17);
-            this.lb_poder_col_02.TabIndex = 166;
-            this.lb_poder_col_02.Text = "Poder";
-            this.lb_poder_col_02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_level_col_02
-            // 
-            this.lb_level_col_02.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_level_col_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_level_col_02.ForeColor = System.Drawing.Color.White;
-            this.lb_level_col_02.Location = new System.Drawing.Point(648, 14);
-            this.lb_level_col_02.Name = "lb_level_col_02";
-            this.lb_level_col_02.Size = new System.Drawing.Size(68, 17);
-            this.lb_level_col_02.TabIndex = 165;
-            this.lb_level_col_02.Text = "Level";
-            this.lb_level_col_02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_abril
-            // 
-            this.lb_abril.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_abril.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_abril.ForeColor = System.Drawing.Color.White;
-            this.lb_abril.Location = new System.Drawing.Point(234, 167);
-            this.lb_abril.Name = "lb_abril";
-            this.lb_abril.Size = new System.Drawing.Size(86, 16);
-            this.lb_abril.TabIndex = 163;
-            this.lb_abril.Text = "Abril";
-            this.lb_abril.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_marco
-            // 
-            this.lb_marco.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_marco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_marco.ForeColor = System.Drawing.Color.White;
-            this.lb_marco.Location = new System.Drawing.Point(234, 128);
-            this.lb_marco.Name = "lb_marco";
-            this.lb_marco.Size = new System.Drawing.Size(86, 16);
-            this.lb_marco.TabIndex = 162;
-            this.lb_marco.Text = "Março";
-            this.lb_marco.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_fevereiro
-            // 
-            this.lb_fevereiro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_fevereiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_fevereiro.ForeColor = System.Drawing.Color.White;
-            this.lb_fevereiro.Location = new System.Drawing.Point(234, 89);
-            this.lb_fevereiro.Name = "lb_fevereiro";
-            this.lb_fevereiro.Size = new System.Drawing.Size(86, 16);
-            this.lb_fevereiro.TabIndex = 161;
-            this.lb_fevereiro.Text = "Fevereiro";
-            this.lb_fevereiro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_janeiro
-            // 
-            this.lb_janeiro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_janeiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_janeiro.ForeColor = System.Drawing.Color.White;
-            this.lb_janeiro.Location = new System.Drawing.Point(252, 49);
-            this.lb_janeiro.Name = "lb_janeiro";
-            this.lb_janeiro.Size = new System.Drawing.Size(68, 17);
-            this.lb_janeiro.TabIndex = 160;
-            this.lb_janeiro.Text = "Janeiro";
-            this.lb_janeiro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pl_pro_adicionar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pl_pro_adicionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.pl_pro_adicionar.Controls.Add(this.txt_poder_ja);
+            this.pl_pro_adicionar.Controls.Add(this.txt_level_ja);
+            this.pl_pro_adicionar.Controls.Add(this.lb_poder_col_01);
+            this.pl_pro_adicionar.Controls.Add(this.lb_level_col_01);
+            this.pl_pro_adicionar.Location = new System.Drawing.Point(177, 40);
+            this.pl_pro_adicionar.Name = "pl_pro_adicionar";
+            this.pl_pro_adicionar.Size = new System.Drawing.Size(263, 77);
+            this.pl_pro_adicionar.TabIndex = 231;
             // 
             // lb_poder_col_01
             // 
             this.lb_poder_col_01.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lb_poder_col_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_poder_col_01.ForeColor = System.Drawing.Color.White;
-            this.lb_poder_col_01.Location = new System.Drawing.Point(402, 14);
+            this.lb_poder_col_01.Location = new System.Drawing.Point(80, 21);
             this.lb_poder_col_01.Name = "lb_poder_col_01";
             this.lb_poder_col_01.Size = new System.Drawing.Size(120, 17);
             this.lb_poder_col_01.TabIndex = 148;
@@ -475,7 +346,7 @@ namespace Hype.Painel
             this.lb_level_col_01.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lb_level_col_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_level_col_01.ForeColor = System.Drawing.Color.White;
-            this.lb_level_col_01.Location = new System.Drawing.Point(327, 14);
+            this.lb_level_col_01.Location = new System.Drawing.Point(5, 21);
             this.lb_level_col_01.Name = "lb_level_col_01";
             this.lb_level_col_01.Size = new System.Drawing.Size(68, 17);
             this.lb_level_col_01.TabIndex = 147;
@@ -488,12 +359,29 @@ namespace Hype.Painel
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_progressao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_progressao.ForeColor = System.Drawing.Color.White;
-            this.lb_progressao.Location = new System.Drawing.Point(6, 3);
+            this.lb_progressao.Location = new System.Drawing.Point(9, 5);
             this.lb_progressao.Name = "lb_progressao";
             this.lb_progressao.Size = new System.Drawing.Size(1160, 31);
             this.lb_progressao.TabIndex = 97;
             this.lb_progressao.Text = "PROGRESSÃO";
             this.lb_progressao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bt_cancelar_prog
+            // 
+            this.bt_cancelar_prog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bt_cancelar_prog.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_cancelar_prog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cancelar_prog.FlatAppearance.BorderSize = 0;
+            this.bt_cancelar_prog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cancelar_prog.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cancelar_prog.ForeColor = System.Drawing.Color.White;
+            this.bt_cancelar_prog.Location = new System.Drawing.Point(5, 271);
+            this.bt_cancelar_prog.Name = "bt_cancelar_prog";
+            this.bt_cancelar_prog.Size = new System.Drawing.Size(102, 36);
+            this.bt_cancelar_prog.TabIndex = 186;
+            this.bt_cancelar_prog.Text = "Cancelar";
+            this.bt_cancelar_prog.UseVisualStyleBackColor = false;
+            this.bt_cancelar_prog.Click += new System.EventHandler(this.bt_cancelar_prog_Click);
             // 
             // pl_espaco_02
             // 
@@ -685,6 +573,61 @@ namespace Hype.Painel
             this.vScrollBar1.Size = new System.Drawing.Size(17, 810);
             this.vScrollBar1.TabIndex = 78;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeight = 50;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.dataGridView1.Location = new System.Drawing.Point(177, 123);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(702, 175);
+            this.dataGridView1.TabIndex = 274;
+            // 
             // txt_remanejamento
             // 
             this.txt_remanejamento.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -754,522 +697,28 @@ namespace Hype.Painel
             this.txt_vem_cla.Texts = "";
             this.txt_vem_cla.UnderlinedStyle = false;
             // 
-            // txt_level_dez
+            // txt_poder_ja
             // 
-            this.txt_level_dez.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level_dez.BackColor = System.Drawing.Color.White;
-            this.txt_level_dez.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_level_dez.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_level_dez.BorderRadius = 0;
-            this.txt_level_dez.BorderSize = 1;
-            this.txt_level_dez.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level_dez.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level_dez.Location = new System.Drawing.Point(648, 230);
-            this.txt_level_dez.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level_dez.Multiline = false;
-            this.txt_level_dez.Name = "txt_level_dez";
-            this.txt_level_dez.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level_dez.PasswordChar = false;
-            this.txt_level_dez.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_level_dez.PlaceholderText = "";
-            this.txt_level_dez.Size = new System.Drawing.Size(68, 31);
-            this.txt_level_dez.TabIndex = 177;
-            this.txt_level_dez.Tag = "";
-            this.txt_level_dez.Texts = "";
-            this.txt_level_dez.UnderlinedStyle = false;
-            // 
-            // txt_poder_dez
-            // 
-            this.txt_poder_dez.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder_dez.BackColor = System.Drawing.Color.White;
-            this.txt_poder_dez.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_poder_dez.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_poder_dez.BorderRadius = 0;
-            this.txt_poder_dez.BorderSize = 1;
-            this.txt_poder_dez.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder_dez.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder_dez.Location = new System.Drawing.Point(724, 230);
-            this.txt_poder_dez.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder_dez.Multiline = false;
-            this.txt_poder_dez.Name = "txt_poder_dez";
-            this.txt_poder_dez.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder_dez.PasswordChar = false;
-            this.txt_poder_dez.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_poder_dez.PlaceholderText = "";
-            this.txt_poder_dez.Size = new System.Drawing.Size(119, 31);
-            this.txt_poder_dez.TabIndex = 176;
-            this.txt_poder_dez.Texts = "";
-            this.txt_poder_dez.UnderlinedStyle = false;
-            // 
-            // txt_level_nov
-            // 
-            this.txt_level_nov.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level_nov.BackColor = System.Drawing.Color.White;
-            this.txt_level_nov.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_level_nov.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_level_nov.BorderRadius = 0;
-            this.txt_level_nov.BorderSize = 1;
-            this.txt_level_nov.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level_nov.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level_nov.Location = new System.Drawing.Point(648, 191);
-            this.txt_level_nov.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level_nov.Multiline = false;
-            this.txt_level_nov.Name = "txt_level_nov";
-            this.txt_level_nov.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level_nov.PasswordChar = false;
-            this.txt_level_nov.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_level_nov.PlaceholderText = "";
-            this.txt_level_nov.Size = new System.Drawing.Size(68, 31);
-            this.txt_level_nov.TabIndex = 175;
-            this.txt_level_nov.Tag = "";
-            this.txt_level_nov.Texts = "";
-            this.txt_level_nov.UnderlinedStyle = false;
-            // 
-            // txt_poder_nov
-            // 
-            this.txt_poder_nov.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder_nov.BackColor = System.Drawing.Color.White;
-            this.txt_poder_nov.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_poder_nov.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_poder_nov.BorderRadius = 0;
-            this.txt_poder_nov.BorderSize = 1;
-            this.txt_poder_nov.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder_nov.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder_nov.Location = new System.Drawing.Point(724, 191);
-            this.txt_poder_nov.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder_nov.Multiline = false;
-            this.txt_poder_nov.Name = "txt_poder_nov";
-            this.txt_poder_nov.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder_nov.PasswordChar = false;
-            this.txt_poder_nov.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_poder_nov.PlaceholderText = "";
-            this.txt_poder_nov.Size = new System.Drawing.Size(119, 31);
-            this.txt_poder_nov.TabIndex = 174;
-            this.txt_poder_nov.Texts = "";
-            this.txt_poder_nov.UnderlinedStyle = false;
-            // 
-            // txt_level_out
-            // 
-            this.txt_level_out.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level_out.BackColor = System.Drawing.Color.White;
-            this.txt_level_out.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_level_out.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_level_out.BorderRadius = 0;
-            this.txt_level_out.BorderSize = 1;
-            this.txt_level_out.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level_out.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level_out.Location = new System.Drawing.Point(648, 152);
-            this.txt_level_out.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level_out.Multiline = false;
-            this.txt_level_out.Name = "txt_level_out";
-            this.txt_level_out.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level_out.PasswordChar = false;
-            this.txt_level_out.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_level_out.PlaceholderText = "";
-            this.txt_level_out.Size = new System.Drawing.Size(68, 31);
-            this.txt_level_out.TabIndex = 173;
-            this.txt_level_out.Tag = "";
-            this.txt_level_out.Texts = "";
-            this.txt_level_out.UnderlinedStyle = false;
-            // 
-            // txt_poder_out
-            // 
-            this.txt_poder_out.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder_out.BackColor = System.Drawing.Color.White;
-            this.txt_poder_out.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_poder_out.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_poder_out.BorderRadius = 0;
-            this.txt_poder_out.BorderSize = 1;
-            this.txt_poder_out.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder_out.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder_out.Location = new System.Drawing.Point(724, 152);
-            this.txt_poder_out.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder_out.Multiline = false;
-            this.txt_poder_out.Name = "txt_poder_out";
-            this.txt_poder_out.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder_out.PasswordChar = false;
-            this.txt_poder_out.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_poder_out.PlaceholderText = "";
-            this.txt_poder_out.Size = new System.Drawing.Size(119, 31);
-            this.txt_poder_out.TabIndex = 172;
-            this.txt_poder_out.Texts = "";
-            this.txt_poder_out.UnderlinedStyle = false;
-            // 
-            // txt_level_set
-            // 
-            this.txt_level_set.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level_set.BackColor = System.Drawing.Color.White;
-            this.txt_level_set.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_level_set.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_level_set.BorderRadius = 0;
-            this.txt_level_set.BorderSize = 1;
-            this.txt_level_set.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level_set.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level_set.Location = new System.Drawing.Point(648, 113);
-            this.txt_level_set.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level_set.Multiline = false;
-            this.txt_level_set.Name = "txt_level_set";
-            this.txt_level_set.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level_set.PasswordChar = false;
-            this.txt_level_set.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_level_set.PlaceholderText = "";
-            this.txt_level_set.Size = new System.Drawing.Size(68, 31);
-            this.txt_level_set.TabIndex = 171;
-            this.txt_level_set.Tag = "";
-            this.txt_level_set.Texts = "";
-            this.txt_level_set.UnderlinedStyle = false;
-            // 
-            // txt_poder_set
-            // 
-            this.txt_poder_set.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder_set.BackColor = System.Drawing.Color.White;
-            this.txt_poder_set.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_poder_set.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_poder_set.BorderRadius = 0;
-            this.txt_poder_set.BorderSize = 1;
-            this.txt_poder_set.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder_set.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder_set.Location = new System.Drawing.Point(724, 113);
-            this.txt_poder_set.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder_set.Multiline = false;
-            this.txt_poder_set.Name = "txt_poder_set";
-            this.txt_poder_set.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder_set.PasswordChar = false;
-            this.txt_poder_set.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_poder_set.PlaceholderText = "";
-            this.txt_poder_set.Size = new System.Drawing.Size(119, 31);
-            this.txt_poder_set.TabIndex = 170;
-            this.txt_poder_set.Texts = "";
-            this.txt_poder_set.UnderlinedStyle = false;
-            // 
-            // txt_level_ago
-            // 
-            this.txt_level_ago.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level_ago.BackColor = System.Drawing.Color.White;
-            this.txt_level_ago.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_level_ago.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_level_ago.BorderRadius = 0;
-            this.txt_level_ago.BorderSize = 1;
-            this.txt_level_ago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level_ago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level_ago.Location = new System.Drawing.Point(648, 74);
-            this.txt_level_ago.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level_ago.Multiline = false;
-            this.txt_level_ago.Name = "txt_level_ago";
-            this.txt_level_ago.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level_ago.PasswordChar = false;
-            this.txt_level_ago.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_level_ago.PlaceholderText = "";
-            this.txt_level_ago.Size = new System.Drawing.Size(68, 31);
-            this.txt_level_ago.TabIndex = 169;
-            this.txt_level_ago.Tag = "";
-            this.txt_level_ago.Texts = "";
-            this.txt_level_ago.UnderlinedStyle = false;
-            // 
-            // txt_poder_ago
-            // 
-            this.txt_poder_ago.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder_ago.BackColor = System.Drawing.Color.White;
-            this.txt_poder_ago.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_poder_ago.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_poder_ago.BorderRadius = 0;
-            this.txt_poder_ago.BorderSize = 1;
-            this.txt_poder_ago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder_ago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder_ago.Location = new System.Drawing.Point(724, 74);
-            this.txt_poder_ago.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder_ago.Multiline = false;
-            this.txt_poder_ago.Name = "txt_poder_ago";
-            this.txt_poder_ago.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder_ago.PasswordChar = false;
-            this.txt_poder_ago.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_poder_ago.PlaceholderText = "";
-            this.txt_poder_ago.Size = new System.Drawing.Size(119, 31);
-            this.txt_poder_ago.TabIndex = 168;
-            this.txt_poder_ago.Texts = "";
-            this.txt_poder_ago.UnderlinedStyle = false;
-            // 
-            // txt_level_jul
-            // 
-            this.txt_level_jul.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level_jul.BackColor = System.Drawing.Color.White;
-            this.txt_level_jul.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_level_jul.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_level_jul.BorderRadius = 0;
-            this.txt_level_jul.BorderSize = 1;
-            this.txt_level_jul.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level_jul.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level_jul.Location = new System.Drawing.Point(648, 35);
-            this.txt_level_jul.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level_jul.Multiline = false;
-            this.txt_level_jul.Name = "txt_level_jul";
-            this.txt_level_jul.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level_jul.PasswordChar = false;
-            this.txt_level_jul.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_level_jul.PlaceholderText = "";
-            this.txt_level_jul.Size = new System.Drawing.Size(68, 31);
-            this.txt_level_jul.TabIndex = 167;
-            this.txt_level_jul.Tag = "";
-            this.txt_level_jul.Texts = "";
-            this.txt_level_jul.UnderlinedStyle = false;
-            // 
-            // txt_poder_jul
-            // 
-            this.txt_poder_jul.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder_jul.BackColor = System.Drawing.Color.White;
-            this.txt_poder_jul.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_poder_jul.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_poder_jul.BorderRadius = 0;
-            this.txt_poder_jul.BorderSize = 1;
-            this.txt_poder_jul.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder_jul.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder_jul.Location = new System.Drawing.Point(724, 35);
-            this.txt_poder_jul.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder_jul.Multiline = false;
-            this.txt_poder_jul.Name = "txt_poder_jul";
-            this.txt_poder_jul.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder_jul.PasswordChar = false;
-            this.txt_poder_jul.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_poder_jul.PlaceholderText = "";
-            this.txt_poder_jul.Size = new System.Drawing.Size(119, 31);
-            this.txt_poder_jul.TabIndex = 164;
-            this.txt_poder_jul.Texts = "";
-            this.txt_poder_jul.UnderlinedStyle = false;
-            // 
-            // txt_level_jun
-            // 
-            this.txt_level_jun.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level_jun.BackColor = System.Drawing.Color.White;
-            this.txt_level_jun.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_level_jun.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_level_jun.BorderRadius = 0;
-            this.txt_level_jun.BorderSize = 1;
-            this.txt_level_jun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level_jun.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level_jun.Location = new System.Drawing.Point(327, 230);
-            this.txt_level_jun.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level_jun.Multiline = false;
-            this.txt_level_jun.Name = "txt_level_jun";
-            this.txt_level_jun.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level_jun.PasswordChar = false;
-            this.txt_level_jun.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_level_jun.PlaceholderText = "";
-            this.txt_level_jun.Size = new System.Drawing.Size(68, 31);
-            this.txt_level_jun.TabIndex = 159;
-            this.txt_level_jun.Tag = "";
-            this.txt_level_jun.Texts = "";
-            this.txt_level_jun.UnderlinedStyle = false;
-            // 
-            // txt_poder_jun
-            // 
-            this.txt_poder_jun.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder_jun.BackColor = System.Drawing.Color.White;
-            this.txt_poder_jun.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_poder_jun.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_poder_jun.BorderRadius = 0;
-            this.txt_poder_jun.BorderSize = 1;
-            this.txt_poder_jun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder_jun.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder_jun.Location = new System.Drawing.Point(403, 230);
-            this.txt_poder_jun.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder_jun.Multiline = false;
-            this.txt_poder_jun.Name = "txt_poder_jun";
-            this.txt_poder_jun.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder_jun.PasswordChar = false;
-            this.txt_poder_jun.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_poder_jun.PlaceholderText = "";
-            this.txt_poder_jun.Size = new System.Drawing.Size(119, 31);
-            this.txt_poder_jun.TabIndex = 158;
-            this.txt_poder_jun.Texts = "";
-            this.txt_poder_jun.UnderlinedStyle = false;
-            // 
-            // txt_level_mai
-            // 
-            this.txt_level_mai.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level_mai.BackColor = System.Drawing.Color.White;
-            this.txt_level_mai.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_level_mai.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_level_mai.BorderRadius = 0;
-            this.txt_level_mai.BorderSize = 1;
-            this.txt_level_mai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level_mai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level_mai.Location = new System.Drawing.Point(327, 191);
-            this.txt_level_mai.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level_mai.Multiline = false;
-            this.txt_level_mai.Name = "txt_level_mai";
-            this.txt_level_mai.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level_mai.PasswordChar = false;
-            this.txt_level_mai.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_level_mai.PlaceholderText = "";
-            this.txt_level_mai.Size = new System.Drawing.Size(68, 31);
-            this.txt_level_mai.TabIndex = 157;
-            this.txt_level_mai.Tag = "";
-            this.txt_level_mai.Texts = "";
-            this.txt_level_mai.UnderlinedStyle = false;
-            // 
-            // txt_poder_mai
-            // 
-            this.txt_poder_mai.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder_mai.BackColor = System.Drawing.Color.White;
-            this.txt_poder_mai.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_poder_mai.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_poder_mai.BorderRadius = 0;
-            this.txt_poder_mai.BorderSize = 1;
-            this.txt_poder_mai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder_mai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder_mai.Location = new System.Drawing.Point(403, 191);
-            this.txt_poder_mai.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder_mai.Multiline = false;
-            this.txt_poder_mai.Name = "txt_poder_mai";
-            this.txt_poder_mai.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder_mai.PasswordChar = false;
-            this.txt_poder_mai.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_poder_mai.PlaceholderText = "";
-            this.txt_poder_mai.Size = new System.Drawing.Size(119, 31);
-            this.txt_poder_mai.TabIndex = 156;
-            this.txt_poder_mai.Texts = "";
-            this.txt_poder_mai.UnderlinedStyle = false;
-            // 
-            // txt_level_abr
-            // 
-            this.txt_level_abr.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level_abr.BackColor = System.Drawing.Color.White;
-            this.txt_level_abr.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_level_abr.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_level_abr.BorderRadius = 0;
-            this.txt_level_abr.BorderSize = 1;
-            this.txt_level_abr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level_abr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level_abr.Location = new System.Drawing.Point(327, 152);
-            this.txt_level_abr.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level_abr.Multiline = false;
-            this.txt_level_abr.Name = "txt_level_abr";
-            this.txt_level_abr.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level_abr.PasswordChar = false;
-            this.txt_level_abr.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_level_abr.PlaceholderText = "";
-            this.txt_level_abr.Size = new System.Drawing.Size(68, 31);
-            this.txt_level_abr.TabIndex = 155;
-            this.txt_level_abr.Tag = "";
-            this.txt_level_abr.Texts = "";
-            this.txt_level_abr.UnderlinedStyle = false;
-            // 
-            // txt_poder_abr
-            // 
-            this.txt_poder_abr.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder_abr.BackColor = System.Drawing.Color.White;
-            this.txt_poder_abr.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_poder_abr.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_poder_abr.BorderRadius = 0;
-            this.txt_poder_abr.BorderSize = 1;
-            this.txt_poder_abr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder_abr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder_abr.Location = new System.Drawing.Point(403, 152);
-            this.txt_poder_abr.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder_abr.Multiline = false;
-            this.txt_poder_abr.Name = "txt_poder_abr";
-            this.txt_poder_abr.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder_abr.PasswordChar = false;
-            this.txt_poder_abr.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_poder_abr.PlaceholderText = "";
-            this.txt_poder_abr.Size = new System.Drawing.Size(119, 31);
-            this.txt_poder_abr.TabIndex = 154;
-            this.txt_poder_abr.Texts = "";
-            this.txt_poder_abr.UnderlinedStyle = false;
-            // 
-            // txt_level_mar
-            // 
-            this.txt_level_mar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level_mar.BackColor = System.Drawing.Color.White;
-            this.txt_level_mar.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_level_mar.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_level_mar.BorderRadius = 0;
-            this.txt_level_mar.BorderSize = 1;
-            this.txt_level_mar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level_mar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level_mar.Location = new System.Drawing.Point(327, 113);
-            this.txt_level_mar.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level_mar.Multiline = false;
-            this.txt_level_mar.Name = "txt_level_mar";
-            this.txt_level_mar.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level_mar.PasswordChar = false;
-            this.txt_level_mar.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_level_mar.PlaceholderText = "";
-            this.txt_level_mar.Size = new System.Drawing.Size(68, 31);
-            this.txt_level_mar.TabIndex = 153;
-            this.txt_level_mar.Tag = "";
-            this.txt_level_mar.Texts = "";
-            this.txt_level_mar.UnderlinedStyle = false;
-            // 
-            // txt_poder_mar
-            // 
-            this.txt_poder_mar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder_mar.BackColor = System.Drawing.Color.White;
-            this.txt_poder_mar.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_poder_mar.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_poder_mar.BorderRadius = 0;
-            this.txt_poder_mar.BorderSize = 1;
-            this.txt_poder_mar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder_mar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder_mar.Location = new System.Drawing.Point(403, 113);
-            this.txt_poder_mar.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder_mar.Multiline = false;
-            this.txt_poder_mar.Name = "txt_poder_mar";
-            this.txt_poder_mar.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder_mar.PasswordChar = false;
-            this.txt_poder_mar.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_poder_mar.PlaceholderText = "";
-            this.txt_poder_mar.Size = new System.Drawing.Size(119, 31);
-            this.txt_poder_mar.TabIndex = 152;
-            this.txt_poder_mar.Texts = "";
-            this.txt_poder_mar.UnderlinedStyle = false;
-            // 
-            // txt_level_fe
-            // 
-            this.txt_level_fe.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level_fe.BackColor = System.Drawing.Color.White;
-            this.txt_level_fe.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_level_fe.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_level_fe.BorderRadius = 0;
-            this.txt_level_fe.BorderSize = 1;
-            this.txt_level_fe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level_fe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level_fe.Location = new System.Drawing.Point(327, 74);
-            this.txt_level_fe.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level_fe.Multiline = false;
-            this.txt_level_fe.Name = "txt_level_fe";
-            this.txt_level_fe.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level_fe.PasswordChar = false;
-            this.txt_level_fe.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_level_fe.PlaceholderText = "";
-            this.txt_level_fe.Size = new System.Drawing.Size(68, 31);
-            this.txt_level_fe.TabIndex = 151;
-            this.txt_level_fe.Tag = "";
-            this.txt_level_fe.Texts = "";
-            this.txt_level_fe.UnderlinedStyle = false;
-            // 
-            // txt_poder_fe
-            // 
-            this.txt_poder_fe.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder_fe.BackColor = System.Drawing.Color.White;
-            this.txt_poder_fe.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_poder_fe.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_poder_fe.BorderRadius = 0;
-            this.txt_poder_fe.BorderSize = 1;
-            this.txt_poder_fe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder_fe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder_fe.Location = new System.Drawing.Point(403, 74);
-            this.txt_poder_fe.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder_fe.Multiline = false;
-            this.txt_poder_fe.Name = "txt_poder_fe";
-            this.txt_poder_fe.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder_fe.PasswordChar = false;
-            this.txt_poder_fe.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_poder_fe.PlaceholderText = "";
-            this.txt_poder_fe.Size = new System.Drawing.Size(119, 31);
-            this.txt_poder_fe.TabIndex = 150;
-            this.txt_poder_fe.Texts = "";
-            this.txt_poder_fe.UnderlinedStyle = false;
+            this.txt_poder_ja.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_poder_ja.BackColor = System.Drawing.Color.White;
+            this.txt_poder_ja.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_poder_ja.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_poder_ja.BorderRadius = 0;
+            this.txt_poder_ja.BorderSize = 1;
+            this.txt_poder_ja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_poder_ja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_poder_ja.Location = new System.Drawing.Point(81, 42);
+            this.txt_poder_ja.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_poder_ja.Multiline = false;
+            this.txt_poder_ja.Name = "txt_poder_ja";
+            this.txt_poder_ja.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_poder_ja.PasswordChar = false;
+            this.txt_poder_ja.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_poder_ja.PlaceholderText = "";
+            this.txt_poder_ja.Size = new System.Drawing.Size(119, 31);
+            this.txt_poder_ja.TabIndex = 146;
+            this.txt_poder_ja.Texts = "";
+            this.txt_poder_ja.UnderlinedStyle = false;
             // 
             // txt_level_ja
             // 
@@ -1281,7 +730,7 @@ namespace Hype.Painel
             this.txt_level_ja.BorderSize = 1;
             this.txt_level_ja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_level_ja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level_ja.Location = new System.Drawing.Point(327, 35);
+            this.txt_level_ja.Location = new System.Drawing.Point(5, 42);
             this.txt_level_ja.Margin = new System.Windows.Forms.Padding(4);
             this.txt_level_ja.Multiline = false;
             this.txt_level_ja.Name = "txt_level_ja";
@@ -1294,29 +743,6 @@ namespace Hype.Painel
             this.txt_level_ja.Tag = "";
             this.txt_level_ja.Texts = "";
             this.txt_level_ja.UnderlinedStyle = false;
-            // 
-            // txt_poder_ja
-            // 
-            this.txt_poder_ja.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder_ja.BackColor = System.Drawing.Color.White;
-            this.txt_poder_ja.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_poder_ja.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_poder_ja.BorderRadius = 0;
-            this.txt_poder_ja.BorderSize = 1;
-            this.txt_poder_ja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder_ja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder_ja.Location = new System.Drawing.Point(403, 35);
-            this.txt_poder_ja.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder_ja.Multiline = false;
-            this.txt_poder_ja.Name = "txt_poder_ja";
-            this.txt_poder_ja.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder_ja.PasswordChar = false;
-            this.txt_poder_ja.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_poder_ja.PlaceholderText = "";
-            this.txt_poder_ja.Size = new System.Drawing.Size(119, 31);
-            this.txt_poder_ja.TabIndex = 146;
-            this.txt_poder_ja.Texts = "";
-            this.txt_poder_ja.UnderlinedStyle = false;
             // 
             // txt_patente
             // 
@@ -1443,127 +869,6 @@ namespace Hype.Painel
             this.txt_nick.UnderlinedStyle = false;
             this.txt_nick.Leave += new System.EventHandler(this.txt_nick_Leave);
             // 
-            // bt_cancelar_prog
-            // 
-            this.bt_cancelar_prog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bt_cancelar_prog.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_cancelar_prog.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cancelar_prog.FlatAppearance.BorderSize = 0;
-            this.bt_cancelar_prog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cancelar_prog.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cancelar_prog.ForeColor = System.Drawing.Color.White;
-            this.bt_cancelar_prog.Location = new System.Drawing.Point(5, 239);
-            this.bt_cancelar_prog.Name = "bt_cancelar_prog";
-            this.bt_cancelar_prog.Size = new System.Drawing.Size(102, 36);
-            this.bt_cancelar_prog.TabIndex = 186;
-            this.bt_cancelar_prog.Text = "Cancelar";
-            this.bt_cancelar_prog.UseVisualStyleBackColor = false;
-            this.bt_cancelar_prog.Click += new System.EventHandler(this.bt_cancelar_prog_Click);
-            // 
-            // bt_cancelar_rema
-            // 
-            this.bt_cancelar_rema.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bt_cancelar_rema.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_cancelar_rema.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cancelar_rema.FlatAppearance.BorderSize = 0;
-            this.bt_cancelar_rema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cancelar_rema.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cancelar_rema.ForeColor = System.Drawing.Color.White;
-            this.bt_cancelar_rema.Location = new System.Drawing.Point(5, 55);
-            this.bt_cancelar_rema.Name = "bt_cancelar_rema";
-            this.bt_cancelar_rema.Size = new System.Drawing.Size(102, 36);
-            this.bt_cancelar_rema.TabIndex = 187;
-            this.bt_cancelar_rema.Text = "Cancelar";
-            this.bt_cancelar_rema.UseVisualStyleBackColor = false;
-            this.bt_cancelar_rema.Click += new System.EventHandler(this.bt_cancelar_rema_Click);
-            // 
-            // pl_titulo_pro
-            // 
-            this.pl_titulo_pro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.pl_titulo_pro.Controls.Add(this.lb_progressao);
-            this.pl_titulo_pro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_titulo_pro.Location = new System.Drawing.Point(0, 223);
-            this.pl_titulo_pro.Name = "pl_titulo_pro";
-            this.pl_titulo_pro.Size = new System.Drawing.Size(1172, 39);
-            this.pl_titulo_pro.TabIndex = 79;
-            // 
-            // pl_espaco_04
-            // 
-            this.pl_espaco_04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.pl_espaco_04.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_espaco_04.Location = new System.Drawing.Point(0, 689);
-            this.pl_espaco_04.Name = "pl_espaco_04";
-            this.pl_espaco_04.Size = new System.Drawing.Size(1172, 10);
-            this.pl_espaco_04.TabIndex = 80;
-            // 
-            // bt_editar_prog
-            // 
-            this.bt_editar_prog.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_editar_prog.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.bt_editar_prog.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_editar_prog.FlatAppearance.BorderSize = 0;
-            this.bt_editar_prog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_editar_prog.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_editar_prog.ForeColor = System.Drawing.Color.White;
-            this.bt_editar_prog.Location = new System.Drawing.Point(465, 113);
-            this.bt_editar_prog.Name = "bt_editar_prog";
-            this.bt_editar_prog.Size = new System.Drawing.Size(237, 36);
-            this.bt_editar_prog.TabIndex = 187;
-            this.bt_editar_prog.Text = "Clique para Editar";
-            this.bt_editar_prog.UseVisualStyleBackColor = false;
-            this.bt_editar_prog.Click += new System.EventHandler(this.bt_editar_prog_Click);
-            // 
-            // bt_editar_rema
-            // 
-            this.bt_editar_rema.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_editar_rema.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.bt_editar_rema.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_editar_rema.FlatAppearance.BorderSize = 0;
-            this.bt_editar_rema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_editar_rema.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_editar_rema.ForeColor = System.Drawing.Color.White;
-            this.bt_editar_rema.Location = new System.Drawing.Point(465, 25);
-            this.bt_editar_rema.Name = "bt_editar_rema";
-            this.bt_editar_rema.Size = new System.Drawing.Size(237, 36);
-            this.bt_editar_rema.TabIndex = 188;
-            this.bt_editar_rema.Text = "Clique para Editar";
-            this.bt_editar_rema.UseVisualStyleBackColor = false;
-            this.bt_editar_rema.Click += new System.EventHandler(this.bt_editar_rema_Click);
-            // 
-            // pl_titulo_rema
-            // 
-            this.pl_titulo_rema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.pl_titulo_rema.Controls.Add(this.lb_remanejamento);
-            this.pl_titulo_rema.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_titulo_rema.Location = new System.Drawing.Point(0, 553);
-            this.pl_titulo_rema.Name = "pl_titulo_rema";
-            this.pl_titulo_rema.Size = new System.Drawing.Size(1172, 39);
-            this.pl_titulo_rema.TabIndex = 80;
-            // 
-            // lb_vem_cla
-            // 
-            this.lb_vem_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_vem_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_vem_cla.ForeColor = System.Drawing.Color.White;
-            this.lb_vem_cla.Location = new System.Drawing.Point(255, 25);
-            this.lb_vem_cla.Name = "lb_vem_cla";
-            this.lb_vem_cla.Size = new System.Drawing.Size(192, 17);
-            this.lb_vem_cla.TabIndex = 188;
-            this.lb_vem_cla.Text = "Vem do Clã";
-            this.lb_vem_cla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_esta_cla
-            // 
-            this.lb_esta_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_esta_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_esta_cla.ForeColor = System.Drawing.Color.White;
-            this.lb_esta_cla.Location = new System.Drawing.Point(491, 24);
-            this.lb_esta_cla.Name = "lb_esta_cla";
-            this.lb_esta_cla.Size = new System.Drawing.Size(192, 17);
-            this.lb_esta_cla.TabIndex = 189;
-            this.lb_esta_cla.Text = "Está no Clã";
-            this.lb_esta_cla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // conta_principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1577,12 +882,13 @@ namespace Hype.Painel
             this.pl_conta_principal.ResumeLayout(false);
             this.pl_botao.ResumeLayout(false);
             this.pl_remanejamento.ResumeLayout(false);
+            this.pl_titulo_rema.ResumeLayout(false);
             this.pl_progressao.ResumeLayout(false);
+            this.pl_pro_adicionar.ResumeLayout(false);
             this.pl_conta.ResumeLayout(false);
             this.pl_top.ResumeLayout(false);
             this.pl_top.PerformLayout();
-            this.pl_titulo_pro.ResumeLayout(false);
-            this.pl_titulo_rema.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1614,42 +920,6 @@ namespace Hype.Painel
         private System.Windows.Forms.Label lb_classe;
         private script.RJComboBox txt_patente;
         private System.Windows.Forms.Label lb_remanejamento;
-        private System.Windows.Forms.Label lb_dezembro;
-        private System.Windows.Forms.Label lb_novembro;
-        private System.Windows.Forms.Label lb_outubro;
-        private System.Windows.Forms.Label lb_setembro;
-        private System.Windows.Forms.Label lb_agosto;
-        private System.Windows.Forms.Label lb_julho;
-        private System.Windows.Forms.Label lb_junho;
-        private System.Windows.Forms.Label lb_maio;
-        private RJTextBox txt_level_dez;
-        private RJTextBox txt_poder_dez;
-        private RJTextBox txt_level_nov;
-        private RJTextBox txt_poder_nov;
-        private RJTextBox txt_level_out;
-        private RJTextBox txt_poder_out;
-        private RJTextBox txt_level_set;
-        private RJTextBox txt_poder_set;
-        private RJTextBox txt_level_ago;
-        private RJTextBox txt_poder_ago;
-        private RJTextBox txt_level_jul;
-        private System.Windows.Forms.Label lb_poder_col_02;
-        private RJTextBox txt_poder_jul;
-        private System.Windows.Forms.Label lb_level_col_02;
-        private System.Windows.Forms.Label lb_abril;
-        private System.Windows.Forms.Label lb_marco;
-        private System.Windows.Forms.Label lb_fevereiro;
-        private System.Windows.Forms.Label lb_janeiro;
-        private RJTextBox txt_level_jun;
-        private RJTextBox txt_poder_jun;
-        private RJTextBox txt_level_mai;
-        private RJTextBox txt_poder_mai;
-        private RJTextBox txt_level_abr;
-        private RJTextBox txt_poder_abr;
-        private RJTextBox txt_level_mar;
-        private RJTextBox txt_poder_mar;
-        private RJTextBox txt_level_fe;
-        private RJTextBox txt_poder_fe;
         private RJTextBox txt_level_ja;
         private System.Windows.Forms.Label lb_poder_col_01;
         private RJTextBox txt_poder_ja;
@@ -1664,12 +934,13 @@ namespace Hype.Painel
         private System.Windows.Forms.Label lb_seta;
         private System.Windows.Forms.Button bt_cancelar_prog;
         private System.Windows.Forms.Button bt_cancelar_rema;
-        private System.Windows.Forms.Panel pl_titulo_pro;
         private System.Windows.Forms.Panel pl_espaco_04;
         private System.Windows.Forms.Button bt_editar_prog;
         private System.Windows.Forms.Button bt_editar_rema;
         private System.Windows.Forms.Panel pl_titulo_rema;
         private System.Windows.Forms.Label lb_esta_cla;
         private System.Windows.Forms.Label lb_vem_cla;
+        private System.Windows.Forms.Panel pl_pro_adicionar;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
