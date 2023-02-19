@@ -83,15 +83,92 @@ namespace Hype.Painel
             Alertas();
         }
 
+        private void bt_editar_prog_Click(object sender, EventArgs e)
+        {
+            CampoTextoHabilitado(pl_pro_adicionar.Controls);
+
+            TabelaHabilitada();
+
+            bt_cancelar_prog.Visible = true;
+            bt_editar_prog.Visible = false;
+            bt_adicionar_prog.Visible = true;
+
+            _progressao = true;
+        }
+
+        private void bt_cancelar_prog_Click(object sender, EventArgs e)
+        {
+            BtCancelarProg();
+        }
+
+        private void bt_editar_rema_Click(object sender, EventArgs e)
+        {
+            bt_cancelar_rema.Visible = true;
+            bt_editar_rema.Visible = false;
+            bt_ok_rema.Visible = true;
+            lb_seta.Visible = true;
+            txt_remanejamento.PlaceholderText = "Remanejamento";
+
+            // DADOS MEMBROS
+            txt_vem_cla_rema.Texts = membros.Instance.vem_do_cla;
+            txt_esta_cla_rema.Texts = membros.Instance.foi_para_cla;
+
+            _remanejamento = true;
+            CampoTextoHabilitado(pl_remanejamento.Controls);
+
+            // CAMPOS FIXO DESATIVAODS
+            txt_vem_cla_rema.Enabled = false;
+            txt_esta_cla_rema.Enabled = false;
+            txt_vem_cla_rema.BackColor = Color.FromArgb(235, 235, 235);
+            txt_esta_cla_rema.BackColor = Color.FromArgb(235, 235, 235);
+        }
+
+        private void bt_cancelar_rema_Click(object sender, EventArgs e)
+        {
+            BtCancelarRema();
+        }
+
+        private void bt_ok_rema_Click(object sender, EventArgs e)
+        {
+            Alertas();
+        }
+
+        private void BtCancelarProg()
+        {
+            bt_cancelar_prog.Visible = false;
+            bt_editar_prog.Visible = true;
+            bt_adicionar_prog.Visible = false;
+
+            _progressao = false;
+
+            TabelaDesabilitada();
+
+            CampoTextoDesativado(pl_pro_adicionar.Controls);
+        }
+
+        private void BtCancelarRema()
+        {
+            bt_cancelar_rema.Visible = false;
+            bt_editar_rema.Visible = true;
+            bt_ok_rema.Visible = false;
+            lb_seta.Visible = false;
+            txt_remanejamento.PlaceholderText = "";
+
+            // DADOS MEMBROS
+            txt_vem_cla_rema.Texts = "";
+            txt_esta_cla_rema.Texts = "";
+            txt_vem_cla_rema.Enabled = false;
+
+            _remanejamento = false;
+            CampoTextoDesativado(pl_remanejamento.Controls);
+        }
+
         private void Alertas()
         {
-
-            if(_membro && !_progressao && !_remanejamento)
+            #region MEMBRO
+            if (_membro && !_progressao && !_remanejamento)
             {
-
-                MessageBox.Show("MEMBRO");
-
-                // CADASTRO
+                // MEMBRO
                 if (String.IsNullOrEmpty(txt_nick.Texts))
                 {
                     txt_nick.BorderColor = Color.Red;
@@ -119,12 +196,12 @@ namespace Hype.Painel
                     }
                 }
             }
+            #endregion
+
+            #region MEMBRO E PROGRESSÃO
             else if (_membro && _progressao && !_remanejamento)
             {
-
-                MessageBox.Show("MEMBRO E PROGRESSAO");
-
-                // CADASTRO
+                // MEMBRO
                 if (String.IsNullOrEmpty(txt_nick.Texts))
                 {
                     txt_nick.BorderColor = Color.Red;
@@ -164,12 +241,12 @@ namespace Hype.Painel
                     }
                 }
             }
+            #endregion
+
+            #region MEMBRO E REMANEJAMENTO
             else if (_membro && _remanejamento && !_progressao)
             {
-
-                MessageBox.Show("MEMBRO E REMANEJAMENTO");
-
-                // CADASTRO
+                // MEMBROS
                 if (String.IsNullOrEmpty(txt_nick.Texts))
                 {
                     txt_nick.BorderColor = Color.Red;
@@ -201,15 +278,16 @@ namespace Hype.Painel
                     finally
                     {
                         AtualizarTabela();
+                        BtCancelarRema();
                     }
                 }
             }
+            #endregion
+
+            #region MEMBRO E PROGRESSÃO E REMANEJAMENTO
             else if (_membro && _progressao && _remanejamento)
             {
-
-                MessageBox.Show("MEMBRO E PROGRESSAO E REMANEJAMENTO");
-
-                // CADASTRO
+                // MEMBROS
                 if (String.IsNullOrEmpty(txt_nick.Texts))
                 {
                     txt_nick.BorderColor = Color.Red;
@@ -256,6 +334,7 @@ namespace Hype.Painel
                     }
                 }
             }
+            #endregion
         }
 
         private void Salvar()
@@ -266,7 +345,8 @@ namespace Hype.Painel
                 configdb database = new configdb();
                 database.openConnection();
 
-                if (!_progressao && !_remanejamento)
+                #region MEMBRO
+                if (_membro && !_progressao && !_remanejamento)
                 {
                     // CADASTRO DE MEMBROS
                     MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
@@ -287,57 +367,50 @@ namespace Hype.Painel
                     objCmdAlt.ExecuteNonQuery();
 
                     DialogResult dr = MessageBox.Show("Salvo Sucesso !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    database.closeConnection();
+                    
                 }
+                #endregion
 
-                // PROGRESSÃO 
-                if (_progressao)
+                #region MEMBRO E PROGRESSÃO
+                if (_membro && _progressao && !_remanejamento)
                 {
+                    // CADASTRO DE MEMBROS
+                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, poder=@poder, level=@level, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
+
+                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
+                    objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+                    objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts;
+                    objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_novo_level.Texts;
+                    objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
+                    objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
+
+                    objCmdCadastroMembros.ExecuteNonQuery();
+
+                    // UPDATE CADASTRO ALT
+                    MySqlCommand objCmdAlt = new MySqlCommand("update hypedb.cadastro_alt set nick_principal=@nick_principal where (id_alt=@id_alt)", database.getConnection());
+
+                    objCmdAlt.Parameters.AddWithValue("@id_alt", id_alt);
+                    objCmdAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+
+                    objCmdAlt.ExecuteNonQuery();                    
+
                     // PROGRESSÂO INTO
-                    MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, nick, antigo_poder, antigo_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
+                    MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, antigo_level, antigo_poder, novo_level, novo_poder) values (null, ?, ?, ?, ?, ?)", database.getConnection());
 
                     objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
-                    objCmdProgressao.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                    objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
                     objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
-                    objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts;
+                    objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
                     objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = txt_novo_level.Texts;
+                    objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts;                    
 
                     objCmdProgressao.ExecuteNonQuery();
 
-                    // MEMBROS UPDATE
-                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set poder=@poder, level=@level where (id_membros=@id_membros)", database.getConnection());
-
-                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
-                    objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts;
-                    objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_novo_level.Texts;
-
-                    objCmdCadastroMembros.ExecuteNonQuery();
+                    DialogResult dr = MessageBox.Show("Progressão adicionada com Sucesso !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                #endregion
 
-                // REMANEJAMENTO 
-                if (_remanejamento)
-                {
-                    // RECRUTAMENTO UPDATE
-                    MySqlCommand objCmdRecrutamento = new MySqlCommand("update hypedb.recrutamento set foi_para_cla=@foi_para_cla where (id_recrutamento=@id_recrutamento)", database.getConnection());
-
-                    objCmdRecrutamento.Parameters.AddWithValue("@id_recrutamento", id_recrutamento);
-                    objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_remanejamento.Texts;
-
-                    objCmdRecrutamento.ExecuteNonQuery();
-
-                    // REMANEJAMENTO INTO
-                    MySqlCommand objCmdRemanejamento = new MySqlCommand("insert into hypedb.remanejamento (id_remanejamento, data_remanejamento, id_recrutamento) values (null, ?, ?)", database.getConnection());
-
-                    objCmdRemanejamento.Parameters.Add("@data_remanejamento", MySqlDbType.Date).Value = DateTime.Now;
-                    objCmdRemanejamento.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = id_recrutamento;
-
-                    objCmdRemanejamento.ExecuteNonQuery();
-                }
-
-
-                if (_remanejamento && !_progressao)
+                #region MEMBRO E REMANEJAMENTO
+                if (_membro && _remanejamento && !_progressao)
                 {
                     // CADASTRO DE MEMBROS
                     MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
@@ -373,10 +446,62 @@ namespace Hype.Painel
 
                     objCmdRemanejamento.ExecuteNonQuery();
 
-                    DialogResult dr = MessageBox.Show("Salvo Sucesso !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult dr = MessageBox.Show("Remanejado com Sucesso !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    database.closeConnection();
                 }
+                #endregion
+                
+                #region MEMBRO E PROGRESSÃO E REMANEJAMENTO
+                if (_membro && _remanejamento && _progressao)
+                {
+                    // CADASTRO DE MEMBROS
+                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
+
+                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
+                    objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+                    objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
+                    objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
+
+                    objCmdCadastroMembros.ExecuteNonQuery();
+
+                    // UPDATE CADASTRO ALT
+                    MySqlCommand objCmdAlt = new MySqlCommand("update hypedb.cadastro_alt set nick_principal=@nick_principal where (id_alt=@id_alt)", database.getConnection());
+
+                    objCmdAlt.Parameters.AddWithValue("@id_alt", id_alt);
+                    objCmdAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+
+                    objCmdAlt.ExecuteNonQuery();
+
+                    // RECRUTAMENTO UPDATE
+                    MySqlCommand objCmdRecrutamento = new MySqlCommand("update hypedb.recrutamento set foi_para_cla=@foi_para_cla where (id_recrutamento=@id_recrutamento)", database.getConnection());
+
+                    objCmdRecrutamento.Parameters.AddWithValue("@id_recrutamento", id_recrutamento);
+                    objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_remanejamento.Texts;
+
+                    objCmdRecrutamento.ExecuteNonQuery();
+
+                    // REMANEJAMENTO INTO
+                    MySqlCommand objCmdRemanejamento = new MySqlCommand("insert into hypedb.remanejamento (id_remanejamento, data_remanejamento, id_recrutamento) values (null, ?, ?)", database.getConnection());
+
+                    objCmdRemanejamento.Parameters.Add("@data_remanejamento", MySqlDbType.Date).Value = DateTime.Now;
+                    objCmdRemanejamento.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = id_recrutamento;
+
+                    objCmdRemanejamento.ExecuteNonQuery();
+
+                    // PROGRESSÂO INTO
+                    MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, antigo_level, antigo_poder, novo_level, novo_poder) values (null, ?, ?, ?, ?, ?)", database.getConnection());
+
+                    objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
+                    objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
+                    objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+                    objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = txt_novo_level.Texts;
+                    objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts;                    
+
+                    objCmdProgressao.ExecuteNonQuery();
+
+                    DialogResult dr = MessageBox.Show("Salvo Sucesso !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                #endregion
 
                 database.closeConnection();
 
@@ -397,12 +522,15 @@ namespace Hype.Painel
         {
             txt_level.Enabled = false;
             txt_poder.Enabled = false;
+            txt_esta_cla.Enabled = false;
             txt_level.BackColor = Color.FromArgb(235, 235, 235);
             txt_poder.BackColor = Color.FromArgb(235, 235, 235);
+            txt_esta_cla.BackColor = Color.FromArgb(235, 235, 235);
 
             bt_cancelar_prog.Visible = false;
             bt_adicionar_prog.Visible = false;
             bt_cancelar_rema.Visible = false;
+            bt_ok_rema.Visible = false;
             lb_seta.Visible = false;
 
             TabelaDesabilitada();
@@ -476,79 +604,6 @@ namespace Hype.Painel
                 }
             }
         }
-
-        private void bt_editar_prog_Click(object sender, EventArgs e)
-        {
-            CampoTextoHabilitado(pl_pro_adicionar.Controls);
-
-            TabelaHabilitada();
-
-            bt_cancelar_prog.Visible = true;
-            bt_editar_prog.Visible = false;
-            bt_adicionar_prog.Visible = true;
-
-            _progressao = true;
-        }
-
-        private void bt_cancelar_prog_Click(object sender, EventArgs e)
-        {
-            BtCancelarProg();            
-        }
-
-        private void bt_editar_rema_Click(object sender, EventArgs e)
-        {
-            bt_cancelar_rema.Visible = true;
-            bt_editar_rema.Visible = false;
-            lb_seta.Visible = true;           
-            txt_remanejamento.PlaceholderText = "Remanejamento";
-
-            // DADOS MEMBROS
-            txt_vem_cla.Texts = membros.Instance.vem_do_cla;
-            txt_esta_cla.Texts = membros.Instance.foi_para_cla;
-
-            _remanejamento = true;
-            CampoTextoHabilitado(pl_remanejamento.Controls);
-
-            // CAMPOS FIXO DESATIVAODS
-            txt_vem_cla.Enabled = false;
-            txt_esta_cla.Enabled = false;
-            txt_vem_cla.BackColor = Color.FromArgb(235, 235, 235);
-            txt_esta_cla.BackColor = Color.FromArgb(235, 235, 235);
-        }
-
-        private void bt_cancelar_rema_Click(object sender, EventArgs e)
-        {
-            BtCancelarRema();
-        }
-
-        private void BtCancelarProg()
-        {
-            bt_cancelar_prog.Visible = false;
-            bt_editar_prog.Visible = true;
-            bt_adicionar_prog.Visible = false;
-
-            _progressao = false;
-
-            TabelaDesabilitada();
-
-            CampoTextoDesativado(pl_pro_adicionar.Controls);
-        }
-
-        private void BtCancelarRema()
-        {
-            bt_cancelar_rema.Visible = false;
-            bt_editar_rema.Visible = true;
-            lb_seta.Visible = false;
-            txt_remanejamento.PlaceholderText = "";
-
-            // DADOS MEMBROS
-            txt_vem_cla.Texts = "";
-            txt_esta_cla.Texts = "";
-            txt_vem_cla.Enabled = false;
-
-            _remanejamento = false;
-            CampoTextoDesativado(pl_remanejamento.Controls);
-        }
         #endregion
 
         #region TABELAS
@@ -557,7 +612,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select ID_PROGRESSAO, DATA_PROGRESSAO, NICK, ANTIGO_PODER, ANTIGO_LEVEL, NOVO_PODER, NOVO_LEVEL from hypedb.progressao where NICK like @nick '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, alt.ID_ALT, alt.DATA_ALT, alt.NICK_PRINCIPAL, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO where c.NICK like @nick '%' ", database.getConnection());
             cmd.Parameters.AddWithValue("@nick", txt_nick.Texts);
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
@@ -578,30 +633,28 @@ namespace Hype.Painel
         {
             dataGridView1.Columns[0].Visible = false; // ID_PROGRESSAO
             dataGridView1.Columns[1].HeaderText = "DATA";
-            dataGridView1.Columns[2].Visible = false; // NICK
+            dataGridView1.Columns[2].HeaderText = "LEVEL";
             dataGridView1.Columns[3].HeaderText = "PODER";
-            dataGridView1.Columns[4].HeaderText = "LEVEL";
+            dataGridView1.Columns[4].HeaderText = "NOVO LEVEL";
             dataGridView1.Columns[5].HeaderText = "NOVO PODER";
-            dataGridView1.Columns[6].HeaderText = "NOVO LEVEL";
 
             dataGridView1.Columns["DATA_PROGRESSAO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns["ANTIGO_PODER"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["ANTIGO_LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns["NOVO_PODER"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns["ANTIGO_PODER"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["NOVO_LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+            dataGridView1.Columns["NOVO_PODER"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
                 if (column.DataPropertyName == "DATA_PROGRESSAO")
                     column.Width = 135;
-                else if (column.DataPropertyName == "ANTIGO_PODER")
-                    column.Width = 130;
                 else if (column.DataPropertyName == "ANTIGO_LEVEL")
                     column.Width = 130;
-                else if (column.DataPropertyName == "NOVO_PODER")
-                    column.Width = 150;
+                else if (column.DataPropertyName == "ANTIGO_PODER")
+                    column.Width = 130;
                 else if (column.DataPropertyName == "NOVO_LEVEL")
+                    column.Width = 150;
+                else if (column.DataPropertyName == "NOVO_PODER")
                     column.Width = 150;
             }
         }
@@ -658,36 +711,26 @@ namespace Hype.Painel
                 configdb database = new configdb();
                 database.openConnection();
 
-                if (_remanejamento)
+                MySqlCommand objCmd = new MySqlCommand("select pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, alt.ID_ALT, alt.DATA_ALT, alt.NICK_PRINCIPAL, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO where c.NICK like @nick '%' ", database.getConnection());
+                objCmd.Parameters.AddWithValue("@nick", txt_nick.Texts);
+
+                using (MySqlDataAdapter da = new MySqlDataAdapter(objCmd))
                 {
-                    //REMANEJAMENTO
-                    txt_vem_cla.Texts = membros.Instance.vem_do_cla;
-                    txt_esta_cla.Texts = membros.Instance.foi_para_cla;
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dataGridView1.DataSource = dt;
                 }
 
+                objCmd.ExecuteNonQuery();
 
-                // PROGRESSÃO
-                if (_progressao)
-                {                    
-                    MySqlCommand objCmdProgressao = new MySqlCommand("select ID_PROGRESSAO, DATA_PROGRESSAO, NICK, ANTIGO_PODER, ANTIGO_LEVEL, NOVO_PODER, NOVO_LEVEL from hypedb.progressao where NICK like @nick '%' ", database.getConnection());
-                    objCmdProgressao.Parameters.AddWithValue("@nick", txt_nick.Texts);
+                Tabela();
 
-                    using (MySqlDataAdapter da = new MySqlDataAdapter(objCmdProgressao))
-                    {
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
+                DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.Rows.Count - 1].DataBoundItem;
 
-                        dataGridView1.DataSource = dt;
-                    }
-
-                    objCmdProgressao.ExecuteNonQuery();
-
-                    // CADASTRO
-                    txt_level.Texts = membros.Instance.level;
-                    txt_poder.Texts = membros.Instance.poder;
-                }
-
-                database.closeConnection();
+                txt_level.Texts = dr["LEVEL"].ToString();
+                txt_poder.Texts = dr["PODER"].ToString();
+                txt_esta_cla.Texts = dr["FOI_PARA_CLA"].ToString();
             }
             catch (Exception erro)
             {
@@ -712,7 +755,7 @@ namespace Hype.Painel
             //REMANEJAMENTO
             id_recrutamento = membros.Instance.id_recrutamento;
             //txt_vem_cla.Texts = membros.Instance.vem_do_cla;
-            //txt_esta_cla.Texts = membros.Instance.foi_para_cla;
+            txt_esta_cla.Texts = membros.Instance.foi_para_cla;
         }
         #endregion
 
@@ -724,7 +767,6 @@ namespace Hype.Painel
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
         }
-
 
     }
 }

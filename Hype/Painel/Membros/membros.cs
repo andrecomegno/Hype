@@ -54,7 +54,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select re.ID_RECRUTAMENTO, pro.ID_PROGRESSAO, alt.ID_ALT, c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, alt.ID_ALT, alt.DATA_ALT, alt.NICK_PRINCIPAL, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO ", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -87,18 +87,13 @@ namespace Hype.Painel
 
         private void Tabela()
         {
-            dataGridView1.Columns[0].Visible = false; // ID_RECRUTAMENTO
-            dataGridView1.Columns[1].Visible = false; // ID_PROGRESSAO
-            dataGridView1.Columns[2].Visible = false; // ID_ALT
-            dataGridView1.Columns[3].Visible = false; // ID_MEMBROS
-            dataGridView1.Columns[4].HeaderText = "DATA ENTRADA";
-            dataGridView1.Columns[5].HeaderText = "NICK";
-            dataGridView1.Columns[6].HeaderText = "LEVEL";
-            dataGridView1.Columns[7].HeaderText = "PODER";
-            dataGridView1.Columns[8].HeaderText = "CLASSE";
-            dataGridView1.Columns[9].HeaderText = "PATENTE";
-            dataGridView1.Columns[10].Visible = false; // vem do cla
-            dataGridView1.Columns[11].Visible = false; // foi para o cla
+            dataGridView1.Columns[0].Visible = false; // ID_MEMBROS
+            dataGridView1.Columns[1].HeaderText = "DATA ENTRADA";
+            dataGridView1.Columns[2].HeaderText = "NICK";
+            dataGridView1.Columns[3].HeaderText = "LEVEL";
+            dataGridView1.Columns[4].HeaderText = "PODER";
+            dataGridView1.Columns[5].HeaderText = "CLASSE";
+            dataGridView1.Columns[6].HeaderText = "PATENTE";
 
             dataGridView1.Columns["DATA_RECRUTAMENTO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
