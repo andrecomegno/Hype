@@ -29,6 +29,8 @@ namespace Hype.Painel
         {
             InitializeComponent();
             CamposDesativados();
+
+            txt_nick.Texts = membros.Instance.nick;
         }
 
         #region BOTOES
@@ -55,7 +57,8 @@ namespace Hype.Painel
         {
             try
             {
-                AtualizarTabelas();
+                AtualizarTabMembros();
+                AtualizartabProgressao();
             }
             catch (Exception erro)
             {
@@ -81,8 +84,22 @@ namespace Hype.Painel
             }
             finally
             {
-                AtualizarTabelas();
+                AtualizarTabMembros();
+                AtualizartabProgressao();
             }
+        }
+
+        private void bt_adicionar_pro_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Alertas();
+            }
+            finally
+            {
+                AtualizartabProgressao();
+            }
+            
         }
 
         private void Alertas()
@@ -111,10 +128,33 @@ namespace Hype.Painel
                 }
                 finally
                 {
-                    AtualizarTabelas();
+                    AtualizarTabMembros();
                 }
             }
 
+
+            // PROGRESSÃO
+            if (String.IsNullOrEmpty(txt_novo_level.Texts))
+            {
+                txt_novo_level.BorderColor = Color.Red;
+                txt_novo_level.BorderSize = 1;
+            }
+            else if (String.IsNullOrEmpty(txt_novo_poder.Texts))
+            {
+                txt_novo_poder.BorderColor = Color.Red;
+                txt_novo_poder.BorderSize = 1;
+            }
+            else
+            {
+                try
+                {
+                    SalvarProgressao();
+                }
+                finally
+                {
+                    AtualizartabProgressao();
+                }
+            }
         }
 
         private void Salvar()
@@ -124,7 +164,6 @@ namespace Hype.Painel
                 // BANCO DE DADOS
                 configdb database = new configdb();
                 database.openConnection();
-
 
                 // CADASTRO DE MEMBROS
                 MySqlCommand objCmdCadastro_membros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
@@ -136,6 +175,7 @@ namespace Hype.Painel
 
                 objCmdCadastro_membros.ExecuteNonQuery();
 
+                // UPDATE CADASTRO ALT
                 MySqlCommand objCmdAlt = new MySqlCommand("update hypedb.cadastro_alt set nick_principal=@nick_principal where (id_alt=@id_alt)", database.getConnection());
 
                 objCmdAlt.Parameters.AddWithValue("@id_alt", id_alt);
@@ -143,9 +183,27 @@ namespace Hype.Painel
 
                 objCmdAlt.ExecuteNonQuery();
 
-                // SE PROGRESSÃO FOR ATIVADO 
+                DialogResult dr = MessageBox.Show("Editado Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                database.closeConnection();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
+            }
+        }
+
+        private void SalvarProgressao()
+        {
+            try
+            {
+                // BANCO DE DADOS
+                configdb database = new configdb();
+                database.openConnection();
+
+                // PROGRESSÃO 
                 if (_progressao != false)
-                {            
+                {
                     // PROGRESSAO INTO
                     MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, ano, mes, nick, atual_poder, atual_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
@@ -162,18 +220,34 @@ namespace Hype.Painel
 
                     objCmdProgressao.ExecuteNonQuery();
 
-                    /*
-                    // PROGRESSAO UPDATE
-                    MySqlCommand objCmdProgressao2 = new MySqlCommand("update hypedb.progressao set novo_poder=@novo_poder, novo_level=@novo_level where (id_progressao=@id_progressao)", database.getConnection());
+                    // CADASTRO DE MEMBROS
+                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set poder=@poder, level=@level where (id_membros=@id_membros)", database.getConnection());
 
-                    objCmdProgressao2.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = novo_poder;
-                    objCmdProgressao2.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = novo_level;
+                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
+                    objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts;
+                    objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_novo_level.Texts;
 
-                    objCmdProgressao.ExecuteNonQuery();
-                    */
+                    objCmdCadastroMembros.ExecuteNonQuery();
                 }
+                
+                database.closeConnection();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
+            }
 
-                // SE REMANEJAMENTO FOR ATIVADO 
+        }
+
+        private void SalvarRemanejamento()
+        {
+            try
+            {
+                // BANCO DE DADOS
+                configdb database = new configdb();
+                database.openConnection();
+
+                // REMANEJAMENTO 
                 if (_remanejamento != false)
                 {
                     // RECRUTAMENTO UPDATE
@@ -193,58 +267,13 @@ namespace Hype.Painel
                     objCmdRemanejamento.ExecuteNonQuery();
                 }
 
-                DialogResult dr = MessageBox.Show("Editado Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 database.closeConnection();
             }
             catch (Exception erro)
             {
                 MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
             }
-        }
 
-        private void TabelaDesabilitada()
-        {
-            dataGridView1.ScrollBars = ScrollBars.None;
-
-            // FUNDO TABELA
-            dataGridView1.BackgroundColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.GridColor = Color.FromArgb(32, 34, 37);
-
-            // CABEÇALHO TABELA
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(32, 34, 37);
-
-            // CORPO DA TABELA
-            dataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.DefaultCellStyle.ForeColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.FromArgb(32, 34, 37);
-
-            dataGridView1.Enabled = false;
-        }
-
-        private void TabelaHabilitada()
-        {
-            dataGridView1.ScrollBars = ScrollBars.Both;
-
-            // FUNDO TABELA
-            dataGridView1.BackgroundColor = Color.FromArgb(34, 32, 46);
-            dataGridView1.GridColor = Color.FromArgb(34, 32, 46);
-
-            // CABEÇALHO TABELA
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(39, 44, 70);
-            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(39, 44, 70);
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-            // CORPO DA TABELA
-            dataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(39, 44, 60);
-            dataGridView1.DefaultCellStyle.ForeColor = Color.White;
-            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.CornflowerBlue;
-            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
-
-            dataGridView1.Enabled = true;
         }
 
         private void Voltar()
@@ -261,6 +290,7 @@ namespace Hype.Painel
             txt_poder.BackColor = Color.FromArgb(235, 235, 235);
 
             bt_cancelar_prog.Visible = false;
+            bt_adicionar_prog.Visible = false;
             bt_cancelar_rema.Visible = false;
             lb_seta.Visible = false;
 
@@ -331,7 +361,8 @@ namespace Hype.Painel
             TabelaHabilitada();
 
             bt_cancelar_prog.Visible = true;
-            bt_editar_prog.Visible = false;            
+            bt_editar_prog.Visible = false;
+            bt_adicionar_prog.Visible = true;
 
             _progressao = true;
         }
@@ -339,16 +370,6 @@ namespace Hype.Painel
         private void bt_cancelar_prog_Click(object sender, EventArgs e)
         {
             BtCancelarProg();            
-        }
-
-        private void BtCancelarProg()
-        {
-            bt_cancelar_prog.Visible = false;
-            bt_editar_prog.Visible = true;
-
-            TabelaDesabilitada();
-
-            CampoTextoDesativado(pl_pro_adicionar.Controls);
         }
 
         private void bt_editar_rema_Click(object sender, EventArgs e)
@@ -377,6 +398,17 @@ namespace Hype.Painel
             BtCancelarRema();
         }
 
+        private void BtCancelarProg()
+        {
+            bt_cancelar_prog.Visible = false;
+            bt_editar_prog.Visible = true;
+            bt_adicionar_prog.Visible = false;
+
+            TabelaDesabilitada();
+
+            CampoTextoDesativado(pl_pro_adicionar.Controls);
+        }
+
         private void BtCancelarRema()
         {
             bt_cancelar_rema.Visible = false;
@@ -392,7 +424,6 @@ namespace Hype.Painel
             _remanejamento = false;
             CampoTextoDesativado(pl_remanejamento.Controls);
         }
-
         #endregion
 
         #region TABELAS
@@ -454,22 +485,88 @@ namespace Hype.Painel
             }
         }
 
+        private void TabelaDesabilitada()
+        {
+            dataGridView1.ScrollBars = ScrollBars.None;
 
-        private void AtualizarTabelas()
+            // FUNDO TABELA
+            dataGridView1.BackgroundColor = Color.FromArgb(32, 34, 37);
+            dataGridView1.GridColor = Color.FromArgb(32, 34, 37);
+
+            // CABEÇALHO TABELA
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(32, 34, 37);
+            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(32, 34, 37);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(32, 34, 37);
+
+            // CORPO DA TABELA
+            dataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(32, 34, 37);
+            dataGridView1.DefaultCellStyle.ForeColor = Color.FromArgb(32, 34, 37);
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(32, 34, 37);
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.FromArgb(32, 34, 37);
+
+            dataGridView1.Enabled = false;
+        }
+
+        private void TabelaHabilitada()
+        {
+            dataGridView1.ScrollBars = ScrollBars.Both;
+
+            // FUNDO TABELA
+            dataGridView1.BackgroundColor = Color.FromArgb(34, 32, 46);
+            dataGridView1.GridColor = Color.FromArgb(34, 32, 46);
+
+            // CABEÇALHO TABELA
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(39, 44, 70);
+            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(39, 44, 70);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            // CORPO DA TABELA
+            dataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(39, 44, 60);
+            dataGridView1.DefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.CornflowerBlue;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            dataGridView1.Enabled = true;
+        }
+
+        private void AtualizartabProgressao()
         {
             // BANCO DE DADOS
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand objCmdCadastro_membros = new MySqlCommand("select * from hypedb.cadastro_membro", database.getConnection());
+            if (_remanejamento != false)
+            {
+                // PROGRESSÃO
+                MySqlCommand objCmdProgressao = new MySqlCommand("select ID_PROGRESSAO, ANO, MES, NICK, ATUAL_PODER, ATUAL_LEVEL, NOVO_PODER, NOVO_LEVEL from hypedb.progressao where NICK like @nick '%' ", database.getConnection());
+                objCmdProgressao.Parameters.AddWithValue("@nick", txt_nick.Texts);
 
-            objCmdCadastro_membros.ExecuteNonQuery();
+                using (MySqlDataAdapter da = new MySqlDataAdapter(objCmdProgressao))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
 
-            MySqlCommand objCmdCadastro_alt = new MySqlCommand("select * from hypedb.cadastro_alt", database.getConnection());
+                    dataGridView1.DataSource = dt;
+                }
 
-            objCmdCadastro_alt.ExecuteNonQuery();
+                objCmdProgressao.ExecuteNonQuery();
+            }
 
             database.closeConnection();
+        }
+
+        private void AtualizarTabMembros()
+        {
+            // BANCO DE DADOS
+            configdb database = new configdb();
+            database.openConnection();
+
+            // CADASTRO
+            MySqlCommand objCmdCadastroMembros = new MySqlCommand("select * from hypedb.cadastro_membro", database.getConnection());
+
+            objCmdCadastroMembros.ExecuteNonQuery();
+
+            database.closeConnection(); 
         }
 
         public void DadosMembros()
@@ -477,7 +574,7 @@ namespace Hype.Painel
             // CADASTRO
             id_membro = membros.Instance.id_membro;
             lb_data_entrada.Text = membros.Instance.data_entrada;
-            txt_nick.Texts = membros.Instance.nick;
+            //txt_nick.Texts = membros.Instance.nick;
             txt_level.Texts = membros.Instance.level;
             txt_poder.Texts = membros.Instance.poder;
             txt_patente.Texts = membros.Instance.patente;
@@ -502,6 +599,5 @@ namespace Hype.Painel
             dataGridView1.EnableHeadersVisualStyles = false;
         }
 
- 
     }
 }

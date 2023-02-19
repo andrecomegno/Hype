@@ -17,10 +17,6 @@ namespace Hype.Painel
     {
         string id_alt = "";
 
-        string[] id_01;
-
-        string teste = "";
-
         string nick_principal = "";
         private string verificar = "";
 
@@ -299,7 +295,7 @@ namespace Hype.Painel
 
                         // EXCLUIR ALT
                         MySqlCommand objCmdCadastroAlt = new MySqlCommand("delete from hypedb.cadastro_alt where ID_ALT in (@ID)", database.getConnection());
-                        objCmdCadastroAlt.Parameters.AddWithValue("@ID", teste);
+                        objCmdCadastroAlt.Parameters.AddWithValue("@ID", id_alt);
 
                         objCmdCadastroAlt.ExecuteNonQuery();
                     }
