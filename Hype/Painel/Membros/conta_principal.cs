@@ -25,8 +25,6 @@ namespace Hype.Painel
         bool _progressao = false;
         bool _remanejamento = false;
 
-        bool _tabelaPro = false;
-
         public conta_principal()
         {
             InitializeComponent();
@@ -159,10 +157,8 @@ namespace Hype.Painel
                     objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
                     objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
 
-                    objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = txt_poder_ja.Texts;
-                    objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = txt_level_ja.Texts;
-
-
+                    objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts;
+                    objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = txt_novo_level.Texts;
 
                     objCmdProgressao.ExecuteNonQuery();
 
@@ -207,6 +203,50 @@ namespace Hype.Painel
             }
         }
 
+        private void TabelaDesabilitada()
+        {
+            dataGridView1.ScrollBars = ScrollBars.None;
+
+            // FUNDO TABELA
+            dataGridView1.BackgroundColor = Color.FromArgb(32, 34, 37);
+            dataGridView1.GridColor = Color.FromArgb(32, 34, 37);
+
+            // CABEÇALHO TABELA
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(32, 34, 37);
+            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(32, 34, 37);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(32, 34, 37);
+
+            // CORPO DA TABELA
+            dataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(32, 34, 37);
+            dataGridView1.DefaultCellStyle.ForeColor = Color.FromArgb(32, 34, 37);
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(32, 34, 37);
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.FromArgb(32, 34, 37);
+
+            dataGridView1.Enabled = false;
+        }
+
+        private void TabelaHabilitada()
+        {
+            dataGridView1.ScrollBars = ScrollBars.Both;
+
+            // FUNDO TABELA
+            dataGridView1.BackgroundColor = Color.FromArgb(34, 32, 46);
+            dataGridView1.GridColor = Color.FromArgb(34, 32, 46);
+
+            // CABEÇALHO TABELA
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(39, 44, 70);
+            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(39, 44, 70);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            // CORPO DA TABELA
+            dataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(39, 44, 60);
+            dataGridView1.DefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.CornflowerBlue;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            dataGridView1.Enabled = true;
+        }
+
         private void Voltar()
         {
             membros uc = new membros();
@@ -224,12 +264,7 @@ namespace Hype.Painel
             bt_cancelar_rema.Visible = false;
             lb_seta.Visible = false;
 
-            dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = Color.FromArgb(32, 34, 37);
+            TabelaDesabilitada();
 
             CampoTextoDesativado(pl_pro_adicionar.Controls);
             CampoTextoDesativado(pl_remanejamento.Controls);
@@ -293,16 +328,7 @@ namespace Hype.Painel
         {
             CampoTextoHabilitado(pl_pro_adicionar.Controls);
 
-            dataGridView1.BackgroundColor = Color.FromArgb(34, 32, 46);
-            dataGridView1.GridColor = Color.FromArgb(34, 32, 46);
-            dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.CornflowerBlue;
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(39, 44, 70);
-            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(39, 44, 70);
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridView1.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(39, 44, 60);
-
-            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
-
+            TabelaHabilitada();
 
             bt_cancelar_prog.Visible = true;
             bt_editar_prog.Visible = false;            
@@ -320,19 +346,9 @@ namespace Hype.Painel
             bt_cancelar_prog.Visible = false;
             bt_editar_prog.Visible = true;
 
-            dataGridView1.BackgroundColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.GridColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(32, 34, 37);
-            dataGridView1.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(32, 34, 37);
-
-            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.FromArgb(32, 34, 37);
+            TabelaDesabilitada();
 
             CampoTextoDesativado(pl_pro_adicionar.Controls);
-
-            _tabelaPro = false;
         }
 
         private void bt_editar_rema_Click(object sender, EventArgs e)
@@ -407,7 +423,7 @@ namespace Hype.Painel
             dataGridView1.Columns[0].Visible = false; // ID_PROGRESSAO
             dataGridView1.Columns[1].HeaderText = "ANO";
             dataGridView1.Columns[2].HeaderText = "MÊS";
-            dataGridView1.Columns[3].HeaderText = "NICK";
+            dataGridView1.Columns[3].Visible = false; // NICK
             dataGridView1.Columns[4].HeaderText = "ATUAL PODER";
             dataGridView1.Columns[5].HeaderText = "ATUAL LEVEL";
             dataGridView1.Columns[6].HeaderText = "NOVO PODER";
@@ -427,8 +443,6 @@ namespace Hype.Painel
                     column.Width = 100;
                 else if (column.DataPropertyName == "MES")
                     column.Width = 100;
-                else if (column.DataPropertyName == "NICK")
-                    column.Width = 130;
                 else if (column.DataPropertyName == "ATUAL_PODER")
                     column.Width = 150;
                 else if (column.DataPropertyName == "ATUAL_LEVEL")
