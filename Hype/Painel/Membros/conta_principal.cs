@@ -19,9 +19,9 @@ namespace Hype.Painel
         string id_membro = string.Empty;
         string id_alt = string.Empty;
         string id_recrutamento = string.Empty;
-        string id_progressao = string.Empty;        
 
         // PAINEIS
+        bool _membro = true;
         bool _progressao = false;
         bool _remanejamento = false;
 
@@ -41,24 +41,14 @@ namespace Hype.Painel
 
         private void bt_salvar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Alertas();
-            }
-            finally
-            {
-                BtCancelarRema();
-                BtCancelarProg();
-            }
-            
+            Alertas();
         } 
 
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
             try
             {
-                AtualizarTabMembros();
-                AtualizartabProgressao();
+                AtualizarTabela();
             }
             catch (Exception erro)
             {
@@ -84,75 +74,186 @@ namespace Hype.Painel
             }
             finally
             {
-                AtualizarTabMembros();
-                AtualizartabProgressao();
+                AtualizarTabela();
             }
         }
 
         private void bt_adicionar_pro_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Alertas();
-            }
-            finally
-            {
-                AtualizartabProgressao();
-            }
-            
+            Alertas();
         }
 
         private void Alertas()
         {
-            // CADASTRO
-            if (String.IsNullOrEmpty(txt_nick.Texts))
-            {
-                txt_nick.BorderColor = Color.Red;
-                txt_nick.BorderSize = 1;
-            }
-            else if (txt_classe.SelectedIndex == 0)
-            {
-                txt_classe.BorderColor = Color.Red;
-                txt_classe.BorderSize = 1;
-            }
-            else if (txt_patente.SelectedIndex == 0)
-            {
-                txt_patente.BorderColor = Color.Red;
-                txt_patente.BorderSize = 1;
-            }
-            else 
-            {
-                try
-                {
-                    Salvar();
-                }
-                finally
-                {
-                    AtualizarTabMembros();
-                }
-            }
 
+            if(_membro && !_progressao && !_remanejamento)
+            {
 
-            // PROGRESSÃO
-            if (String.IsNullOrEmpty(txt_novo_level.Texts))
-            {
-                txt_novo_level.BorderColor = Color.Red;
-                txt_novo_level.BorderSize = 1;
-            }
-            else if (String.IsNullOrEmpty(txt_novo_poder.Texts))
-            {
-                txt_novo_poder.BorderColor = Color.Red;
-                txt_novo_poder.BorderSize = 1;
-            }
-            else
-            {
-                try
+                MessageBox.Show("MEMBRO");
+
+                // CADASTRO
+                if (String.IsNullOrEmpty(txt_nick.Texts))
                 {
-                    SalvarProgressao();
+                    txt_nick.BorderColor = Color.Red;
+                    txt_nick.BorderSize = 1;
                 }
-                finally
+                else if (txt_classe.SelectedIndex == 0)
                 {
-                    AtualizartabProgressao();
+                    txt_classe.BorderColor = Color.Red;
+                    txt_classe.BorderSize = 1;
+                }
+                else if (txt_patente.SelectedIndex == 0)
+                {
+                    txt_patente.BorderColor = Color.Red;
+                    txt_patente.BorderSize = 1;
+                }
+                else
+                {
+                    try
+                    {
+                        Salvar();
+                    }
+                    finally
+                    {
+                        AtualizarTabela();
+                    }
+                }
+            }
+            else if (_membro && _progressao && !_remanejamento)
+            {
+
+                MessageBox.Show("MEMBRO E PROGRESSAO");
+
+                // CADASTRO
+                if (String.IsNullOrEmpty(txt_nick.Texts))
+                {
+                    txt_nick.BorderColor = Color.Red;
+                    txt_nick.BorderSize = 1;
+                }
+                else if (txt_classe.SelectedIndex == 0)
+                {
+                    txt_classe.BorderColor = Color.Red;
+                    txt_classe.BorderSize = 1;
+                }
+                else if (txt_patente.SelectedIndex == 0)
+                {
+                    txt_patente.BorderColor = Color.Red;
+                    txt_patente.BorderSize = 1;
+                }
+
+                // PROGRESSÃO
+                else if (String.IsNullOrEmpty(txt_novo_level.Texts))
+                {
+                    txt_novo_level.BorderColor = Color.Red;
+                    txt_novo_level.BorderSize = 1;
+                }
+                else if (String.IsNullOrEmpty(txt_novo_poder.Texts))
+                {
+                    txt_novo_poder.BorderColor = Color.Red;
+                    txt_novo_poder.BorderSize = 1;
+                }
+                else
+                {
+                    try
+                    {
+                        Salvar();
+                    }
+                    finally
+                    {
+                        AtualizarTabela();
+                    }
+                }
+            }
+            else if (_membro && _remanejamento && !_progressao)
+            {
+
+                MessageBox.Show("MEMBRO E REMANEJAMENTO");
+
+                // CADASTRO
+                if (String.IsNullOrEmpty(txt_nick.Texts))
+                {
+                    txt_nick.BorderColor = Color.Red;
+                    txt_nick.BorderSize = 1;
+                }
+                else if (txt_classe.SelectedIndex == 0)
+                {
+                    txt_classe.BorderColor = Color.Red;
+                    txt_classe.BorderSize = 1;
+                }
+                else if (txt_patente.SelectedIndex == 0)
+                {
+                    txt_patente.BorderColor = Color.Red;
+                    txt_patente.BorderSize = 1;
+                }
+
+                // REMANEJAMENTO
+                else if (String.IsNullOrEmpty(txt_remanejamento.Texts))
+                {
+                    txt_remanejamento.BorderColor = Color.Red;
+                    txt_remanejamento.BorderSize = 1;
+                }
+                else
+                {
+                    try
+                    {
+                        Salvar();
+                    }
+                    finally
+                    {
+                        AtualizarTabela();
+                    }
+                }
+            }
+            else if (_membro && _progressao && _remanejamento)
+            {
+
+                MessageBox.Show("MEMBRO E PROGRESSAO E REMANEJAMENTO");
+
+                // CADASTRO
+                if (String.IsNullOrEmpty(txt_nick.Texts))
+                {
+                    txt_nick.BorderColor = Color.Red;
+                    txt_nick.BorderSize = 1;
+                }
+                else if (txt_classe.SelectedIndex == 0)
+                {
+                    txt_classe.BorderColor = Color.Red;
+                    txt_classe.BorderSize = 1;
+                }
+                else if (txt_patente.SelectedIndex == 0)
+                {
+                    txt_patente.BorderColor = Color.Red;
+                    txt_patente.BorderSize = 1;
+                }
+
+                // PROGRESSÃO
+                else if (String.IsNullOrEmpty(txt_novo_level.Texts))
+                {
+                    txt_novo_level.BorderColor = Color.Red;
+                    txt_novo_level.BorderSize = 1;
+                }
+                else if (String.IsNullOrEmpty(txt_novo_poder.Texts))
+                {
+                    txt_novo_poder.BorderColor = Color.Red;
+                    txt_novo_poder.BorderSize = 1;
+                }
+
+                // REMANEJAMENTO
+                else if (String.IsNullOrEmpty(txt_remanejamento.Texts))
+                {
+                    txt_remanejamento.BorderColor = Color.Red;
+                    txt_remanejamento.BorderSize = 1;
+                }
+                else
+                {
+                    try
+                    {
+                        Salvar();
+                    }
+                    finally
+                    {
+                        AtualizarTabela();
+                    }
                 }
             }
         }
@@ -165,62 +266,47 @@ namespace Hype.Painel
                 configdb database = new configdb();
                 database.openConnection();
 
-                // CADASTRO DE MEMBROS
-                MySqlCommand objCmdCadastro_membros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
+                if (!_progressao && !_remanejamento)
+                {
+                    // CADASTRO DE MEMBROS
+                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
 
-                objCmdCadastro_membros.Parameters.AddWithValue("@id_membros", id_membro);
-                objCmdCadastro_membros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                objCmdCadastro_membros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
-                objCmdCadastro_membros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
+                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
+                    objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+                    objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
+                    objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
 
-                objCmdCadastro_membros.ExecuteNonQuery();
+                    objCmdCadastroMembros.ExecuteNonQuery();
 
-                // UPDATE CADASTRO ALT
-                MySqlCommand objCmdAlt = new MySqlCommand("update hypedb.cadastro_alt set nick_principal=@nick_principal where (id_alt=@id_alt)", database.getConnection());
+                    // UPDATE CADASTRO ALT
+                    MySqlCommand objCmdAlt = new MySqlCommand("update hypedb.cadastro_alt set nick_principal=@nick_principal where (id_alt=@id_alt)", database.getConnection());
 
-                objCmdAlt.Parameters.AddWithValue("@id_alt", id_alt);
-                objCmdAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+                    objCmdAlt.Parameters.AddWithValue("@id_alt", id_alt);
+                    objCmdAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
 
-                objCmdAlt.ExecuteNonQuery();
+                    objCmdAlt.ExecuteNonQuery();
 
-                DialogResult dr = MessageBox.Show("Editado Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult dr = MessageBox.Show("Salvo Sucesso !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                database.closeConnection();
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
-            }
-        }
-
-        private void SalvarProgressao()
-        {
-            try
-            {
-                // BANCO DE DADOS
-                configdb database = new configdb();
-                database.openConnection();
+                    database.closeConnection();
+                }
 
                 // PROGRESSÃO 
-                if (_progressao != false)
+                if (_progressao)
                 {
-                    // PROGRESSAO INTO
-                    MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, ano, mes, nick, atual_poder, atual_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+                    // PROGRESSÂO INTO
+                    MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, nick, antigo_poder, antigo_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-                    objCmdProgressao.Parameters.Add("@ano", MySqlDbType.VarChar, 256).Value = DateTime.Now.Year;
-                    objCmdProgressao.Parameters.Add("@mes", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
-
+                    objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
                     objCmdProgressao.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-
                     objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
                     objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
-
                     objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts;
                     objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = txt_novo_level.Texts;
 
                     objCmdProgressao.ExecuteNonQuery();
 
-                    // CADASTRO DE MEMBROS
+                    // MEMBROS UPDATE
                     MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set poder=@poder, level=@level where (id_membros=@id_membros)", database.getConnection());
 
                     objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
@@ -229,26 +315,9 @@ namespace Hype.Painel
 
                     objCmdCadastroMembros.ExecuteNonQuery();
                 }
-                
-                database.closeConnection();
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
-            }
-
-        }
-
-        private void SalvarRemanejamento()
-        {
-            try
-            {
-                // BANCO DE DADOS
-                configdb database = new configdb();
-                database.openConnection();
 
                 // REMANEJAMENTO 
-                if (_remanejamento != false)
+                if (_remanejamento)
                 {
                     // RECRUTAMENTO UPDATE
                     MySqlCommand objCmdRecrutamento = new MySqlCommand("update hypedb.recrutamento set foi_para_cla=@foi_para_cla where (id_recrutamento=@id_recrutamento)", database.getConnection());
@@ -267,13 +336,55 @@ namespace Hype.Painel
                     objCmdRemanejamento.ExecuteNonQuery();
                 }
 
+
+                if (_remanejamento && !_progressao)
+                {
+                    // CADASTRO DE MEMBROS
+                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
+
+                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
+                    objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+                    objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
+                    objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
+
+                    objCmdCadastroMembros.ExecuteNonQuery();
+
+                    // UPDATE CADASTRO ALT
+                    MySqlCommand objCmdAlt = new MySqlCommand("update hypedb.cadastro_alt set nick_principal=@nick_principal where (id_alt=@id_alt)", database.getConnection());
+
+                    objCmdAlt.Parameters.AddWithValue("@id_alt", id_alt);
+                    objCmdAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+
+                    objCmdAlt.ExecuteNonQuery();
+
+                    // RECRUTAMENTO UPDATE
+                    MySqlCommand objCmdRecrutamento = new MySqlCommand("update hypedb.recrutamento set foi_para_cla=@foi_para_cla where (id_recrutamento=@id_recrutamento)", database.getConnection());
+
+                    objCmdRecrutamento.Parameters.AddWithValue("@id_recrutamento", id_recrutamento);
+                    objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_remanejamento.Texts;
+
+                    objCmdRecrutamento.ExecuteNonQuery();
+
+                    // REMANEJAMENTO INTO
+                    MySqlCommand objCmdRemanejamento = new MySqlCommand("insert into hypedb.remanejamento (id_remanejamento, data_remanejamento, id_recrutamento) values (null, ?, ?)", database.getConnection());
+
+                    objCmdRemanejamento.Parameters.Add("@data_remanejamento", MySqlDbType.Date).Value = DateTime.Now;
+                    objCmdRemanejamento.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = id_recrutamento;
+
+                    objCmdRemanejamento.ExecuteNonQuery();
+
+                    DialogResult dr = MessageBox.Show("Salvo Sucesso !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    database.closeConnection();
+                }
+
                 database.closeConnection();
+
             }
             catch (Exception erro)
             {
                 MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
             }
-
         }
 
         private void Voltar()
@@ -316,6 +427,18 @@ namespace Hype.Painel
         {
             txt_patente.BorderColor = Color.Transparent;
             txt_patente.BorderSize = 0;
+        }
+
+        private void txt_novo_level_Leave(object sender, EventArgs e)
+        {
+            txt_novo_level.BorderColor = Color.Transparent;
+            txt_novo_level.BorderSize = 0;
+        }
+
+        private void txt_novo_poder_Leave(object sender, EventArgs e)
+        {
+            txt_novo_poder.BorderColor = Color.Transparent;
+            txt_novo_poder.BorderSize = 0;
         }
 
         private void CampoTextoDesativado(Control.ControlCollection control)
@@ -404,6 +527,8 @@ namespace Hype.Painel
             bt_editar_prog.Visible = true;
             bt_adicionar_prog.Visible = false;
 
+            _progressao = false;
+
             TabelaDesabilitada();
 
             CampoTextoDesativado(pl_pro_adicionar.Controls);
@@ -432,7 +557,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select ID_PROGRESSAO, ANO, MES, NICK, ATUAL_PODER, ATUAL_LEVEL, NOVO_PODER, NOVO_LEVEL from hypedb.progressao where NICK like @nick '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select ID_PROGRESSAO, DATA_PROGRESSAO, NICK, ANTIGO_PODER, ANTIGO_LEVEL, NOVO_PODER, NOVO_LEVEL from hypedb.progressao where NICK like @nick '%' ", database.getConnection());
             cmd.Parameters.AddWithValue("@nick", txt_nick.Texts);
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
@@ -452,32 +577,28 @@ namespace Hype.Painel
         private void Tabela()
         {
             dataGridView1.Columns[0].Visible = false; // ID_PROGRESSAO
-            dataGridView1.Columns[1].HeaderText = "ANO";
-            dataGridView1.Columns[2].HeaderText = "MÊS";
-            dataGridView1.Columns[3].Visible = false; // NICK
-            dataGridView1.Columns[4].HeaderText = "ATUAL PODER";
-            dataGridView1.Columns[5].HeaderText = "ATUAL LEVEL";
-            dataGridView1.Columns[6].HeaderText = "NOVO PODER";
-            dataGridView1.Columns[7].HeaderText = "NOVO LEVEL";
+            dataGridView1.Columns[1].HeaderText = "DATA";
+            dataGridView1.Columns[2].Visible = false; // NICK
+            dataGridView1.Columns[3].HeaderText = "PODER";
+            dataGridView1.Columns[4].HeaderText = "LEVEL";
+            dataGridView1.Columns[5].HeaderText = "NOVO PODER";
+            dataGridView1.Columns[6].HeaderText = "NOVO LEVEL";
 
-            dataGridView1.Columns["ANO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns["MES"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns["ATUAL_PODER"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns["ATUAL_LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns["DATA_PROGRESSAO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns["ANTIGO_PODER"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns["ANTIGO_LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["NOVO_PODER"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["NOVO_LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                if (column.DataPropertyName == "ANO")
-                    column.Width = 100;
-                else if (column.DataPropertyName == "MES")
-                    column.Width = 100;
-                else if (column.DataPropertyName == "ATUAL_PODER")
-                    column.Width = 150;
-                else if (column.DataPropertyName == "ATUAL_LEVEL")
-                    column.Width = 150;
+                if (column.DataPropertyName == "DATA_PROGRESSAO")
+                    column.Width = 135;
+                else if (column.DataPropertyName == "ANTIGO_PODER")
+                    column.Width = 130;
+                else if (column.DataPropertyName == "ANTIGO_LEVEL")
+                    column.Width = 130;
                 else if (column.DataPropertyName == "NOVO_PODER")
                     column.Width = 150;
                 else if (column.DataPropertyName == "NOVO_LEVEL")
@@ -529,44 +650,49 @@ namespace Hype.Painel
             dataGridView1.Enabled = true;
         }
 
-        private void AtualizartabProgressao()
+        private void AtualizarTabela()
         {
-            // BANCO DE DADOS
-            configdb database = new configdb();
-            database.openConnection();
-
-            if (_remanejamento != false)
+            try
             {
-                // PROGRESSÃO
-                MySqlCommand objCmdProgressao = new MySqlCommand("select ID_PROGRESSAO, ANO, MES, NICK, ATUAL_PODER, ATUAL_LEVEL, NOVO_PODER, NOVO_LEVEL from hypedb.progressao where NICK like @nick '%' ", database.getConnection());
-                objCmdProgressao.Parameters.AddWithValue("@nick", txt_nick.Texts);
+                // BANCO DE DADOS
+                configdb database = new configdb();
+                database.openConnection();
 
-                using (MySqlDataAdapter da = new MySqlDataAdapter(objCmdProgressao))
+                if (_remanejamento)
                 {
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    dataGridView1.DataSource = dt;
+                    //REMANEJAMENTO
+                    txt_vem_cla.Texts = membros.Instance.vem_do_cla;
+                    txt_esta_cla.Texts = membros.Instance.foi_para_cla;
                 }
 
-                objCmdProgressao.ExecuteNonQuery();
+
+                // PROGRESSÃO
+                if (_progressao)
+                {                    
+                    MySqlCommand objCmdProgressao = new MySqlCommand("select ID_PROGRESSAO, DATA_PROGRESSAO, NICK, ANTIGO_PODER, ANTIGO_LEVEL, NOVO_PODER, NOVO_LEVEL from hypedb.progressao where NICK like @nick '%' ", database.getConnection());
+                    objCmdProgressao.Parameters.AddWithValue("@nick", txt_nick.Texts);
+
+                    using (MySqlDataAdapter da = new MySqlDataAdapter(objCmdProgressao))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        dataGridView1.DataSource = dt;
+                    }
+
+                    objCmdProgressao.ExecuteNonQuery();
+
+                    // CADASTRO
+                    txt_level.Texts = membros.Instance.level;
+                    txt_poder.Texts = membros.Instance.poder;
+                }
+
+                database.closeConnection();
             }
-
-            database.closeConnection();
-        }
-
-        private void AtualizarTabMembros()
-        {
-            // BANCO DE DADOS
-            configdb database = new configdb();
-            database.openConnection();
-
-            // CADASTRO
-            MySqlCommand objCmdCadastroMembros = new MySqlCommand("select * from hypedb.cadastro_membro", database.getConnection());
-
-            objCmdCadastroMembros.ExecuteNonQuery();
-
-            database.closeConnection(); 
+            catch (Exception erro)
+            {
+                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
+            }
         }
 
         public void DadosMembros()
@@ -598,6 +724,7 @@ namespace Hype.Painel
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
         }
+
 
     }
 }

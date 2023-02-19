@@ -64,13 +64,12 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA PROGRESSAO
-            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, ano, mes, nick, atual_poder, atual_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, nick, antigo_poder, antigo_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdProgressao.Parameters.Add("@ano", MySqlDbType.VarChar, 256).Value = DateTime.Now.Year;
-            objCmdProgressao.Parameters.Add("@mes", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
+            objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
             objCmdProgressao.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
             objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = 0.00;
             objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = 0;
 
@@ -78,9 +77,9 @@ namespace Hype.Painel
             long idProgressao = objCmdProgressao.LastInsertedId;
 
             // INSERT TABELA RECRUTAMENTO
-            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_recrutamento, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
 
-            objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdRecrutamento.Parameters.Add("@data_recrutamento", MySqlDbType.Date).Value = DateTime.Now;
             objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
             objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
 
@@ -109,13 +108,12 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA PROGRESSAO
-            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, ano, mes, nick, atual_poder, atual_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, nick, antigo_poder, antigo_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdProgressao.Parameters.Add("@ano", MySqlDbType.VarChar, 256).Value = DateTime.Now.Year;
-            objCmdProgressao.Parameters.Add("@mes", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
+            objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
             objCmdProgressao.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
             objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = 0.00;
             objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = 0;
 
@@ -123,9 +121,9 @@ namespace Hype.Painel
             long idProgressao = objCmdProgressao.LastInsertedId;
 
             // INSERT TABELA RECRUTAMENTO
-            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_recrutamento, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
 
-            objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdRecrutamento.Parameters.Add("@data_recrutamento", MySqlDbType.Date).Value = DateTime.Now;
             objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
             objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
 
@@ -167,13 +165,12 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA PROGRESSAO
-            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, ano, mes, nick, atual_poder, atual_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, nick, antigo_poder, antigo_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdProgressao.Parameters.Add("@ano", MySqlDbType.VarChar, 256).Value = DateTime.Now.Year;
-            objCmdProgressao.Parameters.Add("@mes", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
+            objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
             objCmdProgressao.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
             objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = 0.00;
             objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = 0;
 
@@ -181,9 +178,9 @@ namespace Hype.Painel
             long idProgressao = objCmdProgressao.LastInsertedId;
 
             // INSERT TABELA RECRUTAMENTO
-            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_recrutamento, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
 
-            objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdRecrutamento.Parameters.Add("@data_recrutamento", MySqlDbType.Date).Value = DateTime.Now;
             objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
             objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
 
@@ -238,13 +235,12 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA PROGRESSAO
-            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, ano, mes, nick, atual_poder, atual_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, nick, antigo_poder, antigo_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdProgressao.Parameters.Add("@ano", MySqlDbType.VarChar, 256).Value = DateTime.Now.Year;
-            objCmdProgressao.Parameters.Add("@mes", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
+            objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
             objCmdProgressao.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
             objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = 0.00;
             objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = 0;
 
@@ -252,9 +248,9 @@ namespace Hype.Painel
             long idProgressao = objCmdProgressao.LastInsertedId;
 
             // INSERT TABELA RECRUTAMENTO
-            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_recrutamento, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
 
-            objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdRecrutamento.Parameters.Add("@data_recrutamento", MySqlDbType.Date).Value = DateTime.Now;
             objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
             objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
 
@@ -322,13 +318,12 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA PROGRESSAO
-            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, ano, mes, nick, atual_poder, atual_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, nick, antigo_poder, antigo_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdProgressao.Parameters.Add("@ano", MySqlDbType.VarChar, 256).Value = DateTime.Now.Year;
-            objCmdProgressao.Parameters.Add("@mes", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
+            objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
             objCmdProgressao.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
             objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = 0.00;
             objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = 0;
 
@@ -336,9 +331,9 @@ namespace Hype.Painel
             long idProgressao = objCmdProgressao.LastInsertedId;
 
             // INSERT TABELA RECRUTAMENTO
-            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_recrutamento, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
 
-            objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdRecrutamento.Parameters.Add("@data_recrutamento", MySqlDbType.Date).Value = DateTime.Now;
             objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
             objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
 
@@ -419,13 +414,12 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA PROGRESSAO
-            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, ano, mes, nick, atual_poder, atual_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, nick, antigo_poder, antigo_level, novo_poder, novo_level) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdProgressao.Parameters.Add("@ano", MySqlDbType.VarChar, 256).Value = DateTime.Now.Year;
-            objCmdProgressao.Parameters.Add("@mes", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
+            objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
             objCmdProgressao.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-            objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdProgressao.Parameters.Add("@antigo_level", MySqlDbType.Int32).Value = txt_level.Texts;
             objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = 0.00;
             objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = 0;
 
@@ -433,9 +427,9 @@ namespace Hype.Painel
             long idProgressao = objCmdProgressao.LastInsertedId;
 
             // INSERT TABELA RECRUTAMENTO
-            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_entrada, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_recrutamento, vem_do_cla, foi_para_cla) values (null, ?, ?, ?)", database.getConnection());
 
-            objCmdRecrutamento.Parameters.Add("@data_entrada", MySqlDbType.Date).Value = DateTime.Now;
+            objCmdRecrutamento.Parameters.Add("@data_recrutamento", MySqlDbType.Date).Value = DateTime.Now;
             objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
             objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
 

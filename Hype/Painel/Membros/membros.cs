@@ -54,7 +54,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select re.ID_RECRUTAMENTO, pro.ID_PROGRESSAO, alt.ID_ALT, c.ID_MEMBROS, re.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select re.ID_RECRUTAMENTO, pro.ID_PROGRESSAO, alt.ID_ALT, c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -100,7 +100,7 @@ namespace Hype.Painel
             dataGridView1.Columns[10].Visible = false; // vem do cla
             dataGridView1.Columns[11].Visible = false; // foi para o cla
 
-            dataGridView1.Columns["DATA_ENTRADA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns["DATA_RECRUTAMENTO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["PODER"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["CLASSE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -108,7 +108,7 @@ namespace Hype.Painel
 
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                if (column.DataPropertyName == "DATA_ENTRADA")
+                if (column.DataPropertyName == "DATA_RECRUTAMENTO")
                     column.Width = 200;
                 else if (column.DataPropertyName == "NICK")
                     column.Width = 220;
@@ -154,7 +154,7 @@ namespace Hype.Painel
                     id_recrutamento = dr["ID_RECRUTAMENTO"].ToString();
                     id_progressao = dr["ID_PROGRESSAO"].ToString();
 
-                    data_entrada = ((DateTime)dr["DATA_ENTRADA"]).ToShortDateString();
+                    data_entrada = ((DateTime)dr["DATA_RECRUTAMENTO"]).ToShortDateString();
                     nick = dr["NICK"].ToString();
                     level = dr["LEVEL"].ToString();
                     poder = dr["PODER"].ToString();
@@ -210,7 +210,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select re.ID_RECRUTAMENTO, pro.ID_PROGRESSAO, alt.ID_ALT, c.ID_MEMBROS, re.DATA_ENTRADA, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO where c.NICK like @nick '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select re.ID_RECRUTAMENTO, pro.ID_PROGRESSAO, alt.ID_ALT, c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO where c.NICK like @nick '%' ", database.getConnection());
             cmd.Parameters.AddWithValue("@nick", txt_buscar.Texts);
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))

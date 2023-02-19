@@ -29,9 +29,9 @@ namespace Hype.Painel
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pl_conta_principal = new System.Windows.Forms.Panel();
             this.pl_botao = new System.Windows.Forms.Panel();
             this.bt_cancelar = new System.Windows.Forms.Button();
@@ -47,11 +47,12 @@ namespace Hype.Painel
             this.lb_remanejamento = new System.Windows.Forms.Label();
             this.pl_espaco_03 = new System.Windows.Forms.Panel();
             this.pl_progressao = new System.Windows.Forms.Panel();
+            this.bt_adicionar_prog = new System.Windows.Forms.Button();
             this.bt_editar_prog = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pl_pro_adicionar = new System.Windows.Forms.Panel();
-            this.lb_poder_col_01 = new System.Windows.Forms.Label();
-            this.lb_level_col_01 = new System.Windows.Forms.Label();
+            this.lb_poder_prog = new System.Windows.Forms.Label();
+            this.lb_level_prog = new System.Windows.Forms.Label();
             this.lb_progressao = new System.Windows.Forms.Label();
             this.bt_cancelar_prog = new System.Windows.Forms.Button();
             this.pl_espaco_02 = new System.Windows.Forms.Panel();
@@ -69,7 +70,6 @@ namespace Hype.Painel
             this.txt_data_entrada = new System.Windows.Forms.Label();
             this.lb_data_entrada = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.bt_adicionar_prog = new System.Windows.Forms.Button();
             this.txt_remanejamento = new Hype.Painel.RJTextBox();
             this.txt_esta_cla = new Hype.Painel.RJTextBox();
             this.txt_vem_cla = new Hype.Painel.RJTextBox();
@@ -109,7 +109,7 @@ namespace Hype.Painel
             this.pl_conta_principal.Controls.Add(this.pl_top);
             this.pl_conta_principal.Location = new System.Drawing.Point(14, 3);
             this.pl_conta_principal.Name = "pl_conta_principal";
-            this.pl_conta_principal.Size = new System.Drawing.Size(1172, 804);
+            this.pl_conta_principal.Size = new System.Drawing.Size(1172, 1008);
             this.pl_conta_principal.TabIndex = 77;
             // 
             // pl_botao
@@ -118,7 +118,7 @@ namespace Hype.Painel
             this.pl_botao.Controls.Add(this.bt_cancelar);
             this.pl_botao.Controls.Add(this.bt_salvar);
             this.pl_botao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_botao.Location = new System.Drawing.Point(0, 692);
+            this.pl_botao.Location = new System.Drawing.Point(0, 876);
             this.pl_botao.Name = "pl_botao";
             this.pl_botao.Size = new System.Drawing.Size(1172, 71);
             this.pl_botao.TabIndex = 98;
@@ -161,7 +161,7 @@ namespace Hype.Painel
             // 
             this.pl_espaco_04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.pl_espaco_04.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_espaco_04.Location = new System.Drawing.Point(0, 682);
+            this.pl_espaco_04.Location = new System.Drawing.Point(0, 866);
             this.pl_espaco_04.Name = "pl_espaco_04";
             this.pl_espaco_04.Size = new System.Drawing.Size(1172, 10);
             this.pl_espaco_04.TabIndex = 80;
@@ -178,7 +178,7 @@ namespace Hype.Painel
             this.pl_remanejamento.Controls.Add(this.txt_esta_cla);
             this.pl_remanejamento.Controls.Add(this.txt_vem_cla);
             this.pl_remanejamento.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_remanejamento.Location = new System.Drawing.Point(0, 585);
+            this.pl_remanejamento.Location = new System.Drawing.Point(0, 769);
             this.pl_remanejamento.Name = "pl_remanejamento";
             this.pl_remanejamento.Size = new System.Drawing.Size(1172, 97);
             this.pl_remanejamento.TabIndex = 96;
@@ -258,7 +258,7 @@ namespace Hype.Painel
             this.pl_titulo_rema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.pl_titulo_rema.Controls.Add(this.lb_remanejamento);
             this.pl_titulo_rema.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_titulo_rema.Location = new System.Drawing.Point(0, 546);
+            this.pl_titulo_rema.Location = new System.Drawing.Point(0, 730);
             this.pl_titulo_rema.Name = "pl_titulo_rema";
             this.pl_titulo_rema.Size = new System.Drawing.Size(1172, 39);
             this.pl_titulo_rema.TabIndex = 80;
@@ -280,7 +280,7 @@ namespace Hype.Painel
             // 
             this.pl_espaco_03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.pl_espaco_03.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_espaco_03.Location = new System.Drawing.Point(0, 536);
+            this.pl_espaco_03.Location = new System.Drawing.Point(0, 720);
             this.pl_espaco_03.Name = "pl_espaco_03";
             this.pl_espaco_03.Size = new System.Drawing.Size(1172, 10);
             this.pl_espaco_03.TabIndex = 79;
@@ -288,7 +288,6 @@ namespace Hype.Painel
             // pl_progressao
             // 
             this.pl_progressao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.pl_progressao.Controls.Add(this.bt_adicionar_prog);
             this.pl_progressao.Controls.Add(this.bt_editar_prog);
             this.pl_progressao.Controls.Add(this.dataGridView1);
             this.pl_progressao.Controls.Add(this.pl_pro_adicionar);
@@ -297,8 +296,25 @@ namespace Hype.Painel
             this.pl_progressao.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_progressao.Location = new System.Drawing.Point(0, 223);
             this.pl_progressao.Name = "pl_progressao";
-            this.pl_progressao.Size = new System.Drawing.Size(1172, 313);
+            this.pl_progressao.Size = new System.Drawing.Size(1172, 497);
             this.pl_progressao.TabIndex = 86;
+            // 
+            // bt_adicionar_prog
+            // 
+            this.bt_adicionar_prog.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_adicionar_prog.BackColor = System.Drawing.Color.OliveDrab;
+            this.bt_adicionar_prog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_adicionar_prog.FlatAppearance.BorderSize = 0;
+            this.bt_adicionar_prog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_adicionar_prog.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_adicionar_prog.ForeColor = System.Drawing.Color.White;
+            this.bt_adicionar_prog.Location = new System.Drawing.Point(217, 21);
+            this.bt_adicionar_prog.Name = "bt_adicionar_prog";
+            this.bt_adicionar_prog.Size = new System.Drawing.Size(102, 36);
+            this.bt_adicionar_prog.TabIndex = 173;
+            this.bt_adicionar_prog.Text = "Adicionar";
+            this.bt_adicionar_prog.UseVisualStyleBackColor = false;
+            this.bt_adicionar_prog.Click += new System.EventHandler(this.bt_adicionar_pro_Click);
             // 
             // bt_editar_prog
             // 
@@ -309,7 +325,7 @@ namespace Hype.Painel
             this.bt_editar_prog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_editar_prog.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_editar_prog.ForeColor = System.Drawing.Color.White;
-            this.bt_editar_prog.Location = new System.Drawing.Point(465, 143);
+            this.bt_editar_prog.Location = new System.Drawing.Point(465, 145);
             this.bt_editar_prog.Name = "bt_editar_prog";
             this.bt_editar_prog.Size = new System.Drawing.Size(237, 36);
             this.bt_editar_prog.TabIndex = 187;
@@ -326,74 +342,75 @@ namespace Hype.Painel
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.ColumnHeadersHeight = 50;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.dataGridView1.Location = new System.Drawing.Point(221, 115);
+            this.dataGridView1.Location = new System.Drawing.Point(221, 117);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(702, 175);
+            this.dataGridView1.Size = new System.Drawing.Size(702, 337);
             this.dataGridView1.TabIndex = 274;
             // 
             // pl_pro_adicionar
             // 
             this.pl_pro_adicionar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pl_pro_adicionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.pl_pro_adicionar.Controls.Add(this.bt_adicionar_prog);
             this.pl_pro_adicionar.Controls.Add(this.txt_novo_level);
             this.pl_pro_adicionar.Controls.Add(this.txt_novo_poder);
-            this.pl_pro_adicionar.Controls.Add(this.lb_poder_col_01);
-            this.pl_pro_adicionar.Controls.Add(this.lb_level_col_01);
-            this.pl_pro_adicionar.Location = new System.Drawing.Point(221, 32);
+            this.pl_pro_adicionar.Controls.Add(this.lb_level_prog);
+            this.pl_pro_adicionar.Controls.Add(this.lb_poder_prog);
+            this.pl_pro_adicionar.Location = new System.Drawing.Point(206, 53);
             this.pl_pro_adicionar.Name = "pl_pro_adicionar";
-            this.pl_pro_adicionar.Size = new System.Drawing.Size(327, 77);
+            this.pl_pro_adicionar.Size = new System.Drawing.Size(342, 58);
             this.pl_pro_adicionar.TabIndex = 231;
             // 
-            // lb_poder_col_01
+            // lb_poder_prog
             // 
-            this.lb_poder_col_01.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_poder_col_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_poder_col_01.ForeColor = System.Drawing.Color.White;
-            this.lb_poder_col_01.Location = new System.Drawing.Point(76, 21);
-            this.lb_poder_col_01.Name = "lb_poder_col_01";
-            this.lb_poder_col_01.Size = new System.Drawing.Size(120, 17);
-            this.lb_poder_col_01.TabIndex = 148;
-            this.lb_poder_col_01.Text = "Poder";
-            this.lb_poder_col_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_poder_prog.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_poder_prog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_poder_prog.ForeColor = System.Drawing.Color.White;
+            this.lb_poder_prog.Location = new System.Drawing.Point(88, 5);
+            this.lb_poder_prog.Name = "lb_poder_prog";
+            this.lb_poder_prog.Size = new System.Drawing.Size(120, 17);
+            this.lb_poder_prog.TabIndex = 148;
+            this.lb_poder_prog.Text = "Poder";
+            this.lb_poder_prog.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lb_level_col_01
+            // lb_level_prog
             // 
-            this.lb_level_col_01.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_level_col_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_level_col_01.ForeColor = System.Drawing.Color.White;
-            this.lb_level_col_01.Location = new System.Drawing.Point(1, 21);
-            this.lb_level_col_01.Name = "lb_level_col_01";
-            this.lb_level_col_01.Size = new System.Drawing.Size(68, 17);
-            this.lb_level_col_01.TabIndex = 147;
-            this.lb_level_col_01.Text = "Level";
-            this.lb_level_col_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_level_prog.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_level_prog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_level_prog.ForeColor = System.Drawing.Color.White;
+            this.lb_level_prog.Location = new System.Drawing.Point(13, 5);
+            this.lb_level_prog.Name = "lb_level_prog";
+            this.lb_level_prog.Size = new System.Drawing.Size(68, 17);
+            this.lb_level_prog.TabIndex = 147;
+            this.lb_level_prog.Text = "Level";
+            this.lb_level_prog.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb_progressao
             // 
@@ -417,7 +434,7 @@ namespace Hype.Painel
             this.bt_cancelar_prog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_cancelar_prog.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_cancelar_prog.ForeColor = System.Drawing.Color.White;
-            this.bt_cancelar_prog.Location = new System.Drawing.Point(5, 271);
+            this.bt_cancelar_prog.Location = new System.Drawing.Point(5, 455);
             this.bt_cancelar_prog.Name = "bt_cancelar_prog";
             this.bt_cancelar_prog.Size = new System.Drawing.Size(102, 36);
             this.bt_cancelar_prog.TabIndex = 186;
@@ -612,25 +629,8 @@ namespace Hype.Painel
             this.vScrollBar1.Location = new System.Drawing.Point(1183, 0);
             this.vScrollBar1.Maximum = 10;
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 810);
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 1014);
             this.vScrollBar1.TabIndex = 78;
-            // 
-            // bt_adicionar_prog
-            // 
-            this.bt_adicionar_prog.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_adicionar_prog.BackColor = System.Drawing.Color.OliveDrab;
-            this.bt_adicionar_prog.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_adicionar_prog.FlatAppearance.BorderSize = 0;
-            this.bt_adicionar_prog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_adicionar_prog.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_adicionar_prog.ForeColor = System.Drawing.Color.White;
-            this.bt_adicionar_prog.Location = new System.Drawing.Point(430, 70);
-            this.bt_adicionar_prog.Name = "bt_adicionar_prog";
-            this.bt_adicionar_prog.Size = new System.Drawing.Size(102, 36);
-            this.bt_adicionar_prog.TabIndex = 173;
-            this.bt_adicionar_prog.Text = "Adicionar";
-            this.bt_adicionar_prog.UseVisualStyleBackColor = false;
-            this.bt_adicionar_prog.Click += new System.EventHandler(this.bt_adicionar_pro_Click);
             // 
             // txt_remanejamento
             // 
@@ -711,7 +711,7 @@ namespace Hype.Painel
             this.txt_novo_level.BorderSize = 1;
             this.txt_novo_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_novo_level.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_novo_level.Location = new System.Drawing.Point(4, 42);
+            this.txt_novo_level.Location = new System.Drawing.Point(16, 26);
             this.txt_novo_level.Margin = new System.Windows.Forms.Padding(4);
             this.txt_novo_level.Multiline = false;
             this.txt_novo_level.Name = "txt_novo_level";
@@ -725,6 +725,7 @@ namespace Hype.Painel
             this.txt_novo_level.Tag = "";
             this.txt_novo_level.Texts = "";
             this.txt_novo_level.UnderlinedStyle = false;
+            this.txt_novo_level.Leave += new System.EventHandler(this.txt_novo_level_Leave);
             // 
             // txt_novo_poder
             // 
@@ -736,7 +737,7 @@ namespace Hype.Painel
             this.txt_novo_poder.BorderSize = 1;
             this.txt_novo_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_novo_poder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_novo_poder.Location = new System.Drawing.Point(79, 42);
+            this.txt_novo_poder.Location = new System.Drawing.Point(91, 26);
             this.txt_novo_poder.Margin = new System.Windows.Forms.Padding(4);
             this.txt_novo_poder.Multiline = false;
             this.txt_novo_poder.Name = "txt_novo_poder";
@@ -749,6 +750,7 @@ namespace Hype.Painel
             this.txt_novo_poder.TabStop = false;
             this.txt_novo_poder.Texts = "";
             this.txt_novo_poder.UnderlinedStyle = false;
+            this.txt_novo_poder.Leave += new System.EventHandler(this.txt_novo_poder_Leave);
             // 
             // txt_patente
             // 
@@ -883,7 +885,7 @@ namespace Hype.Painel
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.pl_conta_principal);
             this.Name = "conta_principal";
-            this.Size = new System.Drawing.Size(1200, 810);
+            this.Size = new System.Drawing.Size(1200, 1014);
             this.Load += new System.EventHandler(this.conta_principal_Load);
             this.pl_conta_principal.ResumeLayout(false);
             this.pl_botao.ResumeLayout(false);
@@ -926,8 +928,8 @@ namespace Hype.Painel
         private System.Windows.Forms.Label lb_classe;
         private script.RJComboBox txt_patente;
         private System.Windows.Forms.Label lb_remanejamento;
-        private System.Windows.Forms.Label lb_poder_col_01;
-        private System.Windows.Forms.Label lb_level_col_01;
+        private System.Windows.Forms.Label lb_poder_prog;
+        private System.Windows.Forms.Label lb_level_prog;
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Panel pl_botao;
         private System.Windows.Forms.Button bt_cancelar;
