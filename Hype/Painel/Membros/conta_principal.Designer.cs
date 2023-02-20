@@ -29,9 +29,9 @@ namespace Hype.Painel
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pl_conta_principal = new System.Windows.Forms.Panel();
             this.pl_botao = new System.Windows.Forms.Panel();
             this.bt_cancelar = new System.Windows.Forms.Button();
@@ -71,18 +71,18 @@ namespace Hype.Painel
             this.lb_data_entrada = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.bt_ok_rema = new System.Windows.Forms.Button();
+            this.lb_esta_cla = new System.Windows.Forms.Label();
             this.txt_remanejamento = new Hype.Painel.RJTextBox();
             this.txt_esta_cla_rema = new Hype.Painel.RJTextBox();
             this.txt_vem_cla_rema = new Hype.Painel.RJTextBox();
             this.txt_novo_level = new Hype.Painel.RJTextBox();
             this.txt_novo_poder = new Hype.Painel.RJTextBox();
+            this.txt_esta_cla = new Hype.Painel.RJTextBox();
             this.txt_patente = new Hype.script.RJComboBox();
             this.txt_classe = new Hype.script.RJComboBox();
             this.txt_level = new Hype.Painel.RJTextBox();
             this.txt_poder = new Hype.Painel.RJTextBox();
             this.txt_nick = new Hype.Painel.RJTextBox();
-            this.txt_esta_cla = new Hype.Painel.RJTextBox();
-            this.lb_esta_cla = new System.Windows.Forms.Label();
             this.pl_conta_principal.SuspendLayout();
             this.pl_botao.SuspendLayout();
             this.pl_remanejamento.SuspendLayout();
@@ -329,32 +329,32 @@ namespace Hype.Painel
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 50;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.dataGridView1.Location = new System.Drawing.Point(221, 117);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -655,6 +655,18 @@ namespace Hype.Painel
             this.bt_ok_rema.UseVisualStyleBackColor = false;
             this.bt_ok_rema.Click += new System.EventHandler(this.bt_ok_rema_Click);
             // 
+            // lb_esta_cla
+            // 
+            this.lb_esta_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_esta_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_esta_cla.ForeColor = System.Drawing.Color.White;
+            this.lb_esta_cla.Location = new System.Drawing.Point(828, 50);
+            this.lb_esta_cla.Name = "lb_esta_cla";
+            this.lb_esta_cla.Size = new System.Drawing.Size(191, 17);
+            this.lb_esta_cla.TabIndex = 174;
+            this.lb_esta_cla.Text = "Clã";
+            this.lb_esta_cla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // txt_remanejamento
             // 
             this.txt_remanejamento.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -774,6 +786,29 @@ namespace Hype.Painel
             this.txt_novo_poder.Texts = "";
             this.txt_novo_poder.UnderlinedStyle = false;
             this.txt_novo_poder.Leave += new System.EventHandler(this.txt_novo_poder_Leave);
+            // 
+            // txt_esta_cla
+            // 
+            this.txt_esta_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_esta_cla.BackColor = System.Drawing.Color.White;
+            this.txt_esta_cla.BorderColor = System.Drawing.Color.White;
+            this.txt_esta_cla.BorderFocusColor = System.Drawing.Color.White;
+            this.txt_esta_cla.BorderRadius = 0;
+            this.txt_esta_cla.BorderSize = 1;
+            this.txt_esta_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_esta_cla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_esta_cla.Location = new System.Drawing.Point(829, 71);
+            this.txt_esta_cla.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_esta_cla.Multiline = false;
+            this.txt_esta_cla.Name = "txt_esta_cla";
+            this.txt_esta_cla.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_esta_cla.PasswordChar = false;
+            this.txt_esta_cla.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_esta_cla.PlaceholderText = "";
+            this.txt_esta_cla.Size = new System.Drawing.Size(190, 31);
+            this.txt_esta_cla.TabIndex = 173;
+            this.txt_esta_cla.Texts = "";
+            this.txt_esta_cla.UnderlinedStyle = false;
             // 
             // txt_patente
             // 
@@ -899,41 +934,6 @@ namespace Hype.Painel
             this.txt_nick.Texts = "";
             this.txt_nick.UnderlinedStyle = false;
             this.txt_nick.Leave += new System.EventHandler(this.txt_nick_Leave);
-            // 
-            // txt_esta_cla
-            // 
-            this.txt_esta_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_esta_cla.BackColor = System.Drawing.Color.White;
-            this.txt_esta_cla.BorderColor = System.Drawing.Color.White;
-            this.txt_esta_cla.BorderFocusColor = System.Drawing.Color.White;
-            this.txt_esta_cla.BorderRadius = 0;
-            this.txt_esta_cla.BorderSize = 1;
-            this.txt_esta_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_esta_cla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_esta_cla.Location = new System.Drawing.Point(829, 71);
-            this.txt_esta_cla.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_esta_cla.Multiline = false;
-            this.txt_esta_cla.Name = "txt_esta_cla";
-            this.txt_esta_cla.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_esta_cla.PasswordChar = false;
-            this.txt_esta_cla.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_esta_cla.PlaceholderText = "";
-            this.txt_esta_cla.Size = new System.Drawing.Size(190, 31);
-            this.txt_esta_cla.TabIndex = 173;
-            this.txt_esta_cla.Texts = "";
-            this.txt_esta_cla.UnderlinedStyle = false;
-            // 
-            // lb_esta_cla
-            // 
-            this.lb_esta_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_esta_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_esta_cla.ForeColor = System.Drawing.Color.White;
-            this.lb_esta_cla.Location = new System.Drawing.Point(828, 50);
-            this.lb_esta_cla.Name = "lb_esta_cla";
-            this.lb_esta_cla.Size = new System.Drawing.Size(191, 17);
-            this.lb_esta_cla.TabIndex = 174;
-            this.lb_esta_cla.Text = "Clã";
-            this.lb_esta_cla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // conta_principal
             // 

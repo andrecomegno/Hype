@@ -45,7 +45,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select ID_ALT, DATA_ENTRADA, NICK_PRINCIPAL, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT from hypedb.cadastro_alt where NICK_PRINCIPAL like @nick_alt '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select ID_ALT, DATA_ALT, NICK_PRINCIPAL, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT from hypedb.cadastro_alt where NICK_PRINCIPAL like @nick_alt '%' ", database.getConnection());
 
             cmd.Parameters.AddWithValue("@nick_alt", txt_nick.Texts);
 
@@ -58,6 +58,23 @@ namespace Hype.Painel
             }
             
             database.closeConnection();
+
+            if (dataGridView1.Rows.Count == 0)
+            {
+                txt_sem_dados.Visible = true;
+                txt_clique_aqui.Visible = true;
+                lb_conta_alt.Visible = false;
+
+                dataGridView1.Visible = false;
+            }
+            else
+            {
+                txt_sem_dados.Visible = false;
+                txt_clique_aqui.Visible = false;
+
+                lb_conta_alt.Visible = true;
+                dataGridView1.Visible = true;
+            }
 
             Tabela();
         }
@@ -85,7 +102,7 @@ namespace Hype.Painel
 
             dataGridView1.Columns.Insert(0, selecionar);            
 
-            dataGridView1.Columns["DATA_ENTRADA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns["DATA_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["LEVEL_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["CLASSE_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
