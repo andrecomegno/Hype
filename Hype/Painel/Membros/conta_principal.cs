@@ -340,6 +340,8 @@ namespace Hype.Painel
                     finally
                     {
                         AtualizarTabela();
+                        BtCancelarProg();
+                        BtCancelarRema();
                     }
                 }
             }
@@ -363,6 +365,8 @@ namespace Hype.Painel
 
                     objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
                     objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+                    //objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts; // NOVO PODER
+                    //objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_novo_level.Texts; // NOVO LEVEL
                     objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
                     objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
 
@@ -413,12 +417,12 @@ namespace Hype.Painel
                 {
                     #region MEMBROS
                     // UPDATE MEMBROS
-                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, poder=@poder, level=@level, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
+                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
 
                     objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
                     objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                    objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts; // NOVO PODER
-                    objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_novo_level.Texts; // NOVO LEVEL
+                    //objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts; // NOVO PODER
+                    //objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_novo_level.Texts; // NOVO LEVEL
                     objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
                     objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
 
@@ -451,6 +455,35 @@ namespace Hype.Painel
                 #region MEMBRO E PROGRESSÃO E REMANEJAMENTO
                 if (_membro && _remanejamento && _progressao)
                 {
+                    #region MEMBROS
+                    // UPDATE MEMBROS
+                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, poder=@poder, level=@level, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
+
+                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
+                    objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+                    objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts; // NOVO PODER
+                    objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_novo_level.Texts; // NOVO LEVEL
+                    objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
+                    objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
+
+                    objCmdCadastroMembros.ExecuteNonQuery();
+                    #endregion
+
+                    #region PROGRESSÂO
+                    // INTO PROGRESSÃO
+                    MySqlCommand objCmdProgre = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, antigo_level, antigo_poder, novo_level, novo_poder, id_membros) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+                    objCmdProgre.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
+                    objCmdProgre.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
+                    objCmdProgre.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+                    objCmdProgre.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = txt_novo_level.Texts;
+                    objCmdProgre.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts;
+                    objCmdProgre.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
+
+                    objCmdProgre.ExecuteNonQuery();
+                    #endregion
+
+                    #region REMANEJAMENTO
                     // REMANEJAMENTO INTO
                     MySqlCommand objCmdRemanejamento = new MySqlCommand("insert into hypedb.remanejamento (id_remanejamento, data_remanejamento, id_recrutamento) values (null, ?, ?)", database.getConnection());
 
@@ -466,8 +499,7 @@ namespace Hype.Painel
                     objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_remanejamento.Texts;
 
                     objCmdRecrutamento.ExecuteNonQuery();
-
-
+                    #endregion
 
                     DialogResult dr = MessageBox.Show("Salvo Sucesso !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -686,8 +718,8 @@ namespace Hype.Painel
 
                 while (dr.Read())
                 {
-                    txt_level.Texts = dr["NOVO_LEVEL"].ToString();
-                    txt_poder.Texts = dr["NOVO_PODER"].ToString();
+                    txt_level.Texts = dr["LEVEL"].ToString();
+                    txt_poder.Texts = dr["PODER"].ToString();
                     txt_esta_cla.Texts = dr["FOI_PARA_CLA"].ToString();
                 }
 
