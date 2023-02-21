@@ -15,7 +15,7 @@ namespace Hype.Painel
 {
     public partial class conta_excluir : UserControl
     {
-        public string id_membro = "";
+        public string id_membro = membros.Instance.id_membro;
         public string id_progressao = "";
         public string id_recrutamento = "";
 
@@ -34,7 +34,9 @@ namespace Hype.Painel
             CampoDesabilitado(pl_conteudo_01.Controls);
 
             // PALAVRA CHAVE PARA BUSCAR ALT
-            txt_nick.Texts = membros.Instance.nick;
+            //txt_nick.Texts = membros.Instance.nick;
+
+            //id_membro = membros.Instance.id_membro;
 
             lb_data_saida.Text = DateTime.Now.ToShortDateString();
         }
@@ -45,9 +47,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select ID_ALT, DATA_ALT, NICK_PRINCIPAL, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT from hypedb.cadastro_alt where NICK_PRINCIPAL like @nick_alt '%' ", database.getConnection());
-
-            cmd.Parameters.AddWithValue("@nick_alt", txt_nick.Texts);
+            MySqlCommand cmd = new MySqlCommand("select ID_ALT, DATA_ALT, NICK_PRINCIPAL, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT from hypedb.cadastro_alt where NICK_PRINCIPAL = '"+ txt_nick.Texts + "' ", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -162,15 +162,24 @@ namespace Hype.Painel
 
         public void DadosMembros()
         {
-            // CADASTRO              
-            id_membro = membros.Instance.id_membro;
-            txt_level.Texts = membros.Instance.level;
-            txt_poder.Texts = membros.Instance.poder;
-            txt_patente.Texts = membros.Instance.patente;
-            txt_classe.Texts = membros.Instance.classe;
-            txt_cla.Texts = membros.Instance.foi_para_cla;
-            id_progressao = membros.Instance.id_progressao;
-            id_recrutamento = membros.Instance.id_recrutamento;
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, alt.ID_ALT, alt.DATA_ALT, alt.NICK_PRINCIPAL, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO where id_membros = '" + id_membro + "' ", database.getConnection());
+
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                txt_nick.Texts = dr["NICK"].ToString();
+                txt_level.Texts = dr["LEVEL"].ToString();
+                txt_poder.Texts = dr["PODER"].ToString();
+                txt_classe.Texts = dr["CLASSE"].ToString();
+                txt_patente.Texts = dr["PATENTE"].ToString();
+                txt_esta_cla.Texts = dr["FOI_PARA_CLA"].ToString();
+            }
+
+            database.closeConnection();
         }
         #endregion
 
@@ -292,8 +301,9 @@ namespace Hype.Painel
 
         private void conta_excluir_Load(object sender, EventArgs e)
         {
-            TabelaMembrosAlt();
+
             DadosMembros();
+            TabelaMembrosAlt();            
 
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;            

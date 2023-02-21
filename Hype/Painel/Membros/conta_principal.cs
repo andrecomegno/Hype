@@ -16,10 +16,10 @@ namespace Hype.Painel
     public partial class conta_principal : UserControl
     {
         // ID TABELA
-        string id_membro = string.Empty;
-        string id_alt = string.Empty;
-        string id_recrutamento = string.Empty;
-        string id_progressao = string.Empty;
+        string id_membro = membros.Instance.id_membro;
+        string id_alt = membros.Instance.id_alt;
+        string id_recrutamento = membros.Instance.id_recrutamento;
+        string id_progressao = membros.Instance.id_progressao;
 
         // PAINEIS
         bool _membro = true;
@@ -29,9 +29,7 @@ namespace Hype.Painel
         public conta_principal()
         {
             InitializeComponent();
-            CamposDesativados();
-
-            txt_nick.Texts = membros.Instance.nick;
+            CamposDesativados();                       
         }
 
         #region BOTOES
@@ -288,7 +286,7 @@ namespace Hype.Painel
                     }
                     finally
                     {
-                        AtualizarTabela();
+                        //AtualizarTabela();
                         BtCancelarRema();
                     }
                 }
@@ -356,10 +354,11 @@ namespace Hype.Painel
                 configdb database = new configdb();
                 database.openConnection();
 
-                #region MEMBRO
+                #region MEMBROS
                 if (_membro && !_progressao && !_remanejamento)
                 {
-                    // CADASTRO DE MEMBROS
+                    #region MEMBROS
+                    // UPDATE MEMBROS
                     MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
 
                     objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
@@ -369,175 +368,83 @@ namespace Hype.Painel
 
                     objCmdCadastroMembros.ExecuteNonQuery();
 
-                    // CADASTRO ALT UPDATE 
+                    // UPDATE ALT
                     MySqlCommand objCmdAlt = new MySqlCommand("update hypedb.cadastro_alt set nick_principal=@nick_principal where (id_alt=@id_alt)", database.getConnection());
 
                     objCmdAlt.Parameters.AddWithValue("@id_alt", id_alt);
                     objCmdAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
 
                     objCmdAlt.ExecuteNonQuery();
+                    #endregion
 
-                    // PROGRESSÂO UPDATE
-                    MySqlCommand objCmdProgressao = new MySqlCommand("update hypedb.progressao set nick_progressao=@nick_progressao where (id_progressao=@id_progressao)", database.getConnection());
-                    objCmdProgressao.Parameters.AddWithValue("@id_progressao", id_progressao);
-                    objCmdProgressao.Parameters.Add("@nick_progressao", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-
-                    objCmdProgressao.ExecuteNonQuery();
-
-                    DialogResult dr = MessageBox.Show("Salvo Sucesso !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+                    DialogResult dr = MessageBox.Show("Membro Atualizado Com Sucesso !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 #endregion
 
                 #region MEMBRO E PROGRESSÃO
                 if (_membro && _progressao && !_remanejamento)
                 {
-                    // CADASTRO DE MEMBROS
-                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, poder=@poder, level=@level, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
+                    #region MEMBROS
+                    // UPDATE MEMBROS
+                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
 
                     objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
                     objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                    objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts;
-                    objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_novo_level.Texts;
                     objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
                     objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
 
                     objCmdCadastroMembros.ExecuteNonQuery();
 
-                    // UPDATE CADASTRO ALT
+                    // UPDATE ALT
                     MySqlCommand objCmdAlt = new MySqlCommand("update hypedb.cadastro_alt set nick_principal=@nick_principal where (id_alt=@id_alt)", database.getConnection());
 
                     objCmdAlt.Parameters.AddWithValue("@id_alt", id_alt);
                     objCmdAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
 
-                    objCmdAlt.ExecuteNonQuery();                    
+                    objCmdAlt.ExecuteNonQuery();
+                    #endregion
 
-                    // PROGRESSÂO INTO
-                    MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, nick_progressao, antigo_level, antigo_poder, novo_level, novo_poder) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
+                    #region PROGRESSÂO
+                    // INTO PROGRESSÃO
+                    MySqlCommand objCmdProgre = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, antigo_level, antigo_poder, novo_level, novo_poder, id_membros) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-                    objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
-                    objCmdProgressao.Parameters.Add("@nick_progressao", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                    objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
-                    objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-                    objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = txt_novo_level.Texts;
-                    objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts;                    
+                    objCmdProgre.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
+                    objCmdProgre.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
+                    objCmdProgre.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+                    objCmdProgre.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = txt_novo_level.Texts;
+                    objCmdProgre.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts;
+                    objCmdProgre.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
 
-                    objCmdProgressao.ExecuteNonQuery();
+                    objCmdProgre.ExecuteNonQuery();
+                    #endregion
 
-                    // PROGRESSÂO UPDATE
-                    MySqlCommand objCmdProgressao2 = new MySqlCommand("update hypedb.progressao set nick_progressao=@nick_progressao where (id_progressao=@id_progressao)", database.getConnection());
-                    objCmdProgressao2.Parameters.AddWithValue("@id_progressao", id_progressao);
-                    objCmdProgressao2.Parameters.Add("@nick_progressao", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-
-                    objCmdProgressao2.ExecuteNonQuery();
-
-                    DialogResult dr = MessageBox.Show("Progressão adicionada com Sucesso !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult dr = MessageBox.Show("Progressão Adicionada Com Sucesso !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 #endregion
 
                 #region MEMBRO E REMANEJAMENTO
                 if (_membro && _remanejamento && !_progressao)
                 {
-                    // CADASTRO DE MEMBROS
-                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
-
-                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
-                    objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                    objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
-                    objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
-
-                    objCmdCadastroMembros.ExecuteNonQuery();
-
-                    // UPDATE CADASTRO ALT
-                    MySqlCommand objCmdAlt = new MySqlCommand("update hypedb.cadastro_alt set nick_principal=@nick_principal where (id_alt=@id_alt)", database.getConnection());
-
-                    objCmdAlt.Parameters.AddWithValue("@id_alt", id_alt);
-                    objCmdAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-
-                    objCmdAlt.ExecuteNonQuery();
-
-                    // PROGRESSÂO UPDATE
-                    MySqlCommand objCmdProgressao2 = new MySqlCommand("update hypedb.progressao set nick_progressao=@nick_progressao where (id_progressao=@id_progressao)", database.getConnection());
-                    objCmdProgressao2.Parameters.AddWithValue("@id_progressao", id_progressao);
-                    objCmdProgressao2.Parameters.Add("@nick_progressao", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-
-                    objCmdProgressao2.ExecuteNonQuery();
-
-                    // RECRUTAMENTO UPDATE
-                    MySqlCommand objCmdRecrutamento = new MySqlCommand("update hypedb.recrutamento set foi_para_cla=@foi_para_cla where (id_recrutamento=@id_recrutamento)", database.getConnection());
-
-                    objCmdRecrutamento.Parameters.AddWithValue("@id_recrutamento", id_recrutamento);
-                    objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_remanejamento.Texts;
-
-                    objCmdRecrutamento.ExecuteNonQuery();
-
                     // REMANEJAMENTO INTO
                     MySqlCommand objCmdRemanejamento = new MySqlCommand("insert into hypedb.remanejamento (id_remanejamento, data_remanejamento, id_recrutamento) values (null, ?, ?)", database.getConnection());
 
                     objCmdRemanejamento.Parameters.Add("@data_remanejamento", MySqlDbType.Date).Value = DateTime.Now;
-                    objCmdRemanejamento.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = id_recrutamento;
+                    objCmdRemanejamento.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = id_recrutamento;                    
 
                     objCmdRemanejamento.ExecuteNonQuery();
+
+                    MessageBox.Show(id_recrutamento);
 
                     DialogResult dr = MessageBox.Show("Remanejado com Sucesso !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
+
                 #endregion
                 
                 #region MEMBRO E PROGRESSÃO E REMANEJAMENTO
                 if (_membro && _remanejamento && _progressao)
                 {
-                    // CADASTRO DE MEMBROS
-                    MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
 
-                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
-                    objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                    objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
-                    objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
-
-                    objCmdCadastroMembros.ExecuteNonQuery();
-
-                    // UPDATE CADASTRO ALT
-                    MySqlCommand objCmdAlt = new MySqlCommand("update hypedb.cadastro_alt set nick_principal=@nick_principal where (id_alt=@id_alt)", database.getConnection());
-
-                    objCmdAlt.Parameters.AddWithValue("@id_alt", id_alt);
-                    objCmdAlt.Parameters.Add("@nick_principal", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-
-                    objCmdAlt.ExecuteNonQuery();
-
-                    // PROGRESSÂO UPDATE
-                    MySqlCommand objCmdProgressao2 = new MySqlCommand("update hypedb.progressao set nick_progressao=@nick_progressao where (id_progressao=@id_progressao)", database.getConnection());
-                    objCmdProgressao2.Parameters.AddWithValue("@id_progressao", id_progressao);
-                    objCmdProgressao2.Parameters.Add("@nick_progressao", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-
-                    objCmdProgressao2.ExecuteNonQuery();
-
-                    // RECRUTAMENTO UPDATE
-                    MySqlCommand objCmdRecrutamento = new MySqlCommand("update hypedb.recrutamento set foi_para_cla=@foi_para_cla where (id_recrutamento=@id_recrutamento)", database.getConnection());
-
-                    objCmdRecrutamento.Parameters.AddWithValue("@id_recrutamento", id_recrutamento);
-                    objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_remanejamento.Texts;
-
-                    objCmdRecrutamento.ExecuteNonQuery();
-
-                    // REMANEJAMENTO INTO
-                    MySqlCommand objCmdRemanejamento = new MySqlCommand("insert into hypedb.remanejamento (id_remanejamento, data_remanejamento, id_recrutamento) values (null, ?, ?)", database.getConnection());
-
-                    objCmdRemanejamento.Parameters.Add("@data_remanejamento", MySqlDbType.Date).Value = DateTime.Now;
-                    objCmdRemanejamento.Parameters.Add("@id_recrutamento", MySqlDbType.Int32).Value = id_recrutamento;
-
-                    objCmdRemanejamento.ExecuteNonQuery();
-
-                    // PROGRESSÂO INTO
-                    MySqlCommand objCmdProgressao = new MySqlCommand("insert into hypedb.progressao (id_progressao, data_progressao, antigo_level, antigo_poder, novo_level, novo_poder) values (null, ?, ?, ?, ?, ?)", database.getConnection());
-
-                    objCmdProgressao.Parameters.Add("@data_progressao", MySqlDbType.Date).Value = DateTime.Now;
-                    objCmdProgressao.Parameters.Add("@atual_level", MySqlDbType.Int32).Value = txt_level.Texts;
-                    objCmdProgressao.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-                    objCmdProgressao.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = txt_novo_level.Texts;
-                    objCmdProgressao.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts;                    
-
-                    objCmdProgressao.ExecuteNonQuery();
 
                     DialogResult dr = MessageBox.Show("Salvo Sucesso !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -652,8 +559,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select ID_PROGRESSAO, DATA_PROGRESSAO, NICK_PROGRESSAO, ANTIGO_LEVEL, ANTIGO_PODER, NOVO_LEVEL, NOVO_PODER from hypedb.progressao where NICK_PROGRESSAO like @nick '%' ", database.getConnection());
-            cmd.Parameters.AddWithValue("@nick", txt_nick.Texts);
+            MySqlCommand cmd = new MySqlCommand("select ID_PROGRESSAO, DATA_PROGRESSAO, ANTIGO_LEVEL, ANTIGO_PODER, NOVO_LEVEL, NOVO_PODER, ID_MEMBROS from hypedb.progressao where ID_MEMBROS = '" + id_membro +"' ", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -670,13 +576,13 @@ namespace Hype.Painel
 
         private void Tabela()
         {
-            dataGridView1.Columns[0].Visible = false; // ID_PROGRESSAO
+            dataGridView1.Columns[0].Visible = false; // ID_PROGRESSãO
             dataGridView1.Columns[1].HeaderText = "DATA";
-            dataGridView1.Columns[2].Visible = false; // NICK_PROGRESSAO
-            dataGridView1.Columns[3].HeaderText = "LEVEL";
-            dataGridView1.Columns[4].HeaderText = "PODER";
-            dataGridView1.Columns[5].HeaderText = "NOVO LEVEL";
-            dataGridView1.Columns[6].HeaderText = "NOVO PODER";
+            dataGridView1.Columns[2].HeaderText = "LEVEL";
+            dataGridView1.Columns[3].HeaderText = "PODER";
+            dataGridView1.Columns[4].HeaderText = "NOVO LEVEL";
+            dataGridView1.Columns[5].HeaderText = "NOVO PODER";
+            dataGridView1.Columns[6].Visible = false; // ID_MEMBROS
 
             dataGridView1.Columns["DATA_PROGRESSAO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["ANTIGO_LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -752,11 +658,34 @@ namespace Hype.Painel
                 database.openConnection();
 
                 #region MEMBRO E PROGRESÃO
-                if (_membro && _progressao)
+                if (_membro && _progressao && !_remanejamento)
                 {
                     // PROGRESSÃO TAB
-                    MySqlCommand objCmd = new MySqlCommand("select ID_PROGRESSAO, DATA_PROGRESSAO, NICK_PROGRESSAO, ANTIGO_LEVEL, ANTIGO_PODER, NOVO_LEVEL, NOVO_PODER from hypedb.progressao where NICK_PROGRESSAO like @nick '%' ", database.getConnection());
-                    objCmd.Parameters.AddWithValue("@nick", txt_nick.Texts);
+                    MySqlCommand objCmd = new MySqlCommand("select ID_PROGRESSAO, DATA_PROGRESSAO, ANTIGO_LEVEL, ANTIGO_PODER, NOVO_LEVEL, NOVO_PODER, ID_MEMBROS from hypedb.progressao where ID_MEMBROS = '" + id_membro + "' ", database.getConnection());
+
+                    using (MySqlDataAdapter da = new MySqlDataAdapter(objCmd))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        dataGridView1.DataSource = dt;
+                    }                    
+
+                    objCmd.ExecuteNonQuery();
+
+                    // ATUALIZA O TEXTBOX DA CONTA PRINCIPAL
+                    DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.Rows.Count - 1].DataBoundItem;
+
+                    txt_level.Texts = dr["NOVO_LEVEL"].ToString();
+                    txt_poder.Texts = dr["NOVO_PODER"].ToString();
+                }
+                #endregion
+
+                #region MEMBRO E REMANEJAMENTO
+                if (_membro && _remanejamento && !_progressao)
+                {
+                    // PROGRESSÃO TAB
+                    MySqlCommand objCmd = new MySqlCommand("select ID_PROGRESSAO, DATA_PROGRESSAO, ANTIGO_LEVEL, ANTIGO_PODER, NOVO_LEVEL, NOVO_PODER, ID_MEMBROS from hypedb.progressao where ID_MEMBROS = '" + id_membro + "' ", database.getConnection());
 
                     using (MySqlDataAdapter da = new MySqlDataAdapter(objCmd))
                     {
@@ -773,12 +702,7 @@ namespace Hype.Painel
 
                     txt_level.Texts = dr["NOVO_LEVEL"].ToString();
                     txt_poder.Texts = dr["NOVO_PODER"].ToString();
-                }
-                #endregion
 
-                #region MEMBRO E REMANEJAMENTO
-                if (_membro && _remanejamento)
-                {
                     // REMANEJAMENTO
                     txt_esta_cla.Texts = txt_remanejamento.Texts;
                 }
@@ -788,8 +712,7 @@ namespace Hype.Painel
                 if (_membro && _progressao && _remanejamento)
                 {
                     // PROGRESSÃO TAB
-                    MySqlCommand objCmd = new MySqlCommand("select ID_PROGRESSAO, DATA_PROGRESSAO, NICK_PROGRESSAO, ANTIGO_LEVEL, ANTIGO_PODER, NOVO_LEVEL, NOVO_PODER from hypedb.progressao where NICK_PROGRESSAO like @nick '%' ", database.getConnection());
-                    objCmd.Parameters.AddWithValue("@nick", txt_nick.Texts);
+                    MySqlCommand objCmd = new MySqlCommand("select ID_PROGRESSAO, DATA_PROGRESSAO, ANTIGO_LEVEL, ANTIGO_PODER, NOVO_LEVEL, NOVO_PODER, ID_MEMBROS from hypedb.progressao where ID_MEMBROS = '" + id_membro + "' ", database.getConnection());
 
                     using (MySqlDataAdapter da = new MySqlDataAdapter(objCmd))
                     {
@@ -823,32 +746,33 @@ namespace Hype.Painel
 
         public void DadosMembros()
         {
-            // CADASTRO
-            id_membro = membros.Instance.id_membro;
-            lb_data_entrada.Text = membros.Instance.data_entrada;
-            //txt_nick.Texts = membros.Instance.nick;
-            txt_level.Texts = membros.Instance.level;
-            txt_poder.Texts = membros.Instance.poder;
-            txt_patente.Texts = membros.Instance.patente;
-            txt_classe.Texts = membros.Instance.classe;
+            configdb database = new configdb();
+            database.openConnection();
 
-            // ALT
-            id_alt = membros.Instance.id_alt;
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, alt.ID_ALT, alt.DATA_ALT, alt.NICK_PRINCIPAL, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO where c.id_membros = '" + id_membro + "' ", database.getConnection());
 
-            // PROGRESSÃO
-            id_progressao = membros.Instance.id_progressao;
+            MySqlDataReader dr = cmd.ExecuteReader();
 
-            //REMANEJAMENTO
-            id_recrutamento = membros.Instance.id_recrutamento;
-            //txt_vem_cla.Texts = membros.Instance.vem_do_cla;
-            txt_esta_cla.Texts = membros.Instance.foi_para_cla;            
+            while (dr.Read())
+            {
+                txt_nick.Texts = dr["NICK"].ToString();
+                txt_level.Texts = dr["LEVEL"].ToString();
+                txt_poder.Texts = dr["PODER"].ToString();
+                txt_classe.Texts = dr["CLASSE"].ToString();
+                txt_patente.Texts = dr["PATENTE"].ToString();
+                txt_esta_cla.Texts = dr["FOI_PARA_CLA"].ToString();
+            }
+
+            database.closeConnection();
         }
+
         #endregion
 
         private void conta_principal_Load(object sender, EventArgs e)
         {
-            TabelaProgressao();
             DadosMembros();
+            TabelaProgressao();
+
 
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;

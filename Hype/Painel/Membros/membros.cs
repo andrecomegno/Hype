@@ -16,19 +16,19 @@ namespace Hype.Painel
     {
         public static membros Instance;
 
-        public string data_entrada = "";
-        public string nick = "";
-        public string level = "";
-        public string poder = "";
-        public string classe = "";
-        public string patente = "";
-        public string vem_do_cla = "";
-        public string foi_para_cla = "";
+        public string data_entrada = string.Empty;
+        public string nick = string.Empty;
+        public string level = string.Empty;
+        public string poder = string.Empty;
+        public string classe = string.Empty;
+        public string patente = string.Empty;
+        public string vem_do_cla = string.Empty;
+        public string foi_para_cla = string.Empty;
 
-        public string id_membro = "";
-        public string id_alt = "";
-        public string id_progressao = "";
-        public string id_recrutamento = "";
+        public string id_membro = string.Empty;
+        public string id_alt = string.Empty;
+        public string id_progressao = string.Empty;
+        public string id_recrutamento = string.Empty;
 
         public membros()
         {
@@ -54,7 +54,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, alt.ID_ALT, alt.DATA_ALT, alt.NICK_PRINCIPAL, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS ", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -156,7 +156,7 @@ namespace Hype.Painel
                     patente = dr["PATENTE"].ToString();
                     classe = dr["CLASSE"].ToString();
                     vem_do_cla = dr["VEM_DO_CLA"].ToString();
-                    foi_para_cla = dr["FOI_PARA_CLA"].ToString();
+                    foi_para_cla = dr["FOI_PARA_CLA"].ToString();                    
                 }
             }
             catch (Exception erro)
