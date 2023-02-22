@@ -17,15 +17,8 @@ namespace Hype.Painel
     {
         string id_membro = membros.Instance.id_membro;
         string id_recrutamento = membros.Instance.id_recrutamento;
-        string id_progressao = membros.Instance.id_progressao;
 
-        private List<CheckBox> list = new List<CheckBox>();
-
-        bool _membros = true;
-        bool _alt = false;
-
-        public string id_alt = "";
-        public string nick_alt = "";
+        public string[] nick_alt;
 
         public conta_excluir()
         {
@@ -53,6 +46,7 @@ namespace Hype.Painel
             
             database.closeConnection();
 
+            // VERIFICA SE A TABELA NÀO TEM NENHUM REGISTRO
             if (dataGridView1.Rows.Count == 0)
             {
                 txt_sem_dados.Visible = true;
@@ -88,7 +82,7 @@ namespace Hype.Painel
             dataGridView1.Columns[4].ReadOnly = true;
             dataGridView1.Columns[5].ReadOnly = true;
 
-            // ADICIONA A CAIXA DE SELECAO NA TABELA 
+            // ADICIONA A CAIXA DE SELEÇÃO NA TABELA 
             DataGridViewCheckBoxColumn selecionar = new DataGridViewCheckBoxColumn();
             selecionar.Name = "SELECIONAR";
             selecionar.DataPropertyName = "SELECIONAR";
@@ -119,55 +113,8 @@ namespace Hype.Painel
         {
             if (e.ColumnIndex == dataGridView1.Columns["SELECIONAR"].Index)
             {
-                //INTERROMPE A EDICAO NO dataGridView1
+                //INTERROMPE A EDIÇÃO NO dataGridView1
                 dataGridView1.EndEdit();
-
-
-                foreach (DataGridViewRow row in this.dataGridView1.Rows)
-                {
-
-                    DataRow dr = ((DataRowView)row.DataBoundItem).Row;
-
-                    id_alt = dr["ID_ALT"].ToString();
-
-                    MessageBox.Show(id_alt);
-
-                }
-
-                // EXIBE OS VALORES DA CELULA VERDADEIRO OU FASO
-                //MostrarDadosTabela();
-                _alt = true;
-
-                //MessageBox.Show("" + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-            }
-        }
-
-        // SELECIONA O ID DA ALT NO CHECKBOX
-        private void MostrarDadosTabela()
-        {
-            try
-            {
-                /*
-                if (dataGridView1.SelectedRows.Count > 0)
-                {
-                    DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
-
-                    id_alt = dr["ID_ALT"].ToString();
-                    //nick_alt += dr["NICK_ALT"].ToString();
-                }
-                */
-
-                foreach(DataGridViewRow row in this.dataGridView1.Rows)
-                {
-
-
-
-                }
-
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
             }
         }
 
@@ -242,62 +189,50 @@ namespace Hype.Painel
 
             try
             {
-                if(_membros && !_alt)
+                // EXCLUIR CONTA PRINCIPAL
+                MySqlCommand objCmdRecrutamento = new MySqlCommand("delete from hypedb.recrutamento where (id_recrutamento=@id_recrutamento) ", database.getConnection());
+                objCmdRecrutamento.Parameters.AddWithValue("@id_recrutamento", id_recrutamento);
+
+                objCmdRecrutamento.ExecuteNonQuery();
+
+                // VERIFICA SE O CHECKBOX ESTA SELECIONADO COMO VERDADEIRO, NA CELL 0 
+                if (bool.Parse(dataGridView1.CurrentRow.Cells[0].FormattedValue.ToString()) == true)
                 {
-                    // EXCLUIR CONTA PRINCIPAL
-                    MySqlCommand objCmdRecrutamento = new MySqlCommand("delete from hypedb.recrutamento where (id_recrutamento=@id_recrutamento) ", database.getConnection());
-                    objCmdRecrutamento.Parameters.AddWithValue("@id_recrutamento", id_recrutamento);
+                    foreach (DataGridViewRow check in dataGridView1.Rows)
+                    {
+                        // PEGA TODOS OS VALORES SELECIONADOS NA CELLLS 0 QUE REPRESENTA O CHECKBOX
+                        if (bool.Parse(check.Cells[0].EditedFormattedValue.ToString()))
+                        {
+                            // EXCLUIR ALT
+                            MySqlCommand objCmdCadastroAlt = new MySqlCommand("delete from hypedb.cadastro_alt where id_alt=@id_alt", database.getConnection());
+                            objCmdCadastroAlt.Parameters.AddWithValue("@id_alt", check.Cells[1].Value.ToString()); // VARRIALVEL COM TODOS OS ID`S SELECIONADOS
 
-                    objCmdRecrutamento.ExecuteNonQuery();
+                            objCmdCadastroAlt.ExecuteNonQuery();
 
-                    // SAIDA DO CLA
-                    MySqlCommand objCmdSaidaCla = new MySqlCommand("insert into hypedb.saida_do_cla (id_saida_do_cla, data_saida, nick, level, poder, classe, patente, anotacao, nick_alt) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
-                    objCmdSaidaCla.Parameters.Add("@data_saida", MySqlDbType.Date).Value = DateTime.Now;
-                    objCmdSaidaCla.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                    objCmdSaidaCla.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
-                    objCmdSaidaCla.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-                    objCmdSaidaCla.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
-                    objCmdSaidaCla.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
-                    objCmdSaidaCla.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = txt_motivo.Text;
-                    objCmdSaidaCla.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = nick_alt;
+                            check.Cells[2].Value = nick_alt[0].ToString();
 
-                    objCmdSaidaCla.ExecuteNonQuery();
+                            // MessageBox.Show("" + check.Cells[1].Value);
+                        }
+                    }
                 }
 
-                if (_membros && _alt)
-                {
-                    // EXCLUIR CONTA PRINCIPAL
-                    MySqlCommand objCmdRecrutamento = new MySqlCommand("delete from hypedb.recrutamento where (id_recrutamento=@id_recrutamento) ", database.getConnection());
-                    objCmdRecrutamento.Parameters.AddWithValue("@id_recrutamento", id_recrutamento);
+                // SAIDA DO CLA
+                MySqlCommand objCmdSaidaCla = new MySqlCommand("insert into hypedb.saida_do_cla (id_saida_do_cla, data_saida, nick, level, poder, classe, patente, anotacao, nick_alt) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+                objCmdSaidaCla.Parameters.Add("@data_saida", MySqlDbType.Date).Value = DateTime.Now;
+                objCmdSaidaCla.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
+                objCmdSaidaCla.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
+                objCmdSaidaCla.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
+                objCmdSaidaCla.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
+                objCmdSaidaCla.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
+                objCmdSaidaCla.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = txt_motivo.Text;
+                objCmdSaidaCla.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = nick_alt[0];
 
-                    objCmdRecrutamento.ExecuteNonQuery();
-
-                    // SAIDA DO CLA
-                    MySqlCommand objCmdSaidaCla = new MySqlCommand("insert into hypedb.saida_do_cla (id_saida_do_cla, data_saida, nick, level, poder, classe, patente, anotacao, nick_alt) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
-                    objCmdSaidaCla.Parameters.Add("@data_saida", MySqlDbType.Date).Value = DateTime.Now;
-                    objCmdSaidaCla.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                    objCmdSaidaCla.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
-                    objCmdSaidaCla.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-                    objCmdSaidaCla.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
-                    objCmdSaidaCla.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
-                    objCmdSaidaCla.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = txt_motivo.Text;
-                    objCmdSaidaCla.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = nick_alt;
-
-                    objCmdSaidaCla.ExecuteNonQuery();
-
-                    // EXCLUIR ALT
-                    MySqlCommand objCmdCadastroAlt = new MySqlCommand("delete from hypedb.cadastro_alt where id_alt=@id_alt", database.getConnection());
-                    objCmdCadastroAlt.Parameters.AddWithValue("@id_alt", id_alt);
-
-                    objCmdCadastroAlt.ExecuteNonQuery();
-                }
-                 
-             }
+                objCmdSaidaCla.ExecuteNonQuery();
+            }
             catch (Exception erro)
             {
                 MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
-            }            
-
+            }
 
             database.closeConnection();
         }
