@@ -15,16 +15,16 @@ namespace Hype.Painel
 {
     public partial class conta_alt : UserControl
     {
-        string id_alt = "";
+        string id_alt = alts.Instance.id_alt;
+        string id_membro = alts.Instance.id_membro;
 
-        string nick_principal = "";
-        private string verificar = "";
+        bool _selecionar = false;
 
         public conta_alt()
         {
             InitializeComponent();
 
-            nick_principal = alts.Instance.nick_principal;
+            CampoTextoDesativado(pl_conta_principal.Controls);
         }
 
         #region TABELAS
@@ -33,19 +33,15 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand objCmdCadastroAlt = new MySqlCommand("select DATA_ENTRADA, ID_ALT, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT, NICK_PRINCIPAL from hypedb.cadastro_alt where NICK_PRINCIPAL like @NICK_PRINCIPAL '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select ID_ALT, DATA_ALT, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT, QUANTAS_ALT from hypedb.cadastro_alt where ID_MEMBROS = '" + id_membro + "' ", database.getConnection());
 
-            objCmdCadastroAlt.Parameters.AddWithValue("@NICK_PRINCIPAL", nick_principal);
-
-            using (MySqlDataAdapter da = new MySqlDataAdapter(objCmdCadastroAlt))
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
                 dataGridView1.DataSource = dt;
-            }            
-
-            objCmdCadastroAlt.ExecuteNonQuery();
+            }
 
             database.closeConnection();
 
@@ -55,19 +51,18 @@ namespace Hype.Painel
         private void Tabela()
         {
 
-            dataGridView1.Columns[0].Visible = false; // DATA_ENTRADA
+            dataGridView1.Columns[0].Visible = false; // DATA_ALT
             dataGridView1.Columns[1].Visible = false; // ID_ALT
             dataGridView1.Columns[2].HeaderText = "NICK";
             dataGridView1.Columns[3].HeaderText = "LEVEL";
             dataGridView1.Columns[4].HeaderText = "CLASSE";
             dataGridView1.Columns[5].HeaderText = "CLÃ";
-            dataGridView1.Columns[6].HeaderText = "CONTA PRINCIPAL";
+            dataGridView1.Columns[6].Visible = false; // ID_MEMBROS;
 
             dataGridView1.Columns[2].ReadOnly = true;
             dataGridView1.Columns[3].ReadOnly = true;
             dataGridView1.Columns[4].ReadOnly = true;
             dataGridView1.Columns[5].ReadOnly = true;
-            dataGridView1.Columns[6].ReadOnly = true;
 
             // ADICIONA A CAIXA DE SELECAO NA TABELA 
             DataGridViewCheckBoxColumn selecionar = new DataGridViewCheckBoxColumn();
@@ -90,8 +85,6 @@ namespace Hype.Painel
                     column.Width = 100;
                 else if (column.DataPropertyName == "CLA_ALT")
                     column.Width = 185;
-                else if (column.DataPropertyName == "NICK_PRINCIPAL")
-                    column.Width = 220;
                 else if (column.DataPropertyName == "SELECIONAR")
                     column.Width = 30;
             }
@@ -102,9 +95,9 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand objCmdCadastroAlt = new MySqlCommand("select DATA_ENTRADA, ID_ALT, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT, NICK_PRINCIPAL from hypedb.cadastro_alt where NICK_PRINCIPAL like @NICK_PRINCIPAL '%' ", database.getConnection());
+            MySqlCommand objCmdCadastroAlt = new MySqlCommand("select DATA_ALT, ID_ALT, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT from hypedb.cadastro_alt where ID_ALT like @ID_ALT '%' ", database.getConnection());
 
-            objCmdCadastroAlt.Parameters.AddWithValue("@NICK_PRINCIPAL", nick_principal);
+            //objCmdCadastroAlt.Parameters.AddWithValue("@NICK_PRINCIPAL", nick_principal);
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(objCmdCadastroAlt))
             {
@@ -126,15 +119,13 @@ namespace Hype.Painel
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
-                    // CONTA PRINCIPAL
-                    nick_principal = dr["NICK_PRINCIPAL"].ToString();
 
                     // ALT
                     id_alt = dr["ID_ALT"].ToString();
-                    txt_nick.Texts = dr["NICK_ALT"].ToString();
-                    txt_level.Texts = dr["LEVEL_ALT"].ToString();
-                    txt_classe.Texts = dr["CLASSE_ALT"].ToString();
-                    txt_cla.Texts = dr["CLA_ALT"].ToString();
+                    txt_nick_alt.Texts = dr["NICK_ALT"].ToString();
+                    txt_level_alt.Texts = dr["LEVEL_ALT"].ToString();
+                    txt_classe_alt.Texts = dr["CLASSE_ALT"].ToString();
+                    txt_cla_alt.Texts = dr["CLA_ALT"].ToString();
                 }
             }
             catch (Exception erro)
@@ -145,12 +136,24 @@ namespace Hype.Painel
 
         public void DadosMembros()
         {
-            // ALT SELECIONADA - ALT.CS
-            id_alt = alts.Instance.id_alt;
-            txt_nick.Texts = alts.Instance.nick_alt;
-            txt_level.Texts = alts.Instance.level_alt;
-            txt_classe.Texts = alts.Instance.classe_alt;
-            txt_cla.Texts = alts.Instance.cla_alt;
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS where c.id_membros = '" + id_membro + "' ", database.getConnection());
+
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                txt_nick.Texts = dr["NICK"].ToString();
+                txt_level.Texts = dr["LEVEL"].ToString();
+                txt_poder.Texts = dr["PODER"].ToString();
+                txt_classe.Texts = dr["CLASSE"].ToString();
+                txt_patente.Texts = dr["PATENTE"].ToString();
+                txt_esta_cla.Texts = dr["FOI_PARA_CLA"].ToString();
+            }
+
+            database.closeConnection();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -161,10 +164,9 @@ namespace Hype.Painel
                 dataGridView1.EndEdit();
 
                 // EXIBE OS VALORES DA CELULA VERDADEIRO OU FASO
-                verificar = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                _selecionar = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
 
-
-                if (verificar == "True")
+                if (_selecionar == true)
                 {
                     if (dataGridView1.SelectedRows.Count > 0)
                     {
@@ -247,11 +249,6 @@ namespace Hype.Painel
             }
         }
 
-        private void LimparCampos(Control.ControlCollection control)
-        {
-
-        }
-
         private void ExcluirConta()
         {
             configdb database = new configdb();
@@ -288,7 +285,7 @@ namespace Hype.Painel
                 }
                */
 
-                if (verificar == "True")
+                if (_selecionar == true)
                 {
                     if (dataGridView1.SelectedRows.Count > 0)
                     {
@@ -332,7 +329,7 @@ namespace Hype.Painel
                 objCmdCadastroAlt.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                 objCmdCadastroAlt.Parameters.Add("@level_alt", MySqlDbType.Int32).Value = txt_level.Texts;
                 objCmdCadastroAlt.Parameters.Add("@classe_alt", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
-                objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_cla.Texts;
+                objCmdCadastroAlt.Parameters.Add("@cla_alt", MySqlDbType.VarChar, 256).Value = txt_cla_alt.Texts;
 
                 objCmdCadastroAlt.ExecuteNonQuery();
 
@@ -358,10 +355,10 @@ namespace Hype.Painel
                 txt_level.BorderColor = Color.Red;
                 txt_level.BorderSize = 1;
             }
-            else if (String.IsNullOrEmpty(txt_cla.Texts))
+            else if (String.IsNullOrEmpty(txt_cla_alt.Texts))
             {
-                txt_cla.BorderColor = Color.Red;
-                txt_cla.BorderSize = 1;
+                txt_cla_alt.BorderColor = Color.Red;
+                txt_cla_alt.BorderSize = 1;
             }
             else
             {
@@ -378,10 +375,29 @@ namespace Hype.Painel
 
         #endregion
 
+        #region Campo Texto
+        private void CampoTextoDesativado(Control.ControlCollection control)
+        {
+            foreach (Control c in control)
+            {
+                if (c is RJTextBox)
+                {
+                    ((RJTextBox)c).Enabled = false;
+                    ((RJTextBox)c).BackColor = Color.LightGray;
+                }
+            }
+        }
+
+        private void LimparCampos(Control.ControlCollection control)
+        {
+
+        }
+        #endregion
+
         private void conta_alt_Load(object sender, EventArgs e)
         {
-            TabelaAlt();
             DadosMembros();
+            TabelaAlt();
 
             dataGridView1.EnableHeadersVisualStyles = false;
         }

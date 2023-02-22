@@ -17,9 +17,7 @@ namespace Hype.Painel
     {
         // ID TABELA
         string id_membro = membros.Instance.id_membro;
-        string id_alt = membros.Instance.id_alt;
         string id_recrutamento = membros.Instance.id_recrutamento;
-        string id_progressao = membros.Instance.id_progressao;
 
         // PAINEIS
         bool _membro = true;
@@ -118,8 +116,8 @@ namespace Hype.Painel
             // CAMPOS FIXO DESATIVAODS
             txt_vem_cla_rema.Enabled = false;
             txt_esta_cla_rema.Enabled = false;
-            txt_vem_cla_rema.BackColor = Color.FromArgb(235, 235, 235);
-            txt_esta_cla_rema.BackColor = Color.FromArgb(235, 235, 235);
+            txt_vem_cla_rema.BackColor = Color.LightGray;
+            txt_esta_cla_rema.BackColor = Color.LightGray;
         }
 
         private void bt_cancelar_rema_Click(object sender, EventArgs e)
@@ -164,8 +162,7 @@ namespace Hype.Painel
 
             // DADOS MEMBROS
             txt_vem_cla_rema.Texts = "";
-            txt_esta_cla_rema.Texts = "";
-            txt_vem_cla_rema.Enabled = false;
+            txt_esta_cla_rema.Texts = "";            
 
             _remanejamento = false;
             CampoTextoDesativado(pl_remanejamento.Controls);
@@ -180,17 +177,17 @@ namespace Hype.Painel
                 if (String.IsNullOrEmpty(txt_nick.Texts))
                 {
                     txt_nick.BorderColor = Color.Red;
-                    txt_nick.BorderSize = 1;
+                    txt_nick.BorderSize = 3;
                 }
                 else if (txt_classe.SelectedIndex == 0)
                 {
                     txt_classe.BorderColor = Color.Red;
-                    txt_classe.BorderSize = 1;
+                    txt_classe.BorderSize = 3;
                 }
                 else if (txt_patente.SelectedIndex == 0)
                 {
                     txt_patente.BorderColor = Color.Red;
-                    txt_patente.BorderSize = 1;
+                    txt_patente.BorderSize = 3;
                 }
                 else
                 {
@@ -213,29 +210,29 @@ namespace Hype.Painel
                 if (String.IsNullOrEmpty(txt_nick.Texts))
                 {
                     txt_nick.BorderColor = Color.Red;
-                    txt_nick.BorderSize = 1;
+                    txt_nick.BorderSize = 3;
                 }
                 else if (txt_classe.SelectedIndex == 0)
                 {
                     txt_classe.BorderColor = Color.Red;
-                    txt_classe.BorderSize = 1;
+                    txt_classe.BorderSize = 3;
                 }
                 else if (txt_patente.SelectedIndex == 0)
                 {
                     txt_patente.BorderColor = Color.Red;
-                    txt_patente.BorderSize = 1;
+                    txt_patente.BorderSize = 3;
                 }
 
                 // PROGRESSÃO
                 else if (String.IsNullOrEmpty(txt_novo_level.Texts))
                 {
                     txt_novo_level.BorderColor = Color.Red;
-                    txt_novo_level.BorderSize = 1;
+                    txt_novo_level.BorderSize = 3;
                 }
                 else if (String.IsNullOrEmpty(txt_novo_poder.Texts))
                 {
                     txt_novo_poder.BorderColor = Color.Red;
-                    txt_novo_poder.BorderSize = 1;
+                    txt_novo_poder.BorderSize = 3;
                 }
                 else
                 {
@@ -259,24 +256,24 @@ namespace Hype.Painel
                 if (String.IsNullOrEmpty(txt_nick.Texts))
                 {
                     txt_nick.BorderColor = Color.Red;
-                    txt_nick.BorderSize = 1;
+                    txt_nick.BorderSize = 3;
                 }
                 else if (txt_classe.SelectedIndex == 0)
                 {
                     txt_classe.BorderColor = Color.Red;
-                    txt_classe.BorderSize = 1;
+                    txt_classe.BorderSize = 3;
                 }
                 else if (txt_patente.SelectedIndex == 0)
                 {
                     txt_patente.BorderColor = Color.Red;
-                    txt_patente.BorderSize = 1;
+                    txt_patente.BorderSize = 3;
                 }
 
                 // REMANEJAMENTO
                 else if (String.IsNullOrEmpty(txt_remanejamento.Texts))
                 {
                     txt_remanejamento.BorderColor = Color.Red;
-                    txt_remanejamento.BorderSize = 1;
+                    txt_remanejamento.BorderSize = 3;
                 }
                 else
                 {
@@ -300,36 +297,36 @@ namespace Hype.Painel
                 if (String.IsNullOrEmpty(txt_nick.Texts))
                 {
                     txt_nick.BorderColor = Color.Red;
-                    txt_nick.BorderSize = 1;
+                    txt_nick.BorderSize = 3;
                 }
                 else if (txt_classe.SelectedIndex == 0)
                 {
                     txt_classe.BorderColor = Color.Red;
-                    txt_classe.BorderSize = 1;
+                    txt_classe.BorderSize = 3;
                 }
                 else if (txt_patente.SelectedIndex == 0)
                 {
                     txt_patente.BorderColor = Color.Red;
-                    txt_patente.BorderSize = 1;
+                    txt_patente.BorderSize = 3;
                 }
 
                 // PROGRESSÃO
                 else if (String.IsNullOrEmpty(txt_novo_level.Texts))
                 {
                     txt_novo_level.BorderColor = Color.Red;
-                    txt_novo_level.BorderSize = 1;
+                    txt_novo_level.BorderSize = 3;
                 }
                 else if (String.IsNullOrEmpty(txt_novo_poder.Texts))
                 {
                     txt_novo_poder.BorderColor = Color.Red;
-                    txt_novo_poder.BorderSize = 1;
+                    txt_novo_poder.BorderSize = 3;
                 }
 
                 // REMANEJAMENTO
                 else if (String.IsNullOrEmpty(txt_remanejamento.Texts))
                 {
                     txt_remanejamento.BorderColor = Color.Red;
-                    txt_remanejamento.BorderSize = 1;
+                    txt_remanejamento.BorderSize = 3;
                 }
                 else
                 {
@@ -525,9 +522,10 @@ namespace Hype.Painel
             txt_level.Enabled = false;
             txt_poder.Enabled = false;
             txt_esta_cla.Enabled = false;
-            txt_level.BackColor = Color.FromArgb(235, 235, 235);
-            txt_poder.BackColor = Color.FromArgb(235, 235, 235);
-            txt_esta_cla.BackColor = Color.FromArgb(235, 235, 235);
+
+            txt_level.BackColor = Color.LightGray;
+            txt_poder.BackColor = Color.LightGray;
+            txt_esta_cla.BackColor = Color.LightGray;
 
             bt_cancelar_prog.Visible = false;
             bt_adicionar_prog.Visible = false;
@@ -547,16 +545,27 @@ namespace Hype.Painel
             txt_nick.BorderSize = 0;
         }
 
-        private void txt_classe_Leave(object sender, EventArgs e)
+        private void txt_nick_Enter(object sender, EventArgs e)
         {
-            txt_classe.BorderColor = Color.Transparent;
-            txt_classe.BorderSize = 0;
+            txt_nick.BorderSize = 1;
         }
 
-        private void txt_patente_Leave(object sender, EventArgs e)
+        private void txt_classe_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            txt_patente.BorderColor = Color.Transparent;
-            txt_patente.BorderSize = 0;
+            if (txt_classe.SelectedIndex > 0)
+            {
+                txt_classe.BorderColor = Color.Transparent;
+                txt_classe.BorderSize = 0;
+            }
+        }
+
+        private void txt_patente_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txt_patente.SelectedIndex > 0)
+            {
+                txt_patente.BorderColor = Color.Transparent;
+                txt_patente.BorderSize = 0;
+            }
         }
 
         private void txt_novo_level_Leave(object sender, EventArgs e)
@@ -569,6 +578,17 @@ namespace Hype.Painel
         {
             txt_novo_poder.BorderColor = Color.Transparent;
             txt_novo_poder.BorderSize = 0;
+        }
+
+        private void txt_remanejamento_Enter(object sender, EventArgs e)
+        {
+            txt_remanejamento.BorderSize = 1;
+        }
+
+        private void txt_remanejamento_Leave(object sender, EventArgs e)
+        {
+            txt_remanejamento.BorderColor = Color.Transparent;
+            txt_remanejamento.BorderSize = 0;
         }
 
         private void CampoTextoDesativado(Control.ControlCollection control)
@@ -765,6 +785,7 @@ namespace Hype.Painel
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
         }
+
 
     }
 }

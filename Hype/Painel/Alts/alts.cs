@@ -16,7 +16,9 @@ namespace Hype.Painel
     {
         public static alts Instance;
 
-        public string id_alt = "";
+        public string id_alt = membros.Instance.id_alt;
+        public string id_membro = membros.Instance.id_membro;
+
         public string data_entrada = "";
         public string nick_principal = "";
         public string nick_alt = "";
@@ -40,7 +42,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select ID_ALT, DATA_ALT, NICK_PRINCIPAL, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT from hypedb.cadastro_alt", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select ID_ALT, DATA_ALT, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT, ID_MEMBROS from hypedb.cadastro_alt", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -75,19 +77,19 @@ namespace Hype.Painel
 
             dataGridView1.Columns[0].Visible = false; // ID_ALT
             dataGridView1.Columns[1].HeaderText = "DATA ENTRADA";
-            dataGridView1.Columns[2].Visible = false; // NICK_PRINCIPAL
-            dataGridView1.Columns[3].HeaderText = "NICK";
-            dataGridView1.Columns[4].HeaderText = "LEVEL";
-            dataGridView1.Columns[5].HeaderText = "CLASSE";
-            dataGridView1.Columns[6].HeaderText = "CLÃ";
+            dataGridView1.Columns[2].HeaderText = "NICK";
+            dataGridView1.Columns[3].HeaderText = "LEVEL";
+            dataGridView1.Columns[4].HeaderText = "CLASSE";
+            dataGridView1.Columns[5].HeaderText = "CLÃ";
+            dataGridView1.Columns[6].Visible = false; // ID_MEMBROS
 
-            dataGridView1.Columns["DATA_ENTRADA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns["DATA_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["LEVEL_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["CLASSE_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                if (column.DataPropertyName == "DATA_ENTRADA")
+                if (column.DataPropertyName == "DATA_ALT")
                     column.Width = 200;
                 else if (column.DataPropertyName == "NICK_ALT")
                     column.Width = 350;
@@ -101,7 +103,7 @@ namespace Hype.Painel
 
         }
 
-        private void MostrarDadosTabela()
+        private void DadosTabela()
         {
             try
             {
@@ -110,8 +112,8 @@ namespace Hype.Painel
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
 
                     id_alt = dr["ID_ALT"].ToString();
-                    data_entrada = ((DateTime)dr["DATA_ENTRADA"]).ToShortDateString();
-                    nick_principal = dr["NICK_PRINCIPAL"].ToString();
+                    id_membro = dr["ID_MEMBROS"].ToString();
+                    data_entrada = ((DateTime)dr["DATA_ALT"]).ToShortDateString();
                     nick_alt = dr["NICK_ALT"].ToString();
                     level_alt = dr["LEVEL_ALT"].ToString();
                     classe_alt = dr["CLASSE_ALT"].ToString();
@@ -133,7 +135,7 @@ namespace Hype.Painel
         {
             if (dataGridView1.Rows.Count > 0)
             {
-                MostrarDadosTabela();
+                DadosTabela();
             }
         }
 

@@ -39,6 +39,7 @@ namespace Hype.Painel
             this.pl_espaco_04 = new System.Windows.Forms.Panel();
             this.pl_remanejamento = new System.Windows.Forms.Panel();
             this.bt_editar_rema = new System.Windows.Forms.Button();
+            this.bt_ok_rema = new System.Windows.Forms.Button();
             this.lb_esta_cla_rema = new System.Windows.Forms.Label();
             this.lb_vem_cla_rema = new System.Windows.Forms.Label();
             this.bt_cancelar_rema = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@ namespace Hype.Painel
             this.bt_cancelar_prog = new System.Windows.Forms.Button();
             this.pl_espaco_02 = new System.Windows.Forms.Panel();
             this.pl_conta = new System.Windows.Forms.Panel();
+            this.lb_esta_cla = new System.Windows.Forms.Label();
             this.bt_excluir = new System.Windows.Forms.Button();
             this.lb_titulo = new System.Windows.Forms.Label();
             this.lb_poder = new System.Windows.Forms.Label();
@@ -70,8 +72,6 @@ namespace Hype.Painel
             this.txt_data_entrada = new System.Windows.Forms.Label();
             this.lb_data_entrada = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.bt_ok_rema = new System.Windows.Forms.Button();
-            this.lb_esta_cla = new System.Windows.Forms.Label();
             this.txt_remanejamento = new Hype.Painel.RJTextBox();
             this.txt_esta_cla_rema = new Hype.Painel.RJTextBox();
             this.txt_vem_cla_rema = new Hype.Painel.RJTextBox();
@@ -203,6 +203,23 @@ namespace Hype.Painel
             this.bt_editar_rema.Text = "Clique para Editar";
             this.bt_editar_rema.UseVisualStyleBackColor = false;
             this.bt_editar_rema.Click += new System.EventHandler(this.bt_editar_rema_Click);
+            // 
+            // bt_ok_rema
+            // 
+            this.bt_ok_rema.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_ok_rema.BackColor = System.Drawing.Color.OliveDrab;
+            this.bt_ok_rema.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_ok_rema.FlatAppearance.BorderSize = 0;
+            this.bt_ok_rema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_ok_rema.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_ok_rema.ForeColor = System.Drawing.Color.White;
+            this.bt_ok_rema.Location = new System.Drawing.Point(871, 45);
+            this.bt_ok_rema.Name = "bt_ok_rema";
+            this.bt_ok_rema.Size = new System.Drawing.Size(45, 31);
+            this.bt_ok_rema.TabIndex = 107;
+            this.bt_ok_rema.Text = "OK";
+            this.bt_ok_rema.UseVisualStyleBackColor = false;
+            this.bt_ok_rema.Click += new System.EventHandler(this.bt_ok_rema_Click);
             // 
             // lb_esta_cla_rema
             // 
@@ -478,6 +495,18 @@ namespace Hype.Painel
             this.pl_conta.Size = new System.Drawing.Size(1172, 130);
             this.pl_conta.TabIndex = 64;
             // 
+            // lb_esta_cla
+            // 
+            this.lb_esta_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_esta_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_esta_cla.ForeColor = System.Drawing.Color.White;
+            this.lb_esta_cla.Location = new System.Drawing.Point(828, 50);
+            this.lb_esta_cla.Name = "lb_esta_cla";
+            this.lb_esta_cla.Size = new System.Drawing.Size(191, 17);
+            this.lb_esta_cla.TabIndex = 174;
+            this.lb_esta_cla.Text = "Clã";
+            this.lb_esta_cla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // bt_excluir
             // 
             this.bt_excluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -638,35 +667,6 @@ namespace Hype.Painel
             this.vScrollBar1.Size = new System.Drawing.Size(17, 1014);
             this.vScrollBar1.TabIndex = 78;
             // 
-            // bt_ok_rema
-            // 
-            this.bt_ok_rema.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_ok_rema.BackColor = System.Drawing.Color.OliveDrab;
-            this.bt_ok_rema.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_ok_rema.FlatAppearance.BorderSize = 0;
-            this.bt_ok_rema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_ok_rema.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ok_rema.ForeColor = System.Drawing.Color.White;
-            this.bt_ok_rema.Location = new System.Drawing.Point(871, 45);
-            this.bt_ok_rema.Name = "bt_ok_rema";
-            this.bt_ok_rema.Size = new System.Drawing.Size(45, 31);
-            this.bt_ok_rema.TabIndex = 107;
-            this.bt_ok_rema.Text = "OK";
-            this.bt_ok_rema.UseVisualStyleBackColor = false;
-            this.bt_ok_rema.Click += new System.EventHandler(this.bt_ok_rema_Click);
-            // 
-            // lb_esta_cla
-            // 
-            this.lb_esta_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_esta_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_esta_cla.ForeColor = System.Drawing.Color.White;
-            this.lb_esta_cla.Location = new System.Drawing.Point(828, 50);
-            this.lb_esta_cla.Name = "lb_esta_cla";
-            this.lb_esta_cla.Size = new System.Drawing.Size(191, 17);
-            this.lb_esta_cla.TabIndex = 174;
-            this.lb_esta_cla.Text = "Clã";
-            this.lb_esta_cla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // txt_remanejamento
             // 
             this.txt_remanejamento.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -689,6 +689,8 @@ namespace Hype.Painel
             this.txt_remanejamento.TabIndex = 101;
             this.txt_remanejamento.Texts = "";
             this.txt_remanejamento.UnderlinedStyle = false;
+            this.txt_remanejamento.Enter += new System.EventHandler(this.txt_remanejamento_Enter);
+            this.txt_remanejamento.Leave += new System.EventHandler(this.txt_remanejamento_Leave);
             // 
             // txt_esta_cla_rema
             // 
@@ -791,7 +793,7 @@ namespace Hype.Painel
             // 
             this.txt_esta_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_esta_cla.BackColor = System.Drawing.Color.White;
-            this.txt_esta_cla.BorderColor = System.Drawing.Color.White;
+            this.txt_esta_cla.BorderColor = System.Drawing.Color.Transparent;
             this.txt_esta_cla.BorderFocusColor = System.Drawing.Color.White;
             this.txt_esta_cla.BorderRadius = 0;
             this.txt_esta_cla.BorderSize = 1;
@@ -835,7 +837,7 @@ namespace Hype.Painel
             this.txt_patente.Size = new System.Drawing.Size(163, 31);
             this.txt_patente.TabIndex = 172;
             this.txt_patente.Texts = "";
-            this.txt_patente.Leave += new System.EventHandler(this.txt_patente_Leave);
+            this.txt_patente.OnSelectedIndexChanged += new System.EventHandler(this.txt_patente_OnSelectedIndexChanged);
             // 
             // txt_classe
             // 
@@ -862,13 +864,13 @@ namespace Hype.Painel
             this.txt_classe.Size = new System.Drawing.Size(130, 31);
             this.txt_classe.TabIndex = 171;
             this.txt_classe.Texts = "";
-            this.txt_classe.Leave += new System.EventHandler(this.txt_classe_Leave);
+            this.txt_classe.OnSelectedIndexChanged += new System.EventHandler(this.txt_classe_OnSelectedIndexChanged);
             // 
             // txt_level
             // 
             this.txt_level.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_level.BackColor = System.Drawing.Color.White;
-            this.txt_level.BorderColor = System.Drawing.Color.White;
+            this.txt_level.BorderColor = System.Drawing.Color.Transparent;
             this.txt_level.BorderFocusColor = System.Drawing.Color.White;
             this.txt_level.BorderRadius = 0;
             this.txt_level.BorderSize = 1;
@@ -892,7 +894,7 @@ namespace Hype.Painel
             // 
             this.txt_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_poder.BackColor = System.Drawing.Color.White;
-            this.txt_poder.BorderColor = System.Drawing.Color.White;
+            this.txt_poder.BorderColor = System.Drawing.Color.Transparent;
             this.txt_poder.BorderFocusColor = System.Drawing.Color.White;
             this.txt_poder.BorderRadius = 0;
             this.txt_poder.BorderSize = 1;
@@ -933,6 +935,7 @@ namespace Hype.Painel
             this.txt_nick.TabIndex = 1;
             this.txt_nick.Texts = "";
             this.txt_nick.UnderlinedStyle = false;
+            this.txt_nick.Enter += new System.EventHandler(this.txt_nick_Enter);
             this.txt_nick.Leave += new System.EventHandler(this.txt_nick_Leave);
             // 
             // conta_principal

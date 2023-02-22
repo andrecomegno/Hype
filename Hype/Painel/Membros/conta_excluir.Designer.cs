@@ -47,18 +47,12 @@ namespace Hype.Painel
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pl_espaco_02 = new System.Windows.Forms.Panel();
             this.pl_conteudo_01 = new System.Windows.Forms.Panel();
-            this.txt_patente = new Hype.Painel.RJTextBox();
-            this.txt_classe = new Hype.Painel.RJTextBox();
             this.lb_conta_principal = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_esta_cla = new Hype.Painel.RJTextBox();
-            this.txt_level = new Hype.Painel.RJTextBox();
             this.lb_poder = new System.Windows.Forms.Label();
-            this.txt_poder = new Hype.Painel.RJTextBox();
             this.lb_level = new System.Windows.Forms.Label();
             this.lb_nick = new System.Windows.Forms.Label();
             this.lb_patente = new System.Windows.Forms.Label();
-            this.txt_nick = new Hype.Painel.RJTextBox();
             this.lb_classe = new System.Windows.Forms.Label();
             this.pl_espaco_01 = new System.Windows.Forms.Panel();
             this.pl_top = new System.Windows.Forms.Panel();
@@ -66,6 +60,12 @@ namespace Hype.Painel
             this.txt_data_saida = new System.Windows.Forms.Label();
             this.lb_data_saida = new System.Windows.Forms.Label();
             this.lb_titulo = new System.Windows.Forms.Label();
+            this.txt_patente = new Hype.Painel.RJTextBox();
+            this.txt_classe = new Hype.Painel.RJTextBox();
+            this.txt_esta_cla = new Hype.Painel.RJTextBox();
+            this.txt_level = new Hype.Painel.RJTextBox();
+            this.txt_poder = new Hype.Painel.RJTextBox();
+            this.txt_nick = new Hype.Painel.RJTextBox();
             this.pl_conta_excluir.SuspendLayout();
             this.pl_conteudo_03.SuspendLayout();
             this.pl_conteudo_02.SuspendLayout();
@@ -310,52 +310,6 @@ namespace Hype.Painel
             this.pl_conteudo_01.Size = new System.Drawing.Size(1172, 114);
             this.pl_conteudo_01.TabIndex = 64;
             // 
-            // txt_patente
-            // 
-            this.txt_patente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_patente.BackColor = System.Drawing.Color.White;
-            this.txt_patente.BorderColor = System.Drawing.Color.White;
-            this.txt_patente.BorderFocusColor = System.Drawing.Color.White;
-            this.txt_patente.BorderRadius = 0;
-            this.txt_patente.BorderSize = 1;
-            this.txt_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_patente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_patente.Location = new System.Drawing.Point(690, 65);
-            this.txt_patente.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_patente.Multiline = false;
-            this.txt_patente.Name = "txt_patente";
-            this.txt_patente.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_patente.PasswordChar = false;
-            this.txt_patente.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_patente.PlaceholderText = "";
-            this.txt_patente.Size = new System.Drawing.Size(130, 31);
-            this.txt_patente.TabIndex = 248;
-            this.txt_patente.Texts = "";
-            this.txt_patente.UnderlinedStyle = false;
-            // 
-            // txt_classe
-            // 
-            this.txt_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_classe.BackColor = System.Drawing.Color.White;
-            this.txt_classe.BorderColor = System.Drawing.Color.White;
-            this.txt_classe.BorderFocusColor = System.Drawing.Color.White;
-            this.txt_classe.BorderRadius = 0;
-            this.txt_classe.BorderSize = 1;
-            this.txt_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_classe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_classe.Location = new System.Drawing.Point(563, 65);
-            this.txt_classe.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_classe.Multiline = false;
-            this.txt_classe.Name = "txt_classe";
-            this.txt_classe.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_classe.PasswordChar = false;
-            this.txt_classe.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_classe.PlaceholderText = "";
-            this.txt_classe.Size = new System.Drawing.Size(119, 31);
-            this.txt_classe.TabIndex = 247;
-            this.txt_classe.Texts = "";
-            this.txt_classe.UnderlinedStyle = false;
-            // 
             // lb_conta_principal
             // 
             this.lb_conta_principal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -381,53 +335,6 @@ namespace Hype.Painel
             this.label4.Text = "Clã";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txt_esta_cla
-            // 
-            this.txt_esta_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_esta_cla.BackColor = System.Drawing.Color.White;
-            this.txt_esta_cla.BorderColor = System.Drawing.Color.White;
-            this.txt_esta_cla.BorderFocusColor = System.Drawing.Color.White;
-            this.txt_esta_cla.BorderRadius = 0;
-            this.txt_esta_cla.BorderSize = 1;
-            this.txt_esta_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_esta_cla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_esta_cla.Location = new System.Drawing.Point(828, 65);
-            this.txt_esta_cla.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_esta_cla.Multiline = false;
-            this.txt_esta_cla.Name = "txt_esta_cla";
-            this.txt_esta_cla.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_esta_cla.PasswordChar = false;
-            this.txt_esta_cla.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_esta_cla.PlaceholderText = "";
-            this.txt_esta_cla.Size = new System.Drawing.Size(192, 31);
-            this.txt_esta_cla.TabIndex = 244;
-            this.txt_esta_cla.Texts = "";
-            this.txt_esta_cla.UnderlinedStyle = false;
-            // 
-            // txt_level
-            // 
-            this.txt_level.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level.BackColor = System.Drawing.Color.White;
-            this.txt_level.BorderColor = System.Drawing.Color.White;
-            this.txt_level.BorderFocusColor = System.Drawing.Color.White;
-            this.txt_level.BorderRadius = 0;
-            this.txt_level.BorderSize = 1;
-            this.txt_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level.Location = new System.Drawing.Point(360, 65);
-            this.txt_level.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level.Multiline = false;
-            this.txt_level.Name = "txt_level";
-            this.txt_level.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level.PasswordChar = false;
-            this.txt_level.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_level.PlaceholderText = "";
-            this.txt_level.Size = new System.Drawing.Size(68, 31);
-            this.txt_level.TabIndex = 241;
-            this.txt_level.Tag = "";
-            this.txt_level.Texts = "";
-            this.txt_level.UnderlinedStyle = false;
-            // 
             // lb_poder
             // 
             this.lb_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -439,29 +346,6 @@ namespace Hype.Painel
             this.lb_poder.TabIndex = 240;
             this.lb_poder.Text = "Poder";
             this.lb_poder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txt_poder
-            // 
-            this.txt_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder.BackColor = System.Drawing.Color.White;
-            this.txt_poder.BorderColor = System.Drawing.Color.White;
-            this.txt_poder.BorderFocusColor = System.Drawing.Color.White;
-            this.txt_poder.BorderRadius = 0;
-            this.txt_poder.BorderSize = 1;
-            this.txt_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder.Location = new System.Drawing.Point(436, 65);
-            this.txt_poder.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder.Multiline = false;
-            this.txt_poder.Name = "txt_poder";
-            this.txt_poder.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder.PasswordChar = false;
-            this.txt_poder.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_poder.PlaceholderText = "";
-            this.txt_poder.Size = new System.Drawing.Size(119, 31);
-            this.txt_poder.TabIndex = 238;
-            this.txt_poder.Texts = "";
-            this.txt_poder.UnderlinedStyle = false;
             // 
             // lb_level
             // 
@@ -498,29 +382,6 @@ namespace Hype.Painel
             this.lb_patente.TabIndex = 236;
             this.lb_patente.Text = "Patente";
             this.lb_patente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txt_nick
-            // 
-            this.txt_nick.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_nick.BackColor = System.Drawing.Color.White;
-            this.txt_nick.BorderColor = System.Drawing.Color.White;
-            this.txt_nick.BorderFocusColor = System.Drawing.Color.White;
-            this.txt_nick.BorderRadius = 0;
-            this.txt_nick.BorderSize = 1;
-            this.txt_nick.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nick.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_nick.Location = new System.Drawing.Point(160, 65);
-            this.txt_nick.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nick.Multiline = false;
-            this.txt_nick.Name = "txt_nick";
-            this.txt_nick.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_nick.PasswordChar = false;
-            this.txt_nick.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_nick.PlaceholderText = "";
-            this.txt_nick.Size = new System.Drawing.Size(192, 31);
-            this.txt_nick.TabIndex = 234;
-            this.txt_nick.Texts = "";
-            this.txt_nick.UnderlinedStyle = false;
             // 
             // lb_classe
             // 
@@ -608,6 +469,145 @@ namespace Hype.Painel
             this.lb_titulo.TabIndex = 96;
             this.lb_titulo.Text = "EXCLUIR CONTA";
             this.lb_titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_patente
+            // 
+            this.txt_patente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_patente.BackColor = System.Drawing.Color.White;
+            this.txt_patente.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_patente.BorderFocusColor = System.Drawing.Color.White;
+            this.txt_patente.BorderRadius = 0;
+            this.txt_patente.BorderSize = 1;
+            this.txt_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_patente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_patente.Location = new System.Drawing.Point(690, 65);
+            this.txt_patente.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_patente.Multiline = false;
+            this.txt_patente.Name = "txt_patente";
+            this.txt_patente.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_patente.PasswordChar = false;
+            this.txt_patente.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_patente.PlaceholderText = "";
+            this.txt_patente.Size = new System.Drawing.Size(130, 31);
+            this.txt_patente.TabIndex = 248;
+            this.txt_patente.Texts = "";
+            this.txt_patente.UnderlinedStyle = false;
+            // 
+            // txt_classe
+            // 
+            this.txt_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_classe.BackColor = System.Drawing.Color.White;
+            this.txt_classe.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_classe.BorderFocusColor = System.Drawing.Color.White;
+            this.txt_classe.BorderRadius = 0;
+            this.txt_classe.BorderSize = 1;
+            this.txt_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_classe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_classe.Location = new System.Drawing.Point(563, 65);
+            this.txt_classe.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_classe.Multiline = false;
+            this.txt_classe.Name = "txt_classe";
+            this.txt_classe.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_classe.PasswordChar = false;
+            this.txt_classe.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_classe.PlaceholderText = "";
+            this.txt_classe.Size = new System.Drawing.Size(119, 31);
+            this.txt_classe.TabIndex = 247;
+            this.txt_classe.Texts = "";
+            this.txt_classe.UnderlinedStyle = false;
+            // 
+            // txt_esta_cla
+            // 
+            this.txt_esta_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_esta_cla.BackColor = System.Drawing.Color.White;
+            this.txt_esta_cla.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_esta_cla.BorderFocusColor = System.Drawing.Color.White;
+            this.txt_esta_cla.BorderRadius = 0;
+            this.txt_esta_cla.BorderSize = 1;
+            this.txt_esta_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_esta_cla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_esta_cla.Location = new System.Drawing.Point(828, 65);
+            this.txt_esta_cla.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_esta_cla.Multiline = false;
+            this.txt_esta_cla.Name = "txt_esta_cla";
+            this.txt_esta_cla.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_esta_cla.PasswordChar = false;
+            this.txt_esta_cla.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_esta_cla.PlaceholderText = "";
+            this.txt_esta_cla.Size = new System.Drawing.Size(192, 31);
+            this.txt_esta_cla.TabIndex = 244;
+            this.txt_esta_cla.Texts = "";
+            this.txt_esta_cla.UnderlinedStyle = false;
+            // 
+            // txt_level
+            // 
+            this.txt_level.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_level.BackColor = System.Drawing.Color.White;
+            this.txt_level.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_level.BorderFocusColor = System.Drawing.Color.White;
+            this.txt_level.BorderRadius = 0;
+            this.txt_level.BorderSize = 1;
+            this.txt_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_level.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_level.Location = new System.Drawing.Point(360, 65);
+            this.txt_level.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_level.Multiline = false;
+            this.txt_level.Name = "txt_level";
+            this.txt_level.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_level.PasswordChar = false;
+            this.txt_level.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_level.PlaceholderText = "";
+            this.txt_level.Size = new System.Drawing.Size(68, 31);
+            this.txt_level.TabIndex = 241;
+            this.txt_level.Tag = "";
+            this.txt_level.Texts = "";
+            this.txt_level.UnderlinedStyle = false;
+            // 
+            // txt_poder
+            // 
+            this.txt_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_poder.BackColor = System.Drawing.Color.White;
+            this.txt_poder.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_poder.BorderFocusColor = System.Drawing.Color.White;
+            this.txt_poder.BorderRadius = 0;
+            this.txt_poder.BorderSize = 1;
+            this.txt_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_poder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_poder.Location = new System.Drawing.Point(436, 65);
+            this.txt_poder.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_poder.Multiline = false;
+            this.txt_poder.Name = "txt_poder";
+            this.txt_poder.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_poder.PasswordChar = false;
+            this.txt_poder.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_poder.PlaceholderText = "";
+            this.txt_poder.Size = new System.Drawing.Size(119, 31);
+            this.txt_poder.TabIndex = 238;
+            this.txt_poder.Texts = "";
+            this.txt_poder.UnderlinedStyle = false;
+            // 
+            // txt_nick
+            // 
+            this.txt_nick.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_nick.BackColor = System.Drawing.Color.White;
+            this.txt_nick.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_nick.BorderFocusColor = System.Drawing.Color.White;
+            this.txt_nick.BorderRadius = 0;
+            this.txt_nick.BorderSize = 1;
+            this.txt_nick.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nick.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_nick.Location = new System.Drawing.Point(160, 65);
+            this.txt_nick.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nick.Multiline = false;
+            this.txt_nick.Name = "txt_nick";
+            this.txt_nick.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_nick.PasswordChar = false;
+            this.txt_nick.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_nick.PlaceholderText = "";
+            this.txt_nick.Size = new System.Drawing.Size(192, 31);
+            this.txt_nick.TabIndex = 234;
+            this.txt_nick.Texts = "";
+            this.txt_nick.UnderlinedStyle = false;
             // 
             // conta_excluir
             // 
