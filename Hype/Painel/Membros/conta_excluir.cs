@@ -16,9 +16,7 @@ namespace Hype.Painel
     public partial class conta_excluir : UserControl
     {
         string id_membro = membros.Instance.id_membro;
-        string id_recrutamento = membros.Instance.id_recrutamento;
-
-        public string[] nick_alt;
+        string nick_alt = "";
 
         public conta_excluir()
         {
@@ -115,6 +113,11 @@ namespace Hype.Painel
             {
                 //INTERROMPE A EDIÇÃO NO dataGridView1
                 dataGridView1.EndEdit();
+
+                
+                //string[] alt = nick_alt.Split(',');
+                //DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+                //nick_alt += dr["NICK_ALT"].ToString();                
             }
         }
 
@@ -189,32 +192,13 @@ namespace Hype.Painel
 
             try
             {
+                /*
                 // EXCLUIR CONTA PRINCIPAL
                 MySqlCommand objCmdRecrutamento = new MySqlCommand("delete from hypedb.recrutamento where (id_recrutamento=@id_recrutamento) ", database.getConnection());
                 objCmdRecrutamento.Parameters.AddWithValue("@id_recrutamento", id_recrutamento);
 
                 objCmdRecrutamento.ExecuteNonQuery();
-
-                // VERIFICA SE O CHECKBOX ESTA SELECIONADO COMO VERDADEIRO, NA CELL 0 
-                if (bool.Parse(dataGridView1.CurrentRow.Cells[0].FormattedValue.ToString()) == true)
-                {
-                    foreach (DataGridViewRow check in dataGridView1.Rows)
-                    {
-                        // PEGA TODOS OS VALORES SELECIONADOS NA CELLLS 0 QUE REPRESENTA O CHECKBOX
-                        if (bool.Parse(check.Cells[0].EditedFormattedValue.ToString()))
-                        {
-                            // EXCLUIR ALT
-                            MySqlCommand objCmdCadastroAlt = new MySqlCommand("delete from hypedb.cadastro_alt where id_alt=@id_alt", database.getConnection());
-                            objCmdCadastroAlt.Parameters.AddWithValue("@id_alt", check.Cells[1].Value.ToString()); // VARRIALVEL COM TODOS OS ID`S SELECIONADOS
-
-                            objCmdCadastroAlt.ExecuteNonQuery();
-
-                            check.Cells[2].Value = nick_alt[0].ToString();
-
-                            // MessageBox.Show("" + check.Cells[1].Value);
-                        }
-                    }
-                }
+                */
 
                 // SAIDA DO CLA
                 MySqlCommand objCmdSaidaCla = new MySqlCommand("insert into hypedb.saida_do_cla (id_saida_do_cla, data_saida, nick, level, poder, classe, patente, anotacao, nick_alt) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
@@ -225,9 +209,55 @@ namespace Hype.Painel
                 objCmdSaidaCla.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
                 objCmdSaidaCla.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
                 objCmdSaidaCla.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = txt_motivo.Text;
-                objCmdSaidaCla.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = nick_alt[0];
+                objCmdSaidaCla.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = nick_alt;                
 
                 objCmdSaidaCla.ExecuteNonQuery();
+                long idSaida = objCmdSaidaCla.LastInsertedId;
+
+                // VERIFICA SE O CHECKBOX ESTA SELECIONADO COMO VERDADEIRO, NA CELL 0 
+                if (bool.Parse(dataGridView1.CurrentRow.Cells[0].FormattedValue.ToString()) == true)
+                {
+                    foreach (DataGridViewRow check in dataGridView1.Rows)
+                    {
+                        // PEGA TODOS OS VALORES SELECIONADOS NA CELLLS 0 QUE REPRESENTA O CHECKBOX
+                        if (bool.Parse(check.Cells[0].EditedFormattedValue.ToString()))
+                        {
+                            /*
+                            // EXCLUIR ALT
+                            MySqlCommand objCmdCadastroAlt = new MySqlCommand("delete from hypedb.cadastro_alt where id_alt=@id_alt", database.getConnection());
+                            objCmdCadastroAlt.Parameters.AddWithValue("@id_alt", check.Cells[1].Value.ToString()); // TODOS OS ID`S SELECIONADOS
+
+                            objCmdCadastroAlt.ExecuteNonQuery();
+                            
+                            // UPDATE SAIDA DO CLA - NICK ALT
+                            MySqlCommand objCmdSaida = new MySqlCommand("update hypedb.saida_do_cla set nick_alt=@nick_alt where (id_saida_do_cla=@id_saida_do_cla)", database.getConnection());
+
+                            objCmdSaida.Parameters.AddWithValue("@id_saida_do_cla", idSaida);
+                            objCmdSaida.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = check.Cells[3].Value.ToString(); // TODOS OS NICKS SELECIONADOS
+
+                            objCmdSaida.ExecuteNonQuery();
+                            
+                            MessageBox.Show(check.Cells[3].Value.ToString());
+                            */
+                            // MessageBox.Show("" + check.Cells[1].Value);
+                        }
+                    }
+
+                    foreach (DataRowView dr in dataGridView1.SelectedRows)
+                    {
+                        nick_alt += dr["NICK_ALT"].ToString();
+
+                        // UPDATE SAIDA DO CLA - NICK ALT
+                        MySqlCommand objCmdSaida = new MySqlCommand("update hypedb.saida_do_cla set nick_alt=@nick_alt where (id_saida_do_cla=@id_saida_do_cla)", database.getConnection());
+
+                        objCmdSaida.Parameters.AddWithValue("@id_saida_do_cla", idSaida);
+                        objCmdSaida.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = nick_alt; // TODOS OS NICKS SELECIONADOS
+
+                        objCmdSaida.ExecuteNonQuery();
+                    }
+                }
+
+
             }
             catch (Exception erro)
             {
