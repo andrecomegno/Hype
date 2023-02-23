@@ -698,46 +698,212 @@ namespace Hype.Painel
         }
         #endregion
 
+        #region CAMPO TEXTO
+        private void txt_nick_Enter(object sender, EventArgs e)
+        {
+            txt_nick.BorderSize = 1;
+        }
+
+        private void txt_level_Enter(object sender, EventArgs e)
+        {
+            txt_level.BorderSize = 1;
+        }
+
+        private void txt_poder_Enter(object sender, EventArgs e)
+        {
+            txt_poder.BorderSize = 1;
+        }
+
+        private void txt_classe_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txt_classe.SelectedIndex > 0)
+            {
+                txt_classe.BorderColor = Color.Transparent;
+                txt_classe.BorderSize = 0;
+            }
+        }
+
+        private void txt_patente_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txt_patente.SelectedIndex > 0)
+            {
+                txt_patente.BorderColor = Color.Transparent;
+                txt_patente.BorderSize = 0;
+            }
+        }
+
+        private void txt_vem_Enter(object sender, EventArgs e)
+        {
+            txt_vem.BorderSize = 1;
+        }
+
+        private void txt_foi_Enter(object sender, EventArgs e)
+        {
+            txt_foi.BorderSize = 1;
+        }
+
+        private void txt_nick_alt_01_Enter(object sender, EventArgs e)
+        {
+            txt_nick_alt_01.BorderSize = 1;
+        }
+
+        private void txt_level_alt_01_Enter(object sender, EventArgs e)
+        {
+            txt_level_alt_01.BorderSize = 1;
+        }
+
+        private void txt_classe_alt_01_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txt_classe_alt_01.SelectedIndex > 0)
+            {
+                txt_classe_alt_01.BorderColor = Color.Transparent;
+                txt_classe_alt_01.BorderSize = 0;
+            }
+        }
+
+        private void txt_foi_alt_01_Enter(object sender, EventArgs e)
+        {
+            txt_foi_alt_01.BorderSize = 1;
+        }
+
+        private void txt_nick_alt_02_Enter(object sender, EventArgs e)
+        {
+            txt_nick_alt_02.BorderSize = 1;
+        }
+
+        private void txt_level_alt_02_Enter(object sender, EventArgs e)
+        {
+            txt_level_alt_02.BorderSize = 1;
+        }
+
+        private void txt_classe_alt_02_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txt_classe_alt_02.SelectedIndex > 0)
+            {
+                txt_classe_alt_02.BorderColor = Color.Transparent;
+                txt_classe_alt_02.BorderSize = 0;
+            }
+        }
+
+        private void txt_foi_alt_02_Enter(object sender, EventArgs e)
+        {
+            txt_foi_alt_02.BorderSize = 1;
+        }
+
+        private void txt_nick_alt_03_Enter(object sender, EventArgs e)
+        {
+            txt_nick_alt_03.BorderSize = 1;
+        }
+
+        private void txt_level_alt_03_Enter(object sender, EventArgs e)
+        {
+            txt_level_alt_03.BorderSize = 1;
+        }
+
+        private void txt_classe_alt_03_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txt_classe_alt_03.SelectedIndex > 0)
+            {
+                txt_classe_alt_03.BorderColor = Color.Transparent;
+                txt_classe_alt_03.BorderSize = 0;
+            }
+        }
+
+        private void txt_foi_alt_03_Enter(object sender, EventArgs e)
+        {
+            txt_foi_alt_03.BorderSize = 1;
+        }
+
+        private void txt_nick_alt_04_Enter(object sender, EventArgs e)
+        {
+            txt_nick_alt_04.BorderSize = 1;
+        }
+
+        private void txt_level_alt_04_Enter(object sender, EventArgs e)
+        {
+            txt_level_alt_04.BorderSize = 1;
+        }
+
+        private void txt_classe_alt_04_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txt_classe_alt_04.SelectedIndex > 0)
+            {
+                txt_classe_alt_04.BorderColor = Color.Transparent;
+                txt_classe_alt_04.BorderSize = 0;
+            }
+        }
+
+        private void txt_foi_alt_04_Enter(object sender, EventArgs e)
+        {
+            txt_foi_alt_04.BorderSize = 1;
+        }
+
+        private void txt_nick_alt_05_Enter(object sender, EventArgs e)
+        {
+            txt_nick_alt_05.BorderSize = 1;
+        }
+
+        private void txt_level_alt_05_Enter(object sender, EventArgs e)
+        {
+            txt_level_alt_05.BorderSize = 1;
+        }
+
+        private void txt_classe_alt_05_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txt_classe_alt_05.SelectedIndex > 0)
+            {
+                txt_classe_alt_05.BorderColor = Color.Transparent;
+                txt_classe_alt_05.BorderSize = 0;
+            }
+        }
+
+        private void txt_foi_alt_05_Enter(object sender, EventArgs e)
+        {
+            txt_foi_alt_05.BorderSize = 1;
+        }
+        #endregion
+
         #region CAMPO DO TEXTO EM BRANCO - ALERTAS
         private void Alertas()
         {
+            #region MEMBRO
             if (txt_quantidade_alt.SelectedIndex == 0)
             {
                 // CADASTRO
                 if (String.IsNullOrEmpty(txt_nick.Texts))
                 {
                     txt_nick.BorderColor = Color.Red;
-                    txt_nick.BorderSize = 1;
+                    txt_nick.BorderSize = 3;
                 }
                 else if (String.IsNullOrEmpty(txt_level.Texts))
                 {
                     txt_level.BorderColor = Color.Red;
-                    txt_level.BorderSize = 1;
+                    txt_level.BorderSize = 3;
                 }
                 else if (String.IsNullOrEmpty(txt_poder.Texts))
                 {
                     txt_poder.BorderColor = Color.Red;
-                    txt_poder.BorderSize = 1;
+                    txt_poder.BorderSize = 3;
                 }
                 else if (txt_classe.SelectedIndex == 0)
                 {
                     txt_classe.BorderColor = Color.Red;
-                    txt_classe.BorderSize = 1;
+                    txt_classe.BorderSize = 3;
                 }
                 else if (txt_patente.SelectedIndex == 0)
                 {
                     txt_patente.BorderColor = Color.Red;
-                    txt_patente.BorderSize = 1;
+                    txt_patente.BorderSize = 3;
                 }
                 else if (String.IsNullOrEmpty(txt_vem.Texts))
                 {
                     txt_vem.BorderColor = Color.Red;
-                    txt_vem.BorderSize = 1;
+                    txt_vem.BorderSize = 3;
                 }
                 else if (String.IsNullOrEmpty(txt_foi.Texts))
                 {
                     txt_foi.BorderColor = Color.Red;
-                    txt_foi.BorderSize = 1;
+                    txt_foi.BorderSize = 3;
                 }
                 else
                 {
@@ -753,29 +919,31 @@ namespace Hype.Painel
                     }
                 }
             }
+            #endregion
 
+            #region ALT 01
             if (txt_quantidade_alt.SelectedIndex == 1)
             {
                 // ALT 01
                 if (String.IsNullOrEmpty(txt_nick_alt_01.Texts))
                 {
                     txt_nick_alt_01.BorderColor = Color.Red;
-                    txt_nick_alt_01.BorderSize = 1;
+                    txt_nick_alt_01.BorderSize = 3;
                 }
                 else if (String.IsNullOrEmpty(txt_level_alt_01.Texts))
                 {
                     txt_level_alt_01.BorderColor = Color.Red;
-                    txt_level_alt_01.BorderSize = 1;
+                    txt_level_alt_01.BorderSize = 3;
                 }
                 else if (txt_classe_alt_01.SelectedIndex == 0)
                 {
                     txt_classe_alt_01.BorderColor = Color.Red;
-                    txt_classe_alt_01.BorderSize = 1;
+                    txt_classe_alt_01.BorderSize = 3;
                 }
                 else if (String.IsNullOrEmpty(txt_foi_alt_01.Texts))
                 {
                     txt_foi_alt_01.BorderColor = Color.Red;
-                    txt_foi_alt_01.BorderSize = 1;
+                    txt_foi_alt_01.BorderSize = 3;
                 }
                 else
                 {
@@ -791,29 +959,53 @@ namespace Hype.Painel
                     }
                 }
             }
+            #endregion
 
+            #region ALT 02
             if (txt_quantidade_alt.SelectedIndex == 2)
             {
+                // ALT 01
+                if (String.IsNullOrEmpty(txt_nick_alt_01.Texts))
+                {
+                    txt_nick_alt_01.BorderColor = Color.Red;
+                    txt_nick_alt_01.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_level_alt_01.Texts))
+                {
+                    txt_level_alt_01.BorderColor = Color.Red;
+                    txt_level_alt_01.BorderSize = 3;
+                }
+                else if (txt_classe_alt_01.SelectedIndex == 0)
+                {
+                    txt_classe_alt_01.BorderColor = Color.Red;
+                    txt_classe_alt_01.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_foi_alt_01.Texts))
+                {
+                    txt_foi_alt_01.BorderColor = Color.Red;
+                    txt_foi_alt_01.BorderSize = 3;
+                }
+
                 // ALT 02
-                if (String.IsNullOrEmpty(txt_nick_alt_02.Texts))
+                else if (String.IsNullOrEmpty(txt_nick_alt_02.Texts))
                 {
                     txt_nick_alt_02.BorderColor = Color.Red;
-                    txt_nick_alt_02.BorderSize = 1;
+                    txt_nick_alt_02.BorderSize = 3;
                 }
                 else if (String.IsNullOrEmpty(txt_level_alt_02.Texts))
                 {
                     txt_level_alt_02.BorderColor = Color.Red;
-                    txt_level_alt_02.BorderSize = 1;
+                    txt_level_alt_02.BorderSize = 3;
                 }
                 else if (txt_classe_alt_02.SelectedIndex == 0)
                 {
                     txt_classe_alt_02.BorderColor = Color.Red;
-                    txt_classe_alt_02.BorderSize = 1;
+                    txt_classe_alt_02.BorderSize = 3;
                 }
                 else if (String.IsNullOrEmpty(txt_foi_alt_02.Texts))
                 {
                     txt_foi_alt_02.BorderColor = Color.Red;
-                    txt_foi_alt_02.BorderSize = 1;
+                    txt_foi_alt_02.BorderSize = 3;
                 }
                 else
                 {
@@ -829,29 +1021,75 @@ namespace Hype.Painel
                     }
                 }
             }
+            #endregion
 
+            #region ALT 03
             if (txt_quantidade_alt.SelectedIndex == 3)
             {
+                // ALT 01
+                if (String.IsNullOrEmpty(txt_nick_alt_01.Texts))
+                {
+                    txt_nick_alt_01.BorderColor = Color.Red;
+                    txt_nick_alt_01.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_level_alt_01.Texts))
+                {
+                    txt_level_alt_01.BorderColor = Color.Red;
+                    txt_level_alt_01.BorderSize = 3;
+                }
+                else if (txt_classe_alt_01.SelectedIndex == 0)
+                {
+                    txt_classe_alt_01.BorderColor = Color.Red;
+                    txt_classe_alt_01.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_foi_alt_01.Texts))
+                {
+                    txt_foi_alt_01.BorderColor = Color.Red;
+                    txt_foi_alt_01.BorderSize = 3;
+                }
+
+                // ALT 02
+                else if (String.IsNullOrEmpty(txt_nick_alt_02.Texts))
+                {
+                    txt_nick_alt_02.BorderColor = Color.Red;
+                    txt_nick_alt_02.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_level_alt_02.Texts))
+                {
+                    txt_level_alt_02.BorderColor = Color.Red;
+                    txt_level_alt_02.BorderSize = 3;
+                }
+                else if (txt_classe_alt_02.SelectedIndex == 0)
+                {
+                    txt_classe_alt_02.BorderColor = Color.Red;
+                    txt_classe_alt_02.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_foi_alt_02.Texts))
+                {
+                    txt_foi_alt_02.BorderColor = Color.Red;
+                    txt_foi_alt_02.BorderSize = 3;
+                }           
+
                 // ALT 03
-                if (String.IsNullOrEmpty(txt_nick_alt_03.Texts))
+                else if (String.IsNullOrEmpty(txt_nick_alt_03.Texts))
                 {
                     txt_nick_alt_03.BorderColor = Color.Red;
-                    txt_nick_alt_03.BorderSize = 1;
+                    txt_nick_alt_03.BorderSize = 3;
                 }
                 else if (String.IsNullOrEmpty(txt_level_alt_03.Texts))
                 {
                     txt_level_alt_03.BorderColor = Color.Red;
-                    txt_level_alt_03.BorderSize = 1;
+                    txt_level_alt_03.BorderSize = 3;
                 }
                 else if (txt_classe_alt_03.SelectedIndex == 0)
                 {
                     txt_classe_alt_03.BorderColor = Color.Red;
-                    txt_classe_alt_03.BorderSize = 1;
+                    txt_classe_alt_03.BorderSize = 3;
                 }
                 else if (String.IsNullOrEmpty(txt_foi_alt_03.Texts))
                 {
                     txt_foi_alt_03.BorderColor = Color.Red;
-                    txt_foi_alt_03.BorderSize = 1;
+                    txt_foi_alt_03.BorderSize = 3;
                 }
                 else
                 {
@@ -867,30 +1105,97 @@ namespace Hype.Painel
                     }
                 }
             }
+            #endregion
 
+            #region ALT 04
             if (txt_quantidade_alt.SelectedIndex == 4)
             {
-            
+                // ALT 01
+                if (String.IsNullOrEmpty(txt_nick_alt_01.Texts))
+                {
+                    txt_nick_alt_01.BorderColor = Color.Red;
+                    txt_nick_alt_01.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_level_alt_01.Texts))
+                {
+                    txt_level_alt_01.BorderColor = Color.Red;
+                    txt_level_alt_01.BorderSize = 3;
+                }
+                else if (txt_classe_alt_01.SelectedIndex == 0)
+                {
+                    txt_classe_alt_01.BorderColor = Color.Red;
+                    txt_classe_alt_01.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_foi_alt_01.Texts))
+                {
+                    txt_foi_alt_01.BorderColor = Color.Red;
+                    txt_foi_alt_01.BorderSize = 3;
+                }
+
+                // ALT 02
+                else if (String.IsNullOrEmpty(txt_nick_alt_02.Texts))
+                {
+                    txt_nick_alt_02.BorderColor = Color.Red;
+                    txt_nick_alt_02.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_level_alt_02.Texts))
+                {
+                    txt_level_alt_02.BorderColor = Color.Red;
+                    txt_level_alt_02.BorderSize = 3;
+                }
+                else if (txt_classe_alt_02.SelectedIndex == 0)
+                {
+                    txt_classe_alt_02.BorderColor = Color.Red;
+                    txt_classe_alt_02.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_foi_alt_02.Texts))
+                {
+                    txt_foi_alt_02.BorderColor = Color.Red;
+                    txt_foi_alt_02.BorderSize = 3;
+                }
+
+                // ALT 03
+                else if (String.IsNullOrEmpty(txt_nick_alt_03.Texts))
+                {
+                    txt_nick_alt_03.BorderColor = Color.Red;
+                    txt_nick_alt_03.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_level_alt_03.Texts))
+                {
+                    txt_level_alt_03.BorderColor = Color.Red;
+                    txt_level_alt_03.BorderSize = 3;
+                }
+                else if (txt_classe_alt_03.SelectedIndex == 0)
+                {
+                    txt_classe_alt_03.BorderColor = Color.Red;
+                    txt_classe_alt_03.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_foi_alt_03.Texts))
+                {
+                    txt_foi_alt_03.BorderColor = Color.Red;
+                    txt_foi_alt_03.BorderSize = 3;
+                }
+
                 // ALT 04
-                if (String.IsNullOrEmpty(txt_nick_alt_04.Texts))
+                else if (String.IsNullOrEmpty(txt_nick_alt_04.Texts))
                 {
                     txt_nick_alt_04.BorderColor = Color.Red;
-                    txt_nick_alt_04.BorderSize = 1;
+                    txt_nick_alt_04.BorderSize = 3;
                 }
                 else if (String.IsNullOrEmpty(txt_level_alt_04.Texts))
                 {
                     txt_level_alt_04.BorderColor = Color.Red;
-                    txt_level_alt_04.BorderSize = 1;
+                    txt_level_alt_04.BorderSize = 3;
                 }
                 else if (txt_classe_alt_04.SelectedIndex == 0)
                 {
                     txt_classe_alt_04.BorderColor = Color.Red;
-                    txt_classe_alt_04.BorderSize = 1;
+                    txt_classe_alt_04.BorderSize = 3;
                 }
                 else if (String.IsNullOrEmpty(txt_foi_alt_04.Texts))
                 {
                     txt_foi_alt_04.BorderColor = Color.Red;
-                    txt_foi_alt_04.BorderSize = 1;
+                    txt_foi_alt_04.BorderSize = 3;
                 }
                 else
                 {
@@ -906,29 +1211,119 @@ namespace Hype.Painel
                     }
                 }
             }
+            #endregion
 
+            #region ALT 05
             if (txt_quantidade_alt.SelectedIndex == 5)
             {
+                // ALT 01
+                if (String.IsNullOrEmpty(txt_nick_alt_01.Texts))
+                {
+                    txt_nick_alt_01.BorderColor = Color.Red;
+                    txt_nick_alt_01.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_level_alt_01.Texts))
+                {
+                    txt_level_alt_01.BorderColor = Color.Red;
+                    txt_level_alt_01.BorderSize = 3;
+                }
+                else if (txt_classe_alt_01.SelectedIndex == 0)
+                {
+                    txt_classe_alt_01.BorderColor = Color.Red;
+                    txt_classe_alt_01.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_foi_alt_01.Texts))
+                {
+                    txt_foi_alt_01.BorderColor = Color.Red;
+                    txt_foi_alt_01.BorderSize = 3;
+                }
+
+                // ALT 02
+                else if (String.IsNullOrEmpty(txt_nick_alt_02.Texts))
+                {
+                    txt_nick_alt_02.BorderColor = Color.Red;
+                    txt_nick_alt_02.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_level_alt_02.Texts))
+                {
+                    txt_level_alt_02.BorderColor = Color.Red;
+                    txt_level_alt_02.BorderSize = 3;
+                }
+                else if (txt_classe_alt_02.SelectedIndex == 0)
+                {
+                    txt_classe_alt_02.BorderColor = Color.Red;
+                    txt_classe_alt_02.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_foi_alt_02.Texts))
+                {
+                    txt_foi_alt_02.BorderColor = Color.Red;
+                    txt_foi_alt_02.BorderSize = 3;
+                }
+
+                // ALT 03
+                else if (String.IsNullOrEmpty(txt_nick_alt_03.Texts))
+                {
+                    txt_nick_alt_03.BorderColor = Color.Red;
+                    txt_nick_alt_03.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_level_alt_03.Texts))
+                {
+                    txt_level_alt_03.BorderColor = Color.Red;
+                    txt_level_alt_03.BorderSize = 3;
+                }
+                else if (txt_classe_alt_03.SelectedIndex == 0)
+                {
+                    txt_classe_alt_03.BorderColor = Color.Red;
+                    txt_classe_alt_03.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_foi_alt_03.Texts))
+                {
+                    txt_foi_alt_03.BorderColor = Color.Red;
+                    txt_foi_alt_03.BorderSize = 3;
+                }
+
+                // ALT 04
+                else if (String.IsNullOrEmpty(txt_nick_alt_04.Texts))
+                {
+                    txt_nick_alt_04.BorderColor = Color.Red;
+                    txt_nick_alt_04.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_level_alt_04.Texts))
+                {
+                    txt_level_alt_04.BorderColor = Color.Red;
+                    txt_level_alt_04.BorderSize = 3;
+                }
+                else if (txt_classe_alt_04.SelectedIndex == 0)
+                {
+                    txt_classe_alt_04.BorderColor = Color.Red;
+                    txt_classe_alt_04.BorderSize = 3;
+                }
+                else if (String.IsNullOrEmpty(txt_foi_alt_04.Texts))
+                {
+                    txt_foi_alt_04.BorderColor = Color.Red;
+                    txt_foi_alt_04.BorderSize = 3;
+                }
+
                 // ALT 05
-                if (String.IsNullOrEmpty(txt_nick_alt_05.Texts))
+                else if (String.IsNullOrEmpty(txt_nick_alt_05.Texts))
                 {
                     txt_nick_alt_05.BorderColor = Color.Red;
-                    txt_nick_alt_05.BorderSize = 1;
+                    txt_nick_alt_05.BorderSize = 3;
                 }
                 else if (String.IsNullOrEmpty(txt_level_alt_05.Texts))
                 {
                     txt_level_alt_05.BorderColor = Color.Red;
-                    txt_level_alt_05.BorderSize = 1;
+                    txt_level_alt_05.BorderSize = 3;
                 }
                 else if (txt_classe_alt_05.SelectedIndex == 0)
                 {
                     txt_classe_alt_05.BorderColor = Color.Red;
-                    txt_classe_alt_05.BorderSize = 1;
+                    txt_classe_alt_05.BorderSize = 3;
                 }
                 else if (String.IsNullOrEmpty(txt_foi_alt_05.Texts))
                 {
                     txt_foi_alt_05.BorderColor = Color.Red;
-                    txt_foi_alt_05.BorderSize = 1;
+                    txt_foi_alt_05.BorderSize = 3;
                 }
                 else
                 {
@@ -944,9 +1339,9 @@ namespace Hype.Painel
                     }
                 }
             }
+            #endregion
         }
 
-        // Campo Texto Normal
         private void txt_nick_Leave(object sender, EventArgs e)
         {
             txt_nick.BorderColor = Color.Transparent;
@@ -1108,7 +1503,6 @@ namespace Hype.Painel
             txt_foi_alt_05.BorderColor = Color.Transparent;
             txt_foi_alt_05.BorderSize = 0;
         }
-
         #endregion
 
         #region PAINEIS DOS CADASTROS
@@ -1240,5 +1634,6 @@ namespace Hype.Painel
         }
         #endregion
 
+        
     }
 }

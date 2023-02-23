@@ -34,50 +34,50 @@ namespace Hype.Painel
             this.lb_titulo = new System.Windows.Forms.Label();
             this.pl_espaco_01 = new System.Windows.Forms.Panel();
             this.pl_conta_principal = new System.Windows.Forms.Panel();
-            this.lb_conta_principal = new System.Windows.Forms.Label();
-            this.pl_espaco_02 = new System.Windows.Forms.Panel();
-            this.pl_possui_atl = new System.Windows.Forms.Panel();
-            this.lb_possui_alt = new System.Windows.Forms.Label();
-            this.rd_nao = new System.Windows.Forms.RadioButton();
-            this.rd_sim = new System.Windows.Forms.RadioButton();
-            this.pl_espaco_03 = new System.Windows.Forms.Panel();
-            this.pl_conta_alt_01 = new System.Windows.Forms.Panel();
-            this.lb_conta_alt = new System.Windows.Forms.Label();
-            this.pl_conta_alt_02 = new System.Windows.Forms.Panel();
-            this.pl_botao = new System.Windows.Forms.Panel();
-            this.bt_cancelar = new System.Windows.Forms.Button();
-            this.bt_salvar = new System.Windows.Forms.Button();
-            this.pl_conta_alt_03 = new System.Windows.Forms.Panel();
-            this.pl_conta_alt_04 = new System.Windows.Forms.Panel();
-            this.pl_conta_alt_05 = new System.Windows.Forms.Panel();
-            this.txt_classe_alt_05 = new Hype.script.RJComboBox();
-            this.txt_nick_alt_05 = new Hype.Painel.RJTextBox();
-            this.txt_foi_alt_05 = new Hype.Painel.RJTextBox();
-            this.txt_level_alt_05 = new Hype.Painel.RJTextBox();
-            this.txt_classe_alt_04 = new Hype.script.RJComboBox();
-            this.txt_nick_alt_04 = new Hype.Painel.RJTextBox();
-            this.txt_foi_alt_04 = new Hype.Painel.RJTextBox();
-            this.txt_level_alt_04 = new Hype.Painel.RJTextBox();
-            this.txt_classe_alt_03 = new Hype.script.RJComboBox();
-            this.txt_nick_alt_03 = new Hype.Painel.RJTextBox();
-            this.txt_foi_alt_03 = new Hype.Painel.RJTextBox();
-            this.txt_level_alt_03 = new Hype.Painel.RJTextBox();
-            this.txt_classe_alt_02 = new Hype.script.RJComboBox();
-            this.txt_nick_alt_02 = new Hype.Painel.RJTextBox();
-            this.txt_foi_alt_02 = new Hype.Painel.RJTextBox();
-            this.txt_level_alt_02 = new Hype.Painel.RJTextBox();
-            this.txt_classe_alt_01 = new Hype.script.RJComboBox();
-            this.txt_foi_alt_01 = new Hype.Painel.RJTextBox();
-            this.txt_level_alt_01 = new Hype.Painel.RJTextBox();
-            this.txt_nick_alt_01 = new Hype.Painel.RJTextBox();
-            this.txt_quantidade_alt = new Hype.script.RJComboBox();
             this.txt_classe = new Hype.script.RJComboBox();
             this.txt_patente = new Hype.script.RJComboBox();
+            this.lb_conta_principal = new System.Windows.Forms.Label();
             this.txt_level = new Hype.Painel.RJTextBox();
             this.txt_nick = new Hype.Painel.RJTextBox();
             this.txt_poder = new Hype.Painel.RJTextBox();
             this.txt_foi = new Hype.Painel.RJTextBox();
             this.txt_vem = new Hype.Painel.RJTextBox();
+            this.pl_espaco_02 = new System.Windows.Forms.Panel();
+            this.pl_possui_atl = new System.Windows.Forms.Panel();
+            this.txt_quantidade_alt = new Hype.script.RJComboBox();
+            this.lb_possui_alt = new System.Windows.Forms.Label();
+            this.rd_nao = new System.Windows.Forms.RadioButton();
+            this.rd_sim = new System.Windows.Forms.RadioButton();
+            this.pl_espaco_03 = new System.Windows.Forms.Panel();
+            this.pl_conta_alt_01 = new System.Windows.Forms.Panel();
+            this.txt_classe_alt_01 = new Hype.script.RJComboBox();
+            this.lb_conta_alt = new System.Windows.Forms.Label();
+            this.txt_foi_alt_01 = new Hype.Painel.RJTextBox();
+            this.txt_level_alt_01 = new Hype.Painel.RJTextBox();
+            this.txt_nick_alt_01 = new Hype.Painel.RJTextBox();
+            this.pl_conta_alt_02 = new System.Windows.Forms.Panel();
+            this.txt_classe_alt_02 = new Hype.script.RJComboBox();
+            this.txt_nick_alt_02 = new Hype.Painel.RJTextBox();
+            this.txt_foi_alt_02 = new Hype.Painel.RJTextBox();
+            this.txt_level_alt_02 = new Hype.Painel.RJTextBox();
+            this.pl_botao = new System.Windows.Forms.Panel();
+            this.bt_cancelar = new System.Windows.Forms.Button();
+            this.bt_salvar = new System.Windows.Forms.Button();
+            this.pl_conta_alt_03 = new System.Windows.Forms.Panel();
+            this.txt_classe_alt_03 = new Hype.script.RJComboBox();
+            this.txt_nick_alt_03 = new Hype.Painel.RJTextBox();
+            this.txt_foi_alt_03 = new Hype.Painel.RJTextBox();
+            this.txt_level_alt_03 = new Hype.Painel.RJTextBox();
+            this.pl_conta_alt_04 = new System.Windows.Forms.Panel();
+            this.txt_classe_alt_04 = new Hype.script.RJComboBox();
+            this.txt_nick_alt_04 = new Hype.Painel.RJTextBox();
+            this.txt_foi_alt_04 = new Hype.Painel.RJTextBox();
+            this.txt_level_alt_04 = new Hype.Painel.RJTextBox();
+            this.pl_conta_alt_05 = new System.Windows.Forms.Panel();
+            this.txt_classe_alt_05 = new Hype.script.RJComboBox();
+            this.txt_nick_alt_05 = new Hype.Painel.RJTextBox();
+            this.txt_foi_alt_05 = new Hype.Painel.RJTextBox();
+            this.txt_level_alt_05 = new Hype.Painel.RJTextBox();
             this.pl_top.SuspendLayout();
             this.pl_conta_principal.SuspendLayout();
             this.pl_possui_atl.SuspendLayout();
@@ -155,6 +155,62 @@ namespace Hype.Painel
             this.pl_conta_principal.Size = new System.Drawing.Size(1200, 135);
             this.pl_conta_principal.TabIndex = 79;
             // 
+            // txt_classe
+            // 
+            this.txt_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_classe.BackColor = System.Drawing.Color.White;
+            this.txt_classe.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_classe.BorderSize = 0;
+            this.txt_classe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_classe.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_classe.IconColor = System.Drawing.Color.Black;
+            this.txt_classe.Items.AddRange(new object[] {
+            "Classe",
+            "Besteira",
+            "Feiticeira",
+            "Guerreiro",
+            "Lanceiro",
+            "Taoista"});
+            this.txt_classe.ListBackColor = System.Drawing.Color.White;
+            this.txt_classe.ListTextColor = System.Drawing.Color.DimGray;
+            this.txt_classe.Location = new System.Drawing.Point(667, 49);
+            this.txt_classe.MinimumSize = new System.Drawing.Size(50, 30);
+            this.txt_classe.Name = "txt_classe";
+            this.txt_classe.Size = new System.Drawing.Size(130, 31);
+            this.txt_classe.TabIndex = 170;
+            this.txt_classe.Texts = "";
+            this.txt_classe.OnSelectedIndexChanged += new System.EventHandler(this.txt_classe_OnSelectedIndexChanged);
+            this.txt_classe.Leave += new System.EventHandler(this.txt_classe_Leave);
+            // 
+            // txt_patente
+            // 
+            this.txt_patente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_patente.BackColor = System.Drawing.Color.White;
+            this.txt_patente.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_patente.BorderSize = 0;
+            this.txt_patente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_patente.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_patente.IconColor = System.Drawing.Color.Black;
+            this.txt_patente.Items.AddRange(new object[] {
+            "Patente",
+            "Ancião",
+            "Égide Sombria",
+            "Lider",
+            "Membro",
+            "Novo Membro"});
+            this.txt_patente.ListBackColor = System.Drawing.Color.White;
+            this.txt_patente.ListTextColor = System.Drawing.Color.DimGray;
+            this.txt_patente.Location = new System.Drawing.Point(803, 49);
+            this.txt_patente.MinimumSize = new System.Drawing.Size(50, 30);
+            this.txt_patente.Name = "txt_patente";
+            this.txt_patente.Size = new System.Drawing.Size(138, 31);
+            this.txt_patente.TabIndex = 169;
+            this.txt_patente.Texts = "";
+            this.txt_patente.OnSelectedIndexChanged += new System.EventHandler(this.txt_patente_OnSelectedIndexChanged);
+            this.txt_patente.Leave += new System.EventHandler(this.txt_patente_Leave);
+            // 
             // lb_conta_principal
             // 
             this.lb_conta_principal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -167,6 +223,131 @@ namespace Hype.Painel
             this.lb_conta_principal.TabIndex = 97;
             this.lb_conta_principal.Text = "CONTA PRINCIPAL";
             this.lb_conta_principal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_level
+            // 
+            this.txt_level.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_level.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_level.BorderColor = System.Drawing.Color.White;
+            this.txt_level.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_level.BorderRadius = 0;
+            this.txt_level.BorderSize = 1;
+            this.txt_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_level.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_level.Location = new System.Drawing.Point(467, 49);
+            this.txt_level.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_level.Multiline = false;
+            this.txt_level.Name = "txt_level";
+            this.txt_level.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_level.PasswordChar = false;
+            this.txt_level.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_level.PlaceholderText = "Level";
+            this.txt_level.Size = new System.Drawing.Size(69, 31);
+            this.txt_level.TabIndex = 161;
+            this.txt_level.Texts = "";
+            this.txt_level.UnderlinedStyle = false;
+            this.txt_level.Enter += new System.EventHandler(this.txt_level_Enter);
+            this.txt_level.Leave += new System.EventHandler(this.txt_level_Leave);
+            // 
+            // txt_nick
+            // 
+            this.txt_nick.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_nick.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_nick.BorderColor = System.Drawing.Color.White;
+            this.txt_nick.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_nick.BorderRadius = 0;
+            this.txt_nick.BorderSize = 1;
+            this.txt_nick.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nick.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_nick.Location = new System.Drawing.Point(298, 49);
+            this.txt_nick.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nick.Multiline = false;
+            this.txt_nick.Name = "txt_nick";
+            this.txt_nick.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_nick.PasswordChar = false;
+            this.txt_nick.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_nick.PlaceholderText = "Qual é o Nick ?";
+            this.txt_nick.Size = new System.Drawing.Size(162, 31);
+            this.txt_nick.TabIndex = 155;
+            this.txt_nick.Texts = "";
+            this.txt_nick.UnderlinedStyle = false;
+            this.txt_nick.Enter += new System.EventHandler(this.txt_nick_Enter);
+            this.txt_nick.Leave += new System.EventHandler(this.txt_nick_Leave);
+            // 
+            // txt_poder
+            // 
+            this.txt_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_poder.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_poder.BorderColor = System.Drawing.Color.White;
+            this.txt_poder.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_poder.BorderRadius = 0;
+            this.txt_poder.BorderSize = 1;
+            this.txt_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_poder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_poder.Location = new System.Drawing.Point(543, 49);
+            this.txt_poder.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_poder.Multiline = false;
+            this.txt_poder.Name = "txt_poder";
+            this.txt_poder.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_poder.PasswordChar = false;
+            this.txt_poder.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_poder.PlaceholderText = "Qual é Poder ?";
+            this.txt_poder.Size = new System.Drawing.Size(119, 31);
+            this.txt_poder.TabIndex = 156;
+            this.txt_poder.Texts = "";
+            this.txt_poder.UnderlinedStyle = false;
+            this.txt_poder.Enter += new System.EventHandler(this.txt_poder_Enter);
+            this.txt_poder.Leave += new System.EventHandler(this.txt_poder_Leave);
+            // 
+            // txt_foi
+            // 
+            this.txt_foi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_foi.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_foi.BorderColor = System.Drawing.Color.White;
+            this.txt_foi.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_foi.BorderRadius = 0;
+            this.txt_foi.BorderSize = 1;
+            this.txt_foi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_foi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_foi.Location = new System.Drawing.Point(601, 88);
+            this.txt_foi.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_foi.Multiline = false;
+            this.txt_foi.Name = "txt_foi";
+            this.txt_foi.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_foi.PasswordChar = false;
+            this.txt_foi.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_foi.PlaceholderText = "Foi para o Clã";
+            this.txt_foi.Size = new System.Drawing.Size(340, 31);
+            this.txt_foi.TabIndex = 158;
+            this.txt_foi.Texts = "";
+            this.txt_foi.UnderlinedStyle = false;
+            this.txt_foi.Enter += new System.EventHandler(this.txt_foi_Enter);
+            this.txt_foi.Leave += new System.EventHandler(this.txt_foi_Leave);
+            // 
+            // txt_vem
+            // 
+            this.txt_vem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_vem.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_vem.BorderColor = System.Drawing.Color.White;
+            this.txt_vem.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_vem.BorderRadius = 0;
+            this.txt_vem.BorderSize = 1;
+            this.txt_vem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_vem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_vem.Location = new System.Drawing.Point(298, 88);
+            this.txt_vem.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_vem.Multiline = false;
+            this.txt_vem.Name = "txt_vem";
+            this.txt_vem.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_vem.PasswordChar = false;
+            this.txt_vem.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_vem.PlaceholderText = "Vem de qual Clã ?";
+            this.txt_vem.Size = new System.Drawing.Size(295, 31);
+            this.txt_vem.TabIndex = 157;
+            this.txt_vem.Texts = "";
+            this.txt_vem.UnderlinedStyle = false;
+            this.txt_vem.Enter += new System.EventHandler(this.txt_vem_Enter);
+            this.txt_vem.Leave += new System.EventHandler(this.txt_vem_Leave);
             // 
             // pl_espaco_02
             // 
@@ -189,6 +370,33 @@ namespace Hype.Painel
             this.pl_possui_atl.Name = "pl_possui_atl";
             this.pl_possui_atl.Size = new System.Drawing.Size(1200, 42);
             this.pl_possui_atl.TabIndex = 164;
+            // 
+            // txt_quantidade_alt
+            // 
+            this.txt_quantidade_alt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_quantidade_alt.BackColor = System.Drawing.Color.White;
+            this.txt_quantidade_alt.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_quantidade_alt.BorderSize = 0;
+            this.txt_quantidade_alt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_quantidade_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_quantidade_alt.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_quantidade_alt.IconColor = System.Drawing.Color.Black;
+            this.txt_quantidade_alt.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.txt_quantidade_alt.ListBackColor = System.Drawing.Color.White;
+            this.txt_quantidade_alt.ListTextColor = System.Drawing.Color.DimGray;
+            this.txt_quantidade_alt.Location = new System.Drawing.Point(675, 5);
+            this.txt_quantidade_alt.MinimumSize = new System.Drawing.Size(50, 30);
+            this.txt_quantidade_alt.Name = "txt_quantidade_alt";
+            this.txt_quantidade_alt.Size = new System.Drawing.Size(81, 31);
+            this.txt_quantidade_alt.TabIndex = 170;
+            this.txt_quantidade_alt.Texts = "";
+            this.txt_quantidade_alt.OnSelectedIndexChanged += new System.EventHandler(this.txt_quantidade_alt_SelectedIndexChanged);
             // 
             // lb_possui_alt
             // 
@@ -253,6 +461,34 @@ namespace Hype.Painel
             this.pl_conta_alt_01.Size = new System.Drawing.Size(1200, 95);
             this.pl_conta_alt_01.TabIndex = 167;
             // 
+            // txt_classe_alt_01
+            // 
+            this.txt_classe_alt_01.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_classe_alt_01.BackColor = System.Drawing.Color.White;
+            this.txt_classe_alt_01.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_classe_alt_01.BorderSize = 0;
+            this.txt_classe_alt_01.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_classe_alt_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_classe_alt_01.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_classe_alt_01.IconColor = System.Drawing.Color.Black;
+            this.txt_classe_alt_01.Items.AddRange(new object[] {
+            "Classe",
+            "Besteira",
+            "Feiticeira",
+            "Guerreiro",
+            "Lanceiro",
+            "Taoista"});
+            this.txt_classe_alt_01.ListBackColor = System.Drawing.Color.White;
+            this.txt_classe_alt_01.ListTextColor = System.Drawing.Color.DimGray;
+            this.txt_classe_alt_01.Location = new System.Drawing.Point(543, 48);
+            this.txt_classe_alt_01.MinimumSize = new System.Drawing.Size(50, 30);
+            this.txt_classe_alt_01.Name = "txt_classe_alt_01";
+            this.txt_classe_alt_01.Size = new System.Drawing.Size(130, 31);
+            this.txt_classe_alt_01.TabIndex = 167;
+            this.txt_classe_alt_01.Texts = "";
+            this.txt_classe_alt_01.OnSelectedIndexChanged += new System.EventHandler(this.txt_classe_alt_01_OnSelectedIndexChanged);
+            this.txt_classe_alt_01.Leave += new System.EventHandler(this.txt_classe_alt_01_Leave);
+            // 
             // lb_conta_alt
             // 
             this.lb_conta_alt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -266,6 +502,81 @@ namespace Hype.Painel
             this.lb_conta_alt.Text = "CONTA ALT";
             this.lb_conta_alt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txt_foi_alt_01
+            // 
+            this.txt_foi_alt_01.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_foi_alt_01.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_foi_alt_01.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_foi_alt_01.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_foi_alt_01.BorderRadius = 0;
+            this.txt_foi_alt_01.BorderSize = 1;
+            this.txt_foi_alt_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_foi_alt_01.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_foi_alt_01.Location = new System.Drawing.Point(680, 48);
+            this.txt_foi_alt_01.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_foi_alt_01.Multiline = false;
+            this.txt_foi_alt_01.Name = "txt_foi_alt_01";
+            this.txt_foi_alt_01.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_foi_alt_01.PasswordChar = false;
+            this.txt_foi_alt_01.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_foi_alt_01.PlaceholderText = "Foi para o Clã";
+            this.txt_foi_alt_01.Size = new System.Drawing.Size(261, 31);
+            this.txt_foi_alt_01.TabIndex = 20;
+            this.txt_foi_alt_01.Texts = "";
+            this.txt_foi_alt_01.UnderlinedStyle = false;
+            this.txt_foi_alt_01.Enter += new System.EventHandler(this.txt_foi_alt_01_Enter);
+            this.txt_foi_alt_01.Leave += new System.EventHandler(this.txt_foi_alt_01_Leave);
+            // 
+            // txt_level_alt_01
+            // 
+            this.txt_level_alt_01.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_level_alt_01.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_level_alt_01.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_level_alt_01.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_level_alt_01.BorderRadius = 0;
+            this.txt_level_alt_01.BorderSize = 1;
+            this.txt_level_alt_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_level_alt_01.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_level_alt_01.Location = new System.Drawing.Point(468, 48);
+            this.txt_level_alt_01.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_level_alt_01.Multiline = false;
+            this.txt_level_alt_01.Name = "txt_level_alt_01";
+            this.txt_level_alt_01.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_level_alt_01.PasswordChar = false;
+            this.txt_level_alt_01.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_level_alt_01.PlaceholderText = "Level";
+            this.txt_level_alt_01.Size = new System.Drawing.Size(69, 31);
+            this.txt_level_alt_01.TabIndex = 21;
+            this.txt_level_alt_01.Texts = "";
+            this.txt_level_alt_01.UnderlinedStyle = false;
+            this.txt_level_alt_01.Enter += new System.EventHandler(this.txt_level_alt_01_Enter);
+            this.txt_level_alt_01.Leave += new System.EventHandler(this.txt_level_alt_01_Leave);
+            // 
+            // txt_nick_alt_01
+            // 
+            this.txt_nick_alt_01.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_nick_alt_01.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_nick_alt_01.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_nick_alt_01.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_nick_alt_01.BorderRadius = 0;
+            this.txt_nick_alt_01.BorderSize = 1;
+            this.txt_nick_alt_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nick_alt_01.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_nick_alt_01.Location = new System.Drawing.Point(298, 48);
+            this.txt_nick_alt_01.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nick_alt_01.Multiline = false;
+            this.txt_nick_alt_01.Name = "txt_nick_alt_01";
+            this.txt_nick_alt_01.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_nick_alt_01.PasswordChar = false;
+            this.txt_nick_alt_01.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_nick_alt_01.PlaceholderText = "Qual é o Nick ?";
+            this.txt_nick_alt_01.Size = new System.Drawing.Size(162, 31);
+            this.txt_nick_alt_01.TabIndex = 17;
+            this.txt_nick_alt_01.Texts = "";
+            this.txt_nick_alt_01.UnderlinedStyle = false;
+            this.txt_nick_alt_01.Enter += new System.EventHandler(this.txt_nick_alt_01_Enter);
+            this.txt_nick_alt_01.Leave += new System.EventHandler(this.txt_nick_alt_01_Leave);
+            // 
             // pl_conta_alt_02
             // 
             this.pl_conta_alt_02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
@@ -278,6 +589,109 @@ namespace Hype.Painel
             this.pl_conta_alt_02.Name = "pl_conta_alt_02";
             this.pl_conta_alt_02.Size = new System.Drawing.Size(1200, 59);
             this.pl_conta_alt_02.TabIndex = 170;
+            // 
+            // txt_classe_alt_02
+            // 
+            this.txt_classe_alt_02.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_classe_alt_02.BackColor = System.Drawing.Color.White;
+            this.txt_classe_alt_02.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_classe_alt_02.BorderSize = 0;
+            this.txt_classe_alt_02.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_classe_alt_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_classe_alt_02.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_classe_alt_02.IconColor = System.Drawing.Color.Black;
+            this.txt_classe_alt_02.Items.AddRange(new object[] {
+            "Classe",
+            "Besteira",
+            "Feiticeira",
+            "Guerreiro",
+            "Lanceiro",
+            "Taoista"});
+            this.txt_classe_alt_02.ListBackColor = System.Drawing.Color.White;
+            this.txt_classe_alt_02.ListTextColor = System.Drawing.Color.DimGray;
+            this.txt_classe_alt_02.Location = new System.Drawing.Point(543, 21);
+            this.txt_classe_alt_02.MinimumSize = new System.Drawing.Size(50, 30);
+            this.txt_classe_alt_02.Name = "txt_classe_alt_02";
+            this.txt_classe_alt_02.Size = new System.Drawing.Size(130, 31);
+            this.txt_classe_alt_02.TabIndex = 171;
+            this.txt_classe_alt_02.Texts = "";
+            this.txt_classe_alt_02.OnSelectedIndexChanged += new System.EventHandler(this.txt_classe_alt_02_OnSelectedIndexChanged);
+            this.txt_classe_alt_02.Leave += new System.EventHandler(this.txt_classe_alt_02_Leave);
+            // 
+            // txt_nick_alt_02
+            // 
+            this.txt_nick_alt_02.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_nick_alt_02.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_nick_alt_02.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_nick_alt_02.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_nick_alt_02.BorderRadius = 0;
+            this.txt_nick_alt_02.BorderSize = 1;
+            this.txt_nick_alt_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nick_alt_02.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_nick_alt_02.Location = new System.Drawing.Point(298, 21);
+            this.txt_nick_alt_02.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nick_alt_02.Multiline = false;
+            this.txt_nick_alt_02.Name = "txt_nick_alt_02";
+            this.txt_nick_alt_02.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_nick_alt_02.PasswordChar = false;
+            this.txt_nick_alt_02.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_nick_alt_02.PlaceholderText = "Qual é o Nick ?";
+            this.txt_nick_alt_02.Size = new System.Drawing.Size(162, 31);
+            this.txt_nick_alt_02.TabIndex = 168;
+            this.txt_nick_alt_02.Texts = "";
+            this.txt_nick_alt_02.UnderlinedStyle = false;
+            this.txt_nick_alt_02.Enter += new System.EventHandler(this.txt_nick_alt_02_Enter);
+            this.txt_nick_alt_02.Leave += new System.EventHandler(this.txt_nick_alt_02_Leave);
+            // 
+            // txt_foi_alt_02
+            // 
+            this.txt_foi_alt_02.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_foi_alt_02.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_foi_alt_02.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_foi_alt_02.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_foi_alt_02.BorderRadius = 0;
+            this.txt_foi_alt_02.BorderSize = 1;
+            this.txt_foi_alt_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_foi_alt_02.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_foi_alt_02.Location = new System.Drawing.Point(680, 21);
+            this.txt_foi_alt_02.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_foi_alt_02.Multiline = false;
+            this.txt_foi_alt_02.Name = "txt_foi_alt_02";
+            this.txt_foi_alt_02.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_foi_alt_02.PasswordChar = false;
+            this.txt_foi_alt_02.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_foi_alt_02.PlaceholderText = "Foi para o Clã";
+            this.txt_foi_alt_02.Size = new System.Drawing.Size(261, 31);
+            this.txt_foi_alt_02.TabIndex = 169;
+            this.txt_foi_alt_02.Texts = "";
+            this.txt_foi_alt_02.UnderlinedStyle = false;
+            this.txt_foi_alt_02.Enter += new System.EventHandler(this.txt_foi_alt_02_Enter);
+            this.txt_foi_alt_02.Leave += new System.EventHandler(this.txt_foi_alt_02_Leave);
+            // 
+            // txt_level_alt_02
+            // 
+            this.txt_level_alt_02.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_level_alt_02.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_level_alt_02.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_level_alt_02.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_level_alt_02.BorderRadius = 0;
+            this.txt_level_alt_02.BorderSize = 1;
+            this.txt_level_alt_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_level_alt_02.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_level_alt_02.Location = new System.Drawing.Point(468, 21);
+            this.txt_level_alt_02.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_level_alt_02.Multiline = false;
+            this.txt_level_alt_02.Name = "txt_level_alt_02";
+            this.txt_level_alt_02.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_level_alt_02.PasswordChar = false;
+            this.txt_level_alt_02.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_level_alt_02.PlaceholderText = "Level";
+            this.txt_level_alt_02.Size = new System.Drawing.Size(69, 31);
+            this.txt_level_alt_02.TabIndex = 170;
+            this.txt_level_alt_02.Texts = "";
+            this.txt_level_alt_02.UnderlinedStyle = false;
+            this.txt_level_alt_02.Enter += new System.EventHandler(this.txt_level_alt_02_Enter);
+            this.txt_level_alt_02.Leave += new System.EventHandler(this.txt_level_alt_02_Leave);
             // 
             // pl_botao
             // 
@@ -337,6 +751,109 @@ namespace Hype.Painel
             this.pl_conta_alt_03.Size = new System.Drawing.Size(1200, 59);
             this.pl_conta_alt_03.TabIndex = 186;
             // 
+            // txt_classe_alt_03
+            // 
+            this.txt_classe_alt_03.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_classe_alt_03.BackColor = System.Drawing.Color.White;
+            this.txt_classe_alt_03.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_classe_alt_03.BorderSize = 0;
+            this.txt_classe_alt_03.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_classe_alt_03.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_classe_alt_03.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_classe_alt_03.IconColor = System.Drawing.Color.Black;
+            this.txt_classe_alt_03.Items.AddRange(new object[] {
+            "Classe",
+            "Besteira",
+            "Feiticeira",
+            "Guerreiro",
+            "Lanceiro",
+            "Taoista"});
+            this.txt_classe_alt_03.ListBackColor = System.Drawing.Color.White;
+            this.txt_classe_alt_03.ListTextColor = System.Drawing.Color.DimGray;
+            this.txt_classe_alt_03.Location = new System.Drawing.Point(543, 21);
+            this.txt_classe_alt_03.MinimumSize = new System.Drawing.Size(50, 30);
+            this.txt_classe_alt_03.Name = "txt_classe_alt_03";
+            this.txt_classe_alt_03.Size = new System.Drawing.Size(130, 31);
+            this.txt_classe_alt_03.TabIndex = 175;
+            this.txt_classe_alt_03.Texts = "";
+            this.txt_classe_alt_03.OnSelectedIndexChanged += new System.EventHandler(this.txt_classe_alt_03_OnSelectedIndexChanged);
+            this.txt_classe_alt_03.Leave += new System.EventHandler(this.txt_classe_alt_03_Leave);
+            // 
+            // txt_nick_alt_03
+            // 
+            this.txt_nick_alt_03.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_nick_alt_03.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_nick_alt_03.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_nick_alt_03.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_nick_alt_03.BorderRadius = 0;
+            this.txt_nick_alt_03.BorderSize = 1;
+            this.txt_nick_alt_03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nick_alt_03.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_nick_alt_03.Location = new System.Drawing.Point(298, 21);
+            this.txt_nick_alt_03.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nick_alt_03.Multiline = false;
+            this.txt_nick_alt_03.Name = "txt_nick_alt_03";
+            this.txt_nick_alt_03.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_nick_alt_03.PasswordChar = false;
+            this.txt_nick_alt_03.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_nick_alt_03.PlaceholderText = "Qual é o Nick ?";
+            this.txt_nick_alt_03.Size = new System.Drawing.Size(162, 31);
+            this.txt_nick_alt_03.TabIndex = 172;
+            this.txt_nick_alt_03.Texts = "";
+            this.txt_nick_alt_03.UnderlinedStyle = false;
+            this.txt_nick_alt_03.Enter += new System.EventHandler(this.txt_nick_alt_03_Enter);
+            this.txt_nick_alt_03.Leave += new System.EventHandler(this.txt_nick_alt_03_Leave);
+            // 
+            // txt_foi_alt_03
+            // 
+            this.txt_foi_alt_03.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_foi_alt_03.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_foi_alt_03.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_foi_alt_03.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_foi_alt_03.BorderRadius = 0;
+            this.txt_foi_alt_03.BorderSize = 1;
+            this.txt_foi_alt_03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_foi_alt_03.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_foi_alt_03.Location = new System.Drawing.Point(680, 21);
+            this.txt_foi_alt_03.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_foi_alt_03.Multiline = false;
+            this.txt_foi_alt_03.Name = "txt_foi_alt_03";
+            this.txt_foi_alt_03.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_foi_alt_03.PasswordChar = false;
+            this.txt_foi_alt_03.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_foi_alt_03.PlaceholderText = "Foi para o Clã";
+            this.txt_foi_alt_03.Size = new System.Drawing.Size(261, 31);
+            this.txt_foi_alt_03.TabIndex = 173;
+            this.txt_foi_alt_03.Texts = "";
+            this.txt_foi_alt_03.UnderlinedStyle = false;
+            this.txt_foi_alt_03.Enter += new System.EventHandler(this.txt_foi_alt_03_Enter);
+            this.txt_foi_alt_03.Leave += new System.EventHandler(this.txt_foi_alt_03_Leave);
+            // 
+            // txt_level_alt_03
+            // 
+            this.txt_level_alt_03.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_level_alt_03.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_level_alt_03.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_level_alt_03.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_level_alt_03.BorderRadius = 0;
+            this.txt_level_alt_03.BorderSize = 1;
+            this.txt_level_alt_03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_level_alt_03.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_level_alt_03.Location = new System.Drawing.Point(468, 21);
+            this.txt_level_alt_03.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_level_alt_03.Multiline = false;
+            this.txt_level_alt_03.Name = "txt_level_alt_03";
+            this.txt_level_alt_03.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_level_alt_03.PasswordChar = false;
+            this.txt_level_alt_03.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_level_alt_03.PlaceholderText = "Level";
+            this.txt_level_alt_03.Size = new System.Drawing.Size(69, 31);
+            this.txt_level_alt_03.TabIndex = 174;
+            this.txt_level_alt_03.Texts = "";
+            this.txt_level_alt_03.UnderlinedStyle = false;
+            this.txt_level_alt_03.Enter += new System.EventHandler(this.txt_level_alt_03_Enter);
+            this.txt_level_alt_03.Leave += new System.EventHandler(this.txt_level_alt_03_Leave);
+            // 
             // pl_conta_alt_04
             // 
             this.pl_conta_alt_04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
@@ -349,6 +866,109 @@ namespace Hype.Painel
             this.pl_conta_alt_04.Name = "pl_conta_alt_04";
             this.pl_conta_alt_04.Size = new System.Drawing.Size(1200, 59);
             this.pl_conta_alt_04.TabIndex = 187;
+            // 
+            // txt_classe_alt_04
+            // 
+            this.txt_classe_alt_04.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_classe_alt_04.BackColor = System.Drawing.Color.White;
+            this.txt_classe_alt_04.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_classe_alt_04.BorderSize = 0;
+            this.txt_classe_alt_04.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_classe_alt_04.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_classe_alt_04.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_classe_alt_04.IconColor = System.Drawing.Color.Black;
+            this.txt_classe_alt_04.Items.AddRange(new object[] {
+            "Classe",
+            "Besteira",
+            "Feiticeira",
+            "Guerreiro",
+            "Lanceiro",
+            "Taoista"});
+            this.txt_classe_alt_04.ListBackColor = System.Drawing.Color.White;
+            this.txt_classe_alt_04.ListTextColor = System.Drawing.Color.DimGray;
+            this.txt_classe_alt_04.Location = new System.Drawing.Point(543, 21);
+            this.txt_classe_alt_04.MinimumSize = new System.Drawing.Size(50, 30);
+            this.txt_classe_alt_04.Name = "txt_classe_alt_04";
+            this.txt_classe_alt_04.Size = new System.Drawing.Size(130, 31);
+            this.txt_classe_alt_04.TabIndex = 179;
+            this.txt_classe_alt_04.Texts = "";
+            this.txt_classe_alt_04.OnSelectedIndexChanged += new System.EventHandler(this.txt_classe_alt_04_OnSelectedIndexChanged);
+            this.txt_classe_alt_04.Leave += new System.EventHandler(this.txt_classe_alt_04_Leave);
+            // 
+            // txt_nick_alt_04
+            // 
+            this.txt_nick_alt_04.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_nick_alt_04.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_nick_alt_04.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_nick_alt_04.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_nick_alt_04.BorderRadius = 0;
+            this.txt_nick_alt_04.BorderSize = 1;
+            this.txt_nick_alt_04.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nick_alt_04.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_nick_alt_04.Location = new System.Drawing.Point(298, 21);
+            this.txt_nick_alt_04.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nick_alt_04.Multiline = false;
+            this.txt_nick_alt_04.Name = "txt_nick_alt_04";
+            this.txt_nick_alt_04.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_nick_alt_04.PasswordChar = false;
+            this.txt_nick_alt_04.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_nick_alt_04.PlaceholderText = "Qual é o Nick ?";
+            this.txt_nick_alt_04.Size = new System.Drawing.Size(162, 31);
+            this.txt_nick_alt_04.TabIndex = 176;
+            this.txt_nick_alt_04.Texts = "";
+            this.txt_nick_alt_04.UnderlinedStyle = false;
+            this.txt_nick_alt_04.Enter += new System.EventHandler(this.txt_nick_alt_04_Enter);
+            this.txt_nick_alt_04.Leave += new System.EventHandler(this.txt_nick_alt_04_Leave);
+            // 
+            // txt_foi_alt_04
+            // 
+            this.txt_foi_alt_04.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_foi_alt_04.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_foi_alt_04.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_foi_alt_04.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_foi_alt_04.BorderRadius = 0;
+            this.txt_foi_alt_04.BorderSize = 1;
+            this.txt_foi_alt_04.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_foi_alt_04.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_foi_alt_04.Location = new System.Drawing.Point(680, 21);
+            this.txt_foi_alt_04.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_foi_alt_04.Multiline = false;
+            this.txt_foi_alt_04.Name = "txt_foi_alt_04";
+            this.txt_foi_alt_04.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_foi_alt_04.PasswordChar = false;
+            this.txt_foi_alt_04.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_foi_alt_04.PlaceholderText = "Foi para o Clã";
+            this.txt_foi_alt_04.Size = new System.Drawing.Size(261, 31);
+            this.txt_foi_alt_04.TabIndex = 177;
+            this.txt_foi_alt_04.Texts = "";
+            this.txt_foi_alt_04.UnderlinedStyle = false;
+            this.txt_foi_alt_04.Enter += new System.EventHandler(this.txt_foi_alt_04_Enter);
+            this.txt_foi_alt_04.Leave += new System.EventHandler(this.txt_foi_alt_04_Leave);
+            // 
+            // txt_level_alt_04
+            // 
+            this.txt_level_alt_04.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_level_alt_04.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_level_alt_04.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_level_alt_04.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_level_alt_04.BorderRadius = 0;
+            this.txt_level_alt_04.BorderSize = 1;
+            this.txt_level_alt_04.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_level_alt_04.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_level_alt_04.Location = new System.Drawing.Point(468, 21);
+            this.txt_level_alt_04.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_level_alt_04.Multiline = false;
+            this.txt_level_alt_04.Name = "txt_level_alt_04";
+            this.txt_level_alt_04.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_level_alt_04.PasswordChar = false;
+            this.txt_level_alt_04.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_level_alt_04.PlaceholderText = "Level";
+            this.txt_level_alt_04.Size = new System.Drawing.Size(69, 31);
+            this.txt_level_alt_04.TabIndex = 178;
+            this.txt_level_alt_04.Texts = "";
+            this.txt_level_alt_04.UnderlinedStyle = false;
+            this.txt_level_alt_04.Enter += new System.EventHandler(this.txt_level_alt_04_Enter);
+            this.txt_level_alt_04.Leave += new System.EventHandler(this.txt_level_alt_04_Leave);
             // 
             // pl_conta_alt_05
             // 
@@ -388,6 +1008,7 @@ namespace Hype.Painel
             this.txt_classe_alt_05.Size = new System.Drawing.Size(130, 31);
             this.txt_classe_alt_05.TabIndex = 183;
             this.txt_classe_alt_05.Texts = "";
+            this.txt_classe_alt_05.OnSelectedIndexChanged += new System.EventHandler(this.txt_classe_alt_05_OnSelectedIndexChanged);
             this.txt_classe_alt_05.Leave += new System.EventHandler(this.txt_classe_alt_05_Leave);
             // 
             // txt_nick_alt_05
@@ -412,6 +1033,7 @@ namespace Hype.Painel
             this.txt_nick_alt_05.TabIndex = 180;
             this.txt_nick_alt_05.Texts = "";
             this.txt_nick_alt_05.UnderlinedStyle = false;
+            this.txt_nick_alt_05.Enter += new System.EventHandler(this.txt_nick_alt_05_Enter);
             this.txt_nick_alt_05.Leave += new System.EventHandler(this.txt_nick_alt_05_Leave);
             // 
             // txt_foi_alt_05
@@ -436,6 +1058,7 @@ namespace Hype.Painel
             this.txt_foi_alt_05.TabIndex = 181;
             this.txt_foi_alt_05.Texts = "";
             this.txt_foi_alt_05.UnderlinedStyle = false;
+            this.txt_foi_alt_05.Enter += new System.EventHandler(this.txt_foi_alt_05_Enter);
             this.txt_foi_alt_05.Leave += new System.EventHandler(this.txt_foi_alt_05_Leave);
             // 
             // txt_level_alt_05
@@ -460,604 +1083,8 @@ namespace Hype.Painel
             this.txt_level_alt_05.TabIndex = 182;
             this.txt_level_alt_05.Texts = "";
             this.txt_level_alt_05.UnderlinedStyle = false;
+            this.txt_level_alt_05.Enter += new System.EventHandler(this.txt_level_alt_05_Enter);
             this.txt_level_alt_05.Leave += new System.EventHandler(this.txt_level_alt_05_Leave);
-            // 
-            // txt_classe_alt_04
-            // 
-            this.txt_classe_alt_04.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_classe_alt_04.BackColor = System.Drawing.Color.White;
-            this.txt_classe_alt_04.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_classe_alt_04.BorderSize = 0;
-            this.txt_classe_alt_04.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_classe_alt_04.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txt_classe_alt_04.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_classe_alt_04.IconColor = System.Drawing.Color.Black;
-            this.txt_classe_alt_04.Items.AddRange(new object[] {
-            "Classe",
-            "Besteira",
-            "Feiticeira",
-            "Guerreiro",
-            "Lanceiro",
-            "Taoista"});
-            this.txt_classe_alt_04.ListBackColor = System.Drawing.Color.White;
-            this.txt_classe_alt_04.ListTextColor = System.Drawing.Color.DimGray;
-            this.txt_classe_alt_04.Location = new System.Drawing.Point(543, 21);
-            this.txt_classe_alt_04.MinimumSize = new System.Drawing.Size(50, 30);
-            this.txt_classe_alt_04.Name = "txt_classe_alt_04";
-            this.txt_classe_alt_04.Size = new System.Drawing.Size(130, 31);
-            this.txt_classe_alt_04.TabIndex = 179;
-            this.txt_classe_alt_04.Texts = "";
-            this.txt_classe_alt_04.Leave += new System.EventHandler(this.txt_classe_alt_04_Leave);
-            // 
-            // txt_nick_alt_04
-            // 
-            this.txt_nick_alt_04.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_nick_alt_04.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_nick_alt_04.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_nick_alt_04.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_nick_alt_04.BorderRadius = 0;
-            this.txt_nick_alt_04.BorderSize = 1;
-            this.txt_nick_alt_04.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nick_alt_04.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_nick_alt_04.Location = new System.Drawing.Point(298, 21);
-            this.txt_nick_alt_04.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nick_alt_04.Multiline = false;
-            this.txt_nick_alt_04.Name = "txt_nick_alt_04";
-            this.txt_nick_alt_04.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_nick_alt_04.PasswordChar = false;
-            this.txt_nick_alt_04.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_nick_alt_04.PlaceholderText = "Qual é o Nick ?";
-            this.txt_nick_alt_04.Size = new System.Drawing.Size(162, 31);
-            this.txt_nick_alt_04.TabIndex = 176;
-            this.txt_nick_alt_04.Texts = "";
-            this.txt_nick_alt_04.UnderlinedStyle = false;
-            this.txt_nick_alt_04.Leave += new System.EventHandler(this.txt_nick_alt_04_Leave);
-            // 
-            // txt_foi_alt_04
-            // 
-            this.txt_foi_alt_04.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_foi_alt_04.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_foi_alt_04.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_foi_alt_04.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_foi_alt_04.BorderRadius = 0;
-            this.txt_foi_alt_04.BorderSize = 1;
-            this.txt_foi_alt_04.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_foi_alt_04.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_foi_alt_04.Location = new System.Drawing.Point(680, 21);
-            this.txt_foi_alt_04.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_foi_alt_04.Multiline = false;
-            this.txt_foi_alt_04.Name = "txt_foi_alt_04";
-            this.txt_foi_alt_04.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_foi_alt_04.PasswordChar = false;
-            this.txt_foi_alt_04.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_foi_alt_04.PlaceholderText = "Foi para o Clã";
-            this.txt_foi_alt_04.Size = new System.Drawing.Size(261, 31);
-            this.txt_foi_alt_04.TabIndex = 177;
-            this.txt_foi_alt_04.Texts = "";
-            this.txt_foi_alt_04.UnderlinedStyle = false;
-            this.txt_foi_alt_04.Leave += new System.EventHandler(this.txt_foi_alt_04_Leave);
-            // 
-            // txt_level_alt_04
-            // 
-            this.txt_level_alt_04.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level_alt_04.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_level_alt_04.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_level_alt_04.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_level_alt_04.BorderRadius = 0;
-            this.txt_level_alt_04.BorderSize = 1;
-            this.txt_level_alt_04.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level_alt_04.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level_alt_04.Location = new System.Drawing.Point(468, 21);
-            this.txt_level_alt_04.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level_alt_04.Multiline = false;
-            this.txt_level_alt_04.Name = "txt_level_alt_04";
-            this.txt_level_alt_04.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level_alt_04.PasswordChar = false;
-            this.txt_level_alt_04.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_level_alt_04.PlaceholderText = "Level";
-            this.txt_level_alt_04.Size = new System.Drawing.Size(69, 31);
-            this.txt_level_alt_04.TabIndex = 178;
-            this.txt_level_alt_04.Texts = "";
-            this.txt_level_alt_04.UnderlinedStyle = false;
-            this.txt_level_alt_04.Leave += new System.EventHandler(this.txt_level_alt_04_Leave);
-            // 
-            // txt_classe_alt_03
-            // 
-            this.txt_classe_alt_03.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_classe_alt_03.BackColor = System.Drawing.Color.White;
-            this.txt_classe_alt_03.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_classe_alt_03.BorderSize = 0;
-            this.txt_classe_alt_03.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_classe_alt_03.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txt_classe_alt_03.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_classe_alt_03.IconColor = System.Drawing.Color.Black;
-            this.txt_classe_alt_03.Items.AddRange(new object[] {
-            "Classe",
-            "Besteira",
-            "Feiticeira",
-            "Guerreiro",
-            "Lanceiro",
-            "Taoista"});
-            this.txt_classe_alt_03.ListBackColor = System.Drawing.Color.White;
-            this.txt_classe_alt_03.ListTextColor = System.Drawing.Color.DimGray;
-            this.txt_classe_alt_03.Location = new System.Drawing.Point(543, 21);
-            this.txt_classe_alt_03.MinimumSize = new System.Drawing.Size(50, 30);
-            this.txt_classe_alt_03.Name = "txt_classe_alt_03";
-            this.txt_classe_alt_03.Size = new System.Drawing.Size(130, 31);
-            this.txt_classe_alt_03.TabIndex = 175;
-            this.txt_classe_alt_03.Texts = "";
-            this.txt_classe_alt_03.Leave += new System.EventHandler(this.txt_classe_alt_03_Leave);
-            // 
-            // txt_nick_alt_03
-            // 
-            this.txt_nick_alt_03.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_nick_alt_03.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_nick_alt_03.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_nick_alt_03.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_nick_alt_03.BorderRadius = 0;
-            this.txt_nick_alt_03.BorderSize = 1;
-            this.txt_nick_alt_03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nick_alt_03.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_nick_alt_03.Location = new System.Drawing.Point(298, 21);
-            this.txt_nick_alt_03.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nick_alt_03.Multiline = false;
-            this.txt_nick_alt_03.Name = "txt_nick_alt_03";
-            this.txt_nick_alt_03.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_nick_alt_03.PasswordChar = false;
-            this.txt_nick_alt_03.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_nick_alt_03.PlaceholderText = "Qual é o Nick ?";
-            this.txt_nick_alt_03.Size = new System.Drawing.Size(162, 31);
-            this.txt_nick_alt_03.TabIndex = 172;
-            this.txt_nick_alt_03.Texts = "";
-            this.txt_nick_alt_03.UnderlinedStyle = false;
-            this.txt_nick_alt_03.Leave += new System.EventHandler(this.txt_nick_alt_03_Leave);
-            // 
-            // txt_foi_alt_03
-            // 
-            this.txt_foi_alt_03.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_foi_alt_03.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_foi_alt_03.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_foi_alt_03.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_foi_alt_03.BorderRadius = 0;
-            this.txt_foi_alt_03.BorderSize = 1;
-            this.txt_foi_alt_03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_foi_alt_03.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_foi_alt_03.Location = new System.Drawing.Point(680, 21);
-            this.txt_foi_alt_03.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_foi_alt_03.Multiline = false;
-            this.txt_foi_alt_03.Name = "txt_foi_alt_03";
-            this.txt_foi_alt_03.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_foi_alt_03.PasswordChar = false;
-            this.txt_foi_alt_03.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_foi_alt_03.PlaceholderText = "Foi para o Clã";
-            this.txt_foi_alt_03.Size = new System.Drawing.Size(261, 31);
-            this.txt_foi_alt_03.TabIndex = 173;
-            this.txt_foi_alt_03.Texts = "";
-            this.txt_foi_alt_03.UnderlinedStyle = false;
-            this.txt_foi_alt_03.Leave += new System.EventHandler(this.txt_foi_alt_03_Leave);
-            // 
-            // txt_level_alt_03
-            // 
-            this.txt_level_alt_03.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level_alt_03.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_level_alt_03.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_level_alt_03.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_level_alt_03.BorderRadius = 0;
-            this.txt_level_alt_03.BorderSize = 1;
-            this.txt_level_alt_03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level_alt_03.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level_alt_03.Location = new System.Drawing.Point(468, 21);
-            this.txt_level_alt_03.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level_alt_03.Multiline = false;
-            this.txt_level_alt_03.Name = "txt_level_alt_03";
-            this.txt_level_alt_03.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level_alt_03.PasswordChar = false;
-            this.txt_level_alt_03.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_level_alt_03.PlaceholderText = "Level";
-            this.txt_level_alt_03.Size = new System.Drawing.Size(69, 31);
-            this.txt_level_alt_03.TabIndex = 174;
-            this.txt_level_alt_03.Texts = "";
-            this.txt_level_alt_03.UnderlinedStyle = false;
-            this.txt_level_alt_03.Leave += new System.EventHandler(this.txt_level_alt_03_Leave);
-            // 
-            // txt_classe_alt_02
-            // 
-            this.txt_classe_alt_02.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_classe_alt_02.BackColor = System.Drawing.Color.White;
-            this.txt_classe_alt_02.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_classe_alt_02.BorderSize = 0;
-            this.txt_classe_alt_02.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_classe_alt_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txt_classe_alt_02.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_classe_alt_02.IconColor = System.Drawing.Color.Black;
-            this.txt_classe_alt_02.Items.AddRange(new object[] {
-            "Classe",
-            "Besteira",
-            "Feiticeira",
-            "Guerreiro",
-            "Lanceiro",
-            "Taoista"});
-            this.txt_classe_alt_02.ListBackColor = System.Drawing.Color.White;
-            this.txt_classe_alt_02.ListTextColor = System.Drawing.Color.DimGray;
-            this.txt_classe_alt_02.Location = new System.Drawing.Point(543, 21);
-            this.txt_classe_alt_02.MinimumSize = new System.Drawing.Size(50, 30);
-            this.txt_classe_alt_02.Name = "txt_classe_alt_02";
-            this.txt_classe_alt_02.Size = new System.Drawing.Size(130, 31);
-            this.txt_classe_alt_02.TabIndex = 171;
-            this.txt_classe_alt_02.Texts = "";
-            this.txt_classe_alt_02.Leave += new System.EventHandler(this.txt_classe_alt_02_Leave);
-            // 
-            // txt_nick_alt_02
-            // 
-            this.txt_nick_alt_02.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_nick_alt_02.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_nick_alt_02.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_nick_alt_02.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_nick_alt_02.BorderRadius = 0;
-            this.txt_nick_alt_02.BorderSize = 1;
-            this.txt_nick_alt_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nick_alt_02.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_nick_alt_02.Location = new System.Drawing.Point(298, 21);
-            this.txt_nick_alt_02.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nick_alt_02.Multiline = false;
-            this.txt_nick_alt_02.Name = "txt_nick_alt_02";
-            this.txt_nick_alt_02.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_nick_alt_02.PasswordChar = false;
-            this.txt_nick_alt_02.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_nick_alt_02.PlaceholderText = "Qual é o Nick ?";
-            this.txt_nick_alt_02.Size = new System.Drawing.Size(162, 31);
-            this.txt_nick_alt_02.TabIndex = 168;
-            this.txt_nick_alt_02.Texts = "";
-            this.txt_nick_alt_02.UnderlinedStyle = false;
-            this.txt_nick_alt_02.Leave += new System.EventHandler(this.txt_nick_alt_02_Leave);
-            // 
-            // txt_foi_alt_02
-            // 
-            this.txt_foi_alt_02.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_foi_alt_02.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_foi_alt_02.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_foi_alt_02.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_foi_alt_02.BorderRadius = 0;
-            this.txt_foi_alt_02.BorderSize = 1;
-            this.txt_foi_alt_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_foi_alt_02.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_foi_alt_02.Location = new System.Drawing.Point(680, 21);
-            this.txt_foi_alt_02.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_foi_alt_02.Multiline = false;
-            this.txt_foi_alt_02.Name = "txt_foi_alt_02";
-            this.txt_foi_alt_02.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_foi_alt_02.PasswordChar = false;
-            this.txt_foi_alt_02.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_foi_alt_02.PlaceholderText = "Foi para o Clã";
-            this.txt_foi_alt_02.Size = new System.Drawing.Size(261, 31);
-            this.txt_foi_alt_02.TabIndex = 169;
-            this.txt_foi_alt_02.Texts = "";
-            this.txt_foi_alt_02.UnderlinedStyle = false;
-            this.txt_foi_alt_02.Leave += new System.EventHandler(this.txt_foi_alt_02_Leave);
-            // 
-            // txt_level_alt_02
-            // 
-            this.txt_level_alt_02.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level_alt_02.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_level_alt_02.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_level_alt_02.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_level_alt_02.BorderRadius = 0;
-            this.txt_level_alt_02.BorderSize = 1;
-            this.txt_level_alt_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level_alt_02.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level_alt_02.Location = new System.Drawing.Point(468, 21);
-            this.txt_level_alt_02.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level_alt_02.Multiline = false;
-            this.txt_level_alt_02.Name = "txt_level_alt_02";
-            this.txt_level_alt_02.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level_alt_02.PasswordChar = false;
-            this.txt_level_alt_02.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_level_alt_02.PlaceholderText = "Level";
-            this.txt_level_alt_02.Size = new System.Drawing.Size(69, 31);
-            this.txt_level_alt_02.TabIndex = 170;
-            this.txt_level_alt_02.Texts = "";
-            this.txt_level_alt_02.UnderlinedStyle = false;
-            this.txt_level_alt_02.Leave += new System.EventHandler(this.txt_level_alt_02_Leave);
-            // 
-            // txt_classe_alt_01
-            // 
-            this.txt_classe_alt_01.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_classe_alt_01.BackColor = System.Drawing.Color.White;
-            this.txt_classe_alt_01.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_classe_alt_01.BorderSize = 0;
-            this.txt_classe_alt_01.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_classe_alt_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txt_classe_alt_01.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_classe_alt_01.IconColor = System.Drawing.Color.Black;
-            this.txt_classe_alt_01.Items.AddRange(new object[] {
-            "Classe",
-            "Besteira",
-            "Feiticeira",
-            "Guerreiro",
-            "Lanceiro",
-            "Taoista"});
-            this.txt_classe_alt_01.ListBackColor = System.Drawing.Color.White;
-            this.txt_classe_alt_01.ListTextColor = System.Drawing.Color.DimGray;
-            this.txt_classe_alt_01.Location = new System.Drawing.Point(543, 48);
-            this.txt_classe_alt_01.MinimumSize = new System.Drawing.Size(50, 30);
-            this.txt_classe_alt_01.Name = "txt_classe_alt_01";
-            this.txt_classe_alt_01.Size = new System.Drawing.Size(130, 31);
-            this.txt_classe_alt_01.TabIndex = 167;
-            this.txt_classe_alt_01.Texts = "";
-            this.txt_classe_alt_01.Leave += new System.EventHandler(this.txt_classe_alt_01_Leave);
-            // 
-            // txt_foi_alt_01
-            // 
-            this.txt_foi_alt_01.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_foi_alt_01.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_foi_alt_01.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_foi_alt_01.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_foi_alt_01.BorderRadius = 0;
-            this.txt_foi_alt_01.BorderSize = 1;
-            this.txt_foi_alt_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_foi_alt_01.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_foi_alt_01.Location = new System.Drawing.Point(680, 48);
-            this.txt_foi_alt_01.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_foi_alt_01.Multiline = false;
-            this.txt_foi_alt_01.Name = "txt_foi_alt_01";
-            this.txt_foi_alt_01.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_foi_alt_01.PasswordChar = false;
-            this.txt_foi_alt_01.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_foi_alt_01.PlaceholderText = "Foi para o Clã";
-            this.txt_foi_alt_01.Size = new System.Drawing.Size(261, 31);
-            this.txt_foi_alt_01.TabIndex = 20;
-            this.txt_foi_alt_01.Texts = "";
-            this.txt_foi_alt_01.UnderlinedStyle = false;
-            this.txt_foi_alt_01.Leave += new System.EventHandler(this.txt_foi_alt_01_Leave);
-            // 
-            // txt_level_alt_01
-            // 
-            this.txt_level_alt_01.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level_alt_01.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_level_alt_01.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_level_alt_01.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_level_alt_01.BorderRadius = 0;
-            this.txt_level_alt_01.BorderSize = 1;
-            this.txt_level_alt_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level_alt_01.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level_alt_01.Location = new System.Drawing.Point(468, 48);
-            this.txt_level_alt_01.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level_alt_01.Multiline = false;
-            this.txt_level_alt_01.Name = "txt_level_alt_01";
-            this.txt_level_alt_01.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level_alt_01.PasswordChar = false;
-            this.txt_level_alt_01.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_level_alt_01.PlaceholderText = "Level";
-            this.txt_level_alt_01.Size = new System.Drawing.Size(69, 31);
-            this.txt_level_alt_01.TabIndex = 21;
-            this.txt_level_alt_01.Texts = "";
-            this.txt_level_alt_01.UnderlinedStyle = false;
-            this.txt_level_alt_01.Leave += new System.EventHandler(this.txt_level_alt_01_Leave);
-            // 
-            // txt_nick_alt_01
-            // 
-            this.txt_nick_alt_01.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_nick_alt_01.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_nick_alt_01.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_nick_alt_01.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_nick_alt_01.BorderRadius = 0;
-            this.txt_nick_alt_01.BorderSize = 1;
-            this.txt_nick_alt_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nick_alt_01.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_nick_alt_01.Location = new System.Drawing.Point(298, 48);
-            this.txt_nick_alt_01.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nick_alt_01.Multiline = false;
-            this.txt_nick_alt_01.Name = "txt_nick_alt_01";
-            this.txt_nick_alt_01.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_nick_alt_01.PasswordChar = false;
-            this.txt_nick_alt_01.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_nick_alt_01.PlaceholderText = "Qual é o Nick ?";
-            this.txt_nick_alt_01.Size = new System.Drawing.Size(162, 31);
-            this.txt_nick_alt_01.TabIndex = 17;
-            this.txt_nick_alt_01.Texts = "";
-            this.txt_nick_alt_01.UnderlinedStyle = false;
-            this.txt_nick_alt_01.Leave += new System.EventHandler(this.txt_nick_alt_01_Leave);
-            // 
-            // txt_quantidade_alt
-            // 
-            this.txt_quantidade_alt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_quantidade_alt.BackColor = System.Drawing.Color.White;
-            this.txt_quantidade_alt.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_quantidade_alt.BorderSize = 0;
-            this.txt_quantidade_alt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_quantidade_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txt_quantidade_alt.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_quantidade_alt.IconColor = System.Drawing.Color.Black;
-            this.txt_quantidade_alt.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.txt_quantidade_alt.ListBackColor = System.Drawing.Color.White;
-            this.txt_quantidade_alt.ListTextColor = System.Drawing.Color.DimGray;
-            this.txt_quantidade_alt.Location = new System.Drawing.Point(675, 5);
-            this.txt_quantidade_alt.MinimumSize = new System.Drawing.Size(50, 30);
-            this.txt_quantidade_alt.Name = "txt_quantidade_alt";
-            this.txt_quantidade_alt.Size = new System.Drawing.Size(81, 31);
-            this.txt_quantidade_alt.TabIndex = 170;
-            this.txt_quantidade_alt.Texts = "";
-            this.txt_quantidade_alt.OnSelectedIndexChanged += new System.EventHandler(this.txt_quantidade_alt_SelectedIndexChanged);
-            // 
-            // txt_classe
-            // 
-            this.txt_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_classe.BackColor = System.Drawing.Color.White;
-            this.txt_classe.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_classe.BorderSize = 0;
-            this.txt_classe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txt_classe.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_classe.IconColor = System.Drawing.Color.Black;
-            this.txt_classe.Items.AddRange(new object[] {
-            "Classe",
-            "Besteira",
-            "Feiticeira",
-            "Guerreiro",
-            "Lanceiro",
-            "Taoista"});
-            this.txt_classe.ListBackColor = System.Drawing.Color.White;
-            this.txt_classe.ListTextColor = System.Drawing.Color.DimGray;
-            this.txt_classe.Location = new System.Drawing.Point(667, 49);
-            this.txt_classe.MinimumSize = new System.Drawing.Size(50, 30);
-            this.txt_classe.Name = "txt_classe";
-            this.txt_classe.Size = new System.Drawing.Size(130, 31);
-            this.txt_classe.TabIndex = 170;
-            this.txt_classe.Texts = "";
-            this.txt_classe.Leave += new System.EventHandler(this.txt_classe_Leave);
-            // 
-            // txt_patente
-            // 
-            this.txt_patente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_patente.BackColor = System.Drawing.Color.White;
-            this.txt_patente.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_patente.BorderSize = 0;
-            this.txt_patente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txt_patente.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_patente.IconColor = System.Drawing.Color.Black;
-            this.txt_patente.Items.AddRange(new object[] {
-            "Patente",
-            "Ancião",
-            "Égide Sombria",
-            "Lider",
-            "Membro",
-            "Novo Membro"});
-            this.txt_patente.ListBackColor = System.Drawing.Color.White;
-            this.txt_patente.ListTextColor = System.Drawing.Color.DimGray;
-            this.txt_patente.Location = new System.Drawing.Point(803, 49);
-            this.txt_patente.MinimumSize = new System.Drawing.Size(50, 30);
-            this.txt_patente.Name = "txt_patente";
-            this.txt_patente.Size = new System.Drawing.Size(138, 31);
-            this.txt_patente.TabIndex = 169;
-            this.txt_patente.Texts = "";
-            this.txt_patente.Leave += new System.EventHandler(this.txt_patente_Leave);
-            // 
-            // txt_level
-            // 
-            this.txt_level.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_level.BorderColor = System.Drawing.Color.White;
-            this.txt_level.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_level.BorderRadius = 0;
-            this.txt_level.BorderSize = 1;
-            this.txt_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level.Location = new System.Drawing.Point(467, 49);
-            this.txt_level.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level.Multiline = false;
-            this.txt_level.Name = "txt_level";
-            this.txt_level.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level.PasswordChar = false;
-            this.txt_level.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_level.PlaceholderText = "Level";
-            this.txt_level.Size = new System.Drawing.Size(69, 31);
-            this.txt_level.TabIndex = 161;
-            this.txt_level.Texts = "";
-            this.txt_level.UnderlinedStyle = false;
-            this.txt_level.Leave += new System.EventHandler(this.txt_level_Leave);
-            // 
-            // txt_nick
-            // 
-            this.txt_nick.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_nick.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_nick.BorderColor = System.Drawing.Color.White;
-            this.txt_nick.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_nick.BorderRadius = 0;
-            this.txt_nick.BorderSize = 1;
-            this.txt_nick.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nick.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_nick.Location = new System.Drawing.Point(298, 49);
-            this.txt_nick.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nick.Multiline = false;
-            this.txt_nick.Name = "txt_nick";
-            this.txt_nick.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_nick.PasswordChar = false;
-            this.txt_nick.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_nick.PlaceholderText = "Qual é o Nick ?";
-            this.txt_nick.Size = new System.Drawing.Size(162, 31);
-            this.txt_nick.TabIndex = 155;
-            this.txt_nick.Texts = "";
-            this.txt_nick.UnderlinedStyle = false;
-            this.txt_nick.Leave += new System.EventHandler(this.txt_nick_Leave);
-            // 
-            // txt_poder
-            // 
-            this.txt_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_poder.BorderColor = System.Drawing.Color.White;
-            this.txt_poder.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_poder.BorderRadius = 0;
-            this.txt_poder.BorderSize = 1;
-            this.txt_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder.Location = new System.Drawing.Point(543, 49);
-            this.txt_poder.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder.Multiline = false;
-            this.txt_poder.Name = "txt_poder";
-            this.txt_poder.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder.PasswordChar = false;
-            this.txt_poder.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_poder.PlaceholderText = "Qual é Poder ?";
-            this.txt_poder.Size = new System.Drawing.Size(119, 31);
-            this.txt_poder.TabIndex = 156;
-            this.txt_poder.Texts = "";
-            this.txt_poder.UnderlinedStyle = false;
-            this.txt_poder.Leave += new System.EventHandler(this.txt_poder_Leave);
-            // 
-            // txt_foi
-            // 
-            this.txt_foi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_foi.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_foi.BorderColor = System.Drawing.Color.White;
-            this.txt_foi.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_foi.BorderRadius = 0;
-            this.txt_foi.BorderSize = 1;
-            this.txt_foi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_foi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_foi.Location = new System.Drawing.Point(601, 88);
-            this.txt_foi.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_foi.Multiline = false;
-            this.txt_foi.Name = "txt_foi";
-            this.txt_foi.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_foi.PasswordChar = false;
-            this.txt_foi.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_foi.PlaceholderText = "Foi para o Clã";
-            this.txt_foi.Size = new System.Drawing.Size(340, 31);
-            this.txt_foi.TabIndex = 158;
-            this.txt_foi.Texts = "";
-            this.txt_foi.UnderlinedStyle = false;
-            this.txt_foi.Leave += new System.EventHandler(this.txt_foi_Leave);
-            // 
-            // txt_vem
-            // 
-            this.txt_vem.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_vem.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_vem.BorderColor = System.Drawing.Color.White;
-            this.txt_vem.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_vem.BorderRadius = 0;
-            this.txt_vem.BorderSize = 1;
-            this.txt_vem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_vem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_vem.Location = new System.Drawing.Point(298, 88);
-            this.txt_vem.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_vem.Multiline = false;
-            this.txt_vem.Name = "txt_vem";
-            this.txt_vem.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_vem.PasswordChar = false;
-            this.txt_vem.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_vem.PlaceholderText = "Vem de qual Clã ?";
-            this.txt_vem.Size = new System.Drawing.Size(295, 31);
-            this.txt_vem.TabIndex = 157;
-            this.txt_vem.Texts = "";
-            this.txt_vem.UnderlinedStyle = false;
-            this.txt_vem.Leave += new System.EventHandler(this.txt_vem_Leave);
             // 
             // cadastro
             // 
