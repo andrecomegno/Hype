@@ -662,10 +662,10 @@ namespace Hype.Painel
 
             database.closeConnection();
 
-            Tabela();
+            TabelaContaMembros();
         }
 
-        private void Tabela()
+        private void TabelaContaMembros()
         {
             dataGridView1.Columns[0].Visible = false; // ID_PROGRESSãO
             dataGridView1.Columns[1].HeaderText = "DATA";

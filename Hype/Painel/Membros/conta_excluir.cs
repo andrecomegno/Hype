@@ -28,7 +28,7 @@ namespace Hype.Painel
         }
 
         #region TABELA MEMBROS E ALT
-        private void TabelaMembrosAlt()
+        private void TabelaMembrosALT()
         {
             configdb database = new configdb();
             database.openConnection();
@@ -273,7 +273,7 @@ namespace Hype.Painel
         {
 
             DadosMembros();
-            TabelaMembrosAlt();            
+            TabelaMembrosALT();            
 
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;            
