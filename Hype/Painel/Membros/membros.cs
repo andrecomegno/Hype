@@ -46,6 +46,12 @@ namespace Hype.Painel
             alts uc = new alts();
             cla.Instance.addControl(uc);
         }
+
+        private void bt_eventos_Click(object sender, EventArgs e)
+        {
+            evento uc = new evento();
+            cla.Instance.addControl(uc);
+        }
         #endregion
 
         #region TABELAS
@@ -246,7 +252,5 @@ namespace Hype.Painel
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
         }
-
-
     }
 }

@@ -43,11 +43,11 @@ namespace Hype.Painel
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pl_top = new System.Windows.Forms.Panel();
             this.bt_buscar = new System.Windows.Forms.PictureBox();
+            this.txt_buscar = new Hype.Painel.RJTextBox();
             this.bt_alts = new System.Windows.Forms.Button();
             this.bt_eventos = new System.Windows.Forms.Button();
             this.bt_membros = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.txt_buscar = new Hype.Painel.RJTextBox();
             this.membro.SuspendLayout();
             this.pl_conta_excluir.SuspendLayout();
             this.pl_conteudo_02.SuspendLayout();
@@ -223,6 +223,30 @@ namespace Hype.Painel
             this.bt_buscar.MouseEnter += new System.EventHandler(this.bt_buscar_MouseEnter);
             this.bt_buscar.MouseLeave += new System.EventHandler(this.bt_buscar_MouseLeave);
             // 
+            // txt_buscar
+            // 
+            this.txt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_buscar.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_buscar.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_buscar.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.txt_buscar.BorderRadius = 15;
+            this.txt_buscar.BorderSize = 2;
+            this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_buscar.Location = new System.Drawing.Point(436, 5);
+            this.txt_buscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_buscar.Multiline = false;
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_buscar.PasswordChar = false;
+            this.txt_buscar.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_buscar.PlaceholderText = "O que você procura ?";
+            this.txt_buscar.Size = new System.Drawing.Size(661, 31);
+            this.txt_buscar.TabIndex = 67;
+            this.txt_buscar.Texts = "";
+            this.txt_buscar.UnderlinedStyle = false;
+            this.txt_buscar._TextChanged += new System.EventHandler(this.txt_buscar__TextChanged);
+            // 
             // bt_alts
             // 
             this.bt_alts.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -255,6 +279,7 @@ namespace Hype.Painel
             this.bt_eventos.TabIndex = 65;
             this.bt_eventos.Text = "Eventos";
             this.bt_eventos.UseVisualStyleBackColor = false;
+            this.bt_eventos.Click += new System.EventHandler(this.bt_eventos_Click);
             // 
             // bt_membros
             // 
@@ -271,30 +296,6 @@ namespace Hype.Painel
             this.bt_membros.TabIndex = 63;
             this.bt_membros.Text = "Membros";
             this.bt_membros.UseVisualStyleBackColor = false;
-            // 
-            // txt_buscar
-            // 
-            this.txt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_buscar.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_buscar.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_buscar.BorderFocusColor = System.Drawing.Color.Transparent;
-            this.txt_buscar.BorderRadius = 15;
-            this.txt_buscar.BorderSize = 2;
-            this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_buscar.Location = new System.Drawing.Point(436, 5);
-            this.txt_buscar.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_buscar.Multiline = false;
-            this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_buscar.PasswordChar = false;
-            this.txt_buscar.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_buscar.PlaceholderText = "O que você procura ?";
-            this.txt_buscar.Size = new System.Drawing.Size(661, 31);
-            this.txt_buscar.TabIndex = 67;
-            this.txt_buscar.Texts = "";
-            this.txt_buscar.UnderlinedStyle = false;
-            this.txt_buscar._TextChanged += new System.EventHandler(this.txt_buscar__TextChanged);
             // 
             // membros
             // 

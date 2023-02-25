@@ -56,6 +56,7 @@ namespace Hype.Painel
             {
                 txt_sem_dados.Visible = true;
                 txt_clique_aqui.Visible = true;
+                bt_add_membro.Visible = false;
 
                 dataGridView1.Visible = false;
             }
@@ -63,6 +64,7 @@ namespace Hype.Painel
             {
                 txt_sem_dados.Visible = false;
                 txt_clique_aqui.Visible = false;
+                bt_add_membro.Visible = true;
 
                 dataGridView1.Visible = true;
             }
