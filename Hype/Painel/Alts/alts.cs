@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Hype.script;
+using Hype.Painel.Eventos;
 
 namespace Hype.Painel
 {
@@ -159,14 +160,10 @@ namespace Hype.Painel
             cla.Instance.addControl(uc);
         }
 
-        private void bt_progressao_Click(object sender, EventArgs e)
+        private void bt_eventos_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void bt_ouro_Click(object sender, EventArgs e)
-        {
-
+            eventos uc = new eventos();
+            cla.Instance.addControl(uc);
         }
         #endregion
 
@@ -182,7 +179,17 @@ namespace Hype.Painel
             {
                 Buscar();
             }
-        }       
+        }
+
+        private void txt_buscar_Enter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void txt_buscar_Leave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+        }
 
         private void Buscar()
         {

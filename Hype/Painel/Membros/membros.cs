@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Hype.script;
+using Hype.Painel.Eventos;
 
 namespace Hype.Painel
 {
@@ -49,7 +50,7 @@ namespace Hype.Painel
 
         private void bt_eventos_Click(object sender, EventArgs e)
         {
-            evento uc = new evento();
+            eventos uc = new eventos();
             cla.Instance.addControl(uc);
         }
         #endregion
@@ -178,7 +179,7 @@ namespace Hype.Painel
 
         #endregion
 
-        #region BOTOES
+        #region BOTÕES
         private void bt_add_membro_Click(object sender, EventArgs e)
         {
             cadastro uc = new cadastro();
@@ -199,8 +200,9 @@ namespace Hype.Painel
         {
             Cursor = Cursors.Default;
         }
+        #endregion
 
-        // CAMPO DE BUSCA
+        #region BUSCAR
         private void bt_buscar_Click(object sender, EventArgs e)
         {
             Buscar();
@@ -211,7 +213,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select re.ID_RECRUTAMENTO, pro.ID_PROGRESSAO, alt.ID_ALT, c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_PROGRESSAO where c.NICK like @nick '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS  where c.NICK like @nick '%' ", database.getConnection());
             cmd.Parameters.AddWithValue("@nick", txt_buscar.Texts);
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
@@ -242,7 +244,6 @@ namespace Hype.Painel
         {
             Cursor = Cursors.Default;
         }
-
         #endregion
 
         private void membros_Load(object sender, EventArgs e)

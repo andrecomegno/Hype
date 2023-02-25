@@ -29,12 +29,10 @@ namespace Hype.Painel
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.membro = new System.Windows.Forms.Panel();
             this.pl_conta_excluir = new System.Windows.Forms.Panel();
             this.pl_conteudo_02 = new System.Windows.Forms.Panel();
             this.txt_clique_aqui = new System.Windows.Forms.Label();
@@ -47,24 +45,12 @@ namespace Hype.Painel
             this.bt_alts = new System.Windows.Forms.Button();
             this.bt_eventos = new System.Windows.Forms.Button();
             this.bt_membros = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.membro.SuspendLayout();
             this.pl_conta_excluir.SuspendLayout();
             this.pl_conteudo_02.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pl_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // membro
-            // 
-            this.membro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.membro.Controls.Add(this.pl_conta_excluir);
-            this.membro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.membro.Location = new System.Drawing.Point(0, 0);
-            this.membro.Name = "membro";
-            this.membro.Size = new System.Drawing.Size(1200, 720);
-            this.membro.TabIndex = 0;
             // 
             // pl_conta_excluir
             // 
@@ -77,7 +63,7 @@ namespace Hype.Painel
             this.pl_conta_excluir.Location = new System.Drawing.Point(14, 3);
             this.pl_conta_excluir.Name = "pl_conta_excluir";
             this.pl_conta_excluir.Size = new System.Drawing.Size(1172, 714);
-            this.pl_conta_excluir.TabIndex = 79;
+            this.pl_conta_excluir.TabIndex = 81;
             // 
             // pl_conteudo_02
             // 
@@ -220,8 +206,6 @@ namespace Hype.Painel
             this.bt_buscar.TabIndex = 68;
             this.bt_buscar.TabStop = false;
             this.bt_buscar.Click += new System.EventHandler(this.bt_buscar_Click);
-            this.bt_buscar.MouseEnter += new System.EventHandler(this.bt_buscar_MouseEnter);
-            this.bt_buscar.MouseLeave += new System.EventHandler(this.bt_buscar_MouseLeave);
             // 
             // txt_buscar
             // 
@@ -246,6 +230,8 @@ namespace Hype.Painel
             this.txt_buscar.Texts = "";
             this.txt_buscar.UnderlinedStyle = false;
             this.txt_buscar._TextChanged += new System.EventHandler(this.txt_buscar__TextChanged);
+            this.txt_buscar.Enter += new System.EventHandler(this.bt_buscar_MouseEnter);
+            this.txt_buscar.Leave += new System.EventHandler(this.bt_buscar_MouseLeave);
             // 
             // bt_alts
             // 
@@ -301,12 +287,11 @@ namespace Hype.Painel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.membro);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.Controls.Add(this.pl_conta_excluir);
             this.Name = "membros";
             this.Size = new System.Drawing.Size(1200, 720);
             this.Load += new System.EventHandler(this.membros_Load);
-            this.membro.ResumeLayout(false);
             this.pl_conta_excluir.ResumeLayout(false);
             this.pl_conteudo_02.ResumeLayout(false);
             this.pl_conteudo_02.PerformLayout();
@@ -319,19 +304,17 @@ namespace Hype.Painel
 
         #endregion
 
-        private System.Windows.Forms.Panel membro;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Panel pl_conta_excluir;
         private System.Windows.Forms.Panel pl_conteudo_02;
+        private System.Windows.Forms.Label txt_clique_aqui;
+        private System.Windows.Forms.Label txt_sem_dados;
+        private System.Windows.Forms.Label bt_add_membro;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel pl_top;
+        private System.Windows.Forms.PictureBox bt_buscar;
+        private RJTextBox txt_buscar;
         private System.Windows.Forms.Button bt_alts;
         private System.Windows.Forms.Button bt_eventos;
         private System.Windows.Forms.Button bt_membros;
-        private System.Windows.Forms.PictureBox bt_buscar;
-        private RJTextBox txt_buscar;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label bt_add_membro;
-        private System.Windows.Forms.Label txt_clique_aqui;
-        private System.Windows.Forms.Label txt_sem_dados;
     }
 }

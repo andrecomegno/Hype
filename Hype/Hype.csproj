@@ -198,6 +198,18 @@
     <Compile Include="cla.Designer.cs">
       <DependentUpon>cla.cs</DependentUpon>
     </Compile>
+    <Compile Include="Painel\Eventos\eventos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Painel\Eventos\eventos.Designer.cs">
+      <DependentUpon>eventos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Painel\Eventos\novo_evento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Painel\Eventos\novo_evento.Designer.cs">
+      <DependentUpon>novo_evento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Painel\Membros\cadastro.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -272,6 +284,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="cla.resx">
       <DependentUpon>cla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Painel\Eventos\eventos.resx">
+      <DependentUpon>eventos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Painel\Eventos\novo_evento.resx">
+      <DependentUpon>novo_evento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Painel\Membros\cadastro.resx">
       <DependentUpon>cadastro.cs</DependentUpon>
@@ -360,9 +378,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Painel\Eventos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
