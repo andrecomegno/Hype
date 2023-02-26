@@ -16,5 +16,10 @@ namespace Hype.Painel.Eventos
         {
             InitializeComponent();
         }
+
+        private void novo_evento_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
