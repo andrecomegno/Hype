@@ -64,11 +64,24 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA EVENTOS
-            MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, data_evento, nome_evento, doacao_ouro) values (null, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdDoacao = new MySqlCommand("insert into hypedb.doacao (id_doacao, semana_01, semana_02, semana_03, semana_04, total, anotacao) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@anotacao", MySqlDbType.LongText).Value = string.Empty;
+
+            objCmdDoacao.ExecuteNonQuery();
+            long idDoacao = objCmdDoacao.LastInsertedId;
+
+            // INSERT TABELA EVENTOS
+            MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, data_evento, nome_evento, id_doacao) values (null, ?, ?, ?)", database.getConnection());
 
             objCmdEventos.Parameters.Add("@data_evento", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdEventos.Parameters.Add("@nome_evento", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdEventos.Parameters.Add("@doacao_ouro", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdEventos.Parameters.Add("@nome_evento", MySqlDbType.VarChar, 256).Value = string.Empty;
+            objCmdEventos.Parameters.Add("@id_doacao", MySqlDbType.Int32).Value = idDoacao;
 
             objCmdEventos.ExecuteNonQuery();
             long idEventos = objCmdEventos.LastInsertedId;
@@ -118,11 +131,24 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA EVENTOS
-            MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, data_evento, nome_evento, doacao_ouro) values (null, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdDoacao = new MySqlCommand("insert into hypedb.doacao (id_doacao, semana_01, semana_02, semana_03, semana_04, total, anotacao) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdEventos.Parameters.Add("@data_evento", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdEventos.Parameters.Add("@nome_evento", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdEventos.Parameters.Add("@doacao_ouro", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@anotacao", MySqlDbType.LongText).Value = string.Empty;
+
+            objCmdDoacao.ExecuteNonQuery();
+            long idDoacao = objCmdDoacao.LastInsertedId;
+
+            // INSERT TABELA EVENTOS
+            MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, data_evento, nome_evento, id_doacao) values (null, ?, ?, ?)", database.getConnection());
+
+            objCmdEventos.Parameters.Add("@data_evento", MySqlDbType.Date).Value = DateTime.Now.ToString("MMMM");
+            objCmdEventos.Parameters.Add("@nome_evento", MySqlDbType.VarChar, 256).Value = string.Empty;
+            objCmdEventos.Parameters.Add("@id_doacao", MySqlDbType.Int32).Value = idDoacao;
 
             objCmdEventos.ExecuteNonQuery();
             long idEventos = objCmdEventos.LastInsertedId;
@@ -185,11 +211,24 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA EVENTOS
-            MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, data_evento, nome_evento, doacao_ouro) values (null, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdDoacao = new MySqlCommand("insert into hypedb.doacao (id_doacao, semana_01, semana_02, semana_03, semana_04, total, anotacao) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@anotacao", MySqlDbType.LongText).Value = string.Empty;
+
+            objCmdDoacao.ExecuteNonQuery();
+            long idDoacao = objCmdDoacao.LastInsertedId;
+
+            // INSERT TABELA EVENTOS
+            MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, data_evento, nome_evento, id_doacao) values (null, ?, ?, ?)", database.getConnection());
 
             objCmdEventos.Parameters.Add("@data_evento", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdEventos.Parameters.Add("@nome_evento", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdEventos.Parameters.Add("@doacao_ouro", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdEventos.Parameters.Add("@nome_evento", MySqlDbType.VarChar, 256).Value = string.Empty;
+            objCmdEventos.Parameters.Add("@id_doacao", MySqlDbType.Int32).Value = idDoacao;
 
             objCmdEventos.ExecuteNonQuery();
             long idEventos = objCmdEventos.LastInsertedId;
@@ -265,11 +304,24 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA EVENTOS
-            MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, data_evento, nome_evento, doacao_ouro) values (null, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdDoacao = new MySqlCommand("insert into hypedb.doacao (id_doacao, semana_01, semana_02, semana_03, semana_04, total, anotacao) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@anotacao", MySqlDbType.LongText).Value = string.Empty;
+
+            objCmdDoacao.ExecuteNonQuery();
+            long idDoacao = objCmdDoacao.LastInsertedId;
+
+            // INSERT TABELA EVENTOS
+            MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, data_evento, nome_evento, id_doacao) values (null, ?, ?, ?)", database.getConnection());
 
             objCmdEventos.Parameters.Add("@data_evento", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdEventos.Parameters.Add("@nome_evento", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdEventos.Parameters.Add("@doacao_ouro", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdEventos.Parameters.Add("@nome_evento", MySqlDbType.VarChar, 256).Value = string.Empty;
+            objCmdEventos.Parameters.Add("@id_doacao", MySqlDbType.Int32).Value = idDoacao;
 
             objCmdEventos.ExecuteNonQuery();
             long idEventos = objCmdEventos.LastInsertedId;
@@ -358,11 +410,24 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA EVENTOS
-            MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, data_evento, nome_evento, doacao_ouro) values (null, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdDoacao = new MySqlCommand("insert into hypedb.doacao (id_doacao, semana_01, semana_02, semana_03, semana_04, total, anotacao) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@anotacao", MySqlDbType.LongText).Value = string.Empty;
+
+            objCmdDoacao.ExecuteNonQuery();
+            long idDoacao = objCmdDoacao.LastInsertedId;
+
+            // INSERT TABELA EVENTOS
+            MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, data_evento, nome_evento, id_doacao) values (null, ?, ?, ?)", database.getConnection());
 
             objCmdEventos.Parameters.Add("@data_evento", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdEventos.Parameters.Add("@nome_evento", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdEventos.Parameters.Add("@doacao_ouro", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdEventos.Parameters.Add("@nome_evento", MySqlDbType.VarChar, 256).Value = string.Empty;
+            objCmdEventos.Parameters.Add("@id_doacao", MySqlDbType.Int32).Value = idDoacao;
 
             objCmdEventos.ExecuteNonQuery();
             long idEventos = objCmdEventos.LastInsertedId;
@@ -464,11 +529,24 @@ namespace Hype.Painel
             database.openConnection();
 
             // INSERT TABELA EVENTOS
-            MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, data_evento, nome_evento, doacao_ouro) values (null, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdDoacao = new MySqlCommand("insert into hypedb.doacao (id_doacao, semana_01, semana_02, semana_03, semana_04, total, anotacao) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@anotacao", MySqlDbType.LongText).Value = string.Empty;
+
+            objCmdDoacao.ExecuteNonQuery();
+            long idDoacao = objCmdDoacao.LastInsertedId;
+
+            // INSERT TABELA EVENTOS
+            MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, data_evento, nome_evento, id_doacao) values (null, ?, ?, ?)", database.getConnection());
 
             objCmdEventos.Parameters.Add("@data_evento", MySqlDbType.Date).Value = DateTime.Now;
-            objCmdEventos.Parameters.Add("@nome_evento", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            objCmdEventos.Parameters.Add("@doacao_ouro", MySqlDbType.Decimal).Value = txt_poder.Texts;
+            objCmdEventos.Parameters.Add("@nome_evento", MySqlDbType.VarChar, 256).Value = string.Empty;
+            objCmdEventos.Parameters.Add("@id_doacao", MySqlDbType.Int32).Value = idDoacao;
 
             objCmdEventos.ExecuteNonQuery();
             long idEventos = objCmdEventos.LastInsertedId;
