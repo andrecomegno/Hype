@@ -35,18 +35,18 @@ namespace Hype.Painel.Eventos
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pl_eventos = new System.Windows.Forms.Panel();
             this.pl_conteudo = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pl_top = new System.Windows.Forms.Panel();
             this.bt_buscar = new System.Windows.Forms.PictureBox();
+            this.txt_buscar = new Hype.Painel.RJTextBox();
             this.bt_alts = new System.Windows.Forms.Button();
             this.bt_eventos = new System.Windows.Forms.Button();
             this.bt_membros = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txt_buscar = new Hype.Painel.RJTextBox();
             this.pl_eventos.SuspendLayout();
             this.pl_conteudo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pl_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pl_eventos
@@ -71,82 +71,6 @@ namespace Hype.Painel.Eventos
             this.pl_conteudo.Name = "pl_conteudo";
             this.pl_conteudo.Size = new System.Drawing.Size(1172, 651);
             this.pl_conteudo.TabIndex = 79;
-            // 
-            // pl_top
-            // 
-            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.pl_top.Controls.Add(this.bt_buscar);
-            this.pl_top.Controls.Add(this.txt_buscar);
-            this.pl_top.Controls.Add(this.bt_alts);
-            this.pl_top.Controls.Add(this.bt_eventos);
-            this.pl_top.Controls.Add(this.bt_membros);
-            this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_top.Location = new System.Drawing.Point(0, 0);
-            this.pl_top.Name = "pl_top";
-            this.pl_top.Size = new System.Drawing.Size(1172, 43);
-            this.pl_top.TabIndex = 76;
-            // 
-            // bt_buscar
-            // 
-            this.bt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_buscar.BackColor = System.Drawing.SystemColors.Window;
-            this.bt_buscar.Image = global::Hype.Properties.Resources.buscar;
-            this.bt_buscar.Location = new System.Drawing.Point(1067, 12);
-            this.bt_buscar.Name = "bt_buscar";
-            this.bt_buscar.Size = new System.Drawing.Size(20, 20);
-            this.bt_buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bt_buscar.TabIndex = 68;
-            this.bt_buscar.TabStop = false;
-            // 
-            // bt_alts
-            // 
-            this.bt_alts.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_alts.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_alts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_alts.FlatAppearance.BorderSize = 0;
-            this.bt_alts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_alts.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_alts.ForeColor = System.Drawing.Color.White;
-            this.bt_alts.Location = new System.Drawing.Point(179, 3);
-            this.bt_alts.Name = "bt_alts";
-            this.bt_alts.Size = new System.Drawing.Size(122, 36);
-            this.bt_alts.TabIndex = 66;
-            this.bt_alts.Text = "Alts";
-            this.bt_alts.UseVisualStyleBackColor = false;
-            this.bt_alts.Click += new System.EventHandler(this.bt_alts_Click);
-            // 
-            // bt_eventos
-            // 
-            this.bt_eventos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_eventos.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.bt_eventos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_eventos.FlatAppearance.BorderSize = 0;
-            this.bt_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_eventos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_eventos.ForeColor = System.Drawing.Color.White;
-            this.bt_eventos.Location = new System.Drawing.Point(307, 3);
-            this.bt_eventos.Name = "bt_eventos";
-            this.bt_eventos.Size = new System.Drawing.Size(122, 36);
-            this.bt_eventos.TabIndex = 65;
-            this.bt_eventos.Text = "Eventos";
-            this.bt_eventos.UseVisualStyleBackColor = false;
-            // 
-            // bt_membros
-            // 
-            this.bt_membros.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_membros.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_membros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_membros.FlatAppearance.BorderSize = 0;
-            this.bt_membros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_membros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_membros.ForeColor = System.Drawing.Color.White;
-            this.bt_membros.Location = new System.Drawing.Point(71, 3);
-            this.bt_membros.Name = "bt_membros";
-            this.bt_membros.Size = new System.Drawing.Size(102, 36);
-            this.bt_membros.TabIndex = 63;
-            this.bt_membros.Text = "Membros";
-            this.bt_membros.UseVisualStyleBackColor = false;
-            this.bt_membros.Click += new System.EventHandler(this.bt_membros_Click);
             // 
             // dataGridView1
             // 
@@ -200,6 +124,35 @@ namespace Hype.Painel.Eventos
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1026, 616);
             this.dataGridView1.TabIndex = 70;
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
+            this.dataGridView1.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseEnter);
+            this.dataGridView1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseLeave);
+            // 
+            // pl_top
+            // 
+            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_top.Controls.Add(this.bt_buscar);
+            this.pl_top.Controls.Add(this.txt_buscar);
+            this.pl_top.Controls.Add(this.bt_alts);
+            this.pl_top.Controls.Add(this.bt_eventos);
+            this.pl_top.Controls.Add(this.bt_membros);
+            this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_top.Location = new System.Drawing.Point(0, 0);
+            this.pl_top.Name = "pl_top";
+            this.pl_top.Size = new System.Drawing.Size(1172, 43);
+            this.pl_top.TabIndex = 76;
+            // 
+            // bt_buscar
+            // 
+            this.bt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_buscar.BackColor = System.Drawing.SystemColors.Window;
+            this.bt_buscar.Image = global::Hype.Properties.Resources.buscar;
+            this.bt_buscar.Location = new System.Drawing.Point(1067, 12);
+            this.bt_buscar.Name = "bt_buscar";
+            this.bt_buscar.Size = new System.Drawing.Size(20, 20);
+            this.bt_buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bt_buscar.TabIndex = 68;
+            this.bt_buscar.TabStop = false;
             // 
             // txt_buscar
             // 
@@ -224,6 +177,56 @@ namespace Hype.Painel.Eventos
             this.txt_buscar.Texts = "";
             this.txt_buscar.UnderlinedStyle = false;
             // 
+            // bt_alts
+            // 
+            this.bt_alts.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_alts.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_alts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_alts.FlatAppearance.BorderSize = 0;
+            this.bt_alts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_alts.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_alts.ForeColor = System.Drawing.Color.White;
+            this.bt_alts.Location = new System.Drawing.Point(179, 3);
+            this.bt_alts.Name = "bt_alts";
+            this.bt_alts.Size = new System.Drawing.Size(122, 36);
+            this.bt_alts.TabIndex = 66;
+            this.bt_alts.Text = "Alts";
+            this.bt_alts.UseVisualStyleBackColor = false;
+            this.bt_alts.Click += new System.EventHandler(this.bt_alts_Click);
+            // 
+            // bt_eventos
+            // 
+            this.bt_eventos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_eventos.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.bt_eventos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_eventos.FlatAppearance.BorderSize = 0;
+            this.bt_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_eventos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_eventos.ForeColor = System.Drawing.Color.White;
+            this.bt_eventos.Location = new System.Drawing.Point(307, 3);
+            this.bt_eventos.Name = "bt_eventos";
+            this.bt_eventos.Size = new System.Drawing.Size(122, 36);
+            this.bt_eventos.TabIndex = 65;
+            this.bt_eventos.Text = "Eventos";
+            this.bt_eventos.UseVisualStyleBackColor = false;
+            // 
+            // bt_membros
+            // 
+            this.bt_membros.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_membros.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_membros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_membros.FlatAppearance.BorderSize = 0;
+            this.bt_membros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_membros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_membros.ForeColor = System.Drawing.Color.White;
+            this.bt_membros.Location = new System.Drawing.Point(71, 3);
+            this.bt_membros.Name = "bt_membros";
+            this.bt_membros.Size = new System.Drawing.Size(102, 36);
+            this.bt_membros.TabIndex = 63;
+            this.bt_membros.Text = "Membros";
+            this.bt_membros.UseVisualStyleBackColor = false;
+            this.bt_membros.Click += new System.EventHandler(this.bt_membros_Click);
+            // 
             // eventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,9 +238,9 @@ namespace Hype.Painel.Eventos
             this.Load += new System.EventHandler(this.eventos_Load);
             this.pl_eventos.ResumeLayout(false);
             this.pl_conteudo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pl_top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

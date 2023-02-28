@@ -15,10 +15,9 @@ namespace Hype.Painel.Eventos
     public partial class eventos : UserControl
     {
         public static eventos Instance;
-        string id_membro;
-        string data_entrada;
-        string nick;
-        string foi_para_cla;
+        public string id_membro = "";
+        public string nick;
+        public string foi_para_cla;
 
         public eventos()
         {
@@ -46,7 +45,7 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, eve.ID_EVENTOS, d.ID_DOACAO, eve.DATA_EVENTO, re.FOI_PARA_CLA, eve.NOME_EVENTO, c.PATENTE, c.CLASSE, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.eventos eve on eve.ID_EVENTOS = c.ID_MEMBROS left join hypedb.doacao d on d.ID_DOACAO = c.ID_MEMBROS ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.FOI_PARA_CLA, c.PATENTE, c.CLASSE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.eventos eve on eve.ID_EVENTOS = c.ID_MEMBROS left join hypedb.doacao d on d.ID_DOACAO = c.ID_MEMBROS ", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -65,19 +64,19 @@ namespace Hype.Painel.Eventos
         {
             dataGridView1.Columns[0].Visible = false; // ID_MEMBROS
             dataGridView1.Columns[1].Visible = false; // ID_RECRUTAMENTO
-            dataGridView1.Columns[2].Visible = false; // ID_EVENTOS
-            dataGridView1.Columns[3].Visible = false; // ID_DOACAO
-            dataGridView1.Columns[4].Visible = false; // DATA_EVENTO
-            dataGridView1.Columns[5].Visible = false; // FOI_PARA_CLA
-            dataGridView1.Columns[6].HeaderText = "EVENTO";
-            dataGridView1.Columns[7].HeaderText = "PATENTE";
-            dataGridView1.Columns[8].HeaderText = "CLASSE";
+            dataGridView1.Columns[2].Visible = false; // ID_DOACAO
+            dataGridView1.Columns[3].Visible = false; // ID_EVENTOS
+            dataGridView1.Columns[4].Visible = false; // FOI_PARA_CLA
+            dataGridView1.Columns[5].HeaderText = "PATENTE";
+            dataGridView1.Columns[6].HeaderText = "CLASSE";
+            dataGridView1.Columns[7].Visible = false; // ANO_EVENTO
+            dataGridView1.Columns[8].Visible = false; // MES_EVENTO
             dataGridView1.Columns[9].HeaderText = "NICK";
-            dataGridView1.Columns[10].Visible = false; // TOTAL
-            dataGridView1.Columns[11].Visible = false; // TOTAL
-            dataGridView1.Columns[12].Visible = false; // TOTAL
-            dataGridView1.Columns[13].Visible = false; // TOTAL
-            dataGridView1.Columns[14].HeaderText = "TOTAL";
+            dataGridView1.Columns[10].Visible = false; // SEMANA_01
+            dataGridView1.Columns[11].Visible = false; // SEMANA_02
+            dataGridView1.Columns[12].Visible = false; // SEMANA_03
+            dataGridView1.Columns[13].Visible = false; // SEMANA_04
+            dataGridView1.Columns[14].HeaderText = "OURO TOTAL";
             dataGridView1.Columns[15].Visible = false; // ANOTACAO
 
             dataGridView1.Columns["PATENTE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -86,16 +85,14 @@ namespace Hype.Painel.Eventos
 
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                if (column.DataPropertyName == "NOME_EVENTO")
-                    column.Width = 150;
-                else if (column.DataPropertyName == "PATENTE")
+                if (column.DataPropertyName == "PATENTE")
                     column.Width = 150;
                 else if (column.DataPropertyName == "CLASSE")
                     column.Width = 150;
                 else if (column.DataPropertyName == "NICK")
-                    column.Width = 250;
+                    column.Width = 550;
                 else if (column.DataPropertyName == "TOTAL")
-                    column.Width = 150;
+                    column.Width = 200;
             }
         }
 
@@ -127,7 +124,7 @@ namespace Hype.Painel.Eventos
 
                     id_membro = dr["ID_MEMBROS"].ToString();
 
-                    data_entrada = ((DateTime)dr["DATA_RECRUTAMENTO"]).ToShortDateString();
+                    //data_entrada = ((DateTime)dr["DATA_RECRUTAMENTO"]).ToShortDateString();
                     nick = dr["NICK"].ToString();
                     foi_para_cla = dr["FOI_PARA_CLA"].ToString();
                 }
@@ -138,7 +135,7 @@ namespace Hype.Painel.Eventos
             }
             finally
             {
-                conta_principal uc = new conta_principal();
+                novo_evento uc = new novo_evento();
                 cla.Instance.addControl(uc);
             }
         }
