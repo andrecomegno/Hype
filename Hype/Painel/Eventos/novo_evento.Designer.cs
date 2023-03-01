@@ -33,103 +33,55 @@ namespace Hype.Painel.Eventos
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pl_conta_principal = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.pl_evento_doacoes = new System.Windows.Forms.Panel();
             this.pl_espaco_02 = new System.Windows.Forms.Panel();
-            this.pl_conta = new System.Windows.Forms.Panel();
+            this.pl_doacao = new System.Windows.Forms.Panel();
+            this.bt_buscar = new System.Windows.Forms.PictureBox();
+            this.pl_evento_doacao = new System.Windows.Forms.Panel();
+            this.bt_datas_esquerda = new System.Windows.Forms.Button();
+            this.bt_datas_direita = new System.Windows.Forms.Button();
+            this.bt_salvar = new System.Windows.Forms.Button();
+            this.lb_datas = new System.Windows.Forms.Label();
+            this.lb_semana_02 = new System.Windows.Forms.Label();
+            this.lb_semana_03 = new System.Windows.Forms.Label();
+            this.lb_semana_01 = new System.Windows.Forms.Label();
+            this.lb_semana_04 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lb_titulo = new System.Windows.Forms.Label();
             this.pl_espaco_01 = new System.Windows.Forms.Panel();
             this.pl_top = new System.Windows.Forms.Panel();
             this.bt_voltar = new System.Windows.Forms.Button();
             this.txt_data_evento = new System.Windows.Forms.Label();
             this.lb_data_entrada = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.bt_cancelar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.bt_buscar = new System.Windows.Forms.PictureBox();
-            this.txt_poder = new Hype.Painel.RJTextBox();
-            this.txt_classe = new Hype.script.RJComboBox();
+            this.txt_ano_evento = new Hype.Painel.RJTextBox();
+            this.txt_mes_evento = new Hype.script.RJComboBox();
             this.txt_buscar = new Hype.Painel.RJTextBox();
-            this.rjTextBox4 = new Hype.Painel.RJTextBox();
-            this.rjTextBox3 = new Hype.Painel.RJTextBox();
-            this.rjTextBox2 = new Hype.Painel.RJTextBox();
-            this.rjTextBox5 = new Hype.Painel.RJTextBox();
-            this.pl_conta_principal.SuspendLayout();
-            this.pl_conta.SuspendLayout();
-            this.pl_top.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.txt_doacao_04 = new Hype.Painel.RJTextBox();
+            this.txt_doacao_02 = new Hype.Painel.RJTextBox();
+            this.txt_doacao_01 = new Hype.Painel.RJTextBox();
+            this.txt_doacao_03 = new Hype.Painel.RJTextBox();
+            this.pl_evento_doacoes.SuspendLayout();
+            this.pl_doacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).BeginInit();
+            this.pl_evento_doacao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.pl_top.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pl_conta_principal
+            // pl_evento_doacoes
             // 
-            this.pl_conta_principal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pl_evento_doacoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pl_conta_principal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.pl_conta_principal.Controls.Add(this.pl_espaco_02);
-            this.pl_conta_principal.Controls.Add(this.pl_conta);
-            this.pl_conta_principal.Controls.Add(this.pl_espaco_01);
-            this.pl_conta_principal.Controls.Add(this.pl_top);
-            this.pl_conta_principal.Location = new System.Drawing.Point(14, 3);
-            this.pl_conta_principal.Name = "pl_conta_principal";
-            this.pl_conta_principal.Size = new System.Drawing.Size(1172, 1008);
-            this.pl_conta_principal.TabIndex = 78;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(466, 15);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 17);
-            this.label7.TabIndex = 189;
-            this.label7.Text = "Semana 4";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(380, 15);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 17);
-            this.label8.TabIndex = 187;
-            this.label8.Text = "Semana 3";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(294, 15);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 17);
-            this.label6.TabIndex = 185;
-            this.label6.Text = "Semana 2";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(208, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 17);
-            this.label3.TabIndex = 183;
-            this.label3.Text = "Semana 1";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pl_evento_doacoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_evento_doacoes.Controls.Add(this.pl_espaco_02);
+            this.pl_evento_doacoes.Controls.Add(this.pl_doacao);
+            this.pl_evento_doacoes.Controls.Add(this.pl_espaco_01);
+            this.pl_evento_doacoes.Controls.Add(this.pl_top);
+            this.pl_evento_doacoes.Location = new System.Drawing.Point(14, 3);
+            this.pl_evento_doacoes.Name = "pl_evento_doacoes";
+            this.pl_evento_doacoes.Size = new System.Drawing.Size(1172, 1008);
+            this.pl_evento_doacoes.TabIndex = 78;
             // 
             // pl_espaco_02
             // 
@@ -140,21 +92,219 @@ namespace Hype.Painel.Eventos
             this.pl_espaco_02.Size = new System.Drawing.Size(1172, 10);
             this.pl_espaco_02.TabIndex = 78;
             // 
-            // pl_conta
+            // pl_doacao
             // 
-            this.pl_conta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.pl_conta.Controls.Add(this.txt_poder);
-            this.pl_conta.Controls.Add(this.txt_classe);
-            this.pl_conta.Controls.Add(this.bt_buscar);
-            this.pl_conta.Controls.Add(this.txt_buscar);
-            this.pl_conta.Controls.Add(this.panel3);
-            this.pl_conta.Controls.Add(this.dataGridView1);
-            this.pl_conta.Controls.Add(this.lb_titulo);
-            this.pl_conta.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_conta.Location = new System.Drawing.Point(0, 83);
-            this.pl_conta.Name = "pl_conta";
-            this.pl_conta.Size = new System.Drawing.Size(1172, 720);
-            this.pl_conta.TabIndex = 64;
+            this.pl_doacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.pl_doacao.Controls.Add(this.txt_ano_evento);
+            this.pl_doacao.Controls.Add(this.txt_mes_evento);
+            this.pl_doacao.Controls.Add(this.bt_buscar);
+            this.pl_doacao.Controls.Add(this.txt_buscar);
+            this.pl_doacao.Controls.Add(this.pl_evento_doacao);
+            this.pl_doacao.Controls.Add(this.dataGridView1);
+            this.pl_doacao.Controls.Add(this.lb_titulo);
+            this.pl_doacao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_doacao.Location = new System.Drawing.Point(0, 83);
+            this.pl_doacao.Name = "pl_doacao";
+            this.pl_doacao.Size = new System.Drawing.Size(1172, 720);
+            this.pl_doacao.TabIndex = 64;
+            // 
+            // bt_buscar
+            // 
+            this.bt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_buscar.BackColor = System.Drawing.SystemColors.Window;
+            this.bt_buscar.Image = global::Hype.Properties.Resources.buscar;
+            this.bt_buscar.Location = new System.Drawing.Point(1079, 92);
+            this.bt_buscar.Name = "bt_buscar";
+            this.bt_buscar.Size = new System.Drawing.Size(20, 20);
+            this.bt_buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bt_buscar.TabIndex = 195;
+            this.bt_buscar.TabStop = false;
+            // 
+            // pl_evento_doacao
+            // 
+            this.pl_evento_doacao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pl_evento_doacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_evento_doacao.Controls.Add(this.bt_datas_esquerda);
+            this.pl_evento_doacao.Controls.Add(this.bt_datas_direita);
+            this.pl_evento_doacao.Controls.Add(this.bt_salvar);
+            this.pl_evento_doacao.Controls.Add(this.lb_datas);
+            this.pl_evento_doacao.Controls.Add(this.txt_doacao_04);
+            this.pl_evento_doacao.Controls.Add(this.lb_semana_02);
+            this.pl_evento_doacao.Controls.Add(this.txt_doacao_02);
+            this.pl_evento_doacao.Controls.Add(this.txt_doacao_01);
+            this.pl_evento_doacao.Controls.Add(this.lb_semana_03);
+            this.pl_evento_doacao.Controls.Add(this.lb_semana_01);
+            this.pl_evento_doacao.Controls.Add(this.txt_doacao_03);
+            this.pl_evento_doacao.Controls.Add(this.lb_semana_04);
+            this.pl_evento_doacao.Location = new System.Drawing.Point(83, 594);
+            this.pl_evento_doacao.Name = "pl_evento_doacao";
+            this.pl_evento_doacao.Size = new System.Drawing.Size(1026, 80);
+            this.pl_evento_doacao.TabIndex = 193;
+            // 
+            // bt_datas_esquerda
+            // 
+            this.bt_datas_esquerda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_datas_esquerda.BackColor = System.Drawing.Color.Goldenrod;
+            this.bt_datas_esquerda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_datas_esquerda.FlatAppearance.BorderSize = 0;
+            this.bt_datas_esquerda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_datas_esquerda.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_datas_esquerda.ForeColor = System.Drawing.Color.White;
+            this.bt_datas_esquerda.Location = new System.Drawing.Point(21, 15);
+            this.bt_datas_esquerda.Name = "bt_datas_esquerda";
+            this.bt_datas_esquerda.Size = new System.Drawing.Size(28, 52);
+            this.bt_datas_esquerda.TabIndex = 264;
+            this.bt_datas_esquerda.Text = "<";
+            this.bt_datas_esquerda.UseVisualStyleBackColor = false;
+            this.bt_datas_esquerda.Click += new System.EventHandler(this.bt_datas_esquerda_Click);
+            // 
+            // bt_datas_direita
+            // 
+            this.bt_datas_direita.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_datas_direita.BackColor = System.Drawing.Color.Goldenrod;
+            this.bt_datas_direita.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_datas_direita.FlatAppearance.BorderSize = 0;
+            this.bt_datas_direita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_datas_direita.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_datas_direita.ForeColor = System.Drawing.Color.White;
+            this.bt_datas_direita.Location = new System.Drawing.Point(158, 15);
+            this.bt_datas_direita.Name = "bt_datas_direita";
+            this.bt_datas_direita.Size = new System.Drawing.Size(28, 52);
+            this.bt_datas_direita.TabIndex = 263;
+            this.bt_datas_direita.Text = ">";
+            this.bt_datas_direita.UseVisualStyleBackColor = false;
+            this.bt_datas_direita.Click += new System.EventHandler(this.bt_datas_direita_Click);
+            // 
+            // bt_salvar
+            // 
+            this.bt_salvar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_salvar.BackColor = System.Drawing.Color.OliveDrab;
+            this.bt_salvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_salvar.FlatAppearance.BorderSize = 0;
+            this.bt_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_salvar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_salvar.ForeColor = System.Drawing.Color.White;
+            this.bt_salvar.Location = new System.Drawing.Point(565, 36);
+            this.bt_salvar.Name = "bt_salvar";
+            this.bt_salvar.Size = new System.Drawing.Size(102, 31);
+            this.bt_salvar.TabIndex = 262;
+            this.bt_salvar.Text = "Salvar";
+            this.bt_salvar.UseVisualStyleBackColor = false;
+            this.bt_salvar.Click += new System.EventHandler(this.bt_salvar_Click);
+            // 
+            // lb_datas
+            // 
+            this.lb_datas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_datas.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.lb_datas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_datas.ForeColor = System.Drawing.Color.White;
+            this.lb_datas.Location = new System.Drawing.Point(22, 15);
+            this.lb_datas.Name = "lb_datas";
+            this.lb_datas.Size = new System.Drawing.Size(160, 52);
+            this.lb_datas.TabIndex = 194;
+            this.lb_datas.Text = "Janeiro";
+            this.lb_datas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_semana_02
+            // 
+            this.lb_semana_02.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_semana_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_semana_02.ForeColor = System.Drawing.Color.White;
+            this.lb_semana_02.Location = new System.Drawing.Point(294, 15);
+            this.lb_semana_02.Name = "lb_semana_02";
+            this.lb_semana_02.Size = new System.Drawing.Size(81, 17);
+            this.lb_semana_02.TabIndex = 185;
+            this.lb_semana_02.Text = "Semana 2";
+            this.lb_semana_02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_semana_03
+            // 
+            this.lb_semana_03.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_semana_03.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_semana_03.ForeColor = System.Drawing.Color.White;
+            this.lb_semana_03.Location = new System.Drawing.Point(380, 15);
+            this.lb_semana_03.Name = "lb_semana_03";
+            this.lb_semana_03.Size = new System.Drawing.Size(81, 17);
+            this.lb_semana_03.TabIndex = 187;
+            this.lb_semana_03.Text = "Semana 3";
+            this.lb_semana_03.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_semana_01
+            // 
+            this.lb_semana_01.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_semana_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_semana_01.ForeColor = System.Drawing.Color.White;
+            this.lb_semana_01.Location = new System.Drawing.Point(208, 15);
+            this.lb_semana_01.Name = "lb_semana_01";
+            this.lb_semana_01.Size = new System.Drawing.Size(81, 17);
+            this.lb_semana_01.TabIndex = 183;
+            this.lb_semana_01.Text = "Semana 1";
+            this.lb_semana_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_semana_04
+            // 
+            this.lb_semana_04.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_semana_04.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_semana_04.ForeColor = System.Drawing.Color.White;
+            this.lb_semana_04.Location = new System.Drawing.Point(466, 15);
+            this.lb_semana_04.Name = "lb_semana_04";
+            this.lb_semana_04.Size = new System.Drawing.Size(81, 17);
+            this.lb_semana_04.TabIndex = 189;
+            this.lb_semana_04.Text = "Semana 4";
+            this.lb_semana_04.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeight = 50;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.dataGridView1.Location = new System.Drawing.Point(83, 123);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1026, 465);
+            this.dataGridView1.TabIndex = 192;
             // 
             // lb_titulo
             // 
@@ -230,188 +380,40 @@ namespace Hype.Painel.Eventos
             this.lb_data_entrada.TabIndex = 70;
             this.lb_data_entrada.Text = "00/00/0000";
             // 
-            // dataGridView1
+            // txt_ano_evento
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeight = 50;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            this.dataGridView1.Location = new System.Drawing.Point(83, 123);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
-            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1026, 465);
-            this.dataGridView1.TabIndex = 192;
+            this.txt_ano_evento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_ano_evento.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_ano_evento.BorderColor = System.Drawing.Color.White;
+            this.txt_ano_evento.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_ano_evento.BorderRadius = 0;
+            this.txt_ano_evento.BorderSize = 1;
+            this.txt_ano_evento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ano_evento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_ano_evento.Location = new System.Drawing.Point(623, 85);
+            this.txt_ano_evento.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_ano_evento.Multiline = false;
+            this.txt_ano_evento.Name = "txt_ano_evento";
+            this.txt_ano_evento.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_ano_evento.PasswordChar = false;
+            this.txt_ano_evento.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_ano_evento.PlaceholderText = "Ano";
+            this.txt_ano_evento.Size = new System.Drawing.Size(68, 31);
+            this.txt_ano_evento.TabIndex = 197;
+            this.txt_ano_evento.Texts = "";
+            this.txt_ano_evento.UnderlinedStyle = false;
             // 
-            // panel3
+            // txt_mes_evento
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.bt_cancelar);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.rjTextBox4);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.rjTextBox3);
-            this.panel3.Controls.Add(this.rjTextBox2);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.rjTextBox5);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Location = new System.Drawing.Point(83, 594);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1026, 80);
-            this.panel3.TabIndex = 193;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(22, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 52);
-            this.label1.TabIndex = 194;
-            this.label1.Text = "JANEIRO";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bt_cancelar
-            // 
-            this.bt_cancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cancelar.BackColor = System.Drawing.Color.OliveDrab;
-            this.bt_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cancelar.FlatAppearance.BorderSize = 0;
-            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
-            this.bt_cancelar.Location = new System.Drawing.Point(565, 36);
-            this.bt_cancelar.Name = "bt_cancelar";
-            this.bt_cancelar.Size = new System.Drawing.Size(102, 31);
-            this.bt_cancelar.TabIndex = 262;
-            this.bt_cancelar.Text = "Salvar";
-            this.bt_cancelar.UseVisualStyleBackColor = false;
-            this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.Goldenrod;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(158, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 52);
-            this.button1.TabIndex = 263;
-            this.button1.Text = ">";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.BackColor = System.Drawing.Color.Goldenrod;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(21, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 52);
-            this.button2.TabIndex = 264;
-            this.button2.Text = "<";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // bt_buscar
-            // 
-            this.bt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_buscar.BackColor = System.Drawing.SystemColors.Window;
-            this.bt_buscar.Image = global::Hype.Properties.Resources.buscar;
-            this.bt_buscar.Location = new System.Drawing.Point(1079, 92);
-            this.bt_buscar.Name = "bt_buscar";
-            this.bt_buscar.Size = new System.Drawing.Size(20, 20);
-            this.bt_buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bt_buscar.TabIndex = 195;
-            this.bt_buscar.TabStop = false;
-            // 
-            // txt_poder
-            // 
-            this.txt_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_poder.BorderColor = System.Drawing.Color.White;
-            this.txt_poder.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_poder.BorderRadius = 0;
-            this.txt_poder.BorderSize = 1;
-            this.txt_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder.Location = new System.Drawing.Point(623, 85);
-            this.txt_poder.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder.Multiline = false;
-            this.txt_poder.Name = "txt_poder";
-            this.txt_poder.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder.PasswordChar = false;
-            this.txt_poder.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_poder.PlaceholderText = "Ano";
-            this.txt_poder.Size = new System.Drawing.Size(68, 31);
-            this.txt_poder.TabIndex = 197;
-            this.txt_poder.Texts = "";
-            this.txt_poder.UnderlinedStyle = false;
-            // 
-            // txt_classe
-            // 
-            this.txt_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_classe.BackColor = System.Drawing.Color.White;
-            this.txt_classe.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_classe.BorderSize = 0;
-            this.txt_classe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txt_classe.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_classe.IconColor = System.Drawing.Color.Black;
-            this.txt_classe.Items.AddRange(new object[] {
+            this.txt_mes_evento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_mes_evento.BackColor = System.Drawing.Color.White;
+            this.txt_mes_evento.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_mes_evento.BorderSize = 0;
+            this.txt_mes_evento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_mes_evento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_mes_evento.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_mes_evento.IconColor = System.Drawing.Color.Black;
+            this.txt_mes_evento.Items.AddRange(new object[] {
             "Mês",
             "Janeiro",
             "Fevereiro",
@@ -425,14 +427,14 @@ namespace Hype.Painel.Eventos
             "Outubro",
             "Novembro",
             "Dezembro"});
-            this.txt_classe.ListBackColor = System.Drawing.Color.White;
-            this.txt_classe.ListTextColor = System.Drawing.Color.DimGray;
-            this.txt_classe.Location = new System.Drawing.Point(698, 85);
-            this.txt_classe.MinimumSize = new System.Drawing.Size(50, 30);
-            this.txt_classe.Name = "txt_classe";
-            this.txt_classe.Size = new System.Drawing.Size(130, 31);
-            this.txt_classe.TabIndex = 196;
-            this.txt_classe.Texts = "";
+            this.txt_mes_evento.ListBackColor = System.Drawing.Color.White;
+            this.txt_mes_evento.ListTextColor = System.Drawing.Color.DimGray;
+            this.txt_mes_evento.Location = new System.Drawing.Point(698, 85);
+            this.txt_mes_evento.MinimumSize = new System.Drawing.Size(50, 30);
+            this.txt_mes_evento.Name = "txt_mes_evento";
+            this.txt_mes_evento.Size = new System.Drawing.Size(130, 31);
+            this.txt_mes_evento.TabIndex = 196;
+            this.txt_mes_evento.Texts = "";
             // 
             // txt_buscar
             // 
@@ -457,146 +459,146 @@ namespace Hype.Painel.Eventos
             this.txt_buscar.Texts = "";
             this.txt_buscar.UnderlinedStyle = false;
             // 
-            // rjTextBox4
+            // txt_doacao_04
             // 
-            this.rjTextBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rjTextBox4.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox4.BorderColor = System.Drawing.Color.White;
-            this.rjTextBox4.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.rjTextBox4.BorderRadius = 0;
-            this.rjTextBox4.BorderSize = 1;
-            this.rjTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox4.Location = new System.Drawing.Point(469, 36);
-            this.rjTextBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox4.Multiline = false;
-            this.rjTextBox4.Name = "rjTextBox4";
-            this.rjTextBox4.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox4.PasswordChar = false;
-            this.rjTextBox4.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox4.PlaceholderText = "Ouro";
-            this.rjTextBox4.Size = new System.Drawing.Size(78, 31);
-            this.rjTextBox4.TabIndex = 188;
-            this.rjTextBox4.Texts = "";
-            this.rjTextBox4.UnderlinedStyle = false;
+            this.txt_doacao_04.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_doacao_04.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_doacao_04.BorderColor = System.Drawing.Color.White;
+            this.txt_doacao_04.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_doacao_04.BorderRadius = 0;
+            this.txt_doacao_04.BorderSize = 1;
+            this.txt_doacao_04.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_doacao_04.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_doacao_04.Location = new System.Drawing.Point(469, 36);
+            this.txt_doacao_04.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_doacao_04.Multiline = false;
+            this.txt_doacao_04.Name = "txt_doacao_04";
+            this.txt_doacao_04.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_doacao_04.PasswordChar = false;
+            this.txt_doacao_04.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_doacao_04.PlaceholderText = "Ouro";
+            this.txt_doacao_04.Size = new System.Drawing.Size(78, 31);
+            this.txt_doacao_04.TabIndex = 188;
+            this.txt_doacao_04.Texts = "";
+            this.txt_doacao_04.UnderlinedStyle = false;
             // 
-            // rjTextBox3
+            // txt_doacao_02
             // 
-            this.rjTextBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rjTextBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox3.BorderColor = System.Drawing.Color.White;
-            this.rjTextBox3.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.rjTextBox3.BorderRadius = 0;
-            this.rjTextBox3.BorderSize = 1;
-            this.rjTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox3.Location = new System.Drawing.Point(297, 36);
-            this.rjTextBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox3.Multiline = false;
-            this.rjTextBox3.Name = "rjTextBox3";
-            this.rjTextBox3.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox3.PasswordChar = false;
-            this.rjTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox3.PlaceholderText = "Ouro";
-            this.rjTextBox3.Size = new System.Drawing.Size(78, 31);
-            this.rjTextBox3.TabIndex = 184;
-            this.rjTextBox3.Texts = "";
-            this.rjTextBox3.UnderlinedStyle = false;
+            this.txt_doacao_02.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_doacao_02.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_doacao_02.BorderColor = System.Drawing.Color.White;
+            this.txt_doacao_02.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_doacao_02.BorderRadius = 0;
+            this.txt_doacao_02.BorderSize = 1;
+            this.txt_doacao_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_doacao_02.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_doacao_02.Location = new System.Drawing.Point(297, 36);
+            this.txt_doacao_02.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_doacao_02.Multiline = false;
+            this.txt_doacao_02.Name = "txt_doacao_02";
+            this.txt_doacao_02.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_doacao_02.PasswordChar = false;
+            this.txt_doacao_02.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_doacao_02.PlaceholderText = "Ouro";
+            this.txt_doacao_02.Size = new System.Drawing.Size(78, 31);
+            this.txt_doacao_02.TabIndex = 184;
+            this.txt_doacao_02.Texts = "";
+            this.txt_doacao_02.UnderlinedStyle = false;
             // 
-            // rjTextBox2
+            // txt_doacao_01
             // 
-            this.rjTextBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rjTextBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox2.BorderColor = System.Drawing.Color.White;
-            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.rjTextBox2.BorderRadius = 0;
-            this.rjTextBox2.BorderSize = 1;
-            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox2.Location = new System.Drawing.Point(211, 36);
-            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox2.Multiline = false;
-            this.rjTextBox2.Name = "rjTextBox2";
-            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox2.PasswordChar = false;
-            this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox2.PlaceholderText = "Ouro";
-            this.rjTextBox2.Size = new System.Drawing.Size(78, 31);
-            this.rjTextBox2.TabIndex = 181;
-            this.rjTextBox2.Texts = "";
-            this.rjTextBox2.UnderlinedStyle = false;
+            this.txt_doacao_01.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_doacao_01.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_doacao_01.BorderColor = System.Drawing.Color.White;
+            this.txt_doacao_01.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_doacao_01.BorderRadius = 0;
+            this.txt_doacao_01.BorderSize = 1;
+            this.txt_doacao_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_doacao_01.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_doacao_01.Location = new System.Drawing.Point(211, 36);
+            this.txt_doacao_01.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_doacao_01.Multiline = false;
+            this.txt_doacao_01.Name = "txt_doacao_01";
+            this.txt_doacao_01.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_doacao_01.PasswordChar = false;
+            this.txt_doacao_01.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_doacao_01.PlaceholderText = "Ouro";
+            this.txt_doacao_01.Size = new System.Drawing.Size(78, 31);
+            this.txt_doacao_01.TabIndex = 181;
+            this.txt_doacao_01.Texts = "";
+            this.txt_doacao_01.UnderlinedStyle = false;
             // 
-            // rjTextBox5
+            // txt_doacao_03
             // 
-            this.rjTextBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rjTextBox5.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox5.BorderColor = System.Drawing.Color.White;
-            this.rjTextBox5.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.rjTextBox5.BorderRadius = 0;
-            this.rjTextBox5.BorderSize = 1;
-            this.rjTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox5.Location = new System.Drawing.Point(383, 36);
-            this.rjTextBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox5.Multiline = false;
-            this.rjTextBox5.Name = "rjTextBox5";
-            this.rjTextBox5.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox5.PasswordChar = false;
-            this.rjTextBox5.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox5.PlaceholderText = "Ouro";
-            this.rjTextBox5.Size = new System.Drawing.Size(78, 31);
-            this.rjTextBox5.TabIndex = 186;
-            this.rjTextBox5.Texts = "";
-            this.rjTextBox5.UnderlinedStyle = false;
+            this.txt_doacao_03.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_doacao_03.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_doacao_03.BorderColor = System.Drawing.Color.White;
+            this.txt_doacao_03.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_doacao_03.BorderRadius = 0;
+            this.txt_doacao_03.BorderSize = 1;
+            this.txt_doacao_03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_doacao_03.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_doacao_03.Location = new System.Drawing.Point(383, 36);
+            this.txt_doacao_03.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_doacao_03.Multiline = false;
+            this.txt_doacao_03.Name = "txt_doacao_03";
+            this.txt_doacao_03.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_doacao_03.PasswordChar = false;
+            this.txt_doacao_03.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_doacao_03.PlaceholderText = "Ouro";
+            this.txt_doacao_03.Size = new System.Drawing.Size(78, 31);
+            this.txt_doacao_03.TabIndex = 186;
+            this.txt_doacao_03.Texts = "";
+            this.txt_doacao_03.UnderlinedStyle = false;
             // 
             // novo_evento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.Controls.Add(this.pl_conta_principal);
+            this.Controls.Add(this.pl_evento_doacoes);
             this.Name = "novo_evento";
             this.Size = new System.Drawing.Size(1200, 1014);
             this.Load += new System.EventHandler(this.novo_evento_Load);
-            this.pl_conta_principal.ResumeLayout(false);
-            this.pl_conta.ResumeLayout(false);
+            this.pl_evento_doacoes.ResumeLayout(false);
+            this.pl_doacao.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).EndInit();
+            this.pl_evento_doacao.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pl_top.ResumeLayout(false);
             this.pl_top.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pl_conta_principal;
+        private System.Windows.Forms.Panel pl_evento_doacoes;
         private System.Windows.Forms.Panel pl_espaco_02;
-        private System.Windows.Forms.Panel pl_conta;
+        private System.Windows.Forms.Panel pl_doacao;
         private System.Windows.Forms.Label lb_titulo;
         private System.Windows.Forms.Panel pl_espaco_01;
         private System.Windows.Forms.Panel pl_top;
         private System.Windows.Forms.Button bt_voltar;
         private System.Windows.Forms.Label txt_data_evento;
         private System.Windows.Forms.Label lb_data_entrada;
-        private System.Windows.Forms.Label label3;
-        private RJTextBox rjTextBox2;
-        private RJTextBox rjTextBox4;
-        private System.Windows.Forms.Label label7;
-        private RJTextBox rjTextBox5;
-        private System.Windows.Forms.Label label8;
-        private RJTextBox rjTextBox3;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lb_semana_01;
+        private RJTextBox txt_doacao_01;
+        private RJTextBox txt_doacao_04;
+        private System.Windows.Forms.Label lb_semana_04;
+        private RJTextBox txt_doacao_03;
+        private System.Windows.Forms.Label lb_semana_03;
+        private RJTextBox txt_doacao_02;
+        private System.Windows.Forms.Label lb_semana_02;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button bt_cancelar;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel pl_evento_doacao;
+        private System.Windows.Forms.Label lb_datas;
+        private System.Windows.Forms.Button bt_salvar;
+        private System.Windows.Forms.Button bt_datas_esquerda;
+        private System.Windows.Forms.Button bt_datas_direita;
         private System.Windows.Forms.PictureBox bt_buscar;
         private RJTextBox txt_buscar;
-        private script.RJComboBox txt_classe;
-        private RJTextBox txt_poder;
+        private script.RJComboBox txt_mes_evento;
+        private RJTextBox txt_ano_evento;
     }
 }
