@@ -17,6 +17,7 @@ namespace Hype.Painel.Eventos
         public static eventos Instance;
         public string id_membro = "";
         public string id_eventos = "";
+        public string id_doacao = "";
         public string nick;
         public string foi_para_cla;
 
@@ -125,6 +126,7 @@ namespace Hype.Painel.Eventos
 
                     id_membro = dr["ID_MEMBROS"].ToString();
                     id_eventos = dr["ID_EVENTOS"].ToString();
+                    id_doacao = dr["ID_DOACAO"].ToString();
 
                     //data_entrada = ((DateTime)dr["DATA_RECRUTAMENTO"]).ToShortDateString();
                     nick = dr["NICK"].ToString();

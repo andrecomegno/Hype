@@ -16,6 +16,14 @@ namespace Hype.Painel.Eventos
     {
         // ID`S
         string id_membro = eventos.Instance.id_membro;
+        string id_doacao = eventos.Instance.id_doacao;
+        string id_eventos = eventos.Instance.id_eventos;
+
+        // SEMANAS DOACÖES
+        bool semana_01 = true;
+        bool semana_02 = false;
+        bool semana_03 = false;
+        bool semana_04 = false;
 
         // OURO
         decimal total = 4;
@@ -37,7 +45,10 @@ namespace Hype.Painel.Eventos
 
         public novo_evento()
         {
-            InitializeComponent();            
+            InitializeComponent();
+
+            CampoDoacaoDesativado();
+
         }
 
         private void BuscarMes()
@@ -197,6 +208,10 @@ namespace Hype.Painel.Eventos
             {
                 MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
             }
+            finally
+            {
+                AtualizarTabela();
+            }
             
         }
 
@@ -206,49 +221,53 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            // INSERT TABELA EVENTOS
-            MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, mes_evento, ano_evento, id_membros) values (null, ?, ?, ?)", database.getConnection());
+            if(semana_01 && !semana_02 && !semana_03 && !semana_04)
+            {
+                /*
+                // INSERT TABELA EVENTOS
+                MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, mes_evento, ano_evento, id_membros) values (null, ?, ?, ?)", database.getConnection());
 
-            objCmdEventos.Parameters.Add("@mes_evento", MySqlDbType.VarChar, 256).Value = lb_datas.Text;
-            objCmdEventos.Parameters.Add("@ano_evento", MySqlDbType.Year).Value = DateTime.Now.Year;
-            objCmdEventos.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
+                objCmdEventos.Parameters.Add("@mes_evento", MySqlDbType.VarChar, 256).Value = lb_datas.Text;
+                objCmdEventos.Parameters.Add("@ano_evento", MySqlDbType.Year).Value = DateTime.Now.Year;
+                objCmdEventos.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
 
-            objCmdEventos.ExecuteNonQuery();
-            long idEventos = objCmdEventos.LastInsertedId;
- 
-            // INSERT TABELA DOAÇÃO
-            MySqlCommand objCmdDoacao = new MySqlCommand("insert into hypedb.doacao (id_doacao, semana_01, semana_02, semana_03, semana_04, total, anotacao, id_eventos, id_membros) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+                objCmdEventos.ExecuteNonQuery();
+                long idEventos = objCmdEventos.LastInsertedId;
 
-            objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
-            objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
-            objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
-            objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = txt_doacao_04.Texts;
-            objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = 0.0;
-            objCmdDoacao.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = "";
-            objCmdDoacao.Parameters.Add("@id_eventos", MySqlDbType.Int32).Value = idEventos;
-            objCmdDoacao.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
+                // INSERT TABELA DOAÇÃO
+                MySqlCommand objCmdDoacao = new MySqlCommand("insert into hypedb.doacao (id_doacao, semana_01, semana_02, semana_03, semana_04, total, anotacao, id_eventos, id_membros) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdDoacao.ExecuteNonQuery();
+                objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+                objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = 0;
+                objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
+                objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
+                objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = 0;
+                objCmdDoacao.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = "";
+                objCmdDoacao.Parameters.Add("@id_eventos", MySqlDbType.Int32).Value = idEventos;
+                objCmdDoacao.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
 
-            MessageBox.Show(idEventos.ToString());
+                objCmdDoacao.ExecuteNonQuery();
+                */
+            }
 
-            /*
-            #region MEMBROS
-            // UPDATE MEMBROS
-            MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb. set nick=@nick, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
+            if (!semana_01 && semana_02 && !semana_03 && !semana_04)
+            {
 
-            objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
-            objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-            //objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts; // NOVO PODER
-            //objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_novo_level.Texts; // NOVO LEVEL
-            objCmdCadastroMembros.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
-            objCmdCadastroMembros.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
+                // INSERT TABELA DOAÇÃO
+                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04 where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
 
-            objCmdCadastroMembros.ExecuteNonQuery();
-            #endregion
-            */
+                objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
+                objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
+                objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
+                objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+                objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
+                objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
+                objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = txt_doacao_04.Texts;
 
-            DialogResult dr = MessageBox.Show("Membro Atualizado Com Sucesso !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                objCmdDoacao.ExecuteNonQuery();
+
+                DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }                
 
             database.closeConnection();
         }
@@ -324,8 +343,71 @@ namespace Hype.Painel.Eventos
         }
         #endregion
 
+        private void AtualizarTabela()
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.FOI_PARA_CLA, c.CLASSE, c.PATENTE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS where c.ID_MEMBROS = '" + id_membro + "' ", database.getConnection());
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+            }
+
+            database.closeConnection();
+        }
+
+        private void DadosDoacao()
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.FOI_PARA_CLA, c.CLASSE, c.PATENTE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS where c.ID_MEMBROS = '" + id_membro + "' ", database.getConnection());
+
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                id_membro = dr["ID_MEMBROS"].ToString();
+                id_eventos = dr["ID_EVENTOS"].ToString();
+                id_doacao = dr["ID_DOACAO"].ToString();
+
+                txt_doacao_01.Texts = dr["SEMANA_01"].ToString();
+                txt_doacao_02.Texts = dr["SEMANA_02"].ToString();
+                txt_doacao_03.Texts = dr["SEMANA_03"].ToString();
+                txt_doacao_04.Texts = dr["SEMANA_04"].ToString();
+            }
+
+            database.closeConnection();
+        }
+
+        private void CampoDoacaoDesativado()
+        {
+            lb_semana_02.ForeColor = Color.FromArgb(24, 25, 28);
+            txt_doacao_02.BackColor = Color.FromArgb(24, 25, 28);
+            txt_doacao_02.PlaceholderText = "";
+            txt_doacao_02.Enabled = false;
+
+            lb_semana_03.ForeColor = Color.FromArgb(24, 25, 28);
+            txt_doacao_03.BackColor = Color.FromArgb(24, 25, 28);
+            txt_doacao_03.PlaceholderText = "";
+            txt_doacao_03.Enabled = false;
+
+            lb_semana_04.ForeColor = Color.FromArgb(24, 25, 28);
+            txt_doacao_04.BackColor = Color.FromArgb(24, 25, 28);
+            txt_doacao_04.PlaceholderText = "";
+            txt_doacao_04.Enabled = false;
+
+
+        }
+
         private void novo_evento_Load(object sender, EventArgs e)
         {
+            DadosDoacao();
             TabelaEvento();
 
             // COLORIR O TITULO DA TABELA

@@ -36,15 +36,22 @@ namespace Hype.Painel.Eventos
             this.pl_evento_doacoes = new System.Windows.Forms.Panel();
             this.pl_espaco_02 = new System.Windows.Forms.Panel();
             this.pl_doacao = new System.Windows.Forms.Panel();
+            this.txt_ano_evento = new Hype.Painel.RJTextBox();
+            this.txt_mes_evento = new Hype.script.RJComboBox();
             this.bt_buscar = new System.Windows.Forms.PictureBox();
+            this.txt_buscar = new Hype.Painel.RJTextBox();
             this.pl_evento_doacao = new System.Windows.Forms.Panel();
             this.bt_datas_esquerda = new System.Windows.Forms.Button();
             this.bt_datas_direita = new System.Windows.Forms.Button();
             this.bt_salvar = new System.Windows.Forms.Button();
             this.lb_datas = new System.Windows.Forms.Label();
+            this.txt_doacao_04 = new Hype.Painel.RJTextBox();
             this.lb_semana_02 = new System.Windows.Forms.Label();
+            this.txt_doacao_02 = new Hype.Painel.RJTextBox();
+            this.txt_doacao_01 = new Hype.Painel.RJTextBox();
             this.lb_semana_03 = new System.Windows.Forms.Label();
             this.lb_semana_01 = new System.Windows.Forms.Label();
+            this.txt_doacao_03 = new Hype.Painel.RJTextBox();
             this.lb_semana_04 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lb_titulo = new System.Windows.Forms.Label();
@@ -53,13 +60,6 @@ namespace Hype.Painel.Eventos
             this.bt_voltar = new System.Windows.Forms.Button();
             this.txt_data_evento = new System.Windows.Forms.Label();
             this.lb_data_entrada = new System.Windows.Forms.Label();
-            this.txt_ano_evento = new Hype.Painel.RJTextBox();
-            this.txt_mes_evento = new Hype.script.RJComboBox();
-            this.txt_buscar = new Hype.Painel.RJTextBox();
-            this.txt_doacao_04 = new Hype.Painel.RJTextBox();
-            this.txt_doacao_02 = new Hype.Painel.RJTextBox();
-            this.txt_doacao_01 = new Hype.Painel.RJTextBox();
-            this.txt_doacao_03 = new Hype.Painel.RJTextBox();
             this.pl_evento_doacoes.SuspendLayout();
             this.pl_doacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).BeginInit();
@@ -108,6 +108,62 @@ namespace Hype.Painel.Eventos
             this.pl_doacao.Size = new System.Drawing.Size(1172, 720);
             this.pl_doacao.TabIndex = 64;
             // 
+            // txt_ano_evento
+            // 
+            this.txt_ano_evento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_ano_evento.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_ano_evento.BorderColor = System.Drawing.Color.White;
+            this.txt_ano_evento.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_ano_evento.BorderRadius = 0;
+            this.txt_ano_evento.BorderSize = 1;
+            this.txt_ano_evento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ano_evento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_ano_evento.Location = new System.Drawing.Point(623, 85);
+            this.txt_ano_evento.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_ano_evento.Multiline = false;
+            this.txt_ano_evento.Name = "txt_ano_evento";
+            this.txt_ano_evento.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_ano_evento.PasswordChar = false;
+            this.txt_ano_evento.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_ano_evento.PlaceholderText = "Ano";
+            this.txt_ano_evento.Size = new System.Drawing.Size(68, 31);
+            this.txt_ano_evento.TabIndex = 197;
+            this.txt_ano_evento.Texts = "";
+            this.txt_ano_evento.UnderlinedStyle = false;
+            // 
+            // txt_mes_evento
+            // 
+            this.txt_mes_evento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_mes_evento.BackColor = System.Drawing.Color.White;
+            this.txt_mes_evento.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_mes_evento.BorderSize = 0;
+            this.txt_mes_evento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_mes_evento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_mes_evento.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_mes_evento.IconColor = System.Drawing.Color.Black;
+            this.txt_mes_evento.Items.AddRange(new object[] {
+            "Mês",
+            "Janeiro",
+            "Fevereiro",
+            "Março",
+            "Abril",
+            "Maio",
+            "Junho",
+            "Julho",
+            "Agosto",
+            "Setembro",
+            "Outubro",
+            "Novembro",
+            "Dezembro"});
+            this.txt_mes_evento.ListBackColor = System.Drawing.Color.White;
+            this.txt_mes_evento.ListTextColor = System.Drawing.Color.DimGray;
+            this.txt_mes_evento.Location = new System.Drawing.Point(698, 85);
+            this.txt_mes_evento.MinimumSize = new System.Drawing.Size(50, 30);
+            this.txt_mes_evento.Name = "txt_mes_evento";
+            this.txt_mes_evento.Size = new System.Drawing.Size(130, 31);
+            this.txt_mes_evento.TabIndex = 196;
+            this.txt_mes_evento.Texts = "";
+            // 
             // bt_buscar
             // 
             this.bt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -119,6 +175,29 @@ namespace Hype.Painel.Eventos
             this.bt_buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bt_buscar.TabIndex = 195;
             this.bt_buscar.TabStop = false;
+            // 
+            // txt_buscar
+            // 
+            this.txt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_buscar.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_buscar.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_buscar.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.txt_buscar.BorderRadius = 15;
+            this.txt_buscar.BorderSize = 2;
+            this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_buscar.Location = new System.Drawing.Point(835, 85);
+            this.txt_buscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_buscar.Multiline = false;
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_buscar.PasswordChar = false;
+            this.txt_buscar.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_buscar.PlaceholderText = "O que você procura ?";
+            this.txt_buscar.Size = new System.Drawing.Size(274, 31);
+            this.txt_buscar.TabIndex = 194;
+            this.txt_buscar.Texts = "";
+            this.txt_buscar.UnderlinedStyle = false;
             // 
             // pl_evento_doacao
             // 
@@ -205,6 +284,29 @@ namespace Hype.Painel.Eventos
             this.lb_datas.Text = "Janeiro";
             this.lb_datas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txt_doacao_04
+            // 
+            this.txt_doacao_04.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_doacao_04.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_doacao_04.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_doacao_04.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_doacao_04.BorderRadius = 0;
+            this.txt_doacao_04.BorderSize = 1;
+            this.txt_doacao_04.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_doacao_04.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_doacao_04.Location = new System.Drawing.Point(469, 36);
+            this.txt_doacao_04.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_doacao_04.Multiline = false;
+            this.txt_doacao_04.Name = "txt_doacao_04";
+            this.txt_doacao_04.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_doacao_04.PasswordChar = false;
+            this.txt_doacao_04.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_doacao_04.PlaceholderText = "";
+            this.txt_doacao_04.Size = new System.Drawing.Size(78, 31);
+            this.txt_doacao_04.TabIndex = 188;
+            this.txt_doacao_04.Texts = "";
+            this.txt_doacao_04.UnderlinedStyle = false;
+            // 
             // lb_semana_02
             // 
             this.lb_semana_02.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -216,6 +318,52 @@ namespace Hype.Painel.Eventos
             this.lb_semana_02.TabIndex = 185;
             this.lb_semana_02.Text = "Semana 2";
             this.lb_semana_02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_doacao_02
+            // 
+            this.txt_doacao_02.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_doacao_02.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_doacao_02.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_doacao_02.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_doacao_02.BorderRadius = 0;
+            this.txt_doacao_02.BorderSize = 1;
+            this.txt_doacao_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_doacao_02.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_doacao_02.Location = new System.Drawing.Point(297, 36);
+            this.txt_doacao_02.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_doacao_02.Multiline = false;
+            this.txt_doacao_02.Name = "txt_doacao_02";
+            this.txt_doacao_02.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_doacao_02.PasswordChar = false;
+            this.txt_doacao_02.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_doacao_02.PlaceholderText = "";
+            this.txt_doacao_02.Size = new System.Drawing.Size(78, 31);
+            this.txt_doacao_02.TabIndex = 184;
+            this.txt_doacao_02.Texts = "";
+            this.txt_doacao_02.UnderlinedStyle = false;
+            // 
+            // txt_doacao_01
+            // 
+            this.txt_doacao_01.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_doacao_01.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_doacao_01.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_doacao_01.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_doacao_01.BorderRadius = 0;
+            this.txt_doacao_01.BorderSize = 1;
+            this.txt_doacao_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_doacao_01.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_doacao_01.Location = new System.Drawing.Point(211, 36);
+            this.txt_doacao_01.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_doacao_01.Multiline = false;
+            this.txt_doacao_01.Name = "txt_doacao_01";
+            this.txt_doacao_01.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_doacao_01.PasswordChar = false;
+            this.txt_doacao_01.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_doacao_01.PlaceholderText = "";
+            this.txt_doacao_01.Size = new System.Drawing.Size(78, 31);
+            this.txt_doacao_01.TabIndex = 181;
+            this.txt_doacao_01.Texts = "";
+            this.txt_doacao_01.UnderlinedStyle = false;
             // 
             // lb_semana_03
             // 
@@ -240,6 +388,29 @@ namespace Hype.Painel.Eventos
             this.lb_semana_01.TabIndex = 183;
             this.lb_semana_01.Text = "Semana 1";
             this.lb_semana_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_doacao_03
+            // 
+            this.txt_doacao_03.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_doacao_03.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_doacao_03.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_doacao_03.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_doacao_03.BorderRadius = 0;
+            this.txt_doacao_03.BorderSize = 1;
+            this.txt_doacao_03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_doacao_03.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_doacao_03.Location = new System.Drawing.Point(383, 36);
+            this.txt_doacao_03.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_doacao_03.Multiline = false;
+            this.txt_doacao_03.Name = "txt_doacao_03";
+            this.txt_doacao_03.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_doacao_03.PasswordChar = false;
+            this.txt_doacao_03.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_doacao_03.PlaceholderText = "";
+            this.txt_doacao_03.Size = new System.Drawing.Size(78, 31);
+            this.txt_doacao_03.TabIndex = 186;
+            this.txt_doacao_03.Texts = "";
+            this.txt_doacao_03.UnderlinedStyle = false;
             // 
             // lb_semana_04
             // 
@@ -305,6 +476,8 @@ namespace Hype.Painel.Eventos
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1026, 465);
             this.dataGridView1.TabIndex = 192;
+            this.dataGridView1.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseEnter);
+            this.dataGridView1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseLeave);
             // 
             // lb_titulo
             // 
@@ -379,177 +552,6 @@ namespace Hype.Painel.Eventos
             this.lb_data_entrada.Size = new System.Drawing.Size(99, 20);
             this.lb_data_entrada.TabIndex = 70;
             this.lb_data_entrada.Text = "00/00/0000";
-            // 
-            // txt_ano_evento
-            // 
-            this.txt_ano_evento.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_ano_evento.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_ano_evento.BorderColor = System.Drawing.Color.White;
-            this.txt_ano_evento.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_ano_evento.BorderRadius = 0;
-            this.txt_ano_evento.BorderSize = 1;
-            this.txt_ano_evento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ano_evento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_ano_evento.Location = new System.Drawing.Point(623, 85);
-            this.txt_ano_evento.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_ano_evento.Multiline = false;
-            this.txt_ano_evento.Name = "txt_ano_evento";
-            this.txt_ano_evento.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_ano_evento.PasswordChar = false;
-            this.txt_ano_evento.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_ano_evento.PlaceholderText = "Ano";
-            this.txt_ano_evento.Size = new System.Drawing.Size(68, 31);
-            this.txt_ano_evento.TabIndex = 197;
-            this.txt_ano_evento.Texts = "";
-            this.txt_ano_evento.UnderlinedStyle = false;
-            // 
-            // txt_mes_evento
-            // 
-            this.txt_mes_evento.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_mes_evento.BackColor = System.Drawing.Color.White;
-            this.txt_mes_evento.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_mes_evento.BorderSize = 0;
-            this.txt_mes_evento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_mes_evento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txt_mes_evento.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_mes_evento.IconColor = System.Drawing.Color.Black;
-            this.txt_mes_evento.Items.AddRange(new object[] {
-            "Mês",
-            "Janeiro",
-            "Fevereiro",
-            "Março",
-            "Abril",
-            "Maio",
-            "Junho",
-            "Julho",
-            "Agosto",
-            "Setembro",
-            "Outubro",
-            "Novembro",
-            "Dezembro"});
-            this.txt_mes_evento.ListBackColor = System.Drawing.Color.White;
-            this.txt_mes_evento.ListTextColor = System.Drawing.Color.DimGray;
-            this.txt_mes_evento.Location = new System.Drawing.Point(698, 85);
-            this.txt_mes_evento.MinimumSize = new System.Drawing.Size(50, 30);
-            this.txt_mes_evento.Name = "txt_mes_evento";
-            this.txt_mes_evento.Size = new System.Drawing.Size(130, 31);
-            this.txt_mes_evento.TabIndex = 196;
-            this.txt_mes_evento.Texts = "";
-            // 
-            // txt_buscar
-            // 
-            this.txt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_buscar.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_buscar.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_buscar.BorderFocusColor = System.Drawing.Color.Transparent;
-            this.txt_buscar.BorderRadius = 15;
-            this.txt_buscar.BorderSize = 2;
-            this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_buscar.Location = new System.Drawing.Point(835, 85);
-            this.txt_buscar.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_buscar.Multiline = false;
-            this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_buscar.PasswordChar = false;
-            this.txt_buscar.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_buscar.PlaceholderText = "O que você procura ?";
-            this.txt_buscar.Size = new System.Drawing.Size(274, 31);
-            this.txt_buscar.TabIndex = 194;
-            this.txt_buscar.Texts = "";
-            this.txt_buscar.UnderlinedStyle = false;
-            // 
-            // txt_doacao_04
-            // 
-            this.txt_doacao_04.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_doacao_04.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_doacao_04.BorderColor = System.Drawing.Color.White;
-            this.txt_doacao_04.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_doacao_04.BorderRadius = 0;
-            this.txt_doacao_04.BorderSize = 1;
-            this.txt_doacao_04.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_doacao_04.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_doacao_04.Location = new System.Drawing.Point(469, 36);
-            this.txt_doacao_04.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_doacao_04.Multiline = false;
-            this.txt_doacao_04.Name = "txt_doacao_04";
-            this.txt_doacao_04.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_doacao_04.PasswordChar = false;
-            this.txt_doacao_04.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_doacao_04.PlaceholderText = "Ouro";
-            this.txt_doacao_04.Size = new System.Drawing.Size(78, 31);
-            this.txt_doacao_04.TabIndex = 188;
-            this.txt_doacao_04.Texts = "";
-            this.txt_doacao_04.UnderlinedStyle = false;
-            // 
-            // txt_doacao_02
-            // 
-            this.txt_doacao_02.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_doacao_02.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_doacao_02.BorderColor = System.Drawing.Color.White;
-            this.txt_doacao_02.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_doacao_02.BorderRadius = 0;
-            this.txt_doacao_02.BorderSize = 1;
-            this.txt_doacao_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_doacao_02.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_doacao_02.Location = new System.Drawing.Point(297, 36);
-            this.txt_doacao_02.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_doacao_02.Multiline = false;
-            this.txt_doacao_02.Name = "txt_doacao_02";
-            this.txt_doacao_02.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_doacao_02.PasswordChar = false;
-            this.txt_doacao_02.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_doacao_02.PlaceholderText = "Ouro";
-            this.txt_doacao_02.Size = new System.Drawing.Size(78, 31);
-            this.txt_doacao_02.TabIndex = 184;
-            this.txt_doacao_02.Texts = "";
-            this.txt_doacao_02.UnderlinedStyle = false;
-            // 
-            // txt_doacao_01
-            // 
-            this.txt_doacao_01.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_doacao_01.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_doacao_01.BorderColor = System.Drawing.Color.White;
-            this.txt_doacao_01.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_doacao_01.BorderRadius = 0;
-            this.txt_doacao_01.BorderSize = 1;
-            this.txt_doacao_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_doacao_01.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_doacao_01.Location = new System.Drawing.Point(211, 36);
-            this.txt_doacao_01.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_doacao_01.Multiline = false;
-            this.txt_doacao_01.Name = "txt_doacao_01";
-            this.txt_doacao_01.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_doacao_01.PasswordChar = false;
-            this.txt_doacao_01.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_doacao_01.PlaceholderText = "Ouro";
-            this.txt_doacao_01.Size = new System.Drawing.Size(78, 31);
-            this.txt_doacao_01.TabIndex = 181;
-            this.txt_doacao_01.Texts = "";
-            this.txt_doacao_01.UnderlinedStyle = false;
-            // 
-            // txt_doacao_03
-            // 
-            this.txt_doacao_03.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_doacao_03.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_doacao_03.BorderColor = System.Drawing.Color.White;
-            this.txt_doacao_03.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_doacao_03.BorderRadius = 0;
-            this.txt_doacao_03.BorderSize = 1;
-            this.txt_doacao_03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_doacao_03.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_doacao_03.Location = new System.Drawing.Point(383, 36);
-            this.txt_doacao_03.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_doacao_03.Multiline = false;
-            this.txt_doacao_03.Name = "txt_doacao_03";
-            this.txt_doacao_03.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_doacao_03.PasswordChar = false;
-            this.txt_doacao_03.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_doacao_03.PlaceholderText = "Ouro";
-            this.txt_doacao_03.Size = new System.Drawing.Size(78, 31);
-            this.txt_doacao_03.TabIndex = 186;
-            this.txt_doacao_03.Texts = "";
-            this.txt_doacao_03.UnderlinedStyle = false;
             // 
             // novo_evento
             // 
