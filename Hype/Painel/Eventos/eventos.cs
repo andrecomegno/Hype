@@ -146,6 +146,50 @@ namespace Hype.Painel.Eventos
 
         #endregion
 
+        #region BUSCAR
+        private void bt_buscar_Click(object sender, EventArgs e)
+        {
+            Buscar();
+        }
+
+        private void Buscar()
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.FOI_PARA_CLA, c.PATENTE, c.CLASSE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.eventos eve on eve.ID_EVENTOS = c.ID_MEMBROS left join hypedb.doacao d on d.ID_DOACAO = c.ID_MEMBROS where c.NICK like @NICK '%'", database.getConnection());
+            cmd.Parameters.AddWithValue("@NICK", txt_buscar.Texts);
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+            }
+
+            database.closeConnection();
+        }
+
+        private void txt_buscar__TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txt_buscar.Texts))
+            {
+                Buscar();
+            }
+        }
+
+        private void bt_buscar_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void bt_buscar_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+        }
+        #endregion
+
         private void eventos_Load(object sender, EventArgs e)
         {
             TabelaEvento();

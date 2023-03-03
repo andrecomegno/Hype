@@ -26,53 +26,11 @@ namespace Hype.Painel.Eventos
         bool semana_04 = false;
 
         // OURO
-        decimal total = 4;
-
-        // DATAS
-        int datas = 0;
-        string janeiro = "Janeiro";
-        string fevereiro = "Fevereiro";
-        string marco = "Março";
-        string abril = "Abril";
-        string maio = "Maio";
-        string junho = "Junho";
-        string julho = "Julho";
-        string agosto = "Agosto";
-        string setembro = "Setembro";
-        string outubro = "Outubro";
-        string novembro = "Novembro";
-        string dezembro = "Dezembro";
+        decimal totalDoacao;
 
         public novo_evento()
         {
             InitializeComponent();
-        }
-
-        private void BuscarMes()
-        {
-            switch (txt_mes_evento.SelectedIndex)
-            {
-                case 0:
-                    break;
-                case 1:
-
-                    break;
-                case 2:
-
-                    break;
-                case 3:
-
-                    break;
-                case 4:
-
-                    break;
-                case 5:
-
-                    break;
-
-                default:
-                    break;
-            }
         }
 
         #region TABELAS
@@ -229,6 +187,8 @@ namespace Hype.Painel.Eventos
 
                 dataGridView1.Visible = true;
             }
+
+            CampoTextoHabilitado(pl_evento_doacao.Controls);
         }
 
         private void DadosDoacao()
@@ -305,9 +265,9 @@ namespace Hype.Painel.Eventos
                         semana_04 = false;
                         semana_01 = true;
 
-                        Limpar(); // Novo Mês
+                        Limpar(); // Novo Mês  
                     }
-                }
+                }                
             }
 
             database.closeConnection();
@@ -425,12 +385,12 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            if(semana_01)
+            if (semana_01)
             {                
                 // INSERT TABELA EVENTOS
                 MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, mes_evento, ano_evento, id_membros) values (null, ?, ?, ?)", database.getConnection());
 
-                objCmdEventos.Parameters.Add("@mes_evento", MySqlDbType.VarChar, 256).Value = lb_datas.Text;
+                objCmdEventos.Parameters.Add("@mes_evento", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
                 objCmdEventos.Parameters.Add("@ano_evento", MySqlDbType.Year).Value = DateTime.Now.Year;
                 objCmdEventos.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
 
@@ -493,7 +453,7 @@ namespace Hype.Painel.Eventos
             if (semana_04)
             {
                 // INSERT TABELA DOAÇÃO
-                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04 where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04 total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
 
                 objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
                 objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
@@ -503,82 +463,16 @@ namespace Hype.Painel.Eventos
                 objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
                 objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = txt_doacao_04.Texts;
 
+                totalDoacao = txt_doacao_01.Texts + txt_doacao_02.Texts + txt_doacao_03.Texts + txt_doacao_04.Texts;
+
+                objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value =
+
                 objCmdDoacao.ExecuteNonQuery();
 
                 DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 4", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             database.closeConnection();
-        }
-
-        private void MesEvento()
-        {
-            switch (datas)
-            {
-                case 0:
-                    lb_datas.Text = janeiro;
-                    break;
-                case 1:
-                    lb_datas.Text = fevereiro;
-                    break;
-                case 2:
-                    lb_datas.Text = marco;
-                    break;
-                case 3:
-                    lb_datas.Text = abril;
-                    break;
-                case 4:
-                    lb_datas.Text = maio;
-                    break;
-                case 5:
-                    lb_datas.Text = junho;
-                    break;
-                case 6:
-                    lb_datas.Text = julho;
-                    break;
-                case 7:
-                    lb_datas.Text = agosto;
-                    break;
-                case 8:
-                    lb_datas.Text = setembro;
-                    break;
-                case 9:
-                    lb_datas.Text = outubro;
-                    break;
-                case 10:
-                    lb_datas.Text = novembro;
-                    break;
-                case 11:
-                    lb_datas.Text = dezembro;
-                    break;
-
-                default:
-                    break;
-            }
-        }
-
-        private void bt_datas_direita_Click(object sender, EventArgs e)
-        {
-            datas++;
-
-            if(datas == 12)
-            {
-                datas = 0;
-            }
-
-            MesEvento();
-        }
-
-        private void bt_datas_esquerda_Click(object sender, EventArgs e)
-        {
-            datas--;
-
-            if (datas == -1)
-            {
-                datas = 11;
-            }
-
-            MesEvento();
         }
         #endregion
 
@@ -591,7 +485,25 @@ namespace Hype.Painel.Eventos
             txt_doacao_04.Texts = string.Empty;
         }
 
-        private void CampoDoacaoDesativado()
+        private void CampoTextoHabilitado(Control.ControlCollection control)
+        {
+            foreach (Control c in control)
+            {
+                if (c is RJTextBox)
+                {
+                    ((RJTextBox)c).Enabled = false;
+                    ((RJTextBox)c).BackColor = Color.FromArgb(24, 25, 28);
+                    ((RJTextBox)c).ForeColor = Color.FromArgb(24, 25, 28);
+                }
+
+                if (c is Label)
+                {
+                    ((Label)c).ForeColor = Color.FromArgb(24, 25, 28);
+                }
+            }
+        }
+
+        private void CampoDoacao()
         {
             if (semana_01)
             {
@@ -671,10 +583,12 @@ namespace Hype.Painel.Eventos
         {
             DadosDoacao();
             TabelaEvento();
-            CampoDoacaoDesativado();
+            CampoDoacao();
 
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
-        }       
+        }
+
+
     }
 }

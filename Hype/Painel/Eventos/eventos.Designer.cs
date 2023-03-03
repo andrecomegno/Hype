@@ -153,6 +153,9 @@ namespace Hype.Painel.Eventos
             this.bt_buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bt_buscar.TabIndex = 68;
             this.bt_buscar.TabStop = false;
+            this.bt_buscar.Click += new System.EventHandler(this.bt_buscar_Click);
+            this.bt_buscar.MouseEnter += new System.EventHandler(this.bt_buscar_MouseEnter);
+            this.bt_buscar.MouseLeave += new System.EventHandler(this.bt_buscar_MouseLeave);
             // 
             // txt_buscar
             // 
@@ -176,6 +179,7 @@ namespace Hype.Painel.Eventos
             this.txt_buscar.TabIndex = 67;
             this.txt_buscar.Texts = "";
             this.txt_buscar.UnderlinedStyle = false;
+            this.txt_buscar._TextChanged += new System.EventHandler(this.txt_buscar__TextChanged);
             // 
             // bt_alts
             // 
