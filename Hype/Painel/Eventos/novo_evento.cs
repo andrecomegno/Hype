@@ -26,7 +26,7 @@ namespace Hype.Painel.Eventos
         bool semana_04 = false;
 
         // OURO
-        decimal totalDoacao;
+        string totalDoacao;
 
         public novo_evento()
         {
@@ -349,11 +349,11 @@ namespace Hype.Painel.Eventos
                 {
                     try
                     {
-                        Salvar();
+                        Salvar();                        
                     }
                     finally
                     {
-                        AtualizarTabela();
+                        AtualizarTabela();                        
                     }
                 }
             }
@@ -463,9 +463,13 @@ namespace Hype.Painel.Eventos
                 objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
                 objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = txt_doacao_04.Texts;
 
-                totalDoacao = txt_doacao_01.Texts + txt_doacao_02.Texts + txt_doacao_03.Texts + txt_doacao_04.Texts;
+                double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts));
+                totalDoacao = de.ToString();
 
-                objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value =
+                MessageBox.Show(totalDoacao.ToString());
+
+
+                objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = totalDoacao.ToString();
 
                 objCmdDoacao.ExecuteNonQuery();
 

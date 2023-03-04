@@ -60,6 +60,19 @@ namespace Hype.Painel.Eventos
             database.closeConnection();
 
             Tabela();
+
+            if (dataGridView1.Rows.Count == 0)
+            {
+                txt_sem_dados.Visible = true;
+
+                dataGridView1.Visible = false;
+            }
+            else
+            {
+                txt_sem_dados.Visible = false;
+
+                dataGridView1.Visible = true;
+            }
         }
 
         private void Tabela()

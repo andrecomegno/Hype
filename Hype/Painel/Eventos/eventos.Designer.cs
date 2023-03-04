@@ -42,6 +42,7 @@ namespace Hype.Painel.Eventos
             this.bt_alts = new System.Windows.Forms.Button();
             this.bt_eventos = new System.Windows.Forms.Button();
             this.bt_membros = new System.Windows.Forms.Button();
+            this.txt_sem_dados = new System.Windows.Forms.Label();
             this.pl_eventos.SuspendLayout();
             this.pl_conteudo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -65,6 +66,7 @@ namespace Hype.Painel.Eventos
             // pl_conteudo
             // 
             this.pl_conteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_conteudo.Controls.Add(this.txt_sem_dados);
             this.pl_conteudo.Controls.Add(this.dataGridView1);
             this.pl_conteudo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_conteudo.Location = new System.Drawing.Point(0, 43);
@@ -231,6 +233,19 @@ namespace Hype.Painel.Eventos
             this.bt_membros.UseVisualStyleBackColor = false;
             this.bt_membros.Click += new System.EventHandler(this.bt_membros_Click);
             // 
+            // txt_sem_dados
+            // 
+            this.txt_sem_dados.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_sem_dados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.txt_sem_dados.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_sem_dados.ForeColor = System.Drawing.Color.White;
+            this.txt_sem_dados.Location = new System.Drawing.Point(82, 73);
+            this.txt_sem_dados.Name = "txt_sem_dados";
+            this.txt_sem_dados.Size = new System.Drawing.Size(1004, 31);
+            this.txt_sem_dados.TabIndex = 267;
+            this.txt_sem_dados.Text = "VOCÊ NÃO TEM NENHUMA DOAÇÃO";
+            this.txt_sem_dados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // eventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,5 +275,6 @@ namespace Hype.Painel.Eventos
         private System.Windows.Forms.Button bt_eventos;
         private System.Windows.Forms.Button bt_membros;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label txt_sem_dados;
     }
 }
