@@ -1,7 +1,7 @@
 ﻿
 namespace Hype.Painel.Eventos
 {
-    partial class novo_evento
+    partial class doacao
     {
         /// <summary> 
         /// Variável de designer necessária.

@@ -47,7 +47,7 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.FOI_PARA_CLA, c.PATENTE, c.CLASSE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.eventos eve on eve.ID_EVENTOS = c.ID_MEMBROS left join hypedb.doacao d on d.ID_DOACAO = c.ID_MEMBROS ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.FOI_PARA_CLA, c.CLASSE, c.PATENTE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS ", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -91,7 +91,7 @@ namespace Hype.Painel.Eventos
             dataGridView1.Columns[11].Visible = false; // SEMANA_02
             dataGridView1.Columns[12].Visible = false; // SEMANA_03
             dataGridView1.Columns[13].Visible = false; // SEMANA_04
-            dataGridView1.Columns[14].HeaderText = "OURO TOTAL";
+            dataGridView1.Columns[14].HeaderText = "TOTAL";
             dataGridView1.Columns[15].Visible = false; // ANOTACAO
 
             dataGridView1.Columns["PATENTE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -152,7 +152,7 @@ namespace Hype.Painel.Eventos
             }
             finally
             {
-                novo_evento uc = new novo_evento();
+                doacao uc = new doacao();
                 cla.Instance.addControl(uc);
             }
         }

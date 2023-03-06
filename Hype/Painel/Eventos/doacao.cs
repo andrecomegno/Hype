@@ -12,7 +12,7 @@ using Hype.script;
 
 namespace Hype.Painel.Eventos
 {
-    public partial class novo_evento : UserControl
+    public partial class doacao : UserControl
     {
         // ID`S
         string id_membro = eventos.Instance.id_membro;
@@ -28,7 +28,7 @@ namespace Hype.Painel.Eventos
         // OURO
         string totalDoacao;
 
-        public novo_evento()
+        public doacao()
         {
             InitializeComponent();
         }
@@ -153,7 +153,7 @@ namespace Hype.Painel.Eventos
             }
             finally
             {
-                novo_evento uc = new novo_evento();
+                doacao uc = new doacao();
                 cla.Instance.addControl(uc);
             }
         }
@@ -260,7 +260,7 @@ namespace Hype.Painel.Eventos
                     }
                     else
                     {
-                        txt_doacao_04.Texts = dr["SEMANA_04"].ToString();
+                        txt_doacao_04.Texts = dr["SEMANA_04"].ToString();                        
 
                         semana_04 = false;
                         semana_01 = true;
@@ -452,8 +452,11 @@ namespace Hype.Painel.Eventos
 
             if (semana_04)
             {
+                double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts) + Convert.ToDouble(txt_doacao_04.Texts));
+                totalDoacao = de.ToString();
+
                 // INSERT TABELA DOAÇÃO
-                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04 total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
 
                 objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
                 objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
@@ -462,14 +465,7 @@ namespace Hype.Painel.Eventos
                 objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
                 objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
                 objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = txt_doacao_04.Texts;
-
-                double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts));
-                totalDoacao = de.ToString();
-
-                MessageBox.Show(totalDoacao.ToString());
-
-
-                objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = totalDoacao.ToString();
+                objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = totalDoacao;
 
                 objCmdDoacao.ExecuteNonQuery();
 
