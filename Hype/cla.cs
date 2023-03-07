@@ -23,6 +23,9 @@ namespace Hype
             this.FormBorderStyle = FormBorderStyle.None;
 
             Instance = this;
+
+            inicio uc = new inicio();
+            addControl(uc);
         }
 
         // MENU RECOLHER
