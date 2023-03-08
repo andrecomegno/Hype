@@ -64,6 +64,7 @@ namespace Hype.Painel
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.panel3.Controls.Add(this.bt_salvar);
             this.panel3.Controls.Add(this.bt_cancelar);
             this.panel3.Location = new System.Drawing.Point(59, 403);
@@ -108,7 +109,7 @@ namespace Hype.Painel
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(59, 3);
             this.panel1.Name = "panel1";
@@ -131,6 +132,7 @@ namespace Hype.Painel
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.panel2.Controls.Add(this.rjTextBox6);
             this.panel2.Controls.Add(this.rjTextBox1);
             this.panel2.Controls.Add(this.rjTextBox5);

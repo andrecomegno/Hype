@@ -19,30 +19,56 @@ namespace Hype.Painel
             InitializeComponent();
         }
 
-        private void inicio_Load(object sender, EventArgs e)
+        private void GraficoMembros()
         {
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select nick, level, poder, classe, patente from hypedb.cadastro_membro", database.getConnection());
 
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataSet dt = new DataSet();
             da.Fill(dt);
 
-            chart3.DataSource = dt;
-            chart3.Series[0].XValueMember = "PATENTE";
-            chart3.Series[0].YValueMembers = "NICK";
+            chart_membros.DataSource = dt;
+            chart_membros.Series[0].XValueMember = "nick";
+            chart_membros.Series[0].YValueMembers = "level";
 
-            chart3.DataBind();
+            chart_membros.DataBind();
 
-            chart1.DataSource = dt;
-            chart1.Series[0].XValueMember = "CLASSE";
-            chart1.Series[0].YValueMembers = "NICK";
+            database.closeConnection();
+        }
 
-            chart1.DataBind();
+        private void GraficoDoacoes()
+        {
+            // colocar o ouro arrecadado do mes e se vai ter como fazer a expedicao 
+        }
 
-            database.closeConnection(); 
+        private void GraficoProgressao()
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select nick, level, poder, classe, patente from hypedb.cadastro_membro", database.getConnection());
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataSet dt = new DataSet();
+            da.Fill(dt);
+
+            chart_progressao.DataSource = dt;
+            chart_progressao.Series[0].XValueMember = "nick";
+            chart_progressao.Series[0].YValueMembers = "poder";
+
+            chart_progressao.DataBind();
+
+            database.closeConnection();
+        }
+
+        private void inicio_Load(object sender, EventArgs e)
+        {
+            GraficoMembros();
+            GraficoDoacoes();
+            GraficoProgressao();
         }
     }
 }

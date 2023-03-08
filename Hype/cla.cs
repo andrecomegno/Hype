@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
 using Hype.Painel;
+using Hype.Painel.Eventos;
 
 namespace Hype
 {
@@ -24,16 +25,91 @@ namespace Hype
 
             Instance = this;
 
+            btPainel();
+        }
+
+        #region MENU LATERAL
+        //BOTÃO PAINEL
+        private void bt_painel_Click(object sender, EventArgs e)
+        {
+            btPainel();
+        }
+
+        public void btPainel()
+        {
+            bt_painel.BackColor = Color.CornflowerBlue;
+
+            bt_membros.BackColor = Color.LightSlateGray;
+            bt_eventos.BackColor = Color.LightSlateGray;
+            bt_configuracao.BackColor = Color.LightSlateGray;    
+
             inicio uc = new inicio();
             addControl(uc);
         }
 
-        // MENU RECOLHER
-        private void bt_menu_Click(object sender, EventArgs e)
+        //BOTÃO MEMBROS
+        private void bt_membros_Click(object sender, EventArgs e)
+        {
+            bt_membros.BackColor = Color.CornflowerBlue;
+            
+            bt_eventos.BackColor = Color.LightSlateGray;
+            bt_configuracao.BackColor = Color.LightSlateGray;
+            bt_painel.BackColor = Color.LightSlateGray;
+
+            membros uc = new membros();
+            addControl(uc);
+        }
+
+        //BOTÃO EVENTOS
+        private void bt_eventos_Click(object sender, EventArgs e)
+        {
+            bt_eventos.BackColor = Color.CornflowerBlue;
+
+            bt_membros.BackColor = Color.LightSlateGray;
+            bt_configuracao.BackColor = Color.LightSlateGray;
+            bt_painel.BackColor = Color.LightSlateGray;            
+
+            eventos uc = new eventos();
+            addControl(uc);
+        }
+
+        //BOTÃO CONFIGURAÇÕES
+        private void bt_configuracao_Click(object sender, EventArgs e)
+        {
+            btConfiguracao();
+        }
+
+        public void btConfiguracao()
+        {
+            bt_configuracao.BackColor = Color.CornflowerBlue;
+
+            bt_membros.BackColor = Color.LightSlateGray;
+            bt_eventos.BackColor = Color.LightSlateGray;
+            bt_painel.BackColor = Color.LightSlateGray;
+
+            configuracao uc = new configuracao();
+            addControl(uc);
+        }
+
+        // BOTÃO RECOLHER
+        private void bt_menu_recolher_Click(object sender, EventArgs e)
         {
             MenuPrincipal();
         }
 
+        // BOTÃO CONFIGURAÇÃO
+        private void bt_configurar_Click(object sender, EventArgs e)
+        {
+            btConfiguracao();
+        }
+
+        //  BOTÃO HOME
+        private void bt_inicio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // RECOLHER MENU LATERAL
         private void MenuPrincipal()
         {
             if (this.pl_menu.Width > 200)
@@ -42,10 +118,10 @@ namespace Hype
                 lb_nick.Visible = false;
 
                 bt_inicio.Visible = false;
-                bt_menu.Dock = DockStyle.Left;
-                bt_menu.Width = 60;
+                bt_menu_recolher.Dock = DockStyle.Left;
+                bt_menu_recolher.Width = 60;
 
-                bt_menu.IconChar = IconChar.AngleRight;
+                bt_menu_recolher.IconChar = IconChar.AngleRight;
 
                 foreach (Button menuButton in pl_menu.Controls.OfType<Button>())
                 {
@@ -58,10 +134,10 @@ namespace Hype
             {
                 pl_menu.Width = 210;
                 bt_inicio.Visible = true;
-                bt_menu.Dock = DockStyle.None;
-                bt_menu.Width = 44;
+                bt_menu_recolher.Dock = DockStyle.None;
+                bt_menu_recolher.Width = 44;
 
-                bt_menu.IconChar = IconChar.AngleLeft;
+                bt_menu_recolher.IconChar = IconChar.AngleLeft;
 
                 foreach (Button menuButton in pl_menu.Controls.OfType<Button>())
                 {
@@ -71,19 +147,9 @@ namespace Hype
                 }
             }
         }
+        #endregion
 
-        // BOTÃO DO INICIO DO PAINEL MOVER
-        private void bt_configurar_Click(object sender, EventArgs e)
-        {
-            configuracao uc = new configuracao();
-            addControl(uc);
-        }
-
-        private void bt_inicio_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+        #region MENU FLUTUANTE
         private void bt_menu_conta_Click(object sender, EventArgs e)
         {
             MenuConta();
@@ -103,32 +169,23 @@ namespace Hype
             }
         }
 
-        private void bt_painel_Click(object sender, EventArgs e)
+        private void foto_perfil_Click(object sender, EventArgs e)
         {
-            bt_painel.BackColor = Color.CornflowerBlue;
-            bt_membros.BackColor = Color.LightSlateGray;
+            pl_conta.Visible = false;
 
-            inicio uc = new inicio();
+            configuracao uc = new configuracao();
             addControl(uc);
         }
 
-        private void bt_membros_Click(object sender, EventArgs e)
+        private void bt_config_Click(object sender, EventArgs e)
         {
-            bt_membros.BackColor = Color.CornflowerBlue;
-            bt_painel.BackColor = Color.LightSlateGray;
+            pl_conta.Visible = false;
 
-            membros uc = new membros();
-            addControl(uc);
+            btConfiguracao();
         }
+        #endregion
 
-        public void addControl(UserControl userControl)
-        {
-            userControl.Dock = DockStyle.Fill;
-            pl_conteudo.Controls.Clear();
-            pl_conteudo.Controls.Add(userControl);
-            userControl.BringToFront();
-        }
-
+        #region MENU JANELA
         private void bt_fechar_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -158,23 +215,14 @@ namespace Hype
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        #endregion
 
-        //PAINEL CONTA MENU
-        private void foto_perfil_Click(object sender, EventArgs e)
+        public void addControl(UserControl userControl)
         {
-            pl_conta.Visible = false;
-
-            configuracao uc = new configuracao();
-            addControl(uc);
+            userControl.Dock = DockStyle.Fill;
+            pl_conteudo.Controls.Clear();
+            pl_conteudo.Controls.Add(userControl);
+            userControl.BringToFront();
         }
-
-        private void bt_config_Click(object sender, EventArgs e)
-        {
-            pl_conta.Visible = false;
-
-            configuracao uc = new configuracao();
-            addControl(uc);
-        }
-
     }
 }

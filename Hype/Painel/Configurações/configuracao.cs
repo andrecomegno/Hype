@@ -20,11 +20,7 @@ namespace Hype.Painel
 
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
-            inicio uc = new inicio();
-            cla.Instance.addControl(uc);
+            cla.Instance.btPainel();
         }
-
-
-
     }
 }
