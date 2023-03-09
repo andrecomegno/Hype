@@ -29,36 +29,47 @@ namespace Hype.Painel
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pl_inicio = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pl_menu_progressao = new System.Windows.Forms.Panel();
+            this.pl_menu_membros = new System.Windows.Forms.Panel();
+            this.lb_ouro = new System.Windows.Forms.Label();
+            this.pl_menu_ouro = new System.Windows.Forms.Panel();
+            this.pl_membros = new System.Windows.Forms.Panel();
             this.chart_membros = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.lb_titulo_membros = new System.Windows.Forms.Label();
+            this.pl_progressao = new System.Windows.Forms.Panel();
             this.chart_progressao = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lb_progressao = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lb_titulo_progressao = new System.Windows.Forms.Label();
+            this.pl_doacoes = new System.Windows.Forms.Panel();
+            this.lb_titulo_docoes = new System.Windows.Forms.Label();
+            this.lb_ouro_valor = new System.Windows.Forms.Label();
+            this.lb_ouro_total = new System.Windows.Forms.Label();
+            this.lb_poder = new System.Windows.Forms.Label();
+            this.lb_poder_total = new System.Windows.Forms.Label();
+            this.lb_poder_valor = new System.Windows.Forms.Label();
+            this.lb_membros = new System.Windows.Forms.Label();
+            this.lb_membros_total = new System.Windows.Forms.Label();
+            this.lb_membros_valor = new System.Windows.Forms.Label();
+            this.chart_doacao = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pl_inicio.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pl_menu_progressao.SuspendLayout();
+            this.pl_menu_membros.SuspendLayout();
+            this.pl_menu_ouro.SuspendLayout();
+            this.pl_membros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_membros)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.pl_progressao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_progressao)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.pl_doacoes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_doacao)).BeginInit();
             this.SuspendLayout();
             // 
             // pl_inicio
@@ -67,194 +78,303 @@ namespace Hype.Painel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pl_inicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.pl_inicio.Controls.Add(this.panel6);
-            this.pl_inicio.Controls.Add(this.panel5);
-            this.pl_inicio.Controls.Add(this.panel4);
-            this.pl_inicio.Controls.Add(this.panel3);
-            this.pl_inicio.Controls.Add(this.panel2);
-            this.pl_inicio.Controls.Add(this.panel1);
+            this.pl_inicio.Controls.Add(this.pl_menu_progressao);
+            this.pl_inicio.Controls.Add(this.pl_menu_membros);
+            this.pl_inicio.Controls.Add(this.pl_menu_ouro);
+            this.pl_inicio.Controls.Add(this.pl_membros);
+            this.pl_inicio.Controls.Add(this.pl_progressao);
+            this.pl_inicio.Controls.Add(this.pl_doacoes);
             this.pl_inicio.Location = new System.Drawing.Point(14, 3);
             this.pl_inicio.Name = "pl_inicio";
             this.pl_inicio.Size = new System.Drawing.Size(1172, 1008);
             this.pl_inicio.TabIndex = 78;
             // 
-            // panel3
+            // pl_menu_progressao
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.panel3.Controls.Add(this.chart_membros);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(22, 189);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1124, 268);
-            this.panel3.TabIndex = 100;
+            this.pl_menu_progressao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pl_menu_progressao.BackColor = System.Drawing.Color.Sienna;
+            this.pl_menu_progressao.Controls.Add(this.lb_poder_total);
+            this.pl_menu_progressao.Controls.Add(this.lb_poder);
+            this.pl_menu_progressao.Controls.Add(this.lb_poder_valor);
+            this.pl_menu_progressao.Location = new System.Drawing.Point(814, 30);
+            this.pl_menu_progressao.Name = "pl_menu_progressao";
+            this.pl_menu_progressao.Size = new System.Drawing.Size(329, 135);
+            this.pl_menu_progressao.TabIndex = 103;
+            // 
+            // pl_menu_membros
+            // 
+            this.pl_menu_membros.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pl_menu_membros.BackColor = System.Drawing.Color.OliveDrab;
+            this.pl_menu_membros.Controls.Add(this.lb_membros_total);
+            this.pl_menu_membros.Controls.Add(this.lb_membros);
+            this.pl_menu_membros.Controls.Add(this.lb_membros_valor);
+            this.pl_menu_membros.Location = new System.Drawing.Point(22, 30);
+            this.pl_menu_membros.Name = "pl_menu_membros";
+            this.pl_menu_membros.Size = new System.Drawing.Size(329, 135);
+            this.pl_menu_membros.TabIndex = 102;
+            // 
+            // lb_ouro
+            // 
+            this.lb_ouro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_ouro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ouro.ForeColor = System.Drawing.Color.White;
+            this.lb_ouro.Location = new System.Drawing.Point(3, 6);
+            this.lb_ouro.Name = "lb_ouro";
+            this.lb_ouro.Size = new System.Drawing.Size(323, 25);
+            this.lb_ouro.TabIndex = 101;
+            this.lb_ouro.Text = "OURO";
+            this.lb_ouro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pl_menu_ouro
+            // 
+            this.pl_menu_ouro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pl_menu_ouro.BackColor = System.Drawing.Color.Goldenrod;
+            this.pl_menu_ouro.Controls.Add(this.lb_ouro_total);
+            this.pl_menu_ouro.Controls.Add(this.lb_ouro);
+            this.pl_menu_ouro.Controls.Add(this.lb_ouro_valor);
+            this.pl_menu_ouro.Location = new System.Drawing.Point(421, 30);
+            this.pl_menu_ouro.Name = "pl_menu_ouro";
+            this.pl_menu_ouro.Size = new System.Drawing.Size(329, 135);
+            this.pl_menu_ouro.TabIndex = 101;
+            // 
+            // pl_membros
+            // 
+            this.pl_membros.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pl_membros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_membros.Controls.Add(this.chart_membros);
+            this.pl_membros.Controls.Add(this.lb_titulo_membros);
+            this.pl_membros.Location = new System.Drawing.Point(22, 189);
+            this.pl_membros.Name = "pl_membros";
+            this.pl_membros.Size = new System.Drawing.Size(1124, 268);
+            this.pl_membros.TabIndex = 100;
             // 
             // chart_membros
             // 
-            chartArea11.Name = "ChartArea1";
-            this.chart_membros.ChartAreas.Add(chartArea11);
-            legend11.Name = "Legend1";
-            this.chart_membros.Legends.Add(legend11);
+            chartArea1.Name = "ChartArea1";
+            this.chart_membros.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart_membros.Legends.Add(legend1);
             this.chart_membros.Location = new System.Drawing.Point(8, 41);
             this.chart_membros.Name = "chart_membros";
-            this.chart_membros.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
-            series11.Legend = "Legend1";
-            series11.Name = "MEMBROS";
-            series11.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series11.YValuesPerPoint = 30;
-            this.chart_membros.Series.Add(series11);
+            this.chart_membros.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Level";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series1.YValuesPerPoint = 30;
+            this.chart_membros.Series.Add(series1);
             this.chart_membros.Size = new System.Drawing.Size(1106, 210);
             this.chart_membros.TabIndex = 100;
             this.chart_membros.Text = "chart3";
             // 
-            // label2
+            // lb_titulo_membros
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lb_titulo_membros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1118, 31);
-            this.label2.TabIndex = 98;
-            this.label2.Text = "MEMBROS";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_titulo_membros.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_titulo_membros.ForeColor = System.Drawing.Color.White;
+            this.lb_titulo_membros.Location = new System.Drawing.Point(3, 7);
+            this.lb_titulo_membros.Name = "lb_titulo_membros";
+            this.lb_titulo_membros.Size = new System.Drawing.Size(1118, 31);
+            this.lb_titulo_membros.TabIndex = 98;
+            this.lb_titulo_membros.Text = "MEMBROS";
+            this.lb_titulo_membros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel2
+            // pl_progressao
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.panel2.Controls.Add(this.chart_progressao);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(602, 463);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(544, 473);
-            this.panel2.TabIndex = 100;
+            this.pl_progressao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pl_progressao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_progressao.Controls.Add(this.chart_progressao);
+            this.pl_progressao.Controls.Add(this.lb_titulo_progressao);
+            this.pl_progressao.Location = new System.Drawing.Point(602, 463);
+            this.pl_progressao.Name = "pl_progressao";
+            this.pl_progressao.Size = new System.Drawing.Size(544, 473);
+            this.pl_progressao.TabIndex = 100;
             // 
             // chart_progressao
             // 
-            chartArea12.Name = "ChartArea1";
-            this.chart_progressao.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            this.chart_progressao.Legends.Add(legend12);
+            chartArea2.Name = "ChartArea1";
+            this.chart_progressao.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart_progressao.Legends.Add(legend2);
             this.chart_progressao.Location = new System.Drawing.Point(8, 41);
             this.chart_progressao.Name = "chart_progressao";
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Radar;
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            series12.YValuesPerPoint = 6;
-            this.chart_progressao.Series.Add(series12);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Radar;
+            series2.Legend = "Legend1";
+            series2.Name = "Poder Clã";
+            series2.YValuesPerPoint = 6;
+            this.chart_progressao.Series.Add(series2);
             this.chart_progressao.Size = new System.Drawing.Size(526, 421);
             this.chart_progressao.TabIndex = 99;
             this.chart_progressao.Text = "chart2";
             // 
-            // label1
+            // lb_titulo_progressao
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lb_titulo_progressao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(538, 31);
-            this.label1.TabIndex = 98;
-            this.label1.Text = "PROGRESSÃO";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_titulo_progressao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_titulo_progressao.ForeColor = System.Drawing.Color.White;
+            this.lb_titulo_progressao.Location = new System.Drawing.Point(3, 7);
+            this.lb_titulo_progressao.Name = "lb_titulo_progressao";
+            this.lb_titulo_progressao.Size = new System.Drawing.Size(538, 31);
+            this.lb_titulo_progressao.TabIndex = 98;
+            this.lb_titulo_progressao.Text = "PROGRESSÃO";
+            this.lb_titulo_progressao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
+            // pl_doacoes
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.panel1.Controls.Add(this.lb_progressao);
-            this.panel1.Location = new System.Drawing.Point(22, 463);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(544, 473);
-            this.panel1.TabIndex = 0;
+            this.pl_doacoes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pl_doacoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_doacoes.Controls.Add(this.chart_doacao);
+            this.pl_doacoes.Controls.Add(this.lb_titulo_docoes);
+            this.pl_doacoes.Location = new System.Drawing.Point(22, 463);
+            this.pl_doacoes.Name = "pl_doacoes";
+            this.pl_doacoes.Size = new System.Drawing.Size(544, 473);
+            this.pl_doacoes.TabIndex = 0;
             // 
-            // lb_progressao
+            // lb_titulo_docoes
             // 
-            this.lb_progressao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lb_titulo_docoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_progressao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_progressao.ForeColor = System.Drawing.Color.White;
-            this.lb_progressao.Location = new System.Drawing.Point(3, 7);
-            this.lb_progressao.Name = "lb_progressao";
-            this.lb_progressao.Size = new System.Drawing.Size(538, 31);
-            this.lb_progressao.TabIndex = 98;
-            this.lb_progressao.Text = "DOAÇÕES";
-            this.lb_progressao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_titulo_docoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_titulo_docoes.ForeColor = System.Drawing.Color.White;
+            this.lb_titulo_docoes.Location = new System.Drawing.Point(3, 7);
+            this.lb_titulo_docoes.Name = "lb_titulo_docoes";
+            this.lb_titulo_docoes.Size = new System.Drawing.Size(538, 31);
+            this.lb_titulo_docoes.TabIndex = 98;
+            this.lb_titulo_docoes.Text = "DOAÇÕES";
+            this.lb_titulo_docoes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel4
+            // lb_ouro_valor
             // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(421, 30);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(329, 135);
-            this.panel4.TabIndex = 101;
-            // 
-            // panel5
-            // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Location = new System.Drawing.Point(22, 30);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(329, 135);
-            this.panel5.TabIndex = 102;
-            // 
-            // panel6
-            // 
-            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Location = new System.Drawing.Point(814, 30);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(329, 135);
-            this.panel6.TabIndex = 103;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lb_ouro_valor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(17, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(276, 59);
-            this.label3.TabIndex = 101;
-            this.label3.Text = "QT MEMBRO";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_ouro_valor.AutoSize = true;
+            this.lb_ouro_valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ouro_valor.ForeColor = System.Drawing.Color.White;
+            this.lb_ouro_valor.Location = new System.Drawing.Point(163, 59);
+            this.lb_ouro_valor.Name = "lb_ouro_valor";
+            this.lb_ouro_valor.Size = new System.Drawing.Size(71, 31);
+            this.lb_ouro_valor.TabIndex = 102;
+            this.lb_ouro_valor.Text = "0,00";
+            this.lb_ouro_valor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // lb_ouro_total
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lb_ouro_total.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(35, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(276, 59);
-            this.label4.TabIndex = 102;
-            this.label4.Text = "QT DOAÇÃO";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_ouro_total.AutoSize = true;
+            this.lb_ouro_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ouro_total.ForeColor = System.Drawing.Color.White;
+            this.lb_ouro_total.Location = new System.Drawing.Point(56, 65);
+            this.lb_ouro_total.Name = "lb_ouro_total";
+            this.lb_ouro_total.Size = new System.Drawing.Size(91, 25);
+            this.lb_ouro_total.TabIndex = 103;
+            this.lb_ouro_total.Text = "TOTAL:";
+            this.lb_ouro_total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lb_poder
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lb_poder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(29, 29);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(276, 59);
-            this.label5.TabIndex = 103;
-            this.label5.Text = "NAO SEI";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_poder.ForeColor = System.Drawing.Color.White;
+            this.lb_poder.Location = new System.Drawing.Point(3, 6);
+            this.lb_poder.Name = "lb_poder";
+            this.lb_poder.Size = new System.Drawing.Size(323, 25);
+            this.lb_poder.TabIndex = 104;
+            this.lb_poder.Text = "PODER DO CLÃ";
+            this.lb_poder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_poder_total
+            // 
+            this.lb_poder_total.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_poder_total.AutoSize = true;
+            this.lb_poder_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_poder_total.ForeColor = System.Drawing.Color.White;
+            this.lb_poder_total.Location = new System.Drawing.Point(68, 65);
+            this.lb_poder_total.Name = "lb_poder_total";
+            this.lb_poder_total.Size = new System.Drawing.Size(91, 25);
+            this.lb_poder_total.TabIndex = 105;
+            this.lb_poder_total.Text = "TOTAL:";
+            this.lb_poder_total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_poder_valor
+            // 
+            this.lb_poder_valor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_poder_valor.AutoSize = true;
+            this.lb_poder_valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_poder_valor.ForeColor = System.Drawing.Color.White;
+            this.lb_poder_valor.Location = new System.Drawing.Point(175, 59);
+            this.lb_poder_valor.Name = "lb_poder_valor";
+            this.lb_poder_valor.Size = new System.Drawing.Size(71, 31);
+            this.lb_poder_valor.TabIndex = 104;
+            this.lb_poder_valor.Text = "0,00";
+            this.lb_poder_valor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_membros
+            // 
+            this.lb_membros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_membros.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_membros.ForeColor = System.Drawing.Color.White;
+            this.lb_membros.Location = new System.Drawing.Point(3, 6);
+            this.lb_membros.Name = "lb_membros";
+            this.lb_membros.Size = new System.Drawing.Size(323, 25);
+            this.lb_membros.TabIndex = 104;
+            this.lb_membros.Text = "MEMBROS";
+            this.lb_membros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_membros_total
+            // 
+            this.lb_membros_total.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_membros_total.AutoSize = true;
+            this.lb_membros_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_membros_total.ForeColor = System.Drawing.Color.White;
+            this.lb_membros_total.Location = new System.Drawing.Point(69, 65);
+            this.lb_membros_total.Name = "lb_membros_total";
+            this.lb_membros_total.Size = new System.Drawing.Size(91, 25);
+            this.lb_membros_total.TabIndex = 105;
+            this.lb_membros_total.Text = "TOTAL:";
+            this.lb_membros_total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_membros_valor
+            // 
+            this.lb_membros_valor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_membros_valor.AutoSize = true;
+            this.lb_membros_valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_membros_valor.ForeColor = System.Drawing.Color.White;
+            this.lb_membros_valor.Location = new System.Drawing.Point(176, 59);
+            this.lb_membros_valor.Name = "lb_membros_valor";
+            this.lb_membros_valor.Size = new System.Drawing.Size(71, 31);
+            this.lb_membros_valor.TabIndex = 104;
+            this.lb_membros_valor.Text = "0,00";
+            this.lb_membros_valor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // chart_doacao
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.chart_doacao.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart_doacao.Legends.Add(legend3);
+            this.chart_doacao.Location = new System.Drawing.Point(8, 41);
+            this.chart_doacao.Name = "chart_doacao";
+            this.chart_doacao.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series3.Legend = "Legend1";
+            series3.Name = "doacao";
+            series3.YValuesPerPoint = 6;
+            this.chart_doacao.Series.Add(series3);
+            this.chart_doacao.Size = new System.Drawing.Size(526, 421);
+            this.chart_doacao.TabIndex = 100;
+            this.chart_doacao.Text = "chart2";
             // 
             // inicio
             // 
@@ -266,14 +386,18 @@ namespace Hype.Painel
             this.Size = new System.Drawing.Size(1200, 1014);
             this.Load += new System.EventHandler(this.inicio_Load);
             this.pl_inicio.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.pl_menu_progressao.ResumeLayout(false);
+            this.pl_menu_progressao.PerformLayout();
+            this.pl_menu_membros.ResumeLayout(false);
+            this.pl_menu_membros.PerformLayout();
+            this.pl_menu_ouro.ResumeLayout(false);
+            this.pl_menu_ouro.PerformLayout();
+            this.pl_membros.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart_membros)).EndInit();
-            this.panel2.ResumeLayout(false);
+            this.pl_progressao.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart_progressao)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
+            this.pl_doacoes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart_doacao)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -281,19 +405,26 @@ namespace Hype.Painel
         #endregion
 
         private System.Windows.Forms.Panel pl_inicio;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lb_progressao;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pl_doacoes;
+        private System.Windows.Forms.Label lb_titulo_docoes;
+        private System.Windows.Forms.Panel pl_progressao;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_progressao;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lb_titulo_progressao;
+        private System.Windows.Forms.Panel pl_membros;
+        private System.Windows.Forms.Label lb_titulo_membros;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_membros;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel pl_menu_progressao;
+        private System.Windows.Forms.Panel pl_menu_membros;
+        private System.Windows.Forms.Panel pl_menu_ouro;
+        private System.Windows.Forms.Label lb_ouro;
+        private System.Windows.Forms.Label lb_poder_total;
+        private System.Windows.Forms.Label lb_poder;
+        private System.Windows.Forms.Label lb_poder_valor;
+        private System.Windows.Forms.Label lb_membros_total;
+        private System.Windows.Forms.Label lb_membros;
+        private System.Windows.Forms.Label lb_membros_valor;
+        private System.Windows.Forms.Label lb_ouro_total;
+        private System.Windows.Forms.Label lb_ouro_valor;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_doacao;
     }
 }
