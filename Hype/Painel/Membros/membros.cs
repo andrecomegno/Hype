@@ -52,8 +52,7 @@ namespace Hype.Painel
 
         private void bt_eventos_Click(object sender, EventArgs e)
         {
-            eventos uc = new eventos();
-            cla.Instance.addControl(uc);
+            cla.Instance.btEventos();
         }
         #endregion
 
@@ -165,7 +164,7 @@ namespace Hype.Painel
                     patente = dr["PATENTE"].ToString();
                     classe = dr["CLASSE"].ToString();
                     vem_do_cla = dr["VEM_DO_CLA"].ToString();
-                    foi_para_cla = dr["FOI_PARA_CLA"].ToString();                    
+                    foi_para_cla = dr["FOI_PARA_CLA"].ToString();
                 }
             }
             catch (Exception erro)
@@ -248,19 +247,12 @@ namespace Hype.Painel
         }
         #endregion
 
-        public void TotalMembros()
-        {
-            // CONTAR QUANTOS MEMBROS ESTAO REGISTRADOS
-            int total = dataGridView1.RowCount;
-            total_membros = total;
-        }
-
         private void membros_Load(object sender, EventArgs e)
         {
             TabelaMembros();
 
             // COLORIR O TITULO DA TABELA
-            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.EnableHeadersVisualStyles = false;            
         }
     }
 }

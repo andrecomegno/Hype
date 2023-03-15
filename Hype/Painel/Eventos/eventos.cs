@@ -30,8 +30,7 @@ namespace Hype.Painel.Eventos
         #region MENU TOPO
         private void bt_membros_Click(object sender, EventArgs e)
         {
-            membros uc = new membros();
-            cla.Instance.addControl(uc);
+            cla.Instance.btMembros();
         }
 
         private void bt_alts_Click(object sender, EventArgs e)
@@ -47,7 +46,7 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.FOI_PARA_CLA, c.CLASSE, c.PATENTE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.FOI_PARA_CLA, c.PATENTE, c.CLASSE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS left join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -58,8 +57,6 @@ namespace Hype.Painel.Eventos
             }
 
             database.closeConnection();
-
-            Tabela();
 
             if (dataGridView1.Rows.Count == 0)
             {
@@ -73,6 +70,8 @@ namespace Hype.Painel.Eventos
 
                 dataGridView1.Visible = true;
             }
+
+            Tabela();
         }
 
         private void Tabela()
@@ -144,6 +143,8 @@ namespace Hype.Painel.Eventos
                     //data_entrada = ((DateTime)dr["DATA_RECRUTAMENTO"]).ToShortDateString();
                     nick = dr["NICK"].ToString();
                     foi_para_cla = dr["FOI_PARA_CLA"].ToString();
+
+                    MessageBox.Show(id_membro);
                 }
             }
             catch (Exception erro)

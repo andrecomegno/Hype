@@ -50,8 +50,13 @@ namespace Hype
         //BOTÃO MEMBROS
         private void bt_membros_Click(object sender, EventArgs e)
         {
+            btMembros();
+        }
+
+        public void btMembros()
+        {
             bt_membros.BackColor = Color.CornflowerBlue;
-            
+
             bt_eventos.BackColor = Color.LightSlateGray;
             bt_configuracao.BackColor = Color.LightSlateGray;
             bt_painel.BackColor = Color.LightSlateGray;
@@ -63,11 +68,16 @@ namespace Hype
         //BOTÃO EVENTOS
         private void bt_eventos_Click(object sender, EventArgs e)
         {
+            btEventos();
+        }
+
+        public void btEventos()
+        {
             bt_eventos.BackColor = Color.CornflowerBlue;
 
             bt_membros.BackColor = Color.LightSlateGray;
             bt_configuracao.BackColor = Color.LightSlateGray;
-            bt_painel.BackColor = Color.LightSlateGray;            
+            bt_painel.BackColor = Color.LightSlateGray;
 
             eventos uc = new eventos();
             addControl(uc);

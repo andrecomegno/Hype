@@ -37,19 +37,20 @@ namespace Hype.Painel
             this.pl_conteudo_02 = new System.Windows.Forms.Panel();
             this.txt_clique_aqui = new System.Windows.Forms.Label();
             this.txt_sem_dados = new System.Windows.Forms.Label();
-            this.bt_add_membro = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pl_top = new System.Windows.Forms.Panel();
             this.bt_buscar = new System.Windows.Forms.PictureBox();
             this.bt_alts = new System.Windows.Forms.Button();
             this.bt_eventos = new System.Windows.Forms.Button();
             this.bt_membros = new System.Windows.Forms.Button();
+            this.bt_add_membro = new Hype.script.RJCircularPictureBox();
             this.txt_buscar = new Hype.Painel.RJTextBox();
             this.pl_conta_excluir.SuspendLayout();
             this.pl_conteudo_02.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pl_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bt_add_membro)).BeginInit();
             this.SuspendLayout();
             // 
             // pl_conta_excluir
@@ -68,9 +69,9 @@ namespace Hype.Painel
             // pl_conteudo_02
             // 
             this.pl_conteudo_02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_conteudo_02.Controls.Add(this.bt_add_membro);
             this.pl_conteudo_02.Controls.Add(this.txt_clique_aqui);
             this.pl_conteudo_02.Controls.Add(this.txt_sem_dados);
-            this.pl_conteudo_02.Controls.Add(this.bt_add_membro);
             this.pl_conteudo_02.Controls.Add(this.dataGridView1);
             this.pl_conteudo_02.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_conteudo_02.Location = new System.Drawing.Point(0, 43);
@@ -106,23 +107,6 @@ namespace Hype.Painel
             this.txt_sem_dados.TabIndex = 68;
             this.txt_sem_dados.Text = "VOCÊ NÃO TEM NENHUM CADASTRO";
             this.txt_sem_dados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bt_add_membro
-            // 
-            this.bt_add_membro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_add_membro.AutoSize = true;
-            this.bt_add_membro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.bt_add_membro.Font = new System.Drawing.Font("Microsoft Sans Serif", 70F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_add_membro.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.bt_add_membro.Location = new System.Drawing.Point(985, 504);
-            this.bt_add_membro.Name = "bt_add_membro";
-            this.bt_add_membro.Size = new System.Drawing.Size(101, 107);
-            this.bt_add_membro.TabIndex = 67;
-            this.bt_add_membro.Text = "+";
-            this.bt_add_membro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bt_add_membro.Click += new System.EventHandler(this.bt_add_membro_Click);
-            this.bt_add_membro.MouseEnter += new System.EventHandler(this.bt_add_membro_MouseEnter);
-            this.bt_add_membro.MouseLeave += new System.EventHandler(this.bt_add_membro_MouseLeave);
             // 
             // dataGridView1
             // 
@@ -257,6 +241,27 @@ namespace Hype.Painel
             this.bt_membros.Text = "Membros";
             this.bt_membros.UseVisualStyleBackColor = false;
             // 
+            // bt_add_membro
+            // 
+            this.bt_add_membro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_add_membro.BackColor = System.Drawing.Color.Transparent;
+            this.bt_add_membro.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.bt_add_membro.BorderColor = System.Drawing.Color.Transparent;
+            this.bt_add_membro.BorderColor2 = System.Drawing.Color.Transparent;
+            this.bt_add_membro.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.bt_add_membro.BorderSize = 2;
+            this.bt_add_membro.GradientAngle = 50F;
+            this.bt_add_membro.Image = global::Hype.Properties.Resources.Mais;
+            this.bt_add_membro.Location = new System.Drawing.Point(1004, 548);
+            this.bt_add_membro.Name = "bt_add_membro";
+            this.bt_add_membro.Size = new System.Drawing.Size(55, 55);
+            this.bt_add_membro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bt_add_membro.TabIndex = 71;
+            this.bt_add_membro.TabStop = false;
+            this.bt_add_membro.Click += new System.EventHandler(this.bt_add_membro_Click);
+            this.bt_add_membro.MouseEnter += new System.EventHandler(this.bt_add_membro_MouseEnter);
+            this.bt_add_membro.MouseLeave += new System.EventHandler(this.bt_add_membro_MouseLeave);
+            // 
             // txt_buscar
             // 
             this.txt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -298,6 +303,7 @@ namespace Hype.Painel
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pl_top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bt_add_membro)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,7 +314,6 @@ namespace Hype.Painel
         private System.Windows.Forms.Panel pl_conteudo_02;
         private System.Windows.Forms.Label txt_clique_aqui;
         private System.Windows.Forms.Label txt_sem_dados;
-        private System.Windows.Forms.Label bt_add_membro;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel pl_top;
         private System.Windows.Forms.PictureBox bt_buscar;
@@ -316,5 +321,6 @@ namespace Hype.Painel
         private System.Windows.Forms.Button bt_alts;
         private System.Windows.Forms.Button bt_eventos;
         private System.Windows.Forms.Button bt_membros;
+        private script.RJCircularPictureBox bt_add_membro;
     }
 }

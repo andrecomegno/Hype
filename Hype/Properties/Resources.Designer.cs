@@ -123,6 +123,16 @@ namespace Hype.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mais {
+            get {
+                object obj = ResourceManager.GetObject("Mais", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Taoista {
             get {
                 object obj = ResourceManager.GetObject("Taoista", resourceCulture);

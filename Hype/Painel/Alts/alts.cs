@@ -37,6 +37,18 @@ namespace Hype.Painel
             txt_clique_aqui.Visible = false;
         }
 
+        #region MENU TOP
+        private void bt_membros_Click(object sender, EventArgs e)
+        {
+            cla.Instance.btMembros();
+        }
+
+        private void bt_eventos_Click(object sender, EventArgs e)
+        {
+            cla.Instance.btEventos();
+        }
+        #endregion
+
         #region TABELAS
         private void TabelaAlt()
         {
@@ -57,7 +69,7 @@ namespace Hype.Painel
             {
                 txt_sem_dados.Visible = true;
                 txt_clique_aqui.Visible = true;
-                bt_add_membro.Visible = false;
+                bt_add_alt.Visible = false;
 
                 dataGridView1.Visible = false;
             }
@@ -65,7 +77,7 @@ namespace Hype.Painel
             {
                 txt_sem_dados.Visible = false;
                 txt_clique_aqui.Visible = false;
-                bt_add_membro.Visible = true;
+                bt_add_alt.Visible = true;
 
                 dataGridView1.Visible = true;
             }
@@ -151,21 +163,7 @@ namespace Hype.Painel
         {
             dataGridView1.Cursor = Cursors.Default;
         }
-        #endregion
-
-        #region MENU TOP
-        private void bt_membros_Click(object sender, EventArgs e)
-        {
-            membros uc = new membros();
-            cla.Instance.addControl(uc);
-        }
-
-        private void bt_eventos_Click(object sender, EventArgs e)
-        {
-            eventos uc = new eventos();
-            cla.Instance.addControl(uc);
-        }
-        #endregion
+        #endregion       
 
         #region CAMPO DE BUSCA
         private void bt_buscar_Click(object sender, EventArgs e)
@@ -218,18 +216,18 @@ namespace Hype.Painel
             cla.Instance.addControl(uc);
         }
 
-        private void bt_add_membro_Click(object sender, EventArgs e)
+        private void bt_add_alt_Click(object sender, EventArgs e)
         {
             cadastro_alt uc = new cadastro_alt();
             cla.Instance.addControl(uc);
         }
 
-        private void bt_add_membro_MouseEnter(object sender, EventArgs e)
+        private void bt_add_alt_MouseEnter(object sender, EventArgs e)
         {
             Cursor = Cursors.Hand;
         }
 
-        private void bt_add_membro_MouseLeave(object sender, EventArgs e)
+        private void bt_add_alt_MouseLeave(object sender, EventArgs e)
         {
             Cursor = Cursors.Default;
         }

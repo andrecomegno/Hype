@@ -27,19 +27,25 @@ namespace Hype.Painel
 
             MySqlCommand cmd = new MySqlCommand("select nick, level, poder, classe, patente from hypedb.cadastro_membro", database.getConnection());
 
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            DataSet dt = new DataSet();
-            da.Fill(dt);
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
-            chart_membros.DataSource = dt;
-            chart_membros.Series["Level"].XValueMember = "nick";
-            chart_membros.Series["Level"].YValueMembers = "level";
+                dataGridView1.DataSource = dt;
+                chart_membros.DataSource = dt;
 
-            chart_membros.DataBind();
+                chart_membros.Series["Level"].XValueMember = "nick";
+                chart_membros.Series["Level"].YValueMembers = "level";
+
+                chart_membros.DataBind();
+            }
+
+            // CONTAR QUANTOS MEMBROS ESTAO REGISTRADOS
+            int total = dataGridView1.RowCount;
 
             // MEMBROS TOTAL
-            lb_membros_valor.Text = "30";
-
+            lb_membros_valor.Text = total.ToString();
 
             database.closeConnection();
         }
@@ -51,19 +57,22 @@ namespace Hype.Painel
 
             MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.FOI_PARA_CLA, c.CLASSE, c.PATENTE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS ", database.getConnection());
 
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            DataSet dt = new DataSet();
-            da.Fill(dt);
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
-            chart_doacao.DataSource = dt;
-            chart_doacao.Series["doacao"].XValueMember = "nick";
-            chart_doacao.Series["doacao"].YValueMembers = "total";
+                //dataGridView2.DataSource = dt;
+                chart_doacao.DataSource = dt;
 
-            chart_doacao.DataBind();
+                chart_doacao.Series["doacao"].XValueMember = "nick";
+                chart_doacao.Series["doacao"].YValueMembers = "total";
+
+                chart_doacao.DataBind();
+            }            
 
             // OURO TOTAL
-            lb_ouro_valor.Text = "8.000,00";
-
+            lb_ouro_valor.Text = "9.000,00";
 
             database.closeConnection();
         }
@@ -75,15 +84,19 @@ namespace Hype.Painel
 
             MySqlCommand cmd = new MySqlCommand("select nick, level, poder, classe, patente from hypedb.cadastro_membro", database.getConnection());
 
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            DataSet dt = new DataSet();
-            da.Fill(dt);
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
-            chart_progressao.DataSource = dt;
-            chart_progressao.Series["Poder Clã"].XValueMember = "nick";
-            chart_progressao.Series["Poder Clã"].YValueMembers = "poder";
+                //dataGridView1.DataSource = dt;
+                chart_progressao.DataSource = dt;
 
-            chart_progressao.DataBind();
+                chart_progressao.Series["Poder Clã"].XValueMember = "nick";
+                chart_progressao.Series["Poder Clã"].YValueMembers = "poder";
+
+                chart_progressao.DataBind();
+            }            
 
             // PODER TOTAL
             lb_poder_valor.Text = "100.523,00";
@@ -97,6 +110,9 @@ namespace Hype.Painel
             GraficoMembros();
             GraficoDoacoes();
             GraficoProgressao();
+
+            // COLORIR O TITULO DA TABELA
+            dataGridView1.EnableHeadersVisualStyles = false;
         }
     }
 }

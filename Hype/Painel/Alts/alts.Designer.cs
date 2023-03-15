@@ -29,17 +29,15 @@ namespace Hype.Painel
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pl_conta_excluir = new System.Windows.Forms.Panel();
             this.pl_conteudo_02 = new System.Windows.Forms.Panel();
+            this.bt_add_alt = new Hype.script.RJCircularPictureBox();
             this.txt_clique_aqui = new System.Windows.Forms.Label();
             this.txt_sem_dados = new System.Windows.Forms.Label();
-            this.bt_add_membro = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pl_top = new System.Windows.Forms.Panel();
             this.bt_buscar = new System.Windows.Forms.PictureBox();
@@ -49,6 +47,7 @@ namespace Hype.Painel
             this.bt_membros = new System.Windows.Forms.Button();
             this.pl_conta_excluir.SuspendLayout();
             this.pl_conteudo_02.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bt_add_alt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pl_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).BeginInit();
@@ -70,15 +69,36 @@ namespace Hype.Painel
             // pl_conteudo_02
             // 
             this.pl_conteudo_02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_conteudo_02.Controls.Add(this.bt_add_alt);
             this.pl_conteudo_02.Controls.Add(this.txt_clique_aqui);
             this.pl_conteudo_02.Controls.Add(this.txt_sem_dados);
-            this.pl_conteudo_02.Controls.Add(this.bt_add_membro);
             this.pl_conteudo_02.Controls.Add(this.dataGridView1);
             this.pl_conteudo_02.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_conteudo_02.Location = new System.Drawing.Point(0, 43);
             this.pl_conteudo_02.Name = "pl_conteudo_02";
             this.pl_conteudo_02.Size = new System.Drawing.Size(1172, 651);
             this.pl_conteudo_02.TabIndex = 79;
+            // 
+            // bt_add_alt
+            // 
+            this.bt_add_alt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_add_alt.BackColor = System.Drawing.Color.Transparent;
+            this.bt_add_alt.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.bt_add_alt.BorderColor = System.Drawing.Color.Transparent;
+            this.bt_add_alt.BorderColor2 = System.Drawing.Color.Transparent;
+            this.bt_add_alt.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.bt_add_alt.BorderSize = 2;
+            this.bt_add_alt.GradientAngle = 50F;
+            this.bt_add_alt.Image = global::Hype.Properties.Resources.Mais;
+            this.bt_add_alt.Location = new System.Drawing.Point(1004, 548);
+            this.bt_add_alt.Name = "bt_add_alt";
+            this.bt_add_alt.Size = new System.Drawing.Size(55, 55);
+            this.bt_add_alt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bt_add_alt.TabIndex = 72;
+            this.bt_add_alt.TabStop = false;
+            this.bt_add_alt.Click += new System.EventHandler(this.bt_add_alt_Click);
+            this.bt_add_alt.MouseEnter += new System.EventHandler(this.bt_add_alt_MouseEnter);
+            this.bt_add_alt.MouseLeave += new System.EventHandler(this.bt_add_alt_MouseLeave);
             // 
             // txt_clique_aqui
             // 
@@ -109,23 +129,6 @@ namespace Hype.Painel
             this.txt_sem_dados.Text = "VOCÊ NÃO TEM NENHUM CADASTRO";
             this.txt_sem_dados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bt_add_membro
-            // 
-            this.bt_add_membro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_add_membro.AutoSize = true;
-            this.bt_add_membro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.bt_add_membro.Font = new System.Drawing.Font("Microsoft Sans Serif", 70F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_add_membro.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.bt_add_membro.Location = new System.Drawing.Point(985, 504);
-            this.bt_add_membro.Name = "bt_add_membro";
-            this.bt_add_membro.Size = new System.Drawing.Size(101, 107);
-            this.bt_add_membro.TabIndex = 67;
-            this.bt_add_membro.Text = "+";
-            this.bt_add_membro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bt_add_membro.Click += new System.EventHandler(this.bt_add_membro_Click);
-            this.bt_add_membro.MouseEnter += new System.EventHandler(this.bt_add_membro_MouseEnter);
-            this.bt_add_membro.MouseLeave += new System.EventHandler(this.bt_add_membro_MouseLeave);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -135,43 +138,43 @@ namespace Hype.Painel
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 50;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
             this.dataGridView1.Location = new System.Drawing.Point(71, 3);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -297,6 +300,7 @@ namespace Hype.Painel
             this.pl_conta_excluir.ResumeLayout(false);
             this.pl_conteudo_02.ResumeLayout(false);
             this.pl_conteudo_02.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bt_add_alt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pl_top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).EndInit();
@@ -305,12 +309,10 @@ namespace Hype.Painel
         }
 
         #endregion
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Panel pl_conta_excluir;
         private System.Windows.Forms.Panel pl_conteudo_02;
         private System.Windows.Forms.Label txt_clique_aqui;
         private System.Windows.Forms.Label txt_sem_dados;
-        private System.Windows.Forms.Label bt_add_membro;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel pl_top;
         private System.Windows.Forms.PictureBox bt_buscar;
@@ -318,5 +320,6 @@ namespace Hype.Painel
         private System.Windows.Forms.Button bt_alts;
         private System.Windows.Forms.Button bt_eventos;
         private System.Windows.Forms.Button bt_membros;
+        private script.RJCircularPictureBox bt_add_alt;
     }
 }

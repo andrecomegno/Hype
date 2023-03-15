@@ -386,7 +386,10 @@ namespace Hype.Painel.Eventos
             database.openConnection();
 
             if (semana_01)
-            {                
+            {
+                double de = (Convert.ToDouble(txt_doacao_01.Texts));
+                totalDoacao = de.ToString();
+
                 // INSERT TABELA EVENTOS
                 MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, mes_evento, ano_evento, id_membros) values (null, ?, ?, ?)", database.getConnection());
 
@@ -404,7 +407,7 @@ namespace Hype.Painel.Eventos
                 objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = 0;
                 objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
                 objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
-                objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = 0;
+                objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = totalDoacao;
                 objCmdDoacao.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = "";
                 objCmdDoacao.Parameters.Add("@id_eventos", MySqlDbType.Int32).Value = idEventos;
                 objCmdDoacao.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
@@ -416,8 +419,11 @@ namespace Hype.Painel.Eventos
 
             if (semana_02)
             {
+                double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts));
+                totalDoacao = de.ToString();
+
                 // INSERT TABELA DOAÇÃO
-                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04 where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
 
                 objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
                 objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
@@ -426,6 +432,7 @@ namespace Hype.Painel.Eventos
                 objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
                 objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
                 objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
+                objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = totalDoacao;
 
                 objCmdDoacao.ExecuteNonQuery();
 
@@ -434,8 +441,11 @@ namespace Hype.Painel.Eventos
 
             if (semana_03)
             {
+                double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts));
+                totalDoacao = de.ToString();
+
                 // INSERT TABELA DOAÇÃO
-                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04 where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
 
                 objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
                 objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
@@ -444,6 +454,7 @@ namespace Hype.Painel.Eventos
                 objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
                 objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
                 objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
+                objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = totalDoacao;
 
                 objCmdDoacao.ExecuteNonQuery();
 
