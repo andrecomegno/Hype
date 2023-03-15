@@ -33,6 +33,8 @@ namespace Hype
             this.lb_nome_do_cla = new System.Windows.Forms.Label();
             this.lb_patente = new System.Windows.Forms.Label();
             this.pl_menu = new System.Windows.Forms.Panel();
+            this.bt_configuracao = new FontAwesome.Sharp.IconButton();
+            this.bt_eventos = new FontAwesome.Sharp.IconButton();
             this.pl_conf = new System.Windows.Forms.Panel();
             this.bt_menu_recolher = new FontAwesome.Sharp.IconButton();
             this.bt_configurar = new FontAwesome.Sharp.IconButton();
@@ -51,8 +53,6 @@ namespace Hype
             this.bt_maximizar = new System.Windows.Forms.Button();
             this.pl_centro = new System.Windows.Forms.Panel();
             this.pl_conteudo = new System.Windows.Forms.Panel();
-            this.bt_eventos = new FontAwesome.Sharp.IconButton();
-            this.bt_configuracao = new FontAwesome.Sharp.IconButton();
             this.foto_perfil = new Hype.script.RJCircularPictureBox();
             this.foto_perfil_cla = new Hype.script.RJCircularPictureBox();
             this.pl_menu.SuspendLayout();
@@ -115,6 +115,54 @@ namespace Hype
             this.pl_menu.Name = "pl_menu";
             this.pl_menu.Size = new System.Drawing.Size(210, 720);
             this.pl_menu.TabIndex = 51;
+            // 
+            // bt_configuracao
+            // 
+            this.bt_configuracao.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_configuracao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_configuracao.FlatAppearance.BorderSize = 0;
+            this.bt_configuracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_configuracao.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_configuracao.ForeColor = System.Drawing.Color.White;
+            this.bt_configuracao.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.bt_configuracao.IconColor = System.Drawing.Color.White;
+            this.bt_configuracao.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_configuracao.IconSize = 35;
+            this.bt_configuracao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_configuracao.Location = new System.Drawing.Point(0, 196);
+            this.bt_configuracao.Name = "bt_configuracao";
+            this.bt_configuracao.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_configuracao.Size = new System.Drawing.Size(210, 46);
+            this.bt_configuracao.TabIndex = 57;
+            this.bt_configuracao.Tag = "Configuração";
+            this.bt_configuracao.Text = "Configuração";
+            this.bt_configuracao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bt_configuracao.UseVisualStyleBackColor = false;
+            this.bt_configuracao.Click += new System.EventHandler(this.bt_configuracao_Click);
+            // 
+            // bt_eventos
+            // 
+            this.bt_eventos.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_eventos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_eventos.FlatAppearance.BorderSize = 0;
+            this.bt_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_eventos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_eventos.ForeColor = System.Drawing.Color.White;
+            this.bt_eventos.IconChar = FontAwesome.Sharp.IconChar.NetworkWired;
+            this.bt_eventos.IconColor = System.Drawing.Color.White;
+            this.bt_eventos.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_eventos.IconSize = 35;
+            this.bt_eventos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_eventos.Location = new System.Drawing.Point(0, 144);
+            this.bt_eventos.Name = "bt_eventos";
+            this.bt_eventos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_eventos.Size = new System.Drawing.Size(210, 46);
+            this.bt_eventos.TabIndex = 56;
+            this.bt_eventos.Tag = "Eventos";
+            this.bt_eventos.Text = "Eventos";
+            this.bt_eventos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bt_eventos.UseVisualStyleBackColor = false;
+            this.bt_eventos.Click += new System.EventHandler(this.bt_eventos_Click);
             // 
             // pl_conf
             // 
@@ -446,54 +494,6 @@ namespace Hype
             this.pl_conteudo.Name = "pl_conteudo";
             this.pl_conteudo.Size = new System.Drawing.Size(1085, 720);
             this.pl_conteudo.TabIndex = 49;
-            // 
-            // bt_eventos
-            // 
-            this.bt_eventos.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_eventos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_eventos.FlatAppearance.BorderSize = 0;
-            this.bt_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_eventos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_eventos.ForeColor = System.Drawing.Color.White;
-            this.bt_eventos.IconChar = FontAwesome.Sharp.IconChar.NetworkWired;
-            this.bt_eventos.IconColor = System.Drawing.Color.White;
-            this.bt_eventos.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_eventos.IconSize = 35;
-            this.bt_eventos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_eventos.Location = new System.Drawing.Point(0, 144);
-            this.bt_eventos.Name = "bt_eventos";
-            this.bt_eventos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_eventos.Size = new System.Drawing.Size(210, 46);
-            this.bt_eventos.TabIndex = 56;
-            this.bt_eventos.Tag = "Eventos";
-            this.bt_eventos.Text = "Eventos";
-            this.bt_eventos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bt_eventos.UseVisualStyleBackColor = false;
-            this.bt_eventos.Click += new System.EventHandler(this.bt_eventos_Click);
-            // 
-            // bt_configuracao
-            // 
-            this.bt_configuracao.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_configuracao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_configuracao.FlatAppearance.BorderSize = 0;
-            this.bt_configuracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_configuracao.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_configuracao.ForeColor = System.Drawing.Color.White;
-            this.bt_configuracao.IconChar = FontAwesome.Sharp.IconChar.Cog;
-            this.bt_configuracao.IconColor = System.Drawing.Color.White;
-            this.bt_configuracao.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_configuracao.IconSize = 35;
-            this.bt_configuracao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_configuracao.Location = new System.Drawing.Point(0, 196);
-            this.bt_configuracao.Name = "bt_configuracao";
-            this.bt_configuracao.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_configuracao.Size = new System.Drawing.Size(210, 46);
-            this.bt_configuracao.TabIndex = 57;
-            this.bt_configuracao.Tag = "Configuração";
-            this.bt_configuracao.Text = "Configuração";
-            this.bt_configuracao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bt_configuracao.UseVisualStyleBackColor = false;
-            this.bt_configuracao.Click += new System.EventHandler(this.bt_configuracao_Click);
             // 
             // foto_perfil
             // 

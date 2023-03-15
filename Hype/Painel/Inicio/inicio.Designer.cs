@@ -40,9 +40,17 @@ namespace Hype.Painel
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pl_inicio = new System.Windows.Forms.Panel();
             this.pl_menu_progressao = new System.Windows.Forms.Panel();
+            this.lb_poder_total = new System.Windows.Forms.Label();
+            this.lb_poder = new System.Windows.Forms.Label();
+            this.lb_poder_valor = new System.Windows.Forms.Label();
             this.pl_menu_membros = new System.Windows.Forms.Panel();
-            this.lb_ouro = new System.Windows.Forms.Label();
+            this.lb_membros_total = new System.Windows.Forms.Label();
+            this.lb_membros = new System.Windows.Forms.Label();
+            this.lb_membros_valor = new System.Windows.Forms.Label();
             this.pl_menu_ouro = new System.Windows.Forms.Panel();
+            this.lb_ouro_total = new System.Windows.Forms.Label();
+            this.lb_ouro = new System.Windows.Forms.Label();
+            this.lb_ouro_valor = new System.Windows.Forms.Label();
             this.pl_membros = new System.Windows.Forms.Panel();
             this.chart_membros = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lb_titulo_membros = new System.Windows.Forms.Label();
@@ -50,16 +58,8 @@ namespace Hype.Painel
             this.chart_progressao = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lb_titulo_progressao = new System.Windows.Forms.Label();
             this.pl_doacoes = new System.Windows.Forms.Panel();
-            this.lb_titulo_docoes = new System.Windows.Forms.Label();
-            this.lb_ouro_valor = new System.Windows.Forms.Label();
-            this.lb_ouro_total = new System.Windows.Forms.Label();
-            this.lb_poder = new System.Windows.Forms.Label();
-            this.lb_poder_total = new System.Windows.Forms.Label();
-            this.lb_poder_valor = new System.Windows.Forms.Label();
-            this.lb_membros = new System.Windows.Forms.Label();
-            this.lb_membros_total = new System.Windows.Forms.Label();
-            this.lb_membros_valor = new System.Windows.Forms.Label();
             this.chart_doacao = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lb_titulo_docoes = new System.Windows.Forms.Label();
             this.pl_inicio.SuspendLayout();
             this.pl_menu_progressao.SuspendLayout();
             this.pl_menu_membros.SuspendLayout();
@@ -101,6 +101,47 @@ namespace Hype.Painel
             this.pl_menu_progressao.Size = new System.Drawing.Size(329, 135);
             this.pl_menu_progressao.TabIndex = 103;
             // 
+            // lb_poder_total
+            // 
+            this.lb_poder_total.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_poder_total.AutoSize = true;
+            this.lb_poder_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_poder_total.ForeColor = System.Drawing.Color.White;
+            this.lb_poder_total.Location = new System.Drawing.Point(68, 65);
+            this.lb_poder_total.Name = "lb_poder_total";
+            this.lb_poder_total.Size = new System.Drawing.Size(91, 25);
+            this.lb_poder_total.TabIndex = 105;
+            this.lb_poder_total.Text = "TOTAL:";
+            this.lb_poder_total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_poder
+            // 
+            this.lb_poder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_poder.ForeColor = System.Drawing.Color.White;
+            this.lb_poder.Location = new System.Drawing.Point(3, 6);
+            this.lb_poder.Name = "lb_poder";
+            this.lb_poder.Size = new System.Drawing.Size(323, 25);
+            this.lb_poder.TabIndex = 104;
+            this.lb_poder.Text = "PODER DO CLÃ";
+            this.lb_poder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_poder_valor
+            // 
+            this.lb_poder_valor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_poder_valor.AutoSize = true;
+            this.lb_poder_valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_poder_valor.ForeColor = System.Drawing.Color.White;
+            this.lb_poder_valor.Location = new System.Drawing.Point(153, 59);
+            this.lb_poder_valor.Name = "lb_poder_valor";
+            this.lb_poder_valor.Size = new System.Drawing.Size(71, 31);
+            this.lb_poder_valor.TabIndex = 104;
+            this.lb_poder_valor.Text = "0,00";
+            this.lb_poder_valor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pl_menu_membros
             // 
             this.pl_menu_membros.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -112,6 +153,73 @@ namespace Hype.Painel
             this.pl_menu_membros.Name = "pl_menu_membros";
             this.pl_menu_membros.Size = new System.Drawing.Size(329, 135);
             this.pl_menu_membros.TabIndex = 102;
+            // 
+            // lb_membros_total
+            // 
+            this.lb_membros_total.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_membros_total.AutoSize = true;
+            this.lb_membros_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_membros_total.ForeColor = System.Drawing.Color.White;
+            this.lb_membros_total.Location = new System.Drawing.Point(69, 65);
+            this.lb_membros_total.Name = "lb_membros_total";
+            this.lb_membros_total.Size = new System.Drawing.Size(91, 25);
+            this.lb_membros_total.TabIndex = 105;
+            this.lb_membros_total.Text = "TOTAL:";
+            this.lb_membros_total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_membros
+            // 
+            this.lb_membros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_membros.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_membros.ForeColor = System.Drawing.Color.White;
+            this.lb_membros.Location = new System.Drawing.Point(3, 6);
+            this.lb_membros.Name = "lb_membros";
+            this.lb_membros.Size = new System.Drawing.Size(323, 25);
+            this.lb_membros.TabIndex = 104;
+            this.lb_membros.Text = "MEMBROS";
+            this.lb_membros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_membros_valor
+            // 
+            this.lb_membros_valor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_membros_valor.AutoSize = true;
+            this.lb_membros_valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_membros_valor.ForeColor = System.Drawing.Color.White;
+            this.lb_membros_valor.Location = new System.Drawing.Point(155, 59);
+            this.lb_membros_valor.Name = "lb_membros_valor";
+            this.lb_membros_valor.Size = new System.Drawing.Size(71, 31);
+            this.lb_membros_valor.TabIndex = 104;
+            this.lb_membros_valor.Text = "0,00";
+            this.lb_membros_valor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pl_menu_ouro
+            // 
+            this.pl_menu_ouro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pl_menu_ouro.BackColor = System.Drawing.Color.Goldenrod;
+            this.pl_menu_ouro.Controls.Add(this.lb_ouro_total);
+            this.pl_menu_ouro.Controls.Add(this.lb_ouro);
+            this.pl_menu_ouro.Controls.Add(this.lb_ouro_valor);
+            this.pl_menu_ouro.Location = new System.Drawing.Point(421, 30);
+            this.pl_menu_ouro.Name = "pl_menu_ouro";
+            this.pl_menu_ouro.Size = new System.Drawing.Size(329, 135);
+            this.pl_menu_ouro.TabIndex = 101;
+            // 
+            // lb_ouro_total
+            // 
+            this.lb_ouro_total.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_ouro_total.AutoSize = true;
+            this.lb_ouro_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ouro_total.ForeColor = System.Drawing.Color.White;
+            this.lb_ouro_total.Location = new System.Drawing.Point(56, 65);
+            this.lb_ouro_total.Name = "lb_ouro_total";
+            this.lb_ouro_total.Size = new System.Drawing.Size(91, 25);
+            this.lb_ouro_total.TabIndex = 103;
+            this.lb_ouro_total.Text = "TOTAL:";
+            this.lb_ouro_total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb_ouro
             // 
@@ -126,17 +234,19 @@ namespace Hype.Painel
             this.lb_ouro.Text = "OURO";
             this.lb_ouro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pl_menu_ouro
+            // lb_ouro_valor
             // 
-            this.pl_menu_ouro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pl_menu_ouro.BackColor = System.Drawing.Color.Goldenrod;
-            this.pl_menu_ouro.Controls.Add(this.lb_ouro_total);
-            this.pl_menu_ouro.Controls.Add(this.lb_ouro);
-            this.pl_menu_ouro.Controls.Add(this.lb_ouro_valor);
-            this.pl_menu_ouro.Location = new System.Drawing.Point(421, 30);
-            this.pl_menu_ouro.Name = "pl_menu_ouro";
-            this.pl_menu_ouro.Size = new System.Drawing.Size(329, 135);
-            this.pl_menu_ouro.TabIndex = 101;
+            this.lb_ouro_valor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_ouro_valor.AutoSize = true;
+            this.lb_ouro_valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ouro_valor.ForeColor = System.Drawing.Color.White;
+            this.lb_ouro_valor.Location = new System.Drawing.Point(142, 59);
+            this.lb_ouro_valor.Name = "lb_ouro_valor";
+            this.lb_ouro_valor.Size = new System.Drawing.Size(71, 31);
+            this.lb_ouro_valor.TabIndex = 102;
+            this.lb_ouro_valor.Text = "0,00";
+            this.lb_ouro_valor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pl_membros
             // 
@@ -234,129 +344,6 @@ namespace Hype.Painel
             this.pl_doacoes.Size = new System.Drawing.Size(544, 473);
             this.pl_doacoes.TabIndex = 0;
             // 
-            // lb_titulo_docoes
-            // 
-            this.lb_titulo_docoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_titulo_docoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_titulo_docoes.ForeColor = System.Drawing.Color.White;
-            this.lb_titulo_docoes.Location = new System.Drawing.Point(3, 7);
-            this.lb_titulo_docoes.Name = "lb_titulo_docoes";
-            this.lb_titulo_docoes.Size = new System.Drawing.Size(538, 31);
-            this.lb_titulo_docoes.TabIndex = 98;
-            this.lb_titulo_docoes.Text = "DOAÇÕES";
-            this.lb_titulo_docoes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_ouro_valor
-            // 
-            this.lb_ouro_valor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_ouro_valor.AutoSize = true;
-            this.lb_ouro_valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_ouro_valor.ForeColor = System.Drawing.Color.White;
-            this.lb_ouro_valor.Location = new System.Drawing.Point(163, 59);
-            this.lb_ouro_valor.Name = "lb_ouro_valor";
-            this.lb_ouro_valor.Size = new System.Drawing.Size(71, 31);
-            this.lb_ouro_valor.TabIndex = 102;
-            this.lb_ouro_valor.Text = "0,00";
-            this.lb_ouro_valor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_ouro_total
-            // 
-            this.lb_ouro_total.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_ouro_total.AutoSize = true;
-            this.lb_ouro_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_ouro_total.ForeColor = System.Drawing.Color.White;
-            this.lb_ouro_total.Location = new System.Drawing.Point(56, 65);
-            this.lb_ouro_total.Name = "lb_ouro_total";
-            this.lb_ouro_total.Size = new System.Drawing.Size(91, 25);
-            this.lb_ouro_total.TabIndex = 103;
-            this.lb_ouro_total.Text = "TOTAL:";
-            this.lb_ouro_total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_poder
-            // 
-            this.lb_poder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_poder.ForeColor = System.Drawing.Color.White;
-            this.lb_poder.Location = new System.Drawing.Point(3, 6);
-            this.lb_poder.Name = "lb_poder";
-            this.lb_poder.Size = new System.Drawing.Size(323, 25);
-            this.lb_poder.TabIndex = 104;
-            this.lb_poder.Text = "PODER DO CLÃ";
-            this.lb_poder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_poder_total
-            // 
-            this.lb_poder_total.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_poder_total.AutoSize = true;
-            this.lb_poder_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_poder_total.ForeColor = System.Drawing.Color.White;
-            this.lb_poder_total.Location = new System.Drawing.Point(68, 65);
-            this.lb_poder_total.Name = "lb_poder_total";
-            this.lb_poder_total.Size = new System.Drawing.Size(91, 25);
-            this.lb_poder_total.TabIndex = 105;
-            this.lb_poder_total.Text = "TOTAL:";
-            this.lb_poder_total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_poder_valor
-            // 
-            this.lb_poder_valor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_poder_valor.AutoSize = true;
-            this.lb_poder_valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_poder_valor.ForeColor = System.Drawing.Color.White;
-            this.lb_poder_valor.Location = new System.Drawing.Point(175, 59);
-            this.lb_poder_valor.Name = "lb_poder_valor";
-            this.lb_poder_valor.Size = new System.Drawing.Size(71, 31);
-            this.lb_poder_valor.TabIndex = 104;
-            this.lb_poder_valor.Text = "0,00";
-            this.lb_poder_valor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_membros
-            // 
-            this.lb_membros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_membros.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_membros.ForeColor = System.Drawing.Color.White;
-            this.lb_membros.Location = new System.Drawing.Point(3, 6);
-            this.lb_membros.Name = "lb_membros";
-            this.lb_membros.Size = new System.Drawing.Size(323, 25);
-            this.lb_membros.TabIndex = 104;
-            this.lb_membros.Text = "MEMBROS";
-            this.lb_membros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_membros_total
-            // 
-            this.lb_membros_total.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_membros_total.AutoSize = true;
-            this.lb_membros_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_membros_total.ForeColor = System.Drawing.Color.White;
-            this.lb_membros_total.Location = new System.Drawing.Point(69, 65);
-            this.lb_membros_total.Name = "lb_membros_total";
-            this.lb_membros_total.Size = new System.Drawing.Size(91, 25);
-            this.lb_membros_total.TabIndex = 105;
-            this.lb_membros_total.Text = "TOTAL:";
-            this.lb_membros_total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb_membros_valor
-            // 
-            this.lb_membros_valor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_membros_valor.AutoSize = true;
-            this.lb_membros_valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_membros_valor.ForeColor = System.Drawing.Color.White;
-            this.lb_membros_valor.Location = new System.Drawing.Point(176, 59);
-            this.lb_membros_valor.Name = "lb_membros_valor";
-            this.lb_membros_valor.Size = new System.Drawing.Size(71, 31);
-            this.lb_membros_valor.TabIndex = 104;
-            this.lb_membros_valor.Text = "0,00";
-            this.lb_membros_valor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // chart_doacao
             // 
             chartArea3.Name = "ChartArea1";
@@ -375,6 +362,19 @@ namespace Hype.Painel
             this.chart_doacao.Size = new System.Drawing.Size(526, 421);
             this.chart_doacao.TabIndex = 100;
             this.chart_doacao.Text = "chart2";
+            // 
+            // lb_titulo_docoes
+            // 
+            this.lb_titulo_docoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_titulo_docoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_titulo_docoes.ForeColor = System.Drawing.Color.White;
+            this.lb_titulo_docoes.Location = new System.Drawing.Point(3, 7);
+            this.lb_titulo_docoes.Name = "lb_titulo_docoes";
+            this.lb_titulo_docoes.Size = new System.Drawing.Size(538, 31);
+            this.lb_titulo_docoes.TabIndex = 98;
+            this.lb_titulo_docoes.Text = "DOAÇÕES";
+            this.lb_titulo_docoes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // inicio
             // 

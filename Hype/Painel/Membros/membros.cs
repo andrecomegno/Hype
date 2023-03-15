@@ -26,10 +26,12 @@ namespace Hype.Painel
         public string vem_do_cla = string.Empty;
         public string foi_para_cla = string.Empty;
 
+        // ID`S
         public string id_membro = string.Empty;
         public string id_alt = string.Empty;
         public string id_progressao = string.Empty;
         public string id_recrutamento = string.Empty;
+        public int total_membros;
 
         public membros()
         {
@@ -245,6 +247,13 @@ namespace Hype.Painel
             Cursor = Cursors.Default;
         }
         #endregion
+
+        public void TotalMembros()
+        {
+            // CONTAR QUANTOS MEMBROS ESTAO REGISTRADOS
+            int total = dataGridView1.RowCount;
+            total_membros = total;
+        }
 
         private void membros_Load(object sender, EventArgs e)
         {

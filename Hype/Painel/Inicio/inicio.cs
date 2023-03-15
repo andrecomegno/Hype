@@ -37,6 +37,10 @@ namespace Hype.Painel
 
             chart_membros.DataBind();
 
+            // MEMBROS TOTAL
+            lb_membros_valor.Text = "30";
+
+
             database.closeConnection();
         }
 
@@ -56,6 +60,10 @@ namespace Hype.Painel
             chart_doacao.Series["doacao"].YValueMembers = "total";
 
             chart_doacao.DataBind();
+
+            // OURO TOTAL
+            lb_ouro_valor.Text = "8.000,00";
+
 
             database.closeConnection();
         }
@@ -77,32 +85,15 @@ namespace Hype.Painel
 
             chart_progressao.DataBind();
 
+            // PODER TOTAL
+            lb_poder_valor.Text = "100.523,00";
+
             database.closeConnection();
         }
         #endregion
 
-        private void Dados()
-        {
-            configdb database = new configdb();
-            database.openConnection();
-
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS ", database.getConnection());
-
-            MySqlDataReader dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-            {
-                //membros = dr["NICK"].ToString();
-                //ouro = dr["ouro"].ToString();
-                lb_poder_valor.Text = dr["PODER"].ToString();
-            }
-
-            database.closeConnection();
-        }
         private void inicio_Load(object sender, EventArgs e)
         {
-            Dados();
-
             GraficoMembros();
             GraficoDoacoes();
             GraficoProgressao();
