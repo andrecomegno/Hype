@@ -32,7 +32,6 @@ namespace Hype.Painel
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                dataGridView1.DataSource = dt;
                 chart_membros.DataSource = dt;
 
                 chart_membros.Series["Level"].XValueMember = "nick";
@@ -40,12 +39,6 @@ namespace Hype.Painel
 
                 chart_membros.DataBind();
             }
-
-            // CONTAR QUANTOS MEMBROS ESTAO REGISTRADOS
-            int total = dataGridView1.RowCount;
-
-            // MEMBROS TOTAL
-            lb_membros_valor.Text = total.ToString();
 
             database.closeConnection();
         }
@@ -62,17 +55,13 @@ namespace Hype.Painel
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                //dataGridView2.DataSource = dt;
                 chart_doacao.DataSource = dt;
 
                 chart_doacao.Series["doacao"].XValueMember = "nick";
                 chart_doacao.Series["doacao"].YValueMembers = "total";
 
                 chart_doacao.DataBind();
-            }            
-
-            // OURO TOTAL
-            lb_ouro_valor.Text = "9.000,00";
+            }
 
             database.closeConnection();
         }
@@ -89,27 +78,95 @@ namespace Hype.Painel
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                //dataGridView1.DataSource = dt;
                 chart_progressao.DataSource = dt;
 
                 chart_progressao.Series["Poder Clã"].XValueMember = "nick";
                 chart_progressao.Series["Poder Clã"].YValueMembers = "poder";
 
                 chart_progressao.DataBind();
-            }            
-
-            // PODER TOTAL
-            lb_poder_valor.Text = "100.523,00";
+            }
 
             database.closeConnection();
         }
         #endregion
 
+        private void Membros()
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select nick, poder from hypedb.cadastro_membro", database.getConnection());
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+            }
+
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                int membros = dataGridView1.RowCount;
+                string poder;
+
+                // MEMBROS TOTAL
+                lb_membros_valor.Text = membros.ToString();
+
+                poder = dr["PODER"].ToString();
+
+                // TOTAL DE OURO DOADO
+                double de = (Convert.ToDouble(poder) * (Convert.ToDouble(membros)));
+                lb_poder_valor.Text = de.ToString();
+
+                //MessageBox.Show(poder);
+
+            }
+
+            database.closeConnection();
+        }
+
+        private void Ouro()
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select total from hypedb.doacao ", database.getConnection());
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView2.DataSource = dt;
+            }
+
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                int membros = dataGridView2.RowCount;
+                string ouro;
+
+                ouro = dr["TOTAL"].ToString();
+
+                // TOTAL DE OURO DOADO
+                double de = (Convert.ToDouble(membros) * (Convert.ToDouble(ouro)));
+                lb_ouro_valor.Text = de.ToString();
+            }
+
+            database.closeConnection();
+        }
+
         private void inicio_Load(object sender, EventArgs e)
         {
+            Membros();
+            Ouro();
+
             GraficoMembros();
             GraficoDoacoes();
-            GraficoProgressao();
+            GraficoProgressao();            
 
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
