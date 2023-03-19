@@ -143,8 +143,6 @@ namespace Hype.Painel.Eventos
                     //data_entrada = ((DateTime)dr["DATA_RECRUTAMENTO"]).ToShortDateString();
                     nick = dr["NICK"].ToString();
                     foi_para_cla = dr["FOI_PARA_CLA"].ToString();
-
-                    MessageBox.Show(id_membro);
                 }
             }
             catch (Exception erro)

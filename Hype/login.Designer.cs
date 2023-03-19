@@ -47,9 +47,9 @@ namespace Hype
             this.txt_versao.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.txt_versao.Location = new System.Drawing.Point(267, 367);
             this.txt_versao.Name = "txt_versao";
-            this.txt_versao.Size = new System.Drawing.Size(63, 13);
+            this.txt_versao.Size = new System.Drawing.Size(56, 13);
             this.txt_versao.TabIndex = 0;
-            this.txt_versao.Text = "V.  1.0.2a";
+            this.txt_versao.Text = "V.  2.0.0";
             // 
             // bt_fechar
             // 

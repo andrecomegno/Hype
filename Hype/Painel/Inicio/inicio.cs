@@ -48,7 +48,8 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.FOI_PARA_CLA, c.CLASSE, c.PATENTE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.FOI_PARA_CLA, c.CLASSE, c.PATENTE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS where MES_EVENTO like @MES_EVENTO '%'  ", database.getConnection());
+            cmd.Parameters.AddWithValue("@MES_EVENTO", DateTime.Now.ToString("MMMM"));
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -95,7 +96,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select nick, poder from hypedb.cadastro_membro", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select nick from hypedb.cadastro_membro", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -106,23 +107,10 @@ namespace Hype.Painel
             }
 
             MySqlDataReader dr = cmd.ExecuteReader();
-
             while (dr.Read())
             {
                 int membros = dataGridView1.RowCount;
-                string poder;
-
-                // MEMBROS TOTAL
                 lb_membros_valor.Text = membros.ToString();
-
-                poder = dr["PODER"].ToString();
-
-                // TOTAL DE OURO DOADO
-                double de = (Convert.ToDouble(poder) * (Convert.ToDouble(membros)));
-                lb_poder_valor.Text = de.ToString();
-
-                //MessageBox.Show(poder);
-
             }
 
             database.closeConnection();
@@ -133,7 +121,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select total from hypedb.doacao ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select sum(total) as total from hypedb.doacao", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -146,14 +134,31 @@ namespace Hype.Painel
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                int membros = dataGridView2.RowCount;
-                string ouro;
+                lb_ouro_valor.Text = dr["TOTAL"].ToString();
+            }
 
-                ouro = dr["TOTAL"].ToString();
+            database.closeConnection();
+        }
 
-                // TOTAL DE OURO DOADO
-                double de = (Convert.ToDouble(membros) * (Convert.ToDouble(ouro)));
-                lb_ouro_valor.Text = de.ToString();
+        private void Poder()
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select sum(poder) as total from hypedb.cadastro_membro", database.getConnection());
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView3.DataSource = dt;
+            }
+
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lb_poder_valor.Text = dr["TOTAL"].ToString();
             }
 
             database.closeConnection();
@@ -163,6 +168,7 @@ namespace Hype.Painel
         {
             Membros();
             Ouro();
+            Poder();
 
             GraficoMembros();
             GraficoDoacoes();
