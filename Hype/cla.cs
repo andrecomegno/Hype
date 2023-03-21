@@ -22,7 +22,7 @@ namespace Hype
     {
         public static cla Instance;
 
-        private bool _novoCad = login.Instance._novoCad;
+        public bool _novoCad = login.Instance._novoCad;
 
         public cla()
         {
@@ -33,7 +33,7 @@ namespace Hype
 
             NovoCla();
 
-            CadastroLogin();
+            CadastroLogin(_novoCad);
         }
 
         private void NovoCla()
@@ -82,14 +82,22 @@ namespace Hype
             addControl(uc);
         }
 
-        public void CadastroLogin()
+        public void CadastroLogin(bool _novo)
         {
-            if(_novoCad)
+            if(_novo)
             {
                 pl_menu.Visible = false;
                 bt_menu_conta.Visible = false;
 
                 cadastro_login uc = new cadastro_login();
+                addControl(uc);                               
+            }
+            else
+            {
+                pl_menu.Visible = true;
+                bt_menu_conta.Visible = true;
+
+                home uc = new home();
                 addControl(uc);
             }
         }

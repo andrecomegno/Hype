@@ -35,7 +35,7 @@ namespace Hype
             this.bt_entrar = new System.Windows.Forms.Button();
             this.lb_novo_cad = new System.Windows.Forms.Label();
             this.pl_login = new System.Windows.Forms.Panel();
-            this.rjTextBox1 = new Hype.Painel.RJTextBox();
+            this.txt_senha = new Hype.Painel.RJTextBox();
             this.txt_login = new Hype.Painel.RJTextBox();
             this.pl_login.SuspendLayout();
             this.SuspendLayout();
@@ -115,7 +115,7 @@ namespace Hype
             // pl_login
             // 
             this.pl_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
-            this.pl_login.Controls.Add(this.rjTextBox1);
+            this.pl_login.Controls.Add(this.txt_senha);
             this.pl_login.Controls.Add(this.txt_login);
             this.pl_login.Controls.Add(this.lb_novo_cad);
             this.pl_login.Controls.Add(this.bt_entrar);
@@ -126,28 +126,30 @@ namespace Hype
             this.pl_login.TabIndex = 1;
             this.pl_login.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseDown);
             // 
-            // rjTextBox1
+            // txt_senha
             // 
-            this.rjTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.DodgerBlue;
-            this.rjTextBox1.BorderRadius = 0;
-            this.rjTextBox1.BorderSize = 2;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox1.Location = new System.Drawing.Point(71, 128);
-            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox1.Multiline = false;
-            this.rjTextBox1.Name = "rjTextBox1";
-            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox1.PasswordChar = true;
-            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox1.PlaceholderText = "Senha";
-            this.rjTextBox1.Size = new System.Drawing.Size(184, 31);
-            this.rjTextBox1.TabIndex = 3;
-            this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = false;
+            this.txt_senha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_senha.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_senha.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_senha.BorderFocusColor = System.Drawing.Color.DodgerBlue;
+            this.txt_senha.BorderRadius = 0;
+            this.txt_senha.BorderSize = 2;
+            this.txt_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_senha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_senha.Location = new System.Drawing.Point(71, 128);
+            this.txt_senha.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_senha.Multiline = false;
+            this.txt_senha.Name = "txt_senha";
+            this.txt_senha.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_senha.PasswordChar = true;
+            this.txt_senha.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_senha.PlaceholderText = "Senha";
+            this.txt_senha.Size = new System.Drawing.Size(184, 31);
+            this.txt_senha.TabIndex = 3;
+            this.txt_senha.Texts = "";
+            this.txt_senha.UnderlinedStyle = false;
+            this.txt_senha.Enter += new System.EventHandler(this.txt_senha_Enter);
+            this.txt_senha.Leave += new System.EventHandler(this.txt_senha_Leave);
             // 
             // txt_login
             // 
@@ -172,6 +174,8 @@ namespace Hype
             this.txt_login.TabIndex = 2;
             this.txt_login.Texts = "";
             this.txt_login.UnderlinedStyle = false;
+            this.txt_login.Enter += new System.EventHandler(this.txt_login_Enter);
+            this.txt_login.Leave += new System.EventHandler(this.txt_login_Leave);
             // 
             // login
             // 
@@ -203,7 +207,7 @@ namespace Hype
         private System.Windows.Forms.Label lb_novo_cad;
         private System.Windows.Forms.Panel pl_login;
         private Painel.RJTextBox txt_login;
-        private Painel.RJTextBox rjTextBox1;
+        private Painel.RJTextBox txt_senha;
     }
 }
 

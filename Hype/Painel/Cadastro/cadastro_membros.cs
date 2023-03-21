@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hype.Properties;
 using Hype.script;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -1633,7 +1626,5 @@ namespace Hype.Painel
             CampoTextoAltHabilitado(this.pl_conta_alt_05.Controls);
         }
         #endregion
-
-        
     }
 }
