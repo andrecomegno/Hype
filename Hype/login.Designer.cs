@@ -95,7 +95,7 @@ namespace Hype
             this.bt_entrar.TabIndex = 4;
             this.bt_entrar.Text = "ENTRAR";
             this.bt_entrar.UseVisualStyleBackColor = false;
-            this.bt_entrar.Click += new System.EventHandler(this.bt_entrar_Click_1);
+            this.bt_entrar.Click += new System.EventHandler(this.bt_entrar_Click);
             // 
             // lb_novo_cad
             // 
@@ -109,6 +109,8 @@ namespace Hype
             this.lb_novo_cad.TabIndex = 5;
             this.lb_novo_cad.Text = "Criar Novo Cadastro";
             this.lb_novo_cad.Click += new System.EventHandler(this.lb_novo_cad_Click);
+            this.lb_novo_cad.MouseEnter += new System.EventHandler(this.lb_novo_cad_MouseEnter);
+            this.lb_novo_cad.MouseLeave += new System.EventHandler(this.lb_novo_cad_MouseLeave);
             // 
             // pl_login
             // 

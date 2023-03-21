@@ -11,12 +11,18 @@ using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
 using Hype.Painel;
 using Hype.Painel.Eventos;
+using Hype.Painel.Cadastro;
+using MySql.Data.MySqlClient;
+using Hype.script;
+using Hype.Painel.Home;
 
 namespace Hype
 {
     public partial class cla : Form
     {
         public static cla Instance;
+
+        private bool _novoCad = login.Instance._novoCad;
 
         public cla()
         {
@@ -25,25 +31,99 @@ namespace Hype
 
             Instance = this;
 
-            btPainel();
+            NovoCla();
+
+            CadastroLogin();
+        }
+
+        private void NovoCla()
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select id_membros from hypedb.cadastro_membro", database.getConnection());
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+            }
+
+            database.closeConnection();
+
+            if (dataGridView1.Rows.Count == 0)
+            {
+                bt_home.Visible = true;
+                bt_home.Location = new Point(0, 40);
+                bt_configuracao.Location = new Point(0, 92);
+
+                bt_dashboard.Visible = false;
+                bt_membros.Visible = false;
+                bt_eventos.Visible = false;
+
+                Home();
+            }
+            else
+            {
+                bt_home.Visible = false;
+                bt_home.Location = new Point(0, 267);
+                bt_configuracao.Location = new Point(0, 196);
+
+                btPainel();
+            }
+
+        }
+
+        public void Home()
+        {
+            home uc = new home();
+            addControl(uc);
+        }
+
+        public void CadastroLogin()
+        {
+            if(_novoCad)
+            {
+                pl_menu.Visible = false;
+                bt_menu_conta.Visible = false;
+
+                cadastro_login uc = new cadastro_login();
+                addControl(uc);
+            }
         }
 
         #region MENU LATERAL
         //BOTÃO PAINEL
-        private void bt_painel_Click(object sender, EventArgs e)
+        private void bt_home_Click(object sender, EventArgs e)
+        {
+            btHome();
+        }
+
+        public void btHome()
+        {
+            bt_home.BackColor = Color.CornflowerBlue;
+            bt_configuracao.BackColor = Color.LightSlateGray;
+
+            home uc = new home();
+            addControl(uc);
+        }
+
+        private void bt_dashboard_Click(object sender, EventArgs e)
         {
             btPainel();
         }
 
         public void btPainel()
         {
-            bt_painel.BackColor = Color.CornflowerBlue;
+            bt_dashboard.BackColor = Color.CornflowerBlue;
 
             bt_membros.BackColor = Color.LightSlateGray;
             bt_eventos.BackColor = Color.LightSlateGray;
-            bt_configuracao.BackColor = Color.LightSlateGray;    
+            bt_configuracao.BackColor = Color.LightSlateGray;
 
-            inicio uc = new inicio();
+            dashboard uc = new dashboard();
             addControl(uc);
         }
 
@@ -59,7 +139,7 @@ namespace Hype
 
             bt_eventos.BackColor = Color.LightSlateGray;
             bt_configuracao.BackColor = Color.LightSlateGray;
-            bt_painel.BackColor = Color.LightSlateGray;
+            bt_dashboard.BackColor = Color.LightSlateGray;
 
             membros uc = new membros();
             addControl(uc);
@@ -77,7 +157,7 @@ namespace Hype
 
             bt_membros.BackColor = Color.LightSlateGray;
             bt_configuracao.BackColor = Color.LightSlateGray;
-            bt_painel.BackColor = Color.LightSlateGray;
+            bt_dashboard.BackColor = Color.LightSlateGray;
 
             eventos uc = new eventos();
             addControl(uc);
@@ -93,9 +173,10 @@ namespace Hype
         {
             bt_configuracao.BackColor = Color.CornflowerBlue;
 
+            bt_home.BackColor = Color.LightSlateGray;
             bt_membros.BackColor = Color.LightSlateGray;
             bt_eventos.BackColor = Color.LightSlateGray;
-            bt_painel.BackColor = Color.LightSlateGray;
+            bt_dashboard.BackColor = Color.LightSlateGray;            
 
             configuracao uc = new configuracao();
             addControl(uc);
@@ -209,9 +290,13 @@ namespace Hype
         private void bt_maximizar_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
-                WindowState = FormWindowState.Maximized;
+            {
+                WindowState = FormWindowState.Maximized;                
+            }
             else
+            {
                 WindowState = FormWindowState.Normal;
+            }                
         }
 
         //Drag Form
@@ -233,6 +318,12 @@ namespace Hype
             pl_conteudo.Controls.Clear();
             pl_conteudo.Controls.Add(userControl);
             userControl.BringToFront();
+        }
+
+        private void cla_Load(object sender, EventArgs e)
+        {
+            // COLORIR O TITULO DA TABELA
+            dataGridView1.EnableHeadersVisualStyles = false;
         }
     }
 }

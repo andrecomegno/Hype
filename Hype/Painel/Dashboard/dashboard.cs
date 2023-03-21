@@ -12,9 +12,9 @@ using Hype.script;
 
 namespace Hype.Painel
 {
-    public partial class inicio : UserControl
+    public partial class dashboard : UserControl
     {
-        public inicio()
+        public dashboard()
         {
             InitializeComponent();
         }

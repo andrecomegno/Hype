@@ -199,6 +199,12 @@
     <Compile Include="cla.Designer.cs">
       <DependentUpon>cla.cs</DependentUpon>
     </Compile>
+    <Compile Include="Painel\Cadastro\cadastro_login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Painel\Cadastro\cadastro_login.Designer.cs">
+      <DependentUpon>cadastro_login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Painel\Eventos\eventos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -241,6 +247,12 @@
     <Compile Include="Painel\Alts\conta_alt.Designer.cs">
       <DependentUpon>conta_alt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Painel\Home\home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Painel\Home\home.Designer.cs">
+      <DependentUpon>home.cs</DependentUpon>
+    </Compile>
     <Compile Include="Painel\Membros\excluir.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -259,11 +271,11 @@
     <Compile Include="Painel\Membros\membros.Designer.cs">
       <DependentUpon>membros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Painel\Inicio\inicio.cs">
+    <Compile Include="Painel\Dashboard\dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Painel\Inicio\inicio.Designer.cs">
-      <DependentUpon>inicio.cs</DependentUpon>
+    <Compile Include="Painel\Dashboard\dashboard.Designer.cs">
+      <DependentUpon>dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -286,6 +298,9 @@
     <EmbeddedResource Include="cla.resx">
       <DependentUpon>cla.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Painel\Cadastro\cadastro_login.resx">
+      <DependentUpon>cadastro_login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Painel\Eventos\eventos.resx">
       <DependentUpon>eventos.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,6 +322,9 @@
     <EmbeddedResource Include="Painel\Alts\conta_alt.resx">
       <DependentUpon>conta_alt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Painel\Home\home.resx">
+      <DependentUpon>home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Painel\Membros\excluir.resx">
       <DependentUpon>excluir.cs</DependentUpon>
     </EmbeddedResource>
@@ -316,8 +334,8 @@
     <EmbeddedResource Include="Painel\Membros\membros.resx">
       <DependentUpon>membros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Painel\Inicio\inicio.resx">
-      <DependentUpon>inicio.cs</DependentUpon>
+    <EmbeddedResource Include="Painel\Dashboard\dashboard.resx">
+      <DependentUpon>dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -379,6 +397,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
