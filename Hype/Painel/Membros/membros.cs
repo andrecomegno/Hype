@@ -183,13 +183,13 @@ namespace Hype.Painel
         #region BOTÕES
         private void bt_add_membro_Click(object sender, EventArgs e)
         {
-            cadastro uc = new cadastro();
+            cadastro_membros uc = new cadastro_membros();
             cla.Instance.addControl(uc);
         }
 
         private void txt_clique_aqui_Click(object sender, EventArgs e)
         {
-            cadastro uc = new cadastro();
+            cadastro_membros uc = new cadastro_membros();
             cla.Instance.addControl(uc);
         }
         private void bt_add_membro_MouseEnter(object sender, EventArgs e)

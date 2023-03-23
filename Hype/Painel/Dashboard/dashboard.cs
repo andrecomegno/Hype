@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Hype.script;
@@ -19,7 +13,7 @@ namespace Hype.Painel
             InitializeComponent();
         }
 
-        #region Graficos
+        #region GRAFICO
         private void GraficoMembros()
         {
             configdb database = new configdb();
@@ -91,6 +85,7 @@ namespace Hype.Painel
         }
         #endregion
 
+        #region GRAFICO TOPO
         private void Membros()
         {
             configdb database = new configdb();
@@ -163,6 +158,7 @@ namespace Hype.Painel
 
             database.closeConnection();
         }
+        #endregion
 
         private void inicio_Load(object sender, EventArgs e)
         {

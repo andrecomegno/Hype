@@ -199,6 +199,12 @@
     <Compile Include="cla.Designer.cs">
       <DependentUpon>cla.cs</DependentUpon>
     </Compile>
+    <Compile Include="Painel\Cadastro\cadastro_cla.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Painel\Cadastro\cadastro_cla.Designer.cs">
+      <DependentUpon>cadastro_cla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Painel\Cadastro\cadastro_login.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="cla.resx">
       <DependentUpon>cla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Painel\Cadastro\cadastro_cla.resx">
+      <DependentUpon>cadastro_cla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Painel\Cadastro\cadastro_login.resx">
       <DependentUpon>cadastro_login.cs</DependentUpon>

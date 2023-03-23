@@ -3,23 +3,55 @@ using System.Drawing;
 using Hype.script;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Hype.Painel.Home;
+using Hype.Painel.Cadastro;
 
 namespace Hype.Painel
 {
-    public partial class cadastro : UserControl
+    public partial class cadastro_membros : UserControl
     {
-        public static cadastro Instance;
+        public static cadastro_membros Instance;
 
         string tem_alt = string.Empty;
+        bool _novoCla = home.Instance._novoCla;
 
-        public cadastro()
+        public cadastro_membros()
         {
             InitializeComponent();
             Instance = this;
 
-            txt_quantidade_alt.SelectedIndex = 0;
-            txt_classe.SelectedIndex = 0;
-            txt_patente.SelectedIndex = 0;
+            NovoCla(_novoCla);
+        }
+
+        private void NovoCla(bool novo)
+        {
+            if (novo)
+            {
+                try
+                {
+                    //txt_nick.Texts = cadastro_cla.Instance.nick_lider;
+
+                    //txt_foi.Texts = cadastro_cla.Instance.nome_cla;
+                    //txt_vem.Texts = cadastro_cla.Instance.nome_cla;
+
+                    txt_patente.SelectedIndex = 3;
+                    txt_quantidade_alt.SelectedIndex = 0;
+                    txt_classe.SelectedIndex = 0;
+
+                    MessageBox.Show(cadastro_cla.Instance.nick_lider);
+                }
+                finally
+                {
+                    txt_nick.Enabled = false;
+                    txt_patente.Enabled = false;
+                }
+            }
+            else
+            {
+                txt_quantidade_alt.SelectedIndex = 0;
+                txt_classe.SelectedIndex = 0;
+                txt_patente.SelectedIndex = 0;
+            }
         }
 
         private void Cadastro()
@@ -1626,5 +1658,11 @@ namespace Hype.Painel
             CampoTextoAltHabilitado(this.pl_conta_alt_05.Controls);
         }
         #endregion
+
+        private void cadastro_membros_Load(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }
