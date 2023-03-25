@@ -49,25 +49,22 @@ namespace Hype
 
             database.closeConnection();
 
+            // VERIFICA SE TEM MEMBRO CADASTRADO
             if (dataGridView1.Rows.Count == 0)
             {
-                bt_home.Visible = true;
-                bt_home.Location = new Point(0, 40);
-                bt_configuracao.Location = new Point(0, 92);
-
-                bt_dashboard.Visible = false;
-                bt_membros.Visible = false;
-                bt_eventos.Visible = false;
-
                 Home();
             }
             else
             {
-                bt_home.Visible = false;
-                bt_home.Location = new Point(0, 267);
-                bt_configuracao.Location = new Point(0, 196);
+                //bt_home.Visible = false;
+                //bt_home.Location = new Point(0, 267);
+                //bt_configuracao.Location = new Point(0, 92);
 
-                btPainel();
+                bt_dashboard.Visible = true;
+                bt_membros.Visible = true;
+                bt_eventos.Visible = true;
+
+                //btPainel();
             }
 
         }
@@ -76,6 +73,12 @@ namespace Hype
         {
             home uc = new home();
             addControl(uc);
+
+            bt_configuracao.Location = new Point(0, 92);
+
+            bt_dashboard.Visible = false;
+            bt_membros.Visible = false;
+            bt_eventos.Visible = false;
         }
 
         public void CadastroLogin(bool _novo)

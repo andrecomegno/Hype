@@ -30,14 +30,14 @@ namespace Hype.Painel.Cadastro
         private void InitializeComponent()
         {
             this.pl_novo_cla = new System.Windows.Forms.Panel();
+            this.bt_cancelar = new System.Windows.Forms.Button();
+            this.bt_proximo = new System.Windows.Forms.Button();
+            this.txt_nome_cla = new Hype.Painel.RJTextBox();
             this.lb_novo_cla = new System.Windows.Forms.Label();
             this.txt_nick_lider = new Hype.Painel.RJTextBox();
             this.pl_espaco_01 = new System.Windows.Forms.Panel();
             this.pl_top = new System.Windows.Forms.Panel();
             this.lb_titulo = new System.Windows.Forms.Label();
-            this.txt_nome_cla = new Hype.Painel.RJTextBox();
-            this.bt_cancelar = new System.Windows.Forms.Button();
-            this.bt_salvar = new System.Windows.Forms.Button();
             this.pl_novo_cla.SuspendLayout();
             this.pl_top.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +46,7 @@ namespace Hype.Painel.Cadastro
             // 
             this.pl_novo_cla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.pl_novo_cla.Controls.Add(this.bt_cancelar);
-            this.pl_novo_cla.Controls.Add(this.bt_salvar);
+            this.pl_novo_cla.Controls.Add(this.bt_proximo);
             this.pl_novo_cla.Controls.Add(this.txt_nome_cla);
             this.pl_novo_cla.Controls.Add(this.lb_novo_cla);
             this.pl_novo_cla.Controls.Add(this.txt_nick_lider);
@@ -55,6 +55,65 @@ namespace Hype.Painel.Cadastro
             this.pl_novo_cla.Name = "pl_novo_cla";
             this.pl_novo_cla.Size = new System.Drawing.Size(1200, 258);
             this.pl_novo_cla.TabIndex = 210;
+            // 
+            // bt_cancelar
+            // 
+            this.bt_cancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_cancelar.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cancelar.FlatAppearance.BorderSize = 0;
+            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
+            this.bt_cancelar.Location = new System.Drawing.Point(687, 163);
+            this.bt_cancelar.Name = "bt_cancelar";
+            this.bt_cancelar.Size = new System.Drawing.Size(122, 36);
+            this.bt_cancelar.TabIndex = 158;
+            this.bt_cancelar.Text = "Cancelar";
+            this.bt_cancelar.UseVisualStyleBackColor = false;
+            this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
+            // 
+            // bt_proximo
+            // 
+            this.bt_proximo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_proximo.BackColor = System.Drawing.Color.OliveDrab;
+            this.bt_proximo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_proximo.FlatAppearance.BorderSize = 0;
+            this.bt_proximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_proximo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_proximo.ForeColor = System.Drawing.Color.White;
+            this.bt_proximo.Location = new System.Drawing.Point(554, 163);
+            this.bt_proximo.Name = "bt_proximo";
+            this.bt_proximo.Size = new System.Drawing.Size(122, 36);
+            this.bt_proximo.TabIndex = 159;
+            this.bt_proximo.Text = "Próximo";
+            this.bt_proximo.UseVisualStyleBackColor = false;
+            this.bt_proximo.Click += new System.EventHandler(this.bt_proximo_Click);
+            // 
+            // txt_nome_cla
+            // 
+            this.txt_nome_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_nome_cla.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_nome_cla.BorderColor = System.Drawing.Color.White;
+            this.txt_nome_cla.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_nome_cla.BorderRadius = 0;
+            this.txt_nome_cla.BorderSize = 1;
+            this.txt_nome_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nome_cla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_nome_cla.Location = new System.Drawing.Point(548, 94);
+            this.txt_nome_cla.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nome_cla.Multiline = false;
+            this.txt_nome_cla.Name = "txt_nome_cla";
+            this.txt_nome_cla.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_nome_cla.PasswordChar = false;
+            this.txt_nome_cla.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_nome_cla.PlaceholderText = "Nome do Clã";
+            this.txt_nome_cla.Size = new System.Drawing.Size(261, 31);
+            this.txt_nome_cla.TabIndex = 156;
+            this.txt_nome_cla.Texts = "";
+            this.txt_nome_cla.UnderlinedStyle = false;
+            this.txt_nome_cla.Enter += new System.EventHandler(this.txt_nome_cla_Enter);
+            this.txt_nome_cla.Leave += new System.EventHandler(this.txt_nome_cla_Leave);
             // 
             // lb_novo_cla
             // 
@@ -126,65 +185,6 @@ namespace Hype.Painel.Cadastro
             this.lb_titulo.Text = "CADASTRO NOVO CLÃ";
             this.lb_titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txt_nome_cla
-            // 
-            this.txt_nome_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_nome_cla.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_nome_cla.BorderColor = System.Drawing.Color.White;
-            this.txt_nome_cla.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_nome_cla.BorderRadius = 0;
-            this.txt_nome_cla.BorderSize = 1;
-            this.txt_nome_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nome_cla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_nome_cla.Location = new System.Drawing.Point(548, 94);
-            this.txt_nome_cla.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nome_cla.Multiline = false;
-            this.txt_nome_cla.Name = "txt_nome_cla";
-            this.txt_nome_cla.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_nome_cla.PasswordChar = false;
-            this.txt_nome_cla.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_nome_cla.PlaceholderText = "Nome do Clã";
-            this.txt_nome_cla.Size = new System.Drawing.Size(261, 31);
-            this.txt_nome_cla.TabIndex = 156;
-            this.txt_nome_cla.Texts = "";
-            this.txt_nome_cla.UnderlinedStyle = false;
-            this.txt_nome_cla.Enter += new System.EventHandler(this.txt_nome_cla_Enter);
-            this.txt_nome_cla.Leave += new System.EventHandler(this.txt_nome_cla_Leave);
-            // 
-            // bt_cancelar
-            // 
-            this.bt_cancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cancelar.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cancelar.FlatAppearance.BorderSize = 0;
-            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
-            this.bt_cancelar.Location = new System.Drawing.Point(687, 163);
-            this.bt_cancelar.Name = "bt_cancelar";
-            this.bt_cancelar.Size = new System.Drawing.Size(122, 36);
-            this.bt_cancelar.TabIndex = 158;
-            this.bt_cancelar.Text = "Cancelar";
-            this.bt_cancelar.UseVisualStyleBackColor = false;
-            this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
-            // 
-            // bt_salvar
-            // 
-            this.bt_salvar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_salvar.BackColor = System.Drawing.Color.OliveDrab;
-            this.bt_salvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_salvar.FlatAppearance.BorderSize = 0;
-            this.bt_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_salvar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_salvar.ForeColor = System.Drawing.Color.White;
-            this.bt_salvar.Location = new System.Drawing.Point(554, 163);
-            this.bt_salvar.Name = "bt_salvar";
-            this.bt_salvar.Size = new System.Drawing.Size(122, 36);
-            this.bt_salvar.TabIndex = 159;
-            this.bt_salvar.Text = "Salvar";
-            this.bt_salvar.UseVisualStyleBackColor = false;
-            this.bt_salvar.Click += new System.EventHandler(this.bt_salvar_Click);
-            // 
             // cadastro_cla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +211,6 @@ namespace Hype.Painel.Cadastro
         private System.Windows.Forms.Panel pl_top;
         private System.Windows.Forms.Label lb_titulo;
         private System.Windows.Forms.Button bt_cancelar;
-        private System.Windows.Forms.Button bt_salvar;
+        private System.Windows.Forms.Button bt_proximo;
     }
 }

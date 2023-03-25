@@ -4,7 +4,6 @@ using Hype.script;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Hype.Painel.Home;
-using Hype.Painel.Cadastro;
 
 namespace Hype.Painel
 {
@@ -12,8 +11,13 @@ namespace Hype.Painel
     {
         public static cadastro_membros Instance;
 
+        // VARIFICAR SE TEM ALT 
         string tem_alt = string.Empty;
+
+        // VERIFICA SE VAI SER CRIADO UM NOVO CLA
         bool _novoCla = home.Instance._novoCla;
+
+        int _cont = 0;
 
         public cadastro_membros()
         {
@@ -23,63 +27,44 @@ namespace Hype.Painel
             NovoCla(_novoCla);
         }
 
-        private void NovoCla(bool novo)
+        // QUANTIDADE DE ALTS
+        private void Cadastro()
         {
-            if (novo)
+            if (_novoCla)
             {
-                try
-                {
-                    //txt_nick.Texts = cadastro_cla.Instance.nick_lider;
+                home uc = new home();
+                cla.Instance.addControl(uc);
 
-                    //txt_foi.Texts = cadastro_cla.Instance.nome_cla;
-                    //txt_vem.Texts = cadastro_cla.Instance.nome_cla;
-
-                    txt_patente.SelectedIndex = 3;
-                    txt_quantidade_alt.SelectedIndex = 0;
-                    txt_classe.SelectedIndex = 0;
-
-                    MessageBox.Show(cadastro_cla.Instance.nick_lider);
-                }
-                finally
-                {
-                    txt_nick.Enabled = false;
-                    txt_patente.Enabled = false;
-                }
+                home.Instance.AtivarClas(txt_foi.Texts, _cont);            
             }
             else
             {
-                txt_quantidade_alt.SelectedIndex = 0;
-                txt_classe.SelectedIndex = 0;
-                txt_patente.SelectedIndex = 0;
-            }
-        }
+                switch (txt_quantidade_alt.SelectedIndex)
+                {
+                    case 0:
+                        NovoMembro();
+                        break;
+                    case 1:
+                        NovaAlt_01();
+                        break;
+                    case 2:
+                        NovaAlt_02();
+                        break;
+                    case 3:
+                        NovaAlt_03();
+                        break;
+                    case 4:
+                        NovaAlt_04();
+                        break;
+                    case 5:
+                        NovaAlt_05();
+                        break;
 
-        private void Cadastro()
-        {
-            switch (txt_quantidade_alt.SelectedIndex)
-            {
-                case 0:
-                    NovoMembro();
-                    break;
-                case 1:
-                    NovaAlt_01();
-                    break;
-                case 2:
-                    NovaAlt_02();
-                    break;
-                case 3:
-                    NovaAlt_03();
-                    break;
-                case 4:
-                    NovaAlt_04();
-                    break;
-                case 5:
-                    NovaAlt_05();
-                    break;
-
-                default:
-                    break;
+                    default:
+                        break;
+                }
             }
+      
         }
 
         #region NOVO CADASTRO
@@ -543,6 +528,7 @@ namespace Hype.Painel
             try
             {
                 Alertas();
+                _cont++;
             }
             catch (Exception erro)
             {
@@ -558,7 +544,21 @@ namespace Hype.Painel
 
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
-            LimparCadastro();
+            if (_novoCla)
+            {                
+                btVoltar();
+            }
+            else
+            {
+                LimparCadastro();
+            }
+
+        }
+
+        private void btVoltar()
+        {
+            home uc = new home();
+            cla.Instance.addControl(uc);
         }
 
         private void bt_voltar_Click(object sender, EventArgs e)
@@ -885,6 +885,168 @@ namespace Hype.Painel
         private void txt_foi_alt_05_Enter(object sender, EventArgs e)
         {
             txt_foi_alt_05.BorderSize = 1;
+        }
+
+        private void txt_nick_Leave(object sender, EventArgs e)
+        {
+            txt_nick.BorderColor = Color.Transparent;
+            txt_nick.BorderSize = 0;
+        }
+
+        private void txt_level_Leave(object sender, EventArgs e)
+        {
+            txt_level.BorderColor = Color.Transparent;
+            txt_level.BorderSize = 0;
+        }
+
+        private void txt_poder_Leave(object sender, EventArgs e)
+        {
+            txt_poder.BorderColor = Color.Transparent;
+            txt_poder.BorderSize = 0;
+        }
+
+        private void txt_classe_Leave(object sender, EventArgs e)
+        {
+            txt_classe.BorderColor = Color.Transparent;
+            txt_classe.BorderSize = 0;
+        }
+
+        private void txt_patente_Leave(object sender, EventArgs e)
+        {
+            txt_patente.BorderColor = Color.Transparent;
+            txt_patente.BorderSize = 0;
+        }
+
+        private void txt_vem_Leave(object sender, EventArgs e)
+        {
+            txt_vem.BorderColor = Color.Transparent;
+            txt_vem.BorderSize = 0;
+        }
+
+        private void txt_foi_Leave(object sender, EventArgs e)
+        {
+            txt_foi.BorderColor = Color.Transparent;
+            txt_foi.BorderSize = 0;
+        }
+
+        private void txt_nick_alt_01_Leave(object sender, EventArgs e)
+        {
+            txt_nick_alt_01.BorderColor = Color.Transparent;
+            txt_nick_alt_01.BorderSize = 0;
+        }
+
+        private void txt_level_alt_01_Leave(object sender, EventArgs e)
+        {
+            txt_level_alt_01.BorderColor = Color.Transparent;
+            txt_level_alt_01.BorderSize = 0;
+        }
+
+        private void txt_classe_alt_01_Leave(object sender, EventArgs e)
+        {
+            txt_classe_alt_01.BorderColor = Color.Transparent;
+            txt_classe_alt_01.BorderSize = 0;
+        }
+
+        private void txt_foi_alt_01_Leave(object sender, EventArgs e)
+        {
+            txt_foi_alt_01.BorderColor = Color.Transparent;
+            txt_foi_alt_01.BorderSize = 0;
+        }
+
+        private void txt_nick_alt_02_Leave(object sender, EventArgs e)
+        {
+            txt_nick_alt_02.BorderColor = Color.Transparent;
+            txt_nick_alt_02.BorderSize = 0;
+        }
+
+        private void txt_level_alt_02_Leave(object sender, EventArgs e)
+        {
+            txt_level_alt_02.BorderColor = Color.Transparent;
+            txt_level_alt_02.BorderSize = 0;
+        }
+
+        private void txt_classe_alt_02_Leave(object sender, EventArgs e)
+        {
+            txt_classe_alt_02.BorderColor = Color.Transparent;
+            txt_classe_alt_02.BorderSize = 0;
+        }
+
+        private void txt_foi_alt_02_Leave(object sender, EventArgs e)
+        {
+            txt_foi_alt_02.BorderColor = Color.Transparent;
+            txt_foi_alt_02.BorderSize = 0;
+        }
+
+        private void txt_nick_alt_03_Leave(object sender, EventArgs e)
+        {
+            txt_nick_alt_03.BorderColor = Color.Transparent;
+            txt_nick_alt_03.BorderSize = 0;
+        }
+
+        private void txt_level_alt_03_Leave(object sender, EventArgs e)
+        {
+            txt_level_alt_03.BorderColor = Color.Transparent;
+            txt_level_alt_03.BorderSize = 0;
+        }
+
+        private void txt_classe_alt_03_Leave(object sender, EventArgs e)
+        {
+            txt_classe_alt_03.BorderColor = Color.Transparent;
+            txt_classe_alt_03.BorderSize = 0;
+        }
+
+        private void txt_foi_alt_03_Leave(object sender, EventArgs e)
+        {
+            txt_foi_alt_03.BorderColor = Color.Transparent;
+            txt_foi_alt_03.BorderSize = 0;
+        }
+
+        private void txt_nick_alt_04_Leave(object sender, EventArgs e)
+        {
+            txt_nick_alt_04.BorderColor = Color.Transparent;
+            txt_nick_alt_04.BorderSize = 0;
+        }
+
+        private void txt_level_alt_04_Leave(object sender, EventArgs e)
+        {
+            txt_level_alt_04.BorderColor = Color.Transparent;
+            txt_level_alt_04.BorderSize = 0;
+        }
+
+        private void txt_classe_alt_04_Leave(object sender, EventArgs e)
+        {
+            txt_classe_alt_04.BorderColor = Color.Transparent;
+            txt_classe_alt_04.BorderSize = 0;
+        }
+
+        private void txt_foi_alt_04_Leave(object sender, EventArgs e)
+        {
+            txt_foi_alt_04.BorderColor = Color.Transparent;
+            txt_foi_alt_04.BorderSize = 0;
+        }
+
+        private void txt_nick_alt_05_Leave(object sender, EventArgs e)
+        {
+            txt_nick_alt_05.BorderColor = Color.Transparent;
+            txt_nick_alt_05.BorderSize = 0;
+        }
+
+        private void txt_level_alt_05_Leave(object sender, EventArgs e)
+        {
+            txt_level_alt_05.BorderColor = Color.Transparent;
+            txt_level_alt_05.BorderSize = 0;
+        }
+
+        private void txt_classe_alt_05_Leave(object sender, EventArgs e)
+        {
+            txt_classe_alt_05.BorderColor = Color.Transparent;
+            txt_classe_alt_05.BorderSize = 0;
+        }
+
+        private void txt_foi_alt_05_Leave(object sender, EventArgs e)
+        {
+            txt_foi_alt_05.BorderColor = Color.Transparent;
+            txt_foi_alt_05.BorderSize = 0;
         }
         #endregion
 
@@ -1366,168 +1528,6 @@ namespace Hype.Painel
             }
             #endregion
         }
-
-        private void txt_nick_Leave(object sender, EventArgs e)
-        {
-            txt_nick.BorderColor = Color.Transparent;
-            txt_nick.BorderSize = 0;
-        }
-
-        private void txt_level_Leave(object sender, EventArgs e)
-        {
-            txt_level.BorderColor = Color.Transparent;
-            txt_level.BorderSize = 0;
-        }
-
-        private void txt_poder_Leave(object sender, EventArgs e)
-        {
-            txt_poder.BorderColor = Color.Transparent;
-            txt_poder.BorderSize = 0;
-        }
-
-        private void txt_classe_Leave(object sender, EventArgs e)
-        {
-            txt_classe.BorderColor = Color.Transparent;
-            txt_classe.BorderSize = 0;
-        }
-
-        private void txt_patente_Leave(object sender, EventArgs e)
-        {
-            txt_patente.BorderColor = Color.Transparent;
-            txt_patente.BorderSize = 0;
-        }
-
-        private void txt_vem_Leave(object sender, EventArgs e)
-        {
-            txt_vem.BorderColor = Color.Transparent;
-            txt_vem.BorderSize = 0;
-        }
-
-        private void txt_foi_Leave(object sender, EventArgs e)
-        {
-            txt_foi.BorderColor = Color.Transparent;
-            txt_foi.BorderSize = 0;
-        }
-
-        private void txt_nick_alt_01_Leave(object sender, EventArgs e)
-        {
-            txt_nick_alt_01.BorderColor = Color.Transparent;
-            txt_nick_alt_01.BorderSize = 0;
-        }
-
-        private void txt_level_alt_01_Leave(object sender, EventArgs e)
-        {
-            txt_level_alt_01.BorderColor = Color.Transparent;
-            txt_level_alt_01.BorderSize = 0;
-        }
-
-        private void txt_classe_alt_01_Leave(object sender, EventArgs e)
-        {
-            txt_classe_alt_01.BorderColor = Color.Transparent;
-            txt_classe_alt_01.BorderSize = 0;
-        }
-
-        private void txt_foi_alt_01_Leave(object sender, EventArgs e)
-        {
-            txt_foi_alt_01.BorderColor = Color.Transparent;
-            txt_foi_alt_01.BorderSize = 0;
-        }
-
-        private void txt_nick_alt_02_Leave(object sender, EventArgs e)
-        {
-            txt_nick_alt_02.BorderColor = Color.Transparent;
-            txt_nick_alt_02.BorderSize = 0;
-        }
-
-        private void txt_level_alt_02_Leave(object sender, EventArgs e)
-        {
-            txt_level_alt_02.BorderColor = Color.Transparent;
-            txt_level_alt_02.BorderSize = 0;
-        }
-
-        private void txt_classe_alt_02_Leave(object sender, EventArgs e)
-        {
-            txt_classe_alt_02.BorderColor = Color.Transparent;
-            txt_classe_alt_02.BorderSize = 0;
-        }
-
-        private void txt_foi_alt_02_Leave(object sender, EventArgs e)
-        {
-            txt_foi_alt_02.BorderColor = Color.Transparent;
-            txt_foi_alt_02.BorderSize = 0;
-        }
-
-        private void txt_nick_alt_03_Leave(object sender, EventArgs e)
-        {
-            txt_nick_alt_03.BorderColor = Color.Transparent;
-            txt_nick_alt_03.BorderSize = 0;
-        }
-
-        private void txt_level_alt_03_Leave(object sender, EventArgs e)
-        {
-            txt_level_alt_03.BorderColor = Color.Transparent;
-            txt_level_alt_03.BorderSize = 0;
-        }
-
-        private void txt_classe_alt_03_Leave(object sender, EventArgs e)
-        {
-            txt_classe_alt_03.BorderColor = Color.Transparent;
-            txt_classe_alt_03.BorderSize = 0;
-        }
-
-        private void txt_foi_alt_03_Leave(object sender, EventArgs e)
-        {
-            txt_foi_alt_03.BorderColor = Color.Transparent;
-            txt_foi_alt_03.BorderSize = 0;
-        }
-
-        private void txt_nick_alt_04_Leave(object sender, EventArgs e)
-        {
-            txt_nick_alt_04.BorderColor = Color.Transparent;
-            txt_nick_alt_04.BorderSize = 0;
-        }
-
-        private void txt_level_alt_04_Leave(object sender, EventArgs e)
-        {
-            txt_level_alt_04.BorderColor = Color.Transparent;
-            txt_level_alt_04.BorderSize = 0;
-        }
-
-        private void txt_classe_alt_04_Leave(object sender, EventArgs e)
-        {
-            txt_classe_alt_04.BorderColor = Color.Transparent;
-            txt_classe_alt_04.BorderSize = 0;
-        }
-
-        private void txt_foi_alt_04_Leave(object sender, EventArgs e)
-        {
-            txt_foi_alt_04.BorderColor = Color.Transparent;
-            txt_foi_alt_04.BorderSize = 0;
-        }
-
-        private void txt_nick_alt_05_Leave(object sender, EventArgs e)
-        {
-            txt_nick_alt_05.BorderColor = Color.Transparent;
-            txt_nick_alt_05.BorderSize = 0;
-        }
-
-        private void txt_level_alt_05_Leave(object sender, EventArgs e)
-        {
-            txt_level_alt_05.BorderColor = Color.Transparent;
-            txt_level_alt_05.BorderSize = 0;
-        }
-
-        private void txt_classe_alt_05_Leave(object sender, EventArgs e)
-        {
-            txt_classe_alt_05.BorderColor = Color.Transparent;
-            txt_classe_alt_05.BorderSize = 0;
-        }
-
-        private void txt_foi_alt_05_Leave(object sender, EventArgs e)
-        {
-            txt_foi_alt_05.BorderColor = Color.Transparent;
-            txt_foi_alt_05.BorderSize = 0;
-        }
         #endregion
 
         #region PAINEIS DOS CADASTROS
@@ -1659,10 +1659,50 @@ namespace Hype.Painel
         }
         #endregion
 
-        private void cadastro_membros_Load(object sender, EventArgs e)
+        #region CADASTRO DE UM NOVO CLA 
+        private void NovoCla(bool novo)
         {
+            if (novo)
+            {
+                try
+                {
+                    CadastroCla(txt_nick.Texts, txt_foi.Texts);
+                }
+                finally
+                {
+                    txt_nick.Enabled = false;
+                    txt_patente.Enabled = false;
+                    txt_foi.Enabled = false;
 
-
+                    txt_nick.BackColor = Color.LightGray;
+                    txt_patente.BackColor = Color.LightGray;
+                    txt_foi.BackColor = Color.LightGray;
+                }
+            }
+            else
+            {
+                txt_quantidade_alt.SelectedIndex = 0;
+                txt_classe.SelectedIndex = 0;
+                txt_patente.SelectedIndex = 0;
+            }
         }
+
+        // PASSA OS VALORES TEXTO BOX PARA O CADASTRO
+        public void CadastroCla(string nick, string cla)
+        {
+            txt_nick.Texts = nick;
+            txt_foi.Texts = cla;
+
+            txt_nick.Font = new Font(txt_nick.Font, FontStyle.Bold);
+            txt_patente.Font = new Font(txt_patente.Font, FontStyle.Bold);
+            txt_foi.Font = new Font(txt_foi.Font, FontStyle.Bold);
+
+            txt_patente.SelectedIndex = 3;
+            txt_quantidade_alt.SelectedIndex = 0;
+            txt_classe.SelectedIndex = 0;
+            bt_voltar.Visible = false;
+        }
+        #endregion
+
     }
 }

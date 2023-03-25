@@ -9,10 +9,6 @@ namespace Hype.Painel.Cadastro
     {
         public static cadastro_cla Instance;
 
-        public string nick_lider;
-        //public string nome_cla;
-
-
         public cadastro_cla()
         {
             InitializeComponent();
@@ -41,15 +37,14 @@ namespace Hype.Painel.Cadastro
                 }
                 finally
                 {
-                    nick_lider = txt_nick_lider.Texts;
-                    //nome_cla = txt_nome_cla.Texts;
-
-                    MessageBox.Show("CLA " + nick_lider);
+                    // RECEBE OS VALORES E PASSA PARA O CADASTRO MEMBROS
+                    cadastro_membros.Instance.CadastroCla(txt_nick_lider.Texts, txt_nome_cla.Texts);
                 }
             }
         }
 
-        private void bt_salvar_Click(object sender, EventArgs e)
+        #region BOTÕES
+        private void bt_proximo_Click(object sender, EventArgs e)
         {
             Alertas();
         }
@@ -81,5 +76,7 @@ namespace Hype.Painel.Cadastro
             txt_nome_cla.BorderColor = Color.Transparent;
             txt_nome_cla.BorderSize = 0;
         }
+        #endregion
+
     }
 }
