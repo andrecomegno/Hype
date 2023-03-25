@@ -56,15 +56,9 @@ namespace Hype
             }
             else
             {
-                //bt_home.Visible = false;
-                //bt_home.Location = new Point(0, 267);
-                //bt_configuracao.Location = new Point(0, 92);
-
                 bt_dashboard.Visible = true;
                 bt_membros.Visible = true;
                 bt_eventos.Visible = true;
-
-                //btPainel();
             }
 
         }
@@ -111,6 +105,9 @@ namespace Hype
         public void btHome()
         {
             bt_home.BackColor = Color.CornflowerBlue;
+
+            bt_membros.BackColor = Color.LightSlateGray;
+            bt_eventos.BackColor = Color.LightSlateGray;
             bt_configuracao.BackColor = Color.LightSlateGray;
 
             home uc = new home();
@@ -126,6 +123,7 @@ namespace Hype
         {
             bt_dashboard.BackColor = Color.CornflowerBlue;
 
+            bt_home.BackColor = Color.LightSlateGray;
             bt_membros.BackColor = Color.LightSlateGray;
             bt_eventos.BackColor = Color.LightSlateGray;
             bt_configuracao.BackColor = Color.LightSlateGray;
@@ -144,6 +142,7 @@ namespace Hype
         {
             bt_membros.BackColor = Color.CornflowerBlue;
 
+            bt_home.BackColor = Color.LightSlateGray;
             bt_eventos.BackColor = Color.LightSlateGray;
             bt_configuracao.BackColor = Color.LightSlateGray;
             bt_dashboard.BackColor = Color.LightSlateGray;
@@ -162,6 +161,7 @@ namespace Hype
         {
             bt_eventos.BackColor = Color.CornflowerBlue;
 
+            bt_home.BackColor = Color.LightSlateGray;
             bt_membros.BackColor = Color.LightSlateGray;
             bt_configuracao.BackColor = Color.LightSlateGray;
             bt_dashboard.BackColor = Color.LightSlateGray;

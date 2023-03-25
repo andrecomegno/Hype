@@ -17,7 +17,8 @@ namespace Hype.Painel
         // VERIFICA SE VAI SER CRIADO UM NOVO CLA
         bool _novoCla = home.Instance._novoCla;
 
-        int _cont = 0;
+
+        public int _cont = -1;
 
         public cadastro_membros()
         {
@@ -30,41 +31,30 @@ namespace Hype.Painel
         // QUANTIDADE DE ALTS
         private void Cadastro()
         {
-            if (_novoCla)
+            switch (txt_quantidade_alt.SelectedIndex)
             {
-                home uc = new home();
-                cla.Instance.addControl(uc);
+                case 0:
+                    NovoMembro();
+                    break;
+                case 1:
+                    NovaAlt_01();
+                    break;
+                case 2:
+                    NovaAlt_02();
+                    break;
+                case 3:
+                    NovaAlt_03();
+                    break;
+                case 4:
+                    NovaAlt_04();
+                    break;
+                case 5:
+                    NovaAlt_05();
+                    break;
 
-                home.Instance.AtivarClas(txt_foi.Texts, _cont);            
+                default:
+                    break;
             }
-            else
-            {
-                switch (txt_quantidade_alt.SelectedIndex)
-                {
-                    case 0:
-                        NovoMembro();
-                        break;
-                    case 1:
-                        NovaAlt_01();
-                        break;
-                    case 2:
-                        NovaAlt_02();
-                        break;
-                    case 3:
-                        NovaAlt_03();
-                        break;
-                    case 4:
-                        NovaAlt_04();
-                        break;
-                    case 5:
-                        NovaAlt_05();
-                        break;
-
-                    default:
-                        break;
-                }
-            }
-      
         }
 
         #region NOVO CADASTRO
@@ -528,7 +518,6 @@ namespace Hype.Painel
             try
             {
                 Alertas();
-                _cont++;
             }
             catch (Exception erro)
             {
@@ -1527,6 +1516,12 @@ namespace Hype.Painel
                 }
             }
             #endregion
+
+            if (_novoCla)
+            {
+                home uc = new home();
+                cla.Instance.addControl(uc);
+            }
         }
         #endregion
 

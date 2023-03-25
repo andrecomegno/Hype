@@ -1,6 +1,9 @@
 ﻿using Hype.Painel.Cadastro;
 using System;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using Hype.script;
+using System.Data;
 
 namespace Hype.Painel.Home
 {
@@ -9,8 +12,6 @@ namespace Hype.Painel.Home
         public static home Instance;
 
         public bool _novoCla;
-
-        private int _clas = 0;
 
         public home()
         {
@@ -32,109 +33,79 @@ namespace Hype.Painel.Home
             _novoCla = true;
         }
 
-        public void AtivarClas(string _cla, int _cont)
+        public void AtivarClas()
         {
-
-            switch (_cont)
+            switch (dataGridView1.Rows.Count)
             {
                 case 0:
-                    txt_cla_01.Text = _cla;
-                    bt_cla_01.Enabled = true;
                     break;
                 case 1:
-                    txt_cla_02.Text = _cla;
-                    bt_cla_02.Enabled = true;
-                    break;
-
-                default:
-                    break;
-            }
-
-            MessageBox.Show(_cont.ToString());
-
-        }
-
-        private void Clas()
-        {
-            switch (_clas)
-            {
-                case 0:
-                   
-                    break;
-                case 1:
-                   
+                    Cla_01();
                     break;
                 case 2:
-
+                    Cla_02();
                     break;
                 case 3:
-
-                    break;
-                case 4:
-
-                    break;
-                case 5:
-
-                    break;
-                case 6:
-
-                    break;
-                case 7:
-
-                    break;
-                case 8:
-
-                    break;
-                case 9:
-
-                    break;
-                case 10:
-
-                    break;
-                case 11:
-
-                    break;
-                case 12:
-
-                    break;
-                case 13:
-
-                    break;
-                case 14:
-
-                    break;
-                case 15:
-
-                    break;
-                case 16:
-
-                    break;
-                case 17:
-
-                    break;
-                case 18:
-
-                    break;
-                case 19:
-
+                    Cla_03();
                     break;
 
                 default:
                     break;
             }
-
         }
 
-        private void Cla_00(string _cla)
+        private void Cla_01()
         {
-            txt_cla_01.Text = _cla;
+            txt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
+
             bt_cla_01.Enabled = true;
         }
 
-        private void Cla_01(string _cla)
+        private void Cla_02()
         {
-            txt_cla_02.Text = _cla;
+            txt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
+            txt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
+
+            bt_cla_01.Enabled = true;
             bt_cla_02.Enabled = true;
+        }
+
+        private void Cla_03()
+        {
+            txt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
+            txt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
+            txt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
+
+            bt_cla_01.Enabled = true;
+            bt_cla_02.Enabled = true;
+            bt_cla_03.Enabled = true;
+        }
+
+        private void TabelaRecrutamento()
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            // TABELA RECRUTAMENTO
+            MySqlCommand cmd = new MySqlCommand("select foi_para_cla from hypedb.recrutamento", database.getConnection());
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+            }
+
+            cmd.ExecuteNonQuery();
+            database.closeConnection();
+
+            AtivarClas();
+        }
+
+        private void home_Load(object sender, EventArgs e)
+        {
+            TabelaRecrutamento();
         }
     }
 }
