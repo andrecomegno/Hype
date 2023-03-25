@@ -17,9 +17,6 @@ namespace Hype.Painel
         // VERIFICA SE VAI SER CRIADO UM NOVO CLA
         bool _novoCla = home.Instance._novoCla;
 
-
-        public int _cont = -1;
-
         public cadastro_membros()
         {
             InitializeComponent();
