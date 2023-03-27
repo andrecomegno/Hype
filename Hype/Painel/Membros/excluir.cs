@@ -9,7 +9,7 @@ namespace Hype.Painel
 {
     public partial class conta_excluir : UserControl
     {
-        string id_membro = membros.Instance.id_membro;
+        string id_membros = membros.Instance.id_membros;
         string id_recrutamento = membros.Instance.id_recrutamento;
         string nick_alt = string.Empty;
 
@@ -27,7 +27,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select ID_ALT, DATA_ALT, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT, ID_MEMBROS from hypedb.cadastro_alt where ID_MEMBROS = '" + id_membro + "' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select ID_ALT, DATA_ALT, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT, ID_MEMBROS from hypedb.cadastro_alt where ID_MEMBROS = '" + id_membros + "' ", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -119,7 +119,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS where c.id_membros = '" + id_membro + "' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, c.STATUS, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, alt.STATUS_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA, cl.NOME_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on alt.ID_ALT = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO left join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where c.ID_MEMBROS = '" + id_membros + "' ", database.getConnection());
 
             MySqlDataReader dr = cmd.ExecuteReader();
 
@@ -184,7 +184,9 @@ namespace Hype.Painel
             database.openConnection();
 
             try
-            {                
+            {
+                #region ANTIGO EXCLUIR
+                /*
                 // EXCLUIR CONTA PRINCIPAL
                 MySqlCommand objCmdRecrutamento = new MySqlCommand("delete from hypedb.recrutamento where (id_recrutamento=@id_recrutamento) ", database.getConnection());
                 objCmdRecrutamento.Parameters.AddWithValue("@id_recrutamento", id_recrutamento);
@@ -211,19 +213,39 @@ namespace Hype.Painel
                         }
                     }
                 }
+                */
+                #endregion
 
-                // SAIDA DO CLA
-                MySqlCommand objCmdSaidaCla = new MySqlCommand("insert into hypedb.saida_do_cla (id_saida_do_cla, data_saida, nick, level, poder, classe, patente, anotacao, nick_alt) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
-                objCmdSaidaCla.Parameters.Add("@data_saida", MySqlDbType.Date).Value = DateTime.Now;
-                objCmdSaidaCla.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
-                objCmdSaidaCla.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_level.Texts;
-                objCmdSaidaCla.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
-                objCmdSaidaCla.Parameters.Add("@classe", MySqlDbType.VarChar, 256).Value = txt_classe.Texts;
-                objCmdSaidaCla.Parameters.Add("@patente", MySqlDbType.VarChar, 256).Value = txt_patente.Texts;
-                objCmdSaidaCla.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = txt_motivo.Text;
-                objCmdSaidaCla.Parameters.Add("@nick_alt", MySqlDbType.VarChar, 256).Value = nick_alt;
+                // EXCLUIR (DESATIVAR) CONTA PRINCIPAL
+                MySqlCommand objCmdMembros = new MySqlCommand("update hypedb.cadastro_membro set status=@status, anotacao=@anotacao where (id_membros=@id_membros) and (id_recrutamento=@id_recrutamento) ", database.getConnection());
+                objCmdMembros.Parameters.AddWithValue("@id_membros", id_membros);
+                objCmdMembros.Parameters.AddWithValue("@id_recrutamento", id_recrutamento);
+                objCmdMembros.Parameters.AddWithValue("@status", "Desativado");
+                objCmdMembros.Parameters.AddWithValue("@anotacao", txt_motivo.Text);
 
-                objCmdSaidaCla.ExecuteNonQuery();
+                objCmdMembros.ExecuteNonQuery();
+
+                // QUANDO TIVER ALT CADASTRADA 
+                if (dataGridView1.Visible == true)
+                {
+                    // VERIFICA SE O CHECKBOX ESTA SELECIONADO COMO VERDADEIRO, NA CELL ZERO 
+                    if (bool.Parse(dataGridView1.CurrentRow.Cells[0].FormattedValue.ToString()) == true)
+                    {
+                        foreach (DataGridViewRow check in dataGridView1.Rows)
+                        {
+                            // PEGA TODOS OS VALORES SELECIONADOS NA CELLS, O ZERO QUE REPRESENTA O CHECKBOX
+                            if (bool.Parse(check.Cells[0].EditedFormattedValue.ToString()))
+                            {
+                                // EXCLUIR ALT
+                                MySqlCommand objCmdCadastroAlt = new MySqlCommand("update hypedb.cadastro_alt set status_alt=@status_alt where (id_alt=@id_alt)", database.getConnection());
+                                objCmdCadastroAlt.Parameters.AddWithValue("@id_alt", check.Cells[1].Value.ToString()); // TODOS OS ID`S SELECIONADOS
+                                objCmdCadastroAlt.Parameters.AddWithValue("@status_alt", "Desativado");
+
+                                objCmdCadastroAlt.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
             }
             catch (Exception erro)
             {

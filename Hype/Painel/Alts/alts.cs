@@ -13,7 +13,7 @@ namespace Hype.Painel
 
         // ID`S
         public string id_alt = membros.Instance.id_alt;
-        public string id_membro = membros.Instance.id_membro;
+        public string id_membro = membros.Instance.id_membros;
 
         // COLETAR DADOS
         public string data_entrada = "";

@@ -11,7 +11,7 @@ namespace Hype.Painel
     public partial class cadastro_alt : UserControl
     {
 
-        string id_membros = membros.Instance.id_membro;
+        string id_membros = membros.Instance.id_membros;
         bool _selecionar = false;
 
         // SELECIONAR CLA 

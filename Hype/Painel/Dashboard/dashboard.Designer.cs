@@ -75,6 +75,9 @@ namespace Hype.Painel
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lb_sem_doacao = new System.Windows.Forms.Label();
+            this.lb_sem_poder = new System.Windows.Forms.Label();
+            this.lb_sem_membros = new System.Windows.Forms.Label();
             this.pl_inicio.SuspendLayout();
             this.pl_menu_progressao.SuspendLayout();
             this.pl_menu_membros.SuspendLayout();
@@ -273,6 +276,7 @@ namespace Hype.Painel
             // 
             this.pl_membros.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pl_membros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_membros.Controls.Add(this.lb_sem_membros);
             this.pl_membros.Controls.Add(this.chart_membros);
             this.pl_membros.Location = new System.Drawing.Point(3, 189);
             this.pl_membros.Name = "pl_membros";
@@ -321,6 +325,7 @@ namespace Hype.Painel
             // 
             this.pl_progressao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pl_progressao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_progressao.Controls.Add(this.lb_sem_poder);
             this.pl_progressao.Controls.Add(this.chart_progressao);
             this.pl_progressao.Location = new System.Drawing.Point(602, 504);
             this.pl_progressao.Name = "pl_progressao";
@@ -361,6 +366,7 @@ namespace Hype.Painel
             // 
             this.pl_doacoes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pl_doacoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_doacoes.Controls.Add(this.lb_sem_doacao);
             this.pl_doacoes.Controls.Add(this.chart_doacao);
             this.pl_doacoes.Location = new System.Drawing.Point(3, 504);
             this.pl_doacoes.Name = "pl_doacoes";
@@ -556,6 +562,45 @@ namespace Hype.Painel
             this.dataGridView1.Size = new System.Drawing.Size(40, 22);
             this.dataGridView1.TabIndex = 104;
             // 
+            // lb_sem_doacao
+            // 
+            this.lb_sem_doacao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_sem_doacao.BackColor = System.Drawing.Color.White;
+            this.lb_sem_doacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_sem_doacao.ForeColor = System.Drawing.Color.DarkGray;
+            this.lb_sem_doacao.Location = new System.Drawing.Point(19, 220);
+            this.lb_sem_doacao.Name = "lb_sem_doacao";
+            this.lb_sem_doacao.Size = new System.Drawing.Size(526, 25);
+            this.lb_sem_doacao.TabIndex = 106;
+            this.lb_sem_doacao.Text = "Sem Dados";
+            this.lb_sem_doacao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_sem_poder
+            // 
+            this.lb_sem_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_sem_poder.BackColor = System.Drawing.Color.White;
+            this.lb_sem_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_sem_poder.ForeColor = System.Drawing.Color.DarkGray;
+            this.lb_sem_poder.Location = new System.Drawing.Point(21, 220);
+            this.lb_sem_poder.Name = "lb_sem_poder";
+            this.lb_sem_poder.Size = new System.Drawing.Size(526, 25);
+            this.lb_sem_poder.TabIndex = 107;
+            this.lb_sem_poder.Text = "Sem Dados";
+            this.lb_sem_poder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_sem_membros
+            // 
+            this.lb_sem_membros.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_sem_membros.BackColor = System.Drawing.Color.White;
+            this.lb_sem_membros.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_sem_membros.ForeColor = System.Drawing.Color.DarkGray;
+            this.lb_sem_membros.Location = new System.Drawing.Point(22, 135);
+            this.lb_sem_membros.Name = "lb_sem_membros";
+            this.lb_sem_membros.Size = new System.Drawing.Size(1124, 25);
+            this.lb_sem_membros.TabIndex = 108;
+            this.lb_sem_membros.Text = "Sem Dados";
+            this.lb_sem_membros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -609,5 +654,8 @@ namespace Hype.Painel
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Label lb_sem_doacao;
+        private System.Windows.Forms.Label lb_sem_poder;
+        private System.Windows.Forms.Label lb_sem_membros;
     }
 }

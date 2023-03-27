@@ -77,6 +77,5 @@ namespace Hype.Painel.Cadastro
             txt_nome_cla.BorderSize = 0;
         }
         #endregion
-
     }
 }

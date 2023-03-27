@@ -26,8 +26,9 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, c.NICK, c.LEVEL, re.VEM_DO_CLA from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS where re.VEM_DO_CLA like @VEM_DO_CLA '%' ", database.getConnection());
-            cmd.Parameters.AddWithValue("@VEM_DO_CLA", nome_cla);
+            MySqlCommand cmd = new MySqlCommand("select c.NICK, c.LEVEL, cl.NOME_CLA, c.STATUS from hypedb.cadastro_membro c join hypedb.cadastro_cla cl on cl.ID_CLA = cl.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
+            cmd.Parameters.AddWithValue("@STATUS", "Ativo");
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -50,8 +51,9 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();            
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.VEM_DO_CLA, c.CLASSE, c.PATENTE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS where re.VEM_DO_CLA like @VEM_DO_CLA '%' and eve.MES_EVENTO like @MES_EVENTO '%' ", database.getConnection());
-            cmd.Parameters.AddWithValue("@VEM_DO_CLA", nome_cla);
+            MySqlCommand cmd = new MySqlCommand("select c.NICK, eve.MES_EVENTO, d.TOTAL, cl.NOME_CLA, c.STATUS from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS join hypedb.cadastro_cla cl on cl.ID_CLA = cl.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and eve.MES_EVENTO like @MES_EVENTO '%' and c.STATUS like @STATUS '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
+            cmd.Parameters.AddWithValue("@STATUS", "Ativo");
             cmd.Parameters.AddWithValue("@MES_EVENTO", DateTime.Now.ToString("MMMM"));
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
@@ -70,13 +72,14 @@ namespace Hype.Painel
             database.closeConnection();
         }
 
-        private void GraficoProgressao()
+        private void GraficoPoder()
         {
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.NICK, c.PODER, re.VEM_DO_CLA from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS where re.VEM_DO_CLA like @VEM_DO_CLA '%'", database.getConnection());
-            cmd.Parameters.AddWithValue("@VEM_DO_CLA", nome_cla);
+            MySqlCommand cmd = new MySqlCommand("select c.NICK, c.PODER, cl.NOME_CLA, c.STATUS from hypedb.cadastro_membro c join hypedb.cadastro_cla cl on cl.ID_CLA = cl.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
+            cmd.Parameters.AddWithValue("@STATUS", "Ativo");
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -89,7 +92,7 @@ namespace Hype.Painel
                 chart_progressao.Series["Poder Clã"].YValueMembers = "poder";
 
                 chart_progressao.DataBind();
-            }
+            }           
 
             database.closeConnection();
         }
@@ -101,7 +104,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.NICK, cl.NOME_CLA, c.STATUS from hypedb.cadastro_membro c join hypedb.cadastro_cla cl on cl.ID_CLA = c.ID_MEMBROS where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%'", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.NICK, cl.NOME_CLA, c.STATUS from hypedb.cadastro_membro c join hypedb.cadastro_cla cl on cl.ID_CLA = cl.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%'", database.getConnection());
             cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
             cmd.Parameters.AddWithValue("@STATUS", "Ativo");
 
@@ -118,6 +121,14 @@ namespace Hype.Painel
             {
                 int membros = dataGridView1.RowCount;
                 lb_membros_valor.Text = membros.ToString();
+
+                lb_sem_membros.Visible = false;
+            }
+
+            if (String.IsNullOrEmpty(lb_membros_valor.Text))
+            {
+                lb_ouro_valor.Text = "0";
+                lb_sem_membros.Visible = true;
             }
 
             database.closeConnection();
@@ -128,7 +139,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select sum(d.TOTAL) as TOTAL, cl.NOME_CLA from hypedb.cadastro_membro c join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.cadastro_cla cl on cl.ID_CLA = c.ID_MEMBROS where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select sum(d.TOTAL) as TOTAL, cl.NOME_CLA from hypedb.cadastro_membro c join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.cadastro_cla cl on cl.ID_CLA = cl.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
             cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
             cmd.Parameters.AddWithValue("@STATUS", "Ativo");
 
@@ -144,6 +155,13 @@ namespace Hype.Painel
             while (dr.Read())
             {
                 lb_ouro_valor.Text = dr["TOTAL"].ToString();
+                lb_sem_doacao.Visible = false;
+            }
+
+            if (String.IsNullOrEmpty(lb_ouro_valor.Text))
+            {
+                lb_ouro_valor.Text = "0";
+                lb_sem_doacao.Visible = true;
             }
 
             database.closeConnection();
@@ -154,7 +172,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select sum(c.poder) as TOTAL, cl.NOME_CLA from hypedb.cadastro_membro c join hypedb.cadastro_cla cl on cl.ID_CLA = c.ID_MEMBROS where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%'", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select sum(c.poder) as TOTAL, cl.NOME_CLA from hypedb.cadastro_membro c join hypedb.cadastro_cla cl on cl.ID_CLA = cl.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%'", database.getConnection());
             cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
             cmd.Parameters.AddWithValue("@STATUS", "Ativo");
 
@@ -170,6 +188,13 @@ namespace Hype.Painel
             while (dr.Read())
             {
                 lb_poder_valor.Text = dr["TOTAL"].ToString();
+                lb_sem_poder.Visible = false;
+            }
+
+            if (String.IsNullOrEmpty(lb_poder_valor.Text))
+            {
+                lb_poder_valor.Text = "0";
+                lb_sem_poder.Visible = true;
             }
 
             database.closeConnection();
@@ -184,7 +209,7 @@ namespace Hype.Painel
 
             GraficoMembros();
             GraficoDoacoes();
-            GraficoProgressao();
+            GraficoPoder();
 
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;

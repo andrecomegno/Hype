@@ -10,7 +10,7 @@ namespace Hype.Painel
     public partial class conta_principal : UserControl
     {
         // ID TABELA
-        string id_membro = membros.Instance.id_membro;
+        string id_membros = membros.Instance.id_membros;
         string id_recrutamento = membros.Instance.id_recrutamento;
 
         // PAINEIS
@@ -51,7 +51,6 @@ namespace Hype.Painel
             {
                 Voltar();
             }
-
         }
 
         private void bt_excluir_Click(object sender, EventArgs e)
@@ -179,7 +178,7 @@ namespace Hype.Painel
                     // UPDATE MEMBROS
                     MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
 
-                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
+                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membros);
                     objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                     //objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts; // NOVO PODER
                     //objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_novo_level.Texts; // NOVO LEVEL
@@ -200,7 +199,7 @@ namespace Hype.Painel
                     // UPDATE MEMBROS
                     MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, poder=@poder, level=@level, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
 
-                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
+                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membros);
                     objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                     objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts; // NOVO PODER
                     objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_novo_level.Texts; // NOVO LEVEL
@@ -219,7 +218,7 @@ namespace Hype.Painel
                     objCmdProgre.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
                     objCmdProgre.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = txt_novo_level.Texts;
                     objCmdProgre.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts;
-                    objCmdProgre.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
+                    objCmdProgre.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membros;
 
                     objCmdProgre.ExecuteNonQuery();
                     #endregion
@@ -235,7 +234,7 @@ namespace Hype.Painel
                     // UPDATE MEMBROS
                     MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
 
-                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
+                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membros);
                     objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                     //objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts; // NOVO PODER
                     //objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_novo_level.Texts; // NOVO LEVEL
@@ -275,7 +274,7 @@ namespace Hype.Painel
                     // UPDATE MEMBROS
                     MySqlCommand objCmdCadastroMembros = new MySqlCommand("update hypedb.cadastro_membro set nick=@nick, poder=@poder, level=@level, classe=@classe, patente=@patente where (id_membros=@id_membros)", database.getConnection());
 
-                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membro);
+                    objCmdCadastroMembros.Parameters.AddWithValue("@id_membros", id_membros);
                     objCmdCadastroMembros.Parameters.Add("@nick", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                     objCmdCadastroMembros.Parameters.Add("@poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts; // NOVO PODER
                     objCmdCadastroMembros.Parameters.Add("@level", MySqlDbType.Int32).Value = txt_novo_level.Texts; // NOVO LEVEL
@@ -294,7 +293,7 @@ namespace Hype.Painel
                     objCmdProgre.Parameters.Add("@atual_poder", MySqlDbType.Decimal).Value = txt_poder.Texts;
                     objCmdProgre.Parameters.Add("@novo_level", MySqlDbType.Int32).Value = txt_novo_level.Texts;
                     objCmdProgre.Parameters.Add("@novo_poder", MySqlDbType.Decimal).Value = txt_novo_poder.Texts;
-                    objCmdProgre.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
+                    objCmdProgre.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membros;
 
                     objCmdProgre.ExecuteNonQuery();
                     #endregion
@@ -644,7 +643,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select ID_PROGRESSAO, DATA_PROGRESSAO, ANTIGO_LEVEL, ANTIGO_PODER, NOVO_LEVEL, NOVO_PODER, ID_MEMBROS from hypedb.progressao where ID_MEMBROS = '" + id_membro +"' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select ID_PROGRESSAO, DATA_PROGRESSAO, ANTIGO_LEVEL, ANTIGO_PODER, NOVO_LEVEL, NOVO_PODER, ID_MEMBROS from hypedb.progressao where ID_MEMBROS = '" + id_membros +"' ", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -742,7 +741,7 @@ namespace Hype.Painel
                 configdb database = new configdb();
                 database.openConnection();
 
-                MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS where c.id_membros = '" + id_membro + "' ", database.getConnection());
+                MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, c.STATUS, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, alt.STATUS_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA, cl.NOME_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on alt.ID_ALT = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO left join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where c.ID_MEMBROS = '" + id_membros + "' ", database.getConnection());
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 
@@ -767,7 +766,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS where c.id_membros = '" + id_membro + "' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, c.STATUS, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, alt.STATUS_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA, cl.NOME_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on alt.ID_ALT = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO left join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where c.ID_MEMBROS = '" + id_membros + "' ", database.getConnection());
 
             MySqlDataReader dr = cmd.ExecuteReader();
 
