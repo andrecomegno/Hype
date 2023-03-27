@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Hype.script;
+using Hype.Painel.Home;
 
 namespace Hype.Painel
 {
@@ -10,9 +11,11 @@ namespace Hype.Painel
     {
         public static alts Instance;
 
+        // ID`S
         public string id_alt = membros.Instance.id_alt;
         public string id_membro = membros.Instance.id_membro;
 
+        // COLETAR DADOS
         public string data_entrada = "";
         public string nick_principal = "";
         public string nick_alt = "";
@@ -20,6 +23,9 @@ namespace Hype.Painel
         public string poder_alt = "";
         public string classe_alt = "";
         public string cla_alt = "";
+
+        // SELECIONAR CLA 
+        public string nome_cla = home.Instance.nome_cla;
 
         public alts()
         {
@@ -35,11 +41,6 @@ namespace Hype.Painel
         {
             cla.Instance.btMembros();
         }
-
-        private void bt_eventos_Click(object sender, EventArgs e)
-        {
-            cla.Instance.btEventos();
-        }
         #endregion
 
         #region TABELAS
@@ -48,7 +49,9 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select ID_ALT, DATA_ALT, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT, ID_MEMBROS from hypedb.cadastro_alt", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, alt.STATUS_ALT, cl.NOME_CLA, alt.ID_MEMBROS from hypedb.cadastro_alt alt join hypedb.cadastro_cla cl on cl.ID_CLA = alt.ID_ALT where cl.NOME_CLA like @NOME_CLA '%' and alt.STATUS_ALT like @STATUS_ALT '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
+            cmd.Parameters.AddWithValue("@STATUS_ALT", "Ativo");
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -89,7 +92,9 @@ namespace Hype.Painel
             dataGridView1.Columns[3].HeaderText = "LEVEL";
             dataGridView1.Columns[4].HeaderText = "CLASSE";
             dataGridView1.Columns[5].HeaderText = "CLÃ";
-            dataGridView1.Columns[6].Visible = false; // ID_MEMBROS
+            dataGridView1.Columns[6].Visible = false; // STATUS_ALT
+            dataGridView1.Columns[7].Visible = false; // NOME_CLA
+            dataGridView1.Columns[8].Visible = false; // ID_MEMBROS
 
             dataGridView1.Columns["DATA_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["LEVEL_ALT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -108,7 +113,6 @@ namespace Hype.Painel
                 else if (column.DataPropertyName == "CLA_ALT")
                     column.Width = 200;
             }
-
         }
 
         private void DadosTabela()

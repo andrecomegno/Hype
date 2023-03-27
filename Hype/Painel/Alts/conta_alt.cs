@@ -2,6 +2,7 @@
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using Hype.Painel.Home;
 using Hype.script;
 using MySql.Data.MySqlClient;
 
@@ -9,16 +10,20 @@ namespace Hype.Painel
 {
     public partial class conta_alt : UserControl
     {
+        // ID`S
         string id_alt = alts.Instance.id_alt;
         string id_membro = alts.Instance.id_membro;
 
         bool _editarConta = false;
 
+        // SELECIONAR CLA 
+        public string nome_cla = home.Instance.nome_cla;
+
         public conta_alt()
         {
             InitializeComponent();
 
-            //lb_saida.Text = membros.Instance.data_entrada;
+            lb_saida.Text = DateTime.Now.ToString("d");
 
             CampoTextoDesativado(pl_conta_principal.Controls);
         }
@@ -29,7 +34,9 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select ID_ALT, DATA_ALT, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT, QUANTAS_ALT from hypedb.cadastro_alt where ID_MEMBROS = '" + id_membro + "' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, alt.STATUS_ALT, cl.NOME_CLA, alt.ID_MEMBROS from hypedb.cadastro_alt alt join hypedb.cadastro_cla cl on cl.ID_CLA = alt.ID_ALT where ID_MEMBROS = '" + id_membro + "' and cl.NOME_CLA like @NOME_CLA '%' and alt.STATUS_ALT like @STATUS_ALT '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
+            cmd.Parameters.AddWithValue("@STATUS_ALT", "Ativo");
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -46,13 +53,15 @@ namespace Hype.Painel
 
         private void TabelaContaALT()
         {
-            dataGridView1.Columns[0].Visible = false; // DATA_ALT
-            dataGridView1.Columns[1].Visible = false; // ID_ALT
+            dataGridView1.Columns[0].Visible = false; // ID_ALT
+            dataGridView1.Columns[1].Visible = false; // DATA_ALT
             dataGridView1.Columns[2].HeaderText = "NICK";
             dataGridView1.Columns[3].HeaderText = "LEVEL";
             dataGridView1.Columns[4].HeaderText = "CLASSE";
             dataGridView1.Columns[5].HeaderText = "CLÃ";
-            dataGridView1.Columns[6].Visible = false; // ID_MEMBROS;
+            dataGridView1.Columns[6].Visible = false; // STATUS_ALT;
+            dataGridView1.Columns[7].Visible = false; // NOME_CLA;
+            dataGridView1.Columns[8].Visible = false; // ID_MEMBROS;
 
             dataGridView1.Columns[2].ReadOnly = true;
             dataGridView1.Columns[3].ReadOnly = true;
@@ -107,6 +116,7 @@ namespace Hype.Painel
             }
         }
 
+        // CARREGAR DADOS DA CONTA PRINCIPAL
         public void DadosMembros()
         {
             configdb database = new configdb();
@@ -134,7 +144,9 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select ID_ALT, DATA_ALT, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT, QUANTAS_ALT from hypedb.cadastro_alt where ID_MEMBROS = '" + id_membro + "' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, alt.STATUS_ALT, cl.NOME_CLA, alt.ID_MEMBROS from hypedb.cadastro_alt alt join hypedb.cadastro_cla cl on cl.ID_CLA = alt.ID_ALT where ID_MEMBROS = '" + id_membro + "' and cl.NOME_CLA like @NOME_CLA '%' and alt.STATUS_ALT like @STATUS_ALT '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
+            cmd.Parameters.AddWithValue("@STATUS_ALT", "Ativo");
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {

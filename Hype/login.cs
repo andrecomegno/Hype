@@ -12,6 +12,7 @@ namespace Hype
     {
         public static login Instance;
 
+        // NOVO CADASTRO
         public bool _novoCad = false;
 
         public login()
@@ -64,8 +65,12 @@ namespace Hype
 
                 if(login != null)
                 {
+                    // ESCONDER O LOGIN 
                     this.Hide();
-                    new cla().Show();                    
+                    new cla().Show();
+
+                    // NOME DO LOGIN 
+                    cla.Instance.NomeLogin(txt_login.Texts);                                      
                 }
                 else
                 {
@@ -82,7 +87,7 @@ namespace Hype
             {
                 LimparCampo(pl_login.Controls);
             }
-        }
+        }     
 
         // NOVO CADASTRO
         private void lb_novo_cad_Click(object sender, EventArgs e)
@@ -92,8 +97,6 @@ namespace Hype
             this.Hide();
             new cla().ShowDialog();
             this.Close();
-
-            MessageBox.Show(_novoCad.ToString());
         }
 
         private void lb_novo_cad_MouseEnter(object sender, EventArgs e)

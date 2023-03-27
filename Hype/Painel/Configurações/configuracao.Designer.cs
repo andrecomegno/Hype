@@ -36,12 +36,10 @@ namespace Hype.Painel
             this.pl_central = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.bt_salvar = new System.Windows.Forms.Button();
-            this.bt_cancelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.rjTextBox6 = new Hype.Painel.RJTextBox();
-            this.rjTextBox1 = new Hype.Painel.RJTextBox();
             this.rjTextBox5 = new Hype.Painel.RJTextBox();
             this.rjTextBox2 = new Hype.Painel.RJTextBox();
             this.rjTextBox4 = new Hype.Painel.RJTextBox();
@@ -72,9 +70,8 @@ namespace Hype.Painel
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.panel3.Controls.Add(this.bt_salvar);
-            this.panel3.Controls.Add(this.bt_cancelar);
             this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Location = new System.Drawing.Point(59, 403);
+            this.panel3.Location = new System.Drawing.Point(59, 351);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1076, 66);
             this.panel3.TabIndex = 66;
@@ -88,29 +85,13 @@ namespace Hype.Painel
             this.bt_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_salvar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_salvar.ForeColor = System.Drawing.Color.White;
-            this.bt_salvar.Location = new System.Drawing.Point(413, 3);
+            this.bt_salvar.Location = new System.Drawing.Point(541, 3);
             this.bt_salvar.Name = "bt_salvar";
             this.bt_salvar.Size = new System.Drawing.Size(122, 36);
             this.bt_salvar.TabIndex = 65;
             this.bt_salvar.Text = "Salvar";
             this.bt_salvar.UseVisualStyleBackColor = false;
-            // 
-            // bt_cancelar
-            // 
-            this.bt_cancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cancelar.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cancelar.FlatAppearance.BorderSize = 0;
-            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
-            this.bt_cancelar.Location = new System.Drawing.Point(541, 3);
-            this.bt_cancelar.Name = "bt_cancelar";
-            this.bt_cancelar.Size = new System.Drawing.Size(122, 36);
-            this.bt_cancelar.TabIndex = 64;
-            this.bt_cancelar.Text = "Cancelar";
-            this.bt_cancelar.UseVisualStyleBackColor = false;
-            this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
+            this.bt_salvar.Click += new System.EventHandler(this.bt_salvar_Click);
             // 
             // panel1
             // 
@@ -141,14 +122,13 @@ namespace Hype.Painel
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
             this.panel2.Controls.Add(this.rjTextBox6);
-            this.panel2.Controls.Add(this.rjTextBox1);
             this.panel2.Controls.Add(this.rjTextBox5);
             this.panel2.Controls.Add(this.rjTextBox2);
             this.panel2.Controls.Add(this.rjTextBox4);
             this.panel2.Controls.Add(this.rjTextBox3);
             this.panel2.Location = new System.Drawing.Point(59, 109);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1076, 288);
+            this.panel2.Size = new System.Drawing.Size(1076, 236);
             this.panel2.TabIndex = 1;
             // 
             // rjTextBox6
@@ -161,7 +141,7 @@ namespace Hype.Painel
             this.rjTextBox6.BorderSize = 2;
             this.rjTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox6.Location = new System.Drawing.Point(413, 110);
+            this.rjTextBox6.Location = new System.Drawing.Point(413, 100);
             this.rjTextBox6.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox6.Multiline = false;
             this.rjTextBox6.Name = "rjTextBox6";
@@ -174,29 +154,6 @@ namespace Hype.Painel
             this.rjTextBox6.Texts = "";
             this.rjTextBox6.UnderlinedStyle = false;
             // 
-            // rjTextBox1
-            // 
-            this.rjTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox1.BorderColor = System.Drawing.Color.White;
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.rjTextBox1.BorderRadius = 0;
-            this.rjTextBox1.BorderSize = 2;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox1.Location = new System.Drawing.Point(413, 12);
-            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox1.Multiline = false;
-            this.rjTextBox1.Name = "rjTextBox1";
-            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox1.PasswordChar = false;
-            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox1.PlaceholderText = "Nome do Clã";
-            this.rjTextBox1.Size = new System.Drawing.Size(250, 31);
-            this.rjTextBox1.TabIndex = 2;
-            this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = false;
-            // 
             // rjTextBox5
             // 
             this.rjTextBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -207,7 +164,7 @@ namespace Hype.Painel
             this.rjTextBox5.BorderSize = 2;
             this.rjTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox5.Location = new System.Drawing.Point(413, 71);
+            this.rjTextBox5.Location = new System.Drawing.Point(413, 61);
             this.rjTextBox5.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox5.Multiline = false;
             this.rjTextBox5.Name = "rjTextBox5";
@@ -230,7 +187,7 @@ namespace Hype.Painel
             this.rjTextBox2.BorderSize = 2;
             this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox2.Location = new System.Drawing.Point(413, 168);
+            this.rjTextBox2.Location = new System.Drawing.Point(413, 22);
             this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox2.Multiline = false;
             this.rjTextBox2.Name = "rjTextBox2";
@@ -253,7 +210,7 @@ namespace Hype.Painel
             this.rjTextBox4.BorderSize = 2;
             this.rjTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox4.Location = new System.Drawing.Point(413, 246);
+            this.rjTextBox4.Location = new System.Drawing.Point(413, 178);
             this.rjTextBox4.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox4.Multiline = false;
             this.rjTextBox4.Name = "rjTextBox4";
@@ -276,7 +233,7 @@ namespace Hype.Painel
             this.rjTextBox3.BorderSize = 2;
             this.rjTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox3.Location = new System.Drawing.Point(413, 207);
+            this.rjTextBox3.Location = new System.Drawing.Point(413, 139);
             this.rjTextBox3.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox3.Multiline = false;
             this.rjTextBox3.Name = "rjTextBox3";
@@ -319,7 +276,7 @@ namespace Hype.Painel
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            this.dataGridView1.Location = new System.Drawing.Point(1023, 36);
+            this.dataGridView1.Location = new System.Drawing.Point(1033, 41);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -367,14 +324,12 @@ namespace Hype.Painel
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private RJTextBox rjTextBox6;
-        private RJTextBox rjTextBox1;
         private RJTextBox rjTextBox5;
         private RJTextBox rjTextBox2;
         private RJTextBox rjTextBox4;
         private RJTextBox rjTextBox3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button bt_salvar;
-        private System.Windows.Forms.Button bt_cancelar;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -37,18 +37,10 @@ namespace Hype.Painel.Home
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pl_novo_cla = new System.Windows.Forms.Panel();
             this.pl_nome_clas = new System.Windows.Forms.Panel();
-            this.bt_cla_03 = new FontAwesome.Sharp.IconButton();
-            this.bt_cla_02 = new FontAwesome.Sharp.IconButton();
-            this.bt_cla_01 = new FontAwesome.Sharp.IconButton();
-            this.bt_cla_04 = new FontAwesome.Sharp.IconButton();
-            this.bt_novo_cla = new FontAwesome.Sharp.IconButton();
-            this.pl_espaco_01 = new System.Windows.Forms.Panel();
-            this.pl_top = new System.Windows.Forms.Panel();
-            this.lb_titulo = new System.Windows.Forms.Label();
-            this.bt_cla_07 = new FontAwesome.Sharp.IconButton();
-            this.bt_cla_06 = new FontAwesome.Sharp.IconButton();
-            this.bt_cla_05 = new FontAwesome.Sharp.IconButton();
-            this.bt_cla_08 = new FontAwesome.Sharp.IconButton();
+            this.bt_cla_19 = new FontAwesome.Sharp.IconButton();
+            this.bt_cla_18 = new FontAwesome.Sharp.IconButton();
+            this.bt_cla_17 = new FontAwesome.Sharp.IconButton();
+            this.bt_cla_20 = new FontAwesome.Sharp.IconButton();
             this.bt_cla_15 = new FontAwesome.Sharp.IconButton();
             this.bt_cla_14 = new FontAwesome.Sharp.IconButton();
             this.bt_cla_13 = new FontAwesome.Sharp.IconButton();
@@ -57,10 +49,18 @@ namespace Hype.Painel.Home
             this.bt_cla_10 = new FontAwesome.Sharp.IconButton();
             this.bt_cla_09 = new FontAwesome.Sharp.IconButton();
             this.bt_cla_12 = new FontAwesome.Sharp.IconButton();
-            this.bt_cla_19 = new FontAwesome.Sharp.IconButton();
-            this.bt_cla_18 = new FontAwesome.Sharp.IconButton();
-            this.bt_cla_17 = new FontAwesome.Sharp.IconButton();
-            this.bt_cla_20 = new FontAwesome.Sharp.IconButton();
+            this.bt_cla_07 = new FontAwesome.Sharp.IconButton();
+            this.bt_cla_06 = new FontAwesome.Sharp.IconButton();
+            this.bt_cla_05 = new FontAwesome.Sharp.IconButton();
+            this.bt_cla_08 = new FontAwesome.Sharp.IconButton();
+            this.bt_cla_03 = new FontAwesome.Sharp.IconButton();
+            this.bt_cla_02 = new FontAwesome.Sharp.IconButton();
+            this.bt_cla_01 = new FontAwesome.Sharp.IconButton();
+            this.bt_cla_04 = new FontAwesome.Sharp.IconButton();
+            this.bt_novo_cla = new FontAwesome.Sharp.IconButton();
+            this.pl_espaco_01 = new System.Windows.Forms.Panel();
+            this.pl_top = new System.Windows.Forms.Panel();
+            this.lb_titulo = new System.Windows.Forms.Label();
             this.pl_home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pl_novo_cla.SuspendLayout();
@@ -177,238 +177,93 @@ namespace Hype.Painel.Home
             this.pl_nome_clas.Size = new System.Drawing.Size(878, 295);
             this.pl_nome_clas.TabIndex = 81;
             // 
-            // bt_cla_03
+            // bt_cla_19
             // 
-            this.bt_cla_03.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cla_03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.bt_cla_03.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cla_03.FlatAppearance.BorderSize = 0;
-            this.bt_cla_03.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cla_03.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cla_03.ForeColor = System.Drawing.Color.White;
-            this.bt_cla_03.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.bt_cla_03.IconColor = System.Drawing.Color.White;
-            this.bt_cla_03.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_cla_03.IconSize = 35;
-            this.bt_cla_03.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_cla_03.Location = new System.Drawing.Point(445, 20);
-            this.bt_cla_03.Name = "bt_cla_03";
-            this.bt_cla_03.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_cla_03.Size = new System.Drawing.Size(210, 46);
-            this.bt_cla_03.TabIndex = 102;
-            this.bt_cla_03.Tag = "";
-            this.bt_cla_03.UseVisualStyleBackColor = false;
+            this.bt_cla_19.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_cla_19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.bt_cla_19.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cla_19.FlatAppearance.BorderSize = 0;
+            this.bt_cla_19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cla_19.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cla_19.ForeColor = System.Drawing.Color.White;
+            this.bt_cla_19.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.bt_cla_19.IconColor = System.Drawing.Color.White;
+            this.bt_cla_19.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_cla_19.IconSize = 35;
+            this.bt_cla_19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_cla_19.Location = new System.Drawing.Point(445, 228);
+            this.bt_cla_19.Name = "bt_cla_19";
+            this.bt_cla_19.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_cla_19.Size = new System.Drawing.Size(210, 46);
+            this.bt_cla_19.TabIndex = 118;
+            this.bt_cla_19.Tag = "";
+            this.bt_cla_19.UseVisualStyleBackColor = false;
             // 
-            // bt_cla_02
+            // bt_cla_18
             // 
-            this.bt_cla_02.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cla_02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.bt_cla_02.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cla_02.FlatAppearance.BorderSize = 0;
-            this.bt_cla_02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cla_02.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cla_02.ForeColor = System.Drawing.Color.White;
-            this.bt_cla_02.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.bt_cla_02.IconColor = System.Drawing.Color.White;
-            this.bt_cla_02.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_cla_02.IconSize = 35;
-            this.bt_cla_02.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_cla_02.Location = new System.Drawing.Point(229, 20);
-            this.bt_cla_02.Name = "bt_cla_02";
-            this.bt_cla_02.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_cla_02.Size = new System.Drawing.Size(210, 46);
-            this.bt_cla_02.TabIndex = 101;
-            this.bt_cla_02.Tag = "";
-            this.bt_cla_02.UseVisualStyleBackColor = false;
+            this.bt_cla_18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_cla_18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.bt_cla_18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cla_18.FlatAppearance.BorderSize = 0;
+            this.bt_cla_18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cla_18.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cla_18.ForeColor = System.Drawing.Color.White;
+            this.bt_cla_18.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.bt_cla_18.IconColor = System.Drawing.Color.White;
+            this.bt_cla_18.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_cla_18.IconSize = 35;
+            this.bt_cla_18.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_cla_18.Location = new System.Drawing.Point(229, 228);
+            this.bt_cla_18.Name = "bt_cla_18";
+            this.bt_cla_18.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_cla_18.Size = new System.Drawing.Size(210, 46);
+            this.bt_cla_18.TabIndex = 117;
+            this.bt_cla_18.Tag = "";
+            this.bt_cla_18.UseVisualStyleBackColor = false;
             // 
-            // bt_cla_01
+            // bt_cla_17
             // 
-            this.bt_cla_01.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cla_01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.bt_cla_01.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cla_01.FlatAppearance.BorderSize = 0;
-            this.bt_cla_01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cla_01.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cla_01.ForeColor = System.Drawing.Color.White;
-            this.bt_cla_01.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.bt_cla_01.IconColor = System.Drawing.Color.White;
-            this.bt_cla_01.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_cla_01.IconSize = 35;
-            this.bt_cla_01.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_cla_01.Location = new System.Drawing.Point(13, 21);
-            this.bt_cla_01.Name = "bt_cla_01";
-            this.bt_cla_01.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_cla_01.Size = new System.Drawing.Size(210, 46);
-            this.bt_cla_01.TabIndex = 100;
-            this.bt_cla_01.Tag = "";
-            this.bt_cla_01.UseVisualStyleBackColor = false;
+            this.bt_cla_17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_cla_17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.bt_cla_17.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cla_17.FlatAppearance.BorderSize = 0;
+            this.bt_cla_17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cla_17.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cla_17.ForeColor = System.Drawing.Color.White;
+            this.bt_cla_17.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.bt_cla_17.IconColor = System.Drawing.Color.White;
+            this.bt_cla_17.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_cla_17.IconSize = 35;
+            this.bt_cla_17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_cla_17.Location = new System.Drawing.Point(13, 229);
+            this.bt_cla_17.Name = "bt_cla_17";
+            this.bt_cla_17.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_cla_17.Size = new System.Drawing.Size(210, 46);
+            this.bt_cla_17.TabIndex = 116;
+            this.bt_cla_17.Tag = "";
+            this.bt_cla_17.UseVisualStyleBackColor = false;
             // 
-            // bt_cla_04
+            // bt_cla_20
             // 
-            this.bt_cla_04.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cla_04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.bt_cla_04.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cla_04.FlatAppearance.BorderSize = 0;
-            this.bt_cla_04.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cla_04.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cla_04.ForeColor = System.Drawing.Color.White;
-            this.bt_cla_04.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.bt_cla_04.IconColor = System.Drawing.Color.White;
-            this.bt_cla_04.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_cla_04.IconSize = 35;
-            this.bt_cla_04.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_cla_04.Location = new System.Drawing.Point(661, 21);
-            this.bt_cla_04.Name = "bt_cla_04";
-            this.bt_cla_04.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_cla_04.Size = new System.Drawing.Size(210, 46);
-            this.bt_cla_04.TabIndex = 99;
-            this.bt_cla_04.Tag = "";
-            this.bt_cla_04.UseVisualStyleBackColor = false;
-            // 
-            // bt_novo_cla
-            // 
-            this.bt_novo_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_novo_cla.BackColor = System.Drawing.Color.OliveDrab;
-            this.bt_novo_cla.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_novo_cla.FlatAppearance.BorderSize = 0;
-            this.bt_novo_cla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_novo_cla.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_novo_cla.ForeColor = System.Drawing.Color.White;
-            this.bt_novo_cla.IconChar = FontAwesome.Sharp.IconChar.PenAlt;
-            this.bt_novo_cla.IconColor = System.Drawing.Color.White;
-            this.bt_novo_cla.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_novo_cla.IconSize = 35;
-            this.bt_novo_cla.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_novo_cla.Location = new System.Drawing.Point(42, 27);
-            this.bt_novo_cla.Name = "bt_novo_cla";
-            this.bt_novo_cla.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_novo_cla.Size = new System.Drawing.Size(210, 46);
-            this.bt_novo_cla.TabIndex = 98;
-            this.bt_novo_cla.Tag = "";
-            this.bt_novo_cla.Text = "Novo Clã";
-            this.bt_novo_cla.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bt_novo_cla.UseVisualStyleBackColor = false;
-            this.bt_novo_cla.Click += new System.EventHandler(this.bt_novo_cla_Click);
-            // 
-            // pl_espaco_01
-            // 
-            this.pl_espaco_01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.pl_espaco_01.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_espaco_01.Location = new System.Drawing.Point(0, 73);
-            this.pl_espaco_01.Name = "pl_espaco_01";
-            this.pl_espaco_01.Size = new System.Drawing.Size(1172, 10);
-            this.pl_espaco_01.TabIndex = 79;
-            // 
-            // pl_top
-            // 
-            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.pl_top.Controls.Add(this.lb_titulo);
-            this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_top.Location = new System.Drawing.Point(0, 0);
-            this.pl_top.Name = "pl_top";
-            this.pl_top.Size = new System.Drawing.Size(1172, 73);
-            this.pl_top.TabIndex = 78;
-            // 
-            // lb_titulo
-            // 
-            this.lb_titulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_titulo.ForeColor = System.Drawing.Color.White;
-            this.lb_titulo.Location = new System.Drawing.Point(3, 6);
-            this.lb_titulo.Name = "lb_titulo";
-            this.lb_titulo.Size = new System.Drawing.Size(1162, 31);
-            this.lb_titulo.TabIndex = 96;
-            this.lb_titulo.Text = "HOME";
-            this.lb_titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bt_cla_07
-            // 
-            this.bt_cla_07.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cla_07.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.bt_cla_07.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cla_07.FlatAppearance.BorderSize = 0;
-            this.bt_cla_07.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cla_07.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cla_07.ForeColor = System.Drawing.Color.White;
-            this.bt_cla_07.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.bt_cla_07.IconColor = System.Drawing.Color.White;
-            this.bt_cla_07.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_cla_07.IconSize = 35;
-            this.bt_cla_07.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_cla_07.Location = new System.Drawing.Point(445, 72);
-            this.bt_cla_07.Name = "bt_cla_07";
-            this.bt_cla_07.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_cla_07.Size = new System.Drawing.Size(210, 46);
-            this.bt_cla_07.TabIndex = 106;
-            this.bt_cla_07.Tag = "";
-            this.bt_cla_07.UseVisualStyleBackColor = false;
-            // 
-            // bt_cla_06
-            // 
-            this.bt_cla_06.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cla_06.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.bt_cla_06.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cla_06.FlatAppearance.BorderSize = 0;
-            this.bt_cla_06.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cla_06.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cla_06.ForeColor = System.Drawing.Color.White;
-            this.bt_cla_06.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.bt_cla_06.IconColor = System.Drawing.Color.White;
-            this.bt_cla_06.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_cla_06.IconSize = 35;
-            this.bt_cla_06.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_cla_06.Location = new System.Drawing.Point(229, 72);
-            this.bt_cla_06.Name = "bt_cla_06";
-            this.bt_cla_06.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_cla_06.Size = new System.Drawing.Size(210, 46);
-            this.bt_cla_06.TabIndex = 105;
-            this.bt_cla_06.Tag = "";
-            this.bt_cla_06.UseVisualStyleBackColor = false;
-            // 
-            // bt_cla_05
-            // 
-            this.bt_cla_05.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cla_05.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.bt_cla_05.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cla_05.FlatAppearance.BorderSize = 0;
-            this.bt_cla_05.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cla_05.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cla_05.ForeColor = System.Drawing.Color.White;
-            this.bt_cla_05.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.bt_cla_05.IconColor = System.Drawing.Color.White;
-            this.bt_cla_05.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_cla_05.IconSize = 35;
-            this.bt_cla_05.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_cla_05.Location = new System.Drawing.Point(13, 73);
-            this.bt_cla_05.Name = "bt_cla_05";
-            this.bt_cla_05.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_cla_05.Size = new System.Drawing.Size(210, 46);
-            this.bt_cla_05.TabIndex = 104;
-            this.bt_cla_05.Tag = "";
-            this.bt_cla_05.UseVisualStyleBackColor = false;
-            // 
-            // bt_cla_08
-            // 
-            this.bt_cla_08.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cla_08.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.bt_cla_08.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cla_08.FlatAppearance.BorderSize = 0;
-            this.bt_cla_08.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cla_08.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cla_08.ForeColor = System.Drawing.Color.White;
-            this.bt_cla_08.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.bt_cla_08.IconColor = System.Drawing.Color.White;
-            this.bt_cla_08.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_cla_08.IconSize = 35;
-            this.bt_cla_08.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_cla_08.Location = new System.Drawing.Point(661, 73);
-            this.bt_cla_08.Name = "bt_cla_08";
-            this.bt_cla_08.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_cla_08.Size = new System.Drawing.Size(210, 46);
-            this.bt_cla_08.TabIndex = 103;
-            this.bt_cla_08.Tag = "";
-            this.bt_cla_08.UseVisualStyleBackColor = false;
+            this.bt_cla_20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_cla_20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.bt_cla_20.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cla_20.FlatAppearance.BorderSize = 0;
+            this.bt_cla_20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cla_20.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cla_20.ForeColor = System.Drawing.Color.White;
+            this.bt_cla_20.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.bt_cla_20.IconColor = System.Drawing.Color.White;
+            this.bt_cla_20.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_cla_20.IconSize = 35;
+            this.bt_cla_20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_cla_20.Location = new System.Drawing.Point(661, 229);
+            this.bt_cla_20.Name = "bt_cla_20";
+            this.bt_cla_20.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_cla_20.Size = new System.Drawing.Size(210, 46);
+            this.bt_cla_20.TabIndex = 115;
+            this.bt_cla_20.Tag = "";
+            this.bt_cla_20.UseVisualStyleBackColor = false;
             // 
             // bt_cla_15
             // 
@@ -586,93 +441,240 @@ namespace Hype.Painel.Home
             this.bt_cla_12.Tag = "";
             this.bt_cla_12.UseVisualStyleBackColor = false;
             // 
-            // bt_cla_19
+            // bt_cla_07
             // 
-            this.bt_cla_19.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cla_19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.bt_cla_19.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cla_19.FlatAppearance.BorderSize = 0;
-            this.bt_cla_19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cla_19.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cla_19.ForeColor = System.Drawing.Color.White;
-            this.bt_cla_19.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.bt_cla_19.IconColor = System.Drawing.Color.White;
-            this.bt_cla_19.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_cla_19.IconSize = 35;
-            this.bt_cla_19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_cla_19.Location = new System.Drawing.Point(445, 228);
-            this.bt_cla_19.Name = "bt_cla_19";
-            this.bt_cla_19.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_cla_19.Size = new System.Drawing.Size(210, 46);
-            this.bt_cla_19.TabIndex = 118;
-            this.bt_cla_19.Tag = "";
-            this.bt_cla_19.UseVisualStyleBackColor = false;
+            this.bt_cla_07.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_cla_07.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.bt_cla_07.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cla_07.FlatAppearance.BorderSize = 0;
+            this.bt_cla_07.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cla_07.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cla_07.ForeColor = System.Drawing.Color.White;
+            this.bt_cla_07.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.bt_cla_07.IconColor = System.Drawing.Color.White;
+            this.bt_cla_07.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_cla_07.IconSize = 35;
+            this.bt_cla_07.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_cla_07.Location = new System.Drawing.Point(445, 72);
+            this.bt_cla_07.Name = "bt_cla_07";
+            this.bt_cla_07.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_cla_07.Size = new System.Drawing.Size(210, 46);
+            this.bt_cla_07.TabIndex = 106;
+            this.bt_cla_07.Tag = "";
+            this.bt_cla_07.UseVisualStyleBackColor = false;
             // 
-            // bt_cla_18
+            // bt_cla_06
             // 
-            this.bt_cla_18.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cla_18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.bt_cla_18.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cla_18.FlatAppearance.BorderSize = 0;
-            this.bt_cla_18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cla_18.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cla_18.ForeColor = System.Drawing.Color.White;
-            this.bt_cla_18.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.bt_cla_18.IconColor = System.Drawing.Color.White;
-            this.bt_cla_18.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_cla_18.IconSize = 35;
-            this.bt_cla_18.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_cla_18.Location = new System.Drawing.Point(229, 228);
-            this.bt_cla_18.Name = "bt_cla_18";
-            this.bt_cla_18.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_cla_18.Size = new System.Drawing.Size(210, 46);
-            this.bt_cla_18.TabIndex = 117;
-            this.bt_cla_18.Tag = "";
-            this.bt_cla_18.UseVisualStyleBackColor = false;
+            this.bt_cla_06.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_cla_06.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.bt_cla_06.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cla_06.FlatAppearance.BorderSize = 0;
+            this.bt_cla_06.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cla_06.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cla_06.ForeColor = System.Drawing.Color.White;
+            this.bt_cla_06.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.bt_cla_06.IconColor = System.Drawing.Color.White;
+            this.bt_cla_06.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_cla_06.IconSize = 35;
+            this.bt_cla_06.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_cla_06.Location = new System.Drawing.Point(229, 72);
+            this.bt_cla_06.Name = "bt_cla_06";
+            this.bt_cla_06.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_cla_06.Size = new System.Drawing.Size(210, 46);
+            this.bt_cla_06.TabIndex = 105;
+            this.bt_cla_06.Tag = "";
+            this.bt_cla_06.UseVisualStyleBackColor = false;
             // 
-            // bt_cla_17
+            // bt_cla_05
             // 
-            this.bt_cla_17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cla_17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.bt_cla_17.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cla_17.FlatAppearance.BorderSize = 0;
-            this.bt_cla_17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cla_17.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cla_17.ForeColor = System.Drawing.Color.White;
-            this.bt_cla_17.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.bt_cla_17.IconColor = System.Drawing.Color.White;
-            this.bt_cla_17.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_cla_17.IconSize = 35;
-            this.bt_cla_17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_cla_17.Location = new System.Drawing.Point(13, 229);
-            this.bt_cla_17.Name = "bt_cla_17";
-            this.bt_cla_17.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_cla_17.Size = new System.Drawing.Size(210, 46);
-            this.bt_cla_17.TabIndex = 116;
-            this.bt_cla_17.Tag = "";
-            this.bt_cla_17.UseVisualStyleBackColor = false;
+            this.bt_cla_05.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_cla_05.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.bt_cla_05.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cla_05.FlatAppearance.BorderSize = 0;
+            this.bt_cla_05.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cla_05.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cla_05.ForeColor = System.Drawing.Color.White;
+            this.bt_cla_05.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.bt_cla_05.IconColor = System.Drawing.Color.White;
+            this.bt_cla_05.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_cla_05.IconSize = 35;
+            this.bt_cla_05.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_cla_05.Location = new System.Drawing.Point(13, 73);
+            this.bt_cla_05.Name = "bt_cla_05";
+            this.bt_cla_05.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_cla_05.Size = new System.Drawing.Size(210, 46);
+            this.bt_cla_05.TabIndex = 104;
+            this.bt_cla_05.Tag = "";
+            this.bt_cla_05.UseVisualStyleBackColor = false;
             // 
-            // bt_cla_20
+            // bt_cla_08
             // 
-            this.bt_cla_20.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_cla_20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.bt_cla_20.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cla_20.FlatAppearance.BorderSize = 0;
-            this.bt_cla_20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_cla_20.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cla_20.ForeColor = System.Drawing.Color.White;
-            this.bt_cla_20.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.bt_cla_20.IconColor = System.Drawing.Color.White;
-            this.bt_cla_20.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_cla_20.IconSize = 35;
-            this.bt_cla_20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_cla_20.Location = new System.Drawing.Point(661, 229);
-            this.bt_cla_20.Name = "bt_cla_20";
-            this.bt_cla_20.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_cla_20.Size = new System.Drawing.Size(210, 46);
-            this.bt_cla_20.TabIndex = 115;
-            this.bt_cla_20.Tag = "";
-            this.bt_cla_20.UseVisualStyleBackColor = false;
+            this.bt_cla_08.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_cla_08.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.bt_cla_08.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cla_08.FlatAppearance.BorderSize = 0;
+            this.bt_cla_08.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cla_08.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cla_08.ForeColor = System.Drawing.Color.White;
+            this.bt_cla_08.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.bt_cla_08.IconColor = System.Drawing.Color.White;
+            this.bt_cla_08.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_cla_08.IconSize = 35;
+            this.bt_cla_08.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_cla_08.Location = new System.Drawing.Point(661, 73);
+            this.bt_cla_08.Name = "bt_cla_08";
+            this.bt_cla_08.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_cla_08.Size = new System.Drawing.Size(210, 46);
+            this.bt_cla_08.TabIndex = 103;
+            this.bt_cla_08.Tag = "";
+            this.bt_cla_08.UseVisualStyleBackColor = false;
+            // 
+            // bt_cla_03
+            // 
+            this.bt_cla_03.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_cla_03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.bt_cla_03.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cla_03.FlatAppearance.BorderSize = 0;
+            this.bt_cla_03.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cla_03.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cla_03.ForeColor = System.Drawing.Color.White;
+            this.bt_cla_03.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.bt_cla_03.IconColor = System.Drawing.Color.White;
+            this.bt_cla_03.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_cla_03.IconSize = 35;
+            this.bt_cla_03.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_cla_03.Location = new System.Drawing.Point(445, 20);
+            this.bt_cla_03.Name = "bt_cla_03";
+            this.bt_cla_03.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_cla_03.Size = new System.Drawing.Size(210, 46);
+            this.bt_cla_03.TabIndex = 102;
+            this.bt_cla_03.Tag = "";
+            this.bt_cla_03.UseVisualStyleBackColor = false;
+            // 
+            // bt_cla_02
+            // 
+            this.bt_cla_02.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_cla_02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.bt_cla_02.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cla_02.FlatAppearance.BorderSize = 0;
+            this.bt_cla_02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cla_02.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cla_02.ForeColor = System.Drawing.Color.White;
+            this.bt_cla_02.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.bt_cla_02.IconColor = System.Drawing.Color.White;
+            this.bt_cla_02.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_cla_02.IconSize = 35;
+            this.bt_cla_02.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_cla_02.Location = new System.Drawing.Point(229, 20);
+            this.bt_cla_02.Name = "bt_cla_02";
+            this.bt_cla_02.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_cla_02.Size = new System.Drawing.Size(210, 46);
+            this.bt_cla_02.TabIndex = 101;
+            this.bt_cla_02.Tag = "";
+            this.bt_cla_02.UseVisualStyleBackColor = false;
+            this.bt_cla_02.Click += new System.EventHandler(this.bt_cla_02_Click);
+            // 
+            // bt_cla_01
+            // 
+            this.bt_cla_01.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_cla_01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.bt_cla_01.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cla_01.FlatAppearance.BorderSize = 0;
+            this.bt_cla_01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cla_01.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cla_01.ForeColor = System.Drawing.Color.White;
+            this.bt_cla_01.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.bt_cla_01.IconColor = System.Drawing.Color.White;
+            this.bt_cla_01.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_cla_01.IconSize = 35;
+            this.bt_cla_01.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_cla_01.Location = new System.Drawing.Point(13, 21);
+            this.bt_cla_01.Name = "bt_cla_01";
+            this.bt_cla_01.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_cla_01.Size = new System.Drawing.Size(210, 46);
+            this.bt_cla_01.TabIndex = 100;
+            this.bt_cla_01.Tag = "";
+            this.bt_cla_01.UseVisualStyleBackColor = false;
+            this.bt_cla_01.Click += new System.EventHandler(this.bt_cla_01_Click);
+            // 
+            // bt_cla_04
+            // 
+            this.bt_cla_04.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_cla_04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.bt_cla_04.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_cla_04.FlatAppearance.BorderSize = 0;
+            this.bt_cla_04.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cla_04.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cla_04.ForeColor = System.Drawing.Color.White;
+            this.bt_cla_04.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.bt_cla_04.IconColor = System.Drawing.Color.White;
+            this.bt_cla_04.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_cla_04.IconSize = 35;
+            this.bt_cla_04.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_cla_04.Location = new System.Drawing.Point(661, 21);
+            this.bt_cla_04.Name = "bt_cla_04";
+            this.bt_cla_04.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_cla_04.Size = new System.Drawing.Size(210, 46);
+            this.bt_cla_04.TabIndex = 99;
+            this.bt_cla_04.Tag = "";
+            this.bt_cla_04.UseVisualStyleBackColor = false;
+            // 
+            // bt_novo_cla
+            // 
+            this.bt_novo_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_novo_cla.BackColor = System.Drawing.Color.OliveDrab;
+            this.bt_novo_cla.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_novo_cla.FlatAppearance.BorderSize = 0;
+            this.bt_novo_cla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_novo_cla.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_novo_cla.ForeColor = System.Drawing.Color.White;
+            this.bt_novo_cla.IconChar = FontAwesome.Sharp.IconChar.PenAlt;
+            this.bt_novo_cla.IconColor = System.Drawing.Color.White;
+            this.bt_novo_cla.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_novo_cla.IconSize = 35;
+            this.bt_novo_cla.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_novo_cla.Location = new System.Drawing.Point(42, 27);
+            this.bt_novo_cla.Name = "bt_novo_cla";
+            this.bt_novo_cla.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_novo_cla.Size = new System.Drawing.Size(210, 46);
+            this.bt_novo_cla.TabIndex = 98;
+            this.bt_novo_cla.Tag = "";
+            this.bt_novo_cla.Text = "Novo Clã";
+            this.bt_novo_cla.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bt_novo_cla.UseVisualStyleBackColor = false;
+            this.bt_novo_cla.Click += new System.EventHandler(this.bt_novo_cla_Click);
+            // 
+            // pl_espaco_01
+            // 
+            this.pl_espaco_01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_espaco_01.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_espaco_01.Location = new System.Drawing.Point(0, 73);
+            this.pl_espaco_01.Name = "pl_espaco_01";
+            this.pl_espaco_01.Size = new System.Drawing.Size(1172, 10);
+            this.pl_espaco_01.TabIndex = 79;
+            // 
+            // pl_top
+            // 
+            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_top.Controls.Add(this.lb_titulo);
+            this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_top.Location = new System.Drawing.Point(0, 0);
+            this.pl_top.Name = "pl_top";
+            this.pl_top.Size = new System.Drawing.Size(1172, 73);
+            this.pl_top.TabIndex = 78;
+            // 
+            // lb_titulo
+            // 
+            this.lb_titulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_titulo.ForeColor = System.Drawing.Color.White;
+            this.lb_titulo.Location = new System.Drawing.Point(3, 6);
+            this.lb_titulo.Name = "lb_titulo";
+            this.lb_titulo.Size = new System.Drawing.Size(1162, 31);
+            this.lb_titulo.TabIndex = 96;
+            this.lb_titulo.Text = "HOME";
+            this.lb_titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // home
             // 

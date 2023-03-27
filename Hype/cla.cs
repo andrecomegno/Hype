@@ -18,6 +18,7 @@ namespace Hype
     {
         public static cla Instance;
 
+        // NOVO CADASTRO
         public bool _novoCad = login.Instance._novoCad;
 
         public cla()
@@ -30,6 +31,8 @@ namespace Hype
             NovoCla();
 
             CadastroLogin(_novoCad);
+
+            NomeLogin(lb_login.Text);
         }
 
         private void NovoCla()
@@ -52,7 +55,7 @@ namespace Hype
             // VERIFICA SE TEM MEMBRO CADASTRADO
             if (dataGridView1.Rows.Count == 0)
             {
-                Home();
+                btHome();
             }
             else
             {
@@ -61,18 +64,8 @@ namespace Hype
                 bt_eventos.Visible = true;
             }
 
-        }
+            btHome();
 
-        public void Home()
-        {
-            home uc = new home();
-            addControl(uc);
-
-            bt_configuracao.Location = new Point(0, 92);
-
-            bt_dashboard.Visible = false;
-            bt_membros.Visible = false;
-            bt_eventos.Visible = false;
         }
 
         public void CadastroLogin(bool _novo)
@@ -96,7 +89,7 @@ namespace Hype
         }
 
         #region MENU LATERAL
-        //BOTÃO PAINEL
+        //BOTÃO HOME
         private void bt_home_Click(object sender, EventArgs e)
         {
             btHome();
@@ -104,8 +97,17 @@ namespace Hype
 
         public void btHome()
         {
+            bt_home.Location = new Point(0, 40);
+            bt_configuracao.Location = new Point(0, 92);
+
+            bt_home.Visible = true;
+            bt_dashboard.Visible = false;
+            bt_membros.Visible = false;
+            bt_eventos.Visible = false;
+
             bt_home.BackColor = Color.CornflowerBlue;
 
+            bt_dashboard.BackColor = Color.LightSlateGray;
             bt_membros.BackColor = Color.LightSlateGray;
             bt_eventos.BackColor = Color.LightSlateGray;
             bt_configuracao.BackColor = Color.LightSlateGray;
@@ -116,11 +118,18 @@ namespace Hype
 
         private void bt_dashboard_Click(object sender, EventArgs e)
         {
-            btPainel();
+            btDashboard();
         }
 
-        public void btPainel()
+        public void btDashboard()
         {
+            bt_configuracao.Location = new Point(0, 196);
+
+            bt_home.Visible = false;
+            bt_dashboard.Visible = true;
+            bt_membros.Visible = true;
+            bt_eventos.Visible = true;
+
             bt_dashboard.BackColor = Color.CornflowerBlue;
 
             bt_home.BackColor = Color.LightSlateGray;
@@ -131,7 +140,7 @@ namespace Hype
             dashboard uc = new dashboard();
             addControl(uc);
         }
-
+        
         //BOTÃO MEMBROS
         private void bt_membros_Click(object sender, EventArgs e)
         {
@@ -189,7 +198,8 @@ namespace Hype
             addControl(uc);
         }
 
-        // BOTÃO RECOLHER
+        #region BOTÃO RODAPÉ
+        // BOTÃO RECOLHER SETA
         private void bt_menu_recolher_Click(object sender, EventArgs e)
         {
             MenuPrincipal();
@@ -204,7 +214,7 @@ namespace Hype
         //  BOTÃO HOME
         private void bt_inicio_Click(object sender, EventArgs e)
         {
-
+            btHome();
         }
 
         // RECOLHER MENU LATERAL
@@ -213,7 +223,7 @@ namespace Hype
             if (this.pl_menu.Width > 200)
             {
                 pl_menu.Width = 60;
-                lb_nick.Visible = false;
+                lb_login.Visible = false;
 
                 bt_inicio.Visible = false;
                 bt_menu_recolher.Dock = DockStyle.Left;
@@ -247,12 +257,43 @@ namespace Hype
         }
         #endregion
 
+        #endregion
+
         #region MENU FLUTUANTE
         private void bt_menu_conta_Click(object sender, EventArgs e)
         {
             MenuConta();
         }
 
+        // DESLOGAR
+        private void bt_flutuante_deslogar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new login().Show();
+            this.Close();
+        }
+
+        // BOTÃO CONFIGURAÇÃO
+        private void bt_config_Click(object sender, EventArgs e)
+        {
+            pl_conta.Visible = false;
+
+            btConfiguracao();
+        }
+
+        // FOTO PERFIL 
+        private void foto_perfil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // NOME DO LOGIN - CONECTADO
+        public void NomeLogin(string Nomelogin)
+        {
+            lb_login.Text = Nomelogin;
+        }
+
+        // MENU FLUTUANTE
         private void MenuConta()
         {
             this.pl_conta.BringToFront();
@@ -265,21 +306,6 @@ namespace Hype
             {
                 pl_conta.Visible = true;
             }
-        }
-
-        private void foto_perfil_Click(object sender, EventArgs e)
-        {
-            pl_conta.Visible = false;
-
-            configuracao uc = new configuracao();
-            addControl(uc);
-        }
-
-        private void bt_config_Click(object sender, EventArgs e)
-        {
-            pl_conta.Visible = false;
-
-            btConfiguracao();
         }
         #endregion
 
@@ -332,5 +358,6 @@ namespace Hype
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
         }
+
     }
 }

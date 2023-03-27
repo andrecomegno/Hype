@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Hype.script;
+using Hype.Painel.Home;
 
 namespace Hype.Painel.Eventos
 {
@@ -23,6 +24,9 @@ namespace Hype.Painel.Eventos
         // OURO
         string totalDoacao;
 
+        // SELECIONAR CLA 
+        public string nome_cla = home.Instance.nome_cla;
+
         public doacao()
         {
             InitializeComponent();
@@ -34,7 +38,9 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.FOI_PARA_CLA, c.CLASSE, c.PATENTE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS where c.ID_MEMBROS = '" + id_membro + "' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, d.ID_DOACAO, eve.ID_EVENTOS, cl.NOME_CLA, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS left join hypedb.cadastro_cla cl on cl.ID_CLA = c.ID_MEMBROS where c.ID_MEMBROS = '" + id_membro + "' and cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
+            cmd.Parameters.AddWithValue("@STATUS", "Ativo");
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -59,28 +65,24 @@ namespace Hype.Painel.Eventos
                 dataGridView1.Visible = true;
             }
 
-
             Tabela();
         }
 
         private void Tabela()
         {
             dataGridView1.Columns[0].Visible = false; // ID_MEMBROS
-            dataGridView1.Columns[1].Visible = false; // ID_RECRUTAMENTO
-            dataGridView1.Columns[2].Visible = false; // ID_DOACAO
-            dataGridView1.Columns[3].Visible = false; // ID_EVENTOS
-            dataGridView1.Columns[4].Visible = false; // FOI_PARA_CLA
-            dataGridView1.Columns[5].Visible = false; // CLASSE
-            dataGridView1.Columns[6].Visible = false; // PATENTE
-            dataGridView1.Columns[7].HeaderText = "ANO";
-            dataGridView1.Columns[8].HeaderText = "MÊS";
-            dataGridView1.Columns[9].HeaderText = "NICK";
-            dataGridView1.Columns[10].HeaderText = "SEMANA 01";
-            dataGridView1.Columns[11].HeaderText = "SEMANA 02";
-            dataGridView1.Columns[12].HeaderText = "SEMANA 03";
-            dataGridView1.Columns[13].HeaderText = "SEMANA 04";
-            dataGridView1.Columns[14].Visible = false; // TOTAL
-            dataGridView1.Columns[15].Visible = false; // ANOTACAO
+            dataGridView1.Columns[1].Visible = false; // ID_DOACAO
+            dataGridView1.Columns[2].Visible = false; // ID_EVENTOS
+            dataGridView1.Columns[3].Visible = false; // NOME_CLA
+            dataGridView1.Columns[4].HeaderText = "ANO";
+            dataGridView1.Columns[5].HeaderText = "MÊS";
+            dataGridView1.Columns[6].HeaderText = "NICK";
+            dataGridView1.Columns[7].HeaderText = "SEMANA 01";
+            dataGridView1.Columns[8].HeaderText = "SEMANA 02";
+            dataGridView1.Columns[9].HeaderText = "SEMANA 03";
+            dataGridView1.Columns[10].HeaderText = "SEMANA 04";
+            dataGridView1.Columns[11].Visible = false; // TOTAL
+            dataGridView1.Columns[12].Visible = false; // ANOTACAO
 
             dataGridView1.Columns["MES_EVENTO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["SEMANA_01"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -134,12 +136,7 @@ namespace Hype.Painel.Eventos
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
-
-                    //id_membro = dr["ID_MEMBROS"].ToString();
-
-                    //data_entrada = ((DateTime)dr["DATA_RECRUTAMENTO"]).ToShortDateString();
-                    //nick = dr["NICK"].ToString();
-                    //foi_para_cla = dr["FOI_PARA_CLA"].ToString();
+                    // ANOTAÇÃO
                 }
             }
             catch (Exception erro)
@@ -158,7 +155,9 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.FOI_PARA_CLA, c.CLASSE, c.PATENTE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS where c.ID_MEMBROS = '" + id_membro + "' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, d.ID_DOACAO, eve.ID_EVENTOS, cl.NOME_CLA, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS left join hypedb.cadastro_cla cl on cl.ID_CLA = c.ID_MEMBROS where c.ID_MEMBROS = '" + id_membro + "' and cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
+            cmd.Parameters.AddWithValue("@STATUS", "Ativo");
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -191,7 +190,9 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.FOI_PARA_CLA, c.CLASSE, c.PATENTE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS where c.ID_MEMBROS = '" + id_membro + "' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, d.ID_DOACAO, eve.ID_EVENTOS, cl.NOME_CLA, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS left join hypedb.cadastro_cla cl on cl.ID_CLA = c.ID_MEMBROS where c.ID_MEMBROS = '" + id_membro + "' and cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
+            cmd.Parameters.AddWithValue("@STATUS", "Ativo");
 
             MySqlDataReader dr = cmd.ExecuteReader();
 

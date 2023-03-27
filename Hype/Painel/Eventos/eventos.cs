@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Hype.script;
+using Hype.Painel.Home;
 
 namespace Hype.Painel.Eventos
 {
@@ -21,24 +16,14 @@ namespace Hype.Painel.Eventos
         public string nick;
         public string foi_para_cla;
 
+        // SELECIONAR CLA 
+        public string nome_cla = home.Instance.nome_cla;
+
         public eventos()
         {
             InitializeComponent();
             Instance = this;
         }
-
-        #region MENU TOPO
-        private void bt_membros_Click(object sender, EventArgs e)
-        {
-            cla.Instance.btMembros();
-        }
-
-        private void bt_alts_Click(object sender, EventArgs e)
-        {
-            alts uc = new alts();
-            cla.Instance.addControl(uc);
-        }
-        #endregion
 
         #region TABELAS
         private void TabelaEvento()
@@ -46,7 +31,9 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.FOI_PARA_CLA, c.PATENTE, c.CLASSE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS left join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, eve.ID_EVENTOS, d.ID_DOACAO, cl.NOME_CLA, c.STATUS, re.FOI_PARA_CLA, c.PATENTE, c.CLASSE, c.NICK, d.TOTAL from hypedb.cadastro_membro c left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS left join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS left join hypedb.cadastro_cla cl on cl.ID_CLA = c.ID_MEMBROS where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
+            cmd.Parameters.AddWithValue("@STATUS", "Ativo");
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -77,21 +64,15 @@ namespace Hype.Painel.Eventos
         private void Tabela()
         {
             dataGridView1.Columns[0].Visible = false; // ID_MEMBROS
-            dataGridView1.Columns[1].Visible = false; // ID_RECRUTAMENTO
+            dataGridView1.Columns[1].Visible = false; // ID_EVENTOS
             dataGridView1.Columns[2].Visible = false; // ID_DOACAO
-            dataGridView1.Columns[3].Visible = false; // ID_EVENTOS
-            dataGridView1.Columns[4].Visible = false; // FOI_PARA_CLA
-            dataGridView1.Columns[5].HeaderText = "PATENTE";
-            dataGridView1.Columns[6].HeaderText = "CLASSE";
-            dataGridView1.Columns[7].Visible = false; // ANO_EVENTO
-            dataGridView1.Columns[8].Visible = false; // MES_EVENTO
-            dataGridView1.Columns[9].HeaderText = "NICK";
-            dataGridView1.Columns[10].Visible = false; // SEMANA_01
-            dataGridView1.Columns[11].Visible = false; // SEMANA_02
-            dataGridView1.Columns[12].Visible = false; // SEMANA_03
-            dataGridView1.Columns[13].Visible = false; // SEMANA_04
-            dataGridView1.Columns[14].HeaderText = "TOTAL";
-            dataGridView1.Columns[15].Visible = false; // ANOTACAO
+            dataGridView1.Columns[3].Visible = false; // NOME_CLA
+            dataGridView1.Columns[4].Visible = false; // STATUS
+            dataGridView1.Columns[5].Visible = false; // FOI_PARA_CLA
+            dataGridView1.Columns[6].HeaderText = "PATENTE";
+            dataGridView1.Columns[7].HeaderText = "CLASSE";
+            dataGridView1.Columns[8].HeaderText = "NICK";
+            dataGridView1.Columns[9].HeaderText = "TOTAL";
 
             dataGridView1.Columns["PATENTE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["CLASSE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -169,8 +150,10 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.ID_RECRUTAMENTO, d.ID_DOACAO, eve.ID_EVENTOS, re.FOI_PARA_CLA, c.PATENTE, c.CLASSE, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.eventos eve on eve.ID_EVENTOS = c.ID_MEMBROS left join hypedb.doacao d on d.ID_DOACAO = c.ID_MEMBROS where c.NICK like @NICK '%'", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, eve.ID_EVENTOS, d.ID_DOACAO, cl.NOME_CLA, c.STATUS, re.FOI_PARA_CLA, c.PATENTE, c.CLASSE, c.NICK, d.TOTAL from hypedb.cadastro_membro c left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS left join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS left join hypedb.cadastro_cla cl on cl.ID_CLA = c.ID_MEMBROS where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' and c.NICK like @NICK '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
             cmd.Parameters.AddWithValue("@NICK", txt_buscar.Texts);
+            cmd.Parameters.AddWithValue("@STATUS", "Ativo");
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {

@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Hype.script;
-using Hype.Painel.Eventos;
+using Hype.Painel.Home;
 
 namespace Hype.Painel
 {
@@ -25,6 +19,9 @@ namespace Hype.Painel
         public string patente = string.Empty;
         public string vem_do_cla = string.Empty;
         public string foi_para_cla = string.Empty;
+
+        // SELECIONAR CLA 
+        public string nome_cla = home.Instance.nome_cla;
 
         // ID`S
         public string id_membro = string.Empty;
@@ -49,11 +46,6 @@ namespace Hype.Painel
             alts uc = new alts();
             cla.Instance.addControl(uc);
         }
-
-        private void bt_eventos_Click(object sender, EventArgs e)
-        {
-            cla.Instance.btEventos();
-        }
         #endregion
 
         #region TABELAS
@@ -62,7 +54,9 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, c.STATUS, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, alt.STATUS_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA, cl.NOME_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.cadastro_cla cl on cl.ID_CLA = c.ID_MEMBROS where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
+            cmd.Parameters.AddWithValue("@STATUS", "Ativo");
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -73,7 +67,6 @@ namespace Hype.Painel
             }
             
             database.closeConnection();
-
 
             if (dataGridView1.Rows.Count == 0)
             {

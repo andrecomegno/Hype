@@ -253,6 +253,12 @@
     <Compile Include="Painel\Alts\conta_alt.Designer.cs">
       <DependentUpon>conta_alt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Painel\Home\conta_cla.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Painel\Home\conta_cla.Designer.cs">
+      <DependentUpon>conta_cla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Painel\Home\home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Painel\Alts\conta_alt.resx">
       <DependentUpon>conta_alt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Painel\Home\conta_cla.resx">
+      <DependentUpon>conta_cla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Painel\Home\home.resx">
       <DependentUpon>home.cs</DependentUpon>

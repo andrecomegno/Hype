@@ -13,6 +13,8 @@ namespace Hype.Painel.Home
     {
         public static home Instance;
 
+        public string nome_cla;
+
         public bool _novoCla;
 
         public home()
@@ -112,24 +114,17 @@ namespace Hype.Painel.Home
 
         private void Cla_01()
         {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
+            bt_cla_01.Text = dataGridView1[1, 0].Value.ToString();
 
             bt_cla_01.Enabled = true;
             bt_cla_01.IconChar = IconChar.Edit;
             bt_cla_01.BackColor = Color.DarkGoldenrod;
         }
 
-        private void btClas(IconButton _01, IconButton _02, IconButton _03, IconButton _04)
-        {
-            _01.Enabled = true;
-            _01.IconChar = IconChar.Edit;
-            _01.BackColor = Color.DarkGoldenrod;
-        }
-
         private void Cla_02()
         {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
+            bt_cla_01.Text = dataGridView1[1, 0].Value.ToString();
+            bt_cla_02.Text = dataGridView1[1, 1].Value.ToString();
 
             bt_cla_01.Enabled = true;
             bt_cla_01.IconChar = IconChar.Edit;
@@ -142,9 +137,9 @@ namespace Hype.Painel.Home
 
         private void Cla_03()
         {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
+            bt_cla_01.Text = dataGridView1[1, 0].Value.ToString();
+            bt_cla_02.Text = dataGridView1[1, 1].Value.ToString();
+            bt_cla_03.Text = dataGridView1[1, 2].Value.ToString();
 
             bt_cla_01.Enabled = true;
             bt_cla_01.IconChar = IconChar.Edit;
@@ -161,11 +156,10 @@ namespace Hype.Painel.Home
 
         private void Cla_04()
         {
-            bt_cla_04.Text = dataGridView1[0, 3].Value.ToString();
-
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
+            bt_cla_01.Text = dataGridView1[1, 0].Value.ToString();
+            bt_cla_02.Text = dataGridView1[1, 1].Value.ToString();
+            bt_cla_03.Text = dataGridView1[1, 2].Value.ToString();
+            bt_cla_04.Text = dataGridView1[1, 3].Value.ToString();
 
             bt_cla_01.Enabled = true;
             bt_cla_01.IconChar = IconChar.Edit;
@@ -380,7 +374,7 @@ namespace Hype.Painel.Home
             database.openConnection();
 
             // TABELA RECRUTAMENTO
-            MySqlCommand cmd = new MySqlCommand("select foi_para_cla from hypedb.recrutamento", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select nick_lider, nome_cla from hypedb.cadastro_cla", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -400,6 +394,20 @@ namespace Hype.Painel.Home
         private void home_Load(object sender, EventArgs e)
         {
             TabelaRecrutamento();
+        }
+
+        private void bt_cla_01_Click(object sender, EventArgs e)
+        {
+            nome_cla = bt_cla_01.Text;
+
+            cla.Instance.btDashboard();
+        }
+
+        private void bt_cla_02_Click(object sender, EventArgs e)
+        {
+            nome_cla = bt_cla_02.Text;
+
+            cla.Instance.btDashboard();
         }
     }
 }
