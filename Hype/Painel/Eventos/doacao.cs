@@ -38,9 +38,7 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, d.ID_DOACAO, eve.ID_EVENTOS, cl.NOME_CLA, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS left join hypedb.cadastro_cla cl on cl.ID_CLA = c.ID_MEMBROS where c.ID_MEMBROS = '" + id_membro + "' and cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
-            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
-            cmd.Parameters.AddWithValue("@STATUS", "Ativo");
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, d.ID_DOACAO, eve.ID_EVENTOS, cl.NOME_CLA, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where c.ID_MEMBROS like '"+ id_membro +"' ", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -155,9 +153,7 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, d.ID_DOACAO, eve.ID_EVENTOS, cl.NOME_CLA, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS left join hypedb.cadastro_cla cl on cl.ID_CLA = c.ID_MEMBROS where c.ID_MEMBROS = '" + id_membro + "' and cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
-            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
-            cmd.Parameters.AddWithValue("@STATUS", "Ativo");
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, d.ID_DOACAO, eve.ID_EVENTOS, cl.NOME_CLA, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where c.ID_MEMBROS like '" + id_membro + "' ", database.getConnection());
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -190,12 +186,9 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, d.ID_DOACAO, eve.ID_EVENTOS, cl.NOME_CLA, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS left join hypedb.cadastro_cla cl on cl.ID_CLA = c.ID_MEMBROS where c.ID_MEMBROS = '" + id_membro + "' and cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
-            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
-            cmd.Parameters.AddWithValue("@STATUS", "Ativo");
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, d.ID_DOACAO, eve.ID_EVENTOS, cl.NOME_CLA, eve.ANO_EVENTO, eve.MES_EVENTO, c.NICK, d.SEMANA_01, d.SEMANA_02, d.SEMANA_03, d.SEMANA_04, d.TOTAL, d.ANOTACAO from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where c.ID_MEMBROS like '" + id_membro + "' ", database.getConnection());
 
             MySqlDataReader dr = cmd.ExecuteReader();
-
             while (dr.Read())
             {
                 // ID`S

@@ -790,7 +790,6 @@ namespace Hype.Painel
             DadosMembros();
             TabelaProgressao();
 
-
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
         }

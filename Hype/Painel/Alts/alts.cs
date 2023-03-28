@@ -49,7 +49,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, alt.STATUS_ALT, cl.NOME_CLA, alt.ID_MEMBROS from hypedb.cadastro_alt alt join hypedb.cadastro_cla cl on cl.ID_CLA = alt.ID_ALT where cl.NOME_CLA like @NOME_CLA '%' and alt.STATUS_ALT like @STATUS_ALT '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, alt.STATUS_ALT, cl.NOME_CLA, alt.ID_MEMBROS from hypedb.cadastro_membro c join hypedb.cadastro_alt alt on alt.ID_MEMBROS = c.ID_MEMBROS join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and alt.STATUS_ALT like @STATUS_ALT '%' ", database.getConnection());
             cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
             cmd.Parameters.AddWithValue("@STATUS_ALT", "Ativo");
 
@@ -191,8 +191,10 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select DATA_ALT, ID_ALT, NICK_ALT, LEVEL_ALT, CLASSE_ALT, CLA_ALT from hypedb.cadastro_alt where nick_alt like @nick '%' ", database.getConnection());
-            cmd.Parameters.AddWithValue("@nick", txt_buscar.Texts);
+            MySqlCommand cmd = new MySqlCommand("select alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, alt.STATUS_ALT, cl.NOME_CLA, alt.ID_MEMBROS from hypedb.cadastro_membro c join hypedb.cadastro_alt alt on alt.ID_MEMBROS = c.ID_MEMBROS join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and alt.STATUS_ALT like @STATUS_ALT '%' and NICK_ALT like @NICK_ALT '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@NICK_ALT", txt_buscar.Texts);
+            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
+            cmd.Parameters.AddWithValue("@STATUS_ALT", "Ativo");
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {

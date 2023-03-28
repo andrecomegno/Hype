@@ -29,10 +29,10 @@ namespace Hype.Painel
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle89 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle90 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle91 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle92 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bt_voltar = new System.Windows.Forms.Button();
             this.txt_data_entrada = new System.Windows.Forms.Label();
             this.lb_titulo = new System.Windows.Forms.Label();
@@ -41,45 +41,45 @@ namespace Hype.Painel
             this.lb_data_entrada = new System.Windows.Forms.Label();
             this.pl_buscar = new System.Windows.Forms.Panel();
             this.bt_buscar = new System.Windows.Forms.PictureBox();
+            this.txt_buscar = new Hype.Painel.RJTextBox();
             this.pl_conta_excluir = new System.Windows.Forms.Panel();
             this.pl_botao = new System.Windows.Forms.Panel();
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.bt_salvar = new System.Windows.Forms.Button();
             this.pl_conta_alt_05 = new System.Windows.Forms.Panel();
-            this.pl_conta_alt_04 = new System.Windows.Forms.Panel();
-            this.pl_conta_alt_03 = new System.Windows.Forms.Panel();
-            this.pl_conta_alt_02 = new System.Windows.Forms.Panel();
-            this.pl_conta_alt_01 = new System.Windows.Forms.Panel();
-            this.lb_conta_alt = new System.Windows.Forms.Label();
-            this.pl_espaco_03 = new System.Windows.Forms.Panel();
-            this.pl_conta_principal = new System.Windows.Forms.Panel();
-            this.lb_quantas_alt = new System.Windows.Forms.Label();
-            this.pl_espaco_02 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txt_classe_alt_05 = new Hype.script.RJComboBox();
             this.txt_nick_alt_05 = new Hype.Painel.RJTextBox();
             this.txt_foi_alt_05 = new Hype.Painel.RJTextBox();
             this.txt_level_alt_05 = new Hype.Painel.RJTextBox();
+            this.pl_conta_alt_04 = new System.Windows.Forms.Panel();
             this.txt_classe_alt_04 = new Hype.script.RJComboBox();
             this.txt_nick_alt_04 = new Hype.Painel.RJTextBox();
             this.txt_foi_alt_04 = new Hype.Painel.RJTextBox();
             this.txt_level_alt_04 = new Hype.Painel.RJTextBox();
+            this.pl_conta_alt_03 = new System.Windows.Forms.Panel();
             this.txt_classe_alt_03 = new Hype.script.RJComboBox();
             this.txt_nick_alt_03 = new Hype.Painel.RJTextBox();
             this.txt_foi_alt_03 = new Hype.Painel.RJTextBox();
             this.txt_level_alt_03 = new Hype.Painel.RJTextBox();
+            this.pl_conta_alt_02 = new System.Windows.Forms.Panel();
             this.txt_classe_alt_02 = new Hype.script.RJComboBox();
             this.txt_nick_alt_02 = new Hype.Painel.RJTextBox();
             this.txt_foi_alt_02 = new Hype.Painel.RJTextBox();
             this.txt_level_alt_02 = new Hype.Painel.RJTextBox();
+            this.pl_conta_alt_01 = new System.Windows.Forms.Panel();
             this.txt_classe_alt_01 = new Hype.script.RJComboBox();
+            this.lb_conta_alt = new System.Windows.Forms.Label();
             this.txt_foi_alt_01 = new Hype.Painel.RJTextBox();
             this.txt_level_alt_01 = new Hype.Painel.RJTextBox();
             this.txt_nick_alt_01 = new Hype.Painel.RJTextBox();
+            this.pl_espaco_03 = new System.Windows.Forms.Panel();
+            this.pl_conta_principal = new System.Windows.Forms.Panel();
             this.txt_quantidade_alt = new Hype.script.RJComboBox();
+            this.lb_quantas_alt = new System.Windows.Forms.Label();
             this.txt_nick = new Hype.Painel.RJTextBox();
-            this.txt_buscar = new Hype.Painel.RJTextBox();
+            this.pl_espaco_02 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pl_top.SuspendLayout();
             this.pl_buscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).BeginInit();
@@ -193,6 +193,32 @@ namespace Hype.Painel
             this.bt_buscar.TabIndex = 80;
             this.bt_buscar.TabStop = false;
             this.bt_buscar.Click += new System.EventHandler(this.bt_buscar_Click);
+            this.bt_buscar.MouseEnter += new System.EventHandler(this.bt_buscar_MouseEnter);
+            this.bt_buscar.MouseLeave += new System.EventHandler(this.bt_buscar_MouseLeave);
+            // 
+            // txt_buscar
+            // 
+            this.txt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_buscar.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_buscar.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_buscar.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.txt_buscar.BorderRadius = 15;
+            this.txt_buscar.BorderSize = 2;
+            this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_buscar.Location = new System.Drawing.Point(284, 9);
+            this.txt_buscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_buscar.Multiline = false;
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_buscar.PasswordChar = false;
+            this.txt_buscar.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_buscar.PlaceholderText = "Procurar conta principal";
+            this.txt_buscar.Size = new System.Drawing.Size(635, 31);
+            this.txt_buscar.TabIndex = 69;
+            this.txt_buscar.Texts = "";
+            this.txt_buscar.UnderlinedStyle = false;
+            this.txt_buscar._TextChanged += new System.EventHandler(this.txt_buscar__TextChanged);
             // 
             // pl_conta_excluir
             // 
@@ -275,180 +301,6 @@ namespace Hype.Painel
             this.pl_conta_alt_05.Name = "pl_conta_alt_05";
             this.pl_conta_alt_05.Size = new System.Drawing.Size(1172, 59);
             this.pl_conta_alt_05.TabIndex = 199;
-            // 
-            // pl_conta_alt_04
-            // 
-            this.pl_conta_alt_04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.pl_conta_alt_04.Controls.Add(this.txt_classe_alt_04);
-            this.pl_conta_alt_04.Controls.Add(this.txt_nick_alt_04);
-            this.pl_conta_alt_04.Controls.Add(this.txt_foi_alt_04);
-            this.pl_conta_alt_04.Controls.Add(this.txt_level_alt_04);
-            this.pl_conta_alt_04.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_conta_alt_04.Location = new System.Drawing.Point(0, 719);
-            this.pl_conta_alt_04.Name = "pl_conta_alt_04";
-            this.pl_conta_alt_04.Size = new System.Drawing.Size(1172, 59);
-            this.pl_conta_alt_04.TabIndex = 198;
-            // 
-            // pl_conta_alt_03
-            // 
-            this.pl_conta_alt_03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.pl_conta_alt_03.Controls.Add(this.txt_classe_alt_03);
-            this.pl_conta_alt_03.Controls.Add(this.txt_nick_alt_03);
-            this.pl_conta_alt_03.Controls.Add(this.txt_foi_alt_03);
-            this.pl_conta_alt_03.Controls.Add(this.txt_level_alt_03);
-            this.pl_conta_alt_03.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_conta_alt_03.Location = new System.Drawing.Point(0, 660);
-            this.pl_conta_alt_03.Name = "pl_conta_alt_03";
-            this.pl_conta_alt_03.Size = new System.Drawing.Size(1172, 59);
-            this.pl_conta_alt_03.TabIndex = 197;
-            // 
-            // pl_conta_alt_02
-            // 
-            this.pl_conta_alt_02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.pl_conta_alt_02.Controls.Add(this.txt_classe_alt_02);
-            this.pl_conta_alt_02.Controls.Add(this.txt_nick_alt_02);
-            this.pl_conta_alt_02.Controls.Add(this.txt_foi_alt_02);
-            this.pl_conta_alt_02.Controls.Add(this.txt_level_alt_02);
-            this.pl_conta_alt_02.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_conta_alt_02.Location = new System.Drawing.Point(0, 601);
-            this.pl_conta_alt_02.Name = "pl_conta_alt_02";
-            this.pl_conta_alt_02.Size = new System.Drawing.Size(1172, 59);
-            this.pl_conta_alt_02.TabIndex = 196;
-            // 
-            // pl_conta_alt_01
-            // 
-            this.pl_conta_alt_01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.pl_conta_alt_01.Controls.Add(this.txt_classe_alt_01);
-            this.pl_conta_alt_01.Controls.Add(this.lb_conta_alt);
-            this.pl_conta_alt_01.Controls.Add(this.txt_foi_alt_01);
-            this.pl_conta_alt_01.Controls.Add(this.txt_level_alt_01);
-            this.pl_conta_alt_01.Controls.Add(this.txt_nick_alt_01);
-            this.pl_conta_alt_01.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_conta_alt_01.Location = new System.Drawing.Point(0, 506);
-            this.pl_conta_alt_01.Name = "pl_conta_alt_01";
-            this.pl_conta_alt_01.Size = new System.Drawing.Size(1172, 95);
-            this.pl_conta_alt_01.TabIndex = 195;
-            // 
-            // lb_conta_alt
-            // 
-            this.lb_conta_alt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_conta_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_conta_alt.ForeColor = System.Drawing.Color.White;
-            this.lb_conta_alt.Location = new System.Drawing.Point(5, 0);
-            this.lb_conta_alt.Name = "lb_conta_alt";
-            this.lb_conta_alt.Size = new System.Drawing.Size(1167, 31);
-            this.lb_conta_alt.TabIndex = 166;
-            this.lb_conta_alt.Text = "CONTA ALT";
-            this.lb_conta_alt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pl_espaco_03
-            // 
-            this.pl_espaco_03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.pl_espaco_03.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_espaco_03.Location = new System.Drawing.Point(0, 496);
-            this.pl_espaco_03.Name = "pl_espaco_03";
-            this.pl_espaco_03.Size = new System.Drawing.Size(1172, 10);
-            this.pl_espaco_03.TabIndex = 203;
-            // 
-            // pl_conta_principal
-            // 
-            this.pl_conta_principal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.pl_conta_principal.Controls.Add(this.txt_quantidade_alt);
-            this.pl_conta_principal.Controls.Add(this.lb_quantas_alt);
-            this.pl_conta_principal.Controls.Add(this.txt_nick);
-            this.pl_conta_principal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_conta_principal.Location = new System.Drawing.Point(0, 422);
-            this.pl_conta_principal.Name = "pl_conta_principal";
-            this.pl_conta_principal.Size = new System.Drawing.Size(1172, 74);
-            this.pl_conta_principal.TabIndex = 193;
-            // 
-            // lb_quantas_alt
-            // 
-            this.lb_quantas_alt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_quantas_alt.AutoSize = true;
-            this.lb_quantas_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_quantas_alt.ForeColor = System.Drawing.Color.White;
-            this.lb_quantas_alt.Location = new System.Drawing.Point(549, 32);
-            this.lb_quantas_alt.Name = "lb_quantas_alt";
-            this.lb_quantas_alt.Size = new System.Drawing.Size(117, 17);
-            this.lb_quantas_alt.TabIndex = 172;
-            this.lb_quantas_alt.Text = "Quantas ALT ?";
-            // 
-            // pl_espaco_02
-            // 
-            this.pl_espaco_02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.pl_espaco_02.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_espaco_02.Location = new System.Drawing.Point(0, 412);
-            this.pl_espaco_02.Name = "pl_espaco_02";
-            this.pl_espaco_02.Size = new System.Drawing.Size(1172, 10);
-            this.pl_espaco_02.TabIndex = 202;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 129);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1172, 283);
-            this.panel1.TabIndex = 201;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle89.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle89.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle89.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle89.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle89.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle89.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle89.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle89;
-            this.dataGridView1.ColumnHeadersHeight = 50;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle90.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle90.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle90.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle90.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle90.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle90.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle90.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle90;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            this.dataGridView1.Location = new System.Drawing.Point(69, 6);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle91.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle91.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle91.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle91.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle91.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle91.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle91;
-            this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle92.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle92.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle92.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle92.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle92;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
-            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1026, 261);
-            this.dataGridView1.TabIndex = 67;
-            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
-            this.dataGridView1.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseEnter);
-            this.dataGridView1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseLeave);
             // 
             // txt_classe_alt_05
             // 
@@ -552,6 +404,19 @@ namespace Hype.Painel
             this.txt_level_alt_05.Enter += new System.EventHandler(this.txt_level_alt_05_Enter);
             this.txt_level_alt_05.Leave += new System.EventHandler(this.txt_level_alt_05_Leave);
             // 
+            // pl_conta_alt_04
+            // 
+            this.pl_conta_alt_04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.pl_conta_alt_04.Controls.Add(this.txt_classe_alt_04);
+            this.pl_conta_alt_04.Controls.Add(this.txt_nick_alt_04);
+            this.pl_conta_alt_04.Controls.Add(this.txt_foi_alt_04);
+            this.pl_conta_alt_04.Controls.Add(this.txt_level_alt_04);
+            this.pl_conta_alt_04.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_conta_alt_04.Location = new System.Drawing.Point(0, 719);
+            this.pl_conta_alt_04.Name = "pl_conta_alt_04";
+            this.pl_conta_alt_04.Size = new System.Drawing.Size(1172, 59);
+            this.pl_conta_alt_04.TabIndex = 198;
+            // 
             // txt_classe_alt_04
             // 
             this.txt_classe_alt_04.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -653,6 +518,19 @@ namespace Hype.Painel
             this.txt_level_alt_04.UnderlinedStyle = false;
             this.txt_level_alt_04.Enter += new System.EventHandler(this.txt_level_alt_04_Enter);
             this.txt_level_alt_04.Leave += new System.EventHandler(this.txt_level_alt_04_Leave);
+            // 
+            // pl_conta_alt_03
+            // 
+            this.pl_conta_alt_03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.pl_conta_alt_03.Controls.Add(this.txt_classe_alt_03);
+            this.pl_conta_alt_03.Controls.Add(this.txt_nick_alt_03);
+            this.pl_conta_alt_03.Controls.Add(this.txt_foi_alt_03);
+            this.pl_conta_alt_03.Controls.Add(this.txt_level_alt_03);
+            this.pl_conta_alt_03.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_conta_alt_03.Location = new System.Drawing.Point(0, 660);
+            this.pl_conta_alt_03.Name = "pl_conta_alt_03";
+            this.pl_conta_alt_03.Size = new System.Drawing.Size(1172, 59);
+            this.pl_conta_alt_03.TabIndex = 197;
             // 
             // txt_classe_alt_03
             // 
@@ -756,6 +634,19 @@ namespace Hype.Painel
             this.txt_level_alt_03.Enter += new System.EventHandler(this.txt_level_alt_03_Enter);
             this.txt_level_alt_03.Leave += new System.EventHandler(this.txt_level_alt_03_Leave);
             // 
+            // pl_conta_alt_02
+            // 
+            this.pl_conta_alt_02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.pl_conta_alt_02.Controls.Add(this.txt_classe_alt_02);
+            this.pl_conta_alt_02.Controls.Add(this.txt_nick_alt_02);
+            this.pl_conta_alt_02.Controls.Add(this.txt_foi_alt_02);
+            this.pl_conta_alt_02.Controls.Add(this.txt_level_alt_02);
+            this.pl_conta_alt_02.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_conta_alt_02.Location = new System.Drawing.Point(0, 601);
+            this.pl_conta_alt_02.Name = "pl_conta_alt_02";
+            this.pl_conta_alt_02.Size = new System.Drawing.Size(1172, 59);
+            this.pl_conta_alt_02.TabIndex = 196;
+            // 
             // txt_classe_alt_02
             // 
             this.txt_classe_alt_02.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -858,6 +749,20 @@ namespace Hype.Painel
             this.txt_level_alt_02.Enter += new System.EventHandler(this.txt_level_alt_02_Enter);
             this.txt_level_alt_02.Leave += new System.EventHandler(this.txt_level_alt_02_Leave);
             // 
+            // pl_conta_alt_01
+            // 
+            this.pl_conta_alt_01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.pl_conta_alt_01.Controls.Add(this.txt_classe_alt_01);
+            this.pl_conta_alt_01.Controls.Add(this.lb_conta_alt);
+            this.pl_conta_alt_01.Controls.Add(this.txt_foi_alt_01);
+            this.pl_conta_alt_01.Controls.Add(this.txt_level_alt_01);
+            this.pl_conta_alt_01.Controls.Add(this.txt_nick_alt_01);
+            this.pl_conta_alt_01.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_conta_alt_01.Location = new System.Drawing.Point(0, 506);
+            this.pl_conta_alt_01.Name = "pl_conta_alt_01";
+            this.pl_conta_alt_01.Size = new System.Drawing.Size(1172, 95);
+            this.pl_conta_alt_01.TabIndex = 195;
+            // 
             // txt_classe_alt_01
             // 
             this.txt_classe_alt_01.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -884,6 +789,19 @@ namespace Hype.Painel
             this.txt_classe_alt_01.TabIndex = 167;
             this.txt_classe_alt_01.Texts = "";
             this.txt_classe_alt_01.OnSelectedIndexChanged += new System.EventHandler(this.txt_classe_alt_01_OnSelectedIndexChanged);
+            // 
+            // lb_conta_alt
+            // 
+            this.lb_conta_alt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_conta_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_conta_alt.ForeColor = System.Drawing.Color.White;
+            this.lb_conta_alt.Location = new System.Drawing.Point(5, 0);
+            this.lb_conta_alt.Name = "lb_conta_alt";
+            this.lb_conta_alt.Size = new System.Drawing.Size(1167, 31);
+            this.lb_conta_alt.TabIndex = 166;
+            this.lb_conta_alt.Text = "CONTA ALT";
+            this.lb_conta_alt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_foi_alt_01
             // 
@@ -960,6 +878,27 @@ namespace Hype.Painel
             this.txt_nick_alt_01.Enter += new System.EventHandler(this.txt_nick_alt_01_Enter);
             this.txt_nick_alt_01.Leave += new System.EventHandler(this.txt_nick_alt_01_Leave);
             // 
+            // pl_espaco_03
+            // 
+            this.pl_espaco_03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_espaco_03.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_espaco_03.Location = new System.Drawing.Point(0, 496);
+            this.pl_espaco_03.Name = "pl_espaco_03";
+            this.pl_espaco_03.Size = new System.Drawing.Size(1172, 10);
+            this.pl_espaco_03.TabIndex = 203;
+            // 
+            // pl_conta_principal
+            // 
+            this.pl_conta_principal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.pl_conta_principal.Controls.Add(this.txt_quantidade_alt);
+            this.pl_conta_principal.Controls.Add(this.lb_quantas_alt);
+            this.pl_conta_principal.Controls.Add(this.txt_nick);
+            this.pl_conta_principal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_conta_principal.Location = new System.Drawing.Point(0, 422);
+            this.pl_conta_principal.Name = "pl_conta_principal";
+            this.pl_conta_principal.Size = new System.Drawing.Size(1172, 74);
+            this.pl_conta_principal.TabIndex = 193;
+            // 
             // txt_quantidade_alt
             // 
             this.txt_quantidade_alt.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -988,6 +927,18 @@ namespace Hype.Painel
             this.txt_quantidade_alt.OnSelectedIndexChanged += new System.EventHandler(this.txt_quantidade_alt_OnSelectedIndexChanged);
             this.txt_quantidade_alt.Leave += new System.EventHandler(this.txt_quantidade_alt_Leave);
             // 
+            // lb_quantas_alt
+            // 
+            this.lb_quantas_alt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_quantas_alt.AutoSize = true;
+            this.lb_quantas_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_quantas_alt.ForeColor = System.Drawing.Color.White;
+            this.lb_quantas_alt.Location = new System.Drawing.Point(549, 32);
+            this.lb_quantas_alt.Name = "lb_quantas_alt";
+            this.lb_quantas_alt.Size = new System.Drawing.Size(117, 17);
+            this.lb_quantas_alt.TabIndex = 172;
+            this.lb_quantas_alt.Text = "Quantas ALT ?";
+            // 
             // txt_nick
             // 
             this.txt_nick.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1011,29 +962,80 @@ namespace Hype.Painel
             this.txt_nick.Texts = "";
             this.txt_nick.UnderlinedStyle = false;
             // 
-            // txt_buscar
+            // pl_espaco_02
             // 
-            this.txt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_buscar.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_buscar.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_buscar.BorderFocusColor = System.Drawing.Color.Transparent;
-            this.txt_buscar.BorderRadius = 15;
-            this.txt_buscar.BorderSize = 2;
-            this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_buscar.Location = new System.Drawing.Point(284, 9);
-            this.txt_buscar.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_buscar.Multiline = false;
-            this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_buscar.PasswordChar = false;
-            this.txt_buscar.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_buscar.PlaceholderText = "Procurar conta principal";
-            this.txt_buscar.Size = new System.Drawing.Size(635, 31);
-            this.txt_buscar.TabIndex = 69;
-            this.txt_buscar.Texts = "";
-            this.txt_buscar.UnderlinedStyle = false;
-            this.txt_buscar._TextChanged += new System.EventHandler(this.txt_buscar__TextChanged);
+            this.pl_espaco_02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_espaco_02.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_espaco_02.Location = new System.Drawing.Point(0, 412);
+            this.pl_espaco_02.Name = "pl_espaco_02";
+            this.pl_espaco_02.Size = new System.Drawing.Size(1172, 10);
+            this.pl_espaco_02.TabIndex = 202;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 129);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1172, 283);
+            this.panel1.TabIndex = 201;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeight = 50;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            this.dataGridView1.Location = new System.Drawing.Point(69, 6);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1026, 261);
+            this.dataGridView1.TabIndex = 67;
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
+            this.dataGridView1.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseEnter);
+            this.dataGridView1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseLeave);
             // 
             // cadastro_alt
             // 

@@ -89,8 +89,9 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on c.ID_MEMBROS = alt.ID_ALT left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS where re.VEM_DO_CLA like @VEM_DO_CLA '%' ", database.getConnection());
-            cmd.Parameters.AddWithValue("@VEM_DO_CLA", nome_cla);
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, c.STATUS, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, alt.STATUS_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA, cl.NOME_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on alt.ID_ALT = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO left join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
+            cmd.Parameters.AddWithValue("@STATUS", "Ativo");
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -205,31 +206,6 @@ namespace Hype.Painel
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
             LimparCadastro();
-        }
-
-        private void txt_buscar__TextChanged(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(txt_buscar.Texts))
-            {
-                Buscar();
-            }
-        }
-
-        private void Buscar()
-        {
-            configdb database = new configdb();
-            database.openConnection();
-
-            MySqlCommand cmd = new MySqlCommand("select ID_MEMBROS, NICK from hypedb.cadastro_membro where NICK like @nick '%' ", database.getConnection());
-            cmd.Parameters.AddWithValue("@nick", txt_buscar.Texts);
-
-
-            database.closeConnection();
-        }
-
-        private void bt_buscar_Click(object sender, EventArgs e)
-        {
-            Buscar();
         }
         #endregion
 
@@ -1333,6 +1309,52 @@ namespace Hype.Painel
             CampoTextoAltHabilitado(this.pl_conta_alt_05.Controls);
         }
 
+        #endregion
+
+        #region BUSCAR
+        private void txt_buscar__TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txt_buscar.Texts))
+            {
+                Buscar();
+            }
+        }
+
+        private void Buscar()
+        {
+            configdb database = new configdb();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, c.STATUS, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, alt.STATUS_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA, cl.NOME_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on alt.ID_ALT = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO left join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' and c.NICK like @NICK '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@NICK", txt_buscar.Texts);
+            cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
+            cmd.Parameters.AddWithValue("@STATUS", "Ativo");
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+            }
+
+            database.closeConnection();
+        }
+
+        private void bt_buscar_Click(object sender, EventArgs e)
+        {
+            Buscar();
+        }
+
+        private void bt_buscar_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void bt_buscar_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+        }
         #endregion
 
         private void cadastro_alt_Load(object sender, EventArgs e)
