@@ -4,7 +4,6 @@ using Hype.script;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Hype.Painel.Home;
-using Hype.Painel.Cadastro;
 
 namespace Hype.Painel
 {
@@ -13,6 +12,7 @@ namespace Hype.Painel
         public static cadastro_membros Instance;
 
         // DADOS
+        private string id_login = login.Instance.id_login;
         private string id_cla = home.Instance.id_cla;
 
         // VARIFICAR SE TEM ALT 
@@ -62,16 +62,18 @@ namespace Hype.Painel
         // CADASTRO NOVO CLÃ
         private void NovoMembro()
         {
+            // VERIFICA SE VAI CRIAR UM NOVO CLÃ
             if (_novoCla)
             {
                 configdb database = new configdb();
                 database.openConnection();
 
                 // INSERT TABELA CADASTRO CLÃ
-                MySqlCommand objCmdCla = new MySqlCommand("insert into hypedb.cadastro_cla (id_cla, nick_lider, nome_cla) values (null, ?, ?)", database.getConnection());
+                MySqlCommand objCmdCla = new MySqlCommand("insert into hypedb.cadastro_cla (id_cla, nick_lider, nome_cla, id_login) values (null, ?, ?, ?)", database.getConnection());
 
                 objCmdCla.Parameters.Add("@nick_lider", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                 objCmdCla.Parameters.Add("@nome_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
+                objCmdCla.Parameters.Add("@id_login", MySqlDbType.Int32).Value = id_login; // LOGIN
 
                 objCmdCla.ExecuteNonQuery();
                 long idCla = objCmdCla.LastInsertedId;
@@ -2310,6 +2312,7 @@ namespace Hype.Painel
             bt_voltar.Visible = false;
         }
         #endregion
+
 
         // CARREGAR CLÃ LOGADO 
         private void Dados()

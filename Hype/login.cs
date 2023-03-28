@@ -12,7 +12,10 @@ namespace Hype
     {
         public static login Instance;
 
-        // NOVO CADASTRO
+        // DADOS
+        public string id_login;
+
+        // NOVO CADASTRO / HOME
         public bool _novoCad = false;
 
         public login()
@@ -55,22 +58,31 @@ namespace Hype
                 configdb database = new configdb();
                 database.openConnection();
 
-                // INSERT TABELA CADASTRO MEMBROS
-                MySqlCommand objCmdLogin = new MySqlCommand("select usuario, senha from hypedb.login where usuario=@usuario and senha=@senha ", database.getConnection());
-
+                // SELECT TABELA LOGIN
+                MySqlCommand objCmdLogin = new MySqlCommand("select id_login, usuario, senha from hypedb.login where usuario=@usuario and senha=@senha ", database.getConnection());
                 objCmdLogin.Parameters.AddWithValue("@usuario",txt_login.Texts);
                 objCmdLogin.Parameters.AddWithValue("@senha", txt_senha.Texts);
-                
+
                 var login = objCmdLogin.ExecuteScalar();
 
                 if(login != null)
                 {
+                    // ABRIR HOME
+                    _novoCad = false;
+
+                    // COLETA O ID LOGADO
+                    MySqlDataReader dr = objCmdLogin.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        id_login = dr["id_login"].ToString();
+                    }
+
                     // ESCONDER O LOGIN 
                     this.Hide();
                     new cla().Show();
 
                     // NOME DO LOGIN 
-                    cla.Instance.NomeLogin(txt_login.Texts);                                      
+                    cla.Instance.NomeLogin(txt_login.Texts);
                 }
                 else
                 {
@@ -92,11 +104,9 @@ namespace Hype
         // NOVO CADASTRO
         private void lb_novo_cad_Click(object sender, EventArgs e)
         {
+            // ABRIR CADASTRO_LOGIN
             _novoCad = true;
-
-            this.Hide();
             new cla().ShowDialog();
-            this.Close();
         }
 
         private void lb_novo_cad_MouseEnter(object sender, EventArgs e)

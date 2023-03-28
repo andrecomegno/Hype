@@ -8,11 +8,16 @@ namespace Hype.Painel.Cadastro
 {
     public partial class cadastro_login : UserControl
     {
-        private bool _novoCad = false;
+        public static cadastro_login Instance;
+
+        // ID`S
+        public string id_loginCad;
 
         public cadastro_login()
         {
             InitializeComponent();
+
+            Instance = this;
         }
 
         private void Alertas()
@@ -51,7 +56,19 @@ namespace Hype.Painel.Cadastro
 
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Tem Certeza Que Deseja Sair ?", "CANCELAR", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dr = MessageBox.Show("Tem Certeza Que Deseja Sair ?", "CANCELAR", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    cla.Instance.Close();
+                    break;
+                case DialogResult.No:
+
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void bt_salvar_Click(object sender, EventArgs e)
@@ -73,7 +90,7 @@ namespace Hype.Painel.Cadastro
                 objCmdLogin.Parameters.Add("@email", MySqlDbType.VarChar, 256).Value = txt_email.Texts;
                 objCmdLogin.Parameters.Add("@senha", MySqlDbType.VarChar, 256).Value = txt_senha.Texts;
 
-                objCmdLogin.ExecuteNonQuery();
+                objCmdLogin.ExecuteNonQuery();              
 
                 MessageBox.Show("Novo Login Criado Com Sucesso !", "NOVO LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -85,22 +102,9 @@ namespace Hype.Painel.Cadastro
             }
             finally
             {
-                LimparCampo(pl_login.Controls);
-
-                cla.Instance.CadastroLogin(_novoCad);
+                // DEPOIS DO CADASTRO FECHAR A JANELA, PARA FAZER O LOGIN 
+                cla.Instance.Close();
             }
         }
-
-        private void LimparCampo(Control.ControlCollection control)
-        {
-            foreach (Control c in control)
-            {
-                if (c is RJTextBox)
-                {
-                    ((RJTextBox)(c)).Texts = string.Empty;
-                }
-            }
-        }
-
     }
 }

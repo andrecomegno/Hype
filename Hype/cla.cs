@@ -76,7 +76,7 @@ namespace Hype
                 bt_menu_conta.Visible = false;
 
                 cadastro_login uc = new cadastro_login();
-                addControl(uc);                               
+                addControl(uc);                
             }
             else
             {
@@ -304,7 +304,7 @@ namespace Hype
             }
             else
             {
-                pl_conta.Visible = true;
+                pl_conta.Visible = true;                
             }
         }
         #endregion
@@ -312,7 +312,18 @@ namespace Hype
         #region MENU JANELA
         private void bt_fechar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dr = MessageBox.Show("Tem Certeza Que Deseja Sair ?", "CANCELAR", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    Application.Exit();
+                    break;
+                case DialogResult.No:
+                    break;
+                default:
+                    break;
+            }            
         }
 
         private void bt_minimizar_Click(object sender, EventArgs e)
