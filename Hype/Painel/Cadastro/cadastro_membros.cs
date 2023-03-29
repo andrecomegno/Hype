@@ -26,7 +26,7 @@ namespace Hype.Painel
             InitializeComponent();
             Instance = this;
 
-            NovoCla(_novoCla);
+            NovoCla(_novoCla);            
         }
 
         // QUANTIDADE DE ALTS
@@ -132,12 +132,14 @@ namespace Hype.Painel
                 database.openConnection();
 
                 // INSERT TABELA CADASTRO CLÃ
-                MySqlCommand objCmdCla = new MySqlCommand("insert into hypedb.cadastro_cla (id_cla, nick_lider, nome_cla) values (null, ?, ?)", database.getConnection());
+                MySqlCommand objCmdCla = new MySqlCommand("insert into hypedb.cadastro_cla (id_cla, nick_lider, nome_cla, id_login) values (null, ?, ?, ?)", database.getConnection());
 
                 objCmdCla.Parameters.Add("@nick_lider", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                 objCmdCla.Parameters.Add("@nome_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
+                objCmdCla.Parameters.Add("@id_login", MySqlDbType.Int32).Value = id_login; // LOGIN
 
                 objCmdCla.ExecuteNonQuery();
+                long idCla = objCmdCla.LastInsertedId;
 
                 // INSERT TABELA RECRUTAMENTO
                 MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_recrutamento, vem_do_cla, foi_para_cla, id_cla) values (null, ?, ?, ?, ?)", database.getConnection());
@@ -145,7 +147,7 @@ namespace Hype.Painel
                 objCmdRecrutamento.Parameters.Add("@data_recrutamento", MySqlDbType.Date).Value = DateTime.Now;
                 objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
                 objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
-                objCmdRecrutamento.Parameters.Add("@id_cla", MySqlDbType.Int32).Value = id_cla;
+                objCmdRecrutamento.Parameters.Add("@id_cla", MySqlDbType.Int32).Value = idCla;
 
                 objCmdRecrutamento.ExecuteNonQuery();
                 long idRecruta = objCmdRecrutamento.LastInsertedId;
@@ -207,12 +209,14 @@ namespace Hype.Painel
                 database.openConnection();
 
                 // INSERT TABELA CADASTRO CLÃ
-                MySqlCommand objCmdCla = new MySqlCommand("insert into hypedb.cadastro_cla (id_cla, nick_lider, nome_cla) values (null, ?, ?)", database.getConnection());
+                MySqlCommand objCmdCla = new MySqlCommand("insert into hypedb.cadastro_cla (id_cla, nick_lider, nome_cla, id_login) values (null, ?, ?, ?)", database.getConnection());
 
                 objCmdCla.Parameters.Add("@nick_lider", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                 objCmdCla.Parameters.Add("@nome_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
+                objCmdCla.Parameters.Add("@id_login", MySqlDbType.Int32).Value = id_login; // LOGIN
 
                 objCmdCla.ExecuteNonQuery();
+                long idCla = objCmdCla.LastInsertedId;
 
                 // INSERT TABELA RECRUTAMENTO
                 MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_recrutamento, vem_do_cla, foi_para_cla, id_cla) values (null, ?, ?, ?, ?)", database.getConnection());
@@ -220,7 +224,7 @@ namespace Hype.Painel
                 objCmdRecrutamento.Parameters.Add("@data_recrutamento", MySqlDbType.Date).Value = DateTime.Now;
                 objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
                 objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
-                objCmdRecrutamento.Parameters.Add("@id_cla", MySqlDbType.Int32).Value = id_cla;
+                objCmdRecrutamento.Parameters.Add("@id_cla", MySqlDbType.Int32).Value = idCla;
 
                 objCmdRecrutamento.ExecuteNonQuery();
                 long idRecruta = objCmdRecrutamento.LastInsertedId;
@@ -296,12 +300,14 @@ namespace Hype.Painel
                 database.openConnection();
 
                 // INSERT TABELA CADASTRO CLÃ
-                MySqlCommand objCmdCla = new MySqlCommand("insert into hypedb.cadastro_cla (id_cla, nick_lider, nome_cla) values (null, ?, ?)", database.getConnection());
+                MySqlCommand objCmdCla = new MySqlCommand("insert into hypedb.cadastro_cla (id_cla, nick_lider, nome_cla, id_login) values (null, ?, ?, ?)", database.getConnection());
 
                 objCmdCla.Parameters.Add("@nick_lider", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                 objCmdCla.Parameters.Add("@nome_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
+                objCmdCla.Parameters.Add("@id_login", MySqlDbType.Int32).Value = id_login; // LOGIN
 
                 objCmdCla.ExecuteNonQuery();
+                long idCla = objCmdCla.LastInsertedId;
 
                 // INSERT TABELA RECRUTAMENTO
                 MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_recrutamento, vem_do_cla, foi_para_cla, id_cla) values (null, ?, ?, ?, ?)", database.getConnection());
@@ -309,7 +315,7 @@ namespace Hype.Painel
                 objCmdRecrutamento.Parameters.Add("@data_recrutamento", MySqlDbType.Date).Value = DateTime.Now;
                 objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
                 objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
-                objCmdRecrutamento.Parameters.Add("@id_cla", MySqlDbType.Int32).Value = id_cla;
+                objCmdRecrutamento.Parameters.Add("@id_cla", MySqlDbType.Int32).Value = idCla;
 
                 objCmdRecrutamento.ExecuteNonQuery();
                 long idRecruta = objCmdRecrutamento.LastInsertedId;
@@ -399,12 +405,14 @@ namespace Hype.Painel
                 database.openConnection();
 
                 // INSERT TABELA CADASTRO CLÃ
-                MySqlCommand objCmdCla = new MySqlCommand("insert into hypedb.cadastro_cla (id_cla, nick_lider, nome_cla) values (null, ?, ?)", database.getConnection());
+                MySqlCommand objCmdCla = new MySqlCommand("insert into hypedb.cadastro_cla (id_cla, nick_lider, nome_cla, id_login) values (null, ?, ?, ?)", database.getConnection());
 
                 objCmdCla.Parameters.Add("@nick_lider", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                 objCmdCla.Parameters.Add("@nome_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
+                objCmdCla.Parameters.Add("@id_login", MySqlDbType.Int32).Value = id_login; // LOGIN
 
                 objCmdCla.ExecuteNonQuery();
+                long idCla = objCmdCla.LastInsertedId;
 
                 // INSERT TABELA RECRUTAMENTO
                 MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_recrutamento, vem_do_cla, foi_para_cla, id_cla) values (null, ?, ?, ?, ?)", database.getConnection());
@@ -412,7 +420,7 @@ namespace Hype.Painel
                 objCmdRecrutamento.Parameters.Add("@data_recrutamento", MySqlDbType.Date).Value = DateTime.Now;
                 objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
                 objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
-                objCmdRecrutamento.Parameters.Add("@id_cla", MySqlDbType.Int32).Value = id_cla;
+                objCmdRecrutamento.Parameters.Add("@id_cla", MySqlDbType.Int32).Value = idCla;
 
                 objCmdRecrutamento.ExecuteNonQuery();
                 long idRecruta = objCmdRecrutamento.LastInsertedId;
@@ -516,12 +524,14 @@ namespace Hype.Painel
                 database.openConnection();
 
                 // INSERT TABELA CADASTRO CLÃ
-                MySqlCommand objCmdCla = new MySqlCommand("insert into hypedb.cadastro_cla (id_cla, nick_lider, nome_cla) values (null, ?, ?)", database.getConnection());
+                MySqlCommand objCmdCla = new MySqlCommand("insert into hypedb.cadastro_cla (id_cla, nick_lider, nome_cla, id_login) values (null, ?, ?, ?)", database.getConnection());
 
                 objCmdCla.Parameters.Add("@nick_lider", MySqlDbType.VarChar, 256).Value = txt_nick.Texts;
                 objCmdCla.Parameters.Add("@nome_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
+                objCmdCla.Parameters.Add("@id_login", MySqlDbType.Int32).Value = id_login; // LOGIN
 
                 objCmdCla.ExecuteNonQuery();
+                long idCla = objCmdCla.LastInsertedId;
 
                 // INSERT TABELA RECRUTAMENTO
                 MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_recrutamento, vem_do_cla, foi_para_cla, id_cla) values (null, ?, ?, ?, ?)", database.getConnection());
@@ -529,7 +539,7 @@ namespace Hype.Painel
                 objCmdRecrutamento.Parameters.Add("@data_recrutamento", MySqlDbType.Date).Value = DateTime.Now;
                 objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
                 objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
-                objCmdRecrutamento.Parameters.Add("@id_cla", MySqlDbType.Int32).Value = id_cla;
+                objCmdRecrutamento.Parameters.Add("@id_cla", MySqlDbType.Int32).Value = idCla;
 
                 objCmdRecrutamento.ExecuteNonQuery();
                 long idRecruta = objCmdRecrutamento.LastInsertedId;

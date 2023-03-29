@@ -13,6 +13,9 @@ namespace Hype.Painel.Home
     {
         public static home Instance;
 
+        // ID`S
+        private string id_login = login.Instance.id_login;
+
         // COLETAR DADOS
         public string id_cla;
         public string nick_lider;
@@ -27,7 +30,7 @@ namespace Hype.Painel.Home
 
             Instance = this;
 
-            BotoesCla(pl_nome_clas.Controls);
+            BotoesCla(pl_nome_clas.Controls);            
         }
 
         #region HABILITAR CLAS
@@ -118,7 +121,7 @@ namespace Hype.Painel.Home
 
         private void Cla_01()
         {
-            bt_cla_01.Text = dataGridView1[2, 0].Value.ToString();
+            bt_cla_01.Text = dataGridView1[1, 0].Value.ToString();
 
             bt_cla_01.Enabled = true;
             bt_cla_01.IconChar = IconChar.Edit;
@@ -372,14 +375,15 @@ namespace Hype.Painel.Home
         }
 
         #region TABELA
-        private void TabelaRecrutamento()
+        // COMPARAR OS ID`S PARA CADA CONTA DE LOGIN CRIADA 
+        private void TabelaCla()
         {
             configdb database = new configdb();
             database.openConnection();
 
-            // TABELA RECRUTAMENTO
-            MySqlCommand cmd = new MySqlCommand("select id_cla, nick_lider, nome_cla from hypedb.cadastro_cla", database.getConnection());
-
+            // TABELA CADASTRO CLA
+            MySqlCommand cmd = new MySqlCommand("select nick_lider, nome_cla, id_login from hypedb.cadastro_cla where id_login = '"+ id_login +"' ", database.getConnection());
+            
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
                 DataTable dt = new DataTable();
@@ -388,7 +392,6 @@ namespace Hype.Painel.Home
                 dataGridView1.DataSource = dt;
             }
 
-            cmd.ExecuteNonQuery();
             database.closeConnection();
 
             HabilitarClas();
@@ -396,33 +399,40 @@ namespace Hype.Painel.Home
 
         private void Dados()
         {
-            DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+            // BANCO DE DADOS
+            configdb database = new configdb();
+            database.openConnection();
 
-            id_cla = dr["ID_CLA"].ToString();
+            // TABELA CADASTRO CLA
+            MySqlCommand objCmdLogin = new MySqlCommand("select id_cla, nick_lider, nome_cla, id_login from hypedb.cadastro_cla ", database.getConnection());            
 
-            nick_lider = dr["NICK_LIDER"].ToString();
-            nome_cla = dr["NOME_CLA"].ToString();
+            // COLETA O ID_CLA DA TABELA CADASTRO_CLA
+            MySqlDataReader dr = objCmdLogin.ExecuteReader();
+            while (dr.Read())
+            {
+                id_cla = dr["id_cla"].ToString();
+            }
+
+            database.closeConnection();
         }
 
         #endregion
 
         private void home_Load(object sender, EventArgs e)
         {
-            TabelaRecrutamento();
+            TabelaCla();
+
+            Dados();
         }
 
         private void bt_cla_01_Click(object sender, EventArgs e)
         {
-            Dados();
-
             nome_cla = bt_cla_01.Text;
             cla.Instance.btDashboard();
         }
 
         private void bt_cla_02_Click(object sender, EventArgs e)
         {
-            Dados();
-
             nome_cla = bt_cla_02.Text;
             cla.Instance.btDashboard();
         }
