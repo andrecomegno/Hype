@@ -26,7 +26,7 @@ namespace Hype.Painel
             InitializeComponent();
             Instance = this;
 
-            NovoCla(_novoCla);            
+            NovoCla(_novoCla);
         }
 
         // QUANTIDADE DE ALTS
@@ -1147,6 +1147,14 @@ namespace Hype.Painel
             catch (Exception erro)
             {
                 MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                if (_novoCla)
+                {
+                    home uc = new home();
+                    cla.Instance.addControl(uc);
+                }
             }
         }
 

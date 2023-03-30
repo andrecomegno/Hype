@@ -12,17 +12,17 @@ namespace Hype.Painel
         public static alts Instance;
 
         // ID`S
-        public string id_alt = membros.Instance.id_alt;
         public string id_membro = membros.Instance.id_membros;
 
         // COLETAR DADOS
-        public string data_entrada = "";
-        public string nick_principal = "";
-        public string nick_alt = "";
-        public string level_alt = "";
-        public string poder_alt = "";
-        public string classe_alt = "";
-        public string cla_alt = "";
+        public string id_alt = string.Empty;
+        public string data_entrada = string.Empty;
+        public string nick_principal = string.Empty;
+        public string nick_alt = string.Empty;
+        public string level_alt = string.Empty;
+        public string poder_alt = string.Empty;
+        public string classe_alt = string.Empty;
+        public string cla_alt = string.Empty;
 
         // SELECIONAR CLA 
         public string nome_cla = home.Instance.nome_cla;
@@ -49,7 +49,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, alt.STATUS_ALT, cl.NOME_CLA, alt.ID_MEMBROS from hypedb.cadastro_membro c join hypedb.cadastro_alt alt on alt.ID_MEMBROS = c.ID_MEMBROS join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and alt.STATUS_ALT like @STATUS_ALT '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, alt.STATUS_ALT, cl.NOME_CLA, alt.ID_MEMBROS from hypedb.cadastro_membro c join hypedb.cadastro_alt alt on alt.ID_MEMBROS = c.ID_MEMBROS join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and alt.STATUS_ALT like @STATUS_ALT '%' ", database.getConnection());
             cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
             cmd.Parameters.AddWithValue("@STATUS_ALT", "Ativo");
 
@@ -162,7 +162,7 @@ namespace Hype.Painel
         }
         #endregion       
 
-        #region CAMPO DE BUSCA
+        #region BUSCAR
         private void bt_buscar_Click(object sender, EventArgs e)
         {
             Buscar();

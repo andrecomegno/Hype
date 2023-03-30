@@ -29,16 +29,18 @@ namespace Hype
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lb_login = new System.Windows.Forms.Label();
             this.lb_nome_do_cla = new System.Windows.Forms.Label();
             this.pl_conta = new System.Windows.Forms.Panel();
             this.bt_flutuante_config = new FontAwesome.Sharp.IconButton();
             this.bt_flutuante_deslogar = new FontAwesome.Sharp.IconButton();
+            this.foto_perfil = new Hype.script.RJCircularPictureBox();
             this.pl_top = new System.Windows.Forms.Panel();
+            this.foto_perfil_cla = new Hype.script.RJCircularPictureBox();
             this.bt_minimizar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bt_menu_conta = new FontAwesome.Sharp.IconButton();
@@ -57,18 +59,16 @@ namespace Hype
             this.bt_configuracao = new FontAwesome.Sharp.IconButton();
             this.bt_home = new FontAwesome.Sharp.IconButton();
             this.pl_menu = new System.Windows.Forms.Panel();
-            this.foto_perfil = new Hype.script.RJCircularPictureBox();
-            this.foto_perfil_cla = new Hype.script.RJCircularPictureBox();
             this.pl_conta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).BeginInit();
             this.pl_top.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil_cla)).BeginInit();
             this.panel1.SuspendLayout();
             this.pl_centro.SuspendLayout();
             this.pl_conteudo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pl_conf.SuspendLayout();
             this.pl_menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil_cla)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_login
@@ -162,6 +162,25 @@ namespace Hype
             this.bt_flutuante_deslogar.UseVisualStyleBackColor = false;
             this.bt_flutuante_deslogar.Click += new System.EventHandler(this.bt_flutuante_deslogar_Click);
             // 
+            // foto_perfil
+            // 
+            this.foto_perfil.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.foto_perfil.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.foto_perfil.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.foto_perfil.BorderColor2 = System.Drawing.Color.HotPink;
+            this.foto_perfil.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.foto_perfil.BorderSize = 2;
+            this.foto_perfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.foto_perfil.GradientAngle = 50F;
+            this.foto_perfil.Image = global::Hype.Properties.Resources.HYPE_03;
+            this.foto_perfil.Location = new System.Drawing.Point(65, 17);
+            this.foto_perfil.Name = "foto_perfil";
+            this.foto_perfil.Size = new System.Drawing.Size(80, 80);
+            this.foto_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.foto_perfil.TabIndex = 52;
+            this.foto_perfil.TabStop = false;
+            this.foto_perfil.Click += new System.EventHandler(this.foto_perfil_Click);
+            // 
             // pl_top
             // 
             this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
@@ -177,6 +196,23 @@ namespace Hype
             this.pl_top.Size = new System.Drawing.Size(1295, 63);
             this.pl_top.TabIndex = 0;
             this.pl_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pl_top_MouseDown);
+            // 
+            // foto_perfil_cla
+            // 
+            this.foto_perfil_cla.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.foto_perfil_cla.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.foto_perfil_cla.BorderColor2 = System.Drawing.Color.HotPink;
+            this.foto_perfil_cla.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.foto_perfil_cla.BorderSize = 2;
+            this.foto_perfil_cla.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.foto_perfil_cla.GradientAngle = 50F;
+            this.foto_perfil_cla.Image = global::Hype.Properties.Resources.HYPE_03;
+            this.foto_perfil_cla.Location = new System.Drawing.Point(8, 4);
+            this.foto_perfil_cla.Name = "foto_perfil_cla";
+            this.foto_perfil_cla.Size = new System.Drawing.Size(52, 52);
+            this.foto_perfil_cla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.foto_perfil_cla.TabIndex = 0;
+            this.foto_perfil_cla.TabStop = false;
             // 
             // bt_minimizar
             // 
@@ -290,43 +326,43 @@ namespace Hype
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.ColumnHeadersHeight = 50;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
             this.dataGridView1.Location = new System.Drawing.Point(-56, 113);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -559,42 +595,6 @@ namespace Hype
             this.pl_menu.Size = new System.Drawing.Size(210, 720);
             this.pl_menu.TabIndex = 51;
             // 
-            // foto_perfil
-            // 
-            this.foto_perfil.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.foto_perfil.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.foto_perfil.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.foto_perfil.BorderColor2 = System.Drawing.Color.HotPink;
-            this.foto_perfil.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.foto_perfil.BorderSize = 2;
-            this.foto_perfil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.foto_perfil.GradientAngle = 50F;
-            this.foto_perfil.Image = global::Hype.Properties.Resources.HYPE_03;
-            this.foto_perfil.Location = new System.Drawing.Point(65, 17);
-            this.foto_perfil.Name = "foto_perfil";
-            this.foto_perfil.Size = new System.Drawing.Size(80, 80);
-            this.foto_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.foto_perfil.TabIndex = 52;
-            this.foto_perfil.TabStop = false;
-            this.foto_perfil.Click += new System.EventHandler(this.foto_perfil_Click);
-            // 
-            // foto_perfil_cla
-            // 
-            this.foto_perfil_cla.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.foto_perfil_cla.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.foto_perfil_cla.BorderColor2 = System.Drawing.Color.HotPink;
-            this.foto_perfil_cla.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.foto_perfil_cla.BorderSize = 2;
-            this.foto_perfil_cla.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.foto_perfil_cla.GradientAngle = 50F;
-            this.foto_perfil_cla.Image = global::Hype.Properties.Resources.HYPE_03;
-            this.foto_perfil_cla.Location = new System.Drawing.Point(8, 4);
-            this.foto_perfil_cla.Name = "foto_perfil_cla";
-            this.foto_perfil_cla.Size = new System.Drawing.Size(52, 52);
-            this.foto_perfil_cla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.foto_perfil_cla.TabIndex = 0;
-            this.foto_perfil_cla.TabStop = false;
-            // 
             // cla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,20 +608,19 @@ namespace Hype
             this.Controls.Add(this.pl_top);
             this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "cla";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.cla_Load);
             this.pl_conta.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).EndInit();
             this.pl_top.ResumeLayout(false);
             this.pl_top.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil_cla)).EndInit();
             this.panel1.ResumeLayout(false);
             this.pl_centro.ResumeLayout(false);
             this.pl_conteudo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pl_conf.ResumeLayout(false);
             this.pl_menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_perfil_cla)).EndInit();
             this.ResumeLayout(false);
 
         }

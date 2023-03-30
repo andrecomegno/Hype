@@ -33,7 +33,7 @@ namespace Hype.Painel.Home
             BotoesCla(pl_nome_clas.Controls);            
         }
 
-        #region HABILITAR CLAS
+        #region LISTA CLÃ
         public void HabilitarClas()
         {
             switch (dataGridView1.Rows.Count)
@@ -103,21 +103,6 @@ namespace Hype.Painel.Home
                     break;
             }
         }
-        #endregion
-
-        #region BOTÕES CLÃ
-        private void bt_novo_cla_Click(object sender, EventArgs e)
-        {
-            NovoCla();
-        }
-
-        public void NovoCla()
-        {
-            cadastro_cla uc = new cadastro_cla();
-            cla.Instance.addControl(uc);
-
-            _novoCla = true;
-        }
 
         private void Cla_01()
         {
@@ -125,7 +110,7 @@ namespace Hype.Painel.Home
 
             bt_cla_01.Enabled = true;
             bt_cla_01.IconChar = IconChar.Edit;
-            bt_cla_01.BackColor = Color.DarkGoldenrod;
+            bt_cla_01.BackColor = Color.DarkGoldenrod;            
         }
 
         private void Cla_02()
@@ -362,18 +347,6 @@ namespace Hype.Painel.Home
         }
         #endregion
 
-        private void BotoesCla(Control.ControlCollection control)
-        {
-            foreach (Control c in control)
-            {
-                if (c is IconButton)
-                {
-                    ((IconButton)(c)).Enabled = false;
-                    ((IconButton)(c)).IconChar = IconChar.AccessibleIcon; 
-                }
-            }
-        }
-
         #region TABELA
         // COMPARAR OS ID`S PARA CADA CONTA DE LOGIN CRIADA 
         private void TabelaCla()
@@ -404,7 +377,7 @@ namespace Hype.Painel.Home
             database.openConnection();
 
             // TABELA CADASTRO CLA
-            MySqlCommand objCmdLogin = new MySqlCommand("select id_cla, nick_lider, nome_cla, id_login from hypedb.cadastro_cla ", database.getConnection());            
+            MySqlCommand objCmdLogin = new MySqlCommand("select id_cla, nick_lider, nome_cla, id_login from hypedb.cadastro_cla  where id_login = '" + id_login + "' ", database.getConnection());            
 
             // COLETA O ID_CLA DA TABELA CADASTRO_CLA
             MySqlDataReader dr = objCmdLogin.ExecuteReader();
@@ -415,16 +388,22 @@ namespace Hype.Painel.Home
 
             database.closeConnection();
         }
-
         #endregion
 
-        private void home_Load(object sender, EventArgs e)
+        #region BOTÕES
+        private void bt_novo_cla_Click(object sender, EventArgs e)
         {
-            TabelaCla();
-
-            Dados();
+            NovoCla();
         }
 
+        public void NovoCla()
+        {
+            cadastro_cla uc = new cadastro_cla();
+            cla.Instance.addControl(uc);
+
+            _novoCla = true;
+        }
+        
         private void bt_cla_01_Click(object sender, EventArgs e)
         {
             nome_cla = bt_cla_01.Text;
@@ -435,6 +414,26 @@ namespace Hype.Painel.Home
         {
             nome_cla = bt_cla_02.Text;
             cla.Instance.btDashboard();
+        }
+
+        private void BotoesCla(Control.ControlCollection control)
+        {
+            foreach (Control c in control)
+            {
+                if (c is IconButton)
+                {
+                    ((IconButton)(c)).Enabled = false;
+                    ((IconButton)(c)).IconChar = IconChar.AccessibleIcon;
+                }
+            }
+        }
+        #endregion
+
+        private void home_Load(object sender, EventArgs e)
+        {
+            TabelaCla();
+
+            Dados();
         }
     }
 }

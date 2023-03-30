@@ -14,6 +14,8 @@ namespace Hype
 
         // DADOS
         public string id_login;
+        public string usuario;
+        public string email;
 
         // NOVO CADASTRO / HOME
         public bool _novoCad = false;
@@ -59,7 +61,7 @@ namespace Hype
                 database.openConnection();
 
                 // SELECT TABELA LOGIN
-                MySqlCommand objCmdLogin = new MySqlCommand("select id_login, usuario, senha from hypedb.login where usuario=@usuario and senha=@senha ", database.getConnection());
+                MySqlCommand objCmdLogin = new MySqlCommand("select id_login, usuario, email, senha from hypedb.login where usuario=@usuario and senha=@senha ", database.getConnection());
                 objCmdLogin.Parameters.AddWithValue("@usuario",txt_login.Texts);
                 objCmdLogin.Parameters.AddWithValue("@senha", txt_senha.Texts);
 
@@ -75,6 +77,8 @@ namespace Hype
                     while (dr.Read())
                     {
                         id_login = dr["id_login"].ToString();
+                        usuario = dr["usuario"].ToString();
+                        email = dr["email"].ToString();
                     }
 
                     // ESCONDER O LOGIN 

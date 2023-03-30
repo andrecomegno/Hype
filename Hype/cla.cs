@@ -21,6 +21,8 @@ namespace Hype
         // NOVO CADASTRO
         public bool _novoCad = login.Instance._novoCad;
 
+        bool menu_recolher;
+
         public cla()
         {
             InitializeComponent();
@@ -202,7 +204,7 @@ namespace Hype
         // BOTÃO RECOLHER SETA
         private void bt_menu_recolher_Click(object sender, EventArgs e)
         {
-            MenuPrincipal();
+            MenuPrincipal(menu_recolher = !menu_recolher);
         }
 
         // BOTÃO CONFIGURAÇÃO
@@ -218,16 +220,16 @@ namespace Hype
         }
 
         // RECOLHER MENU LATERAL
-        private void MenuPrincipal()
+        private void MenuPrincipal(bool menu)
         {
-            if (this.pl_menu.Width > 200)
+            if (menu)
             {
                 pl_menu.Width = 60;
                 lb_login.Visible = false;
 
                 bt_inicio.Visible = false;
                 bt_menu_recolher.Dock = DockStyle.Left;
-                bt_menu_recolher.Width = 60;
+                bt_menu_recolher.Width = 60;                
 
                 bt_menu_recolher.IconChar = IconChar.AngleRight;
 
@@ -297,15 +299,7 @@ namespace Hype
         private void MenuConta()
         {
             this.pl_conta.BringToFront();
-
-            if (pl_conta.Visible == true)
-            {
-                pl_conta.Visible = false;
-            }
-            else
-            {
-                pl_conta.Visible = true;                
-            }
+            pl_conta.Visible = !pl_conta.Visible;
         }
         #endregion
 
@@ -335,11 +329,13 @@ namespace Hype
         {
             if (WindowState == FormWindowState.Normal)
             {
-                WindowState = FormWindowState.Maximized;                
+                WindowState = FormWindowState.Maximized;
+                MenuPrincipal(menu_recolher);
             }
             else
             {
                 WindowState = FormWindowState.Normal;
+                MenuPrincipal(!menu_recolher);
             }                
         }
 

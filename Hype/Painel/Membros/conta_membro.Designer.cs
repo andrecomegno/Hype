@@ -29,9 +29,9 @@ namespace Hype.Painel
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pl_conta_principal = new System.Windows.Forms.Panel();
             this.pl_botao = new System.Windows.Forms.Panel();
             this.bt_cancelar = new System.Windows.Forms.Button();
@@ -44,6 +44,9 @@ namespace Hype.Painel
             this.lb_vem_cla_rema = new System.Windows.Forms.Label();
             this.bt_cancelar_rema = new System.Windows.Forms.Button();
             this.lb_seta = new System.Windows.Forms.Label();
+            this.txt_remanejamento = new Hype.Painel.RJTextBox();
+            this.txt_esta_cla_rema = new Hype.Painel.RJTextBox();
+            this.txt_vem_cla_rema = new Hype.Painel.RJTextBox();
             this.pl_titulo_rema = new System.Windows.Forms.Panel();
             this.lb_remanejamento = new System.Windows.Forms.Label();
             this.pl_espaco_03 = new System.Windows.Forms.Panel();
@@ -52,6 +55,8 @@ namespace Hype.Painel
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pl_pro_adicionar = new System.Windows.Forms.Panel();
             this.bt_adicionar_prog = new System.Windows.Forms.Button();
+            this.txt_novo_level = new Hype.Painel.RJTextBox();
+            this.txt_novo_poder = new Hype.Painel.RJTextBox();
             this.lb_level_prog = new System.Windows.Forms.Label();
             this.lb_poder_prog = new System.Windows.Forms.Label();
             this.lb_progressao = new System.Windows.Forms.Label();
@@ -59,12 +64,18 @@ namespace Hype.Painel
             this.pl_espaco_02 = new System.Windows.Forms.Panel();
             this.pl_conta = new System.Windows.Forms.Panel();
             this.lb_esta_cla = new System.Windows.Forms.Label();
+            this.txt_esta_cla = new Hype.Painel.RJTextBox();
+            this.txt_patente = new Hype.script.RJComboBox();
+            this.txt_classe = new Hype.script.RJComboBox();
             this.bt_excluir = new System.Windows.Forms.Button();
             this.lb_titulo = new System.Windows.Forms.Label();
+            this.txt_level = new Hype.Painel.RJTextBox();
             this.lb_poder = new System.Windows.Forms.Label();
+            this.txt_poder = new Hype.Painel.RJTextBox();
             this.lb_level = new System.Windows.Forms.Label();
             this.lb_nick = new System.Windows.Forms.Label();
             this.lb_patente = new System.Windows.Forms.Label();
+            this.txt_nick = new Hype.Painel.RJTextBox();
             this.lb_classe = new System.Windows.Forms.Label();
             this.pl_espaco_01 = new System.Windows.Forms.Panel();
             this.pl_top = new System.Windows.Forms.Panel();
@@ -72,17 +83,6 @@ namespace Hype.Painel
             this.txt_data_entrada = new System.Windows.Forms.Label();
             this.lb_data_entrada = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.txt_remanejamento = new Hype.Painel.RJTextBox();
-            this.txt_esta_cla_rema = new Hype.Painel.RJTextBox();
-            this.txt_vem_cla_rema = new Hype.Painel.RJTextBox();
-            this.txt_novo_level = new Hype.Painel.RJTextBox();
-            this.txt_novo_poder = new Hype.Painel.RJTextBox();
-            this.txt_esta_cla = new Hype.Painel.RJTextBox();
-            this.txt_patente = new Hype.script.RJComboBox();
-            this.txt_classe = new Hype.script.RJComboBox();
-            this.txt_level = new Hype.Painel.RJTextBox();
-            this.txt_poder = new Hype.Painel.RJTextBox();
-            this.txt_nick = new Hype.Painel.RJTextBox();
             this.pl_conta_principal.SuspendLayout();
             this.pl_botao.SuspendLayout();
             this.pl_remanejamento.SuspendLayout();
@@ -274,6 +274,77 @@ namespace Hype.Painel
             this.lb_seta.Text = "▶";
             this.lb_seta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txt_remanejamento
+            // 
+            this.txt_remanejamento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_remanejamento.BackColor = System.Drawing.Color.White;
+            this.txt_remanejamento.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_remanejamento.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_remanejamento.BorderRadius = 0;
+            this.txt_remanejamento.BorderSize = 1;
+            this.txt_remanejamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_remanejamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_remanejamento.Location = new System.Drawing.Point(672, 45);
+            this.txt_remanejamento.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_remanejamento.Multiline = false;
+            this.txt_remanejamento.Name = "txt_remanejamento";
+            this.txt_remanejamento.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_remanejamento.PasswordChar = false;
+            this.txt_remanejamento.PlaceholderColor = System.Drawing.Color.Gray;
+            this.txt_remanejamento.PlaceholderText = "";
+            this.txt_remanejamento.Size = new System.Drawing.Size(192, 31);
+            this.txt_remanejamento.TabIndex = 101;
+            this.txt_remanejamento.Texts = "";
+            this.txt_remanejamento.UnderlinedStyle = false;
+            this.txt_remanejamento.Enter += new System.EventHandler(this.txt_remanejamento_Enter);
+            this.txt_remanejamento.Leave += new System.EventHandler(this.txt_remanejamento_Leave);
+            // 
+            // txt_esta_cla_rema
+            // 
+            this.txt_esta_cla_rema.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_esta_cla_rema.BackColor = System.Drawing.Color.White;
+            this.txt_esta_cla_rema.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_esta_cla_rema.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_esta_cla_rema.BorderRadius = 0;
+            this.txt_esta_cla_rema.BorderSize = 1;
+            this.txt_esta_cla_rema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_esta_cla_rema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_esta_cla_rema.Location = new System.Drawing.Point(425, 45);
+            this.txt_esta_cla_rema.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_esta_cla_rema.Multiline = false;
+            this.txt_esta_cla_rema.Name = "txt_esta_cla_rema";
+            this.txt_esta_cla_rema.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_esta_cla_rema.PasswordChar = false;
+            this.txt_esta_cla_rema.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_esta_cla_rema.PlaceholderText = "";
+            this.txt_esta_cla_rema.Size = new System.Drawing.Size(192, 31);
+            this.txt_esta_cla_rema.TabIndex = 100;
+            this.txt_esta_cla_rema.Texts = "";
+            this.txt_esta_cla_rema.UnderlinedStyle = false;
+            // 
+            // txt_vem_cla_rema
+            // 
+            this.txt_vem_cla_rema.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_vem_cla_rema.BackColor = System.Drawing.Color.White;
+            this.txt_vem_cla_rema.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_vem_cla_rema.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_vem_cla_rema.BorderRadius = 0;
+            this.txt_vem_cla_rema.BorderSize = 1;
+            this.txt_vem_cla_rema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_vem_cla_rema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_vem_cla_rema.Location = new System.Drawing.Point(225, 45);
+            this.txt_vem_cla_rema.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_vem_cla_rema.Multiline = false;
+            this.txt_vem_cla_rema.Name = "txt_vem_cla_rema";
+            this.txt_vem_cla_rema.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_vem_cla_rema.PasswordChar = false;
+            this.txt_vem_cla_rema.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_vem_cla_rema.PlaceholderText = "";
+            this.txt_vem_cla_rema.Size = new System.Drawing.Size(192, 31);
+            this.txt_vem_cla_rema.TabIndex = 99;
+            this.txt_vem_cla_rema.Texts = "";
+            this.txt_vem_cla_rema.UnderlinedStyle = false;
+            // 
             // pl_titulo_rema
             // 
             this.pl_titulo_rema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
@@ -346,32 +417,32 @@ namespace Hype.Painel
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 50;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.dataGridView1.Location = new System.Drawing.Point(221, 117);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -408,6 +479,59 @@ namespace Hype.Painel
             this.bt_adicionar_prog.Text = "Adicionar";
             this.bt_adicionar_prog.UseVisualStyleBackColor = false;
             this.bt_adicionar_prog.Click += new System.EventHandler(this.bt_adicionar_pro_Click);
+            // 
+            // txt_novo_level
+            // 
+            this.txt_novo_level.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_novo_level.BackColor = System.Drawing.Color.White;
+            this.txt_novo_level.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_novo_level.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_novo_level.BorderRadius = 0;
+            this.txt_novo_level.BorderSize = 1;
+            this.txt_novo_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_novo_level.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_novo_level.Location = new System.Drawing.Point(16, 26);
+            this.txt_novo_level.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_novo_level.Multiline = false;
+            this.txt_novo_level.Name = "txt_novo_level";
+            this.txt_novo_level.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_novo_level.PasswordChar = false;
+            this.txt_novo_level.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_novo_level.PlaceholderText = "";
+            this.txt_novo_level.Size = new System.Drawing.Size(68, 31);
+            this.txt_novo_level.TabIndex = 1;
+            this.txt_novo_level.TabStop = false;
+            this.txt_novo_level.Tag = "";
+            this.txt_novo_level.Texts = "";
+            this.txt_novo_level.UnderlinedStyle = false;
+            this.txt_novo_level.Enter += new System.EventHandler(this.txt_novo_level_Enter);
+            this.txt_novo_level.Leave += new System.EventHandler(this.txt_novo_level_Leave);
+            // 
+            // txt_novo_poder
+            // 
+            this.txt_novo_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_novo_poder.BackColor = System.Drawing.Color.White;
+            this.txt_novo_poder.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_novo_poder.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_novo_poder.BorderRadius = 0;
+            this.txt_novo_poder.BorderSize = 1;
+            this.txt_novo_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_novo_poder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_novo_poder.Location = new System.Drawing.Point(91, 26);
+            this.txt_novo_poder.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_novo_poder.Multiline = false;
+            this.txt_novo_poder.Name = "txt_novo_poder";
+            this.txt_novo_poder.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_novo_poder.PasswordChar = false;
+            this.txt_novo_poder.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_novo_poder.PlaceholderText = "";
+            this.txt_novo_poder.Size = new System.Drawing.Size(119, 31);
+            this.txt_novo_poder.TabIndex = 2;
+            this.txt_novo_poder.TabStop = false;
+            this.txt_novo_poder.Texts = "";
+            this.txt_novo_poder.UnderlinedStyle = false;
+            this.txt_novo_poder.Enter += new System.EventHandler(this.txt_novo_poder_Enter);
+            this.txt_novo_poder.Leave += new System.EventHandler(this.txt_novo_poder_Leave);
             // 
             // lb_level_prog
             // 
@@ -507,6 +631,83 @@ namespace Hype.Painel
             this.lb_esta_cla.Text = "Clã";
             this.lb_esta_cla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txt_esta_cla
+            // 
+            this.txt_esta_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_esta_cla.BackColor = System.Drawing.Color.White;
+            this.txt_esta_cla.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_esta_cla.BorderFocusColor = System.Drawing.Color.White;
+            this.txt_esta_cla.BorderRadius = 0;
+            this.txt_esta_cla.BorderSize = 1;
+            this.txt_esta_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_esta_cla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_esta_cla.Location = new System.Drawing.Point(829, 71);
+            this.txt_esta_cla.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_esta_cla.Multiline = false;
+            this.txt_esta_cla.Name = "txt_esta_cla";
+            this.txt_esta_cla.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_esta_cla.PasswordChar = false;
+            this.txt_esta_cla.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_esta_cla.PlaceholderText = "";
+            this.txt_esta_cla.Size = new System.Drawing.Size(190, 31);
+            this.txt_esta_cla.TabIndex = 173;
+            this.txt_esta_cla.Texts = "";
+            this.txt_esta_cla.UnderlinedStyle = false;
+            // 
+            // txt_patente
+            // 
+            this.txt_patente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_patente.BackColor = System.Drawing.Color.White;
+            this.txt_patente.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_patente.BorderSize = 0;
+            this.txt_patente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_patente.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_patente.IconColor = System.Drawing.Color.Black;
+            this.txt_patente.Items.AddRange(new object[] {
+            "Patente",
+            "Ancião",
+            "Égide Sombria",
+            "Lider",
+            "Membro",
+            "Novo Membro"});
+            this.txt_patente.ListBackColor = System.Drawing.Color.White;
+            this.txt_patente.ListTextColor = System.Drawing.Color.DimGray;
+            this.txt_patente.Location = new System.Drawing.Point(659, 71);
+            this.txt_patente.MinimumSize = new System.Drawing.Size(50, 30);
+            this.txt_patente.Name = "txt_patente";
+            this.txt_patente.Size = new System.Drawing.Size(163, 31);
+            this.txt_patente.TabIndex = 172;
+            this.txt_patente.Texts = "";
+            this.txt_patente.OnSelectedIndexChanged += new System.EventHandler(this.txt_patente_OnSelectedIndexChanged);
+            // 
+            // txt_classe
+            // 
+            this.txt_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_classe.BackColor = System.Drawing.Color.White;
+            this.txt_classe.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_classe.BorderSize = 0;
+            this.txt_classe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_classe.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_classe.IconColor = System.Drawing.Color.Black;
+            this.txt_classe.Items.AddRange(new object[] {
+            "Classe",
+            "Besteira",
+            "Feiticeira",
+            "Guerreiro",
+            "Lanceiro",
+            "Taoista"});
+            this.txt_classe.ListBackColor = System.Drawing.Color.White;
+            this.txt_classe.ListTextColor = System.Drawing.Color.DimGray;
+            this.txt_classe.Location = new System.Drawing.Point(523, 71);
+            this.txt_classe.MinimumSize = new System.Drawing.Size(50, 30);
+            this.txt_classe.Name = "txt_classe";
+            this.txt_classe.Size = new System.Drawing.Size(130, 31);
+            this.txt_classe.TabIndex = 171;
+            this.txt_classe.Texts = "";
+            this.txt_classe.OnSelectedIndexChanged += new System.EventHandler(this.txt_classe_OnSelectedIndexChanged);
+            // 
             // bt_excluir
             // 
             this.bt_excluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -537,6 +738,30 @@ namespace Hype.Painel
             this.lb_titulo.Text = "CONTA PRINCIPAL";
             this.lb_titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txt_level
+            // 
+            this.txt_level.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_level.BackColor = System.Drawing.Color.White;
+            this.txt_level.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_level.BorderFocusColor = System.Drawing.Color.White;
+            this.txt_level.BorderRadius = 0;
+            this.txt_level.BorderSize = 1;
+            this.txt_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_level.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_level.Location = new System.Drawing.Point(321, 71);
+            this.txt_level.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_level.Multiline = false;
+            this.txt_level.Name = "txt_level";
+            this.txt_level.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_level.PasswordChar = false;
+            this.txt_level.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_level.PlaceholderText = "";
+            this.txt_level.Size = new System.Drawing.Size(68, 31);
+            this.txt_level.TabIndex = 151;
+            this.txt_level.Tag = "";
+            this.txt_level.Texts = "";
+            this.txt_level.UnderlinedStyle = false;
+            // 
             // lb_poder
             // 
             this.lb_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -548,6 +773,29 @@ namespace Hype.Painel
             this.lb_poder.TabIndex = 150;
             this.lb_poder.Text = "Poder";
             this.lb_poder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_poder
+            // 
+            this.txt_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_poder.BackColor = System.Drawing.Color.White;
+            this.txt_poder.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_poder.BorderFocusColor = System.Drawing.Color.White;
+            this.txt_poder.BorderRadius = 0;
+            this.txt_poder.BorderSize = 1;
+            this.txt_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_poder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_poder.Location = new System.Drawing.Point(397, 71);
+            this.txt_poder.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_poder.Multiline = false;
+            this.txt_poder.Name = "txt_poder";
+            this.txt_poder.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_poder.PasswordChar = false;
+            this.txt_poder.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_poder.PlaceholderText = "";
+            this.txt_poder.Size = new System.Drawing.Size(119, 31);
+            this.txt_poder.TabIndex = 148;
+            this.txt_poder.Texts = "";
+            this.txt_poder.UnderlinedStyle = false;
             // 
             // lb_level
             // 
@@ -568,7 +816,7 @@ namespace Hype.Painel
             this.lb_nick.ForeColor = System.Drawing.Color.White;
             this.lb_nick.Location = new System.Drawing.Point(121, 50);
             this.lb_nick.Name = "lb_nick";
-            this.lb_nick.Size = new System.Drawing.Size(162, 17);
+            this.lb_nick.Size = new System.Drawing.Size(192, 17);
             this.lb_nick.TabIndex = 65;
             this.lb_nick.Text = "Nick";
             this.lb_nick.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -584,6 +832,31 @@ namespace Hype.Painel
             this.lb_patente.TabIndex = 13;
             this.lb_patente.Text = "Patente";
             this.lb_patente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_nick
+            // 
+            this.txt_nick.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_nick.BackColor = System.Drawing.Color.White;
+            this.txt_nick.BorderColor = System.Drawing.Color.White;
+            this.txt_nick.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_nick.BorderRadius = 0;
+            this.txt_nick.BorderSize = 1;
+            this.txt_nick.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nick.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_nick.Location = new System.Drawing.Point(121, 71);
+            this.txt_nick.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nick.Multiline = false;
+            this.txt_nick.Name = "txt_nick";
+            this.txt_nick.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_nick.PasswordChar = false;
+            this.txt_nick.PlaceholderColor = System.Drawing.Color.Black;
+            this.txt_nick.PlaceholderText = "";
+            this.txt_nick.Size = new System.Drawing.Size(192, 31);
+            this.txt_nick.TabIndex = 1;
+            this.txt_nick.Texts = "";
+            this.txt_nick.UnderlinedStyle = false;
+            this.txt_nick.Enter += new System.EventHandler(this.txt_nick_Enter);
+            this.txt_nick.Leave += new System.EventHandler(this.txt_nick_Leave);
             // 
             // lb_classe
             // 
@@ -666,279 +939,6 @@ namespace Hype.Painel
             this.vScrollBar1.Name = "vScrollBar1";
             this.vScrollBar1.Size = new System.Drawing.Size(17, 1014);
             this.vScrollBar1.TabIndex = 78;
-            // 
-            // txt_remanejamento
-            // 
-            this.txt_remanejamento.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_remanejamento.BackColor = System.Drawing.Color.White;
-            this.txt_remanejamento.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_remanejamento.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_remanejamento.BorderRadius = 0;
-            this.txt_remanejamento.BorderSize = 1;
-            this.txt_remanejamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_remanejamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_remanejamento.Location = new System.Drawing.Point(672, 45);
-            this.txt_remanejamento.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_remanejamento.Multiline = false;
-            this.txt_remanejamento.Name = "txt_remanejamento";
-            this.txt_remanejamento.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_remanejamento.PasswordChar = false;
-            this.txt_remanejamento.PlaceholderColor = System.Drawing.Color.Gray;
-            this.txt_remanejamento.PlaceholderText = "";
-            this.txt_remanejamento.Size = new System.Drawing.Size(192, 31);
-            this.txt_remanejamento.TabIndex = 101;
-            this.txt_remanejamento.Texts = "";
-            this.txt_remanejamento.UnderlinedStyle = false;
-            this.txt_remanejamento.Enter += new System.EventHandler(this.txt_remanejamento_Enter);
-            this.txt_remanejamento.Leave += new System.EventHandler(this.txt_remanejamento_Leave);
-            // 
-            // txt_esta_cla_rema
-            // 
-            this.txt_esta_cla_rema.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_esta_cla_rema.BackColor = System.Drawing.Color.White;
-            this.txt_esta_cla_rema.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_esta_cla_rema.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_esta_cla_rema.BorderRadius = 0;
-            this.txt_esta_cla_rema.BorderSize = 1;
-            this.txt_esta_cla_rema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_esta_cla_rema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_esta_cla_rema.Location = new System.Drawing.Point(425, 45);
-            this.txt_esta_cla_rema.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_esta_cla_rema.Multiline = false;
-            this.txt_esta_cla_rema.Name = "txt_esta_cla_rema";
-            this.txt_esta_cla_rema.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_esta_cla_rema.PasswordChar = false;
-            this.txt_esta_cla_rema.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_esta_cla_rema.PlaceholderText = "";
-            this.txt_esta_cla_rema.Size = new System.Drawing.Size(192, 31);
-            this.txt_esta_cla_rema.TabIndex = 100;
-            this.txt_esta_cla_rema.Texts = "";
-            this.txt_esta_cla_rema.UnderlinedStyle = false;
-            // 
-            // txt_vem_cla_rema
-            // 
-            this.txt_vem_cla_rema.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_vem_cla_rema.BackColor = System.Drawing.Color.White;
-            this.txt_vem_cla_rema.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_vem_cla_rema.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_vem_cla_rema.BorderRadius = 0;
-            this.txt_vem_cla_rema.BorderSize = 1;
-            this.txt_vem_cla_rema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_vem_cla_rema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_vem_cla_rema.Location = new System.Drawing.Point(225, 45);
-            this.txt_vem_cla_rema.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_vem_cla_rema.Multiline = false;
-            this.txt_vem_cla_rema.Name = "txt_vem_cla_rema";
-            this.txt_vem_cla_rema.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_vem_cla_rema.PasswordChar = false;
-            this.txt_vem_cla_rema.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_vem_cla_rema.PlaceholderText = "";
-            this.txt_vem_cla_rema.Size = new System.Drawing.Size(192, 31);
-            this.txt_vem_cla_rema.TabIndex = 99;
-            this.txt_vem_cla_rema.Texts = "";
-            this.txt_vem_cla_rema.UnderlinedStyle = false;
-            // 
-            // txt_novo_level
-            // 
-            this.txt_novo_level.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_novo_level.BackColor = System.Drawing.Color.White;
-            this.txt_novo_level.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_novo_level.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_novo_level.BorderRadius = 0;
-            this.txt_novo_level.BorderSize = 1;
-            this.txt_novo_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_novo_level.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_novo_level.Location = new System.Drawing.Point(16, 26);
-            this.txt_novo_level.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_novo_level.Multiline = false;
-            this.txt_novo_level.Name = "txt_novo_level";
-            this.txt_novo_level.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_novo_level.PasswordChar = false;
-            this.txt_novo_level.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_novo_level.PlaceholderText = "";
-            this.txt_novo_level.Size = new System.Drawing.Size(68, 31);
-            this.txt_novo_level.TabIndex = 1;
-            this.txt_novo_level.TabStop = false;
-            this.txt_novo_level.Tag = "";
-            this.txt_novo_level.Texts = "";
-            this.txt_novo_level.UnderlinedStyle = false;
-            this.txt_novo_level.Enter += new System.EventHandler(this.txt_novo_level_Enter);
-            this.txt_novo_level.Leave += new System.EventHandler(this.txt_novo_level_Leave);
-            // 
-            // txt_novo_poder
-            // 
-            this.txt_novo_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_novo_poder.BackColor = System.Drawing.Color.White;
-            this.txt_novo_poder.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_novo_poder.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_novo_poder.BorderRadius = 0;
-            this.txt_novo_poder.BorderSize = 1;
-            this.txt_novo_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_novo_poder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_novo_poder.Location = new System.Drawing.Point(91, 26);
-            this.txt_novo_poder.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_novo_poder.Multiline = false;
-            this.txt_novo_poder.Name = "txt_novo_poder";
-            this.txt_novo_poder.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_novo_poder.PasswordChar = false;
-            this.txt_novo_poder.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_novo_poder.PlaceholderText = "";
-            this.txt_novo_poder.Size = new System.Drawing.Size(119, 31);
-            this.txt_novo_poder.TabIndex = 2;
-            this.txt_novo_poder.TabStop = false;
-            this.txt_novo_poder.Texts = "";
-            this.txt_novo_poder.UnderlinedStyle = false;
-            this.txt_novo_poder.Enter += new System.EventHandler(this.txt_novo_poder_Enter);
-            this.txt_novo_poder.Leave += new System.EventHandler(this.txt_novo_poder_Leave);
-            // 
-            // txt_esta_cla
-            // 
-            this.txt_esta_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_esta_cla.BackColor = System.Drawing.Color.White;
-            this.txt_esta_cla.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_esta_cla.BorderFocusColor = System.Drawing.Color.White;
-            this.txt_esta_cla.BorderRadius = 0;
-            this.txt_esta_cla.BorderSize = 1;
-            this.txt_esta_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_esta_cla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_esta_cla.Location = new System.Drawing.Point(829, 71);
-            this.txt_esta_cla.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_esta_cla.Multiline = false;
-            this.txt_esta_cla.Name = "txt_esta_cla";
-            this.txt_esta_cla.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_esta_cla.PasswordChar = false;
-            this.txt_esta_cla.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_esta_cla.PlaceholderText = "";
-            this.txt_esta_cla.Size = new System.Drawing.Size(190, 31);
-            this.txt_esta_cla.TabIndex = 173;
-            this.txt_esta_cla.Texts = "";
-            this.txt_esta_cla.UnderlinedStyle = false;
-            // 
-            // txt_patente
-            // 
-            this.txt_patente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_patente.BackColor = System.Drawing.Color.White;
-            this.txt_patente.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_patente.BorderSize = 0;
-            this.txt_patente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_patente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txt_patente.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_patente.IconColor = System.Drawing.Color.Black;
-            this.txt_patente.Items.AddRange(new object[] {
-            "Patente",
-            "Ancião",
-            "Égide Sombria",
-            "Lider",
-            "Membro",
-            "Novo Membro"});
-            this.txt_patente.ListBackColor = System.Drawing.Color.White;
-            this.txt_patente.ListTextColor = System.Drawing.Color.DimGray;
-            this.txt_patente.Location = new System.Drawing.Point(659, 71);
-            this.txt_patente.MinimumSize = new System.Drawing.Size(50, 30);
-            this.txt_patente.Name = "txt_patente";
-            this.txt_patente.Size = new System.Drawing.Size(163, 31);
-            this.txt_patente.TabIndex = 172;
-            this.txt_patente.Texts = "";
-            this.txt_patente.OnSelectedIndexChanged += new System.EventHandler(this.txt_patente_OnSelectedIndexChanged);
-            // 
-            // txt_classe
-            // 
-            this.txt_classe.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_classe.BackColor = System.Drawing.Color.White;
-            this.txt_classe.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_classe.BorderSize = 0;
-            this.txt_classe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txt_classe.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_classe.IconColor = System.Drawing.Color.Black;
-            this.txt_classe.Items.AddRange(new object[] {
-            "Classe",
-            "Besteira",
-            "Feiticeira",
-            "Guerreiro",
-            "Lanceiro",
-            "Taoista"});
-            this.txt_classe.ListBackColor = System.Drawing.Color.White;
-            this.txt_classe.ListTextColor = System.Drawing.Color.DimGray;
-            this.txt_classe.Location = new System.Drawing.Point(523, 71);
-            this.txt_classe.MinimumSize = new System.Drawing.Size(50, 30);
-            this.txt_classe.Name = "txt_classe";
-            this.txt_classe.Size = new System.Drawing.Size(130, 31);
-            this.txt_classe.TabIndex = 171;
-            this.txt_classe.Texts = "";
-            this.txt_classe.OnSelectedIndexChanged += new System.EventHandler(this.txt_classe_OnSelectedIndexChanged);
-            // 
-            // txt_level
-            // 
-            this.txt_level.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_level.BackColor = System.Drawing.Color.White;
-            this.txt_level.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_level.BorderFocusColor = System.Drawing.Color.White;
-            this.txt_level.BorderRadius = 0;
-            this.txt_level.BorderSize = 1;
-            this.txt_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_level.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_level.Location = new System.Drawing.Point(321, 71);
-            this.txt_level.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_level.Multiline = false;
-            this.txt_level.Name = "txt_level";
-            this.txt_level.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_level.PasswordChar = false;
-            this.txt_level.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_level.PlaceholderText = "";
-            this.txt_level.Size = new System.Drawing.Size(68, 31);
-            this.txt_level.TabIndex = 151;
-            this.txt_level.Tag = "";
-            this.txt_level.Texts = "";
-            this.txt_level.UnderlinedStyle = false;
-            // 
-            // txt_poder
-            // 
-            this.txt_poder.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_poder.BackColor = System.Drawing.Color.White;
-            this.txt_poder.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_poder.BorderFocusColor = System.Drawing.Color.White;
-            this.txt_poder.BorderRadius = 0;
-            this.txt_poder.BorderSize = 1;
-            this.txt_poder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_poder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_poder.Location = new System.Drawing.Point(397, 71);
-            this.txt_poder.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_poder.Multiline = false;
-            this.txt_poder.Name = "txt_poder";
-            this.txt_poder.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_poder.PasswordChar = false;
-            this.txt_poder.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_poder.PlaceholderText = "";
-            this.txt_poder.Size = new System.Drawing.Size(119, 31);
-            this.txt_poder.TabIndex = 148;
-            this.txt_poder.Texts = "";
-            this.txt_poder.UnderlinedStyle = false;
-            // 
-            // txt_nick
-            // 
-            this.txt_nick.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_nick.BackColor = System.Drawing.Color.White;
-            this.txt_nick.BorderColor = System.Drawing.Color.White;
-            this.txt_nick.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_nick.BorderRadius = 0;
-            this.txt_nick.BorderSize = 1;
-            this.txt_nick.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nick.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_nick.Location = new System.Drawing.Point(121, 71);
-            this.txt_nick.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nick.Multiline = false;
-            this.txt_nick.Name = "txt_nick";
-            this.txt_nick.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_nick.PasswordChar = false;
-            this.txt_nick.PlaceholderColor = System.Drawing.Color.Black;
-            this.txt_nick.PlaceholderText = "";
-            this.txt_nick.Size = new System.Drawing.Size(192, 31);
-            this.txt_nick.TabIndex = 1;
-            this.txt_nick.Texts = "";
-            this.txt_nick.UnderlinedStyle = false;
-            this.txt_nick.Enter += new System.EventHandler(this.txt_nick_Enter);
-            this.txt_nick.Leave += new System.EventHandler(this.txt_nick_Leave);
             // 
             // conta_principal
             // 

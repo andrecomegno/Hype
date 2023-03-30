@@ -10,8 +10,6 @@ namespace Hype.Painel
     public partial class conta_excluir : UserControl
     {
         string id_membros = membros.Instance.id_membros;
-        string id_recrutamento = membros.Instance.id_recrutamento;
-        string nick_alt = string.Empty;
 
         public conta_excluir()
         {
@@ -107,10 +105,7 @@ namespace Hype.Painel
             if (e.ColumnIndex == dataGridView1.Columns["SELECIONAR"].Index)
             {
                 //INTERROMPE A EDIÇÃO NO dataGridView1
-                dataGridView1.EndEdit();
-
-                //DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
-                //nick_alt = dr["NICK_ALT"].ToString();                
+                dataGridView1.EndEdit();            
             }
         }
 
@@ -217,14 +212,13 @@ namespace Hype.Painel
                 #endregion
 
                 // EXCLUIR (DESATIVAR) CONTA PRINCIPAL
-                MySqlCommand objCmdMembros = new MySqlCommand("update hypedb.cadastro_membro set status=@status, anotacao=@anotacao where (id_membros=@id_membros) and (id_recrutamento=@id_recrutamento) ", database.getConnection());
+                MySqlCommand objCmdMembros = new MySqlCommand("update hypedb.cadastro_membro set status=@status, anotacao=@anotacao where (id_membros=@id_membros)", database.getConnection());
                 objCmdMembros.Parameters.AddWithValue("@id_membros", id_membros);
-                objCmdMembros.Parameters.AddWithValue("@id_recrutamento", id_recrutamento);
                 objCmdMembros.Parameters.AddWithValue("@status", "Desativado");
                 objCmdMembros.Parameters.AddWithValue("@anotacao", txt_motivo.Text);
 
                 objCmdMembros.ExecuteNonQuery();
-
+                                
                 // QUANDO TIVER ALT CADASTRADA 
                 if (dataGridView1.Visible == true)
                 {
@@ -241,11 +235,12 @@ namespace Hype.Painel
                                 objCmdCadastroAlt.Parameters.AddWithValue("@id_alt", check.Cells[1].Value.ToString()); // TODOS OS ID`S SELECIONADOS
                                 objCmdCadastroAlt.Parameters.AddWithValue("@status_alt", "Desativado");
 
-                                objCmdCadastroAlt.ExecuteNonQuery();
+                                objCmdCadastroAlt.ExecuteNonQuery();                                
                             }
                         }
                     }
                 }
+                
             }
             catch (Exception erro)
             {

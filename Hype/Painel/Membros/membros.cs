@@ -13,7 +13,10 @@ namespace Hype.Painel
 
         // RECUPERAR DADOS
         private string nome_cla = home.Instance.nome_cla; // SELECIONAR CLA
-        private string id_login = login.Instance.id_login; // SELECIONA ID LOGIN
+
+        // ID`S
+        public string id_membros = string.Empty;
+        public string id_recrutamento = string.Empty;
 
         // DADOS
         public string data_entrada = string.Empty;
@@ -24,13 +27,6 @@ namespace Hype.Painel
         public string patente = string.Empty;
         public string vem_do_cla = string.Empty;
         public string foi_para_cla = string.Empty;
-
-        // ID`S
-        public string id_membros = string.Empty;
-        public string id_alt = string.Empty;
-        public string id_progressao = string.Empty;
-        public string id_recrutamento = string.Empty;
-        public int total_membros;
 
         public membros()
         {
@@ -56,7 +52,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, c.STATUS, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, alt.STATUS_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA, cl.NOME_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on alt.ID_ALT = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO left join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where id_login = '" + id_login + "' and cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, c.STATUS, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA, cl.NOME_CLA from hypedb.cadastro_membro c left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO left join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
             cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
             cmd.Parameters.AddWithValue("@STATUS", "Ativo");
 
@@ -66,7 +62,7 @@ namespace Hype.Painel
                 da.Fill(dt);
 
                 dataGridView1.DataSource = dt;
-            }
+            }            
             
             database.closeConnection();
 
@@ -97,6 +93,11 @@ namespace Hype.Painel
             dataGridView1.Columns[4].HeaderText = "PODER";
             dataGridView1.Columns[5].HeaderText = "CLASSE";
             dataGridView1.Columns[6].HeaderText = "PATENTE";
+            dataGridView1.Columns[7].Visible = false; // STATUS
+            dataGridView1.Columns[8].Visible = false; // ID_RECRUTAMENTO
+            dataGridView1.Columns[9].Visible = false; // VEM_DO_CLA
+            dataGridView1.Columns[10].Visible = false; // FOI_PARA_CLA
+            dataGridView1.Columns[11].Visible = false; // NOME_CLA
 
             dataGridView1.Columns["DATA_RECRUTAMENTO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["LEVEL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -145,21 +146,17 @@ namespace Hype.Painel
             {
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
+                    // CARREGA OS DADOS DOS MEMBROS CONTA_MEMBROS.CS AO CLICAR NA TABELA
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
 
+                    // ID MEMBROS
                     id_membros = dr["ID_MEMBROS"].ToString();
-                    id_alt = dr["ID_ALT"].ToString();
                     id_recrutamento = dr["ID_RECRUTAMENTO"].ToString();
-                    id_progressao = dr["ID_PROGRESSAO"].ToString();
 
-                    data_entrada = ((DateTime)dr["DATA_RECRUTAMENTO"]).ToShortDateString();
-                    nick = dr["NICK"].ToString();
-                    level = dr["LEVEL"].ToString();
-                    poder = dr["PODER"].ToString();
-                    patente = dr["PATENTE"].ToString();
-                    classe = dr["CLASSE"].ToString();
+                    // REMANEJAMENTO
                     vem_do_cla = dr["VEM_DO_CLA"].ToString();
                     foi_para_cla = dr["FOI_PARA_CLA"].ToString();
+                   
                 }
             }
             catch (Exception erro)
@@ -209,7 +206,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, c.STATUS, alt.ID_ALT, alt.DATA_ALT, alt.NICK_ALT, alt.LEVEL_ALT, alt.CLASSE_ALT, alt.CLA_ALT, alt.STATUS_ALT, pro.ID_PROGRESSAO, pro.DATA_PROGRESSAO, pro.ANTIGO_LEVEL, pro.ANTIGO_PODER, pro.NOVO_LEVEL, pro.NOVO_PODER, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA, cl.NOME_CLA from hypedb.cadastro_membro c left join hypedb.cadastro_alt alt on alt.ID_ALT = c.ID_MEMBROS left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO left join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where id_login = '" + id_login + "' and cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' and c.NICK like @NICK '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, re.DATA_RECRUTAMENTO, c.NICK, c.LEVEL, c.PODER, c.CLASSE, c.PATENTE, c.STATUS, re.ID_RECRUTAMENTO, re.VEM_DO_CLA, re.FOI_PARA_CLA, cl.NOME_CLA from hypedb.cadastro_membro c left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO left join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' and c.NICK like @NICK '%' ", database.getConnection());
             cmd.Parameters.AddWithValue("@NICK", txt_buscar.Texts);
             cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
             cmd.Parameters.AddWithValue("@STATUS", "Ativo");

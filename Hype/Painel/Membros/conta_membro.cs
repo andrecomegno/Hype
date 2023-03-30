@@ -101,7 +101,7 @@ namespace Hype.Painel
             lb_seta.Visible = true;
             txt_remanejamento.PlaceholderText = "Remanejamento";
 
-            // DADOS MEMBROS
+            // DADOS REMANEJAMENTO
             txt_vem_cla_rema.Texts = membros.Instance.vem_do_cla;
             txt_esta_cla_rema.Texts = membros.Instance.foi_para_cla;
 
@@ -772,6 +772,7 @@ namespace Hype.Painel
 
             while (dr.Read())
             {
+                // CARREGA OS DADOS DOS MEMBROS MEMBROS.CS
                 txt_nick.Texts = dr["NICK"].ToString();
                 txt_level.Texts = dr["LEVEL"].ToString();
                 txt_poder.Texts = dr["PODER"].ToString();
