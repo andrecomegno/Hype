@@ -18,9 +18,13 @@ namespace Hype
     {
         public static cla Instance;
 
+        // ID`S
+        private string usuario = login.Instance.usuario;
+
         // NOVO CADASTRO
         public bool _novoCad = login.Instance._novoCad;
 
+        // MENU RECOLHER
         bool menu_recolher;
 
         public cla()
@@ -34,7 +38,8 @@ namespace Hype
 
             CadastroLogin(_novoCad);
 
-            NomeLogin(lb_login.Text);
+            // NOME DO USUARIO CONECTADO
+            lb_login.Text = usuario;
         }
 
         private void NovoCla()
@@ -270,7 +275,7 @@ namespace Hype
         // DESLOGAR
         private void bt_flutuante_deslogar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Hide(); // ESCONDE A JANELA
             new login().Show();
             this.Close();
         }
@@ -287,12 +292,6 @@ namespace Hype
         private void foto_perfil_Click(object sender, EventArgs e)
         {
 
-        }
-
-        // NOME DO LOGIN - CONECTADO
-        public void NomeLogin(string Nomelogin)
-        {
-            lb_login.Text = Nomelogin;
         }
 
         // MENU FLUTUANTE

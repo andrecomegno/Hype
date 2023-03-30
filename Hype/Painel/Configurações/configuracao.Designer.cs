@@ -31,16 +31,16 @@ namespace Hype.Painel
         {
             this.pl_configuracao = new System.Windows.Forms.Panel();
             this.pl_conteudo = new System.Windows.Forms.Panel();
+            this.lb_login_usuario = new System.Windows.Forms.Label();
             this.bt_salvar = new System.Windows.Forms.Button();
+            this.pl_espaco_01 = new System.Windows.Forms.Panel();
+            this.pl_top = new System.Windows.Forms.Panel();
+            this.lb_titulo = new System.Windows.Forms.Label();
             this.txt_email_conf = new Hype.Painel.RJTextBox();
             this.txt_email = new Hype.Painel.RJTextBox();
             this.txt_usuario = new Hype.Painel.RJTextBox();
             this.txt_senha_conf = new Hype.Painel.RJTextBox();
             this.txt_senha = new Hype.Painel.RJTextBox();
-            this.pl_espaco_01 = new System.Windows.Forms.Panel();
-            this.pl_top = new System.Windows.Forms.Panel();
-            this.lb_titulo = new System.Windows.Forms.Label();
-            this.lb_login_usuario = new System.Windows.Forms.Label();
             this.pl_configuracao.SuspendLayout();
             this.pl_conteudo.SuspendLayout();
             this.pl_top.SuspendLayout();
@@ -75,6 +75,18 @@ namespace Hype.Painel
             this.pl_conteudo.Size = new System.Drawing.Size(1146, 422);
             this.pl_conteudo.TabIndex = 5;
             // 
+            // lb_login_usuario
+            // 
+            this.lb_login_usuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_login_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_login_usuario.ForeColor = System.Drawing.Color.White;
+            this.lb_login_usuario.Location = new System.Drawing.Point(451, 49);
+            this.lb_login_usuario.Name = "lb_login_usuario";
+            this.lb_login_usuario.Size = new System.Drawing.Size(253, 17);
+            this.lb_login_usuario.TabIndex = 66;
+            this.lb_login_usuario.Text = "Login / Usuario";
+            this.lb_login_usuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // bt_salvar
             // 
             this.bt_salvar.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -91,6 +103,37 @@ namespace Hype.Painel
             this.bt_salvar.Text = "Salvar";
             this.bt_salvar.UseVisualStyleBackColor = false;
             this.bt_salvar.Click += new System.EventHandler(this.bt_salvar_Click);
+            // 
+            // pl_espaco_01
+            // 
+            this.pl_espaco_01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pl_espaco_01.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_espaco_01.Location = new System.Drawing.Point(0, 100);
+            this.pl_espaco_01.Name = "pl_espaco_01";
+            this.pl_espaco_01.Size = new System.Drawing.Size(1146, 10);
+            this.pl_espaco_01.TabIndex = 6;
+            // 
+            // pl_top
+            // 
+            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
+            this.pl_top.Controls.Add(this.lb_titulo);
+            this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pl_top.Location = new System.Drawing.Point(0, 0);
+            this.pl_top.Name = "pl_top";
+            this.pl_top.Size = new System.Drawing.Size(1146, 100);
+            this.pl_top.TabIndex = 4;
+            // 
+            // lb_titulo
+            // 
+            this.lb_titulo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_titulo.AutoSize = true;
+            this.lb_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_titulo.ForeColor = System.Drawing.Color.White;
+            this.lb_titulo.Location = new System.Drawing.Point(313, 16);
+            this.lb_titulo.Name = "lb_titulo";
+            this.lb_titulo.Size = new System.Drawing.Size(532, 69);
+            this.lb_titulo.TabIndex = 0;
+            this.lb_titulo.Text = "CONFIGURAÇÃO";
             // 
             // txt_email_conf
             // 
@@ -114,6 +157,8 @@ namespace Hype.Painel
             this.txt_email_conf.TabIndex = 7;
             this.txt_email_conf.Texts = "";
             this.txt_email_conf.UnderlinedStyle = false;
+            this.txt_email_conf.Enter += new System.EventHandler(this.txt_email_conf_Enter);
+            this.txt_email_conf.Leave += new System.EventHandler(this.txt_email_conf_Leave);
             // 
             // txt_email
             // 
@@ -137,6 +182,8 @@ namespace Hype.Painel
             this.txt_email.TabIndex = 6;
             this.txt_email.Texts = "";
             this.txt_email.UnderlinedStyle = false;
+            this.txt_email.Enter += new System.EventHandler(this.txt_email_Enter);
+            this.txt_email.Leave += new System.EventHandler(this.txt_email_Leave);
             // 
             // txt_usuario
             // 
@@ -176,13 +223,15 @@ namespace Hype.Painel
             this.txt_senha_conf.Multiline = false;
             this.txt_senha_conf.Name = "txt_senha_conf";
             this.txt_senha_conf.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_senha_conf.PasswordChar = false;
+            this.txt_senha_conf.PasswordChar = true;
             this.txt_senha_conf.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_senha_conf.PlaceholderText = "Confirmar Senha";
             this.txt_senha_conf.Size = new System.Drawing.Size(250, 31);
             this.txt_senha_conf.TabIndex = 5;
             this.txt_senha_conf.Texts = "";
             this.txt_senha_conf.UnderlinedStyle = false;
+            this.txt_senha_conf.Enter += new System.EventHandler(this.txt_senha_conf_Enter);
+            this.txt_senha_conf.Leave += new System.EventHandler(this.txt_senha_conf_Leave);
             // 
             // txt_senha
             // 
@@ -199,56 +248,15 @@ namespace Hype.Painel
             this.txt_senha.Multiline = false;
             this.txt_senha.Name = "txt_senha";
             this.txt_senha.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_senha.PasswordChar = false;
+            this.txt_senha.PasswordChar = true;
             this.txt_senha.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_senha.PlaceholderText = "Senha";
             this.txt_senha.Size = new System.Drawing.Size(250, 31);
             this.txt_senha.TabIndex = 4;
             this.txt_senha.Texts = "";
             this.txt_senha.UnderlinedStyle = false;
-            // 
-            // pl_espaco_01
-            // 
-            this.pl_espaco_01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.pl_espaco_01.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_espaco_01.Location = new System.Drawing.Point(0, 100);
-            this.pl_espaco_01.Name = "pl_espaco_01";
-            this.pl_espaco_01.Size = new System.Drawing.Size(1146, 10);
-            this.pl_espaco_01.TabIndex = 6;
-            // 
-            // pl_top
-            // 
-            this.pl_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(25)))), ((int)(((byte)(28)))));
-            this.pl_top.Controls.Add(this.lb_titulo);
-            this.pl_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pl_top.Location = new System.Drawing.Point(0, 0);
-            this.pl_top.Name = "pl_top";
-            this.pl_top.Size = new System.Drawing.Size(1146, 100);
-            this.pl_top.TabIndex = 4;
-            // 
-            // lb_titulo
-            // 
-            this.lb_titulo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_titulo.AutoSize = true;
-            this.lb_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_titulo.ForeColor = System.Drawing.Color.White;
-            this.lb_titulo.Location = new System.Drawing.Point(313, 16);
-            this.lb_titulo.Name = "lb_titulo";
-            this.lb_titulo.Size = new System.Drawing.Size(532, 69);
-            this.lb_titulo.TabIndex = 0;
-            this.lb_titulo.Text = "CONFIGURAÇÃO";
-            // 
-            // lb_login_usuario
-            // 
-            this.lb_login_usuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_login_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_login_usuario.ForeColor = System.Drawing.Color.White;
-            this.lb_login_usuario.Location = new System.Drawing.Point(451, 49);
-            this.lb_login_usuario.Name = "lb_login_usuario";
-            this.lb_login_usuario.Size = new System.Drawing.Size(253, 17);
-            this.lb_login_usuario.TabIndex = 66;
-            this.lb_login_usuario.Text = "Login / Usuario";
-            this.lb_login_usuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txt_senha.Enter += new System.EventHandler(this.txt_senha_Enter);
+            this.txt_senha.Leave += new System.EventHandler(this.txt_senha_Leave);
             // 
             // configuracao
             // 

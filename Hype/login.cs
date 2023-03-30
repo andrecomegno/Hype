@@ -84,9 +84,6 @@ namespace Hype
                     // ESCONDER O LOGIN 
                     this.Hide();
                     new cla().Show();
-
-                    // NOME DO LOGIN 
-                    cla.Instance.NomeLogin(txt_login.Texts);
                 }
                 else
                 {

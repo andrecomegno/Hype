@@ -132,6 +132,8 @@ namespace Hype.Painel.Cadastro
             this.txt_email_conf.TabIndex = 13;
             this.txt_email_conf.Texts = "";
             this.txt_email_conf.UnderlinedStyle = false;
+            this.txt_email_conf.Enter += new System.EventHandler(this.txt_email_conf_Enter);
+            this.txt_email_conf.Leave += new System.EventHandler(this.txt_email_conf_Leave);
             // 
             // txt_email
             // 
@@ -155,6 +157,8 @@ namespace Hype.Painel.Cadastro
             this.txt_email.TabIndex = 12;
             this.txt_email.Texts = "";
             this.txt_email.UnderlinedStyle = false;
+            this.txt_email.Enter += new System.EventHandler(this.txt_email_Enter);
+            this.txt_email.Leave += new System.EventHandler(this.txt_email_Leave);
             // 
             // txt_login
             // 
@@ -178,6 +182,8 @@ namespace Hype.Painel.Cadastro
             this.txt_login.TabIndex = 9;
             this.txt_login.Texts = "";
             this.txt_login.UnderlinedStyle = false;
+            this.txt_login.Enter += new System.EventHandler(this.txt_login_Enter);
+            this.txt_login.Leave += new System.EventHandler(this.txt_login_Leave);
             // 
             // txt_senha_conf
             // 
@@ -201,6 +207,8 @@ namespace Hype.Painel.Cadastro
             this.txt_senha_conf.TabIndex = 11;
             this.txt_senha_conf.Texts = "";
             this.txt_senha_conf.UnderlinedStyle = false;
+            this.txt_senha_conf.Enter += new System.EventHandler(this.txt_senha_conf_Enter);
+            this.txt_senha_conf.Leave += new System.EventHandler(this.txt_senha_conf_Leave);
             // 
             // txt_senha
             // 
@@ -224,6 +232,8 @@ namespace Hype.Painel.Cadastro
             this.txt_senha.TabIndex = 10;
             this.txt_senha.Texts = "";
             this.txt_senha.UnderlinedStyle = false;
+            this.txt_senha.Enter += new System.EventHandler(this.txt_senha_Enter);
+            this.txt_senha.Leave += new System.EventHandler(this.txt_senha_Leave);
             // 
             // pl_espaco_01
             // 

@@ -145,7 +145,7 @@ namespace Hype.Painel.Home
             this.pl_novo_cla.Dock = System.Windows.Forms.DockStyle.Top;
             this.pl_novo_cla.Location = new System.Drawing.Point(0, 83);
             this.pl_novo_cla.Name = "pl_novo_cla";
-            this.pl_novo_cla.Size = new System.Drawing.Size(1172, 326);
+            this.pl_novo_cla.Size = new System.Drawing.Size(1172, 533);
             this.pl_novo_cla.TabIndex = 80;
             // 
             // pl_nome_clas
@@ -172,7 +172,7 @@ namespace Hype.Painel.Home
             this.pl_nome_clas.Controls.Add(this.bt_cla_02);
             this.pl_nome_clas.Controls.Add(this.bt_cla_01);
             this.pl_nome_clas.Controls.Add(this.bt_cla_04);
-            this.pl_nome_clas.Location = new System.Drawing.Point(278, 6);
+            this.pl_nome_clas.Location = new System.Drawing.Point(278, 109);
             this.pl_nome_clas.Name = "pl_nome_clas";
             this.pl_nome_clas.Size = new System.Drawing.Size(878, 295);
             this.pl_nome_clas.TabIndex = 81;
@@ -633,7 +633,7 @@ namespace Hype.Painel.Home
             this.bt_novo_cla.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.bt_novo_cla.IconSize = 35;
             this.bt_novo_cla.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_novo_cla.Location = new System.Drawing.Point(42, 27);
+            this.bt_novo_cla.Location = new System.Drawing.Point(42, 130);
             this.bt_novo_cla.Name = "bt_novo_cla";
             this.bt_novo_cla.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.bt_novo_cla.Size = new System.Drawing.Size(210, 46);
