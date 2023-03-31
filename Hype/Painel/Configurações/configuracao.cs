@@ -97,7 +97,7 @@ namespace Hype.Painel
                     txt_email_conf.BorderColor = Color.Transparent;
 
                     // VERIFICA EMAIL
-                    if (IsEmail(txt_email.Texts) == false)
+                    if (conftext.IsEmail(txt_email.Texts) == false)
                     {
                         MessageBox.Show("E-mail: seunome@email.com ", "E-Mail Invalido !", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -205,20 +205,6 @@ namespace Hype.Painel
             txt_senha_conf.BorderSize = 0;
         }
         #endregion
-
-        // VERIFICA EMAIL
-        private bool IsEmail(string strEmail)
-        {
-            string strModelo = "^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
-            if (System.Text.RegularExpressions.Regex.IsMatch(strEmail, strModelo))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
 
         private void Dados()
         {

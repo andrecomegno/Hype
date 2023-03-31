@@ -33,14 +33,14 @@ namespace Hype.Painel
             this.pl_conteudo = new System.Windows.Forms.Panel();
             this.lb_login_usuario = new System.Windows.Forms.Label();
             this.bt_salvar = new System.Windows.Forms.Button();
-            this.pl_espaco_01 = new System.Windows.Forms.Panel();
-            this.pl_top = new System.Windows.Forms.Panel();
-            this.lb_titulo = new System.Windows.Forms.Label();
             this.txt_email_conf = new Hype.Painel.RJTextBox();
             this.txt_email = new Hype.Painel.RJTextBox();
             this.txt_usuario = new Hype.Painel.RJTextBox();
             this.txt_senha_conf = new Hype.Painel.RJTextBox();
             this.txt_senha = new Hype.Painel.RJTextBox();
+            this.pl_espaco_01 = new System.Windows.Forms.Panel();
+            this.pl_top = new System.Windows.Forms.Panel();
+            this.lb_titulo = new System.Windows.Forms.Label();
             this.pl_configuracao.SuspendLayout();
             this.pl_conteudo.SuspendLayout();
             this.pl_top.SuspendLayout();
@@ -99,10 +99,134 @@ namespace Hype.Painel
             this.bt_salvar.Location = new System.Drawing.Point(582, 284);
             this.bt_salvar.Name = "bt_salvar";
             this.bt_salvar.Size = new System.Drawing.Size(122, 36);
-            this.bt_salvar.TabIndex = 65;
+            this.bt_salvar.TabIndex = 5;
             this.bt_salvar.Text = "Salvar";
             this.bt_salvar.UseVisualStyleBackColor = false;
             this.bt_salvar.Click += new System.EventHandler(this.bt_salvar_Click);
+            // 
+            // txt_email_conf
+            // 
+            this.txt_email_conf.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_email_conf.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_email_conf.BorderColor = System.Drawing.Color.White;
+            this.txt_email_conf.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_email_conf.BorderRadius = 0;
+            this.txt_email_conf.BorderSize = 2;
+            this.txt_email_conf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_email_conf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_email_conf.Location = new System.Drawing.Point(454, 168);
+            this.txt_email_conf.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_email_conf.Multiline = false;
+            this.txt_email_conf.Name = "txt_email_conf";
+            this.txt_email_conf.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_email_conf.PasswordChar = false;
+            this.txt_email_conf.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_email_conf.PlaceholderText = "Confirmar E-Mail";
+            this.txt_email_conf.Size = new System.Drawing.Size(250, 31);
+            this.txt_email_conf.TabIndex = 2;
+            this.txt_email_conf.Texts = "";
+            this.txt_email_conf.UnderlinedStyle = false;
+            this.txt_email_conf.Enter += new System.EventHandler(this.txt_email_conf_Enter);
+            this.txt_email_conf.Leave += new System.EventHandler(this.txt_email_conf_Leave);
+            // 
+            // txt_email
+            // 
+            this.txt_email.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_email.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_email.BorderColor = System.Drawing.Color.White;
+            this.txt_email.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_email.BorderRadius = 0;
+            this.txt_email.BorderSize = 2;
+            this.txt_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_email.Location = new System.Drawing.Point(454, 129);
+            this.txt_email.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_email.Multiline = false;
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_email.PasswordChar = false;
+            this.txt_email.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_email.PlaceholderText = "E-Mail";
+            this.txt_email.Size = new System.Drawing.Size(250, 31);
+            this.txt_email.TabIndex = 1;
+            this.txt_email.Texts = "";
+            this.txt_email.UnderlinedStyle = false;
+            this.txt_email.Enter += new System.EventHandler(this.txt_email_Enter);
+            this.txt_email.Leave += new System.EventHandler(this.txt_email_Leave);
+            // 
+            // txt_usuario
+            // 
+            this.txt_usuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_usuario.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_usuario.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_usuario.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_usuario.BorderRadius = 0;
+            this.txt_usuario.BorderSize = 2;
+            this.txt_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_usuario.Location = new System.Drawing.Point(454, 70);
+            this.txt_usuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_usuario.Multiline = false;
+            this.txt_usuario.Name = "txt_usuario";
+            this.txt_usuario.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_usuario.PasswordChar = false;
+            this.txt_usuario.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_usuario.PlaceholderText = "";
+            this.txt_usuario.Size = new System.Drawing.Size(250, 31);
+            this.txt_usuario.TabIndex = 0;
+            this.txt_usuario.TabStop = false;
+            this.txt_usuario.Texts = "";
+            this.txt_usuario.UnderlinedStyle = false;
+            // 
+            // txt_senha_conf
+            // 
+            this.txt_senha_conf.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_senha_conf.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_senha_conf.BorderColor = System.Drawing.Color.White;
+            this.txt_senha_conf.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_senha_conf.BorderRadius = 0;
+            this.txt_senha_conf.BorderSize = 2;
+            this.txt_senha_conf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_senha_conf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_senha_conf.Location = new System.Drawing.Point(454, 246);
+            this.txt_senha_conf.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_senha_conf.Multiline = false;
+            this.txt_senha_conf.Name = "txt_senha_conf";
+            this.txt_senha_conf.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_senha_conf.PasswordChar = true;
+            this.txt_senha_conf.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_senha_conf.PlaceholderText = "Confirmar Senha";
+            this.txt_senha_conf.Size = new System.Drawing.Size(250, 31);
+            this.txt_senha_conf.TabIndex = 4;
+            this.txt_senha_conf.Texts = "";
+            this.txt_senha_conf.UnderlinedStyle = false;
+            this.txt_senha_conf.Enter += new System.EventHandler(this.txt_senha_conf_Enter);
+            this.txt_senha_conf.Leave += new System.EventHandler(this.txt_senha_conf_Leave);
+            // 
+            // txt_senha
+            // 
+            this.txt_senha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_senha.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_senha.BorderColor = System.Drawing.Color.White;
+            this.txt_senha.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_senha.BorderRadius = 0;
+            this.txt_senha.BorderSize = 2;
+            this.txt_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_senha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_senha.Location = new System.Drawing.Point(454, 207);
+            this.txt_senha.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_senha.Multiline = false;
+            this.txt_senha.Name = "txt_senha";
+            this.txt_senha.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_senha.PasswordChar = true;
+            this.txt_senha.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_senha.PlaceholderText = "Senha";
+            this.txt_senha.Size = new System.Drawing.Size(250, 31);
+            this.txt_senha.TabIndex = 3;
+            this.txt_senha.Texts = "";
+            this.txt_senha.UnderlinedStyle = false;
+            this.txt_senha.Enter += new System.EventHandler(this.txt_senha_Enter);
+            this.txt_senha.Leave += new System.EventHandler(this.txt_senha_Leave);
             // 
             // pl_espaco_01
             // 
@@ -134,129 +258,6 @@ namespace Hype.Painel
             this.lb_titulo.Size = new System.Drawing.Size(532, 69);
             this.lb_titulo.TabIndex = 0;
             this.lb_titulo.Text = "CONFIGURAÇÃO";
-            // 
-            // txt_email_conf
-            // 
-            this.txt_email_conf.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_email_conf.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_email_conf.BorderColor = System.Drawing.Color.White;
-            this.txt_email_conf.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_email_conf.BorderRadius = 0;
-            this.txt_email_conf.BorderSize = 2;
-            this.txt_email_conf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_email_conf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_email_conf.Location = new System.Drawing.Point(454, 168);
-            this.txt_email_conf.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_email_conf.Multiline = false;
-            this.txt_email_conf.Name = "txt_email_conf";
-            this.txt_email_conf.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_email_conf.PasswordChar = false;
-            this.txt_email_conf.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_email_conf.PlaceholderText = "Confirmar E-Mail";
-            this.txt_email_conf.Size = new System.Drawing.Size(250, 31);
-            this.txt_email_conf.TabIndex = 7;
-            this.txt_email_conf.Texts = "";
-            this.txt_email_conf.UnderlinedStyle = false;
-            this.txt_email_conf.Enter += new System.EventHandler(this.txt_email_conf_Enter);
-            this.txt_email_conf.Leave += new System.EventHandler(this.txt_email_conf_Leave);
-            // 
-            // txt_email
-            // 
-            this.txt_email.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_email.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_email.BorderColor = System.Drawing.Color.White;
-            this.txt_email.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_email.BorderRadius = 0;
-            this.txt_email.BorderSize = 2;
-            this.txt_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_email.Location = new System.Drawing.Point(454, 129);
-            this.txt_email.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_email.Multiline = false;
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_email.PasswordChar = false;
-            this.txt_email.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_email.PlaceholderText = "E-Mail";
-            this.txt_email.Size = new System.Drawing.Size(250, 31);
-            this.txt_email.TabIndex = 6;
-            this.txt_email.Texts = "";
-            this.txt_email.UnderlinedStyle = false;
-            this.txt_email.Enter += new System.EventHandler(this.txt_email_Enter);
-            this.txt_email.Leave += new System.EventHandler(this.txt_email_Leave);
-            // 
-            // txt_usuario
-            // 
-            this.txt_usuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_usuario.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_usuario.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_usuario.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_usuario.BorderRadius = 0;
-            this.txt_usuario.BorderSize = 2;
-            this.txt_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_usuario.Location = new System.Drawing.Point(454, 70);
-            this.txt_usuario.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_usuario.Multiline = false;
-            this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_usuario.PasswordChar = false;
-            this.txt_usuario.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_usuario.PlaceholderText = "";
-            this.txt_usuario.Size = new System.Drawing.Size(250, 31);
-            this.txt_usuario.TabIndex = 3;
-            this.txt_usuario.Texts = "";
-            this.txt_usuario.UnderlinedStyle = false;
-            // 
-            // txt_senha_conf
-            // 
-            this.txt_senha_conf.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_senha_conf.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_senha_conf.BorderColor = System.Drawing.Color.White;
-            this.txt_senha_conf.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_senha_conf.BorderRadius = 0;
-            this.txt_senha_conf.BorderSize = 2;
-            this.txt_senha_conf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_senha_conf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_senha_conf.Location = new System.Drawing.Point(454, 246);
-            this.txt_senha_conf.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_senha_conf.Multiline = false;
-            this.txt_senha_conf.Name = "txt_senha_conf";
-            this.txt_senha_conf.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_senha_conf.PasswordChar = true;
-            this.txt_senha_conf.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_senha_conf.PlaceholderText = "Confirmar Senha";
-            this.txt_senha_conf.Size = new System.Drawing.Size(250, 31);
-            this.txt_senha_conf.TabIndex = 5;
-            this.txt_senha_conf.Texts = "";
-            this.txt_senha_conf.UnderlinedStyle = false;
-            this.txt_senha_conf.Enter += new System.EventHandler(this.txt_senha_conf_Enter);
-            this.txt_senha_conf.Leave += new System.EventHandler(this.txt_senha_conf_Leave);
-            // 
-            // txt_senha
-            // 
-            this.txt_senha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_senha.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_senha.BorderColor = System.Drawing.Color.White;
-            this.txt_senha.BorderFocusColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_senha.BorderRadius = 0;
-            this.txt_senha.BorderSize = 2;
-            this.txt_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_senha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_senha.Location = new System.Drawing.Point(454, 207);
-            this.txt_senha.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_senha.Multiline = false;
-            this.txt_senha.Name = "txt_senha";
-            this.txt_senha.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_senha.PasswordChar = true;
-            this.txt_senha.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_senha.PlaceholderText = "Senha";
-            this.txt_senha.Size = new System.Drawing.Size(250, 31);
-            this.txt_senha.TabIndex = 4;
-            this.txt_senha.Texts = "";
-            this.txt_senha.UnderlinedStyle = false;
-            this.txt_senha.Enter += new System.EventHandler(this.txt_senha_Enter);
-            this.txt_senha.Leave += new System.EventHandler(this.txt_senha_Leave);
             // 
             // configuracao
             // 

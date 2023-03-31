@@ -176,9 +176,7 @@ namespace Hype.Painel.Eventos
                 txt_sem_dados.Visible = false;
 
                 dataGridView1.Visible = true;
-            }
-
-            CampoTextoHabilitado(pl_evento_doacao.Controls);
+            }            
         }
 
         private void DadosDoacao()
@@ -263,47 +261,77 @@ namespace Hype.Painel.Eventos
         }
         #endregion
 
-        #region CAMPO DO TEXTO EM BRANCO - ALERTAS
+        #region ALERTAS
         private void Alertas()
         {
             if(semana_01)
             {
+                /*
                 if (String.IsNullOrEmpty(txt_doacao_01.Texts))
                 {
                     txt_doacao_01.BorderColor = Color.Red;
                     txt_doacao_01.BorderSize = 3;
                 }
+                else if (conftext.IsNumero(txt_doacao_01.Texts) == false)
+                {
+                    txt_doacao_01.BorderColor = Color.Red;
+                    txt_doacao_01.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else
                 {
-                    try
-                    {
-                        Salvar();
-                    }
-                    finally
-                    {
-                        AtualizarTabela();                        
-                    }
+
+                }
+                */
+                try
+                {
+                    Semana_01();
+
+                    CampoDoacao(lb_semana_02, txt_doacao_02, lb_semana_01, txt_doacao_01, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
+
+                    semana_02 = true;
+                    semana_01 = false;
+                }
+                finally
+                {
+                    AtualizarTabela();
                 }
             }
 
-
             if (semana_02)
             {
+                /*
                 if (String.IsNullOrEmpty(txt_doacao_02.Texts))
                 {
                     txt_doacao_02.BorderColor = Color.Red;
                     txt_doacao_02.BorderSize = 3;
                 }
+                else if (conftext.IsNumero(txt_doacao_02.Texts) == false)
+                {
+                    txt_doacao_02.BorderColor = Color.Red;
+                    txt_doacao_02.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else
                 {
-                    try
-                    {
-                        Salvar();
-                    }
-                    finally
-                    {
-                        AtualizarTabela();
-                    }
+
+                }
+                */
+                try
+                {
+                    Semana_02();
+
+                    CampoDoacao(lb_semana_03, txt_doacao_03, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_04, txt_doacao_04);
+
+                    semana_03 = true;
+                    semana_01 = false;
+                    semana_02 = false;
+                }
+                finally
+                {
+                    AtualizarTabela();
                 }
             }
 
@@ -313,6 +341,13 @@ namespace Hype.Painel.Eventos
                 {
                     txt_doacao_03.BorderColor = Color.Red;
                     txt_doacao_03.BorderSize = 3;
+                }
+                else if (conftext.IsNumero(txt_doacao_03.Texts) == false)
+                {
+                    txt_doacao_03.BorderColor = Color.Red;
+                    txt_doacao_03.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -333,6 +368,13 @@ namespace Hype.Painel.Eventos
                 {
                     txt_doacao_04.BorderColor = Color.Red;
                     txt_doacao_04.BorderSize = 3;
+                }
+                else if (conftext.IsNumero(txt_doacao_04.Texts) == false)
+                {
+                    txt_doacao_04.BorderColor = Color.Red;
+                    txt_doacao_04.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -368,6 +410,72 @@ namespace Hype.Painel.Eventos
             }            
         }
 
+        private void Semana_01()
+        {
+            // BANCO DE DADOS
+            configdb database = new configdb();
+            database.openConnection();
+
+            double de = (Convert.ToDouble(txt_doacao_01.Texts));
+            totalDoacao = de.ToString();
+
+            // INSERT TABELA EVENTOS
+            MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, mes_evento, ano_evento, id_membros) values (null, ?, ?, ?)", database.getConnection());
+
+            objCmdEventos.Parameters.Add("@mes_evento", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
+            objCmdEventos.Parameters.Add("@ano_evento", MySqlDbType.Year).Value = DateTime.Now.Year;
+            objCmdEventos.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
+
+            objCmdEventos.ExecuteNonQuery();
+            long idEventos = objCmdEventos.LastInsertedId;
+
+            // INSERT TABELA DOAÇÃO
+            MySqlCommand objCmdDoacao = new MySqlCommand("insert into hypedb.doacao (id_doacao, semana_01, semana_02, semana_03, semana_04, total, anotacao, id_eventos, id_membros) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+            objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = totalDoacao;
+            objCmdDoacao.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = "";
+            objCmdDoacao.Parameters.Add("@id_eventos", MySqlDbType.Int32).Value = idEventos;
+            objCmdDoacao.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
+
+            objCmdDoacao.ExecuteNonQuery();
+
+            DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 1", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            database.closeConnection();
+        }
+
+        private void Semana_02()
+        {
+            // BANCO DE DADOS
+            configdb database = new configdb();
+            database.openConnection();
+
+            double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts));
+            totalDoacao = de.ToString();
+
+            // INSERT TABELA DOAÇÃO
+            MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+
+            objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
+            objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
+            objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
+            objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+            objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
+            objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
+            objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = totalDoacao;
+
+            objCmdDoacao.ExecuteNonQuery();
+
+            DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            database.closeConnection();
+        }
+
         private void Salvar()
         {
             // BANCO DE DADOS
@@ -375,7 +483,7 @@ namespace Hype.Painel.Eventos
             database.openConnection();
 
             if (semana_01)
-            {
+                {
                 double de = (Convert.ToDouble(txt_doacao_01.Texts));
                 totalDoacao = de.ToString();
 
@@ -476,7 +584,7 @@ namespace Hype.Painel.Eventos
         }
         #endregion
 
-        #region Campo Texto
+        #region CAMPO TEXTO
         private void Limpar()
         {
             txt_doacao_01.Texts = string.Empty;
@@ -485,77 +593,23 @@ namespace Hype.Painel.Eventos
             txt_doacao_04.Texts = string.Empty;
         }
 
-        private void CampoTextoHabilitado(Control.ControlCollection control)
+        private void CampoDoacao(Label lb1, RJTextBox text1, Label lb2, RJTextBox text2, Label lb3, RJTextBox text3, Label lb4, RJTextBox text4)
         {
-            foreach (Control c in control)
-            {
-                if (c is RJTextBox)
-                {
-                    ((RJTextBox)c).Enabled = false;
-                    ((RJTextBox)c).BackColor = Color.FromArgb(24, 25, 28);
-                    ((RJTextBox)c).ForeColor = Color.FromArgb(24, 25, 28);
-                }
+            lb1.ForeColor = Color.White;
+            text1.BackColor = Color.White;
+            text1.Enabled = true;
 
-                if (c is Label)
-                {
-                    ((Label)c).ForeColor = Color.FromArgb(24, 25, 28);
-                }
-            }
-        }
+            lb2.ForeColor = Color.FromArgb(24, 25, 28);
+            text2.BackColor = Color.FromArgb(24, 25, 28);
+            text2.Enabled = false;
 
-        private void CampoDoacao()
-        {
-            if (semana_01)
-            {
-                lb_semana_01.ForeColor = Color.White;
-                txt_doacao_01.BackColor = Color.White;
-                txt_doacao_01.Enabled = true;
-            }
-            else
-            {
-                lb_semana_01.ForeColor = Color.FromArgb(24, 25, 28);
-                txt_doacao_01.BackColor = Color.FromArgb(24, 25, 28);
-                txt_doacao_01.Enabled = false;
-            }
+            lb3.ForeColor = Color.FromArgb(24, 25, 28);
+            text3.BackColor = Color.FromArgb(24, 25, 28);
+            text3.Enabled = false;
 
-            if (semana_02)
-            {
-                lb_semana_02.ForeColor = Color.White;
-                txt_doacao_02.BackColor = Color.White;
-                txt_doacao_02.Enabled = true;
-            }
-            else
-            {
-                lb_semana_02.ForeColor = Color.FromArgb(24, 25, 28);
-                txt_doacao_02.BackColor = Color.FromArgb(24, 25, 28);
-                txt_doacao_02.Enabled = false;
-            }
-
-            if (semana_03)
-            {
-                lb_semana_03.ForeColor = Color.White;
-                txt_doacao_03.BackColor = Color.White;
-                txt_doacao_03.Enabled = true;
-            }
-            else
-            {
-                lb_semana_03.ForeColor = Color.FromArgb(24, 25, 28);
-                txt_doacao_03.BackColor = Color.FromArgb(24, 25, 28);
-                txt_doacao_03.Enabled = false;
-            }
-
-            if (semana_04)
-            {
-                lb_semana_04.ForeColor = Color.White;
-                txt_doacao_04.BackColor = Color.White;
-                txt_doacao_04.Enabled = true;
-            }
-            else
-            {
-                lb_semana_04.ForeColor = Color.FromArgb(24, 25, 28);
-                txt_doacao_04.BackColor = Color.FromArgb(24, 25, 28);
-                txt_doacao_04.Enabled = false;
-            }
+            lb4.ForeColor = Color.FromArgb(24, 25, 28);
+            text4.BackColor = Color.FromArgb(24, 25, 28);
+            text4.Enabled = false;
         }
 
         private void txt_doacao_01_Enter(object sender, EventArgs e)
@@ -581,9 +635,10 @@ namespace Hype.Painel.Eventos
 
         private void novo_evento_Load(object sender, EventArgs e)
         {
+            CampoDoacao(lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
+
             DadosDoacao();
-            TabelaEvento();
-            CampoDoacao();
+            TabelaEvento();            
 
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;

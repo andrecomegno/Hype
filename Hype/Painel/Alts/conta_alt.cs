@@ -311,7 +311,9 @@ namespace Hype.Painel
                 MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
             }
         }
+        #endregion
 
+        #region ALERTAS
         private void Alertas()
         {
             if (String.IsNullOrEmpty(txt_nick_alt.Texts))
@@ -323,6 +325,13 @@ namespace Hype.Painel
             {
                 txt_level_alt.BorderColor = Color.Red;
                 txt_level_alt.BorderSize = 3;
+            }
+            else if (conftext.IsNumero(txt_level_alt.Texts) == false)
+            {
+                txt_level_alt.BorderColor = Color.Red;
+                txt_level_alt.BorderSize = 3;
+
+                MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (String.IsNullOrEmpty(txt_classe_alt.Texts))
             {
@@ -349,7 +358,7 @@ namespace Hype.Painel
         }
         #endregion
 
-        #region Campo Texto
+        #region CAMPO TEXTO
         private void txt_nick_alt_Enter(object sender, EventArgs e)
         {
             txt_nick_alt.BorderSize = 1;

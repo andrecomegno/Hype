@@ -52,7 +52,7 @@ namespace Hype.Painel.Cadastro
                 txt_email_conf.BorderSize = 3;
             }
             // VERIFICAR EMAIL
-            else if (IsEmail(txt_email.Texts) == false)
+            else if (conftext.IsEmail(txt_email.Texts) == false)
             {
                 MessageBox.Show("E-mail: seunome@email.com ", "E-Mail Invalido !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }            
@@ -220,17 +220,5 @@ namespace Hype.Painel.Cadastro
         }
         #endregion
 
-        private bool IsEmail(string strEmail)
-        {
-            string strModelo = "^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
-            if (System.Text.RegularExpressions.Regex.IsMatch(strEmail, strModelo))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
     }
 }

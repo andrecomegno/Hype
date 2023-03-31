@@ -209,7 +209,7 @@ namespace Hype.Painel
         }
         #endregion
 
-        #region CAMPO DO TEXTO EM BRANCO - ALERTAS
+        #region ALERTAS
         private void Alertas()
         {
 
@@ -246,6 +246,13 @@ namespace Hype.Painel
                 {
                     txt_level_alt_01.BorderColor = Color.Red;
                     txt_level_alt_01.BorderSize = 3;
+                }
+                else if (conftext.IsNumero(txt_level_alt_01.Texts) == false)
+                {
+                    txt_level_alt_01.BorderColor = Color.Red;
+                    txt_level_alt_01.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (txt_classe_alt_01.SelectedIndex == 0)
                 {
@@ -288,6 +295,13 @@ namespace Hype.Painel
                     txt_level_alt_01.BorderColor = Color.Red;
                     txt_level_alt_01.BorderSize = 3;
                 }
+                else if (conftext.IsNumero(txt_level_alt_01.Texts) == false)
+                {
+                    txt_level_alt_01.BorderColor = Color.Red;
+                    txt_level_alt_01.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else if (txt_classe_alt_01.SelectedIndex == 0)
                 {
                     txt_classe_alt_01.BorderColor = Color.Red;
@@ -309,6 +323,13 @@ namespace Hype.Painel
                 {
                     txt_level_alt_02.BorderColor = Color.Red;
                     txt_level_alt_02.BorderSize = 3;
+                }
+                else if (conftext.IsNumero(txt_level_alt_02.Texts) == false)
+                {
+                    txt_level_alt_02.BorderColor = Color.Red;
+                    txt_level_alt_02.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (txt_classe_alt_02.SelectedIndex == 0)
                 {
@@ -350,6 +371,13 @@ namespace Hype.Painel
                     txt_level_alt_01.BorderColor = Color.Red;
                     txt_level_alt_01.BorderSize = 3;
                 }
+                else if (conftext.IsNumero(txt_level_alt_01.Texts) == false)
+                {
+                    txt_level_alt_01.BorderColor = Color.Red;
+                    txt_level_alt_01.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else if (txt_classe_alt_01.SelectedIndex == 0)
                 {
                     txt_classe_alt_01.BorderColor = Color.Red;
@@ -372,6 +400,13 @@ namespace Hype.Painel
                     txt_level_alt_02.BorderColor = Color.Red;
                     txt_level_alt_02.BorderSize = 3;
                 }
+                else if (conftext.IsNumero(txt_level_alt_02.Texts) == false)
+                {
+                    txt_level_alt_02.BorderColor = Color.Red;
+                    txt_level_alt_02.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else if (txt_classe_alt_02.SelectedIndex == 0)
                 {
                     txt_classe_alt_02.BorderColor = Color.Red;
@@ -393,6 +428,13 @@ namespace Hype.Painel
                 {
                     txt_level_alt_03.BorderColor = Color.Red;
                     txt_level_alt_03.BorderSize = 3;
+                }
+                else if (conftext.IsNumero(txt_level_alt_03.Texts) == false)
+                {
+                    txt_level_alt_03.BorderColor = Color.Red;
+                    txt_level_alt_03.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (txt_classe_alt_03.SelectedIndex == 0)
                 {
@@ -434,6 +476,13 @@ namespace Hype.Painel
                     txt_level_alt_01.BorderColor = Color.Red;
                     txt_level_alt_01.BorderSize = 3;
                 }
+                else if (conftext.IsNumero(txt_level_alt_01.Texts) == false)
+                {
+                    txt_level_alt_01.BorderColor = Color.Red;
+                    txt_level_alt_01.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else if (txt_classe_alt_01.SelectedIndex == 0)
                 {
                     txt_classe_alt_01.BorderColor = Color.Red;
@@ -455,6 +504,13 @@ namespace Hype.Painel
                 {
                     txt_level_alt_02.BorderColor = Color.Red;
                     txt_level_alt_02.BorderSize = 3;
+                }
+                else if (conftext.IsNumero(txt_level_alt_02.Texts) == false)
+                {
+                    txt_level_alt_02.BorderColor = Color.Red;
+                    txt_level_alt_02.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (txt_classe_alt_02.SelectedIndex == 0)
                 {
@@ -478,6 +534,13 @@ namespace Hype.Painel
                     txt_level_alt_03.BorderColor = Color.Red;
                     txt_level_alt_03.BorderSize = 3;
                 }
+                else if (conftext.IsNumero(txt_level_alt_03.Texts) == false)
+                {
+                    txt_level_alt_03.BorderColor = Color.Red;
+                    txt_level_alt_03.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else if (txt_classe_alt_03.SelectedIndex == 0)
                 {
                     txt_classe_alt_03.BorderColor = Color.Red;
@@ -499,6 +562,13 @@ namespace Hype.Painel
                 {
                     txt_level_alt_04.BorderColor = Color.Red;
                     txt_level_alt_04.BorderSize = 3;
+                }
+                else if (conftext.IsNumero(txt_level_alt_04.Texts) == false)
+                {
+                    txt_level_alt_04.BorderColor = Color.Red;
+                    txt_level_alt_04.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (txt_classe_alt_04.SelectedIndex == 0)
                 {
@@ -540,6 +610,13 @@ namespace Hype.Painel
                     txt_level_alt_01.BorderColor = Color.Red;
                     txt_level_alt_01.BorderSize = 3;
                 }
+                else if (conftext.IsNumero(txt_level_alt_01.Texts) == false)
+                {
+                    txt_level_alt_01.BorderColor = Color.Red;
+                    txt_level_alt_01.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else if (txt_classe_alt_01.SelectedIndex == 0)
                 {
                     txt_classe_alt_01.BorderColor = Color.Red;
@@ -561,6 +638,13 @@ namespace Hype.Painel
                 {
                     txt_level_alt_02.BorderColor = Color.Red;
                     txt_level_alt_02.BorderSize = 3;
+                }
+                else if (conftext.IsNumero(txt_level_alt_02.Texts) == false)
+                {
+                    txt_level_alt_02.BorderColor = Color.Red;
+                    txt_level_alt_02.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (txt_classe_alt_02.SelectedIndex == 0)
                 {
@@ -584,6 +668,13 @@ namespace Hype.Painel
                     txt_level_alt_03.BorderColor = Color.Red;
                     txt_level_alt_03.BorderSize = 3;
                 }
+                else if (conftext.IsNumero(txt_level_alt_03.Texts) == false)
+                {
+                    txt_level_alt_03.BorderColor = Color.Red;
+                    txt_level_alt_03.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else if (txt_classe_alt_03.SelectedIndex == 0)
                 {
                     txt_classe_alt_03.BorderColor = Color.Red;
@@ -606,6 +697,13 @@ namespace Hype.Painel
                     txt_level_alt_04.BorderColor = Color.Red;
                     txt_level_alt_04.BorderSize = 3;
                 }
+                else if (conftext.IsNumero(txt_level_alt_04.Texts) == false)
+                {
+                    txt_level_alt_04.BorderColor = Color.Red;
+                    txt_level_alt_04.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else if (txt_classe_alt_04.SelectedIndex == 0)
                 {
                     txt_classe_alt_04.BorderColor = Color.Red;
@@ -627,6 +725,13 @@ namespace Hype.Painel
                 {
                     txt_level_alt_05.BorderColor = Color.Red;
                     txt_level_alt_05.BorderSize = 3;
+                }
+                else if (conftext.IsNumero(txt_level_alt_05.Texts) == false)
+                {
+                    txt_level_alt_05.BorderColor = Color.Red;
+                    txt_level_alt_05.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (txt_classe_alt_05.SelectedIndex == 0)
                 {
@@ -1312,6 +1417,14 @@ namespace Hype.Painel
         #endregion
 
         #region BUSCAR
+        private void txt_buscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                Buscar();
+            }
+        }
+
         private void txt_buscar__TextChanged(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txt_buscar.Texts))
@@ -1364,7 +1477,6 @@ namespace Hype.Painel
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
         }
-
 
     }
 }

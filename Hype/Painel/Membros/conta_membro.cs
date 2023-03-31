@@ -358,7 +358,7 @@ namespace Hype.Painel
         }
         #endregion
 
-        #region CAMPO DO TEXTO EM BRANCO - ALERTAS
+        #region ALERTAS
         private void Alertas()
         {
             #region MEMBRO
@@ -420,10 +420,24 @@ namespace Hype.Painel
                     txt_novo_level.BorderColor = Color.Red;
                     txt_novo_level.BorderSize = 3;
                 }
+                else if (conftext.IsNumero(txt_novo_level.Texts) == false)
+                {
+                    txt_novo_level.BorderColor = Color.Red;
+                    txt_novo_level.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else if (String.IsNullOrEmpty(txt_novo_poder.Texts))
                 {
                     txt_novo_poder.BorderColor = Color.Red;
                     txt_novo_poder.BorderSize = 3;
+                }
+                else if (conftext.IsNumero(txt_novo_poder.Texts) == false)
+                {
+                    txt_novo_poder.BorderColor = Color.Red;
+                    txt_novo_poder.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -507,10 +521,24 @@ namespace Hype.Painel
                     txt_novo_level.BorderColor = Color.Red;
                     txt_novo_level.BorderSize = 3;
                 }
+                else if (conftext.IsNumero(txt_novo_level.Texts) == false)
+                {
+                    txt_novo_level.BorderColor = Color.Red;
+                    txt_novo_level.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else if (String.IsNullOrEmpty(txt_novo_poder.Texts))
                 {
                     txt_novo_poder.BorderColor = Color.Red;
                     txt_novo_poder.BorderSize = 3;
+                }
+                else if (conftext.IsNumero(txt_novo_poder.Texts) == false)
+                {
+                    txt_novo_poder.BorderColor = Color.Red;
+                    txt_novo_poder.BorderSize = 3;
+
+                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 // REMANEJAMENTO

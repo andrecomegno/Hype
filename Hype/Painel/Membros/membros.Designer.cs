@@ -234,6 +234,7 @@ namespace Hype.Painel
             this.txt_buscar.UnderlinedStyle = false;
             this.txt_buscar._TextChanged += new System.EventHandler(this.txt_buscar__TextChanged);
             this.txt_buscar.Enter += new System.EventHandler(this.bt_buscar_MouseEnter);
+            this.txt_buscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_buscar_KeyPress);
             this.txt_buscar.Leave += new System.EventHandler(this.bt_buscar_MouseLeave);
             // 
             // bt_alts

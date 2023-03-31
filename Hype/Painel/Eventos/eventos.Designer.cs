@@ -191,6 +191,7 @@ namespace Hype.Painel.Eventos
             this.txt_buscar.Texts = "";
             this.txt_buscar.UnderlinedStyle = false;
             this.txt_buscar._TextChanged += new System.EventHandler(this.txt_buscar__TextChanged);
+            this.txt_buscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_buscar_KeyPress);
             // 
             // bt_eventos
             // 

@@ -88,7 +88,7 @@ namespace Hype.Painel.Cadastro
             this.bt_cancelar.Location = new System.Drawing.Point(586, 264);
             this.bt_cancelar.Name = "bt_cancelar";
             this.bt_cancelar.Size = new System.Drawing.Size(122, 36);
-            this.bt_cancelar.TabIndex = 66;
+            this.bt_cancelar.TabIndex = 7;
             this.bt_cancelar.Text = "Cancelar";
             this.bt_cancelar.UseVisualStyleBackColor = false;
             this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
@@ -105,7 +105,7 @@ namespace Hype.Painel.Cadastro
             this.bt_salvar.Location = new System.Drawing.Point(458, 264);
             this.bt_salvar.Name = "bt_salvar";
             this.bt_salvar.Size = new System.Drawing.Size(122, 36);
-            this.bt_salvar.TabIndex = 67;
+            this.bt_salvar.TabIndex = 6;
             this.bt_salvar.Text = "Salvar";
             this.bt_salvar.UseVisualStyleBackColor = false;
             this.bt_salvar.Click += new System.EventHandler(this.bt_salvar_Click);
@@ -129,7 +129,7 @@ namespace Hype.Painel.Cadastro
             this.txt_email_conf.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_email_conf.PlaceholderText = "Confirmar E-Mail";
             this.txt_email_conf.Size = new System.Drawing.Size(250, 31);
-            this.txt_email_conf.TabIndex = 13;
+            this.txt_email_conf.TabIndex = 3;
             this.txt_email_conf.Texts = "";
             this.txt_email_conf.UnderlinedStyle = false;
             this.txt_email_conf.Enter += new System.EventHandler(this.txt_email_conf_Enter);
@@ -154,7 +154,7 @@ namespace Hype.Painel.Cadastro
             this.txt_email.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_email.PlaceholderText = "E-Mail";
             this.txt_email.Size = new System.Drawing.Size(250, 31);
-            this.txt_email.TabIndex = 12;
+            this.txt_email.TabIndex = 1;
             this.txt_email.Texts = "";
             this.txt_email.UnderlinedStyle = false;
             this.txt_email.Enter += new System.EventHandler(this.txt_email_Enter);
@@ -179,7 +179,7 @@ namespace Hype.Painel.Cadastro
             this.txt_login.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_login.PlaceholderText = "Login";
             this.txt_login.Size = new System.Drawing.Size(250, 31);
-            this.txt_login.TabIndex = 9;
+            this.txt_login.TabIndex = 0;
             this.txt_login.Texts = "";
             this.txt_login.UnderlinedStyle = false;
             this.txt_login.Enter += new System.EventHandler(this.txt_login_Enter);
@@ -200,11 +200,11 @@ namespace Hype.Painel.Cadastro
             this.txt_senha_conf.Multiline = false;
             this.txt_senha_conf.Name = "txt_senha_conf";
             this.txt_senha_conf.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_senha_conf.PasswordChar = false;
+            this.txt_senha_conf.PasswordChar = true;
             this.txt_senha_conf.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_senha_conf.PlaceholderText = "Confirmar Senha";
             this.txt_senha_conf.Size = new System.Drawing.Size(250, 31);
-            this.txt_senha_conf.TabIndex = 11;
+            this.txt_senha_conf.TabIndex = 5;
             this.txt_senha_conf.Texts = "";
             this.txt_senha_conf.UnderlinedStyle = false;
             this.txt_senha_conf.Enter += new System.EventHandler(this.txt_senha_conf_Enter);
@@ -225,11 +225,11 @@ namespace Hype.Painel.Cadastro
             this.txt_senha.Multiline = false;
             this.txt_senha.Name = "txt_senha";
             this.txt_senha.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_senha.PasswordChar = false;
+            this.txt_senha.PasswordChar = true;
             this.txt_senha.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_senha.PlaceholderText = "Senha";
             this.txt_senha.Size = new System.Drawing.Size(250, 31);
-            this.txt_senha.TabIndex = 10;
+            this.txt_senha.TabIndex = 4;
             this.txt_senha.Texts = "";
             this.txt_senha.UnderlinedStyle = false;
             this.txt_senha.Enter += new System.EventHandler(this.txt_senha_Enter);

@@ -47,6 +47,15 @@ namespace Hype
         }
 
         #region BOTÕES
+        private void txt_senha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                Alertas();
+                LimparCampo(pl_login.Controls);
+            }
+        }
+
         private void bt_entrar_Click(object sender, EventArgs e)
         {
             Alertas();
@@ -98,7 +107,7 @@ namespace Hype
             }
             finally
             {
-                LimparCampo(pl_login.Controls);
+                LimparCampo(pl_login.Controls);                
             }
         }     
 
@@ -171,8 +180,10 @@ namespace Hype
                 if (c is RJTextBox)
                 {
                     ((RJTextBox)(c)).Texts = string.Empty;
+
                 }
             }
         }
+
     }
 }

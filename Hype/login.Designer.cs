@@ -149,6 +149,7 @@ namespace Hype
             this.txt_senha.Texts = "";
             this.txt_senha.UnderlinedStyle = false;
             this.txt_senha.Enter += new System.EventHandler(this.txt_senha_Enter);
+            this.txt_senha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_senha_KeyPress);
             this.txt_senha.Leave += new System.EventHandler(this.txt_senha_Leave);
             // 
             // txt_login

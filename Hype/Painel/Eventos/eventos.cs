@@ -140,6 +140,14 @@ namespace Hype.Painel.Eventos
         #endregion
 
         #region BUSCAR
+        private void txt_buscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                Buscar();
+            }
+        }
+
         private void bt_buscar_Click(object sender, EventArgs e)
         {
             Buscar();
@@ -192,5 +200,7 @@ namespace Hype.Painel.Eventos
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
         }
+
+
     }
 }

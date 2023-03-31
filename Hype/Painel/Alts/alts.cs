@@ -160,9 +160,17 @@ namespace Hype.Painel
         {
             dataGridView1.Cursor = Cursors.Default;
         }
-        #endregion       
+        #endregion
 
         #region BUSCAR
+        private void txt_buscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                Buscar();
+            }
+        }
+
         private void bt_buscar_Click(object sender, EventArgs e)
         {
             Buscar();
@@ -240,5 +248,7 @@ namespace Hype.Painel
             dataGridView1.EnableHeadersVisualStyles = false;
 
         }
+
+
     }
 }

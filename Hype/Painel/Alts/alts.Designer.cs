@@ -35,21 +35,21 @@ namespace Hype.Painel
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pl_conta_excluir = new System.Windows.Forms.Panel();
             this.pl_conteudo_02 = new System.Windows.Forms.Panel();
+            this.bt_add_alt = new Hype.script.RJCircularPictureBox();
             this.txt_clique_aqui = new System.Windows.Forms.Label();
             this.txt_sem_dados = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pl_top = new System.Windows.Forms.Panel();
             this.bt_buscar = new System.Windows.Forms.PictureBox();
+            this.txt_buscar = new Hype.Painel.RJTextBox();
             this.bt_alts = new System.Windows.Forms.Button();
             this.bt_membros = new System.Windows.Forms.Button();
-            this.bt_add_alt = new Hype.script.RJCircularPictureBox();
-            this.txt_buscar = new Hype.Painel.RJTextBox();
             this.pl_conta_excluir.SuspendLayout();
             this.pl_conteudo_02.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bt_add_alt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pl_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bt_add_alt)).BeginInit();
             this.SuspendLayout();
             // 
             // pl_conta_excluir
@@ -77,6 +77,27 @@ namespace Hype.Painel
             this.pl_conteudo_02.Name = "pl_conteudo_02";
             this.pl_conteudo_02.Size = new System.Drawing.Size(1172, 651);
             this.pl_conteudo_02.TabIndex = 79;
+            // 
+            // bt_add_alt
+            // 
+            this.bt_add_alt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_add_alt.BackColor = System.Drawing.Color.Transparent;
+            this.bt_add_alt.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.bt_add_alt.BorderColor = System.Drawing.Color.Transparent;
+            this.bt_add_alt.BorderColor2 = System.Drawing.Color.Transparent;
+            this.bt_add_alt.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.bt_add_alt.BorderSize = 2;
+            this.bt_add_alt.GradientAngle = 50F;
+            this.bt_add_alt.Image = global::Hype.Properties.Resources.Mais;
+            this.bt_add_alt.Location = new System.Drawing.Point(1004, 548);
+            this.bt_add_alt.Name = "bt_add_alt";
+            this.bt_add_alt.Size = new System.Drawing.Size(55, 55);
+            this.bt_add_alt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bt_add_alt.TabIndex = 72;
+            this.bt_add_alt.TabStop = false;
+            this.bt_add_alt.Click += new System.EventHandler(this.bt_add_alt_Click);
+            this.bt_add_alt.MouseEnter += new System.EventHandler(this.bt_add_alt_MouseEnter);
+            this.bt_add_alt.MouseLeave += new System.EventHandler(this.bt_add_alt_MouseLeave);
             // 
             // txt_clique_aqui
             // 
@@ -189,6 +210,33 @@ namespace Hype.Painel
             this.bt_buscar.TabStop = false;
             this.bt_buscar.Click += new System.EventHandler(this.bt_buscar_Click);
             // 
+            // txt_buscar
+            // 
+            this.txt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_buscar.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_buscar.BorderColor = System.Drawing.Color.Transparent;
+            this.txt_buscar.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.txt_buscar.BorderRadius = 15;
+            this.txt_buscar.BorderSize = 2;
+            this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_buscar.Location = new System.Drawing.Point(436, 5);
+            this.txt_buscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_buscar.Multiline = false;
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_buscar.PasswordChar = false;
+            this.txt_buscar.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_buscar.PlaceholderText = "O que você procura ?";
+            this.txt_buscar.Size = new System.Drawing.Size(661, 31);
+            this.txt_buscar.TabIndex = 67;
+            this.txt_buscar.Texts = "";
+            this.txt_buscar.UnderlinedStyle = false;
+            this.txt_buscar._TextChanged += new System.EventHandler(this.txt_buscar__TextChanged);
+            this.txt_buscar.Enter += new System.EventHandler(this.txt_buscar_Enter);
+            this.txt_buscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_buscar_KeyPress);
+            this.txt_buscar.Leave += new System.EventHandler(this.txt_buscar_Leave);
+            // 
             // bt_alts
             // 
             this.bt_alts.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -222,53 +270,6 @@ namespace Hype.Painel
             this.bt_membros.UseVisualStyleBackColor = false;
             this.bt_membros.Click += new System.EventHandler(this.bt_membros_Click);
             // 
-            // bt_add_alt
-            // 
-            this.bt_add_alt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_add_alt.BackColor = System.Drawing.Color.Transparent;
-            this.bt_add_alt.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.bt_add_alt.BorderColor = System.Drawing.Color.Transparent;
-            this.bt_add_alt.BorderColor2 = System.Drawing.Color.Transparent;
-            this.bt_add_alt.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.bt_add_alt.BorderSize = 2;
-            this.bt_add_alt.GradientAngle = 50F;
-            this.bt_add_alt.Image = global::Hype.Properties.Resources.Mais;
-            this.bt_add_alt.Location = new System.Drawing.Point(1004, 548);
-            this.bt_add_alt.Name = "bt_add_alt";
-            this.bt_add_alt.Size = new System.Drawing.Size(55, 55);
-            this.bt_add_alt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bt_add_alt.TabIndex = 72;
-            this.bt_add_alt.TabStop = false;
-            this.bt_add_alt.Click += new System.EventHandler(this.bt_add_alt_Click);
-            this.bt_add_alt.MouseEnter += new System.EventHandler(this.bt_add_alt_MouseEnter);
-            this.bt_add_alt.MouseLeave += new System.EventHandler(this.bt_add_alt_MouseLeave);
-            // 
-            // txt_buscar
-            // 
-            this.txt_buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_buscar.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_buscar.BorderColor = System.Drawing.Color.Transparent;
-            this.txt_buscar.BorderFocusColor = System.Drawing.Color.Transparent;
-            this.txt_buscar.BorderRadius = 15;
-            this.txt_buscar.BorderSize = 2;
-            this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_buscar.Location = new System.Drawing.Point(436, 5);
-            this.txt_buscar.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_buscar.Multiline = false;
-            this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_buscar.PasswordChar = false;
-            this.txt_buscar.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_buscar.PlaceholderText = "O que você procura ?";
-            this.txt_buscar.Size = new System.Drawing.Size(661, 31);
-            this.txt_buscar.TabIndex = 67;
-            this.txt_buscar.Texts = "";
-            this.txt_buscar.UnderlinedStyle = false;
-            this.txt_buscar._TextChanged += new System.EventHandler(this.txt_buscar__TextChanged);
-            this.txt_buscar.Enter += new System.EventHandler(this.txt_buscar_Enter);
-            this.txt_buscar.Leave += new System.EventHandler(this.txt_buscar_Leave);
-            // 
             // alts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,10 +282,10 @@ namespace Hype.Painel
             this.pl_conta_excluir.ResumeLayout(false);
             this.pl_conteudo_02.ResumeLayout(false);
             this.pl_conteudo_02.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bt_add_alt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pl_top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bt_buscar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bt_add_alt)).EndInit();
             this.ResumeLayout(false);
 
         }
