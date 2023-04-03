@@ -12,24 +12,44 @@ namespace Hype.Painel.Eventos
     {
         // ID`S
         string id_membro = eventos.Instance.id_membro;
-        string id_doacao = eventos.Instance.id_doacao;
-        string id_eventos = eventos.Instance.id_eventos;
+        string id_doacao;
+        string id_eventos;
 
         // SEMANAS DOACÖES
-        bool semana_01 = true;
-        bool semana_02 = false;
-        bool semana_03 = false;
-        bool semana_04 = false;
+        int _doacao = 1;
+        bool _editarDoacao = false;
 
         // OURO
         string totalDoacao;
 
         // SELECIONAR CLA 
-        public string nome_cla = home.Instance.nome_cla;
+        public string nome_cla = home.Instance.nome_cla;        
 
         public doacao()
         {
             InitializeComponent();
+        }
+
+        private void Semanas()
+        {
+            switch (_doacao)
+            {
+                case 1:
+                    DoacaoSemana_01();
+                    break;
+                case 2:
+                    DoacaoSemana_02();
+                    break;
+                case 3:
+                    DoacaoSemana_03();
+                    break;
+                case 4:
+                    DoacaoSemana_04();
+                    break;
+                case 5:
+                   
+                    break;
+            }
         }
 
         #region TABELAS
@@ -113,7 +133,77 @@ namespace Hype.Painel.Eventos
         {
             if (dataGridView1.Rows.Count > 0)
             {
-                MostrarDadosTabela();
+                _editarDoacao = true;
+
+                // PEGA O VALOR DOADO DENTRO DA CELULA
+                var doacao = dataGridView1.CurrentCell.Value;
+                // PEGA O TITULO DA COLUNA
+                var titulo = dataGridView1.Columns[e.ColumnIndex].HeaderCell.Value;
+
+                // COMPARACAO DA TAG DENTRO DO CAMPO TEXTO COM O TITULO DA TABELA 
+                if (String.Equals(txt_doacao_01.Tag, titulo))
+                {
+                    try
+                    {
+                        // PASSA OS VALORES PARA O CAMPO TEXTO 
+                        txt_doacao_01.Texts = doacao.ToString();
+                        // HABILITA O CAMPO DOACAO DA SEMANA
+                        CampoDoacao(lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);  
+                    }
+                    finally
+                    {
+                        // LIMPAR
+                        txt_doacao_02.Texts = string.Empty;
+                        txt_doacao_03.Texts = string.Empty;
+                        txt_doacao_04.Texts = string.Empty;
+                    }
+                    MessageBox.Show(doacao.ToString());
+                }                
+                else if (String.Equals(txt_doacao_02.Tag, titulo))
+                {
+                    try
+                    {
+                        txt_doacao_02.Texts = doacao.ToString();
+                        CampoDoacao(lb_semana_02, txt_doacao_02, lb_semana_01, txt_doacao_01, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
+                    }
+                    finally
+                    {
+                        txt_doacao_01.Texts = string.Empty;
+                        txt_doacao_03.Texts = string.Empty;
+                        txt_doacao_04.Texts = string.Empty;
+                    }
+
+                }                    
+                else if (String.Equals(txt_doacao_03.Tag, titulo))
+                {
+                    try
+                    {
+                        txt_doacao_03.Texts = doacao.ToString();
+                        CampoDoacao(lb_semana_03, txt_doacao_03, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_04, txt_doacao_04);
+                    }
+                    finally
+                    {
+                        txt_doacao_01.Texts = string.Empty;
+                        txt_doacao_02.Texts = string.Empty;
+                        txt_doacao_04.Texts = string.Empty;
+                    }
+
+                }                    
+                else if (String.Equals(txt_doacao_04.Tag, titulo))
+                {
+                    try
+                    {
+                        txt_doacao_04.Texts = doacao.ToString();
+                        CampoDoacao(lb_semana_04, txt_doacao_04, lb_semana_02, txt_doacao_02, lb_semana_01, txt_doacao_01, lb_semana_03, txt_doacao_03);
+                    }
+                    finally
+                    {
+                        txt_doacao_01.Texts = string.Empty;
+                        txt_doacao_02.Texts = string.Empty;
+                        txt_doacao_03.Texts = string.Empty;
+                    }
+                }
+                    
             }
         }
 
@@ -125,27 +215,6 @@ namespace Hype.Painel.Eventos
         private void dataGridView1_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.Cursor = Cursors.Default;
-        }
-
-        private void MostrarDadosTabela()
-        {
-            try
-            {
-                if (dataGridView1.SelectedRows.Count > 0)
-                {
-                    DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
-                    // ANOTAÇÃO
-                }
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
-            }
-            finally
-            {
-                doacao uc = new doacao();
-                cla.Instance.addControl(uc);
-            }
         }
 
         private void AtualizarTabela()
@@ -179,7 +248,7 @@ namespace Hype.Painel.Eventos
             }            
         }
 
-        private void DadosDoacao()
+        private void Dados()
         {
             configdb database = new configdb();
             database.openConnection();
@@ -193,68 +262,6 @@ namespace Hype.Painel.Eventos
                 id_membro = dr["ID_MEMBROS"].ToString();
                 id_eventos = dr["ID_EVENTOS"].ToString();
                 id_doacao = dr["ID_DOACAO"].ToString();
-
-                // SEMANAS
-                if (semana_01)
-                {
-                    txt_doacao_01.Texts = dr["SEMANA_01"].ToString();
-
-                    semana_01 = false;
-                    semana_02 = true;
-                }
-
-                if (semana_02)
-                {
-                    txt_doacao_02.Texts = dr["SEMANA_02"].ToString();
-
-                    if (txt_doacao_02.Texts == "0,00")
-                    {
-                        txt_doacao_02.Texts = string.Empty;
-                    }
-                    else
-                    {
-                        txt_doacao_02.Texts = dr["SEMANA_02"].ToString();
-
-                        semana_02 = false;
-                        semana_03 = true;
-                    }
-                }
-
-                if (semana_03)
-                {
-                    txt_doacao_03.Texts = dr["SEMANA_03"].ToString();
-
-                    if (txt_doacao_03.Texts == "0,00")
-                    {
-                        txt_doacao_03.Texts = string.Empty;
-                    }
-                    else
-                    {
-                        txt_doacao_03.Texts = dr["SEMANA_03"].ToString();
-
-                        semana_03 = false;
-                        semana_04 = true;
-                    }
-                }
-
-                if (semana_04)
-                {
-                    txt_doacao_04.Texts = dr["SEMANA_04"].ToString();
-
-                    if (txt_doacao_04.Texts == "0,00")
-                    {
-                        txt_doacao_04.Texts = string.Empty;
-                    }
-                    else
-                    {
-                        txt_doacao_04.Texts = dr["SEMANA_04"].ToString();                        
-
-                        semana_04 = false;
-                        semana_01 = true;
-
-                        Limpar(); // Novo Mês  
-                    }
-                }                
             }
 
             database.closeConnection();
@@ -262,133 +269,113 @@ namespace Hype.Painel.Eventos
         #endregion
 
         #region ALERTAS
-        private void Alertas()
+        private void DoacaoSemana_01()
         {
-            if(semana_01)
+            if (String.IsNullOrEmpty(txt_doacao_01.Texts))
             {
-                /*
-                if (String.IsNullOrEmpty(txt_doacao_01.Texts))
-                {
-                    txt_doacao_01.BorderColor = Color.Red;
-                    txt_doacao_01.BorderSize = 3;
-                }
-                else if (conftext.IsNumero(txt_doacao_01.Texts) == false)
-                {
-                    txt_doacao_01.BorderColor = Color.Red;
-                    txt_doacao_01.BorderSize = 3;
+                txt_doacao_01.BorderColor = Color.Red;
+                txt_doacao_01.BorderSize = 3;
+            }
+            else if (conftext.IsNumero(txt_doacao_01.Texts) == false)
+            {
+                txt_doacao_01.BorderColor = Color.Red;
+                txt_doacao_01.BorderSize = 3;
 
-                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-
-                }
-                */
+                MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
                 try
                 {
                     Semana_01();
-
-                    CampoDoacao(lb_semana_02, txt_doacao_02, lb_semana_01, txt_doacao_01, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
-
-                    semana_02 = true;
-                    semana_01 = false;
                 }
                 finally
                 {
                     AtualizarTabela();
-                }
-            }
-
-            if (semana_02)
-            {
-                /*
-                if (String.IsNullOrEmpty(txt_doacao_02.Texts))
-                {
-                    txt_doacao_02.BorderColor = Color.Red;
-                    txt_doacao_02.BorderSize = 3;
-                }
-                else if (conftext.IsNumero(txt_doacao_02.Texts) == false)
-                {
-                    txt_doacao_02.BorderColor = Color.Red;
-                    txt_doacao_02.BorderSize = 3;
-
-                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-
-                }
-                */
-                try
-                {
-                    Semana_02();
-
-                    CampoDoacao(lb_semana_03, txt_doacao_03, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_04, txt_doacao_04);
-
-                    semana_03 = true;
-                    semana_01 = false;
-                    semana_02 = false;
-                }
-                finally
-                {
-                    AtualizarTabela();
-                }
-            }
-
-            if (semana_03)
-            {
-                if (String.IsNullOrEmpty(txt_doacao_03.Texts))
-                {
-                    txt_doacao_03.BorderColor = Color.Red;
-                    txt_doacao_03.BorderSize = 3;
-                }
-                else if (conftext.IsNumero(txt_doacao_03.Texts) == false)
-                {
-                    txt_doacao_03.BorderColor = Color.Red;
-                    txt_doacao_03.BorderSize = 3;
-
-                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    try
-                    {
-                        Salvar();
-                    }
-                    finally
-                    {
-                        AtualizarTabela();
-                    }
-                }
-            }
-
-            if (semana_04)
-            {
-                if (String.IsNullOrEmpty(txt_doacao_04.Texts))
-                {
-                    txt_doacao_04.BorderColor = Color.Red;
-                    txt_doacao_04.BorderSize = 3;
-                }
-                else if (conftext.IsNumero(txt_doacao_04.Texts) == false)
-                {
-                    txt_doacao_04.BorderColor = Color.Red;
-                    txt_doacao_04.BorderSize = 3;
-
-                    MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    try
-                    {
-                        Salvar();                        
-                    }
-                    finally
-                    {
-                        AtualizarTabela();                        
-                    }
                 }
             }
         }
+
+        private void DoacaoSemana_02()
+        {
+            if (String.IsNullOrEmpty(txt_doacao_02.Texts))
+            {
+                txt_doacao_02.BorderColor = Color.Red;
+                txt_doacao_02.BorderSize = 3;
+            }
+            else if (conftext.IsNumero(txt_doacao_02.Texts) == false)
+            {
+                txt_doacao_02.BorderColor = Color.Red;
+                txt_doacao_02.BorderSize = 3;
+
+                MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                try
+                {
+                    Semana_02();
+                }
+                finally
+                {
+                    AtualizarTabela();
+                }
+            }
+        }
+
+        private void DoacaoSemana_03()
+        {
+            if (String.IsNullOrEmpty(txt_doacao_03.Texts))
+            {
+                txt_doacao_03.BorderColor = Color.Red;
+                txt_doacao_03.BorderSize = 3;
+            }
+            else if (conftext.IsNumero(txt_doacao_03.Texts) == false)
+            {
+                txt_doacao_03.BorderColor = Color.Red;
+                txt_doacao_03.BorderSize = 3;
+
+                MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                try
+                {
+                    Semana_03();
+                }
+                finally
+                {
+                    AtualizarTabela();
+                }
+            }
+        }
+
+        private void DoacaoSemana_04()
+        {
+            if (String.IsNullOrEmpty(txt_doacao_04.Texts))
+            {
+                txt_doacao_04.BorderColor = Color.Red;
+                txt_doacao_04.BorderSize = 3;
+            }
+            else if (conftext.IsNumero(txt_doacao_04.Texts) == false)
+            {
+                txt_doacao_04.BorderColor = Color.Red;
+                txt_doacao_04.BorderSize = 3;
+
+                MessageBox.Show("Somente Numeros !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                try
+                {
+                    Semana_04();
+                }
+                finally
+                {
+                    AtualizarTabela();
+                }
+            }
+        }             
         #endregion
 
         #region BOTÕES
@@ -402,7 +389,7 @@ namespace Hype.Painel.Eventos
         {
             try
             {
-                Alertas();
+                Semanas();
             }
             catch (Exception erro)
             {
@@ -416,34 +403,67 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            double de = (Convert.ToDouble(txt_doacao_01.Texts));
-            totalDoacao = de.ToString();
+            try
+            {
+                if (_editarDoacao)
+                {
+                    //double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts) + Convert.ToDouble(txt_doacao_04.Texts));
+                    //totalDoacao = de.ToString();
 
-            // INSERT TABELA EVENTOS
-            MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, mes_evento, ano_evento, id_membros) values (null, ?, ?, ?)", database.getConnection());
+                    // UPDATE TABELA DOAÇÃO 01
+                    MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
 
-            objCmdEventos.Parameters.Add("@mes_evento", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
-            objCmdEventos.Parameters.Add("@ano_evento", MySqlDbType.Year).Value = DateTime.Now.Year;
-            objCmdEventos.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
+                    objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
+                    objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
+                    objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
+                    objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+                    objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = totalDoacao;
 
-            objCmdEventos.ExecuteNonQuery();
-            long idEventos = objCmdEventos.LastInsertedId;
+                    objCmdDoacao.ExecuteNonQuery();
 
-            // INSERT TABELA DOAÇÃO
-            MySqlCommand objCmdDoacao = new MySqlCommand("insert into hypedb.doacao (id_doacao, semana_01, semana_02, semana_03, semana_04, total, anotacao, id_eventos, id_membros) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+                    DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 1", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts) + Convert.ToDouble(txt_doacao_04.Texts));
+                    totalDoacao = de.ToString();
 
-            objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
-            objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = 0;
-            objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
-            objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
-            objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = totalDoacao;
-            objCmdDoacao.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = "";
-            objCmdDoacao.Parameters.Add("@id_eventos", MySqlDbType.Int32).Value = idEventos;
-            objCmdDoacao.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
+                    // INSERT TABELA EVENTOS
+                    MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, mes_evento, ano_evento, id_membros) values (null, ?, ?, ?)", database.getConnection());
 
-            objCmdDoacao.ExecuteNonQuery();
+                    objCmdEventos.Parameters.Add("@mes_evento", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
+                    objCmdEventos.Parameters.Add("@ano_evento", MySqlDbType.Year).Value = DateTime.Now.Year;
+                    objCmdEventos.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
 
-            DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 1", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    objCmdEventos.ExecuteNonQuery();
+                    id_eventos = objCmdEventos.LastInsertedId.ToString();
+
+                    // INSERT TABELA DOAÇÃO
+                    MySqlCommand objCmdDoacao = new MySqlCommand("insert into hypedb.doacao (id_doacao, semana_01, semana_02, semana_03, semana_04, total, anotacao, id_eventos, id_membros) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+                    objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+                    objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = 0;
+                    objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
+                    objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
+                    objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = totalDoacao;
+                    objCmdDoacao.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = "";
+                    objCmdDoacao.Parameters.Add("@id_eventos", MySqlDbType.Int32).Value = id_eventos;
+                    objCmdDoacao.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
+
+                    objCmdDoacao.ExecuteNonQuery();
+                    id_doacao = objCmdDoacao.LastInsertedId.ToString();
+
+                    DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 1", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            finally
+            {
+                // HABILITAR OS CAMPOS TEXTOS
+                CampoDoacao(lb_semana_02, txt_doacao_02, lb_semana_01, txt_doacao_01, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
+
+                // SEMANAS +1
+                _doacao++;
+            }
 
             database.closeConnection();
         }
@@ -454,130 +474,101 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts));
-            totalDoacao = de.ToString();
-
-            // INSERT TABELA DOAÇÃO
-            MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
-
-            objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
-            objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
-            objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
-            objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
-            objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
-            objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
-            objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
-            objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = totalDoacao;
-
-            objCmdDoacao.ExecuteNonQuery();
-
-            DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 2", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            database.closeConnection();
-        }
-
-        private void Salvar()
-        {
-            // BANCO DE DADOS
-            configdb database = new configdb();
-            database.openConnection();
-
-            if (semana_01)
-                {
-                double de = (Convert.ToDouble(txt_doacao_01.Texts));
-                totalDoacao = de.ToString();
-
-                // INSERT TABELA EVENTOS
-                MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, mes_evento, ano_evento, id_membros) values (null, ?, ?, ?)", database.getConnection());
-
-                objCmdEventos.Parameters.Add("@mes_evento", MySqlDbType.VarChar, 256).Value = DateTime.Now.ToString("MMMM");
-                objCmdEventos.Parameters.Add("@ano_evento", MySqlDbType.Year).Value = DateTime.Now.Year;
-                objCmdEventos.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
-
-                objCmdEventos.ExecuteNonQuery();
-                long idEventos = objCmdEventos.LastInsertedId;
-
-                // INSERT TABELA DOAÇÃO
-                MySqlCommand objCmdDoacao = new MySqlCommand("insert into hypedb.doacao (id_doacao, semana_01, semana_02, semana_03, semana_04, total, anotacao, id_eventos, id_membros) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
-
-                objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
-                objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = 0;
-                objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
-                objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
-                objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = totalDoacao;
-                objCmdDoacao.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = "";
-                objCmdDoacao.Parameters.Add("@id_eventos", MySqlDbType.Int32).Value = idEventos;
-                objCmdDoacao.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
-
-                objCmdDoacao.ExecuteNonQuery();
-
-                DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 1", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            if (semana_02)
+            try
             {
-                double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts));
+                double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts) + Convert.ToDouble(txt_doacao_04.Texts));
                 totalDoacao = de.ToString();
 
-                // INSERT TABELA DOAÇÃO
-                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+                // UPDATE TABELA DOAÇÃO 02
+                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_02=@semana_02, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
 
                 objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
                 objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
                 objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
-                objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
                 objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
-                objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
-                objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
                 objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = totalDoacao;
 
                 objCmdDoacao.ExecuteNonQuery();
 
                 DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 2", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            finally
+            {
+                CampoDoacao(lb_semana_03, txt_doacao_03, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_04, txt_doacao_04);
 
-            if (semana_03)
+                _doacao++;
+            }
+
+            database.closeConnection();
+        }
+
+        private void Semana_03()
+        {
+            // BANCO DE DADOS
+            configdb database = new configdb();
+            database.openConnection();
+
+            try
             {
                 double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts));
                 totalDoacao = de.ToString();
 
-                // INSERT TABELA DOAÇÃO
-                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+                // UPDATE TABELA DOAÇÃO 03
+                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_03=@semana_03, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
 
                 objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
                 objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
                 objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
-                objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
-                objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
                 objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
-                objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
                 objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = totalDoacao;
 
                 objCmdDoacao.ExecuteNonQuery();
 
                 DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 3", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            finally
+            {
+                CampoDoacao(lb_semana_04, txt_doacao_04, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03);
 
-            if (semana_04)
+                _doacao++;
+            }
+
+            database.closeConnection();
+        }
+
+        private void Semana_04()
+        {
+            // BANCO DE DADOS
+            configdb database = new configdb();
+            database.openConnection();
+
+            try
             {
                 double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts) + Convert.ToDouble(txt_doacao_04.Texts));
                 totalDoacao = de.ToString();
 
-                // INSERT TABELA DOAÇÃO
-                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+                // UPDATE TABELA DOAÇÃO 04
+                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_04=@semana_04, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
 
                 objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
                 objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
                 objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
-                objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
-                objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
-                objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
                 objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = txt_doacao_04.Texts;
                 objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = totalDoacao;
 
                 objCmdDoacao.ExecuteNonQuery();
 
                 DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 4", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            finally
+            {
+                CampoDoacao(lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
+
+                // RETORNA DOAÇÃO 1
+                _doacao = 1;
+
+                // LIMPA A CAMPO DE TEXTO
+                Limpar();
             }
 
             database.closeConnection();
@@ -609,7 +600,7 @@ namespace Hype.Painel.Eventos
 
             lb4.ForeColor = Color.FromArgb(24, 25, 28);
             text4.BackColor = Color.FromArgb(24, 25, 28);
-            text4.Enabled = false;
+            text4.Enabled = false;             
         }
 
         private void txt_doacao_01_Enter(object sender, EventArgs e)
@@ -631,19 +622,42 @@ namespace Hype.Painel.Eventos
         {
             txt_doacao_04.BorderSize = 1;
         }
+
+        private void txt_doacao_01_Leave(object sender, EventArgs e)
+        {
+            txt_doacao_01.BorderColor = Color.Transparent;
+            txt_doacao_01.BorderSize = 0;
+        }
+
+        private void txt_doacao_02_Leave(object sender, EventArgs e)
+        {
+            txt_doacao_02.BorderColor = Color.Transparent;
+            txt_doacao_02.BorderSize = 0;
+        }
+
+        private void txt_doacao_03_Leave(object sender, EventArgs e)
+        {
+            txt_doacao_03.BorderColor = Color.Transparent;
+            txt_doacao_03.BorderSize = 0;
+        }
+
+        private void txt_doacao_04_Leave(object sender, EventArgs e)
+        {
+            txt_doacao_04.BorderColor = Color.Transparent;
+            txt_doacao_04.BorderSize = 0;
+        }
         #endregion
 
         private void novo_evento_Load(object sender, EventArgs e)
         {
             CampoDoacao(lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
 
-            DadosDoacao();
+            Dados();
             TabelaEvento();            
 
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
         }
-
 
     }
 }

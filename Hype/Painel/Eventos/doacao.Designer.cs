@@ -179,6 +179,7 @@ namespace Hype.Painel.Eventos
             this.lb_semana_01.Name = "lb_semana_01";
             this.lb_semana_01.Size = new System.Drawing.Size(81, 17);
             this.lb_semana_01.TabIndex = 183;
+            this.lb_semana_01.Tag = "";
             this.lb_semana_01.Text = "Semana 1";
             this.lb_semana_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -246,6 +247,7 @@ namespace Hype.Painel.Eventos
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1026, 465);
             this.dataGridView1.TabIndex = 192;
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             this.dataGridView1.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseEnter);
             this.dataGridView1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseLeave);
             // 
@@ -343,9 +345,11 @@ namespace Hype.Painel.Eventos
             this.txt_doacao_04.PlaceholderText = "";
             this.txt_doacao_04.Size = new System.Drawing.Size(78, 31);
             this.txt_doacao_04.TabIndex = 188;
+            this.txt_doacao_04.Tag = "SEMANA 04";
             this.txt_doacao_04.Texts = "";
             this.txt_doacao_04.UnderlinedStyle = false;
             this.txt_doacao_04.Enter += new System.EventHandler(this.txt_doacao_04_Enter);
+            this.txt_doacao_04.Leave += new System.EventHandler(this.txt_doacao_04_Leave);
             // 
             // txt_doacao_02
             // 
@@ -367,9 +371,11 @@ namespace Hype.Painel.Eventos
             this.txt_doacao_02.PlaceholderText = "";
             this.txt_doacao_02.Size = new System.Drawing.Size(78, 31);
             this.txt_doacao_02.TabIndex = 184;
+            this.txt_doacao_02.Tag = "SEMANA 02";
             this.txt_doacao_02.Texts = "";
             this.txt_doacao_02.UnderlinedStyle = false;
             this.txt_doacao_02.Enter += new System.EventHandler(this.txt_doacao_02_Enter);
+            this.txt_doacao_02.Leave += new System.EventHandler(this.txt_doacao_02_Leave);
             // 
             // txt_doacao_01
             // 
@@ -391,9 +397,11 @@ namespace Hype.Painel.Eventos
             this.txt_doacao_01.PlaceholderText = "";
             this.txt_doacao_01.Size = new System.Drawing.Size(78, 31);
             this.txt_doacao_01.TabIndex = 181;
+            this.txt_doacao_01.Tag = "SEMANA 01";
             this.txt_doacao_01.Texts = "";
             this.txt_doacao_01.UnderlinedStyle = false;
             this.txt_doacao_01.Enter += new System.EventHandler(this.txt_doacao_01_Enter);
+            this.txt_doacao_01.Leave += new System.EventHandler(this.txt_doacao_01_Leave);
             // 
             // txt_doacao_03
             // 
@@ -415,17 +423,19 @@ namespace Hype.Painel.Eventos
             this.txt_doacao_03.PlaceholderText = "";
             this.txt_doacao_03.Size = new System.Drawing.Size(78, 31);
             this.txt_doacao_03.TabIndex = 186;
+            this.txt_doacao_03.Tag = "SEMANA 03";
             this.txt_doacao_03.Texts = "";
             this.txt_doacao_03.UnderlinedStyle = false;
             this.txt_doacao_03.Enter += new System.EventHandler(this.txt_doacao_03_Enter);
+            this.txt_doacao_03.Leave += new System.EventHandler(this.txt_doacao_03_Leave);
             // 
-            // novo_evento
+            // doacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.Controls.Add(this.pl_evento_doacoes);
-            this.Name = "novo_evento";
+            this.Name = "doacao";
             this.Size = new System.Drawing.Size(1200, 1014);
             this.Load += new System.EventHandler(this.novo_evento_Load);
             this.pl_evento_doacoes.ResumeLayout(false);
