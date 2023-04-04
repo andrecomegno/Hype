@@ -427,6 +427,17 @@ namespace Hype.Painel.Home
                 }
             }
         }
+
+        // MENU BOTÖES
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // EDITAR CLA
+        }
+
+        private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // EXCLUIR CLA
+        }
         #endregion
 
         private void home_Load(object sender, EventArgs e)
@@ -435,5 +446,7 @@ namespace Hype.Painel.Home
 
             Dados();
         }
+
+
     }
 }

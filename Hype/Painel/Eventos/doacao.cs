@@ -12,11 +12,10 @@ namespace Hype.Painel.Eventos
     {
         // ID`S
         string id_membro = eventos.Instance.id_membro;
-        string id_login = login.Instance.id_login;
         string id_doacao;
         string id_eventos;
 
-        // SEMANAS DOACÖES
+        // DOAÇÃO
         string titulo;
         int _doacao = 1;
         bool _editarDoacao = false;
@@ -164,10 +163,7 @@ namespace Hype.Painel.Eventos
                     }
                     finally
                     {
-                        // LIMPAR
-                        txt_doacao_02.Texts = string.Empty;
-                        txt_doacao_03.Texts = string.Empty;
-                        txt_doacao_04.Texts = string.Empty;
+                        Limpar(txt_doacao_02, txt_doacao_03, txt_doacao_04);
                     }
 
                 }
@@ -182,25 +178,21 @@ namespace Hype.Painel.Eventos
                     }
                     finally
                     {
-                        txt_doacao_01.Texts = string.Empty;
-                        txt_doacao_03.Texts = string.Empty;
-                        txt_doacao_04.Texts = string.Empty;
+                        Limpar(txt_doacao_01, txt_doacao_03, txt_doacao_04);
                     }
                 }
                 else if (String.Equals(txt_doacao_03.Tag, titulo))
                 {
                     try
                     {
-                        txt_doacao_02.Texts = dr["SEMANA_03"].ToString();
+                        txt_doacao_03.Texts = dr["SEMANA_03"].ToString();
                         CampoDoacao(lb_semana_03, txt_doacao_03, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_04, txt_doacao_04);
 
                         _doacao = 3;
                     }
                     finally
                     {
-                        txt_doacao_01.Texts = string.Empty;
-                        txt_doacao_02.Texts = string.Empty;
-                        txt_doacao_04.Texts = string.Empty;
+                        Limpar(txt_doacao_01, txt_doacao_02, txt_doacao_04);
                     }
 
                 }
@@ -208,16 +200,14 @@ namespace Hype.Painel.Eventos
                 {
                     try
                     {
-                        txt_doacao_02.Texts = dr["SEMANA_04"].ToString();
+                        txt_doacao_04.Texts = dr["SEMANA_04"].ToString();
                         CampoDoacao(lb_semana_04, txt_doacao_04, lb_semana_02, txt_doacao_02, lb_semana_01, txt_doacao_01, lb_semana_03, txt_doacao_03);
 
                         _doacao = 4;
                     }
                     finally
                     {
-                        txt_doacao_01.Texts = string.Empty;
-                        txt_doacao_02.Texts = string.Empty;
-                        txt_doacao_03.Texts = string.Empty;
+                        Limpar(txt_doacao_01, txt_doacao_02, txt_doacao_03);
                     }
                 }
             }
@@ -266,6 +256,14 @@ namespace Hype.Painel.Eventos
 
         private void Dados()
         {
+            // QUANDO NÃO TEM NENHUMA DOAÇÃO
+            if (dataGridView1.Rows.Count == 0)
+            {
+                CampoDoacao(lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
+
+                _doacao = 1;
+            }
+
             configdb database = new configdb();
             database.openConnection();
 
@@ -276,6 +274,42 @@ namespace Hype.Painel.Eventos
             {
                 // ID`S
                 id_membro = dr["ID_MEMBROS"].ToString();
+                id_doacao = dr["ID_DOACAO"].ToString();
+                id_eventos = dr["ID_EVENTOS"].ToString();
+
+                // SEMANAS DOADAS 
+                string doacao_01 = dr["SEMANA_01"].ToString();
+                string doacao_02 = dr["SEMANA_02"].ToString();
+                string doacao_03 = dr["SEMANA_03"].ToString();
+                string doacao_04 = dr["SEMANA_04"].ToString();
+
+                // CARREGA OS DADOS JA DOADOS 
+                if (String.IsNullOrEmpty(doacao_01))
+                {
+                    CampoDoacao(lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
+                    _doacao = 1;
+                }
+                else if (String.IsNullOrEmpty(doacao_02))
+                {
+                    CampoDoacao(lb_semana_02, txt_doacao_02, lb_semana_01, txt_doacao_01, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
+                    _doacao = 2;
+                }
+                else if (String.IsNullOrEmpty(doacao_03))
+                {
+                    CampoDoacao(lb_semana_03, txt_doacao_03, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_04, txt_doacao_04);
+                    _doacao = 3;
+                }
+                else if (String.IsNullOrEmpty(doacao_04))
+                {
+                    CampoDoacao(lb_semana_04, txt_doacao_04, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03);
+                    _doacao = 4;
+                }
+                else
+                {
+                    // COMEÇAR SEMANA 1
+                    CampoDoacao(lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
+                    _doacao = 1;
+                }
             }
 
             database.closeConnection();
@@ -419,6 +453,7 @@ namespace Hype.Painel.Eventos
 
             try
             {
+                // SE EDITAR FDR VERDADEIRO
                 if (_editarDoacao)
                 {
                     // UPDATE TABELA DOAÇÃO 01
@@ -449,9 +484,9 @@ namespace Hype.Painel.Eventos
                     MySqlCommand objCmdDoacao = new MySqlCommand("insert into hypedb.doacao (id_doacao, semana_01, semana_02, semana_03, semana_04, anotacao, id_eventos, id_membros) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
                     objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
-                    objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = 0;
-                    objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = 0;
-                    objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = 0;
+                    objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = null;
+                    objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = null;
+                    objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = null;
                     objCmdDoacao.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = "";
                     objCmdDoacao.Parameters.Add("@id_eventos", MySqlDbType.Int32).Value = id_eventos;
                     objCmdDoacao.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
@@ -464,20 +499,34 @@ namespace Hype.Painel.Eventos
             }
             finally
             {
+                // SE EDITAR FDR VERDADEIRO
                 if (_editarDoacao)
                 {
-
+                    try
+                    {
+                        // CARREGA OS DADOS NOVAMENTE 
+                        Dados();
+                    }
+                    finally
+                    {
+                        txt_doacao_01.Texts = string.Empty;
+                        _editarDoacao = false;
+                    }
                 }
                 else
                 {
-                    // HABILITAR OS CAMPOS TEXTOS
-                    CampoDoacao(lb_semana_02, txt_doacao_02, lb_semana_01, txt_doacao_01, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
-
-                    // SEMANAS +1
-                    _doacao++;
-                }
-
-                _editarDoacao = false;
+                    try
+                    {
+                        // HABILITAR OS CAMPOS TEXTOS
+                        CampoDoacao(lb_semana_02, txt_doacao_02, lb_semana_01, txt_doacao_01, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
+                        // SEMANAS +1
+                        _doacao++;
+                    }
+                    finally
+                    {
+                        txt_doacao_01.Texts = string.Empty;
+                    }
+                }                
             }
 
             database.closeConnection();
@@ -507,16 +556,28 @@ namespace Hype.Painel.Eventos
             {
                 if (_editarDoacao)
                 {
-
+                    try
+                    {
+                        Dados();
+                    }
+                    finally
+                    {
+                        txt_doacao_02.Texts = string.Empty;
+                        _editarDoacao = false;
+                    }
                 }
                 else
                 {
-                    CampoDoacao(lb_semana_03, txt_doacao_03, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_04, txt_doacao_04);
-
-                    _doacao++;
+                    try
+                    {
+                        CampoDoacao(lb_semana_03, txt_doacao_03, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_04, txt_doacao_04);
+                        _doacao++;
+                    }
+                    finally
+                    {
+                        txt_doacao_02.Texts = string.Empty;
+                    }
                 }
-
-                _editarDoacao = false;
             }
 
             database.closeConnection();
@@ -546,15 +607,28 @@ namespace Hype.Painel.Eventos
             {
                 if (_editarDoacao)
                 {
-
+                    try
+                    {
+                        Dados();
+                    }
+                    finally
+                    {
+                        txt_doacao_03.Texts = string.Empty;
+                        _editarDoacao = false;
+                    }                    
                 }
                 else
                 {
-                    CampoDoacao(lb_semana_04, txt_doacao_04, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03);
-
-                    _doacao++;
+                    try
+                    {
+                        CampoDoacao(lb_semana_04, txt_doacao_04, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03);
+                        _doacao++;
+                    }
+                    finally
+                    {
+                        txt_doacao_03.Texts = string.Empty;
+                    }
                 }
-
             }
 
             database.closeConnection();
@@ -584,17 +658,32 @@ namespace Hype.Painel.Eventos
             {
                 if (_editarDoacao)
                 {
-
+                    try
+                    {
+                        Dados();
+                    }
+                    finally
+                    {
+                        txt_doacao_04.Texts = string.Empty;
+                        _editarDoacao = false;
+                    }
                 }
                 else
                 {
-                    CampoDoacao(lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
-
-                    // RETORNA DOAÇÃO 1
-                    _doacao = 1;
-
-                    // LIMPA A CAMPO DE TEXTO
-                    Limpar();
+                    try
+                    {
+                        CampoDoacao(lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
+                        // RETORNA DOAÇÃO 1
+                        _doacao = 1;
+                    }
+                    finally
+                    {
+                        // LIMPA A CAMPO DE TEXTO
+                        txt_doacao_01.Texts = string.Empty;
+                        txt_doacao_02.Texts = string.Empty;
+                        txt_doacao_03.Texts = string.Empty;
+                        txt_doacao_04.Texts = string.Empty;
+                    }
                 }
             }
 
@@ -603,12 +692,11 @@ namespace Hype.Painel.Eventos
         #endregion
 
         #region CAMPO TEXTO
-        private void Limpar()
+        private void Limpar(RJTextBox a, RJTextBox b, RJTextBox c)
         {
-            txt_doacao_01.Texts = string.Empty;
-            txt_doacao_02.Texts = string.Empty;
-            txt_doacao_03.Texts = string.Empty;
-            txt_doacao_04.Texts = string.Empty;
+            a.Texts = string.Empty;
+            b.Texts= string.Empty;
+            c.Texts = string.Empty;
         }
 
         private void CampoDoacao(Label lb1, RJTextBox text1, Label lb2, RJTextBox text2, Label lb3, RJTextBox text3, Label lb4, RJTextBox text4)
@@ -677,8 +765,6 @@ namespace Hype.Painel.Eventos
 
         private void novo_evento_Load(object sender, EventArgs e)
         {
-            CampoDoacao(lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
-
             Dados();
             TabelaEvento();
 
