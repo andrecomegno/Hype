@@ -30,7 +30,8 @@ namespace Hype.Painel.Home
 
             Instance = this;
 
-            BotoesCla(pl_nome_clas.Controls);            
+            BotoesCla(pl_nome_clas.Controls);
+
         }
 
         #region LISTA CLÃ
@@ -39,311 +40,41 @@ namespace Hype.Painel.Home
             switch (dataGridView1.Rows.Count)
             {
                 case 1:
-                    Cla_01();
+                    Cla_01(nome_cla);
                     break;
                 case 2:
-                    Cla_02();
-                    break;
-                case 3:
-                    Cla_03();
-                    break;
-                case 4:
-                    Cla_04();
-                    break;
-                case 5:
-                    Cla_05();
-                    break;
-                case 6:
-                    Cla_06();
-                    break;
-                case 7:
-                    Cla_07();
-                    break;
-                case 8:
-                    Cla_08();
-                    break;
-                case 9:
-                    Cla_09();
-                    break;
-                case 10:
-                    Cla_10();
-                    break;
-                case 11:
-                    Cla_11();
-                    break;
-                case 12:
-                    Cla_12();
-                    break;
-                case 13:
-                    Cla_13();
-                    break;
-                case 14:
-                    Cla_14();
-                    break;
-                case 15:
-                    Cla_15();
-                    break;
-                case 16:
-                    Cla_16();
-                    break;
-                case 17:
-                    Cla_17();
-                    break;
-                case 18:
-                    Cla_18();
-                    break;
-                case 19:
-                    Cla_19();
-                    break;
-                case 20:
-                    Cla_20();
-                    break;
-
-                default:
+                    Cla_02(nome_cla);
                     break;
             }
         }
 
-        private void Cla_01()
+        private void Cla_01(string nome)
         {
+            /*
             bt_cla_01.Text = dataGridView1[1, 0].Value.ToString();
 
             bt_cla_01.Enabled = true;
             bt_cla_01.IconChar = IconChar.Edit;
-            bt_cla_01.BackColor = Color.DarkGoldenrod;            
-        }
+            bt_cla_01.BackColor = Color.DarkGoldenrod;  
+            */
 
-        private void Cla_02()
-        {
-            bt_cla_01.Text = dataGridView1[1, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[1, 1].Value.ToString();
-
+            bt_cla_01.Text = nome;
             bt_cla_01.Enabled = true;
             bt_cla_01.IconChar = IconChar.Edit;
             bt_cla_01.BackColor = Color.DarkGoldenrod;
+        }
 
+
+
+        private void Cla_02(string nome)
+        {
+            //bt_cla_01.Text = dataGridView1[1, 0].Value.ToString();
+            //bt_cla_02.Text = dataGridView1[1, 1].Value.ToString();
+
+            bt_cla_02.Text = nome;
             bt_cla_02.Enabled = true;
             bt_cla_02.IconChar = IconChar.Edit;
             bt_cla_02.BackColor = Color.DarkGoldenrod;
-        }
-
-        private void Cla_03()
-        {
-            bt_cla_01.Text = dataGridView1[1, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[1, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[1, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_01.IconChar = IconChar.Edit;
-            bt_cla_01.BackColor = Color.DarkGoldenrod;
-
-            bt_cla_02.Enabled = true;
-            bt_cla_02.IconChar = IconChar.Edit;
-            bt_cla_02.BackColor = Color.DarkGoldenrod;
-
-            bt_cla_03.Enabled = true;
-            bt_cla_03.IconChar = IconChar.Edit;
-            bt_cla_03.BackColor = Color.DarkGoldenrod;
-        }
-
-        private void Cla_04()
-        {
-            bt_cla_01.Text = dataGridView1[1, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[1, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[1, 2].Value.ToString();
-            bt_cla_04.Text = dataGridView1[1, 3].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_01.IconChar = IconChar.Edit;
-            bt_cla_01.BackColor = Color.DarkGoldenrod;
-
-            bt_cla_02.Enabled = true;
-            bt_cla_02.IconChar = IconChar.Edit;
-            bt_cla_02.BackColor = Color.DarkGoldenrod;
-
-            bt_cla_03.Enabled = true;
-            bt_cla_03.IconChar = IconChar.Edit;
-            bt_cla_03.BackColor = Color.DarkGoldenrod;
-
-            bt_cla_04.Enabled = true;
-            bt_cla_04.IconChar = IconChar.Edit;
-            bt_cla_04.BackColor = Color.DarkGoldenrod;
-        }
-
-        private void Cla_05()
-        {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_02.Enabled = true;
-            bt_cla_03.Enabled = true;
-        }
-
-        private void Cla_06()
-        {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_02.Enabled = true;
-            bt_cla_03.Enabled = true;
-        }
-
-        private void Cla_07()
-        {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_02.Enabled = true;
-            bt_cla_03.Enabled = true;
-        }
-
-        private void Cla_08()
-        {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_02.Enabled = true;
-            bt_cla_03.Enabled = true;
-        }
-
-        private void Cla_09()
-        {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_02.Enabled = true;
-            bt_cla_03.Enabled = true;
-        }
-
-        private void Cla_10()
-        {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_02.Enabled = true;
-            bt_cla_03.Enabled = true;
-        }
-
-        private void Cla_11()
-        {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_02.Enabled = true;
-            bt_cla_03.Enabled = true;
-        }
-
-        private void Cla_12()
-        {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_02.Enabled = true;
-            bt_cla_03.Enabled = true;
-        }
-
-        private void Cla_13()
-        {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_02.Enabled = true;
-            bt_cla_03.Enabled = true;
-        }
-
-        private void Cla_14()
-        {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_02.Enabled = true;
-            bt_cla_03.Enabled = true;
-        }
-
-        private void Cla_15()
-        {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_02.Enabled = true;
-            bt_cla_03.Enabled = true;
-        }
-
-        private void Cla_16()
-        {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_02.Enabled = true;
-            bt_cla_03.Enabled = true;
-        }
-
-        private void Cla_17()
-        {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_02.Enabled = true;
-            bt_cla_03.Enabled = true;
-        }
-
-        private void Cla_18()
-        {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_02.Enabled = true;
-            bt_cla_03.Enabled = true;
-        }
-
-        private void Cla_19()
-        {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_02.Enabled = true;
-            bt_cla_03.Enabled = true;
-        }
-
-        private void Cla_20()
-        {
-            bt_cla_01.Text = dataGridView1[0, 0].Value.ToString();
-            bt_cla_02.Text = dataGridView1[0, 1].Value.ToString();
-            bt_cla_03.Text = dataGridView1[0, 2].Value.ToString();
-
-            bt_cla_01.Enabled = true;
-            bt_cla_02.Enabled = true;
-            bt_cla_03.Enabled = true;
         }
         #endregion
 
@@ -384,6 +115,7 @@ namespace Hype.Painel.Home
             while (dr.Read())
             {
                 id_cla = dr["id_cla"].ToString();
+                nome_cla = dr["nome_cla"].ToString();
             }
 
             database.closeConnection();
@@ -436,15 +168,52 @@ namespace Hype.Painel.Home
 
         private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            DialogResult dr = MessageBox.Show("Tem Certeza Que Deseja Sair ?", "CANCELAR", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    DeletarCla();
+                    break;
+                case DialogResult.No:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void DeletarCla()
+        {
             // EXCLUIR CLA
+            try
+            {                
+                configdb database = new configdb();
+                database.openConnection();
+
+                MySqlCommand objCmdCla = new MySqlCommand("delete from hypedb.cadastro_cla where (id_login=@id_login) and (id_cla=@id_cla)", database.getConnection());
+                objCmdCla.Parameters.AddWithValue("@id_login", id_login);
+                objCmdCla.Parameters.AddWithValue("@id_cla", id_cla);
+
+                objCmdCla.ExecuteNonQuery();
+
+                database.closeConnection();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                // LIMPAR O BOTAO CLA
+            }
         }
         #endregion
 
         private void home_Load(object sender, EventArgs e)
         {
-            TabelaCla();
-
             Dados();
+            TabelaCla();            
         }
 
 

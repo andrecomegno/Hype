@@ -11,6 +11,10 @@ namespace Hype.Painel
     {
         public static cadastro_membros Instance;
 
+        // DADOS DO CLÃ CRIADO
+        public string _idCla;
+        public string _nomeCla;
+
         // DADOS
         private string id_login = login.Instance.id_login;
         private string id_cla = home.Instance.id_cla;
@@ -76,7 +80,7 @@ namespace Hype.Painel
                 objCmdCla.Parameters.Add("@id_login", MySqlDbType.Int32).Value = id_login; // LOGIN
 
                 objCmdCla.ExecuteNonQuery();
-                long idCla = objCmdCla.LastInsertedId;
+                _idCla = objCmdCla.LastInsertedId.ToString();
 
                 // INSERT TABELA RECRUTAMENTO
                 MySqlCommand objCmdRecrutamento = new MySqlCommand("insert into hypedb.recrutamento (id_recrutamento, data_recrutamento, vem_do_cla, foi_para_cla, id_cla) values (null, ?, ?, ?, ?)", database.getConnection());
@@ -84,7 +88,7 @@ namespace Hype.Painel
                 objCmdRecrutamento.Parameters.Add("@data_recrutamento", MySqlDbType.Date).Value = DateTime.Now;
                 objCmdRecrutamento.Parameters.Add("@vem_do_cla", MySqlDbType.VarChar, 256).Value = txt_vem.Texts;
                 objCmdRecrutamento.Parameters.Add("@foi_para_cla", MySqlDbType.VarChar, 256).Value = txt_foi.Texts;
-                objCmdRecrutamento.Parameters.Add("@id_cla", MySqlDbType.Int32).Value = idCla;
+                objCmdRecrutamento.Parameters.Add("@id_cla", MySqlDbType.Int32).Value = _idCla;
 
                 objCmdRecrutamento.ExecuteNonQuery();
                 long idRecruta = objCmdRecrutamento.LastInsertedId;
@@ -1148,14 +1152,6 @@ namespace Hype.Painel
             {
                 MessageBox.Show("Código" + erro + "de Erro Interno ", "ERRO FATAL");
             }
-            finally
-            {
-                if (_novoCla)
-                {
-                    home uc = new home();
-                    cla.Instance.addControl(uc);
-                }
-            }
         }
 
         private void VoltarMembros()
@@ -1731,8 +1727,24 @@ namespace Hype.Painel
                 {
                     try
                     {
-                        Cadastro();
-                        DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (_novoCla)
+                        {
+                            try
+                            {
+                                Cadastro();
+                                DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            finally
+                            {
+                                home uc = new home();
+                                cla.Instance.addControl(uc);
+                            }
+                        }
+                        else
+                        {
+                            Cadastro();
+                            DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     finally
                     {
@@ -1778,8 +1790,24 @@ namespace Hype.Painel
                 {
                     try
                     {
-                        Cadastro();
-                        DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (_novoCla)
+                        {
+                            try
+                            {
+                                Cadastro();
+                                DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            finally
+                            {
+                                home uc = new home();
+                                cla.Instance.addControl(uc);
+                            }
+                        }
+                        else
+                        {
+                            Cadastro();
+                            DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     finally
                     {
@@ -1854,8 +1882,24 @@ namespace Hype.Painel
                 {
                     try
                     {
-                        Cadastro();
-                        DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (_novoCla)
+                        {
+                            try
+                            {
+                                Cadastro();
+                                DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            finally
+                            {
+                                home uc = new home();
+                                cla.Instance.addControl(uc);
+                            }
+                        }
+                        else
+                        {
+                            Cadastro();
+                            DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     finally
                     {
@@ -1959,8 +2003,24 @@ namespace Hype.Painel
                 {
                     try
                     {
-                        Cadastro();
-                        DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (_novoCla)
+                        {
+                            try
+                            {
+                                Cadastro();
+                                DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            finally
+                            {
+                                home uc = new home();
+                                cla.Instance.addControl(uc);
+                            }
+                        }
+                        else
+                        {
+                            Cadastro();
+                            DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     finally
                     {
@@ -2093,8 +2153,24 @@ namespace Hype.Painel
                 {
                     try
                     {
-                        Cadastro();
-                        DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (_novoCla)
+                        {
+                            try
+                            {
+                                Cadastro();
+                                DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            finally
+                            {
+                                home uc = new home();
+                                cla.Instance.addControl(uc);
+                            }
+                        }
+                        else
+                        {
+                            Cadastro();
+                            DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     finally
                     {
@@ -2256,8 +2332,24 @@ namespace Hype.Painel
                 {
                     try
                     {
-                        Cadastro();
-                        DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (_novoCla)
+                        {
+                            try
+                            {
+                                Cadastro();
+                                DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            finally
+                            {
+                                home uc = new home();
+                                cla.Instance.addControl(uc);
+                            }
+                        }
+                        else
+                        {
+                            Cadastro();
+                            DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     finally
                     {
@@ -2267,6 +2359,7 @@ namespace Hype.Painel
                 }
             }
             #endregion
+
         }
         #endregion
 
