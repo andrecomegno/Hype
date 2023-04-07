@@ -12,7 +12,7 @@ namespace Hype.Painel
         public static dashboard Instance;
 
         private string id_login = login.Instance.id_login;
-        private string nome_cla = home.Instance.nome_cla;
+        private string nome_cla = lista_clas.Instance.nome_cla;
 
         public dashboard()
         {

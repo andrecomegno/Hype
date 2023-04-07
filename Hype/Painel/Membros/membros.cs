@@ -12,7 +12,7 @@ namespace Hype.Painel
         public static membros Instance;
 
         // RECUPERAR DADOS
-        private string nome_cla = home.Instance.nome_cla; // SELECIONAR CLA
+        private string nome_cla = lista_clas.Instance.nome_cla; // SELECIONAR CLA
 
         // ID`S
         public string id_membros = string.Empty;

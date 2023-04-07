@@ -15,7 +15,7 @@ namespace Hype.Painel
         bool _selecionar = false;
 
         // SELECIONAR CLA 
-        public string nome_cla = home.Instance.nome_cla;
+        public string nome_cla = lista_clas.Instance.nome_cla;
 
         public cadastro_alt()
         {

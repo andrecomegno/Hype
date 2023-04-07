@@ -16,12 +16,13 @@ namespace Hype.Painel.Eventos
         string id_eventos;
 
         // DOAÇÃO
+        string _total;
         string titulo;
         int _doacao = 1;
         bool _editarDoacao = false;
 
         // SELECIONAR CLA 
-        public string nome_cla = home.Instance.nome_cla;        
+        public string nome_cla = lista_clas.Instance.nome_cla;        
 
         public doacao()
         {
@@ -102,11 +103,9 @@ namespace Hype.Painel.Eventos
             dataGridView1.Columns["SEMANA_02"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["SEMANA_03"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["SEMANA_04"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns["TOTAL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-
                 if (column.DataPropertyName == "ANO_EVENTO")
                     column.Width = 80;
                 else if (column.DataPropertyName == "MES_EVENTO")
@@ -149,10 +148,21 @@ namespace Hype.Painel.Eventos
                 id_membro = dr["ID_MEMBROS"].ToString();
                 id_eventos = dr["ID_EVENTOS"].ToString();
 
+                // CARREGA TODOS OS DADOS 
+                txt_doacao_01.Texts = dr["SEMANA_01"].ToString();
+                txt_doacao_02.Texts = dr["SEMANA_02"].ToString();
+                txt_doacao_03.Texts = dr["SEMANA_03"].ToString();
+                txt_doacao_04.Texts = dr["SEMANA_04"].ToString();
+
                 // COMPARACAO DA TAG DENTRO DO CAMPO TEXTO COM O TITULO DA TABELA 
                 if (String.Equals(txt_doacao_01.Tag, titulo))
                 {
-                    try
+                    // IMPEDI A EDICÃO SE O CAMPO FOR VAZIO
+                    if (String.IsNullOrEmpty(txt_doacao_01.Texts))
+                    {
+                        MessageBox.Show("NAO TEM O QUE EDITAR");
+                    }
+                    else
                     {
                         // PASSA O VALOR DOADO AO CAMPO TEXTO
                         txt_doacao_01.Texts = dr["SEMANA_01"].ToString();
@@ -161,53 +171,44 @@ namespace Hype.Painel.Eventos
                         // SEMANAS
                         _doacao = 1;
                     }
-                    finally
-                    {
-                        Limpar(txt_doacao_02, txt_doacao_03, txt_doacao_04);
-                    }
-
                 }
                 else if (String.Equals(txt_doacao_02.Tag, titulo))
                 {
-                    try
+                    if (String.IsNullOrEmpty(txt_doacao_02.Texts))
+                    {
+                        MessageBox.Show("NAO TEM O QUE EDITAR");
+                    }
+                    else
                     {
                         txt_doacao_02.Texts = dr["SEMANA_02"].ToString();
                         CampoDoacao(lb_semana_02, txt_doacao_02, lb_semana_01, txt_doacao_01, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
-
                         _doacao = 2;
-                    }
-                    finally
-                    {
-                        Limpar(txt_doacao_01, txt_doacao_03, txt_doacao_04);
                     }
                 }
                 else if (String.Equals(txt_doacao_03.Tag, titulo))
                 {
-                    try
+                    if (String.IsNullOrEmpty(txt_doacao_03.Texts))
+                    {
+                        MessageBox.Show("NAO TEM O QUE EDITAR");
+                    }
+                    else
                     {
                         txt_doacao_03.Texts = dr["SEMANA_03"].ToString();
                         CampoDoacao(lb_semana_03, txt_doacao_03, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_04, txt_doacao_04);
-
                         _doacao = 3;
                     }
-                    finally
-                    {
-                        Limpar(txt_doacao_01, txt_doacao_02, txt_doacao_04);
-                    }
-
                 }
                 else if (String.Equals(txt_doacao_04.Tag, titulo))
                 {
-                    try
+                    if (String.IsNullOrEmpty(txt_doacao_04.Texts))
+                    {
+                        MessageBox.Show("NAO TEM O QUE EDITAR");
+                    }
+                    else
                     {
                         txt_doacao_04.Texts = dr["SEMANA_04"].ToString();
                         CampoDoacao(lb_semana_04, txt_doacao_04, lb_semana_02, txt_doacao_02, lb_semana_01, txt_doacao_01, lb_semana_03, txt_doacao_03);
-
                         _doacao = 4;
-                    }
-                    finally
-                    {
-                        Limpar(txt_doacao_01, txt_doacao_02, txt_doacao_03);
                     }
                 }
             }
@@ -259,8 +260,9 @@ namespace Hype.Painel.Eventos
             // QUANDO NÃO TEM NENHUMA DOAÇÃO
             if (dataGridView1.Rows.Count == 0)
             {
+                // HABILITA O PRIMEIRO CAMPO SEMANA 1 PARA DOAÇÃO
                 CampoDoacao(lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
-
+                // ATRIBUI DOAÇÃO EM UM - Semanas()
                 _doacao = 1;
             }
 
@@ -277,42 +279,69 @@ namespace Hype.Painel.Eventos
                 id_doacao = dr["ID_DOACAO"].ToString();
                 id_eventos = dr["ID_EVENTOS"].ToString();
 
-                // SEMANAS DOADAS 
+                // STRING CRIADA PARA VERIFICAR SEMANAS DOADAS
                 string doacao_01 = dr["SEMANA_01"].ToString();
                 string doacao_02 = dr["SEMANA_02"].ToString();
                 string doacao_03 = dr["SEMANA_03"].ToString();
                 string doacao_04 = dr["SEMANA_04"].ToString();
 
-                // CARREGA OS DADOS JA DOADOS 
+                // VERIFICA SE DOACAO ESTÁ VAZIA
                 if (String.IsNullOrEmpty(doacao_01))
                 {
+                    //PRIMEIRA DOAÇÃO NÃO CARREGA DADOS NO TEXTOBOX
+
+                    // HABILITA O PRIMEIRO CAMPO SEMANA 1 PARA DOAÇÃO
                     CampoDoacao(lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
+                    // ATRIBUI DOAÇÃO EM UM - Semanas()
                     _doacao = 1;
                 }
                 else if (String.IsNullOrEmpty(doacao_02))
                 {
+                    // CARREGAR DADOS NO TEXTOBOX
+                    txt_doacao_01.Texts = dr["SEMANA_01"].ToString();
+                    txt_doacao_03.Texts = dr["SEMANA_03"].ToString();
+                    txt_doacao_04.Texts = dr["SEMANA_04"].ToString();
+
+                    // LIMPA DADOS ANTIGOS CARREGADOS
+                    txt_doacao_02.Texts = string.Empty;
+
                     CampoDoacao(lb_semana_02, txt_doacao_02, lb_semana_01, txt_doacao_01, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
                     _doacao = 2;
                 }
                 else if (String.IsNullOrEmpty(doacao_03))
                 {
+                    txt_doacao_01.Texts = dr["SEMANA_01"].ToString();
+                    txt_doacao_02.Texts = dr["SEMANA_02"].ToString();
+                    txt_doacao_04.Texts = dr["SEMANA_04"].ToString();
+
+                    txt_doacao_03.Texts = string.Empty;
+
                     CampoDoacao(lb_semana_03, txt_doacao_03, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_04, txt_doacao_04);
                     _doacao = 3;
                 }
                 else if (String.IsNullOrEmpty(doacao_04))
                 {
+                    txt_doacao_01.Texts = dr["SEMANA_01"].ToString();
+                    txt_doacao_02.Texts = dr["SEMANA_02"].ToString();
+                    txt_doacao_03.Texts = dr["SEMANA_03"].ToString();
+
+                    txt_doacao_04.Texts = string.Empty;
+
                     CampoDoacao(lb_semana_04, txt_doacao_04, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03);
                     _doacao = 4;
                 }
                 else
                 {
-                    // COMEÇAR SEMANA 1
+                    // LIMPA TODOS OS DADOS ANTIGOS CARREGADOS
+                    Limpar();
+
+                    // DEPOIS DE DOAR TODAS AS SEMANAS COMEÇA A SEMANA 1
                     CampoDoacao(lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
                     _doacao = 1;
                 }
             }
 
-            database.closeConnection();
+            database.closeConnection();            
         }
         #endregion
 
@@ -466,10 +495,13 @@ namespace Hype.Painel.Eventos
 
                     objCmdDoacao.ExecuteNonQuery();                    
 
-                    DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 1", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 1", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
+                    double de = (Convert.ToDouble(txt_doacao_01.Texts));
+                    _total = de.ToString();
+
                     // INSERT TABELA EVENTOS
                     MySqlCommand objCmdEventos = new MySqlCommand("insert into hypedb.eventos (id_eventos, mes_evento, ano_evento, id_membros) values (null, ?, ?, ?)", database.getConnection());
 
@@ -481,12 +513,13 @@ namespace Hype.Painel.Eventos
                     id_eventos = objCmdEventos.LastInsertedId.ToString();
 
                     // INSERT TABELA DOAÇÃO
-                    MySqlCommand objCmdDoacao = new MySqlCommand("insert into hypedb.doacao (id_doacao, semana_01, semana_02, semana_03, semana_04, anotacao, id_eventos, id_membros) values (null, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+                    MySqlCommand objCmdDoacao = new MySqlCommand("insert into hypedb.doacao (id_doacao, semana_01, semana_02, semana_03, semana_04, total, anotacao, id_eventos, id_membros) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
                     objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
                     objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = null;
                     objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = null;
                     objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = null;
+                    objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = _total;
                     objCmdDoacao.Parameters.Add("@anotacao", MySqlDbType.VarChar, 256).Value = "";
                     objCmdDoacao.Parameters.Add("@id_eventos", MySqlDbType.Int32).Value = id_eventos;
                     objCmdDoacao.Parameters.Add("@id_membros", MySqlDbType.Int32).Value = id_membro;
@@ -494,7 +527,7 @@ namespace Hype.Painel.Eventos
                     objCmdDoacao.ExecuteNonQuery();
                     id_doacao = objCmdDoacao.LastInsertedId.ToString();
 
-                    DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 1", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 1", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             finally
@@ -509,23 +542,15 @@ namespace Hype.Painel.Eventos
                     }
                     finally
                     {
-                        txt_doacao_01.Texts = string.Empty;
                         _editarDoacao = false;
                     }
                 }
                 else
                 {
-                    try
-                    {
-                        // HABILITAR OS CAMPOS TEXTOS
-                        CampoDoacao(lb_semana_02, txt_doacao_02, lb_semana_01, txt_doacao_01, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
-                        // SEMANAS +1
-                        _doacao++;
-                    }
-                    finally
-                    {
-                        txt_doacao_01.Texts = string.Empty;
-                    }
+                    // HABILITAR OS CAMPOS TEXTOS
+                    CampoDoacao(lb_semana_02, txt_doacao_02, lb_semana_01, txt_doacao_01, lb_semana_03, txt_doacao_03, lb_semana_04, txt_doacao_04);
+                    // SEMANAS +1
+                    _doacao++;
                 }                
             }
 
@@ -540,17 +565,22 @@ namespace Hype.Painel.Eventos
 
             try
             {
+                double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts));
+                _total = de.ToString();
+
                 // UPDATE TABELA DOAÇÃO 02
-                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_02=@semana_02 where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
 
                 objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
                 objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
                 objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
+                objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
                 objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
+                objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = _total;
 
                 objCmdDoacao.ExecuteNonQuery();
 
-                DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 2", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             finally
             {
@@ -562,21 +592,13 @@ namespace Hype.Painel.Eventos
                     }
                     finally
                     {
-                        txt_doacao_02.Texts = string.Empty;
                         _editarDoacao = false;
                     }
                 }
                 else
                 {
-                    try
-                    {
-                        CampoDoacao(lb_semana_03, txt_doacao_03, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_04, txt_doacao_04);
-                        _doacao++;
-                    }
-                    finally
-                    {
-                        txt_doacao_02.Texts = string.Empty;
-                    }
+                    CampoDoacao(lb_semana_03, txt_doacao_03, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_04, txt_doacao_04);
+                    _doacao++;
                 }
             }
 
@@ -591,17 +613,23 @@ namespace Hype.Painel.Eventos
 
             try
             {
+                double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts));
+                _total = de.ToString();
+
                 // UPDATE TABELA DOAÇÃO 03
-                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_03=@semana_03 where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
 
                 objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
                 objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
                 objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
+                objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+                objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
                 objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
+                objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = _total;
 
                 objCmdDoacao.ExecuteNonQuery();
 
-                DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 3", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 3", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             finally
             {
@@ -613,21 +641,14 @@ namespace Hype.Painel.Eventos
                     }
                     finally
                     {
-                        txt_doacao_03.Texts = string.Empty;
+                        //txt_doacao_03.Texts = string.Empty;
                         _editarDoacao = false;
                     }                    
                 }
                 else
                 {
-                    try
-                    {
-                        CampoDoacao(lb_semana_04, txt_doacao_04, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03);
-                        _doacao++;
-                    }
-                    finally
-                    {
-                        txt_doacao_03.Texts = string.Empty;
-                    }
+                    CampoDoacao(lb_semana_04, txt_doacao_04, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_03, txt_doacao_03);
+                    _doacao++;
                 }
             }
 
@@ -642,17 +663,24 @@ namespace Hype.Painel.Eventos
 
             try
             {
+                double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts) + Convert.ToDouble(txt_doacao_04.Texts));
+                _total = de.ToString();
+
                 // UPDATE TABELA DOAÇÃO 04
-                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_04=@semana_04 where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
 
                 objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
                 objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
                 objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
+                objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+                objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
+                objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
                 objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = txt_doacao_04.Texts;
+                objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = _total;
 
                 objCmdDoacao.ExecuteNonQuery();
 
-                DialogResult dr = MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 4", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 4", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             finally
             {
@@ -664,7 +692,7 @@ namespace Hype.Painel.Eventos
                     }
                     finally
                     {
-                        txt_doacao_04.Texts = string.Empty;
+                        //txt_doacao_04.Texts = string.Empty;
                         _editarDoacao = false;
                     }
                 }
@@ -679,10 +707,7 @@ namespace Hype.Painel.Eventos
                     finally
                     {
                         // LIMPA A CAMPO DE TEXTO
-                        txt_doacao_01.Texts = string.Empty;
-                        txt_doacao_02.Texts = string.Empty;
-                        txt_doacao_03.Texts = string.Empty;
-                        txt_doacao_04.Texts = string.Empty;
+                        Limpar();
                     }
                 }
             }
@@ -692,30 +717,35 @@ namespace Hype.Painel.Eventos
         #endregion
 
         #region CAMPO TEXTO
-        private void Limpar(RJTextBox a, RJTextBox b, RJTextBox c)
+        private void Limpar()
         {
-            a.Texts = string.Empty;
-            b.Texts= string.Empty;
-            c.Texts = string.Empty;
+            txt_doacao_01.Texts = string.Empty;
+            txt_doacao_02.Texts = string.Empty;
+            txt_doacao_03.Texts = string.Empty;
+            txt_doacao_04.Texts = string.Empty;
         }
 
         private void CampoDoacao(Label lb1, RJTextBox text1, Label lb2, RJTextBox text2, Label lb3, RJTextBox text3, Label lb4, RJTextBox text4)
         {
             lb1.ForeColor = Color.White;
             text1.BackColor = Color.White;
+            text4.ForeColor = Color.FromArgb(64, 64, 64);
             text1.Enabled = true;
 
             lb2.ForeColor = Color.FromArgb(24, 25, 28);
             text2.BackColor = Color.FromArgb(24, 25, 28);
+            text2.ForeColor = Color.FromArgb(24, 25, 28);
             text2.Enabled = false;
 
             lb3.ForeColor = Color.FromArgb(24, 25, 28);
             text3.BackColor = Color.FromArgb(24, 25, 28);
+            text3.ForeColor = Color.FromArgb(24, 25, 28);
             text3.Enabled = false;
 
             lb4.ForeColor = Color.FromArgb(24, 25, 28);
             text4.BackColor = Color.FromArgb(24, 25, 28);
-            text4.Enabled = false;             
+            text4.ForeColor = Color.FromArgb(24, 25, 28);
+            text4.Enabled = false;
         }
 
         private void txt_doacao_01_Enter(object sender, EventArgs e)
@@ -771,6 +801,5 @@ namespace Hype.Painel.Eventos
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
         }
-
     }
 }

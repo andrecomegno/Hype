@@ -17,7 +17,7 @@ namespace Hype.Painel
         bool _editarConta = false;
 
         // SELECIONAR CLA 
-        public string nome_cla = home.Instance.nome_cla;
+        public string nome_cla = lista_clas.Instance.nome_cla;
 
         public conta_alt()
         {

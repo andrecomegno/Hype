@@ -25,7 +25,7 @@ namespace Hype.Painel
         public string cla_alt = string.Empty;
 
         // SELECIONAR CLA 
-        public string nome_cla = home.Instance.nome_cla;
+        public string nome_cla = lista_clas.Instance.nome_cla;
 
         public alts()
         {

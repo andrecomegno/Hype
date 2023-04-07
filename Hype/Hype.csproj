@@ -253,11 +253,17 @@
     <Compile Include="Painel\Alts\conta_alt.Designer.cs">
       <DependentUpon>conta_alt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Painel\Home\editar_home.cs">
+    <Compile Include="Painel\Home\lista_clas.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Painel\Home\editar_home.Designer.cs">
-      <DependentUpon>editar_home.cs</DependentUpon>
+    <Compile Include="Painel\Home\lista_clas.Designer.cs">
+      <DependentUpon>lista_clas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Painel\Home\editar_clas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Painel\Home\editar_clas.Designer.cs">
+      <DependentUpon>editar_clas.cs</DependentUpon>
     </Compile>
     <Compile Include="Painel\Home\home.cs">
       <SubType>UserControl</SubType>
@@ -338,8 +344,11 @@
     <EmbeddedResource Include="Painel\Alts\conta_alt.resx">
       <DependentUpon>conta_alt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Painel\Home\editar_home.resx">
-      <DependentUpon>editar_home.cs</DependentUpon>
+    <EmbeddedResource Include="Painel\Home\lista_clas.resx">
+      <DependentUpon>lista_clas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Painel\Home\editar_clas.resx">
+      <DependentUpon>editar_clas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Painel\Home\home.resx">
       <DependentUpon>home.cs</DependentUpon>

@@ -17,7 +17,7 @@ namespace Hype.Painel
 
         // DADOS
         private string id_login = login.Instance.id_login;
-        private string id_cla = home.Instance.id_cla;
+        private string id_cla = lista_clas.Instance.id_cla;
 
         // VARIFICAR SE TEM ALT 
         string tem_alt = string.Empty;
@@ -2541,7 +2541,7 @@ namespace Hype.Painel
         private void Dados()
         {
             // CLÃ CADASTRADO
-            txt_foi.Texts = home.Instance.nome_cla;
+            txt_foi.Texts = lista_clas.Instance.nome_cla;
 
             txt_foi.Enabled = false;
             txt_foi.Font = new Font(txt_foi.Font, FontStyle.Bold);

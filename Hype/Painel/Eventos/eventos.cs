@@ -10,14 +10,12 @@ namespace Hype.Painel.Eventos
     public partial class eventos : UserControl
     {
         public static eventos Instance;
-        public string id_membro = "";
-        public string id_eventos = "";
-        public string id_doacao = "";
-        public string nick;
-        public string foi_para_cla;
+
+        // ID`S
+        public string id_membro = string.Empty;
 
         // SELECIONAR CLA 
-        public string nome_cla = home.Instance.nome_cla;
+        public string nome_cla = lista_clas.Instance.nome_cla;
 
         public eventos()
         {
@@ -31,7 +29,7 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, eve.ID_EVENTOS, d.ID_DOACAO, cl.NOME_CLA, c.STATUS, re.FOI_PARA_CLA, c.PATENTE, c.CLASSE, c.NICK, sum(d.SEMANA_01 + d.SEMANA_02 + d.SEMANA_03 + d.SEMANA_04) AS TOTAL from hypedb.cadastro_membro c left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO left join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS left join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS left join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, eve.ID_EVENTOS, d.ID_DOACAO, cl.NOME_CLA, c.STATUS, re.FOI_PARA_CLA, c.PATENTE, c.CLASSE, c.NICK, d.TOTAL from hypedb.cadastro_membro c left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO left join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS left join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS left join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' ", database.getConnection());
             cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
             cmd.Parameters.AddWithValue("@STATUS", "Ativo");
 
@@ -118,12 +116,6 @@ namespace Hype.Painel.Eventos
                     DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
 
                     id_membro = dr["ID_MEMBROS"].ToString();
-                    id_eventos = dr["ID_EVENTOS"].ToString();
-                    id_doacao = dr["ID_DOACAO"].ToString();
-
-                    //data_entrada = ((DateTime)dr["DATA_RECRUTAMENTO"]).ToShortDateString();
-                    nick = dr["NICK"].ToString();
-                    foi_para_cla = dr["FOI_PARA_CLA"].ToString();
                 }
             }
             catch (Exception erro)
