@@ -34,6 +34,8 @@ namespace Hype.Painel.Home
             this.txt_nome_cla = new Hype.Painel.RJTextBox();
             this.txt_nick_lider = new Hype.Painel.RJTextBox();
             this.pl_botoes = new System.Windows.Forms.Panel();
+            this.lb_nick_lider = new System.Windows.Forms.Label();
+            this.lb_nome_cla = new System.Windows.Forms.Label();
             this.pl_botoes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,11 +90,13 @@ namespace Hype.Painel.Home
             this.txt_nome_cla.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txt_nome_cla.PasswordChar = false;
             this.txt_nome_cla.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_nome_cla.PlaceholderText = "Nome do Clã";
+            this.txt_nome_cla.PlaceholderText = "";
             this.txt_nome_cla.Size = new System.Drawing.Size(261, 31);
             this.txt_nome_cla.TabIndex = 161;
             this.txt_nome_cla.Texts = "";
             this.txt_nome_cla.UnderlinedStyle = false;
+            this.txt_nome_cla.Enter += new System.EventHandler(this.txt_nome_cla_Enter);
+            this.txt_nome_cla.Leave += new System.EventHandler(this.txt_nome_cla_Leave);
             // 
             // txt_nick_lider
             // 
@@ -111,14 +115,18 @@ namespace Hype.Painel.Home
             this.txt_nick_lider.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txt_nick_lider.PasswordChar = false;
             this.txt_nick_lider.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_nick_lider.PlaceholderText = "Nick Lider";
+            this.txt_nick_lider.PlaceholderText = "";
             this.txt_nick_lider.Size = new System.Drawing.Size(162, 31);
             this.txt_nick_lider.TabIndex = 160;
             this.txt_nick_lider.Texts = "";
             this.txt_nick_lider.UnderlinedStyle = false;
+            this.txt_nick_lider.Enter += new System.EventHandler(this.txt_nick_lider_Enter);
+            this.txt_nick_lider.Leave += new System.EventHandler(this.txt_nick_lider_Leave);
             // 
             // pl_botoes
             // 
+            this.pl_botoes.Controls.Add(this.lb_nome_cla);
+            this.pl_botoes.Controls.Add(this.lb_nick_lider);
             this.pl_botoes.Controls.Add(this.txt_nome_cla);
             this.pl_botoes.Controls.Add(this.bt_cancelar);
             this.pl_botoes.Controls.Add(this.txt_nick_lider);
@@ -128,6 +136,30 @@ namespace Hype.Painel.Home
             this.pl_botoes.Name = "pl_botoes";
             this.pl_botoes.Size = new System.Drawing.Size(880, 300);
             this.pl_botoes.TabIndex = 164;
+            // 
+            // lb_nick_lider
+            // 
+            this.lb_nick_lider.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_nick_lider.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nick_lider.ForeColor = System.Drawing.Color.White;
+            this.lb_nick_lider.Location = new System.Drawing.Point(214, 62);
+            this.lb_nick_lider.Name = "lb_nick_lider";
+            this.lb_nick_lider.Size = new System.Drawing.Size(165, 17);
+            this.lb_nick_lider.TabIndex = 164;
+            this.lb_nick_lider.Text = "Nick Lider";
+            this.lb_nick_lider.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_nome_cla
+            // 
+            this.lb_nome_cla.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_nome_cla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nome_cla.ForeColor = System.Drawing.Color.White;
+            this.lb_nome_cla.Location = new System.Drawing.Point(386, 62);
+            this.lb_nome_cla.Name = "lb_nome_cla";
+            this.lb_nome_cla.Size = new System.Drawing.Size(262, 17);
+            this.lb_nome_cla.TabIndex = 165;
+            this.lb_nome_cla.Text = "Nome do Clã";
+            this.lb_nome_cla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // editar_clas
             // 
@@ -150,5 +182,7 @@ namespace Hype.Painel.Home
         private RJTextBox txt_nome_cla;
         private RJTextBox txt_nick_lider;
         private System.Windows.Forms.Panel pl_botoes;
+        private System.Windows.Forms.Label lb_nome_cla;
+        private System.Windows.Forms.Label lb_nick_lider;
     }
 }

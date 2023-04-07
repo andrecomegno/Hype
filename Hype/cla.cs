@@ -297,7 +297,7 @@ namespace Hype
         // MENU FLUTUANTE
         private void MenuConta()
         {
-            this.pl_conta.BringToFront();
+            this.pl_conta.BringToFront(); // SEMPRE POR CIMA DOS OUTROS
             pl_conta.Visible = !pl_conta.Visible;
         }
         #endregion
@@ -364,6 +364,5 @@ namespace Hype
             // COLORIR O TITULO DA TABELA
             dataGridView1.EnableHeadersVisualStyles = false;
         }
-
     }
 }

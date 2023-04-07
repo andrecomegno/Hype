@@ -15,12 +15,13 @@ namespace Hype.Painel.Home
         // ID`S
         private string id_login = login.Instance.id_login;
 
-        // BOTÃO CLÃ
-        private IconButton bt_cla;
-
         // COLETAR DADOS
         public string id_cla;
+        public string nick_lider;
         public string nome_cla;
+
+        // BOTÃO EXCLUIR CLÃ
+        private IconButton bt_cla;
 
         public lista_clas()
         {
@@ -53,28 +54,12 @@ namespace Hype.Painel.Home
             HabilitarClas();
         }
 
-        private void Dados()
-        {
-            // BANCO DE DADOS
-            configdb database = new configdb();
-            database.openConnection();
-
-            // TABELA CADASTRO CLA
-            MySqlCommand objCmdLogin = new MySqlCommand("select id_cla, nick_lider, nome_cla, id_login from hypedb.cadastro_cla where id_login = '" + id_login + "' ", database.getConnection());
-
-            // COLETA O ID_CLA DA TABELA CADASTRO_CLA
-            MySqlDataReader dr = objCmdLogin.ExecuteReader();
-            while (dr.Read())
-            {
-                id_cla = dr["id_cla"].ToString();
-            }
-            database.closeConnection();
-        }
         #endregion
 
         #region LISTA CLÃ
         public void HabilitarClas()
         {
+            // BOTÕES DO CLÃ
             switch (dataGridView1.Rows.Count)
             {
                 case 1:
@@ -142,7 +127,9 @@ namespace Hype.Painel.Home
 
         private void Cla_01()
         {
+            // NOME DO CLÃ
             bt_cla_01.Text = dataGridView1[2, 0].Value.ToString();
+            // HABILITAR BOTÃO CLÃ
             Clas(bt_cla_01);
         }
 
@@ -477,13 +464,16 @@ namespace Hype.Painel.Home
             {
                 // MOUSE ESQUERDO
                 case MouseButtons.Left:
-                    nome_cla = bt_cla_01.Text; // NOME DO CLÃ
+                    nome_cla = bt_cla_01.Text; // NOME DO CLÃ                    
+                    id_cla = dataGridView1[0, 0].Value.ToString(); // ID DO CLÃ
                     cla.Instance.btDashboard(); // VAI PARA O DASHBOARD
                     break;
                 // MOUSE DIREITO
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_01.Text; // NOME DO CLÃ
+                    nick_lider = dataGridView1[1, 0].Value.ToString(); // NICK DO LIDER
                     id_cla = dataGridView1[0, 0].Value.ToString(); // ID DO CLÃ
-                    bt_cla = bt_cla_01; // PASSA O ID_CLA PARA O BT_CLA
+                    bt_cla = bt_cla_01; // BT_CLA EXCLUIR
                     break;
             }
         }
@@ -493,11 +483,14 @@ namespace Hype.Painel.Home
             switch (e.Button)
             {
                 case MouseButtons.Left:
-                    nome_cla = bt_cla_02.Text;
+                    nome_cla = bt_cla_02.Text;                    
+                    id_cla = dataGridView1[0, 1].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_02.Text;
+                    nick_lider = dataGridView1[1, 1].Value.ToString();
                     id_cla = dataGridView1[0, 1].Value.ToString();
                     bt_cla = bt_cla_02;
                     break;
@@ -509,11 +502,14 @@ namespace Hype.Painel.Home
             switch (e.Button)
             {
                 case MouseButtons.Left:
-                    nome_cla = bt_cla_03.Text;
+                    nome_cla = bt_cla_03.Text;                    
+                    id_cla = dataGridView1[0, 2].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_03.Text;
+                    nick_lider = dataGridView1[1, 2].Value.ToString();
                     id_cla = dataGridView1[0, 2].Value.ToString();
                     bt_cla = bt_cla_03;
                     break;
@@ -526,10 +522,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_04.Text;
+                    id_cla = dataGridView1[0, 3].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_04.Text;
+                    nick_lider = dataGridView1[1, 3].Value.ToString();
                     id_cla = dataGridView1[0, 3].Value.ToString();
                     bt_cla = bt_cla_04;
                     break;
@@ -542,10 +541,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_05.Text;
+                    id_cla = dataGridView1[0, 4].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_05.Text;
+                    nick_lider = dataGridView1[1, 4].Value.ToString();
                     id_cla = dataGridView1[0, 4].Value.ToString();
                     bt_cla = bt_cla_05;
                     break;
@@ -558,10 +560,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_06.Text;
+                    id_cla = dataGridView1[0, 5].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_06.Text;
+                    nick_lider = dataGridView1[1, 5].Value.ToString();
                     id_cla = dataGridView1[0, 5].Value.ToString();
                     bt_cla = bt_cla_06;
                     break;
@@ -574,10 +579,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_07.Text;
+                    id_cla = dataGridView1[0, 6].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_07.Text;
+                    nick_lider = dataGridView1[1, 6].Value.ToString();
                     id_cla = dataGridView1[0, 6].Value.ToString();
                     bt_cla = bt_cla_07;
                     break;
@@ -590,10 +598,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_08.Text;
+                    id_cla = dataGridView1[0, 7].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_08.Text;
+                    nick_lider = dataGridView1[1, 7].Value.ToString();
                     id_cla = dataGridView1[0, 7].Value.ToString();
                     bt_cla = bt_cla_08;
                     break;
@@ -606,10 +617,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_09.Text;
+                    id_cla = dataGridView1[0, 8].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_09.Text;
+                    nick_lider = dataGridView1[1, 8].Value.ToString();
                     id_cla = dataGridView1[0, 8].Value.ToString();
                     bt_cla = bt_cla_09;
                     break;
@@ -622,10 +636,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_10.Text;
+                    id_cla = dataGridView1[0, 9].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_10.Text;
+                    nick_lider = dataGridView1[1, 9].Value.ToString();
                     id_cla = dataGridView1[0, 9].Value.ToString();
                     bt_cla = bt_cla_10;
                     break;
@@ -638,10 +655,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_11.Text;
+                    id_cla = dataGridView1[0, 10].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_11.Text;
+                    nick_lider = dataGridView1[1, 10].Value.ToString();
                     id_cla = dataGridView1[0, 10].Value.ToString();
                     bt_cla = bt_cla_11;
                     break;
@@ -654,10 +674,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_12.Text;
+                    id_cla = dataGridView1[0, 11].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_12.Text;
+                    nick_lider = dataGridView1[1, 11].Value.ToString();
                     id_cla = dataGridView1[0, 11].Value.ToString();
                     bt_cla = bt_cla_12;
                     break;
@@ -670,10 +693,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_13.Text;
+                    id_cla = dataGridView1[0, 12].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_13.Text;
+                    nick_lider = dataGridView1[1, 12].Value.ToString();
                     id_cla = dataGridView1[0, 12].Value.ToString();
                     bt_cla = bt_cla_13;
                     break;
@@ -686,10 +712,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_14.Text;
+                    id_cla = dataGridView1[0, 13].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_14.Text;
+                    nick_lider = dataGridView1[1, 13].Value.ToString();
                     id_cla = dataGridView1[0, 13].Value.ToString();
                     bt_cla = bt_cla_14;
                     break;
@@ -702,10 +731,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_15.Text;
+                    id_cla = dataGridView1[0, 14].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_15.Text;
+                    nick_lider = dataGridView1[1, 14].Value.ToString();
                     id_cla = dataGridView1[0, 14].Value.ToString();
                     bt_cla = bt_cla_15;
                     break;
@@ -718,10 +750,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_16.Text;
+                    id_cla = dataGridView1[0, 15].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_16.Text;
+                    nick_lider = dataGridView1[1, 15].Value.ToString();
                     id_cla = dataGridView1[0, 15].Value.ToString();
                     bt_cla = bt_cla_16;
                     break;
@@ -734,10 +769,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_17.Text;
+                    id_cla = dataGridView1[0, 16].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_17.Text;
+                    nick_lider = dataGridView1[1, 16].Value.ToString();
                     id_cla = dataGridView1[0, 16].Value.ToString();
                     bt_cla = bt_cla_17;
                     break;
@@ -750,10 +788,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_18.Text;
+                    id_cla = dataGridView1[0, 17].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_18.Text;
+                    nick_lider = dataGridView1[1, 17].Value.ToString();
                     id_cla = dataGridView1[0, 17].Value.ToString();
                     bt_cla = bt_cla_18;
                     break;
@@ -766,10 +807,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_19.Text;
+                    id_cla = dataGridView1[0, 18].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_19.Text;
+                    nick_lider = dataGridView1[1, 18].Value.ToString();
                     id_cla = dataGridView1[0, 18].Value.ToString();
                     bt_cla = bt_cla_19;
                     break;
@@ -782,10 +826,13 @@ namespace Hype.Painel.Home
             {
                 case MouseButtons.Left:
                     nome_cla = bt_cla_20.Text;
+                    id_cla = dataGridView1[0, 19].Value.ToString();
                     cla.Instance.btDashboard();
                     break;
 
                 case MouseButtons.Right:
+                    nome_cla = bt_cla_20.Text;
+                    nick_lider = dataGridView1[1, 19].Value.ToString();
                     id_cla = dataGridView1[0, 19].Value.ToString();
                     bt_cla = bt_cla_20;
                     break;
@@ -840,7 +887,7 @@ namespace Hype.Painel.Home
             }
             finally
             {
-                DeletarBotao(bt_cla);
+                DeletarBotao(bt_cla);                
             }
         }
         #endregion
@@ -877,7 +924,6 @@ namespace Hype.Painel.Home
 
         private void clas_home_Load(object sender, System.EventArgs e)
         {
-            Dados();
             TabelaCla();
         }
     }

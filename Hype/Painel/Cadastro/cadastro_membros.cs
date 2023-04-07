@@ -1732,7 +1732,7 @@ namespace Hype.Painel
                             try
                             {
                                 Cadastro();
-                                DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             finally
                             {
@@ -1743,7 +1743,7 @@ namespace Hype.Painel
                         else
                         {
                             Cadastro();
-                            DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Salvo Com Sucesso !", "Membros", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     finally

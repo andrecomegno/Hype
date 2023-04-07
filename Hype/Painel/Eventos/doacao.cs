@@ -476,29 +476,113 @@ namespace Hype.Painel.Eventos
 
         private void Semana_01()
         {
-            // BANCO DE DADOS
-            configdb database = new configdb();
-            database.openConnection();
-
             try
             {
                 // SE EDITAR FDR VERDADEIRO
                 if (_editarDoacao)
                 {
-                    // UPDATE TABELA DOAÇÃO 01
-                    MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01 where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+                    // BANCO DE DADOS
+                    configdb database = new configdb();
+                    database.openConnection();
 
-                    objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
-                    objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
-                    objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
-                    objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+                    #region SEMANA 1
+                    // VERIFICA OS CAMPOS DE DOAÇÃO
+                    if (txt_doacao_01.Texts != null && String.IsNullOrEmpty(txt_doacao_02.Texts) && String.IsNullOrEmpty(txt_doacao_03.Texts) && String.IsNullOrEmpty(txt_doacao_04.Texts))
+                    {
+                        // SOMA TOTAL DE DOAÇÕES
+                        double de = (Convert.ToDouble(txt_doacao_01.Texts));
+                        _total = de.ToString();
 
-                    objCmdDoacao.ExecuteNonQuery();                    
+                        // UPDATE TABELA DOAÇÃO 01
+                        MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
 
-                    MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 1", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
+                        objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
+                        objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
+                        objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+                        objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = _total;
+
+                        objCmdDoacao.ExecuteNonQuery();
+
+                        MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 1", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    #endregion
+                    #region SEMANA 2
+                    else if (txt_doacao_01.Texts != null && txt_doacao_02.Texts != null && String.IsNullOrEmpty(txt_doacao_03.Texts) && String.IsNullOrEmpty(txt_doacao_04.Texts))
+                    {
+                        double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts));
+                        _total = de.ToString();
+
+                        // UPDATE TABELA DOAÇÃO 02
+                        MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+
+                        objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
+                        objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
+                        objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
+                        objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+                        objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
+                        objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = _total;
+
+                        objCmdDoacao.ExecuteNonQuery();
+
+                        MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    #endregion
+                    #region SEMANA 3
+                    else if (txt_doacao_01.Texts != null && txt_doacao_02.Texts != null && txt_doacao_03.Texts != null && String.IsNullOrEmpty(txt_doacao_04.Texts))
+                    {
+                        double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts));
+                        _total = de.ToString();
+
+                        // UPDATE TABELA DOAÇÃO 03
+                        MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+
+                        objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
+                        objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
+                        objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
+                        objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+                        objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
+                        objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
+                        objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = _total;
+
+                        objCmdDoacao.ExecuteNonQuery();
+
+                        MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 3", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    #endregion
+                    #region SEMANA 4
+                    else if (txt_doacao_01.Texts != null && txt_doacao_02.Texts != null && txt_doacao_03.Texts != null && txt_doacao_04.Texts != null)
+                    {
+                        double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts) + Convert.ToDouble(txt_doacao_04.Texts));
+                        _total = de.ToString();
+
+                        // UPDATE TABELA DOAÇÃO 04
+                        MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+
+                        objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
+                        objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
+                        objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
+                        objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+                        objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
+                        objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
+                        objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = txt_doacao_04.Texts;
+                        objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = _total;
+
+                        objCmdDoacao.ExecuteNonQuery();
+
+                        MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 4", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    #endregion
+
+                    database.closeConnection();
                 }
                 else
                 {
+
+                    // BANCO DE DADOS
+                    configdb database = new configdb();
+                    database.openConnection();
+
                     double de = (Convert.ToDouble(txt_doacao_01.Texts));
                     _total = de.ToString();
 
@@ -528,6 +612,8 @@ namespace Hype.Painel.Eventos
                     id_doacao = objCmdDoacao.LastInsertedId.ToString();
 
                     MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 1", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    database.closeConnection();
                 }
             }
             finally
@@ -552,35 +638,85 @@ namespace Hype.Painel.Eventos
                     // SEMANAS +1
                     _doacao++;
                 }                
-            }
-
-            database.closeConnection();
+            }            
         }
 
         private void Semana_02()
         {
-            // BANCO DE DADOS
-            configdb database = new configdb();
-            database.openConnection();
-
             try
             {
-                double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts));
-                _total = de.ToString();
+                // BANCO DE DADOS
+                configdb database = new configdb();
+                database.openConnection();
 
-                // UPDATE TABELA DOAÇÃO 02
-                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+                #region SEMANA 2
+                if (txt_doacao_01.Texts != null && txt_doacao_02.Texts != null && String.IsNullOrEmpty(txt_doacao_03.Texts) && String.IsNullOrEmpty(txt_doacao_04.Texts))
+                {
+                    double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts));
+                    _total = de.ToString();
 
-                objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
-                objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
-                objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
-                objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
-                objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
-                objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = _total;
+                    // UPDATE TABELA DOAÇÃO 02
+                    MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
 
-                objCmdDoacao.ExecuteNonQuery();
+                    objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
+                    objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
+                    objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
+                    objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+                    objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
+                    objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = _total;
 
-                MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    objCmdDoacao.ExecuteNonQuery();
+
+                    MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                #endregion
+                #region SEMANA 3
+                else if (txt_doacao_01.Texts != null && txt_doacao_02.Texts != null && txt_doacao_03.Texts != null && String.IsNullOrEmpty(txt_doacao_04.Texts))
+                {
+                    double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts));
+                    _total = de.ToString();
+
+                    // UPDATE TABELA DOAÇÃO 03
+                    MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+
+                    objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
+                    objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
+                    objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
+                    objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+                    objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
+                    objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
+                    objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = _total;
+
+                    objCmdDoacao.ExecuteNonQuery();
+
+                    MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 3", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                #endregion
+                #region SEMANA 4
+                else if (txt_doacao_01.Texts != null && txt_doacao_02.Texts != null && txt_doacao_03.Texts != null && txt_doacao_04.Texts != null)
+                {
+                    double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts) + Convert.ToDouble(txt_doacao_04.Texts));
+                    _total = de.ToString();
+
+                    // UPDATE TABELA DOAÇÃO 04
+                    MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+
+                    objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
+                    objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
+                    objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
+                    objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+                    objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
+                    objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
+                    objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = txt_doacao_04.Texts;
+                    objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = _total;
+
+                    objCmdDoacao.ExecuteNonQuery();
+
+                    MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 4", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                #endregion
+
+                database.closeConnection();
             }
             finally
             {
@@ -600,36 +736,64 @@ namespace Hype.Painel.Eventos
                     CampoDoacao(lb_semana_03, txt_doacao_03, lb_semana_01, txt_doacao_01, lb_semana_02, txt_doacao_02, lb_semana_04, txt_doacao_04);
                     _doacao++;
                 }
-            }
-
-            database.closeConnection();
+            }            
         }
 
         private void Semana_03()
         {
-            // BANCO DE DADOS
-            configdb database = new configdb();
-            database.openConnection();
-
             try
             {
-                double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts));
-                _total = de.ToString();
+                // BANCO DE DADOS
+                configdb database = new configdb();
+                database.openConnection();
 
-                // UPDATE TABELA DOAÇÃO 03
-                MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+                #region SEMANA 3
+                if (txt_doacao_01.Texts != null && txt_doacao_02.Texts != null && txt_doacao_03.Texts != null && String.IsNullOrEmpty(txt_doacao_04.Texts))
+                {
+                    double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts));
+                    _total = de.ToString();
 
-                objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
-                objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
-                objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
-                objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
-                objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
-                objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
-                objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = _total;
+                    // UPDATE TABELA DOAÇÃO 03
+                    MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
 
-                objCmdDoacao.ExecuteNonQuery();
+                    objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
+                    objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
+                    objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
+                    objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+                    objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
+                    objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
+                    objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = _total;
 
-                MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 3", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    objCmdDoacao.ExecuteNonQuery();
+
+                    MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 3", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                #endregion
+                #region SEMANA 4
+                else if (txt_doacao_01.Texts != null && txt_doacao_02.Texts != null && txt_doacao_03.Texts != null && txt_doacao_04.Texts != null)
+                {
+                    double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts) + Convert.ToDouble(txt_doacao_04.Texts));
+                    _total = de.ToString();
+
+                    // UPDATE TABELA DOAÇÃO 04
+                    MySqlCommand objCmdDoacao = new MySqlCommand("update hypedb.doacao set semana_01=@semana_01, semana_02=@semana_02, semana_03=@semana_03, semana_04=@semana_04, total=@total where (id_doacao=@id_doacao) and (id_eventos=@id_eventos) and (id_membros=@id_membros)", database.getConnection());
+
+                    objCmdDoacao.Parameters.AddWithValue("@id_doacao", id_doacao);
+                    objCmdDoacao.Parameters.AddWithValue("@id_eventos", id_eventos);
+                    objCmdDoacao.Parameters.AddWithValue("@id_membros", id_membro);
+                    objCmdDoacao.Parameters.Add("@semana_01", MySqlDbType.Decimal).Value = txt_doacao_01.Texts;
+                    objCmdDoacao.Parameters.Add("@semana_02", MySqlDbType.Decimal).Value = txt_doacao_02.Texts;
+                    objCmdDoacao.Parameters.Add("@semana_03", MySqlDbType.Decimal).Value = txt_doacao_03.Texts;
+                    objCmdDoacao.Parameters.Add("@semana_04", MySqlDbType.Decimal).Value = txt_doacao_04.Texts;
+                    objCmdDoacao.Parameters.Add("@total", MySqlDbType.Decimal).Value = _total;
+
+                    objCmdDoacao.ExecuteNonQuery();
+
+                    MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 4", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                #endregion
+
+                database.closeConnection();
             }
             finally
             {
@@ -641,7 +805,6 @@ namespace Hype.Painel.Eventos
                     }
                     finally
                     {
-                        //txt_doacao_03.Texts = string.Empty;
                         _editarDoacao = false;
                     }                    
                 }
@@ -651,18 +814,16 @@ namespace Hype.Painel.Eventos
                     _doacao++;
                 }
             }
-
-            database.closeConnection();
         }
 
         private void Semana_04()
         {
-            // BANCO DE DADOS
-            configdb database = new configdb();
-            database.openConnection();
-
             try
             {
+                // BANCO DE DADOS
+                configdb database = new configdb();
+                database.openConnection();
+
                 double de = (Convert.ToDouble(txt_doacao_01.Texts) + Convert.ToDouble(txt_doacao_02.Texts) + Convert.ToDouble(txt_doacao_03.Texts) + Convert.ToDouble(txt_doacao_04.Texts));
                 _total = de.ToString();
 
@@ -681,6 +842,8 @@ namespace Hype.Painel.Eventos
                 objCmdDoacao.ExecuteNonQuery();
 
                 MessageBox.Show("Doação Efetuada Com Sucesso !", "Semana 4", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                database.closeConnection();
             }
             finally
             {
@@ -692,7 +855,6 @@ namespace Hype.Painel.Eventos
                     }
                     finally
                     {
-                        //txt_doacao_04.Texts = string.Empty;
                         _editarDoacao = false;
                     }
                 }
@@ -711,8 +873,6 @@ namespace Hype.Painel.Eventos
                     }
                 }
             }
-
-            database.closeConnection();
         }
         #endregion
 

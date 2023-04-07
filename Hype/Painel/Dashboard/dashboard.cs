@@ -52,7 +52,7 @@ namespace Hype.Painel
             configdb database = new configdb();
             database.openConnection();            
 
-            MySqlCommand cmd = new MySqlCommand("select c.NICK, eve.MES_EVENTO, sum(d.SEMANA_01 + d.SEMANA_02 + d.SEMANA_03 + d.SEMANA_04) as TOTAL, cl.NOME_CLA, c.STATUS from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where id_login = '" + id_login + "' and cl.NOME_CLA like @NOME_CLA '%' and eve.MES_EVENTO like @MES_EVENTO '%' and c.STATUS like @STATUS '%' ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.NICK, eve.MES_EVENTO, sum(d.SEMANA_01 + d.SEMANA_02 + d.SEMANA_03 + d.SEMANA_04) as TOTAL, cl.NOME_CLA, c.STATUS from hypedb.cadastro_membro c join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS join hypedb.eventos eve on eve.ID_EVENTOS = d.ID_EVENTOS join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where id_login = '" + id_login + "' and cl.NOME_CLA like @NOME_CLA '%' and eve.MES_EVENTO like @MES_EVENTO '%' and c.STATUS like @STATUS '%' group by c.ID_MEMBROS", database.getConnection());
             cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
             cmd.Parameters.AddWithValue("@STATUS", "Ativo");
             cmd.Parameters.AddWithValue("@MES_EVENTO", DateTime.Now.ToString("MMMM"));
