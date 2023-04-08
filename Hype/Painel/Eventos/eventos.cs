@@ -29,7 +29,7 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, cl.NOME_CLA, c.STATUS, c.PATENTE, c.CLASSE, c.NICK, sum(d.SEMANA_01 + d.SEMANA_02 + d.SEMANA_03 + d.SEMANA_04) as TOTAL from hypedb.cadastro_membro c left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO left join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS left join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' group by c.ID_MEMBROS ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, cl.NOME_CLA, c.STATUS, c.PATENTE, c.CLASSE, c.NICK, d.TOTAL from hypedb.cadastro_membro c left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO left join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS left join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' group by c.ID_MEMBROS ", database.getConnection());
             cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
             cmd.Parameters.AddWithValue("@STATUS", "Ativo");
 
@@ -146,7 +146,7 @@ namespace Hype.Painel.Eventos
             configdb database = new configdb();
             database.openConnection();
 
-            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, cl.NOME_CLA, c.STATUS, c.PATENTE, c.CLASSE, c.NICK, sum(d.SEMANA_01 + d.SEMANA_02 + d.SEMANA_03 + d.SEMANA_04) as TOTAL from hypedb.cadastro_membro c left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO left join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS left join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where c.NICK like @NICK '%' and cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' group by c.ID_MEMBROS ", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select c.ID_MEMBROS, cl.NOME_CLA, c.STATUS, c.PATENTE, c.CLASSE, c.NICK, d.TOTAL from hypedb.cadastro_membro c left join hypedb.progressao pro on pro.ID_PROGRESSAO = c.ID_MEMBROS left join hypedb.recrutamento re on re.ID_RECRUTAMENTO = c.ID_RECRUTAMENTO left join hypedb.doacao d on d.ID_MEMBROS = c.ID_MEMBROS left join hypedb.cadastro_cla cl on cl.ID_CLA = re.ID_CLA where c.NICK like @NICK '%' and cl.NOME_CLA like @NOME_CLA '%' and c.STATUS like @STATUS '%' group by c.ID_MEMBROS ", database.getConnection());
             cmd.Parameters.AddWithValue("@NICK", txt_buscar.Texts);
             cmd.Parameters.AddWithValue("@NOME_CLA", nome_cla);
             cmd.Parameters.AddWithValue("@STATUS", "Ativo");
