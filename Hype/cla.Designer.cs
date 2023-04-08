@@ -33,6 +33,7 @@ namespace Hype
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cla));
             this.lb_login = new System.Windows.Forms.Label();
             this.lb_nome_do_cla = new System.Windows.Forms.Label();
             this.pl_conta = new System.Windows.Forms.Panel();
@@ -49,16 +50,16 @@ namespace Hype
             this.pl_centro = new System.Windows.Forms.Panel();
             this.pl_conteudo = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bt_membros = new FontAwesome.Sharp.IconButton();
-            this.bt_dashboard = new FontAwesome.Sharp.IconButton();
             this.pl_conf = new System.Windows.Forms.Panel();
             this.bt_menu_recolher = new FontAwesome.Sharp.IconButton();
             this.bt_configurar = new FontAwesome.Sharp.IconButton();
             this.bt_inicio = new FontAwesome.Sharp.IconButton();
-            this.bt_eventos = new FontAwesome.Sharp.IconButton();
-            this.bt_configuracao = new FontAwesome.Sharp.IconButton();
-            this.bt_home = new FontAwesome.Sharp.IconButton();
             this.pl_menu = new System.Windows.Forms.Panel();
+            this.bt_home = new FontAwesome.Sharp.IconButton();
+            this.bt_configuracao = new FontAwesome.Sharp.IconButton();
+            this.bt_eventos = new FontAwesome.Sharp.IconButton();
+            this.bt_dashboard = new FontAwesome.Sharp.IconButton();
+            this.bt_membros = new FontAwesome.Sharp.IconButton();
             this.pl_conta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto_perfil)).BeginInit();
             this.pl_top.SuspendLayout();
@@ -172,7 +173,7 @@ namespace Hype
             this.foto_perfil.BorderSize = 2;
             this.foto_perfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.foto_perfil.GradientAngle = 50F;
-            this.foto_perfil.Image = global::Hype.Properties.Resources.HYPE_03;
+            this.foto_perfil.Image = global::Hype.Properties.Resources.hype;
             this.foto_perfil.Location = new System.Drawing.Point(65, 17);
             this.foto_perfil.Name = "foto_perfil";
             this.foto_perfil.Size = new System.Drawing.Size(80, 80);
@@ -206,7 +207,7 @@ namespace Hype
             this.foto_perfil_cla.BorderSize = 2;
             this.foto_perfil_cla.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.foto_perfil_cla.GradientAngle = 50F;
-            this.foto_perfil_cla.Image = global::Hype.Properties.Resources.HYPE_03;
+            this.foto_perfil_cla.Image = global::Hype.Properties.Resources.hype;
             this.foto_perfil_cla.Location = new System.Drawing.Point(8, 4);
             this.foto_perfil_cla.Name = "foto_perfil_cla";
             this.foto_perfil_cla.Size = new System.Drawing.Size(52, 52);
@@ -370,54 +371,6 @@ namespace Hype
             this.dataGridView1.Size = new System.Drawing.Size(40, 22);
             this.dataGridView1.TabIndex = 105;
             // 
-            // bt_membros
-            // 
-            this.bt_membros.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_membros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_membros.FlatAppearance.BorderSize = 0;
-            this.bt_membros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_membros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_membros.ForeColor = System.Drawing.Color.White;
-            this.bt_membros.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.bt_membros.IconColor = System.Drawing.Color.White;
-            this.bt_membros.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_membros.IconSize = 35;
-            this.bt_membros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_membros.Location = new System.Drawing.Point(0, 92);
-            this.bt_membros.Name = "bt_membros";
-            this.bt_membros.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_membros.Size = new System.Drawing.Size(210, 46);
-            this.bt_membros.TabIndex = 54;
-            this.bt_membros.Tag = "Membros";
-            this.bt_membros.Text = "Membros";
-            this.bt_membros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bt_membros.UseVisualStyleBackColor = false;
-            this.bt_membros.Click += new System.EventHandler(this.bt_membros_Click);
-            // 
-            // bt_dashboard
-            // 
-            this.bt_dashboard.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.bt_dashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_dashboard.FlatAppearance.BorderSize = 0;
-            this.bt_dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_dashboard.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_dashboard.ForeColor = System.Drawing.Color.White;
-            this.bt_dashboard.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
-            this.bt_dashboard.IconColor = System.Drawing.Color.White;
-            this.bt_dashboard.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_dashboard.IconSize = 35;
-            this.bt_dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_dashboard.Location = new System.Drawing.Point(0, 40);
-            this.bt_dashboard.Name = "bt_dashboard";
-            this.bt_dashboard.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_dashboard.Size = new System.Drawing.Size(210, 46);
-            this.bt_dashboard.TabIndex = 55;
-            this.bt_dashboard.Tag = "Dashboard";
-            this.bt_dashboard.Text = "Dashboard";
-            this.bt_dashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bt_dashboard.UseVisualStyleBackColor = false;
-            this.bt_dashboard.Click += new System.EventHandler(this.bt_dashboard_Click);
-            // 
             // pl_conf
             // 
             this.pl_conf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -508,53 +461,20 @@ namespace Hype
             this.bt_inicio.UseVisualStyleBackColor = false;
             this.bt_inicio.Click += new System.EventHandler(this.bt_inicio_Click);
             // 
-            // bt_eventos
+            // pl_menu
             // 
-            this.bt_eventos.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_eventos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_eventos.FlatAppearance.BorderSize = 0;
-            this.bt_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_eventos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_eventos.ForeColor = System.Drawing.Color.White;
-            this.bt_eventos.IconChar = FontAwesome.Sharp.IconChar.NetworkWired;
-            this.bt_eventos.IconColor = System.Drawing.Color.White;
-            this.bt_eventos.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_eventos.IconSize = 35;
-            this.bt_eventos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_eventos.Location = new System.Drawing.Point(0, 144);
-            this.bt_eventos.Name = "bt_eventos";
-            this.bt_eventos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_eventos.Size = new System.Drawing.Size(210, 46);
-            this.bt_eventos.TabIndex = 56;
-            this.bt_eventos.Tag = "Eventos";
-            this.bt_eventos.Text = "Eventos";
-            this.bt_eventos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bt_eventos.UseVisualStyleBackColor = false;
-            this.bt_eventos.Click += new System.EventHandler(this.bt_eventos_Click);
-            // 
-            // bt_configuracao
-            // 
-            this.bt_configuracao.BackColor = System.Drawing.Color.LightSlateGray;
-            this.bt_configuracao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_configuracao.FlatAppearance.BorderSize = 0;
-            this.bt_configuracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_configuracao.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_configuracao.ForeColor = System.Drawing.Color.White;
-            this.bt_configuracao.IconChar = FontAwesome.Sharp.IconChar.Cog;
-            this.bt_configuracao.IconColor = System.Drawing.Color.White;
-            this.bt_configuracao.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.bt_configuracao.IconSize = 35;
-            this.bt_configuracao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_configuracao.Location = new System.Drawing.Point(0, 196);
-            this.bt_configuracao.Name = "bt_configuracao";
-            this.bt_configuracao.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.bt_configuracao.Size = new System.Drawing.Size(210, 46);
-            this.bt_configuracao.TabIndex = 57;
-            this.bt_configuracao.Tag = "Configuração";
-            this.bt_configuracao.Text = "Configuração";
-            this.bt_configuracao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bt_configuracao.UseVisualStyleBackColor = false;
-            this.bt_configuracao.Click += new System.EventHandler(this.bt_configuracao_Click);
+            this.pl_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.pl_menu.Controls.Add(this.bt_home);
+            this.pl_menu.Controls.Add(this.bt_configuracao);
+            this.pl_menu.Controls.Add(this.bt_eventos);
+            this.pl_menu.Controls.Add(this.pl_conf);
+            this.pl_menu.Controls.Add(this.bt_dashboard);
+            this.pl_menu.Controls.Add(this.bt_membros);
+            this.pl_menu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pl_menu.Location = new System.Drawing.Point(0, 63);
+            this.pl_menu.Name = "pl_menu";
+            this.pl_menu.Size = new System.Drawing.Size(210, 720);
+            this.pl_menu.TabIndex = 51;
             // 
             // bt_home
             // 
@@ -580,20 +500,101 @@ namespace Hype
             this.bt_home.UseVisualStyleBackColor = false;
             this.bt_home.Click += new System.EventHandler(this.bt_home_Click);
             // 
-            // pl_menu
+            // bt_configuracao
             // 
-            this.pl_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
-            this.pl_menu.Controls.Add(this.bt_home);
-            this.pl_menu.Controls.Add(this.bt_configuracao);
-            this.pl_menu.Controls.Add(this.bt_eventos);
-            this.pl_menu.Controls.Add(this.pl_conf);
-            this.pl_menu.Controls.Add(this.bt_dashboard);
-            this.pl_menu.Controls.Add(this.bt_membros);
-            this.pl_menu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pl_menu.Location = new System.Drawing.Point(0, 63);
-            this.pl_menu.Name = "pl_menu";
-            this.pl_menu.Size = new System.Drawing.Size(210, 720);
-            this.pl_menu.TabIndex = 51;
+            this.bt_configuracao.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_configuracao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_configuracao.FlatAppearance.BorderSize = 0;
+            this.bt_configuracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_configuracao.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_configuracao.ForeColor = System.Drawing.Color.White;
+            this.bt_configuracao.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.bt_configuracao.IconColor = System.Drawing.Color.White;
+            this.bt_configuracao.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_configuracao.IconSize = 35;
+            this.bt_configuracao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_configuracao.Location = new System.Drawing.Point(0, 196);
+            this.bt_configuracao.Name = "bt_configuracao";
+            this.bt_configuracao.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_configuracao.Size = new System.Drawing.Size(210, 46);
+            this.bt_configuracao.TabIndex = 57;
+            this.bt_configuracao.Tag = "Configuração";
+            this.bt_configuracao.Text = "Configuração";
+            this.bt_configuracao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bt_configuracao.UseVisualStyleBackColor = false;
+            this.bt_configuracao.Click += new System.EventHandler(this.bt_configuracao_Click);
+            // 
+            // bt_eventos
+            // 
+            this.bt_eventos.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_eventos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_eventos.FlatAppearance.BorderSize = 0;
+            this.bt_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_eventos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_eventos.ForeColor = System.Drawing.Color.White;
+            this.bt_eventos.IconChar = FontAwesome.Sharp.IconChar.NetworkWired;
+            this.bt_eventos.IconColor = System.Drawing.Color.White;
+            this.bt_eventos.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_eventos.IconSize = 35;
+            this.bt_eventos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_eventos.Location = new System.Drawing.Point(0, 144);
+            this.bt_eventos.Name = "bt_eventos";
+            this.bt_eventos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_eventos.Size = new System.Drawing.Size(210, 46);
+            this.bt_eventos.TabIndex = 56;
+            this.bt_eventos.Tag = "Eventos";
+            this.bt_eventos.Text = "Eventos";
+            this.bt_eventos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bt_eventos.UseVisualStyleBackColor = false;
+            this.bt_eventos.Click += new System.EventHandler(this.bt_eventos_Click);
+            // 
+            // bt_dashboard
+            // 
+            this.bt_dashboard.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.bt_dashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_dashboard.FlatAppearance.BorderSize = 0;
+            this.bt_dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_dashboard.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_dashboard.ForeColor = System.Drawing.Color.White;
+            this.bt_dashboard.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
+            this.bt_dashboard.IconColor = System.Drawing.Color.White;
+            this.bt_dashboard.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_dashboard.IconSize = 35;
+            this.bt_dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_dashboard.Location = new System.Drawing.Point(0, 40);
+            this.bt_dashboard.Name = "bt_dashboard";
+            this.bt_dashboard.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_dashboard.Size = new System.Drawing.Size(210, 46);
+            this.bt_dashboard.TabIndex = 55;
+            this.bt_dashboard.Tag = "Dashboard";
+            this.bt_dashboard.Text = "Dashboard";
+            this.bt_dashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bt_dashboard.UseVisualStyleBackColor = false;
+            this.bt_dashboard.Click += new System.EventHandler(this.bt_dashboard_Click);
+            // 
+            // bt_membros
+            // 
+            this.bt_membros.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_membros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_membros.FlatAppearance.BorderSize = 0;
+            this.bt_membros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_membros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_membros.ForeColor = System.Drawing.Color.White;
+            this.bt_membros.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.bt_membros.IconColor = System.Drawing.Color.White;
+            this.bt_membros.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.bt_membros.IconSize = 35;
+            this.bt_membros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_membros.Location = new System.Drawing.Point(0, 92);
+            this.bt_membros.Name = "bt_membros";
+            this.bt_membros.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.bt_membros.Size = new System.Drawing.Size(210, 46);
+            this.bt_membros.TabIndex = 54;
+            this.bt_membros.Tag = "Membros";
+            this.bt_membros.Text = "Membros";
+            this.bt_membros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bt_membros.UseVisualStyleBackColor = false;
+            this.bt_membros.Click += new System.EventHandler(this.bt_membros_Click);
             // 
             // cla
             // 
@@ -606,6 +607,7 @@ namespace Hype
             this.Controls.Add(this.pl_centro);
             this.Controls.Add(this.pl_menu);
             this.Controls.Add(this.pl_top);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "cla";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

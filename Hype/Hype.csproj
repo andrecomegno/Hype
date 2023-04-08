@@ -50,7 +50,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>HYPE_03.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\hype.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Hype.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
@@ -300,6 +303,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="script\configdb.cs" />
     <Compile Include="script\conftext.cs" />
     <Compile Include="script\RJCircularPictureBox.cs">
@@ -370,14 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="script\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,9 +399,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\HYPE_03.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\buscar.png" />
   </ItemGroup>
   <ItemGroup>
@@ -414,7 +414,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HYPE_03.ico" />
+    <Resource Include="Resources\hype.ico" />
+    <None Include="Resources\hype.png" />
     <Content Include="Resources\Mais.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

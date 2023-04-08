@@ -29,6 +29,7 @@ namespace Hype
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.txt_versao = new System.Windows.Forms.Label();
             this.bt_fechar = new System.Windows.Forms.Button();
             this.lb_login = new System.Windows.Forms.Label();
@@ -189,6 +190,7 @@ namespace Hype
             this.Controls.Add(this.txt_versao);
             this.Controls.Add(this.pl_login);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

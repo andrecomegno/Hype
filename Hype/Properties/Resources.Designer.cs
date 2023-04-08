@@ -73,9 +73,9 @@ namespace Hype.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HYPE_03 {
+        internal static System.Drawing.Bitmap hype {
             get {
-                object obj = ResourceManager.GetObject("HYPE_03", resourceCulture);
+                object obj = ResourceManager.GetObject("hype", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
