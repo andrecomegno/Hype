@@ -5,9 +5,11 @@
   </a>
 </p>
 
+ #
+ 
 <div>
   <p align="center">
-    <img src="https://user-images.githubusercontent.com/55299009/230734374-61873c9e-507a-4df8-9f5c-6dec403d5981.png" alt="Logo-Hype" height="280">
+    <img src="https://user-images.githubusercontent.com/55299009/230734374-61873c9e-507a-4df8-9f5c-6dec403d5981.png" alt="Logo" height="280">
   </p>
 </div>
 
@@ -37,7 +39,7 @@ Hype é um projeto de gerenciador de cadastro para Guildas de um jogo MMORPG que
 </div>
 
 ## Gif`s
-<p> Aqui estão um pouco mais sobre o projeto Hype mostrando o cadastro de membros e alt`s, a busca por membros, editar cadastro e clãs<p>
+<p> Aqui estão um pouco mais sobre o projeto Hype mostrando o cadastro de membros e alt`s, a busca por membros, editar cadastro e clãs <p>
 <div style="display: inline"> 
     <img src="https://user-images.githubusercontent.com/55299009/230698605-ac832d2e-3705-429b-99c1-b0c2b39215ef.gif" alt="Cadastro" height="280">    
     <img src="https://user-images.githubusercontent.com/55299009/230698618-9b5892e3-9ee6-427f-9ad7-4e1e34edccea.gif" alt="Buscar" height="280">
